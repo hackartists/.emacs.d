@@ -24,7 +24,7 @@
 (require 'setup-projectile)
 (require 'setup-fa)
 (require 'setup-eclim)
-(require 'setup-ac)
+;;(require 'setup-ac)
 (require 'setup-py)
 
 (add-hook 'dired-mode-hook 'helm-gtags-mode)
