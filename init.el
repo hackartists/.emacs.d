@@ -41,7 +41,7 @@
 (add-hook 'prog-mode-hook (lambda () (interactive) (setq show-trailing-whitespace 1)))
 
 (setq make-backup-files nil)
-(setq c-default-style "linux")
+(setq c-default-style "bsd")
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 
