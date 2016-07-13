@@ -31,6 +31,7 @@
 ;;(require 'setup-ac)
 (require 'setup-py)
 (require 'setup-tramp)
+(require 'setup-jade)
 
 (add-hook 'dired-mode-hook 'helm-gtags-mode)
 (add-hook 'eshell-mode-hook 'helm-gtags-mode)
