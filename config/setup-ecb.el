@@ -86,27 +86,27 @@
 
   (ecb-layout-define "hackartist" left
     "This function creates the following layout:
-   -------------------------------------------------------
-   |                                      |              |
-   |                                      |  Directories |
-   |                                      |              |
-   |                                      |              |
-   |                                      |              |
-   |                                      |              |
-   |                                      |--------------|
-   |                 Edit                 |              |
-   |                                      |  Methods     |
-   |                                      |              |
-   |                                      |              |
-   |                                      |--------------|
-   |                                      |              |
-   |                                      |  History     |
-   |                                      |              |
-   -------------------------------------------------------
-   |                                                     |
-   |                    Compilation                      |
-   |                                                     |
-   -------------------------------------------------------
+   ----------------------------------------------------------------------
+   |              |                        |                            |
+   |  Directories |                                                     |
+   |              |                        |                            |
+   |              |                        |                            |
+   |              |                        |                            |
+   |              |                        |                            |
+   |--------------|                        |                            |
+   |              |   Edit1                |        Edit2               |
+   |  Methods     |                        |                            |
+   |              |                        |                            |
+   |              |                        |                            |
+   |--------------|                        |                            |
+   |              |                        |                            |
+   |  History     |                        |                            |
+   |              |                        |                            |
+   ----------------------------------------------------------------------
+   |                                                                    |
+   |                    Compilation                                     |
+   |                                                                    |
+   ----------------------------------------------------------------------
 If you have not set a compilation-window in `ecb-compile-window-height' then
 the layout contains no persistent compilation window and the other windows get a
 little more place. This layout works best if it is contained in

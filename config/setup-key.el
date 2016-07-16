@@ -1,10 +1,10 @@
 (define-key input-decode-map "\e[1;5A" [C-up])
 (define-key input-decode-map "\e[1;5B" [C-down])
 
- (global-unset-key [C-left])
- (global-unset-key [C-right])
- (global-unset-key [C-up])
- (global-unset-key [C-down])
+(global-unset-key [C-left])
+(global-unset-key [C-right])
+(global-unset-key [C-up])
+(global-unset-key [C-down])
 
 (global-set-key [C-up] 'windmove-up)
 (global-set-key [C-down] 'windmove-down)
