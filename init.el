@@ -70,8 +70,7 @@
  '(ecb-options-version "2.40")
  '(ecb-source-path
    (quote
-    (("/sshx:root@server.artofthings.org#10022:" "/sshx:root@server.artofthings.org#10022:")
-     ("/sshx:root@server.artofthings.org#10022:" "server.artofthings.org")))))
+     ("/sshx:hackartist@lab.artofthings.org#10022:" "lab"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

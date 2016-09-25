@@ -10,7 +10,7 @@
       ecb-compile-window-width 'edit-window
       ecb-compile-window-temporally-enlarge 'both
       ecb-create-layout-file "~/.emacs.d/auto-save-list/.ecb-user-layouts.el"
-      ecb-windows-width 0.15
+      ecb-windows-width 0.2
       ecb-fix-window-size 'width
       ecb-layout-name "hackartist"
       ecb-history-make-buckets 'mode
