@@ -11,7 +11,6 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-
 (add-to-list 'load-path "~/.emacs.d/config")
 
 (require 'setup-helm)
@@ -32,6 +31,7 @@
 (require 'setup-py)
 (require 'setup-tramp)
 (require 'setup-jade)
+(require 'setup-font)
 
 (add-hook 'dired-mode-hook 'helm-gtags-mode)
 (add-hook 'eshell-mode-hook 'helm-gtags-mode)
@@ -62,18 +62,19 @@
 
 
 
-(custom-set-variables
+;;(custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ecb-options-version "2.40")
- '(ecb-source-path
-   (quote
-     ("/sshx:hackartist@lab.artofthings.org#10022:" "lab"))))
-(custom-set-faces
+;; '(ecb-options-version "2.40")
+;; '(ecb-source-path
+;;   (quote
+;;    ("/sshx:hackartist@lab.artofthings.org#10022:" "lab"))))
+
+;;(custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ ;;'(highlight-current-line-face ((t (:background "yellow15" :height 400 :family "Nanum Gothic")))))
