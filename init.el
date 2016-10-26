@@ -31,7 +31,7 @@
 (require 'setup-py)
 (require 'setup-tramp)
 (require 'setup-jade)
-(require 'setup-font)
+;;(require 'setup-font)
 
 (add-hook 'dired-mode-hook 'helm-gtags-mode)
 (add-hook 'eshell-mode-hook 'helm-gtags-mode)
