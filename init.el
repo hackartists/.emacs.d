@@ -31,6 +31,8 @@
 (require 'setup-py)
 (require 'setup-tramp)
 (require 'setup-jade)
+(provide 'setup-go)
+;;(require 'setup-smartparens)
 ;;(require 'setup-font)
 
 (add-hook 'dired-mode-hook 'helm-gtags-mode)
