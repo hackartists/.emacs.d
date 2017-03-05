@@ -7,7 +7,28 @@
 ;;     (define-key company-active-map (kbd "TAB") 'company-complete)
 ;;     (define-key company-active-map [tab] 'company-complete)))
 (add-hook 'after-init-hook 'global-company-mode)
-(delete 'company-semantic company-backends)
+(global-company-mode t)
+
+(set 'company-auto-complete t)
+(setq company-idle-delay 0)
+(setq company-require-match nil)
+
+(define-key company-active-map (kbd "TAB") 'company-complete)
+
+;;(define-key )
+
+;; auto-comple
+;; (defun company-complete-common-or-cycle ()
+;;   (interactive)
+;;   (when (company-manual-begin)
+;;     (if (eq last-command 'company-complete-common-or-cycle)
+;;         (let ((company-selection-wrap-around t))
+;;           (call-interactively 'company-select-next))
+;;       (call-interactively 'company-complete-common))))
+
+;; (define-key company-active-map [tab] 'company-complete-common-or-cycle)
+;; (define-key company-active-map (kbd "TAB") 'company-complete-common-or-cycle)
+;;(delete 'company-semantic company-backends)
 ;;(define-key c-mode-map  [(tab)] 'company-complete)
 ;;(define-key c++-mode-map  [(tab)] 'company-complete)
 ;;(define-key css-mode-map [(tab)] 'company-complete)

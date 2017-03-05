@@ -2,11 +2,11 @@
 (require 'go-flycheck)
 (require 'go-autocomplete)
 (require 'auto-complete-config)
-(ac-config-default)
 
 
 (defun my-go-mode-hook()
   (add-hook 'before-save-hook 'gofmt-before-save)
+  (ac-config-default)
   (setq gofmt-command "goimports")
   (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)

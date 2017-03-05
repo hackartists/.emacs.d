@@ -31,7 +31,8 @@
 (require 'setup-py)
 (require 'setup-tramp)
 (require 'setup-jade)
-(provide 'setup-go)
+(require 'setup-go)
+(require 'setup-erlang)
 ;;(require 'setup-smartparens)
 ;;(require 'setup-font)
 
