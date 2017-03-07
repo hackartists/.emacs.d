@@ -6,7 +6,7 @@
 (custom-set-variables '(ecb-options-version "2.40"))
 (defconst initial-frame-width (frame-width)
   "The width of frame will be changed ,remember the init value.")
-(setq ecb-compile-window-height 6
+(setq ecb-compile-window-height 10
       ecb-compile-window-width 'edit-window
       ecb-compile-window-temporally-enlarge 'both
       ecb-create-layout-file "~/.emacs.d/auto-save-list/.ecb-user-layouts.el"
@@ -121,6 +121,14 @@ little more place. This layout works best if it is contained in
 (setq dired-omit-files "^\\.?#\\|^\\.$")
 (ecb-activate)
 (ecb-byte-compile)
+
+(defun display-buffer-at-bottom--display-buffer-at-bottom-around (orig-fun &rest args)
+  "Bugfix for ECB: cannot use display-buffer-at-bottom', calldisplay-buffer-use-some-window' instead in ECB frame."
+  (if (and ecb-minor-mode (equal (selected-frame) ecb-frame))
+      (apply 'display-buffer-use-some-window args)
+    (apply orig-fun args)))
+(advice-add 'display-buffer-at-bottom :around #'display-buffer-at-bottom--display-buffer-at-bottom-around)
+
 (provide 'setup-ecb)
 
 ;;; config-ecb.el ends here ---"")

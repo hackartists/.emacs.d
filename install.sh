@@ -1,3 +1,4 @@
+
 #golang setting
 go get github.com/dougm/goflymake
 go get github.com/nsf/gocode
