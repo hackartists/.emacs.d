@@ -13,11 +13,8 @@
 (setq company-idle-delay 0)
 (setq company-require-match nil)
 
-(eval-after-load 'company
-  '(progn
-     (define-key company-active-map (kbd "TAB") 'company-complete)
+(define-key company-active-map (kbd "TAB") 'company-complete)
 
-     (add-to-list 'company-backends 'company-files)))
 
 
 ;; (add-hook 'org-mode-hook

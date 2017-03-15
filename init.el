@@ -11,6 +11,8 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(set-frame-parameter nil 'fullscreen 'fullboth)
+
 (add-to-list 'load-path "~/.emacs.d/config")
 
 (require 'setup-path)

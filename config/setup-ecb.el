@@ -40,7 +40,11 @@
   "Bugfix for ECB: cannot use display-buffer-at-bottom', calldisplay-buffer-use-some-window' instead in ECB frame."
   (if (and ecb-minor-mode (equal (selected-frame) ecb-frame))
       (apply 'display-buffer-use-some-window args)
-    (apply orig-fun args)))
+    (apply orig-fun args)
+    ;;   (apply 'display-buffer-use-some-window ecb-compile-window)
+    ;; (apply orig-fun ecb-compile-window)
+    )
+  )
 (advice-add 'display-buffer-at-bottom :around #'display-buffer-at-bottom--display-buffer-at-bottom-around)
 
 (defun frame-horizontal-maximized-p ()
