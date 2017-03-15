@@ -13,9 +13,9 @@
 
 (add-to-list 'load-path "~/.emacs.d/config")
 
+(require 'setup-path)
 (require 'setup-helm)
 (require 'setup-helm-gtags)
-;; (require 'setup-ggtags)
 (require 'setup-cedet)
 (require 'setup-editing)
 (require 'setup-ecb)
@@ -27,12 +27,14 @@
 (require 'setup-projectile)
 (require 'setup-fa)
 (require 'setup-eclim)
-;;(require 'setup-ac)
 (require 'setup-py)
 (require 'setup-tramp)
 (require 'setup-jade)
 (require 'setup-go)
 (require 'setup-erlang)
+
+;; (require 'setup-ggtags)
+;;(require 'setup-ac)
 ;;(require 'setup-smartparens)
 ;;(require 'setup-font)
 

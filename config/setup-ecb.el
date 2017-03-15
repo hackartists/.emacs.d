@@ -33,8 +33,15 @@
           'ecb-shrink-frame-width-before-hide)
 (add-hook 'ecb-deactivate-hook
           'ecb-shrink-frame-width-before-hide)
-(add-hook 'ecb-activate-before-layout-draw-hook
-          'ecb-enlarge-frame-width-before-activate)
+;;(add-hook 'ecb-activate-before-layout-draw-hook
+;;          'ecb-enlarge-frame-width-before-activate)
+
+(defun display-buffer-at-bottom--display-buffer-at-bottom-around (orig-fun &rest args)
+  "Bugfix for ECB: cannot use display-buffer-at-bottom', calldisplay-buffer-use-some-window' instead in ECB frame."
+  (if (and ecb-minor-mode (equal (selected-frame) ecb-frame))
+      (apply 'display-buffer-use-some-window args)
+    (apply orig-fun args)))
+(advice-add 'display-buffer-at-bottom :around #'display-buffer-at-bottom--display-buffer-at-bottom-around)
 
 (defun frame-horizontal-maximized-p ()
   "Test current frame wheather be maxmized by test the frame width and height equal to the screen resolution"
@@ -122,12 +129,6 @@ little more place. This layout works best if it is contained in
 (ecb-activate)
 (ecb-byte-compile)
 
-(defun display-buffer-at-bottom--display-buffer-at-bottom-around (orig-fun &rest args)
-  "Bugfix for ECB: cannot use display-buffer-at-bottom', calldisplay-buffer-use-some-window' instead in ECB frame."
-  (if (and ecb-minor-mode (equal (selected-frame) ecb-frame))
-      (apply 'display-buffer-use-some-window args)
-    (apply orig-fun args)))
-(advice-add 'display-buffer-at-bottom :around #'display-buffer-at-bottom--display-buffer-at-bottom-around)
 
 (provide 'setup-ecb)
 

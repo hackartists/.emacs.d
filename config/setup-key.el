@@ -17,7 +17,7 @@
 (global-set-key (kbd "<end>") 'move-end-of-line)
 (global-set-key (kbd "RET") 'newline-and-indent)  ; automatically indent when press RET
 (global-set-key (kbd "M-`") 'ecb-open-source-in-editwin2)
-(global-set-key [(tab)] 'company-complete)
+;;(global-set-key [(tab)] 'company-complete)
 
 (global-set-key (kbd "<f5>") (lambda ()
                                (interactive)
