@@ -1,4 +1,4 @@
-(setq load-path (cons "/usr/local/opt/erl/lib/tools-2.9/emacs" load-path))
+(setq load-path (cons "/usr/local/opt/erl/lib/tools-2.8.3/emacs" load-path))
 (require 'erlang-start)
 (setq erlang-root-dir "/usr/local/opt/erl/")
 (setq exec-path (cons "/usr/local/opt/erl/bin" exec-path))
@@ -17,7 +17,7 @@
 
 (add-hook 'erlang-mode-hook
           (lambda ()
-            (flycheck-select-checker 'erlang-otp)
+           ;; (flycheck-select-checker 'erlang-otp)
             (flycheck-mode)))
 
 (require 'flycheck-tip)
