@@ -35,6 +35,7 @@
 (require 'setup-go)
 (require 'setup-erlang)
 (require 'setup-tex)
+(require 'setup-face)
 
 ;; (require 'setup-ggtags)
 ;;(require 'setup-ac)
