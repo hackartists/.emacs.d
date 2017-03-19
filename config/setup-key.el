@@ -11,8 +11,8 @@
 (global-set-key [C-left] 'windmove-left)
 (global-set-key [C-right] 'windmove-right)
 
-(global-set-key (kbd "M-.") 'sp-forward-slurp-sexp)
-(global-set-key (kbd "M-,") 'sp-forward-barf-sexp)
+;; (global-set-key (kbd "M-.") 'sp-forward-slurp-sexp)
+;; (global-set-key (kbd "M-,") 'sp-forward-barf-sexp)
 (global-set-key (kbd "<home>") 'move-beginning-of-line)
 (global-set-key (kbd "<end>") 'move-end-of-line)
 (global-set-key (kbd "RET") 'newline-and-indent)  ; automatically indent when press RET

@@ -1,11 +1,11 @@
 
 (require 'company)
-;;(eval-after-load 'company
-;;  '(progn
+(eval-after-load 'company
+  '(progn
 ;;     (define-key company-active-map (kbd "TAB") 'company-select-next)
      ;;     (define-key company-active-map [tab] 'company-select-next)))
-;;     (define-key company-active-map (kbd "TAB") 'company-complete)
-;;     (define-key company-active-map [tab] 'company-complete)))
+     (define-key company-active-map (kbd "TAB") 'company-complete)
+     (define-key company-active-map [tab] 'company-complete)))
 ;; (add-hook 'after-init-hook 'global-company-mode)
 (global-company-mode t)
 
@@ -13,7 +13,8 @@
 (setq company-idle-delay 0)
 (setq company-require-match nil)
 
-(define-key company-active-map (kbd "TAB") 'company-complete)
+;;(define-key company-active-map (kbd "TAB") 'company-complete)
+;;(local-set-key [(tab)] 'company-complete)
 
 
 

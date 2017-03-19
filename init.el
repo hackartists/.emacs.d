@@ -36,6 +36,7 @@
 (require 'setup-erlang)
 (require 'setup-tex)
 (require 'setup-face)
+(require 'setup-utree)
 
 ;; (require 'setup-ggtags)
 ;;(require 'setup-ac)
@@ -62,7 +63,7 @@
 
 (cua-mode 1)
 
-(global-linum-mode 1)
+;;(global-linum-mode 1)
 
 
 (split-window-horizontally)
