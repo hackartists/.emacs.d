@@ -71,14 +71,14 @@
 (yas-global-mode 1)
 
 ;; PACKAGE: smartparens
- (require 'smartparens-config)
+;; (require 'smartparens-config)
 ;; (setq sp-base-key-bindings 'paredit)
-(setq sp-autoskip-closing-pair 'always)
+;;(setq sp-autoskip-closing-pair 'always)
 ;; (setq sp-hybrid-kill-entire-symbol nil)
 ;; (sp-use-paredit-bindings)
 
-(show-smartparens-global-mode +1)
-(smartparens-global-mode 1)
+;;(show-smartparens-global-mode +1)
+;;(smartparens-global-mode 1)
 
 ;; PACKAGE: comment-dwim-2
 (global-set-key (kbd "M-;") 'comment-dwim-2)
@@ -136,30 +136,30 @@
 (global-set-key (kbd "M-c") 'duplicate-thing)
 
 ;; Customized functions
-(defun prelude-move-beginning-of-line (arg)
-  "Move point back to indentation of beginning of line.
+;; (defun prelude-move-beginning-of-line (arg)
+;;   "Move point back to indentation of beginning of line.
 
-Move point to the first non-whitespace character on this line.
-If point is already there, move to the beginning of the line.
-Effectively toggle between the first non-whitespace character and
-the beginning of the line.
+;; Move point to the first non-whitespace character on this line.
+;; If point is already there, move to the beginning of the line.
+;; Effectively toggle between the first non-whitespace character and
+;; the beginning of the line.
 
-If ARG is not nil or 1, move forward ARG - 1 lines first. If
-point reaches the beginning or end of the buffer, stop there."
-  (interactive "^p")
-  (setq arg (or arg 1))
+;; If ARG is not nil or 1, move forward ARG - 1 lines first. If
+;; point reaches the beginning or end of the buffer, stop there."
+;;   (interactive "^p")
+;;   (setq arg (or arg 1))
 
-  ;; Move lines first
-  (when (/= arg 1)
-    (let ((line-move-visual nil))
-      (forward-line (1- arg))))
+;;   ;; Move lines first
+;;   (when (/= arg 1)
+;;     (let ((line-move-visual nil))
+;;       (forward-line (1- arg))))
 
-  (let ((orig-point (point)))
-    (back-to-indentation)
-    (when (= orig-point (point))
-      (move-beginning-of-line 1))))
+;;   (let ((orig-point (point)))
+;;     (back-to-indentation)
+;;     (when (= orig-point (point))
+;;       (move-beginning-of-line 1))))
 
-(global-set-key (kbd "C-a") 'prelude-move-beginning-of-line)
+;;(global-set-key (kbd "C-a") 'prelude-move-beginning-of-line)
 
 (defadvice kill-ring-save (before slick-copy activate compile)
   "When called interactively with no active region, copy a single
@@ -292,7 +292,7 @@ Position the cursor at it's beginning, according to the current mode."
   (forward-line -1)
   (indent-according-to-mode))
 
-(global-set-key (kbd "M-o") 'prelude-smart-open-line)
-(global-set-key (kbd "M-o") 'open-line)
+;;(global-set-key (kbd "M-o") 'prelude-smart-open-line)
+;;(global-set-key (kbd "M-o") 'open-line)
 
 (provide 'setup-editing)

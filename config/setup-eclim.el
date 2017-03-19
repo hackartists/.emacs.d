@@ -1,5 +1,5 @@
 (require 'eclim)
-(global-eclim-mode)
+;;(global-eclim-mode)
 
 ;;(require 'eclimd)
 ;; regular auto-complete initialization
@@ -10,7 +10,6 @@
 (require 'ac-emacs-eclim-source)
 (ac-emacs-eclim-config)
 
-(require 'company)
 (require 'company-emacs-eclim)
 (company-emacs-eclim-setup)
 ;;(global-company-mode t)
