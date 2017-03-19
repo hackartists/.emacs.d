@@ -1,19 +1,35 @@
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (setq TeX-save-query nil)
-;(setq TeX-PDF-mode t)
+                                        ;(setq TeX-PDF-mode t)
 
 (setq ispell-program-name "aspell") ; could be ispell as well, depending on your preferences
 (setq ispell-dictionary "english") ; this can obviously be set to any language your spell-checking program supports
 
-(add-hook 'latex-mode-hook 'flyspell-mode)
-(add-hook 'latex-mode-hook 'flyspell-buffer)
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-buffer)
 ;;(add-hook 'LaTeX-mode-hook 'linum-mode)
 (defun turn-on-outline-minor-mode ()
   (outline-minor-mode 1))
 
-(add-hook 'latex-mode-hook 'turn-on-outline-minor-mode)
+(add-hook 'LaTeX-mode-hook 'turn-on-outline-minor-mode)
 (setq outline-minor-mode-prefix "\C-c \C-o") ; Or something else
+
+(add-hook 'LaTeX-mode-hook
+          (lambda()
+            (require 'company-auctex)
+            (company-auctex-init)
+            )
+          )
+
+;; (add-to-list 'TeX-command-list '(
+;;                                  "pdflatex \\nonstopmode\\input %s.tex"
+;;                                  "pdflatex \\nonstopmode\\input %s.tex"
+;;                                  TeX-run-command
+;;                                  nil
+;;                                  t
+;;                                  :help "pdflatex \\nonstopmode\\input golang.tex"
+;;                                  ))
 
 
 (provide 'setup-tex)
