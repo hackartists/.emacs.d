@@ -37,6 +37,7 @@
 (require 'setup-tex)
 (require 'setup-face)
 (require 'setup-utree)
+(require 'setup-c)
 
 ;; (require 'setup-ggtags)
 ;;(require 'setup-ac)
