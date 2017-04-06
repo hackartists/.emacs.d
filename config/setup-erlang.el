@@ -41,7 +41,7 @@
             (add-to-list 'company-backends 'company-distel)
             (setq company-distel-popup-help t)
             (setq company-distel-popup-height 30)
-            (setq inferior-erlang-machine-options '("-sname" "ejabberd@localhost"))
+            (setq inferior-erlang-machine-options '("-sname" "emacs@localhost"))
             (imenu-add-to-menubar "imenu")
             ))
 
