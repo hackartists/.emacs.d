@@ -40,6 +40,8 @@
 (require 'setup-c)
 (require 'setup-yaml)
 (require 'setup-android)
+(require 'android)
+
 ;;(require 'setup-todo)
 ;; (require 'setup-ggtags)
 ;;(require 'setup-ac)
