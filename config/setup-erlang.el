@@ -1,4 +1,4 @@
-(setq load-path (cons "/usr/local/opt/erl/lib/tools-2.9.1/emacs" load-path))
+(setq load-path (cons "/usr/local/opt/erl/lib/tools-2.8/emacs" load-path))
 (require 'erlang-start)
 (setq erlang-root-dir "/usr/local/opt/erl/")
 (setq exec-path (cons "/usr/local/opt/erl/bin" exec-path))
@@ -34,9 +34,9 @@
 (add-hook 'erlang-mode-hook
           (lambda ()
             (add-to-list 'company-backends 'company-distel)
-            (setq company-distel-popup-help t)
-            (setq company-distel-popup-height 30)
-            (setq inferior-erlang-machine-options '("-sname" "emacs@localhost"))
+            ;;(setq company-distel-popup-help t)
+            ;;(setq company-distel-popup-height 30)
+            ;;(setq inferior-erlang-machine-options '("-sname" "emacs@localhost"))
             (imenu-add-to-menubar "imenu")
             ;;(flycheck-select-checker 'erlang-otp)
             (flycheck-mode)
