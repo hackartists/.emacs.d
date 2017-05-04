@@ -7,6 +7,7 @@
       )
 
 (global-linum-mode)
+(setq make-backup-files nil)
 (add-hook 'sh-mode-hook (lambda ()
                           (setq tab-width 4)))
 
