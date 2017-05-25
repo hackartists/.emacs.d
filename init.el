@@ -12,11 +12,14 @@
                      ;;setup-company
                      company
                      ;;setup-helm
+                     popup
                      helm
+                     helm-core
                      helm-swoop
                      ;;setup-helm-gtags
                      helm-gtags
                      ;;setup-projectile
+                     pkg-info
                      projectile
                      helm-projectile
                      ;;setup-path
