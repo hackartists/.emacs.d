@@ -3,7 +3,7 @@
                                         ;(defvar stack-trace-on-error
                                         ;  "To be compatible with emacs 24")
 
-(custom-set-variables '(ecb-options-version "2.40"))
+(custom-set-variables '(ecb-options-version "2.50"))
 (defconst initial-frame-width (frame-width)
   "The width of frame will be changed ,remember the init value.")
 (setq ecb-compile-window-height 10

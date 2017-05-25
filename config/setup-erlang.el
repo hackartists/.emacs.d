@@ -22,14 +22,14 @@
 ;;(require 'company-distel)
 (require 'company-distel)
 
-(flycheck-define-checker erlang-otp
-  "An Erlang syntax checker using the Erlang interpreter."
-  :command ("erlc" "-o" temporary-directory "-Wall"
-            "-I" "../include" "-I" "../../include"
-            "-I" "../../../include" source)
-  :error-patterns
-  ((warning line-start (file-name) ":" line ": Warning:" (message) line-end)
-   (error line-start (file-name) ":" line ": " (message) line-end)))
+;;(flycheck-define-checker erlang-otp
+;;  "An Erlang syntax checker using the Erlang interpreter."
+;;  :command ("erlc" "-o" temporary-directory "-Wall"
+;;            "-I" "../include" "-I" "../../include"
+;;           "-I" "../../../include" source)
+;;  :error-patterns
+;;  ((warning line-start (file-name) ":" line ": Warning:" (message) line-end)
+;;   (error line-start (file-name) ":" line ": " (message) line-end)))
 
 (add-hook 'erlang-mode-hook
           (lambda ()
