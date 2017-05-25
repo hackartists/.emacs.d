@@ -8,3 +8,4 @@ go get golang.org/x/tools/cmd/goimports
 go get golang.org/x/tools/cmd/guru
 brew install go-delve/delve/delve
 sudo gem install redcarpet
+emacs --script init.el
