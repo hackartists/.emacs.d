@@ -6,6 +6,7 @@
 
 (require 'flycheck)
 (require 'flycheck-tip)
+
 ;;(flycheck-tip-use-timer 'verbose)
 
 (setq flycheck-display-errors-function 'ignore)
@@ -34,6 +35,7 @@
 (add-hook 'erlang-mode-hook
           (lambda ()
             (add-to-list 'company-backends 'company-distel)
+            (add-to-list 'flycheck-erlang-include-path "../include")
             ;;(setq company-distel-popup-help t)
             ;;(setq company-distel-popup-height 30)
             ;;(setq inferior-erlang-machine-options '("-sname" "emacs@localhost"))
