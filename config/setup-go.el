@@ -3,6 +3,14 @@
 ;;(require 'go-autocomplete)
 ;;(require 'auto-complete-config)
 
+(flycheck-define-checker go-checker
+ "A Go syntax checker."
+ :command ("go" "build")
+ :error-patterns
+ ((error line-start (file-name) ":" line ": " (message) line-end))
+ :modes go-mode
+ )
+
 
 (defun my-go-mode-hook()
   (add-hook 'before-save-hook 'gofmt-before-save)
@@ -14,6 +22,8 @@
   (local-set-key (kbd "M-.") 'godef-jump)
   (local-set-key (kbd "M-*") 'pop-tag-mark)
   (add-to-list 'company-backends 'company-go)
+  (flycheck-select-checker 'go-checker)
+  (flycheck-mode)
   )
 
 (add-hook 'go-mode-hook 'my-go-mode-hook)
