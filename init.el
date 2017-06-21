@@ -73,6 +73,7 @@
                      vdiff
                      diff-hl
 
+                     rfringe
                      )
       )
 
