@@ -8,4 +8,10 @@ go get golang.org/x/tools/cmd/goimports
 go get golang.org/x/tools/cmd/guru
 brew install go-delve/delve/delve
 sudo gem install redcarpet
+
+# flymake-json mode
+brew install npm
+npm install jsonlint -g
+
+# run emacs script
 emacs --script init.el
