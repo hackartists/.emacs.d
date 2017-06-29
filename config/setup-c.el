@@ -13,11 +13,13 @@
                 tab-width 4
                 indent-tabs-mode t)
   (setq c-default-style "linux")
+  (helm-gtags-mode 1)
   )
 
-(add-hook 'c-mode-common-hook 'my-cedet-hook)
+(add-hook 'c-mode-common-hook 'my-c-mode-hook)
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 (add-hook 'c++-mode-hook 'my-c-mode-hook)
+(add-hook 'cc-mode-hook 'my-c-mode-hook)
 
 
 (provide 'setup-c)
