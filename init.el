@@ -2,32 +2,42 @@
                      ;;common
                      magit
                      magit-popup
+
                      ;;setup-android
                      android-mode
+
                      ;; setup-tex
                      auctex
                      company-auctex
+
                      ;; setup-ecb
                      ecb
+
                      ;;setup-company
                      company
+
                      ;;setup-helm
                      popup
                      helm
                      helm-core
                      helm-swoop
+
                      ;;setup-helm-gtags
                      helm-gtags
+
                      ;;setup-projectile
                      pkg-info
                      projectile
                      helm-projectile
+
                      ;;setup-path
                      exec-path-from-shell
+
                      ;;setup-erlang
                      flycheck
                      flycheck-tip
                      company-distel
+
                      ;; setup-go
                      go-dlv
                      go-errcheck
@@ -37,22 +47,29 @@
                      go-rename
                      gotest
                      company-go
+
                      ;;setup-fa
                      function-args
+
                      ;;setup-cedet
                      semantic
                      cc-mode
+
                      ;;setup-py
                      elpy
                      py-autopep8
+
                      ;;setup-jade
                      jade-mode
                      sws-mode
+
                      ;;setup-utree
                      undo-tree
+
                      ;;setup-markdown
                      markdown-mode
                      markdown-mode+
+
                      ;; setup-editing
                      anzu
                      dtrt-indent
@@ -62,6 +79,7 @@
                      ws-butler
                      iedit
                      duplicate-thing
+
                      ;;setup-yaml
                      yaml-mode
                      xcscope
@@ -71,6 +89,10 @@
 
                      ;; setup-json
                      flymake-json
+
+                     ;;setup-xcode
+                     xcode-mode
+                     swift-mode
 
                      ;;etc
                      vdiff

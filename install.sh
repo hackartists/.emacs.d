@@ -13,5 +13,9 @@ sudo gem install redcarpet
 brew install npm
 npm install jsonlint -g
 
+# xcode-mode
+brew install xctool
+brew install ios-sim
+
 # run emacs script
 emacs --script init.el

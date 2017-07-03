@@ -1,6 +1,6 @@
 ;; Package: projejctile
 (require 'projectile)
-;;(projectile-global-mode)
+(projectile-global-mode)
 (setq projectile-enable-caching t)
 
 (require 'helm-projectile)
