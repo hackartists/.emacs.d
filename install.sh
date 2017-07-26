@@ -17,5 +17,11 @@ npm install jsonlint -g
 brew install xctool
 brew install ios-sim
 
+# rtags
+brew install rtags
+export CLANG = `xcrun -f clang++`
+sudo mv $CLANG $CLANG.old
+sudo ln -s /usr/local/opt/rtags/bin/gcc-rtags-wrapper.sh $CLANG 
+
 # run emacs script
 emacs --script init.el

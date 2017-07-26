@@ -94,6 +94,10 @@
                      xcode-mode
                      swift-mode
 
+                     ;; rtags
+                     rtags
+                     company-rtags
+                     
                      ;;etc
                      vdiff
                      diff-hl
