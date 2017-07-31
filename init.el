@@ -97,7 +97,7 @@
                      ;; rtags
                      rtags
                      company-rtags
-                     
+
                      ;;etc
                      vdiff
                      diff-hl
@@ -108,8 +108,10 @@
 
 (setq package-archives
       '(("gnu" . "http://elpa.gnu.org/packages/")
+		("melpa" . "http://melpa.milkbox.net/packages/")
         ("marmalade" . "https://marmalade-repo.org/packages/")
-        ("melpa" . "http://melpa.milkbox.net/packages/")))
+        ))
+
 (package-initialize)
 
 (unless package-archive-contents
@@ -220,9 +222,9 @@
 ;;  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white smoke" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Menlo"))))
 ;;  '(mode-line-inactive ((t (:background "grey30" :foreground "grey80" :box (:line-width -1 :color "grey40") :weight light))))
 ;;  )
-(custom-set-faces
+;;(custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+;; )

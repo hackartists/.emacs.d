@@ -11,7 +11,7 @@
   ;;(require 'rtags-ac)
   ;;(add-to-list 'ac-sources 'ac-source-rtags)
   ;;(add-to-list 'ac-sources 'ac-source-yasnippet))
-  (require 'company-rtags))
+  (require 'company-rtags)
   (add-to-list 'company-backends 'company-c-headers)
   ;;(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.2.1/")
   (local-set-key "\C-c\C-j" 'semantic-ia-fast-jump)
