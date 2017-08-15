@@ -101,6 +101,10 @@
                      ;; jupiter
                      ein
                      ein-mumamo
+
+                     ;; angular
+                     angular-mode
+                     angular-snippets
                      
                      ;;etc
                      vdiff

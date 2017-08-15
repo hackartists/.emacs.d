@@ -26,8 +26,7 @@
 (flycheck-define-checker erlang-otp
  "An Erlang syntax checker using the Erlang interpreter."
  :command ("erlc" "-o" temporary-directory "-Wall" "-pa" "../deps/lager/ebin"
-           "-I" "../include" "-pa" "../deps/fast_xml/ebin"
-          "-I" "../include" source-original)
+           "-pa" "../deps/fast_xml/ebin" "-pa" "../deps/social_thrift/ebin" "-I" "../include" source-original)
  :error-patterns
  (
   (warning line-start (file-name) ":" line ": Warning:" (message) line-end)
