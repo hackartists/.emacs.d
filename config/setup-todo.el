@@ -1,5 +1,5 @@
 (require 'fixmee)
-(require 'rfringe)
+;; (require 'rfringe)
  
 ;;(global-fixmee-mode 1)
 

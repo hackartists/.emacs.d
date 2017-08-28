@@ -111,7 +111,7 @@
                      vdiff
                      diff-hl
 
-                     rfringe
+                     ;;rfringe
                      )
       )
 
@@ -164,7 +164,7 @@
 (require 'setup-android)
 (require 'android)
 (require 'setup-markdown)
-(require 'setup-todo)
+;;(require 'setup-todo)
 (require 'setup-json)
 
 ;; (require 'setup-ggtags)
