@@ -58,6 +58,7 @@
                      ;;setup-py
                      elpy
                      py-autopep8
+                     realgud
 
                      ;;setup-jade
                      jade-mode
@@ -105,9 +106,6 @@
                      ;; angular
                      angular-mode
                      angular-snippets
-
-                     ;; solidity
-                     solidity-mode
                      
                      ;;etc
                      vdiff
@@ -174,6 +172,7 @@
 ;;(require 'setup-smartparens)
 ;;(require 'setup-font)
 
+(setq warning-minimum-level :emergency)
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
 (add-hook 'prog-mode-hook (lambda () (interactive) (setq show-trailing-whitespace 1)))
 
@@ -219,17 +218,11 @@
  '(android-mode-sdk-dir "/Volumes/Data/Developers/android")
  '(diff-hl-draw-borders t)
  '(doc-view-continuous t)
- '(ecb-layout-window-sizes
-   (quote
-    (("hackartist"
-      (ecb-directories-buffer-name 0.16728624535315986 . 0.4393939393939394)
-      (ecb-methods-buffer-name 0.16728624535315986 . 0.3484848484848485)
-      (ecb-history-buffer-name 0.16728624535315986 . 0.3484848484848485)))))
  '(ecb-options-version "2.40")
  '(global-diff-hl-mode t)
  '(package-selected-packages
    (quote
-    (solidity-mode angular-snippets angular-mode thrift flymake-json rfringe diff-hl vdiff ecb go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jdee jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu))))
+    (realgud ein-mumamo flymake-json rfringe diff-hl vdiff ecb go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jdee jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu))))
 
 ;; (custom-set-faces
 ;;  ;; custom-set-faces was added by Custom.
