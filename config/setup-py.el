@@ -14,7 +14,7 @@
 (add-hook 'python-mode-hook (lambda ()
                               (require 'py-autopep8)
                               (require 'flycheck)
-                              (setq elpy-rpc-python-command "/usr/local/bin/python3")
+                              (setq elpy-rpc-python-command "python3")
                               (elpy-mode)
                               (flycheck-mode)
                               (py-autopep8-enable-on-save)

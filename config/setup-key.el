@@ -38,7 +38,6 @@
 (add-hook 'shell-mode-hook (lambda()
                              (local-set-key (kbd "<C-up>") 'windmove-up)
                              (local-set-key (kbd "<C-down>") 'windmove-down)
-                             )
-          )
+                             ))
 
 (provide 'setup-key)
