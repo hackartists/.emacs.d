@@ -26,5 +26,9 @@ sudo ln -s /usr/local/opt/rtags/bin/gcc-rtags-wrapper.sh $CLANG
 # python
 brew install python3
 sudo pip3 install rope jedi importmagic autopep8 yapf virtualenv
+
+#eslint
+npm install -g eslint babel-eslint eslint-plugin-react
+
 # run emacs script
 emacs --script init.el
