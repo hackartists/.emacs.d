@@ -169,6 +169,7 @@
 (require 'setup-markdown)
 ;;(require 'setup-todo)
 (require 'setup-json)
+(require 'setup-javascript)
 
 ;; (require 'setup-ggtags)
 ;;(require 'setup-ac)
@@ -222,6 +223,10 @@
  '(diff-hl-draw-borders t)
  '(doc-view-continuous t)
  '(ecb-options-version "2.40")
+ '(ecb-source-path
+   (quote
+    (("/" "/")
+     ("/sshx:elasticsearch:/usr/share/elasticsearch" "/elasticsearch"))))
  '(global-diff-hl-mode t)
  '(package-selected-packages
    (quote
