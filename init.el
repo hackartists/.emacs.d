@@ -225,11 +225,8 @@
  '(android-mode-sdk-dir "/Volumes/Data/Developers/android")
  '(diff-hl-draw-borders t)
  '(doc-view-continuous t)
- '(ecb-options-version "2.40")
- '(ecb-source-path
-   (quote
-    (("/" "/")
-     ("/docker:root@elasticsearch:/usr/share/elasticsearch" "/elasticsearch"))))
+ '(ecb-options-version "2.50")
+ '(ecb-source-path (quote (("/" "/"))))
  '(global-diff-hl-mode t)
  '(package-selected-packages
    (quote

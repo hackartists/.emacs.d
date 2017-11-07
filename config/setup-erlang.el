@@ -1,42 +1,43 @@
-(setq load-path (cons "/usr/local/opt/erl/lib/tools-2.8/emacs" load-path))
-(require 'erlang-start)
-(setq erlang-root-dir "/usr/local/opt/erl/")
-(setq exec-path (cons "/usr/local/opt/erl/bin" exec-path))
-(setq erlang-man-root-dir "/usr/local/opt/erl/man")
-
-(require 'flycheck)
-(require 'flycheck-tip)
-
-;;(flycheck-tip-use-timer 'verbose)
-
-(setq flycheck-display-errors-function 'ignore)
-(push "~/.emacs.d/refs/distel/elisp/" load-path)
-(require 'distel)
-(distel-setup)
-
-;; auto-complete-mode for erlang
-;;(require 'auto)
-;;(require 'auto-complete-distel)
-;;(add-to-list 'ac-sources 'auto-complete-distel)
-
-;; compnay-mode for erlang
-;;(require 'company-distel)
-(require 'company-distel)
-
-(flycheck-define-checker erlang-otp
- "An Erlang syntax checker using the Erlang interpreter."
- :command ("erlc" "-o" temporary-directory "-Wall" "-pa" "../deps/lager/ebin"
-           "-pa" "../deps/fast_xml/ebin" "-pa" "../deps/social_thrift/ebin" "-I" "../include" source-original)
- :error-patterns
- (
-  (warning line-start (file-name) ":" line ": Warning:" (message) line-end)
-  (error line-start (file-name) ":" line ": " (message) line-end)
-  ;;(info line-start (file-name) ":" (message) line-end)
-  )
- :modes (erlang-mode))
-
 (add-hook 'erlang-mode-hook
           (lambda ()
+            (setq load-path (cons "/usr/local/opt/erl/lib/tools/emacs" load-path))
+            (require 'erlang-start)
+            (setq erlang-root-dir "/usr/local/opt/erl/")
+            (setq exec-path (cons "/usr/local/opt/erl/bin" exec-path))
+            (setq erlang-man-root-dir "/usr/local/opt/erl/man")
+
+            (require 'flycheck)
+            (require 'flycheck-tip)
+
+            ;;(flycheck-tip-use-timer 'verbose)
+
+            (setq flycheck-display-errors-function 'ignore)
+            (push "~/.emacs.d/refs/distel/elisp/" load-path)
+            (require 'distel)
+            (distel-setup)
+
+            ;; auto-complete-mode for erlang
+            ;;(require 'auto)
+            ;;(require 'auto-complete-distel)
+            ;;(add-to-list 'ac-sources 'auto-complete-distel)
+
+            ;; compnay-mode for erlang
+            ;;(require 'company-distel)
+            (require 'company-distel)
+
+            (flycheck-define-checker erlang-otp
+              "An Erlang syntax checker using the Erlang interpreter."
+              :command ("erlc" "-o" temporary-directory "-Wall" "-pa" "../deps/lager/ebin"
+                        "-pa" "../deps/fast_xml/ebin" "-pa" "../deps/social_thrift/ebin" "-I" "../include" source-original)
+              :error-patterns
+              (
+               (warning line-start (file-name) ":" line ": Warning:" (message) line-end)
+               (error line-start (file-name) ":" line ": " (message) line-end)
+               ;;(info line-start (file-name) ":" (message) line-end)
+               )
+              :modes (erlang-mode))
+
+
             (add-to-list 'company-backends 'company-distel)
             (local-set-key (kbd "RET") 'newline-and-indent)
             ;;(add-to-list 'flycheck-erlang-include-path "../include")
