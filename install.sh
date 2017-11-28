@@ -5,7 +5,8 @@
 ## xctool and ios-sim : for xcode-mode
 ## rtags : for rtags mode
 ## python3 : python mode
-brew install golang erlang npm xctool ios-sim rtags python3
+## markdown : live markdown mode
+brew install golang erlang npm xctool ios-sim rtags python3 markdown
 
 ## eralng setting
 ln -s /usr/local/opt/erlang/lib/erlang/lib/tools-* /usr/local/opt/erlang/lib/erlang/lib/tools
@@ -22,6 +23,11 @@ go get github.com/rogpeppe/godef
 go get github.com/jstemmer/gotags
 go get golang.org/x/tools/cmd/goimports
 go get golang.org/x/tools/cmd/guru
+go get github.com/golang/lint/golint
+cd ~/go/src/github.com/golang/lint/golint
+go build
+go install
+
 brew install go-delve/delve/delve
 sudo gem install redcarpet
 
