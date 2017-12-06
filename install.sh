@@ -31,6 +31,17 @@ go install
 brew install go-delve/delve/delve
 sudo gem install redcarpet
 
+# Java setting (JDEE)
+if [[ `which javac` == "" ]]
+then
+    echo "JDK may be seen to be installed"
+fi
+
+brew install maven
+git clone https://github.com/jdee-emacs/jdee-server.git
+cd jdee-server
+mvn -Dmaven.test.skip=true package
+
 # flymake-json mode
 npm install jsonlint -g
 

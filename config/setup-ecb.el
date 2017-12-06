@@ -1,13 +1,11 @@
 ;;; config-ecb.el ---
 (require 'ecb)
-                                        ;(defvar stack-trace-on-error
-                                        ;  "To be compatible with emacs 24")
 
 (custom-set-variables '(ecb-options-version "2.50"))
 (defconst initial-frame-width (frame-width)
   "The width of frame will be changed ,remember the init value.")
-(setq ;; ecb-compile-window-height 10
-      ;; ecb-compile-window-width 'edit-window
+(setq ecb-compile-window-height 0.2
+      ecb-compile-window-width 'edit-window
       ;; ecb-compile-window-temporally-enlarge 'both
       ecb-create-layout-file "~/.emacs.d/auto-save-list/.ecb-user-layouts.el"
       ecb-windows-width 0.2
@@ -16,7 +14,7 @@
       ecb-history-make-buckets 'mode
       ecb-kill-buffer-clears-history 'auto
       ecb-tip-of-the-day nil
-      ecb-tip-of-the-day-file "~/.emacs/auto-save-list/.ecb-tip-of-day.el"
+      ;; ecb-tip-of-the-day-file "~/.emacs/auto-save-list/.ecb-tip-of-day.el"
       ecb-primary-secondary-mouse-buttons 'mouse-1--mouse-2
       semantic-decoration-styles (list '("semantic-decoration-on-includes" . t)
                                        '("semantic-tag-boundary" . t))
@@ -71,7 +69,6 @@ little more place. This layout works best if it is contained in
 (setq dired-omit-files "^\\.?#\\|^\\.$")
 (ecb-activate)
 (ecb-byte-compile)
-
 
 (provide 'setup-ecb)
 
