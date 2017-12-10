@@ -6,7 +6,9 @@
 ## rtags : for rtags mode
 ## python3 : python mode
 ## markdown : live markdown mode
-brew install golang erlang npm xctool ios-sim rtags python3 markdown
+brew install golang erlang npm xctool ios-sim rtags python3 markdown groovy gradle
+
+echo "export GROOVY_HOME=/usr/local/opt/groovy/libexec" >> ~/.profile
 
 ## eralng setting
 ln -s /usr/local/opt/erlang/lib/erlang/lib/tools-* /usr/local/opt/erlang/lib/erlang/lib/tools
@@ -38,6 +40,7 @@ then
 fi
 
 brew install maven
+cd refs
 git clone https://github.com/jdee-emacs/jdee-server.git
 cd jdee-server
 mvn -Dmaven.test.skip=true package

@@ -92,7 +92,7 @@
                      flymake-json
 
                      ;; setup-java
-                     jdee
+                     ;;jdee
 
                      ;;setup-xcode
                      xcode-mode
@@ -177,7 +177,8 @@
 ;;(require 'setup-todo)
 (require 'setup-json)
 (require 'setup-javascript)
-
+;;(require 'setup-java)
+(require 'setup-misc)
 ;; (require 'setup-ggtags)
 ;;(require 'setup-ac)
 ;;(require 'setup-smartparens)
@@ -200,10 +201,7 @@
 
 ;;(global-linum-mode 1)
 
-
 (split-window-horizontally)
-
-
 
 ;;(custom-set-variables
 ;; custom-set-variables was added by Custom.
@@ -232,15 +230,19 @@
  '(ecb-options-version "2.50")
  '(ecb-source-path
    (quote
-    (("/" "/")
-     ("/Volumes/Data/devel" "devel")
-     ("/Volumes/Data/Dropbox" "dropbox")
-     ("/Volumes/Data" "/Data")
-     ("/Volumes/SData" "/SData"))))
+	(("/" "/")
+	 ("/Volumes/Data/devel" "devel")
+	 ("/Volumes/Data/Dropbox" "dropbox")
+	 ("/Volumes/Data" "/Data")
+	 ("/Volumes/SData" "/SData"))))
  '(global-diff-hl-mode t)
+ '(jdee-jdk-registry
+   (quote
+	(("1.9" . "/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home"))))
+ '(jdee-server-dir "/Users/hackartist/.emacs.d/refs/jdee-server")
  '(package-selected-packages
    (quote
-    (csv-mode flycheck ctags flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json rfringe diff-hl vdiff ecb go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jdee jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu))))
+	(mvn csv-mode flycheck ctags flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json rfringe diff-hl vdiff ecb go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu))))
 
 ;; (custom-set-faces
 ;;  ;; custom-set-faces was added by Custom.
