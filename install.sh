@@ -66,4 +66,5 @@ sudo python3 -m ipykernel install --user
 npm install -g eslint babel-eslint eslint-plugin-react
 
 # run emacs script
+cd $emacs_dir
 emacs --script init.el
