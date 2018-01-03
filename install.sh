@@ -6,7 +6,10 @@
 ## rtags : for rtags mode
 ## python3 : python mode
 ## markdown : live markdown mode
-brew install golang erlang npm xctool ios-sim rtags python3 markdown groovy gradle
+## jupyter : python(ein) mode
+## graphviz : ML library
+brew cask install java
+brew install golang erlang npm xctool ios-sim rtags python3 markdown groovy gradle jupyter graphviz
 
 echo "export GROOVY_HOME=/usr/local/opt/groovy/libexec" >> ~/.profile
 
@@ -55,9 +58,13 @@ sudo ln -s /usr/local/opt/rtags/bin/gcc-rtags-wrapper.sh $CLANG
 
 # python
 sudo pip3 install rope jedi importmagic autopep8 yapf virtualenv
+sudo pip3 install numpy scipy scikit-learn matplotlib pandas pillow graphviz ipykernel
+sudo python3 -m ipykernel install --user
+
 
 #eslint
 npm install -g eslint babel-eslint eslint-plugin-react
 
 # run emacs script
+cd $emacs_dir
 emacs --script init.el

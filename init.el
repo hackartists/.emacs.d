@@ -178,7 +178,7 @@
 (require 'setup-json)
 (require 'setup-javascript)
 ;;(require 'setup-java)
-(require 'setup-misc)
+;;(require 'setup-misc)
 ;; (require 'setup-ggtags)
 ;;(require 'setup-ac)
 ;;(require 'setup-smartparens)
