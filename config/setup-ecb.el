@@ -11,13 +11,13 @@
       ecb-windows-width 0.2
       ecb-fix-window-size 'width
       ecb-layout-name "hackartist"
-      ecb-history-make-buckets 'mode
+      ;;ecb-history-make-buckets 'mode
       ecb-kill-buffer-clears-history 'auto
       ecb-tip-of-the-day nil
       ;; ecb-tip-of-the-day-file "~/.emacs/auto-save-list/.ecb-tip-of-day.el"
       ecb-primary-secondary-mouse-buttons 'mouse-1--mouse-2
-      semantic-decoration-styles (list '("semantic-decoration-on-includes" . t)
-                                       '("semantic-tag-boundary" . t))
+      ;;semantic-decoration-styles (list '("semantic-decoration-on-includes" . t)
+      ;;                                 '("semantic-tag-boundary" . t))
       ;;ecb-create-layout-frame-height 40
       ;;ecb-create-layout-frame-width 110
       )

@@ -230,19 +230,23 @@
  '(ecb-options-version "2.50")
  '(ecb-source-path
    (quote
-	(("/" "/")
-	 ("/Volumes/Data/devel" "devel")
-	 ("/Volumes/Data/Dropbox" "dropbox")
-	 ("/Volumes/Data" "/Data")
-	 ("/Volumes/SData" "/SData"))))
+    (("/" "/")
+     ("/Volumes/Data/devel" "Devel")
+     ("/Volumes/Data/Dropbox" "Dropbox")
+     ("/Volumes/Data" "/Data")
+     ("/Volumes/Dta" "/Data")
+     ("/Volumes/SData" "/SData"))))
+ '(ecb-stealthy-tasks-delay 30)
+ '(ecb-tree-incremental-search (quote prefix))
+ '(ecb-use-speedbar-instead-native-tree-buffer nil)
  '(global-diff-hl-mode t)
  '(jdee-jdk-registry
    (quote
-	(("1.9" . "/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home"))))
+    (("1.9" . "/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home"))))
  '(jdee-server-dir "/Users/hackartist/.emacs.d/refs/jdee-server")
  '(package-selected-packages
    (quote
-	(mvn csv-mode flycheck ctags flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json rfringe diff-hl vdiff ecb go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu))))
+    (ecb mvn csv-mode flycheck ctags flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json rfringe diff-hl vdiff go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu))))
 
 ;; (custom-set-faces
 ;;  ;; custom-set-faces was added by Custom.
