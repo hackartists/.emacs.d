@@ -13,11 +13,12 @@ brew install golang erlang npm xctool ios-sim rtags python3 markdown groovy grad
 
 echo 'export GOPATH=$HOME/go' >> ~/.profile
 echo 'export PATH=$$GOPATH/bin:$PATH' >> ~/.profile
+echo 'export PATH=/usr/local/texlive/2017/bin/x86_64-darwin:$PATH' >> ~/.profile 
 echo "export GROOVY_HOME=/usr/local/opt/groovy/libexec" >> ~/.profile
 
 ## eralng setting
 ln -s /usr/local/opt/erlang/lib/erlang/lib/tools-* /usr/local/opt/erlang/lib/erlang/lib/tools
-ln -s /usr/local/opt/erlang/lib/erlang/lib/erlang /usr/local/opt/erl
+ln -s /usr/local/opt/erlang/lib/erlang /usr/local/opt/erl
 export emacs_dir=`pwd`
 cd refs/distel
 make
