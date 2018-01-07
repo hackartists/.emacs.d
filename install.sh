@@ -8,9 +8,11 @@
 ## markdown : live markdown mode
 ## jupyter : python(ein) mode
 ## graphviz : ML library
-brew cask install java
-brew install golang erlang npm xctool ios-sim rtags python3 markdown groovy gradle jupyter graphviz
+brew cask install java emacs mactex
+brew install golang erlang npm xctool ios-sim rtags python3 markdown groovy gradle jupyter graphviz go-delve/delve/delve maven
 
+echo 'export GOPATH=$HOME/go' >> ~/.profile
+echo 'export PATH=$$GOPATH/bin:$PATH' >> ~/.profile
 echo "export GROOVY_HOME=/usr/local/opt/groovy/libexec" >> ~/.profile
 
 ## eralng setting
@@ -29,11 +31,8 @@ go get github.com/jstemmer/gotags
 go get golang.org/x/tools/cmd/goimports
 go get golang.org/x/tools/cmd/guru
 go get github.com/golang/lint/golint
-cd ~/go/src/github.com/golang/lint/golint
-go build
-go install
+go get github.com/derekparker/delve/cmd/dlv
 
-brew install go-delve/delve/delve
 sudo gem install redcarpet
 
 # Java setting (JDEE)
@@ -42,7 +41,6 @@ then
     echo "JDK may be seen to be installed"
 fi
 
-brew install maven
 cd refs
 git clone https://github.com/jdee-emacs/jdee-server.git
 cd jdee-server
