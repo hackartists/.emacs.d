@@ -7,8 +7,8 @@
 ;; (add-hook 'after-init-hook 'global-company-mode)
 (global-company-mode t)
 (setq company-minimum-prefix-length 1)
-(setq company-auto-complete t)
-(setq company-show-numbers t)
+;;(setq company-auto-complete t)
+;;(setq company-show-numbers t)
 (setq company-idle-delay 0)
 (setq company-require-match nil)
 
