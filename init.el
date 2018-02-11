@@ -191,6 +191,7 @@
 (require 'setup-misc)
 (require 'setup-swift)
 (require 'setup-csv)
+(require 'setup-mode)
 ;; (require 'setup-ggtags)
 ;;(require 'setup-ac)
 ;;(require 'setup-smartparens)
