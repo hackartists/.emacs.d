@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: UIViewController
+# key: class-uiview
+# --
+
+class ViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Override point for customization after loading the view.
+    }
+}

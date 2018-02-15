@@ -97,6 +97,8 @@
                      ;;setup-xcode
                      xcode-mode
                      swift-mode
+                     flycheck-swiftlint
+                     flycheck-swift3
 
                      ;; rtags
                      rtags
@@ -244,8 +246,8 @@
  '(ecb-source-path
    (quote
     (("/" "/")
-     ("/Volumes/Data/devel" "Devel")
-     ("/Volumes/Data/Dropbox" "Dropbox")
+     ("/Volumes/Data/devel" "/Devel")
+     ("/Volumes/Data/Dropbox" "/Dropbox")
      ("/Volumes/Data" "/Data"))))
  '(ecb-stealthy-tasks-delay 30)
  '(ecb-tree-incremental-search (quote prefix))
@@ -257,22 +259,8 @@
  '(jdee-server-dir "/Users/hackartist/.emacs.d/refs/jdee-server")
  '(package-selected-packages
    (quote
-    (bazel-mode osx-plist xcode-project protobuf-mode ecb mvn csv-mode flycheck ctags flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json rfringe diff-hl vdiff go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu))))
+    (swift-mode flycheck-swiftlint flycheck-swift3 bazel-mode osx-plist xcode-project protobuf-mode ecb mvn csv-mode flycheck ctags flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json rfringe diff-hl vdiff go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu))))
 
-;; (custom-set-faces
-;;  ;; custom-set-faces was added by Custom.
-;;  ;; If you edit it by hand, you could mess it up, so be careful.
-;;  ;; Your init file should contain only one such instance.
-;;  ;; If there is more than one, they won't work right.
-;;  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white smoke" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Menlo"))))
-;;  '(mode-line-inactive ((t (:background "grey30" :foreground "grey80" :box (:line-width -1 :color "grey40") :weight light))))
-;;  )
-;;(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
-;; )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -8,6 +8,7 @@
 (eval-after-load 'company
   '(progn
      (define-key company-active-map (kbd "TAB") 'company-complete)
+     (define-key company-active-map (kbd "ESC") 'company-abort)
      (define-key company-active-map (kbd "<return>") 'my-company-active-return)
      (define-key company-active-map [tab] 'company-complete)))
 ;; (add-hook 'after-init-hook 'global-company-mode)
