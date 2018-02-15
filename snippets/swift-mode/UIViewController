@@ -3,7 +3,7 @@
 # key: class-uiview
 # --
 
-class ViewController: UIViewController {
+class ${0:\{Name\}}ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Override point for customization after loading the view.
