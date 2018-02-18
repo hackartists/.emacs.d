@@ -246,9 +246,9 @@
  '(ecb-source-path
    (quote
     (("/" "/")
-     ("/Volumes/Data/devel" "/Devel")
-     ("/Volumes/Data/Dropbox" "/Dropbox")
-     ("/Volumes/Data" "/Data"))))
+     ("~/Data/devel" "/Devel")
+     ("~/Data/Dropbox" "/Dropbox")
+     ("~/Data" "/Data"))))
  '(ecb-stealthy-tasks-delay 30)
  '(ecb-tree-incremental-search (quote prefix))
  '(ecb-use-speedbar-instead-native-tree-buffer nil)
