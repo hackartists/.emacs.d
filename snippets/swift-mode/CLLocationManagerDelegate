@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: CLLocationManagerDelegate
+# key: CLLocationManagerDelegate
+# --
+
+extension ${0:\{ClassName\}: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
+         // After location was updated, this will be performed.
+    }
+}

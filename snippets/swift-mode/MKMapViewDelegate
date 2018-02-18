@@ -1,0 +1,95 @@
+# -*- mode: snippet -*-
+# name: MKMapViewDelegate
+# key: MKMapViewDelegate
+# --
+
+extension ${0:ClassName}: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        // Tells the delegate that the region displayed by the map view is about to change.
+    }
+
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        // Tells the delegate that the region displayed by the map view just changed.
+    }
+
+    func mapViewWillStartLoadingMap(_ mapView: MKMapView) {
+        // Tells the delegate that the specified map view is about to retrieve some map data.
+    }
+
+    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+        // Tells the delegate that the specified map view successfully loaded the needed map data.
+    }
+
+    func mapViewDidFailLoadingMap(_ mapView: MKMapView, withError error: Error) {
+        // Tells the delegate that the specified view was unable to load the map data.
+
+    }
+
+    func mapViewWillStartRenderingMap(_ mapView: MKMapView) {
+        // Tells the delegate that the map view is about to start rendering some of its tiles.
+
+    }
+
+    func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
+        // Tells the delegate that the map view has finished rendering all visible tiles.
+    }
+
+    func mapViewWillStartLocatingUser(_ mapView: MKMapView) {
+        // Tells the delegate that the map view will start tracking the user’s position.
+    }
+
+    func mapViewDidStopLocatingUser(_ mapView: MKMapView) {
+        // Tells the delegate that the map view stopped tracking the user’s location.
+    }
+
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        // Tells the delegate that the location of the user was updated.
+    }
+
+    func mapView(_ mapView: MKMapView, didFailToLocateUserWithError error: Error) {
+        // Tells the delegate that an attempt to locate the user’s position failed.
+    }
+
+    func mapView(_ mapView: MKMapView, didChange mode: MKUserTrackingMode, animated: Bool) {
+        // Tells the delegate that the user tracking mode changed.
+    }
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        // Returns the view associated with the specified annotation object.
+        return nil
+    }
+
+    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
+        // Tells the delegate that one or more annotation views were added to the map.
+    }
+
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        // Tells the delegate that the user tapped one of the annotation view’s accessory buttons.
+    }
+
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
+        // Tells the delegate that the drag state of one of its annotation views changed.
+    }
+
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        // Tells the delegate that one of its annotation views was selected.
+    }
+
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        // Tells the delegate that one of its annotation views was deselected.
+    }
+
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        // Asks the delegate for a renderer object to use when drawing the specified overlay.
+        return MKOverlayRenderer()
+    }
+
+    func mapView(_ mapView: MKMapView, didAdd renderers: [MKOverlayRenderer]) {
+        // Tells the delegate that one or more renderer objects were added to the map.
+    }
+
+    @available(iOS 11.0, *)
+    func mapView(_ mapView: MKMapView, clusterAnnotationForMemberAnnotations memberAnnotations: [MKAnnotation]) -> MKClusterAnnotation {
+        return MKClusterAnnotation(memberAnnotations:memberAnnotations)
+    }
+}
