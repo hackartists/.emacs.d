@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Protocol
+# key: Protocol
+# --
+
+@objc protocol ${0:\{ProtocolName\}}: class {
+    @objc optional func ${1:\{EventName\}}()
+}

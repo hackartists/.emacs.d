@@ -1,0 +1,43 @@
+# -*- mode: snippet -*-
+# name: UINavigationControllerDelegate
+# key: UINavigationControllerDelegate
+# --
+
+extension ${0:\{Name\}}: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, 
+                              willShow viewController: UIViewController, 
+                              animated: Bool) {
+        // Called just before the navigation controller displays a view controller’s view and navigation item properties.
+    }
+
+    func navigationController(_ navigationController: UINavigationController, 
+                              didShow viewController: UIViewController, 
+                              animated: Bool) {
+        // Called just after the navigation controller displays a view controller’s view and navigation item properties.
+    }
+
+    func navigationController(_ navigationController: UINavigationController, 
+                              animationControllerFor operation: UINavigationControllerOperation, 
+                              from fromVC: UIViewController, 
+                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        // Called to allow the delegate to return a noninteractive animator object for use during view controller transitions.
+        return nil
+    }
+
+    func navigationController(_ navigationController: UINavigationController, 
+                              interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        // Called to allow the delegate to return an interactive animator object for use during view controller transitions.
+        return nil
+    }
+
+    func navigationControllerPreferredInterfaceOrientationForPresentation(_ navigationController: UINavigationController) -> UIInterfaceOrientation {
+        // Returns the preferred orientation for presentation of the navigation controller, as determined by the delegate.
+        return .unknown
+    }
+
+    func navigationControllerSupportedInterfaceOrientations(_ navigationController: UINavigationController) -> UIInterfaceOrientationMask {
+        // Returns the complete set of supported interface orientations for the navigation controller, as determined by the delegate.
+        return .all
+    }
+
+}
