@@ -10,8 +10,9 @@
 ## graphviz : ML library
 ## sourcekitten : swift
 ## aspell : ispell-mode
+cat .ctags >> ~/.ctags
 brew cask install java emacs mactex
-brew install golang erlang npm xctool ios-sim rtags python3 markdown groovy gradle jupyter graphviz go-delve/delve/delve maven sourcekitten aspell
+brew install golang erlang npm xctool ios-sim rtags python3 markdown groovy gradle jupyter graphviz go-delve/delve/delve maven sourcekitten aspell ctags
 
 echo 'export GOPATH=$HOME/go' >> ~/.profile
 echo 'export PATH=$$GOPATH/bin:$PATH' >> ~/.profile
