@@ -194,7 +194,11 @@
 (require 'setup-swift)
 (require 'setup-csv)
 (require 'setup-mode)
+<<<<<<< HEAD
+(require 'setup-html)
+=======
 (require 'docker-tramp-compat)
+>>>>>>> 046c61268540a44460b236b21f2727655f8230e4
 ;; (require 'setup-ggtags)
 ;;(require 'setup-ac)
 ;;(require 'setup-smartparens)
