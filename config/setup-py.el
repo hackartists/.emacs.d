@@ -23,7 +23,10 @@
                               (define-key elpy-mode-map (kbd "<C-left>") 'windmove-left)
                               (define-key elpy-mode-map (kbd "<C-right>") 'windmove-right)
                               ))
-
+(add-hook 'ein:notebook-mode-hook (lambda ()
+                                    (define-key ein:notebook-mode-map (kbd "<C-up>") 'windmove-up)
+                                    (define-key ein:notebook-mode-map (kbd "<C-down>") 'windmove-down)
+                                    ))
 ;; IPython
 (require 'ein)
 (require 'ein-loaddefs)
