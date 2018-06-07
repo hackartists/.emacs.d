@@ -17,8 +17,6 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew cask install java emacs mactex wireshark
 brew install golang erlang npm xctool ios-sim rtags python3 markdown groovy gradle graphviz go-delve/delve/delve maven sourcekitten aspell jq yq ctags global ctags
 
-pip3 install virtualenv
-
 brew link --overwrite ctags
 
 export emacs_dir=`pwd`
