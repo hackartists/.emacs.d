@@ -72,7 +72,7 @@ sudo mv $CLANG $CLANG.old
 sudo ln -s /usr/local/opt/rtags/bin/gcc-rtags-wrapper.sh $CLANG 
 
 # python
-sudo pip3 install rope jedi importmagic autopep8 yapf virtualenv
+sudo pip3 install rope jedi importmagic autopep8 yapf virtualenv jupyter
 sudo pip3 install numpy scipy scikit-learn matplotlib pandas pillow graphviz ipykernel
 sudo python3 -m ipykernel install --user
 
