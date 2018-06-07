@@ -15,7 +15,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/pwnartist/oh-my-profiles/master/install.sh)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew cask install java emacs mactex wireshark
-brew install golang erlang npm xctool ios-sim rtags python3 markdown groovy gradle jupyter graphviz go-delve/delve/delve maven sourcekitten aspell jq yq ctags global ctags
+brew install golang erlang npm xctool ios-sim rtags python3 markdown groovy gradle graphviz go-delve/delve/delve maven sourcekitten aspell jq yq ctags global ctags
+
+pip3 install virtualenv
 
 brew link --overwrite ctags
 
