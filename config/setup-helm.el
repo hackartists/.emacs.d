@@ -19,18 +19,18 @@
   (setq helm-google-suggest-use-curl-p t))
 
 (setq
- helm-scroll-amount 4 ; scroll 4 lines other window using M-<next>/M-<prior>
- helm-ff-search-library-in-sexp t ; search for library in `require' and `declare-function' sexp.
- helm-split-window-in-side-p t ;; open helm buffer inside current window, not occupy whole other window
- helm-candidate-number-limit 500 ; limit the number of displayed canidates
- helm-ff-file-name-history-use-recentf t
- helm-move-to-line-cycle-in-source t ; move to end or beginning of source when reaching top or bottom of source.
- helm-buffers-fuzzy-matching t          ; fuzzy matching buffer names when non-nil
-                                        ; useful in helm-mini that lists buffers
+  helm-scroll-amount 4 ; scroll 4 lines other window using M-<next>/M-<prior>
+  helm-ff-search-library-in-sexp t ; search for library in `require' and `declare-function' sexp.
+  helm-split-window-in-side-p t ;; open helm buffer inside current window, not occupy whole other window
+  helm-candidate-number-limit 500 ; limit the number of displayed canidates
+  helm-ff-file-name-history-use-recentf t
+  helm-move-to-line-cycle-in-source t ; move to end or beginning of source when reaching top or bottom of source.
+  helm-buffers-fuzzy-matching t          ; fuzzy matching buffer names when non-nil
+                                         ; useful in helm-mini that lists buffers
 
- )
+)
 
-(add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
+;;(add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
 
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)

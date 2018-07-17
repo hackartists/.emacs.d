@@ -2,7 +2,27 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("[fabric] GetLedger for storage db"
+(("[fabric] Provider contains vbdProvider(versionedDB)"
+ (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/kv_ledger_provider.go")
+ (front-context-string . "der := &Provider")
+ (rear-context-string . "ialized\")\n	provi")
+ (position . 2774))
+("[fabric] Creating LedgerProvider with ledgerstorage"
+ (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/kv_ledger_provider.go")
+ (front-context-string . "dstate.NewCommon")
+ (rear-context-string . ":= privacyenable")
+ (position . 2388))
+("[fabric] Calling GetDBHandle"
+ (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/privacyenabledstate/common_storage_db.go")
+ (front-context-string . "GetDBHandle(id)\n")
+ (rear-context-string . "ionedDBProvider.")
+ (position . 1563))
+("[fabric] Interface of GetDBHandle"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statedb.go")
+ (front-context-string . "DBHandle(id stri")
+ (rear-context-string . "VersionedDB\n	Get")
+ (position . 452))
+("[fabric] GetLedger for storage db"
  (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/peer/peer.go")
  (front-context-string . "Ledger(cid strin")
  (rear-context-string . "reated.\nfunc Get")
