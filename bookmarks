@@ -1,0 +1,45 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("Make genesis block "
+ (filename . "/Volumes/Data/devel/src/github.com/hyperledger/fabric/common/genesis/genesis.go")
+ (front-context-string . "payloadChannelHe")
+ (rear-context-string . "lock, error) {\n	")
+ (position . 1338))
+("X.509 Verification error was cased from here."
+ (filename . "/usr/local/Cellar/go/1.9.2/libexec/src/crypto/x509/verify.go")
+ (front-context-string . "w) == 0 {\n		retu")
+ (rear-context-string . "ms.\n	if len(c.Ra")
+ (position . 8896))
+("installChaincode"
+ (filename . "~/Data/devel/src/github.com/SharedMocha/fabric-starter/network.sh")
+ (front-context-string . "Chaincode() {\n  ")
+ (rear-context-string . "function install")
+ (position . 11720))
+("networks.sh -m up"
+ (filename . "~/Data/devel/src/github.com/SharedMocha/fabric-starter/network.sh")
+ (front-context-string . "if [ \"${MODE}\" =")
+ (rear-context-string . ";;\n  esac\ndone\n\n")
+ (position . 22783))
+("createJoinInstantiateWarmUp"
+ (filename . "~/Data/devel/src/github.com/SharedMocha/fabric-starter/network.sh")
+ (front-context-string . "InstantiateWarmU")
+ (rear-context-string . "ction createJoin")
+ (position . 13727))
+("Hyperledger Fabric ConfigTXGen : main"
+ (filename . "/Volumes/Data/devel/fabric/common/configtx/tool/configtxgen/main.go")
+ (front-context-string . "func main() {\n	v")
+ (rear-context-string . "\n	return nil\n}\n\n")
+ (position . 11427))
+("Hyperledger Fabric Orderer : main"
+ (filename . "/Volumes/Data/devel/fabric/orderer/main.go")
+ (front-context-string . "func main() {\n\n	")
+ (rear-context-string . "nformation\")\n)\n\n")
+ (position . 1959))
+("Hyperledger Fabric Peer : main"
+ (filename . "/Volumes/Data/devel/fabric/peer/main.go")
+ (front-context-string . "	// For environm")
+ (rear-context-string . "\n\nfunc main() {\n")
+ (position . 1984))
+)
