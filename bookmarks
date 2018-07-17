@@ -2,7 +2,62 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Make genesis block "
+(("[fabric] GetLedger for storage db"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/peer/peer.go")
+ (front-context-string . "Ledger(cid strin")
+ (rear-context-string . "reated.\nfunc Get")
+ (position . 12762))
+("[fabric] ledger Open and initialize"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/peer/peer.go")
+ (front-context-string . "rmgmt.OpenLedger")
+ (rear-context-string . "ger, err = ledge")
+ (position . 6060))
+("[fabric] Singleton Initialize of ledgerProvider"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/ledgermgmt/ledger_mgmt.go")
+ (front-context-string . "alize(customTxPr")
+ (rear-context-string . "rmgmt\nfunc Initi")
+ (position . 1601))
+("[fabric] Creating a new kvledger Provider"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/ledgermgmt/ledger_mgmt.go")
+ (front-context-string . "NewProvider()\n	i")
+ (rear-context-string . "err := kvledger.")
+ (position . 2120))
+("[fabric] loading Storage handler for versionDB with GetDBHandle"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/kv_ledger_provider.go")
+ (front-context-string . "GetDBHandle(ledg")
+ (rear-context-string . "der.vdbProvider.")
+ (position . 5548))
+("[fabric] HandleChaincodeDeploy practical implemention"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/privacyenabledstate/common_storage_db.go")
+ (front-context-string . "eChaincodeDeploy")
+ (rear-context-string . "StorageDB) Handl")
+ (position . 7933))
+("[hyperledger/fabric] Starting of ProcessIndexs(CreateIndex)"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/privacyenabledstate/common_storage_db.go")
+ (front-context-string . "pable.ProcessInd")
+ (rear-context-string . "		err := indexCa")
+ (position . 8857))
+("[hyperledger/fabric] Interface of ProcessIndexesForChaincodeDeploy"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statedb.go")
+ (front-context-string . "ProcessIndexesFo")
+ (rear-context-string . "BType() string\n	")
+ (position . 3465))
+("[hyperledger/fabric] Starting point of CreateIndex of Couch DB"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go")
+ (front-context-string . "nedDB) ProcessIn")
+ (rear-context-string . "unc (vdb *Versio")
+ (position . 4057))
+("[hyperledger/fabric] Handling couch DB indexes from deploying chaincode"
+ (filename . "/Volumes/Data/devel/src/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statedb.go")
+ (front-context-string . "ssIndexesForChai")
+ (rear-context-string . "() string\n	Proce")
+ (position . 3470))
+("[hyperledger/fabric] CouchDB create index"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/util/couchdb/couchdb.go")
+ (front-context-string . "ateIndex(indexde")
+ (rear-context-string . "uchDatabase) Cre")
+ (position . 33504))
+("Make genesis block "
  (filename . "/Volumes/Data/devel/src/github.com/hyperledger/fabric/common/genesis/genesis.go")
  (front-context-string . "payloadChannelHe")
  (rear-context-string . "lock, error) {\n	")
