@@ -10,6 +10,7 @@
 (global-set-key [C-down] 'windmove-down)
 (global-set-key [C-left] 'windmove-left)
 (global-set-key [C-right] 'windmove-right)
+(global-set-key (kbd "<f5"> 'compile)
 
 (global-set-key (kbd "C-SPC") 'company-complete)
 
@@ -21,10 +22,10 @@
 (global-set-key (kbd "M-`") 'ecb-open-source-in-editwin2)
 ;;(global-set-key [(tab)] 'company-complete)
 
-(global-set-key (kbd "<f5>") (lambda ()
-                               (interactive)
-                               (setq-local compilation-read-command nil)
-                               (call-interactively 'compile)))
+;; (global-set-key (kbd "<f5>") (lambda ()
+;;                                (interactive)
+;;                                (setq-local compilation-read-command nil)
+;;                                (call-interactively 'compile)))
 
 (defun remove-keys-set-by-global()
   (local-set-key (kbd "<C-letft>") nil)
@@ -38,6 +39,11 @@
   )
 
 (add-hook 'shell-mode-hook (lambda()
+                             (local-set-key (kbd "<C-up>") 'windmove-up)
+                             (local-set-key (kbd "<C-down>") 'windmove-down)
+                             ))
+
+(add-hook 'eshell-mode-hook (lambda()
                              (local-set-key (kbd "<C-up>") 'windmove-up)
                              (local-set-key (kbd "<C-down>") 'windmove-down)
                              ))
