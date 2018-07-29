@@ -15,7 +15,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/pwnartist/oh-my-profiles/master/install.sh)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew cask install java emacs mactex wireshark
-brew install golang erlang npm xctool ios-sim rtags python3 markdown groovy gradle jupyter graphviz go-delve/delve/delve maven sourcekitten aspell jq yq ctags global ctags
+brew install golang erlang npm xctool ios-sim rtags python3 markdown groovy gradle graphviz go-delve/delve/delve maven sourcekitten aspell jq yq ctags global ctags
 
 brew link --overwrite ctags
 
@@ -72,7 +72,7 @@ sudo mv $CLANG $CLANG.old
 sudo ln -s /usr/local/opt/rtags/bin/gcc-rtags-wrapper.sh $CLANG 
 
 # python
-sudo pip3 install rope jedi importmagic autopep8 yapf virtualenv
+sudo pip3 install rope jedi importmagic autopep8 yapf virtualenv jupyter
 sudo pip3 install numpy scipy scikit-learn matplotlib pandas pillow graphviz ipykernel
 sudo python3 -m ipykernel install --user
 

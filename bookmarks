@@ -1,0 +1,120 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("[fabric] Provider contains vbdProvider(versionedDB)"
+ (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/kv_ledger_provider.go")
+ (front-context-string . "der := &Provider")
+ (rear-context-string . "ialized\")\n	provi")
+ (position . 2774))
+("[fabric] Creating LedgerProvider with ledgerstorage"
+ (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/kv_ledger_provider.go")
+ (front-context-string . "dstate.NewCommon")
+ (rear-context-string . ":= privacyenable")
+ (position . 2388))
+("[fabric] Calling GetDBHandle"
+ (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/privacyenabledstate/common_storage_db.go")
+ (front-context-string . "GetDBHandle(id)\n")
+ (rear-context-string . "ionedDBProvider.")
+ (position . 1563))
+("[fabric] Interface of GetDBHandle"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statedb.go")
+ (front-context-string . "DBHandle(id stri")
+ (rear-context-string . "VersionedDB\n	Get")
+ (position . 452))
+("[fabric] GetLedger for storage db"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/peer/peer.go")
+ (front-context-string . "Ledger(cid strin")
+ (rear-context-string . "reated.\nfunc Get")
+ (position . 12762))
+("[fabric] ledger Open and initialize"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/peer/peer.go")
+ (front-context-string . "rmgmt.OpenLedger")
+ (rear-context-string . "ger, err = ledge")
+ (position . 6060))
+("[fabric] Singleton Initialize of ledgerProvider"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/ledgermgmt/ledger_mgmt.go")
+ (front-context-string . "alize(customTxPr")
+ (rear-context-string . "rmgmt\nfunc Initi")
+ (position . 1601))
+("[fabric] Creating a new kvledger Provider"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/ledgermgmt/ledger_mgmt.go")
+ (front-context-string . "NewProvider()\n	i")
+ (rear-context-string . "err := kvledger.")
+ (position . 2120))
+("[fabric] loading Storage handler for versionDB with GetDBHandle"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/kv_ledger_provider.go")
+ (front-context-string . "GetDBHandle(ledg")
+ (rear-context-string . "der.vdbProvider.")
+ (position . 5548))
+("[fabric] HandleChaincodeDeploy practical implemention"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/privacyenabledstate/common_storage_db.go")
+ (front-context-string . "eChaincodeDeploy")
+ (rear-context-string . "StorageDB) Handl")
+ (position . 7933))
+("[hyperledger/fabric] Starting of ProcessIndexs(CreateIndex)"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/privacyenabledstate/common_storage_db.go")
+ (front-context-string . "pable.ProcessInd")
+ (rear-context-string . "		err := indexCa")
+ (position . 8857))
+("[hyperledger/fabric] Interface of ProcessIndexesForChaincodeDeploy"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statedb.go")
+ (front-context-string . "ProcessIndexesFo")
+ (rear-context-string . "BType() string\n	")
+ (position . 3465))
+("[hyperledger/fabric] Starting point of CreateIndex of Couch DB"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go")
+ (front-context-string . "nedDB) ProcessIn")
+ (rear-context-string . "unc (vdb *Versio")
+ (position . 4057))
+("[hyperledger/fabric] Handling couch DB indexes from deploying chaincode"
+ (filename . "/Volumes/Data/devel/src/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statedb.go")
+ (front-context-string . "ssIndexesForChai")
+ (rear-context-string . "() string\n	Proce")
+ (position . 3470))
+("[hyperledger/fabric] CouchDB create index"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/util/couchdb/couchdb.go")
+ (front-context-string . "ateIndex(indexde")
+ (rear-context-string . "uchDatabase) Cre")
+ (position . 33504))
+("Make genesis block "
+ (filename . "/Volumes/Data/devel/src/github.com/hyperledger/fabric/common/genesis/genesis.go")
+ (front-context-string . "payloadChannelHe")
+ (rear-context-string . "lock, error) {\n	")
+ (position . 1338))
+("X.509 Verification error was cased from here."
+ (filename . "/usr/local/Cellar/go/1.9.2/libexec/src/crypto/x509/verify.go")
+ (front-context-string . "w) == 0 {\n		retu")
+ (rear-context-string . "ms.\n	if len(c.Ra")
+ (position . 8896))
+("installChaincode"
+ (filename . "~/Data/devel/src/github.com/SharedMocha/fabric-starter/network.sh")
+ (front-context-string . "Chaincode() {\n  ")
+ (rear-context-string . "function install")
+ (position . 11720))
+("networks.sh -m up"
+ (filename . "~/Data/devel/src/github.com/SharedMocha/fabric-starter/network.sh")
+ (front-context-string . "if [ \"${MODE}\" =")
+ (rear-context-string . ";;\n  esac\ndone\n\n")
+ (position . 22783))
+("createJoinInstantiateWarmUp"
+ (filename . "~/Data/devel/src/github.com/SharedMocha/fabric-starter/network.sh")
+ (front-context-string . "InstantiateWarmU")
+ (rear-context-string . "ction createJoin")
+ (position . 13727))
+("Hyperledger Fabric ConfigTXGen : main"
+ (filename . "/Volumes/Data/devel/fabric/common/configtx/tool/configtxgen/main.go")
+ (front-context-string . "func main() {\n	v")
+ (rear-context-string . "\n	return nil\n}\n\n")
+ (position . 11427))
+("Hyperledger Fabric Orderer : main"
+ (filename . "/Volumes/Data/devel/fabric/orderer/main.go")
+ (front-context-string . "func main() {\n\n	")
+ (rear-context-string . "nformation\")\n)\n\n")
+ (position . 1959))
+("Hyperledger Fabric Peer : main"
+ (filename . "/Volumes/Data/devel/fabric/peer/main.go")
+ (front-context-string . "	// For environm")
+ (rear-context-string . "\n\nfunc main() {\n")
+ (position . 1984))
+)

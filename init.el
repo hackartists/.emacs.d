@@ -133,6 +133,7 @@
 
                      ;;swift
                      ;; company-sourcekit ;;manually loaded
+					 multi-term toml-mode dockerfile-mode
                      )
       )
 
@@ -196,6 +197,7 @@
 (require 'setup-mode)
 (require 'setup-html)
 (require 'docker-tramp-compat)
+(require 'openapi-yaml-mode)
 ;; (require 'setup-ggtags)
 ;;(require 'setup-ac)
 ;;(require 'setup-smartparens)
