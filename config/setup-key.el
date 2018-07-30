@@ -10,7 +10,7 @@
 (global-set-key [C-down] 'windmove-down)
 (global-set-key [C-left] 'windmove-left)
 (global-set-key [C-right] 'windmove-right)
-(global-set-key (kbd "<f5"> 'compile)
+(global-set-key (kbd "<f5>") 'compile)
 
 (global-set-key (kbd "C-SPC") 'company-complete)
 
