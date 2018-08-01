@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("[steem] create_vesting"
+(("[steem] genesis_init"
+ (filename . "/Volumes/Data/devel/src/github.com/steemit/steem/libraries/chain/database.cpp")
+ (front-context-string . "\n   {\n      stru")
+ (rear-context-string . "upply )\n{\n   try")
+ (position . 94167))
+("[steem] create_vesting"
  (filename . "/Volumes/Data/devel/src/github.com/steemit/steem/libraries/chain/database.cpp")
  (front-context-string . "set liquid, bool")
  (rear-context-string . "& to_account, as")
