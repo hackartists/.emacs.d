@@ -14,6 +14,8 @@
 
 (global-set-key (kbd "C-SPC") 'company-complete)
 
+(global-set-key (kbd "C-t") 'helm-mt)
+
 ;; (global-set-key (kbd "M-.") 'sp-forward-slurp-sexp)
 ;; (global-set-key (kbd "M-,") 'sp-forward-barf-sexp)
 (global-set-key (kbd "<home>") 'move-beginning-of-line)

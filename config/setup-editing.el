@@ -6,6 +6,8 @@
       tab-width 4                       ; default to 4 visible spaces to display a tab
       )
 
+(global-rainbow-delimiters-mode)
+(tabbar-mode)
 (global-linum-mode)
 (global-diff-hl-mode)
 (setq make-backup-files nil)

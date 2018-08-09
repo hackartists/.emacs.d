@@ -1,4 +1,5 @@
 (setq package-list '(
+                     gorepl-mode
                      ;;common
                      magit
                      magit-popup
@@ -133,9 +134,15 @@
 
                      ;;swift
                      ;; company-sourcekit ;;manually loaded
-		     multi-term
-		     toml-mode
-		     dockerfile-mode
+                     helm-mt
+                     multi-term
+                     toml-mode
+                     dockerfile-mode
+                     tabbar
+                     helm-swoop
+                     highlight-symbol
+                     rainbow-delimiters
+                     go-autocomplete
                      )
       )
 
@@ -251,21 +258,21 @@
  '(ecb-options-version "2.50")
  '(ecb-source-path
    (quote
-	(("/" "/")
-	 ("~/Data/devel/src" "/Devel")
-	 ("~/Data/smartm2m Dropbox" "/Dropbox")
-	 ("~/Data" "/Data"))))
+    (("/" "/")
+     ("~/Data/devel/src" "/Devel")
+     ("~/Data/smartm2m Dropbox" "/Dropbox")
+     ("~/Data" "/Data"))))
  '(ecb-stealthy-tasks-delay 30)
  '(ecb-tree-incremental-search (quote prefix))
  '(ecb-use-speedbar-instead-native-tree-buffer nil)
  '(global-diff-hl-mode t)
  '(jdee-jdk-registry
    (quote
-	(("1.9" . "/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home"))))
+    (("1.9" . "/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home"))))
  '(jdee-server-dir "/Users/hackartist/.emacs.d/refs/jdee-server")
  '(package-selected-packages
    (quote
-	(multi-term toml-mode dockerfile-mode helm-core helm swift-mode flycheck-swiftlint flycheck-swift3 bazel-mode osx-plist xcode-project protobuf-mode ecb mvn csv-mode flycheck ctags flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json rfringe diff-hl vdiff go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu))))
+    (gorepl-mode project-explorer typo visual-regexp bm rainbow-delimiters helm-mt elscreen tabbar multi-term toml-mode dockerfile-mode helm-core helm swift-mode flycheck-swiftlint flycheck-swift3 bazel-mode osx-plist xcode-project protobuf-mode ecb mvn csv-mode flycheck ctags flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json rfringe diff-hl vdiff go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

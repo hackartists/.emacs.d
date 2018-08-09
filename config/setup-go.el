@@ -25,6 +25,10 @@
   (add-to-list 'company-backends 'company-go)
   (flycheck-select-checker 'go-golint)
   (flycheck-mode)
+  (require 'go-autocomplete)
+  (require 'auto-complete-config)
+  (ac-config-default)
+  (gorepl-mode)
   )
 
 (add-hook 'go-mode-hook 'my-go-mode-hook)
