@@ -50,4 +50,8 @@
                              (local-set-key (kbd "<C-down>") 'windmove-down)
                              ))
 
+(add-hook 'term-mode-hook (lambda()
+                              (local-set-key (kbd "<C-t>") 'helm-mt)
+                              ))
+
 (provide 'setup-key)
