@@ -52,9 +52,11 @@
                              ))
 
 (add-hook 'term-mode-hook (lambda()
-                            (define-key term-mode-map (kbd "C-t") 'helm-mt)
+                            ;;(define-key term-mode-map (kbd "C-t") 'helm-mt)
+                            ;;(local-set-key (kbd "C-t") 'helm-mt)
+                            (define-key term-raw-map (kbd "<prior>") 'term-pager-back-page)
+                            (define-key term-raw-map (kbd "<next>") 'term-pager-page)
                             (define-key term-raw-map (kbd "C-t") 'helm-mt)
-                            (local-set-key (kbd "C-t") 'helm-mt)
                             ))
 
 (provide 'setup-key)

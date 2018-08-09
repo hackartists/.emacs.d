@@ -1,7 +1,5 @@
 ;;(add-to-list 'load-path "~/go/src/github.com/dougm/goflymake")
 ;;(require 'go-flycheck)
-;;(require 'go-autocomplete)
-;;(require 'auto-complete-config)
 
 (require 'flycheck)
 (flycheck-define-checker go-checker
@@ -15,7 +13,7 @@
 (defun my-go-mode-hook()
   (require 'company-go)
   (add-hook 'before-save-hook 'gofmt-before-save)
-  ;;(ac-config-default)
+
   (setq gofmt-command "goimports")
   (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)
@@ -25,9 +23,16 @@
   (add-to-list 'company-backends 'company-go)
   (flycheck-select-checker 'go-golint)
   (flycheck-mode)
-  (require 'go-autocomplete)
-  (require 'auto-complete-config)
-  (ac-config-default)
+
+  ;; (require 'go-autocomplete)
+  ;; (require 'auto-complete-config)
+  ;; (ac-config-default)
+
+  (setq company-tooltip-limit 20)                      ; bigger popup window
+  (setq company-idle-delay 0)                         ; decrease delay before autocompletion popup shows
+  (setq company-echo-delay 0)                          ; remove annoying blinking
+  (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
+
   (gorepl-mode)
   )
 

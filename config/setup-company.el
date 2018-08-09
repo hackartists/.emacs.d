@@ -1,4 +1,4 @@
-(require 'company)
+;;(require 'company)
 (defun my-company-active-return ()
   (interactive)
   (company-abort)
