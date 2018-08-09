@@ -5,6 +5,7 @@
 (global-unset-key [C-right])
 (global-unset-key [C-up])
 (global-unset-key [C-down])
+(global-unset-key (kbd "<C-t>"))
 
 (global-set-key [C-up] 'windmove-up)
 (global-set-key [C-down] 'windmove-down)
@@ -51,7 +52,9 @@
                              ))
 
 (add-hook 'term-mode-hook (lambda()
-                              (local-set-key (kbd "<C-t>") 'helm-mt)
-                              ))
+                            (define-key term-mode-map (kbd "C-t") 'helm-mt)
+                            (define-key term-raw-map (kbd "C-t") 'helm-mt)
+                            (local-set-key (kbd "C-t") 'helm-mt)
+                            ))
 
 (provide 'setup-key)
