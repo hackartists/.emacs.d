@@ -13,8 +13,8 @@
                                   global-semantic-idle-summary-mode
                                   global-semantic-decoration-mode
                                   global-semantic-highlight-func-mode
-                                  global-semantic-stickyfunc-mode
-                                                                        global-semantic-mru-bookmark-mode))
+                                  ;;global-semantic-stickyfunc-mode
+                                  global-semantic-mru-bookmark-mode))
 
 (semantic-mode 1)
 (semantic-add-system-include "/usr/include")
