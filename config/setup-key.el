@@ -57,6 +57,10 @@
                             (define-key term-raw-map (kbd "<prior>") 'term-pager-back-page)
                             (define-key term-raw-map (kbd "<next>") 'term-pager-page)
                             (define-key term-raw-map (kbd "C-t") 'helm-mt)
+                            (define-key term-raw-map (kbd "C-v") 'term-paste)
+                            (define-key term-raw-map (kbd "s-v") 'term-paste)
+                            (define-key term-raw-map (kbd "M-c") 'term-line-mode)
+                            (define-key term-mode-map (kbd "M-c") 'term-char-mode)
                             ))
 
 (provide 'setup-key)
