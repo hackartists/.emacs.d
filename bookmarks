@@ -2,7 +2,17 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("[steem] genesis_init"
+(("[steem] operation_validate"
+ (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/protocol/include/steem/protocol/operation_util_impl.hpp")
+ (front-context-string . "eration_validate")
+ (rear-context-string . "       \\\nvoid op")
+ (position . 1471))
+("[steem] transaction validate"
+ (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/protocol/transaction.cpp")
+ (front-context-string . "void transaction")
+ (rear-context-string . "nc.result();\n}\n\n")
+ (position . 710))
+("[steem] genesis_init"
  (filename . "/Volumes/Data/devel/src/github.com/steemit/steem/libraries/chain/database.cpp")
  (front-context-string . "\n   {\n      stru")
  (rear-context-string . "upply )\n{\n   try")
