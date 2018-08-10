@@ -62,5 +62,8 @@
                             (define-key term-raw-map (kbd "M-c") 'term-line-mode)
                             (define-key term-mode-map (kbd "M-c") 'term-char-mode)
                             ))
+(add-hook 'projectile-mode-hook (lambda()
+                                  (define-key projectile-mode-map (kbd "C-c p g") 'helm-projectile-grep)
+                                  ))
 
 (provide 'setup-key)
