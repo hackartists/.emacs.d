@@ -142,7 +142,7 @@
                      helm-swoop
                      highlight-symbol
                      rainbow-delimiters
-                     go-autocomplete
+                     go-autocomplete helm-ag gorepl-mode project-explorer typo visual-regexp bm
                      )
       )
 
