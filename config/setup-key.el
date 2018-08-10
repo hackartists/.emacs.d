@@ -66,4 +66,8 @@
                                   (define-key projectile-mode-map (kbd "C-c p g") 'helm-projectile-grep)
                                   ))
 
+(add-hook 'tabbar-mode-hook (lambda()
+							  (define-key tabbar-mode-map (kbd "<s-left>") 'tabbar-backward)
+							  (define-key tabbar-mode-map (kbd "<s-right>") 'tabbar-forward)
+							  ))
 (provide 'setup-key)
