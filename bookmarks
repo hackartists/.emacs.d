@@ -2,7 +2,42 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("[steem] operation_validate"
+(("[fabric] endorsement policy"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/common/cauthdsl/cauthdsl_builder.go")
+ (front-context-string . "unc signedByAnyO")
+ (rear-context-string . " type policies\nf")
+ (position . 4574))
+("[fabric] serialized next triggered handle"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/handler.go")
+ (front-context-string . "/ Defer the dere")
+ (rear-context-string . "<-msgAvail:\n			/")
+ (position . 12834))
+("[fabric] serialized channel was created for invoking CC"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/container/inproccontroller/inproccontroller.go")
+ (front-context-string . "imStartInProc(en")
+ (rear-context-string . "\n		}\n		err := sh")
+ (position . 3517))
+("[fabric] get peer addresses"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/peer/chaincode/common.go")
+ (front-context-string . "eer, peerChannel")
+ (rear-context-string . "tring{}\n			for p")
+ (position . 9990))
+("[fabric] Processing endorments"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/peer/chaincode/common.go")
+ (front-context-string . "ts {\n		proposalR")
+ (rear-context-string . "ge endorserClien")
+ (position . 16186))
+("[fabric] Endorser interface"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/protos/peer/peer.pb.go")
+ (front-context-string . "type EndorserSer")
+ (rear-context-string . "dorser service\n\n")
+ (position . 2609))
+("[fabric] system chaincodes bootstratp"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/shim/chaincode.go")
+ (front-context-string . "nProc(env []stri")
+ (rear-context-string . "des.\nfunc StartI")
+ (position . 6669))
+("[steem] operation_validate"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/protocol/include/steem/protocol/operation_util_impl.hpp")
  (front-context-string . "eration_validate")
  (rear-context-string . "       \\\nvoid op")
