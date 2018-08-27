@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("[steem] operation_validate"
+(("[fabric] policy default"
+ (filename . "/Volumes/Data/devel/src/github.com/hyperledger/fabric/core/scc/lscc/lscc.go")
+ (front-context-string . "gnedByAnyMember(")
+ (rear-context-string . "p := cauthdsl.Si")
+ (position . 22405))
+("[steem] operation_validate"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/protocol/include/steem/protocol/operation_util_impl.hpp")
  (front-context-string . "eration_validate")
  (rear-context-string . "       \\\nvoid op")

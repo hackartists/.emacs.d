@@ -1,7 +1,17 @@
 ;; Package: projejctile
 (require 'projectile)
+(setq use-package-verbose t
+      use-package-enable-imenu-support t)
+(require 'use-package)
+
+(use-package projectile
+             :ensure t
+             :diminish projectile-mode
+             :commands (projectile-global-mode)
+             :init (setq projectile-enable-caching t)
+             :config (projectile-global-mode 1))
+
 (projectile-global-mode)
-(setq projectile-enable-caching t)
 
 (require 'helm-projectile)
 (helm-projectile-on)

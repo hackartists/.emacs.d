@@ -71,7 +71,8 @@ cd jdee-server
 mvn -Dmaven.test.skip=true package
 
 # flymake-json mode
-npm install jsonlint -g
+npm install -g jsonlint indium tern
+
 
 # rtags
 export CLANG=`xcrun -f clang++`
