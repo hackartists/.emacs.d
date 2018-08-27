@@ -259,7 +259,6 @@
  '(android-mode-sdk-dir "/Volumes/Data/Developers/android")
  '(diff-hl-draw-borders t)
  '(doc-view-continuous t)
- '(ecb-enlarged-compilation-window-max-height 0.8)
  '(ecb-options-version "2.50")
  '(ecb-source-path
    (quote
@@ -278,10 +277,10 @@
  '(package-selected-packages
    (quote
 	(gulp-task-runner typescript-mode nodejs-repl helm-xref helm-ag gorepl-mode project-explorer typo visual-regexp bm rainbow-delimiters helm-mt elscreen tabbar multi-term toml-mode dockerfile-mode helm-core helm swift-mode flycheck-swiftlint flycheck-swift3 bazel-mode osx-plist xcode-project protobuf-mode ecb mvn csv-mode flycheck ctags flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json rfringe diff-hl vdiff go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu)))
+
  '(projectile-project-root-files
    (quote
     ("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS" ".dropbox"))))
->>>>>>> f877f2f9538804e3a39aa1d68da7d461aae624a8
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

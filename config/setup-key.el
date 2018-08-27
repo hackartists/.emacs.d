@@ -70,4 +70,5 @@
 							  (define-key tabbar-mode-map (kbd "<s-left>") 'tabbar-backward)
 							  (define-key tabbar-mode-map (kbd "<s-right>") 'tabbar-forward)
 							  ))
+
 (provide 'setup-key)
