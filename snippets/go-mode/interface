@@ -2,6 +2,7 @@
 # name: interface
 # key: interface
 # --
-type ${name} interface {
-     ${name}(${args})
+// $0 ...
+type ${0:name} interface {
+     $1
 }

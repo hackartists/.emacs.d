@@ -2,6 +2,7 @@
 # name: struct
 # key: struct
 # --
-type ${name} struct {
-     ${name} ${type}
+// $1 ...
+type ${1:name} struct {
+     $2
 }

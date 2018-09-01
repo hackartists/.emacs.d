@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: func-with-reciever
+# key: func
+# --
+// $0 ...
+func (r ${0:reciever})${1:name}()  {
+     $2
+}
