@@ -38,4 +38,13 @@
 
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 
+
+(defun my-go-playground-mode-hook (args)
+  "docstring"
+  (interactive "P")
+  (define-key go-playground-mode-map (kbd "<s-return>") 'go-playground-exec)
+  )
+
+(add-hook 'go-playground-mode-hook 'my-go-playground-mode-hook)
+
 (provide 'setup-go)

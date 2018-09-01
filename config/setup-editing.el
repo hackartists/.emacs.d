@@ -10,6 +10,9 @@
 (tabbar-mode)
 (global-linum-mode)
 (global-diff-hl-mode)
+(yas-global-mode)
+
+(global-set-key (kbd "M-RET") 'yas-insert-snippet)
 (setq make-backup-files nil)
 (add-hook 'sh-mode-hook (lambda ()
                           (setq tab-width 4)))
