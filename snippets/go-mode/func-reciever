@@ -2,7 +2,6 @@
 # name: func-with-reciever
 # key: func
 # --
-// $0 ...
-func (r ${0:reciever})${1:name}()  {
-     $2
+// $2 ...
+func (r ${1:reciever})${2:name}()  {
 }

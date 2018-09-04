@@ -227,7 +227,7 @@
  )
 
 (cua-mode 1)
-
+(server-start)
 ;;(global-linum-mode 1)
 
 (split-window-horizontally)
