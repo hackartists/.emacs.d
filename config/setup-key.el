@@ -12,6 +12,8 @@
 (global-set-key [C-left] 'windmove-left)
 (global-set-key [C-right] 'windmove-right)
 (global-set-key (kbd "<f5>") 'compile)
+(global-set-key (kbd "<s-left>") 'tabbar-backward)
+(global-set-key (kbd "<s-right>") 'tabbar-forward)
 
 (global-set-key (kbd "C-SPC") 'company-complete)
 
@@ -61,14 +63,14 @@
                             (define-key term-raw-map (kbd "s-v") 'term-paste)
                             (define-key term-raw-map (kbd "M-c") 'term-line-mode)
                             (define-key term-mode-map (kbd "M-c") 'term-char-mode)
+                            (define-key term-raw-map (kbd "<C-right>") 'windmove-right)
+                            (define-key term-raw-map (kbd "<C-left>") 'windmove-left)
+                            (define-key term-raw-map (kbd "<C-up>") 'windmove-up)
+                            (define-key term-raw-map (kbd "<C-down>") 'windmove-down)
                             ))
 (add-hook 'projectile-mode-hook (lambda()
                                   (define-key projectile-mode-map (kbd "C-c p g") 'helm-projectile-grep)
                                   ))
 
-(add-hook 'tabbar-mode-hook (lambda()
-							  (define-key tabbar-mode-map (kbd "<s-left>") 'tabbar-backward)
-							  (define-key tabbar-mode-map (kbd "<s-right>") 'tabbar-forward)
-							  ))
 
 (provide 'setup-key)
