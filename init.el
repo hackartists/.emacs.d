@@ -214,6 +214,7 @@
 ;;(require 'setup-ac)
 ;;(require 'setup-smartparens)
 ;;(require 'setup-font)
+(require 'setup-rust)
 
 (setq warning-minimum-level :emergency)
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
