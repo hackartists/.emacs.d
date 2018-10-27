@@ -14,9 +14,7 @@ cat .ctags >> ~/.ctags
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/pwnartist/oh-my-profiles/master/install.sh)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew cask install java emacs mactex wireshark
-brew install golang erlang npm xctool ios-sim rtags python3 markdown groovy gradle graphviz go-delve/delve/delve maven sourcekitten aspell jq yq ctags global ctags
-
+brew bundle
 brew link --overwrite ctags
 
 export emacs_dir=`pwd`
@@ -73,20 +71,27 @@ mvn -Dmaven.test.skip=true package
 # flymake-json mode
 npm install -g jsonlint indium tern
 
-
 # rtags
 export CLANG=`xcrun -f clang++`
 sudo mv $CLANG $CLANG.old
 sudo ln -s /usr/local/opt/rtags/bin/gcc-rtags-wrapper.sh $CLANG 
 
 # python
-sudo pip3 install rope jedi importmagic autopep8 yapf virtualenv jupyter
-sudo pip3 install numpy scipy scikit-learn matplotlib pandas pillow graphviz ipykernel
-sudo python3 -m ipykernel install --user
-
+pip3 install -r requirements.txt
+python3 -m ipykernel install --user
 
 #eslint
 npm install -g eslint babel-eslint eslint-plugin-react
+
+# Rust
+rustup-init -y
+source $HOME/.cargo/env
+rustup toolchain add nightly
+rustup component add rust-src
+cargo +nightly install racer
+cargo +nightly install rustfmt
+echo "source $HOME/.cargo/env" >> ~/.zshrc
+echo "export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src" >> ~/.zshrc
 
 # For swift completion, sourcekittendeamon should be installed on machine.
 git dev git@github.com:terhechte/SourceKittenDaemon.git
