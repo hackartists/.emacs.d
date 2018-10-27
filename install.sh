@@ -21,8 +21,8 @@ brew link --overwrite ctags
 
 export emacs_dir=`pwd`
 
-mkdir -p $HOME/go $HOME/go/src
-cd $HOME/go
+mkdir -p $HOME/data/devel/src
+cd $HOME/data/devel
 addpath GOPATH
 cd $GOPATH/src
 addpath devel
@@ -87,6 +87,10 @@ sudo python3 -m ipykernel install --user
 
 #eslint
 npm install -g eslint babel-eslint eslint-plugin-react
+
+# For swift completion, sourcekittendeamon should be installed on machine.
+git dev git@github.com:terhechte/SourceKittenDaemon.git
+make install
 
 # run emacs script
 cd $emacs_dir
