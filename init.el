@@ -212,6 +212,7 @@
 (require 'docker-tramp-compat)
 (require 'openapi-yaml-mode)
 (require 'setup-ext)
+(require 'setup-ts)
 ;; (require 'setup-ggtags)
 ;;(require 'setup-ac)
 ;;(require 'setup-smartparens)
