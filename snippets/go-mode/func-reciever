@@ -3,5 +3,6 @@
 # key: func
 # --
 // $2 ...
-func (r ${1:reciever})${2:name}()  {
+func (r ${1:reciever})${2:name}() ${3:} {
+     ${4:}
 }
