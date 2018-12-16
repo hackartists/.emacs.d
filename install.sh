@@ -69,7 +69,7 @@ cd jdee-server
 mvn -Dmaven.test.skip=true package
 
 # flymake-json mode
-npm install -g jsonlint indium tern
+npm install -g jsonlint indium tern eslint babel-eslint eslint-plugin-react eslint-plugin-node tslint tslint-eslint-rules tslint-config-prettier tide
 
 # rtags
 export CLANG=`xcrun -f clang++`
