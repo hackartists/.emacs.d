@@ -86,10 +86,10 @@ npm install -g eslint babel-eslint eslint-plugin-react
 # Rust
 rustup-init -y
 source $HOME/.cargo/env
-rustup toolchain add nightly
+rustup toolchain add stable
 rustup component add rust-src
-cargo +nightly install racer
-cargo +nightly install rustfmt
+cargo install racer
+cargo install rustfmt
 echo "source $HOME/.cargo/env" >> ~/.zshrc
 echo "export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src" >> ~/.zshrc
 
