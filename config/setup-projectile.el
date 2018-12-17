@@ -31,8 +31,8 @@
                                        (message "Invalidated Projectile cache for %s."
                                                 (propertize project-root 'face 'font-lock-keyword-face)))
                                      (when (fboundp 'recentf-cleanup)
-                                       (recentf-cleanup)))
-                                   (projectile-hash-keys projectile-projects-cache))
+                                       (recentf-cleanup))))
+                                   ;;(projectile-hash-keys projectile-projects-cache))
                              (projectile-serialize-cache)))
 
 (provide 'setup-projectile)

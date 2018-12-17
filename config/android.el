@@ -47,7 +47,7 @@
                      t
                      nil
                      'file-directory-p)
-   (labels ((read-directory ()
+   (cl-labels ((read-directory ()
                             (read-file-name "Android project root: "
                                             android-project-root
                                             nil

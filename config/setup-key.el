@@ -68,8 +68,11 @@
                             (define-key term-raw-map (kbd "<C-up>") 'windmove-up)
                             (define-key term-raw-map (kbd "<C-down>") 'windmove-down)
                             ))
+
 (add-hook 'projectile-mode-hook (lambda()
                                   (define-key projectile-mode-map (kbd "C-c p g") 'helm-projectile-grep)
+                                  (define-key projectile-mode-map (kbd "C-c p p") 'helm-projectile-switch-project)
+                                  (define-key projectile-mode-map (kbd "C-c p f") 'helm-projectile-find-file)
                                   ))
 
 
