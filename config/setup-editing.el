@@ -11,6 +11,7 @@
 (global-linum-mode)
 (global-diff-hl-mode)
 (yas-global-mode)
+(highlight-blocks-mode)
 
 (global-set-key (kbd "M-RET") 'yas-insert-snippet)
 (setq make-backup-files nil)
