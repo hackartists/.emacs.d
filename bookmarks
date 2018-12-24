@@ -2,7 +2,7 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("[Peer-gRPC] registerDiscoverService"
+(("[fabric/peer/grpc] registerDiscoverService"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/peer/node/start.go")
  (front-context-string . "erDiscoveryServi")
  (rear-context-string . "led\") {\n		regist")
@@ -52,37 +52,37 @@
  (front-context-string . "(conf.BindPort, ")
  (rear-context-string . "teCommWithServer")
  (position . 3079))
-("[Peer-gRPC] gossip server"
+("[fabric/peer/grpc] gossip server"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/gossip/service/gossip_service.go")
  (front-context-string . "deliveryFactoryI")
  (rear-context-string . " error)\n}\n\ntype ")
  (position . 2316))
-("[Peer-gRPC] auth filter servers before endorser"
+("[fabric/peer/grpc] auth filter servers before endorser"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/handlers/auth/auth.go")
  (front-context-string . "ChainFilters(end")
  (rear-context-string . "e endorser\nfunc ")
  (position . 537))
-("[Peer-gRPC] Endorser server"
+("[fabric/peer/grpc] Endorser server"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/endorser/endorser.go")
  (front-context-string . "Endorser struct ")
  (rear-context-string . "ssProposal\ntype ")
  (position . 4343))
-("[Peer-gRPC] Admin server"
+("[fabric/peer/grpc] Admin server"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/admin/admin.go")
  (front-context-string . "ServerAdmin stru")
  (rear-context-string . "r the Peer\ntype ")
  (position . 1123))
-("[Peer-gRPC] ChaincodeSupport server"
+("[fabric/peer/grpc] ChaincodeSupport server"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/chaincode_support.go")
  (front-context-string . "ChaincodeSupport")
  (rear-context-string . " the Peer.\ntype ")
  (position . 1085))
-("[Peer-gRPC] delivery server"
+("[fabric/peer/grpc] delivery server"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/peer/deliverevents.go")
  (front-context-string . "server struct {\n")
  (rear-context-string . "ver server\ntype ")
  (position . 1465))
-("[Peer-gRPC] Event server"
+("[fabric/peer/grpc] Event server"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/events/producer/producer.go")
  (front-context-string . "EventsServer str")
  (rear-context-string . "er service\ntype ")
