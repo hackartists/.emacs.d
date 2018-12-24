@@ -2,7 +2,17 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("[fabric] policy default"
+(("[Peer-gRPC] delivery server"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/peer/deliverevents.go")
+ (front-context-string . "server struct {\n")
+ (rear-context-string . "ver server\ntype ")
+ (position . 1465))
+("[Peer-gRPC] Event server"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/events/producer/producer.go")
+ (front-context-string . "EventsServer str")
+ (rear-context-string . "er service\ntype ")
+ (position . 392))
+("[fabric] policy default"
  (filename . "/Volumes/Data/devel/src/github.com/hyperledger/fabric/core/scc/lscc/lscc.go")
  (front-context-string . "gnedByAnyMember(")
  (rear-context-string . "p := cauthdsl.Si")
