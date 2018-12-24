@@ -2,7 +2,32 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("[fabric/peer/grpc] registerDiscoverService"
+(("[fabric/ledger] txmgr.NewTxSimulator"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/txmgr/lockbasedtxmgr/lockbased_txmgr.go")
+ (front-context-string . "func (txmgr *Loc")
+ (rear-context-string . " `txmgmt.TxMgr`\n")
+ (position . 3305))
+("[fabric/ledger] NewTxSimulator"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/ledger/kvledger/kv_ledger.go")
+ (front-context-string . "func (l *kvLedge")
+ (rear-context-string . "er.TxSimulator`\n")
+ (position . 10389))
+("[fabric/endorser] SupportImpl"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/endorser/support.go")
+ (front-context-string . "rtImpl struct {\n")
+ (rear-context-string . " peer\ntype Suppo")
+ (position . 1011))
+("[fabric/cc/install] InvocationSpec"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/protos/utils/proputils.go")
+ (front-context-string . "sccSpec := &peer")
+ (rear-context-string . "ec to lscc...\n	l")
+ (position . 19854))
+("[fabric/endorser] ProcessProposal"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/endorser/endorser.go")
+ (front-context-string . "er) ProcessPropo")
+ (rear-context-string . "\nfunc (e *Endors")
+ (position . 16535))
+("[fabric/peer/grpc] registerDiscoverService"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/peer/node/start.go")
  (front-context-string . "erDiscoveryServi")
  (rear-context-string . "led\") {\n		regist")
