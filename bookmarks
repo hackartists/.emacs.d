@@ -2,7 +2,52 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("[gossip-server] before initialization of gossip server"
+(("[Peer-gRPC] registerDiscoverService"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/peer/node/start.go")
+ (front-context-string . "erDiscoveryServi")
+ (rear-context-string . "led\") {\n		regist")
+ (position . 13643))
+("[Fabric/protos] RegisterAdminServer"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/protos/peer/admin.pb.go")
+ (front-context-string . " RegisterAdminSe")
+ (rear-context-string . ", error)\n}\n\nfunc")
+ (position . 11369))
+("[Fabric/protos] RegisterEndorserServer"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/protos/peer/peer.pb.go")
+ (front-context-string . " RegisterEndorse")
+ (rear-context-string . ", error)\n}\n\nfunc")
+ (position . 2726))
+("[Fabric/protos] RegisterChaincodeSupportServer"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/protos/peer/chaincode_shim.pb.go")
+ (front-context-string . " RegisterChainco")
+ (rear-context-string . "r) error\n}\n\nfunc")
+ (position . 14345))
+("[Fabric/protos] RegisterDeliverServer"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/protos/peer/events.pb.go")
+ (front-context-string . "c RegisterDelive")
+ (rear-context-string . "er) error\n}\n\nfun")
+ (position . 32960))
+("[Fabric/protos] RegisterEventsServer"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/protos/peer/events.pb.go")
+ (front-context-string . "c RegisterEvents")
+ (rear-context-string . "er) error\n}\n\nfun")
+ (position . 29032))
+("[Fabric/protos] RegisterAtomicBroadcastServer"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/protos/orderer/ab.pb.go")
+ (front-context-string . "func RegisterAto")
+ (rear-context-string . "erver) error\n}\n\n")
+ (position . 16991))
+("[Fabric/protos] RegisterGossipServer"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/protos/gossip/message.pb.go")
+ (front-context-string . "func RegisterGos")
+ (rear-context-string . "mpty, error)\n}\n\n")
+ (position . 61914))
+("[Fabric/protos] RegisterDiscoveryServer"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/protos/discovery/protocol.pb.go")
+ (front-context-string . "func RegisterDis")
+ (rear-context-string . "onse, error)\n}\n\n")
+ (position . 31373))
+("[gossip-server] before initialization of gossip server"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/gossip/gossip/gossip_impl.go")
  (front-context-string . "(conf.BindPort, ")
  (rear-context-string . "teCommWithServer")
