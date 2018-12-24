@@ -2,7 +2,37 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("[Peer-gRPC] delivery server"
+(("[gossip-server] before initialization of gossip server"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/gossip/gossip/gossip_impl.go")
+ (front-context-string . "(conf.BindPort, ")
+ (rear-context-string . "teCommWithServer")
+ (position . 3079))
+("[Peer-gRPC] gossip server"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/gossip/service/gossip_service.go")
+ (front-context-string . "deliveryFactoryI")
+ (rear-context-string . " error)\n}\n\ntype ")
+ (position . 2316))
+("[Peer-gRPC] auth filter servers before endorser"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/handlers/auth/auth.go")
+ (front-context-string . "ChainFilters(end")
+ (rear-context-string . "e endorser\nfunc ")
+ (position . 537))
+("[Peer-gRPC] Endorser server"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/endorser/endorser.go")
+ (front-context-string . "Endorser struct ")
+ (rear-context-string . "ssProposal\ntype ")
+ (position . 4343))
+("[Peer-gRPC] Admin server"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/admin/admin.go")
+ (front-context-string . "ServerAdmin stru")
+ (rear-context-string . "r the Peer\ntype ")
+ (position . 1123))
+("[Peer-gRPC] ChaincodeSupport server"
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/chaincode_support.go")
+ (front-context-string . "ChaincodeSupport")
+ (rear-context-string . " the Peer.\ntype ")
+ (position . 1085))
+("[Peer-gRPC] delivery server"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/peer/deliverevents.go")
  (front-context-string . "server struct {\n")
  (rear-context-string . "ver server\ntype ")
@@ -12,131 +42,6 @@
  (front-context-string . "EventsServer str")
  (rear-context-string . "er service\ntype ")
  (position . 392))
-("[fabric] policy default"
- (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/scc/lscc/lscc.go")
- (front-context-string . "gnedByAnyMember(")
- (rear-context-string . "p := cauthdsl.Si")
- (position . 22405))
-("[fabric] endorsement policy"
- (filename . "~/Data/devel/src/github.com/hyperledger/fabric/common/cauthdsl/cauthdsl_builder.go")
- (front-context-string . "unc signedByAnyO")
- (rear-context-string . " type policies\nf")
- (position . 4574))
-("[fabric] serialized next triggered handle"
- (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/handler.go")
- (front-context-string . "/ Defer the dere")
- (rear-context-string . "<-msgAvail:\n			/")
- (position . 12834))
-("[fabric] serialized channel was created for invoking CC"
- (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/container/inproccontroller/inproccontroller.go")
- (front-context-string . "imStartInProc(en")
- (rear-context-string . "\n		}\n		err := sh")
- (position . 3517))
-("[fabric] get peer addresses"
- (filename . "~/Data/devel/src/github.com/hyperledger/fabric/peer/chaincode/common.go")
- (front-context-string . "eer, peerChannel")
- (rear-context-string . "tring{}\n			for p")
- (position . 9990))
-("[fabric] Processing endorments"
- (filename . "~/Data/devel/src/github.com/hyperledger/fabric/peer/chaincode/common.go")
- (front-context-string . "ts {\n		proposalR")
- (rear-context-string . "ge endorserClien")
- (position . 16186))
-("[fabric] Endorser interface"
- (filename . "~/Data/devel/src/github.com/hyperledger/fabric/protos/peer/peer.pb.go")
- (front-context-string . "type EndorserSer")
- (rear-context-string . "dorser service\n\n")
- (position . 2609))
-("[fabric] system chaincodes bootstratp"
- (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/shim/chaincode.go")
- (front-context-string . "nProc(env []stri")
- (rear-context-string . "des.\nfunc StartI")
- (position . 6669))
-("[steem] operation_validate"
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/protocol/include/steem/protocol/operation_util_impl.hpp")
- (front-context-string . "eration_validate")
- (rear-context-string . "       \\\nvoid op")
- (position . 1471))
-("[steem] transaction validate"
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/protocol/transaction.cpp")
- (front-context-string . "void transaction")
- (rear-context-string . "nc.result();\n}\n\n")
- (position . 710))
-("[steem] genesis_init"
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/chain/database.cpp")
- (front-context-string . "\n   {\n      stru")
- (rear-context-string . "upply )\n{\n   try")
- (position . 94167))
-("[steem] create_vesting"
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/chain/database.cpp")
- (front-context-string . "set liquid, bool")
- (rear-context-string . "& to_account, as")
- (position . 37778))
-("[steem] on_block"
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/legacy_plugins/blockchain_statistics/blockchain_statistics_plugin.cpp")
- (front-context-string . "\n      auto open")
- (rear-context-string . "d_buckets )\n   {")
- (position . 7666))
-("[steem] create bucket"
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/legacy_plugins/blockchain_statistics/blockchain_statistics_plugin.cpp")
- (front-context-string . "base();\n\n   if( ")
- (rear-context-string . " db = _self.data")
- (position . 6941))
-("[steem] bucket_object for blockchain statistics"
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/legacy_plugins/blockchain_statistics/include/steem/blockchain_statistics/blockchain_statistics_plugin.hpp")
- (front-context-string . "   share_type   ")
- (rear-context-string . "count transfers\n")
- (position . 2840))
-("[steem] most of evaluator was defined."
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/chain/steem_evaluator.cpp")
- (front-context-string . "{ try {\n   if( _")
- (rear-context-string . "_operation& o )\n")
- (position . 21411))
-("[steem] do_apply"
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/chain/include/steem/chain/evaluator.hpp")
- (front-context-string . "y(op);\n      }\n\n")
- (rear-context-string . "   eval->do_appl")
- (position . 1038))
-("[steem] apply_operation(pre->eval->post)"
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/chain/database.cpp")
- (front-context-string . "operation_notifi")
- (rear-context-string . "ation& op)\n{\n   ")
- (position . 116429))
-("[steem] signal notify"
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/chain/database.cpp")
- (front-context-string . "_signal, note )\n")
- (rear-context-string . "_apply_operation")
- (position . 33688))
-("[steem] operator handler signal"
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/chain/include/steem/chain/database.hpp")
- (front-context-string . "nal<void(const o")
- (rear-context-string . "         fc::sig")
- (position . 27849))
-("[steem] operation handler registration"
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/plugins/follow/follow_plugin.cpp")
- (front-context-string . "my->_pre_apply_o")
- (rear-context-string . "reter );\n\n      ")
- (position . 12102))
-("[steem] operation_validate define"
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/protocol/include/steem/protocol/operation_util_impl.hpp")
- (front-context-string . "STEEM_DEFINE_OPE")
- (rear-context-string . "type\n//\n#define ")
- (position . 1164))
-("[steem] definitions of operations"
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/protocol/include/steem/protocol/steem_operations.hpp")
- (front-context-string . "struct account_c")
- (rear-context-string . " protocol {\n\n   ")
- (position . 291))
-("[steem] all of operations"
- (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/protocol/steem_operations.cpp")
- (front-context-string . "namespace steem ")
- (rear-context-string . "clude <locale>\n\n")
- (position . 145))
-("[fabric] Provider contains vbdProvider(versionedDB)"
- (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/kv_ledger_provider.go")
- (front-context-string . "der := &Provider")
- (rear-context-string . "ialized\")\n	provi")
- (position . 2774))
 ("[fabric] Creating LedgerProvider with ledgerstorage"
  (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/kv_ledger_provider.go")
  (front-context-string . "dstate.NewCommon")
@@ -147,337 +52,222 @@
  (front-context-string . "GetDBHandle(id)\n")
  (rear-context-string . "ionedDBProvider.")
  (position . 1563))
-("[fabric] Interface of GetDBHandle"
- (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statedb.go")
- (front-context-string . "DBHandle(id stri")
- (rear-context-string . "VersionedDB\n	Get")
- (position . 452))
-("[fabric] GetLedger for storage db"
- (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/peer/peer.go")
- (front-context-string . "Ledger(cid strin")
- (rear-context-string . "reated.\nfunc Get")
- (position . 12762))
-("[fabric] ledger Open and initialize"
- (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/peer/peer.go")
- (front-context-string . "rmgmt.OpenLedger")
- (rear-context-string . "ger, err = ledge")
- (position . 6060))
-("[fabric] Singleton Initialize of ledgerProvider"
- (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/ledgermgmt/ledger_mgmt.go")
- (front-context-string . "alize(customTxPr")
- (rear-context-string . "rmgmt\nfunc Initi")
- (position . 1601))
-("[fabric] Creating a new kvledger Provider"
- (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/ledgermgmt/ledger_mgmt.go")
- (front-context-string . "NewProvider()\n	i")
- (rear-context-string . "err := kvledger.")
- (position . 2120))
-("[fabric] loading Storage handler for versionDB with GetDBHandle"
- (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/kv_ledger_provider.go")
- (front-context-string . "GetDBHandle(ledg")
- (rear-context-string . "der.vdbProvider.")
- (position . 5548))
-("[fabric] HandleChaincodeDeploy practical implemention"
- (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/privacyenabledstate/common_storage_db.go")
- (front-context-string . "eChaincodeDeploy")
- (rear-context-string . "StorageDB) Handl")
- (position . 7933))
-("[hyperledger/fabric] Starting of ProcessIndexs(CreateIndex)"
- (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/privacyenabledstate/common_storage_db.go")
- (front-context-string . "pable.ProcessInd")
- (rear-context-string . "		err := indexCa")
- (position . 8857))
-("[hyperledger/fabric] Interface of ProcessIndexesForChaincodeDeploy"
- (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statedb.go")
- (front-context-string . "ProcessIndexesFo")
- (rear-context-string . "BType() string\n	")
- (position . 3465))
-("[hyperledger/fabric] Starting point of CreateIndex of Couch DB"
- (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go")
- (front-context-string . "nedDB) ProcessIn")
- (rear-context-string . "unc (vdb *Versio")
- (position . 4057))
-("[hyperledger/fabric] Handling couch DB indexes from deploying chaincode"
- (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statedb.go")
- (front-context-string . "ssIndexesForChai")
- (rear-context-string . "() string\n	Proce")
- (position . 3470))
-("[hyperledger/fabric] CouchDB create index"
- (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/util/couchdb/couchdb.go")
- (front-context-string . "ateIndex(indexde")
- (rear-context-string . "uchDatabase) Cre")
- (position . 33504))
-("Make genesis block "
- (filename . "~/Data/devel/src/github.com/hyperledger/fabric/common/genesis/genesis.go")
- (front-context-string . "payloadChannelHe")
- (rear-context-string . "lock, error) {\n	")
- (position . 1338))
-("X.509 Verification error was cased from here."
- (filename . "/usr/local/Cellar/go/1.9.2/libexec/src/crypto/x509/verify.go")
- (front-context-string . "w) == 0 {\n		retu")
- (rear-context-string . "ms.\n	if len(c.Ra")
- (position . 8896))
-("installChaincode"
- (filename . "~/Data/devel/src/github.com/SharedMocha/fabric-starter/network.sh")
- (front-context-string . "Chaincode() {\n  ")
- (rear-context-string . "function install")
- (position . 11720))
-("networks.sh -m up"
- (filename . "~/Data/devel/src/github.com/SharedMocha/fabric-starter/network.sh")
- (front-context-string . "if [ \"${MODE}\" =")
- (rear-context-string . ";;\n  esac\ndone\n\n")
- (position . 22783))
-("createJoinInstantiateWarmUp"
- (filename . "~/Data/devel/src/github.com/SharedMocha/fabric-starter/network.sh")
- (front-context-string . "InstantiateWarmU")
- (rear-context-string . "ction createJoin")
- (position . 13727))
-("Hyperledger Fabric ConfigTXGen : main"
- (filename . "~/Data/devel/src/github.com/hyperledger/fabric/common/configtx/tool/configtxgen/main.go")
- (front-context-string . "func main() {\n	v")
- (rear-context-string . "\n	return nil\n}\n\n")
- (position . 11427))
-("Hyperledger Fabric Orderer : main"
- (filename . "~/Data/devel/src/github.com/hyperledger/fabric/orderer/main.go")
- (front-context-string . "func main() {\n\n	")
- (rear-context-string . "nformation\")\n)\n\n")
- (position . 1959))
-("Hyperledger Fabric Peer : main"
- (filename . "~/Data/devel/src/github.com/hyperledger/fabric/peer/main.go")
- (front-context-string . "	// For environm")
- (rear-context-string . "\n\nfunc main() {\n")
- (position . 1984))
-("[fabric] policy default<2>"
+("[fabric] policy default<4>"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/scc/lscc/lscc.go")
  (front-context-string . "gnedByAnyMember(")
  (rear-context-string . "p := cauthdsl.Si")
  (position . 22405))
-("[fabric] endorsement policy<2>"
+("[fabric] endorsement policy<4>"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/common/cauthdsl/cauthdsl_builder.go")
  (front-context-string . "unc signedByAnyO")
  (rear-context-string . " type policies\nf")
  (position . 4574))
-("[fabric] serialized next triggered handle<2>"
+("[fabric] serialized next triggered handle<4>"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/handler.go")
  (front-context-string . "/ Defer the dere")
  (rear-context-string . "<-msgAvail:\n			/")
  (position . 12834))
-("[fabric] serialized channel was created for invoking CC<2>"
+("[fabric] serialized channel was created for invoking CC<4>"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/container/inproccontroller/inproccontroller.go")
  (front-context-string . "imStartInProc(en")
  (rear-context-string . "\n		}\n		err := sh")
  (position . 3517))
-("[fabric] get peer addresses<2>"
+("[fabric] get peer addresses<4>"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/peer/chaincode/common.go")
  (front-context-string . "eer, peerChannel")
  (rear-context-string . "tring{}\n			for p")
  (position . 9990))
-("[fabric] Processing endorments<2>"
+("[fabric] Processing endorments<4>"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/peer/chaincode/common.go")
  (front-context-string . "ts {\n		proposalR")
  (rear-context-string . "ge endorserClien")
  (position . 16186))
-("[fabric] Endorser interface<2>"
+("[fabric] Endorser interface<4>"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/protos/peer/peer.pb.go")
  (front-context-string . "type EndorserSer")
  (rear-context-string . "dorser service\n\n")
  (position . 2609))
-("[fabric] system chaincodes bootstratp<2>"
+("[fabric] system chaincodes bootstratp<4>"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/shim/chaincode.go")
  (front-context-string . "nProc(env []stri")
  (rear-context-string . "des.\nfunc StartI")
  (position . 6669))
-("[steem] operation_validate<2>"
+("[steem] operation_validate<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/protocol/include/steem/protocol/operation_util_impl.hpp")
  (front-context-string . "eration_validate")
  (rear-context-string . "       \\\nvoid op")
  (position . 1471))
-("[steem] transaction validate<2>"
+("[steem] transaction validate<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/protocol/transaction.cpp")
  (front-context-string . "void transaction")
  (rear-context-string . "nc.result();\n}\n\n")
  (position . 710))
-("[steem] genesis_init<2>"
+("[steem] genesis_init<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/chain/database.cpp")
  (front-context-string . "\n   {\n      stru")
  (rear-context-string . "upply )\n{\n   try")
  (position . 94167))
-("[steem] create_vesting<2>"
+("[steem] create_vesting<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/chain/database.cpp")
  (front-context-string . "set liquid, bool")
  (rear-context-string . "& to_account, as")
  (position . 37778))
-("[steem] on_block<2>"
+("[steem] on_block<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/legacy_plugins/blockchain_statistics/blockchain_statistics_plugin.cpp")
  (front-context-string . "\n      auto open")
  (rear-context-string . "d_buckets )\n   {")
  (position . 7666))
-("[steem] create bucket<2>"
+("[steem] create bucket<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/legacy_plugins/blockchain_statistics/blockchain_statistics_plugin.cpp")
  (front-context-string . "base();\n\n   if( ")
  (rear-context-string . " db = _self.data")
  (position . 6941))
-("[steem] bucket_object for blockchain statistics<2>"
+("[steem] bucket_object for blockchain statistics<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/legacy_plugins/blockchain_statistics/include/steem/blockchain_statistics/blockchain_statistics_plugin.hpp")
  (front-context-string . "   share_type   ")
  (rear-context-string . "count transfers\n")
  (position . 2840))
-("[steem] most of evaluator was defined.<2>"
+("[steem] most of evaluator was defined.<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/chain/steem_evaluator.cpp")
  (front-context-string . "{ try {\n   if( _")
  (rear-context-string . "_operation& o )\n")
  (position . 21411))
-("[steem] do_apply<2>"
+("[steem] do_apply<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/chain/include/steem/chain/evaluator.hpp")
  (front-context-string . "y(op);\n      }\n\n")
  (rear-context-string . "   eval->do_appl")
  (position . 1038))
-("[steem] apply_operation(pre->eval->post)<2>"
+("[steem] apply_operation(pre->eval->post)<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/chain/database.cpp")
  (front-context-string . "operation_notifi")
  (rear-context-string . "ation& op)\n{\n   ")
  (position . 116429))
-("[steem] signal notify<2>"
+("[steem] signal notify<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/chain/database.cpp")
  (front-context-string . "_signal, note )\n")
  (rear-context-string . "_apply_operation")
  (position . 33688))
-("[steem] operator handler signal<2>"
+("[steem] operator handler signal<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/chain/include/steem/chain/database.hpp")
  (front-context-string . "nal<void(const o")
  (rear-context-string . "         fc::sig")
  (position . 27849))
-("[steem] operation handler registration<2>"
+("[steem] operation handler registration<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/plugins/follow/follow_plugin.cpp")
  (front-context-string . "my->_pre_apply_o")
  (rear-context-string . "reter );\n\n      ")
  (position . 12102))
-("[steem] operation_validate define<2>"
+("[steem] operation_validate define<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/protocol/include/steem/protocol/operation_util_impl.hpp")
  (front-context-string . "STEEM_DEFINE_OPE")
  (rear-context-string . "type\n//\n#define ")
  (position . 1164))
-("[steem] definitions of operations<2>"
+("[steem] definitions of operations<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/protocol/include/steem/protocol/steem_operations.hpp")
  (front-context-string . "struct account_c")
  (rear-context-string . " protocol {\n\n   ")
  (position . 291))
-("[steem] all of operations<2>"
+("[steem] all of operations<4>"
  (filename . "~/Data/devel/src/github.com/steemit/steem/libraries/protocol/steem_operations.cpp")
  (front-context-string . "namespace steem ")
  (rear-context-string . "clude <locale>\n\n")
  (position . 145))
-("[fabric] Provider contains vbdProvider(versionedDB)<2>"
+("[fabric] Provider contains vbdProvider(versionedDB)<4>"
  (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/kv_ledger_provider.go")
  (front-context-string . "der := &Provider")
  (rear-context-string . "ialized\")\n	provi")
  (position . 2774))
-("[fabric] Creating LedgerProvider with ledgerstorage<2>"
- (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/kv_ledger_provider.go")
- (front-context-string . "dstate.NewCommon")
- (rear-context-string . ":= privacyenable")
- (position . 2388))
-("[fabric] Calling GetDBHandle<2>"
- (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/privacyenabledstate/common_storage_db.go")
- (front-context-string . "GetDBHandle(id)\n")
- (rear-context-string . "ionedDBProvider.")
- (position . 1563))
-("[fabric] Interface of GetDBHandle<2>"
+("[fabric] Interface of GetDBHandle<4>"
  (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statedb.go")
  (front-context-string . "DBHandle(id stri")
  (rear-context-string . "VersionedDB\n	Get")
  (position . 452))
-("[fabric] GetLedger for storage db<2>"
+("[fabric] GetLedger for storage db<4>"
  (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/peer/peer.go")
  (front-context-string . "Ledger(cid strin")
  (rear-context-string . "reated.\nfunc Get")
  (position . 12762))
-("[fabric] ledger Open and initialize<2>"
+("[fabric] ledger Open and initialize<4>"
  (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/peer/peer.go")
  (front-context-string . "rmgmt.OpenLedger")
  (rear-context-string . "ger, err = ledge")
  (position . 6060))
-("[fabric] Singleton Initialize of ledgerProvider<2>"
+("[fabric] Singleton Initialize of ledgerProvider<4>"
  (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/ledgermgmt/ledger_mgmt.go")
  (front-context-string . "alize(customTxPr")
  (rear-context-string . "rmgmt\nfunc Initi")
  (position . 1601))
-("[fabric] Creating a new kvledger Provider<2>"
+("[fabric] Creating a new kvledger Provider<4>"
  (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/ledgermgmt/ledger_mgmt.go")
  (front-context-string . "NewProvider()\n	i")
  (rear-context-string . "err := kvledger.")
  (position . 2120))
-("[fabric] loading Storage handler for versionDB with GetDBHandle<2>"
+("[fabric] loading Storage handler for versionDB with GetDBHandle<4>"
  (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/kv_ledger_provider.go")
  (front-context-string . "GetDBHandle(ledg")
  (rear-context-string . "der.vdbProvider.")
  (position . 5548))
-("[fabric] HandleChaincodeDeploy practical implemention<2>"
+("[fabric] HandleChaincodeDeploy practical implemention<4>"
  (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/privacyenabledstate/common_storage_db.go")
  (front-context-string . "eChaincodeDeploy")
  (rear-context-string . "StorageDB) Handl")
  (position . 7933))
-("[hyperledger/fabric] Starting of ProcessIndexs(CreateIndex)<2>"
- (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/privacyenabledstate/common_storage_db.go")
- (front-context-string . "pable.ProcessInd")
- (rear-context-string . "		err := indexCa")
- (position . 8857))
-("[hyperledger/fabric] Interface of ProcessIndexesForChaincodeDeploy<2>"
+("[hyperledger/fabric] Interface of ProcessIndexesForChaincodeDeploy<4>"
  (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statedb.go")
  (front-context-string . "ProcessIndexesFo")
  (rear-context-string . "BType() string\n	")
  (position . 3465))
-("[hyperledger/fabric] Starting point of CreateIndex of Couch DB<2>"
+("[hyperledger/fabric] Starting point of CreateIndex of Couch DB<4>"
  (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go")
  (front-context-string . "nedDB) ProcessIn")
  (rear-context-string . "unc (vdb *Versio")
  (position . 4057))
-("[hyperledger/fabric] Handling couch DB indexes from deploying chaincode<2>"
+("[hyperledger/fabric] Handling couch DB indexes from deploying chaincode<4>"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statedb.go")
  (front-context-string . "ssIndexesForChai")
  (rear-context-string . "() string\n	Proce")
  (position . 3470))
-("[hyperledger/fabric] CouchDB create index<2>"
+("[hyperledger/fabric] CouchDB create index<4>"
  (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/ledger/util/couchdb/couchdb.go")
  (front-context-string . "ateIndex(indexde")
  (rear-context-string . "uchDatabase) Cre")
  (position . 33504))
-("Make genesis block <2>"
+("Make genesis block <4>"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/common/genesis/genesis.go")
  (front-context-string . "payloadChannelHe")
  (rear-context-string . "lock, error) {\n	")
  (position . 1338))
-("X.509 Verification error was cased from here.<2>"
+("X.509 Verification error was cased from here.<4>"
  (filename . "/usr/local/Cellar/go/1.9.2/libexec/src/crypto/x509/verify.go")
  (front-context-string . "w) == 0 {\n		retu")
  (rear-context-string . "ms.\n	if len(c.Ra")
  (position . 8896))
-("installChaincode<2>"
+("installChaincode<4>"
  (filename . "~/Data/devel/src/github.com/SharedMocha/fabric-starter/network.sh")
  (front-context-string . "Chaincode() {\n  ")
  (rear-context-string . "function install")
  (position . 11720))
-("networks.sh -m up<2>"
+("networks.sh -m up<4>"
  (filename . "~/Data/devel/src/github.com/SharedMocha/fabric-starter/network.sh")
  (front-context-string . "if [ \"${MODE}\" =")
  (rear-context-string . ";;\n  esac\ndone\n\n")
  (position . 22783))
-("createJoinInstantiateWarmUp<2>"
+("createJoinInstantiateWarmUp<4>"
  (filename . "~/Data/devel/src/github.com/SharedMocha/fabric-starter/network.sh")
  (front-context-string . "InstantiateWarmU")
  (rear-context-string . "ction createJoin")
  (position . 13727))
-("Hyperledger Fabric ConfigTXGen : main<2>"
+("Hyperledger Fabric ConfigTXGen : main<4>"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/common/configtx/tool/configtxgen/main.go")
  (front-context-string . "func main() {\n	v")
  (rear-context-string . "\n	return nil\n}\n\n")
  (position . 11427))
-("Hyperledger Fabric Orderer : main<2>"
+("Hyperledger Fabric Orderer : main<4>"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/orderer/main.go")
  (front-context-string . "func main() {\n\n	")
  (rear-context-string . "nformation\")\n)\n\n")
  (position . 1959))
-("Hyperledger Fabric Peer : main<2>"
+("Hyperledger Fabric Peer : main<4>"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/peer/main.go")
  (front-context-string . "	// For environm")
  (rear-context-string . "\n\nfunc main() {\n")
