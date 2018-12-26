@@ -90,6 +90,7 @@ rustup toolchain add stable
 rustup component add rust-src
 cargo install racer
 cargo install rustfmt
+cargo install cargo-edit
 echo "source $HOME/.cargo/env" >> ~/.zshrc
 echo "export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src" >> ~/.zshrc
 
