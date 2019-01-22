@@ -277,7 +277,7 @@
    (quote
     (("/" "/")
      ("~/Data/devel/src" "/Devel")
-     ("~/Data/OneDrive - SmartM2M" "/Cloud")
+     ("~/Data/cloud" "/Cloud")
      ("~/Data" "/Data"))))
  '(ecb-stealthy-tasks-delay 30)
  '(ecb-tree-incremental-search (quote prefix))

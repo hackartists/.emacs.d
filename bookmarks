@@ -3,52 +3,52 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("[fabric/cs] HandleChaincodeStream"
- (filename . "/Volumes/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/chaincode_support.go")
- (front-context-string . "leChaincodeStrea")
- (rear-context-string . "odeSupport) Hand")
- (position . 5677))
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/chaincode_support.go")
+ (front-context-string . "Support) HandleC")
+ (rear-context-string . "c (cs *Chaincode")
+ (position . 5664))
 ("[fabric/stream] interceptedStream"
- (filename . "/Volumes/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/accesscontrol/interceptor.go")
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/accesscontrol/interceptor.go")
  (front-context-string . " interceptedStre")
  (rear-context-string . "ster(is)\n}\n\ntype")
  (position . 1361))
 ("[fabric/cc] Handler.handleTransaction.Invoke()"
- (filename . "/Volumes/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/shim/handler.go")
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/shim/handler.go")
  (front-context-string . "nvoke(stub)\n\n		/")
  (rear-context-string . " := handler.cc.I")
  (position . 9706))
 ("[fabric/stream] InProcStream"
- (filename . "/Volumes/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/shim/inprocstream.go")
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/shim/inprocstream.go")
  (front-context-string . "func (s *inProcS")
  (rear-context-string . "{recv, send}\n}\n\n")
  (position . 1151))
 ("[fabric/endorser] Endorser.ProcessProposal"
- (filename . "/Volumes/Data/devel/src/github.com/hyperledger/fabric/core/endorser/endorser.go")
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/endorser/endorser.go")
  (front-context-string . "func (e *Endorse")
  (rear-context-string . "ss the Proposal\n")
  (position . 17460))
 ("[fabric/endorser] Endorser.SimulateProposal"
- (filename . "/Volumes/Data/devel/src/github.com/hyperledger/fabric/core/endorser/endorser.go")
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/endorser/endorser.go")
  (front-context-string . "roposal(txParams")
  (rear-context-string . "orser) SimulateP")
  (position . 8871))
 ("[fabric/Tx] Handler.Execute"
- (filename . "/Volumes/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/handler.go")
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/handler.go")
  (front-context-string . "te(txParams *ccp")
  (rear-context-string . " *Handler) Execu")
  (position . 41971))
 ("[fabric/TX] Handler.HandleTransaction"
- (filename . "/Volumes/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/handler.go")
+ (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/chaincode/handler.go")
  (front-context-string . "func (h *Handler")
  (rear-context-string . "error messages.\n")
  (position . 9052))
 ("[fabric/Handler] Creating TX Context"
- (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/chaincode/handler.go")
+ (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/chaincode/handler.go")
  (front-context-string . "Create(ctxt, msg")
  (rear-context-string . ":= h.TXContexts.")
  (position . 32516))
 ("[fabric/cc] ChaincodeStub"
- (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/chaincode/shim/chaincode.go")
+ (filename . "~/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/chaincode/shim/chaincode.go")
  (front-context-string . "type ChaincodeSt")
  (rear-context-string . "ing of\n// APIs.\n")
  (position . 1323))
