@@ -1,8 +1,18 @@
-;;;; Emacs Bookmark Format Version 1 ;;;;
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("[fabric/ledger] txmgr.NewTxSimulator"
+(("[fabric/Handler] Creating TX Context"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/chaincode/handler.go")
+ (front-context-string . "Create(ctxt, msg")
+ (rear-context-string . ":= h.TXContexts.")
+ (position . 32516))
+("[fabric/cc] ChaincodeStub"
+ (filename . "/Volumes/Data/devel/src/gitlab.smartm2m.co.kr/task/sg-steem/vendor/github.com/hyperledger/fabric/core/chaincode/shim/chaincode.go")
+ (front-context-string . "type ChaincodeSt")
+ (rear-context-string . "ing of\n// APIs.\n")
+ (position . 1323))
+("[fabric/ledger] txmgr.NewTxSimulator"
  (filename . "~/Data/devel/src/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/txmgr/lockbasedtxmgr/lockbased_txmgr.go")
  (front-context-string . "func (txmgr *Loc")
  (rear-context-string . " `txmgmt.TxMgr`\n")

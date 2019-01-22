@@ -3,16 +3,24 @@
 
 (require 'flycheck)
 (flycheck-define-checker go-checker
-  "A Go syntax checker."
-  :command ("go" "build")
+  "A Go style checker using Golint.
+
+See URL `https://github.com/golang/lint'."
+  :command ("golint" source)
   :error-patterns
-  ((error line-start (file-name) ":" line ": " (message) line-end))
+  ((warning line-start (file-name) ":" line ":" column ": " (message) line-end))
   :modes go-mode
-  )
+  :next-checkers (go-vet
+                  ;; Fall back, if go-vet doesn't exist
+                  go-build go-test go-errcheck go-unconvert go-megacheck))
 
 (defun my-go-mode-hook()
   (require 'company-go)
+  (require 'golint)
+  (require 'govet)
+
   (add-hook 'before-save-hook 'gofmt-before-save)
+  (add-hook 'completion-at-point-functions 'go-complete-at-point)
 
   (setq gofmt-command "goimports")
   (if (not (string-match "go" compile-command))
