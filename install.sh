@@ -10,15 +10,23 @@
 ## graphviz : ML library
 ## sourcekitten : swift
 ## aspell : ispell-mode
+
+export emacs_dir=`pwd`
+
+## Homebrew
 cat .ctags >> ~/.ctags
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/pwnartist/oh-my-profiles/master/install.sh)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew bundle
 brew link --overwrite ctags
 
-export emacs_dir=`pwd`
+## ZSH installation and configurations
+brew install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
 
+## oh-my-profile
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/pwnartist/oh-my-profiles/master/install.sh)"
 mkdir -p $HOME/data/devel/src
 cd $HOME/data/devel
 addpath GOPATH

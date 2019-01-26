@@ -61,7 +61,7 @@ ZSH_THEME="hackartist"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx emacs docker docker-compose)
+plugins=(git osx emacs docker docker-compose zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
