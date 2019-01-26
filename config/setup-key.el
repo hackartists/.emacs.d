@@ -20,6 +20,8 @@
 
 (global-set-key (kbd "C-t") 'helm-mt)
 
+(global-set-key (kbd "C-x g") 'magit-status)
+
 ;; (global-set-key (kbd "M-.") 'sp-forward-slurp-sexp)
 ;; (global-set-key (kbd "M-,") 'sp-forward-barf-sexp)
 (global-set-key (kbd "<home>") 'move-beginning-of-line)

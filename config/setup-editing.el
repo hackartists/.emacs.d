@@ -296,6 +296,7 @@ Position the cursor at it's beginning, according to the current mode."
   (forward-line -1)
   (indent-according-to-mode))
 
+(add-hook 'after-save-hook 'magit-after-save-refresh-status t)
 ;;(global-set-key (kbd "M-o") 'prelude-smart-open-line)
 ;;(global-set-key (kbd "M-o") 'open-line)
 
