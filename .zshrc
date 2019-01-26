@@ -94,7 +94,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+if [ -f "/usr/local/opt/nvm/nvm.sh" ]
+then 
+    . "/usr/local/opt/nvm/nvm.sh"
+fi
 source $HOME/.cargo/env
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
@@ -102,6 +105,7 @@ export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 ##export JAVA_HOME=`/usr/libexec/java_home -v 9`
 export JAVA_HOME=`/usr/libexec/java_home -v 11`
 export PATH="$JAVA_HOME/bin:/usr/local/opt/binutils/bin:$PATH"
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
 export ANDROID_NDK_ROOT="/usr/local/Caskroom/android-ndk/18/android-ndk-r18"
 export ANDROID_NDK="$ANDROID_NDK_ROOT"
 export ANDROID_TOOLCHAIN="/usr/local/Caskroom/android-ndk/18/android-ndk-r18/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin"
