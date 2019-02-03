@@ -1,5 +1,9 @@
 (require 'android-mode)
-(custom-set-variables '(android-mode-sdk-dir "~/Data/sdks/android"))
+
+(add-hook 'android-mode-hook
+		  (lambda ()
+			(custom-set-variables '(android-mode-sdk-dir "~/Data/sdks/android"))
+			))
 
 (add-hook 'gud-mode-hook
           (lambda ()

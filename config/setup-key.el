@@ -15,6 +15,9 @@
 (global-set-key (kbd "<s-left>") 'tabbar-backward)
 (global-set-key (kbd "<s-right>") 'tabbar-forward)
 (global-set-key (kbd "s-f") 'helm-swoop-from-evil-search)
+(global-set-key (kbd "s-=") 'text-scale-increase)
+(global-set-key (kbd "s--") 'text-scale-decrease)
+
 
 (global-set-key (kbd "C-SPC") 'company-complete)
 

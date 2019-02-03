@@ -6,7 +6,7 @@
 (require 'semantic/wisent/java-tags)
 
 (global-semanticdb-minor-mode 1)
-;;(global-semantic-idle-scheduler-mode 1)
+(global-semantic-idle-scheduler-mode 1)
 (setq semantic-load-turn-everything-on t)
 (setq semantic-default-submodes '(;;global-semantic-idle-scheduler-mode
                                   global-semanticdb-minor-mode
