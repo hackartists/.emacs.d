@@ -209,7 +209,7 @@
 ;;(require 'setup-todo)
 (require 'setup-json)
 (require 'setup-javascript)
-;;(require 'setup-java)
+(require 'setup-java)
 (require 'setup-misc)
 (require 'setup-swift)
 (require 'setup-csv)
@@ -282,16 +282,22 @@
  '(ecb-tree-incremental-search (quote prefix))
  '(ecb-use-speedbar-instead-native-tree-buffer nil)
  '(global-diff-hl-mode t)
- '(jdee-jdk-registry
-   (quote
-	(("1.8" . "/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"))))
- '(jdee-server-dir "/Users/hackartist/.emacs.d/refs/jdee-server")
+ '(jdee-bug-debugger-host-address "localhost:5005")
+ '(jdee-jdk
+   (quote /usr/local/Cellar/atlassian-plugin-sdk/6\.3\.12/libexec/repository))
+ '(jdee-maven-build-phase
+   "com.atlassian.maven.plugins:maven-amps-dispatcher-plugin:6.3.21:debug -gs /usr/local/Cellar/atlassian-plugin-sdk/6.3.12/libexec/apache-maven-3.2.1/conf/settings.xml")
+ '(jdee-server-dir "~/.emacs.d/refs/jdee-server")
+ '(jdibug-connect-hosts (quote ("localhost:5005")))
+ '(meghanada-debug t)
+ '(meghanada-server-remote-debug t)
  '(package-selected-packages
    (quote
-	(jdee web-mode golint go-snippets go-complete govet rustic highlight-blocks rainbow-blocks typescript react-snippets flycheck-swift company-sourcekit cargo racer flycheck-rust rust-mode tide gulp-task-runner typescript-mode nodejs-repl helm-xref helm-ag gorepl-mode project-explorer typo visual-regexp bm rainbow-delimiters helm-mt elscreen tabbar multi-term toml-mode dockerfile-mode helm-core helm swift-mode flycheck-swiftlint flycheck-swift3 bazel-mode osx-plist xcode-project protobuf-mode ecb mvn csv-mode flycheck ctags flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json rfringe diff-hl vdiff go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu)))
+	(lsp-java eclim meghanada company-lsp dap-mode hydra treemacs lsp-ui lsp-mode helm-jira org-jira jira-markup-mode jira web-mode golint go-snippets go-complete govet rustic highlight-blocks rainbow-blocks typescript react-snippets flycheck-swift company-sourcekit cargo racer flycheck-rust rust-mode tide gulp-task-runner typescript-mode nodejs-repl helm-xref helm-ag gorepl-mode project-explorer typo visual-regexp bm rainbow-delimiters helm-mt elscreen tabbar multi-term toml-mode dockerfile-mode helm-core helm swift-mode flycheck-swiftlint flycheck-swift3 bazel-mode osx-plist xcode-project protobuf-mode ecb mvn csv-mode flycheck ctags flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json rfringe diff-hl vdiff go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu)))
  '(projectile-project-root-files
    (quote
-	("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS" ".dropbox"))))
+	("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS" ".dropbox")))
+ '(treemacs-position (quote right)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
