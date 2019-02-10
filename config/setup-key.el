@@ -9,6 +9,8 @@
 
 (global-set-key [C-up] 'windmove-up)
 (global-set-key [C-down] 'windmove-down)
+(global-set-key (kbd "<s-up>") 'windmove-up)
+(global-set-key (kbd "<s-down>") 'windmove-down)
 (global-set-key [C-left] 'windmove-left)
 (global-set-key [C-right] 'windmove-right)
 (global-set-key (kbd "<f5>") 'compile)
