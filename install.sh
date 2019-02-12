@@ -12,21 +12,20 @@
 ## aspell : ispell-mode
 
 export emacs_dir=`pwd`
-
+sudo xcodebuild -license accept
 ## Homebrew
 cat .ctags >> ~/.ctags
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew bundle
-brew link --overwrite ctags
+brew install zsh
 
 ## ZSH installation and configurations
-brew install zsh
+
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
 
 ## oh-my-profile
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/pwnartist/oh-my-profiles/master/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/hackartists/oh-my-profiles/master/install.sh)"
 mkdir -p $HOME/data/devel/src
 cd $HOME/data/devel
 addpath GOPATH
@@ -38,6 +37,12 @@ cd $emacs_dir
 
 addbinpath $GOPATH/bin
 addbinpath /usr/local/texlive/2017/bin/x86_64-darwin
+
+brew cask install homebrew/cask-versions/java8
+brew cask install xquartz
+brew bundle
+brew link --overwrite ctags
+
 
 ## eralng setting
 ln -s /usr/local/opt/erlang/lib/erlang/lib/tools-* /usr/local/opt/erlang/lib/erlang/lib/tools

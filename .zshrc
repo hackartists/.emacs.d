@@ -1,11 +1,11 @@
-source /Users/hackartist/.oh-my-profiles/init.profile
+source $HOME/.oh-my-profiles/init.profile
 export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/hackartist/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -111,3 +111,5 @@ export ANDROID_NDK="$ANDROID_NDK_ROOT"
 export ANDROID_TOOLCHAIN="/usr/local/Caskroom/android-ndk/18/android-ndk-r18/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin"
 export PATH="$ANDROID_TOOLCHAIN:$PATH"
 
+source /Users/jongseokchoi/.cargo/env
+export RUST_SRC_PATH=/Users/jongseokchoi/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
