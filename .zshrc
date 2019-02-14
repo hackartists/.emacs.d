@@ -111,5 +111,5 @@ export ANDROID_NDK="$ANDROID_NDK_ROOT"
 export ANDROID_TOOLCHAIN="/usr/local/Caskroom/android-ndk/18/android-ndk-r18/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin"
 export PATH="$ANDROID_TOOLCHAIN:$PATH"
 
-source /Users/jongseokchoi/.cargo/env
+source $HOME/.cargo/env
 export RUST_SRC_PATH=/Users/jongseokchoi/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
