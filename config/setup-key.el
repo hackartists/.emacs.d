@@ -21,6 +21,7 @@
 (global-set-key (kbd "s--") 'text-scale-decrease)
 
 
+(global-set-key (kbd "S-SPC") 'toggle-input-method)
 (global-set-key (kbd "C-SPC") 'company-complete)
 
 (global-set-key (kbd "C-t") 'helm-mt)
