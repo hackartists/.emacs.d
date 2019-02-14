@@ -13,6 +13,10 @@
 (yas-global-mode)
 (highlight-blocks-mode)
 
+(recentf-mode 1)
+(setq recentf-max-menu-items 100)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
 (global-set-key (kbd "M-RET") 'yas-insert-snippet)
 (setq make-backup-files nil)
 (add-hook 'sh-mode-hook (lambda ()
