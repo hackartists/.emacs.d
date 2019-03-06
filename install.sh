@@ -61,12 +61,20 @@ go get golang.org/x/tools/cmd/guru
 go get github.com/golang/lint/golint
 go get github.com/derekparker/delve/cmd/dlv
 go get github.com/nsf/gocode
-go install github.com/nsf/gocode
 go get github.com/motemen/gore
-go install github.com/motemen/gore
 go get github.com/k0kubun/pp
-go install github.com/k0kubun/pp
 
+go install github.com/dougm/goflymake
+go install github.com/nsf/gocode
+go install github.com/rogpeppe/godef
+go install github.com/jstemmer/gotags
+go install golang.org/x/tools/cmd/goimports
+go install golang.org/x/tools/cmd/guru
+go install github.com/golang/lint/golint
+go install github.com/derekparker/delve/cmd/dlv
+go install github.com/nsf/gocode
+go install github.com/motemen/gore
+go install github.com/k0kubun/pp
 
 sudo gem install redcarpet
 
