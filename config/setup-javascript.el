@@ -17,6 +17,7 @@
                            (company-mode)
                            (js2-imenu-extras-mode)
                            (js2-refactor-mode)
+                           (setq js-indent-level 2)
 
                            ;; Key bindings
                            (define-key js2-mode-map (kbd "C-x C-e") 'nodejs-repl-send-last-expression)
@@ -28,5 +29,10 @@
                            (define-key tern-mode-keymap (kbd "M-,") nil)
                            (define-key js2-mode-map (kbd "C-k") #'js2r-kill)
                            ))
+
+(add-hook 'js-jsx-mode-hook (lambda ()
+                              (setq js-indent-level 2)
+                              (setq-local sgml-basic-offset js-indent-level))
+          ))
 
 (provide 'setup-javascript)

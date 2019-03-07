@@ -1,7 +1,7 @@
 (defun my-go-mode-hook()
   (require 'company-go)
   (require 'golint)
-  (require 'govet)
+  (use-package govet)
   (require 'flycheck)
   (require 'go-complete)
 
