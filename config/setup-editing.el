@@ -11,6 +11,7 @@
 (global-linum-mode)
 (global-diff-hl-mode)
 (yas-global-mode)
+(yas-minor-mode)
 (highlight-blocks-mode)
 
 (recentf-mode 1)

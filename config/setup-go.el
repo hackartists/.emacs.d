@@ -42,6 +42,7 @@ See URL `https://github.com/golang/lint'."
   (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
 
   (gorepl-mode)
+  (yas-minor-mode)
   )
 
 (add-hook 'go-mode-hook 'my-go-mode-hook)
