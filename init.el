@@ -50,8 +50,7 @@
                      go-playground
                      go-rename
                      gotest
-                     company-go
-                     go-imenu go-fill-struct go-direx go-add-tags go-projectile go-tag go-stacktracer go-gen-test go-imports go-impl
+                     company-gogo-imenu go-fill-struct go-direx go-add-tags go-projectile go-tag go-stacktracer go-gen-test go-imports go-impl
 
                      ;;setup-fa
                      function-args
