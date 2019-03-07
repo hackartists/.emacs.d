@@ -110,4 +110,3 @@ export ANDROID_NDK_ROOT="/usr/local/Caskroom/android-ndk/18/android-ndk-r18"
 export ANDROID_NDK="$ANDROID_NDK_ROOT"
 export ANDROID_TOOLCHAIN="/usr/local/Caskroom/android-ndk/18/android-ndk-r18/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin"
 export PATH="$ANDROID_TOOLCHAIN:$PATH"
-
