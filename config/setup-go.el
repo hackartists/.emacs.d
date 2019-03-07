@@ -1,23 +1,9 @@
-;;(add-to-list 'load-path "~/go/src/github.com/dougm/goflymake")
-;;(require 'go-flycheck)
-
-(require 'flycheck)
-(flycheck-define-checker go-checker
-  "A Go style checker using Golint.
-
-See URL `https://github.com/golang/lint'."
-  :command ("golint" source)
-  :error-patterns
-  ((warning line-start (file-name) ":" line ":" column ": " (message) line-end))
-  :modes go-mode
-  :next-checkers (go-vet
-                  ;; Fall back, if go-vet doesn't exist
-                  go-build go-test go-errcheck go-unconvert go-megacheck))
-
 (defun my-go-mode-hook()
   (require 'company-go)
   (require 'golint)
   (require 'govet)
+  (require 'flycheck)
+  (require 'go-complete)
 
   (add-hook 'before-save-hook 'gofmt-before-save)
   (add-hook 'completion-at-point-functions 'go-complete-at-point)
@@ -29,7 +15,6 @@ See URL `https://github.com/golang/lint'."
   (local-set-key (kbd "M-.") 'godef-jump)
   (local-set-key (kbd "M-*") 'pop-tag-mark)
   (add-to-list 'company-backends 'company-go)
-  (flycheck-select-checker 'go-golint)
   (flycheck-mode)
 
   ;; (require 'go-autocomplete)

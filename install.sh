@@ -63,6 +63,12 @@ go get github.com/derekparker/delve/cmd/dlv
 go get github.com/nsf/gocode
 go get github.com/motemen/gore
 go get github.com/k0kubun/pp
+go get github.com/kisielk/errcheck
+go get github.com/mdempsky/unconvert
+go get github.com/dominikh/go-tools
+go get honnef.co/go/tools/cmd/megacheck
+go get github.com/fatih/gomodifytags
+go get github.com/lukehoban/go-outline
 
 go install github.com/dougm/goflymake
 go install github.com/nsf/gocode
