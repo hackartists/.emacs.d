@@ -32,7 +32,6 @@
 
 (add-hook 'js-jsx-mode-hook (lambda ()
                               (setq js-indent-level 2)
-                              (setq-local sgml-basic-offset js-indent-level))
-          ))
+                              (setq-local sgml-basic-offset js-indent-level)))
 
 (provide 'setup-javascript)
