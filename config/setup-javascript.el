@@ -2,10 +2,19 @@
   :requires ( emmet web-beautify skewer-mode impatient-mode restclient elnode ))
 
 (use-package indium
-  :ensure-system-package ( indium . "npm install -g indium" )
+  :ensure-system-package ( indium . "npm install -g indium" ))
 
 (use-package js2-mode
-  :requires ( js2-refactor xref-js2 tern js-comint json-mode rjsx-mode ))
+  :requires ( js2-refactor xref-js2 tern js-comint json-mode rjsx-mode )
+  :ensure-system-package ((jsonlint "npm install -g jsonlint")
+                          (tern "npm install -g tern")
+                          (eslint "npm install -g eslint")
+                          (babel-eslint "npm install -g babel-eslint")
+                          (eslint-plugin-react "npm install -g eslint-plugin-react")
+                          (eslint-plugin-node "npm install -g eslint-plugin-node")
+                          (jshint "npm install -g jshint")
+                          (standard "npm install -g standard"))
+  )
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 

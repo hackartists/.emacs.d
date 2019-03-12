@@ -1,10 +1,25 @@
 (use-package go-mode
   :requires ( company-go golint govet flycheck go-complete go-dlv go-errcheck go-guru go-playground go-snippets go-rename gorepl-mode )
-  :ensure-system-package go
+  :ensure-system-package ((go . "brew install golang")
+                          (goflymake . "go get -u github.com/dougm/goflymake")
+                          (gocode . "go get -u github.com/nsf/gocode")
+                          (godef . "go get -u github.com/rogpeppe/godef")
+                          (gotags . "go get -u github.com/jstemmer/gotags")
+                          (goimports . "go get -u golang.org/x/tools/cmd/goimports")
+                          (guru . "go get -u golang.org/x/tools/cmd/guru")
+                          (golint . "go get -u github.com/golang/lint/golint")
+                          (dlv . "go get -u github.com/derekparker/delve/cmd/dlv")
+                          (gocode . "go get -u github.com/nsf/gocode")
+                          (gore . "go get -u github.com/motemen/gore")
+                          (pp . "go get -u github.com/k0kubun/pp")
+                          (errcheck . "go get -u github.com/kisielk/errcheck")
+                          (unconvert . "go get -u github.com/mdempsky/unconvert")
+                          (go-tools . "go get -u github.com/dominikh/go-tools")
+                          (megacheck . "go get -u honnef.co/go/tools/cmd/megacheck")
+                          (gomodifytags . "go get github.com/fatih/gomodifytags")
+                          (go-outline . "go get github.com/lukehoban/go-outline"))
   :ensure t
-  :bind (
-         ("M-." . godef-jump)
-         )
+  :bind (("M-." . godef-jump))
   )
 
 (use-package eglot

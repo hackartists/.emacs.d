@@ -43,44 +43,12 @@ brew cask install xquartz
 brew bundle
 brew link --overwrite ctags
 
-
 ## eralng setting
 ln -s /usr/local/opt/erlang/lib/erlang/lib/tools-* /usr/local/opt/erlang/lib/erlang/lib/tools
 ln -s /usr/local/opt/erlang/lib/erlang /usr/local/opt/erl
 cd refs/distel
 make
 cd $emacs_dir
-
-#golang setting
-go get github.com/dougm/goflymake
-go get github.com/nsf/gocode
-go get github.com/rogpeppe/godef
-go get github.com/jstemmer/gotags
-go get golang.org/x/tools/cmd/goimports
-go get golang.org/x/tools/cmd/guru
-go get github.com/golang/lint/golint
-go get github.com/derekparker/delve/cmd/dlv
-go get github.com/nsf/gocode
-go get github.com/motemen/gore
-go get github.com/k0kubun/pp
-go get github.com/kisielk/errcheck
-go get github.com/mdempsky/unconvert
-go get github.com/dominikh/go-tools
-go get honnef.co/go/tools/cmd/megacheck
-go get github.com/fatih/gomodifytags
-go get github.com/lukehoban/go-outline
-
-go install github.com/dougm/goflymake
-go install github.com/nsf/gocode
-go install github.com/rogpeppe/godef
-go install github.com/jstemmer/gotags
-go install golang.org/x/tools/cmd/goimports
-go install golang.org/x/tools/cmd/guru
-go install github.com/golang/lint/golint
-go install github.com/derekparker/delve/cmd/dlv
-go install github.com/nsf/gocode
-go install github.com/motemen/gore
-go install github.com/k0kubun/pp
 
 sudo gem install redcarpet
 
@@ -95,9 +63,6 @@ git clone https://github.com/jdee-emacs/jdee-server.git
 cd jdee-server
 mvn -Dmaven.test.skip=true package
 
-# flymake-json mode
-npm install -g jsonlint indium tern eslint babel-eslint eslint-plugin-react eslint-plugin-node tslint tslint-eslint-rules tslint-config-prettier tide typescript jshint standard
-
 # rtags
 export CLANG=`xcrun -f clang++`
 sudo mv $CLANG $CLANG.old
@@ -106,9 +71,6 @@ sudo ln -s /usr/local/opt/rtags/bin/gcc-rtags-wrapper.sh $CLANG
 # python
 pip3 install -r requirements.txt
 python3 -m ipykernel install --user
-
-#eslint
-npm install -g eslint babel-eslint eslint-plugin-react
 
 # Rust
 rustup-init -y
