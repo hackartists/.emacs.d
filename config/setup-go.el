@@ -1,10 +1,25 @@
-(defun my-go-mode-hook()
-  (require 'company-go)
-  (require 'golint)
-  (use-package govet)
-  (require 'flycheck)
-  (require 'go-complete)
+(use-package go-mode
+  :requires ( company-go golint govet flycheck go-complete go-dlv go-errcheck go-guru go-playground go-snippets go-rename gorepl-mode )
+  :ensure-system-package go
+  :ensure t
+  :bind (
+         ("M-." . godef-jump)
+         )
+  )
 
+(use-package eglot
+  :ensure t
+  :ensure-system-package (go-langserver . "go get -u github.com/sourcegraph/go-langserver")
+  :after go-mode
+  :config
+  (add-to-list 'eglot-server-programs '(go-mode . ("go-langserver"))))
+
+(use-package lsp-go
+  :ensure t
+  :ensure-system-package (go-langserver . "go get -u github.com/sourcegraph/go-langserver")
+  :after go-mode)
+
+(defun my-go-mode-hook()
   (add-hook 'before-save-hook 'gofmt-before-save)
   (add-hook 'completion-at-point-functions 'go-complete-at-point)
 
@@ -38,5 +53,6 @@
   )
 
 (add-hook 'go-playground-mode-hook 'my-go-playground-mode-hook)
+
 
 (provide 'setup-go)
