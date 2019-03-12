@@ -1,9 +1,11 @@
-(require 'js2-mode)
-(require 'js2-refactor)
-(require 'xref-js2)
-(require 'company)
-(require 'company-tern)
-(require 'helm-xref)
+(use-package web-mode
+  :requires ( emmet web-beautify skewer-mode impatient-mode restclient elnode ))
+
+(use-package indium
+  :ensure-system-package ( indium . "npm install -g indium" )
+
+(use-package js2-mode
+  :requires ( js2-refactor xref-js2 tern js-comint json-mode rjsx-mode ))
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
