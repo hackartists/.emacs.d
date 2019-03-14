@@ -1,3 +1,6 @@
+(use-package erlang-mode
+  :requires ( company-distel )
+  )
 (add-hook 'erlang-mode-hook
           (lambda ()
             (setq load-path (cons "/usr/local/opt/erl/lib/tools/emacs" load-path))

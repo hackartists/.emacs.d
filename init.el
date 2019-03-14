@@ -2,55 +2,12 @@
                          ("melpa" . "https://melpa.org/packages/")
                          ("org" . "http://orgmode.org/elpa/")))
 (setq package-list '(
-                     gorepl-mode
-                     ;;common
-                     magit
-                     magit-popup
-
-                     ;;setup-android
-                     android-mode
-
                      ;; setup-tex
                      auctex
                      company-auctex
 
-                     ;; setup-ecb
-                     ecb
-
-                     ;;setup-company
-                     company
-
-                     ;;setup-helm
-                     popup
-                     helm
-                     helm-core
-                     helm-swoop
-
-                     ;;setup-helm-gtags
-                     helm-gtags
-
-                     ;;setup-projectile
-                     pkg-info
-                     projectile
-                     helm-projectile
-
                      ;;setup-path
                      exec-path-from-shell
-
-                     ;;setup-erlang
-                     flycheck
-                     flycheck-tip
-                     company-distel
-
-                     ;; setup-go
-                     go-dlv
-                     go-errcheck
-                     go-guru
-                     go-mode
-                     go-playground
-                     go-rename
-                     gotest
-                     company-go go-imenu go-fill-struct go-direx go-add-tags go-projectile go-tag go-stacktracer go-gen-test go-imports go-impl govet
 
                      ;;setup-fa
                      function-args
@@ -97,14 +54,11 @@
 
                      ;; setup-java
                      meghanada
-                     
+
                      ;; setup-javascript
                      xref-js2
                      js2-refactor
                      company-tern
-                     helm-xref
-
-                     ;;jdee
 
                      ;;setup-xcode
                      xcode-mode
@@ -147,7 +101,6 @@
                      swift-mode flycheck-swift company-sourcekit
 
                      ;; company-sourcekit ;;manually loaded
-                     helm-mt
                      multi-term
                      toml-mode
                      dockerfile-mode
@@ -186,6 +139,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/config")
 
+(require 'setup-dev)
 (require 'setup-path)
 (require 'setup-helm)
 (require 'setup-helm-gtags)

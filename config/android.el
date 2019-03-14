@@ -2,6 +2,7 @@
 
 ;;; Set up GUD+JDB to attach to a Java process running on the phone or
 ;;; under the emulator.
+(use-package android-mode)
 
 (defvar android-jdb-port-history '("8700")
  "history of ports supplied to `android-jdb'")

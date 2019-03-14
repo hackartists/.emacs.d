@@ -1,5 +1,5 @@
 (use-package go-mode
-  :requires ( company-go golint govet flycheck go-complete go-dlv go-errcheck go-guru go-playground go-snippets go-rename gorepl-mode )
+  :requires ( company-go golint govet flycheck go-complete go-dlv go-errcheck go-guru go-playground go-snippets go-rename gorepl-mode gotest go-imenu go-fill-struct go-direx go-add-tags go-projectile go-tag go-stacktracer go-gen-test go-imports go-impl govet)
   :ensure-system-package ((go . "brew install golang")
                           (goflymake . "go get -u github.com/dougm/goflymake")
                           (gocode . "go get -u github.com/nsf/gocode")

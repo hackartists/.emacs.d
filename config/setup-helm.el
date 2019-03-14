@@ -1,5 +1,16 @@
-(require 'helm-config)
-(require 'helm-grep)
+(use-package helm
+  :requires ( popup )
+  )
+(use-package helm-xref)
+(use-package helm-mt)
+(use-package helm-core)
+(use-package helm-swoop)
+(use-package helm-gtags)
+(use-package helm-projectile
+  :requires ( pkg-info projectile )
+  )
+(use-package helm-config)
+(use-package helm-grep)
 
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
@@ -68,7 +79,6 @@
 ;; PACKAGE: helm-swoop                ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Locate the helm-swoop folder to your path
-(require 'helm-swoop)
 
 ;; Change the keybinds to whatever you like :)
 (global-set-key (kbd "C-c h o") 'helm-swoop)

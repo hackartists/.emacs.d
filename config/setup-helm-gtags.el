@@ -1,4 +1,4 @@
-(require 'helm-gtags)
+(use-package helm-gtags)
 
 (setq
  helm-gtags-ignore-case t
