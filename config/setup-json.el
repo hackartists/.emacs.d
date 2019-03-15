@@ -1,6 +1,9 @@
+(use-package json-mode
+  :requires ( flymake-json )
+  )
+
 (add-hook 'json-mode
           (lambda ()
-            (require flymake-json)
             (flymake-mode)
             ))
 

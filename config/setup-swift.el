@@ -1,7 +1,10 @@
+(use-package swift-mode
+  :requires (xcode-mode flycheck-swift flycheck-swiftlint flycheck-swift3 company-sourcekit )
+  )
+
 (add-hook 'swift-mode-hook
           (lambda ()
             ;; (push "~/.emacs.d/refs/company-sourcekit" load-path)
-            (require 'company-sourcekit)
             (add-to-list 'company-backends 'company-sourcekit)
 
             (flycheck-define-checker swift-lint

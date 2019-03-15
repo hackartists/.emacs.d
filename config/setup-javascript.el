@@ -1,3 +1,9 @@
+(use-package angular-mode)
+(use-package angular-snippets)
+(use-package xref-js2)
+(use-package js2-refactor)
+(use-package company-tern)
+
 (use-package web-mode
   :requires ( emmet web-beautify skewer-mode impatient-mode restclient elnode ))
 

@@ -1,4 +1,5 @@
 (use-package tide
+  :requires ( typescript typescript-mode )
   :ensure-system-package ((tslint "npm install -g tslint")
                           (tslint-eslint-rules "npm install -g tslint-eslint-rules")
                           (tslint-config-prettier "npm install -g tslint-config-prettier")

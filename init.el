@@ -2,93 +2,9 @@
                          ("melpa" . "https://melpa.org/packages/")
                          ("org" . "http://orgmode.org/elpa/")))
 (setq package-list '(
-                     ;; setup-tex
-                     auctex
-                     company-auctex
-
-                     ;;setup-path
-                     exec-path-from-shell
-
-                     ;;setup-fa
-                     function-args
-
-                     ;;setup-cedet
-                     semantic
-                     cc-mode
-
-                     ;;setup-py
-                     elpy
-                     py-autopep8
-                     realgud
-
                      ;;setup-jade
                      jade-mode
                      sws-mode
-
-                     ;;setup-utree
-                     undo-tree
-
-                     ;;setup-markdown
-                     markdown-mode
-                     markdown-mode+
-
-                     ;; setup-editing
-                     anzu
-                     dtrt-indent
-                     yasnippet
-                     volatile-highlights
-                     clean-aindent-mode
-                     ws-butler
-                     iedit
-                     duplicate-thing
-
-                     ;;setup-yaml
-                     yaml-mode
-                     xcscope
-
-                     ;;setup-fixme
-                     fixmee
-
-                     ;; setup-json
-                     flymake-json
-
-                     ;; setup-java
-                     meghanada
-
-                     ;; setup-javascript
-                     xref-js2
-                     js2-refactor
-                     company-tern
-
-                     ;;setup-xcode
-                     xcode-mode
-                     swift-mode
-                     flycheck-swiftlint
-                     flycheck-swift3
-
-                     ;; rtags
-                     rtags
-                     company-rtags
-
-                     ;; jupiter
-                     ein
-                     ein-mumamo
-
-                     ;; angular
-                     angular-mode
-                     angular-snippets
-
-                     ;;highlight
-                     highlight-symbol
-
-                     ;;etc
-                     vdiff
-                     diff-hl
-
-                     ;;rfringe
-
-                     ;;docker
-                     docker-tramp
 
                      ;;protobuf
                      protobuf-mode
@@ -97,27 +13,9 @@
                      csv-mode
                      bazel-mode
 
-                     ;;swift
-                     swift-mode flycheck-swift company-sourcekit
-
                      ;; company-sourcekit ;;manually loaded
-                     multi-term
                      toml-mode
-                     dockerfile-mode
-                     tabbar
-                     helm-swoop
-                     highlight-symbol
-                     rainbow-delimiters
                      use-package
-                     go-autocomplete helm-ag gorepl-mode project-explorer typo visual-regexp bm
-                     ;;rust
-                     rust-mode flycheck-rust racer cargo
-
-                     ;;typescript
-                     ;;tide typescript typescript-mode
-
-					 ;;convenience
-					 highlight-blocks
                      )
       )
 
@@ -140,6 +38,7 @@
 (add-to-list 'load-path "~/.emacs.d/config")
 
 (require 'setup-dev)
+(require 'setup-docker)
 (require 'setup-path)
 (require 'setup-helm)
 (require 'setup-helm-gtags)

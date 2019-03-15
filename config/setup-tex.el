@@ -1,3 +1,7 @@
+(use-package auctex
+  :requires ( company-auctex )
+  )
+
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (setq TeX-save-query nil)

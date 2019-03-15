@@ -1,3 +1,6 @@
+(use-package python-mode
+  :requires (elpy py-autopep8 realgud ein ein-mumamo)
+  )
 
 ;; (elpy-use-ipython)
 
@@ -12,8 +15,6 @@
 
 
 (add-hook 'python-mode-hook (lambda ()
-                              (require 'py-autopep8)
-                              (require 'flycheck)
                               (setq elpy-rpc-python-command "python3")
                               (elpy-mode)
                               (flycheck-mode)
@@ -28,7 +29,6 @@
                                     (define-key ein:notebook-mode-map (kbd "<C-down>") 'windmove-down)
                                     ))
 ;; IPython
-(require 'ein)
 ;; (require 'ein-loaddefs)
 ;;(require 'ein-notebook)
 ;;(require 'ein-subpackages)

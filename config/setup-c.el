@@ -1,17 +1,16 @@
-(require 'cc-mode)
+(use-package cc-mode
+  :requires ( cl-lib rtags company-rtags function-args semantic )
+  )
 
 (font-lock-add-keywords
  'c-mode
  '(("\\<\\(\\sw+\\) ?(" 1 'font-lock-function-name-face)))
 
 (defun my-c-mode-hook()
-  (require 'cl-lib)
-  (require 'rtags)
   (rtags-enable-standard-keybindings c-mode-base-map)
   ;;(require 'rtags-ac)
   ;;(add-to-list 'ac-sources 'ac-source-rtags)
   ;;(add-to-list 'ac-sources 'ac-source-yasnippet))
-  (require 'company-rtags)
   (add-to-list 'company-backends 'company-c-headers)
   ;;(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.2.1/")
   (local-set-key "\C-c\C-j" 'semantic-ia-fast-jump)

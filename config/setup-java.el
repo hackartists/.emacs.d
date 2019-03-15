@@ -1,4 +1,4 @@
-(require 'meghanada)
+(use-package meghanada)
 
 (add-hook 'java-mode-hook
           (lambda ()
