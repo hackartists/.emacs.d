@@ -27,5 +27,9 @@
 (use-package bm)
 (use-package highlight-blocks)
 (use-package xcscope)
+(use-package protobuf-mode)
+(use-package csv-mode)
+(use-package bazel-mode)
+(use-package toml-mode)
 
 (provide 'setup-dev)

@@ -1,23 +1,7 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")
                          ("org" . "http://orgmode.org/elpa/")))
-(setq package-list '(
-                     ;;setup-jade
-                     jade-mode
-                     sws-mode
-
-                     ;;protobuf
-                     protobuf-mode
-
-                     ;;others
-                     csv-mode
-                     bazel-mode
-
-                     ;; company-sourcekit ;;manually loaded
-                     toml-mode
-                     use-package
-                     )
-      )
+(setq package-list '( use-package ))
 
 (package-initialize)
 
