@@ -1,3 +1,4 @@
+(use-package json-navigator)
 (use-package json-mode
   :requires ( flymake-json )
   )
