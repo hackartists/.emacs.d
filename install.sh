@@ -1,3 +1,4 @@
+#!/bin/bash
 ## Package description
 ## golang : Go language
 ## erlang : Erlang
@@ -13,6 +14,8 @@
 
 export emacs_dir=`pwd`
 sudo xcodebuild -license accept
+sudo gem install redcarpet
+
 ## Homebrew
 cat .ctags >> ~/.ctags
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -26,6 +29,13 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/
 
 ## oh-my-profile
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/hackartists/oh-my-profiles/master/install.sh)"
+
+## Changing .zshrc
+rm -rf $HOME/.zshrc
+ln -s $HOME/.emacs.d/.zshrc $HOME/.zshrc
+source $HOME/.zshrc
+
+## Configuring devel paths
 mkdir -p $HOME/data/devel/src
 cd $HOME/data/devel
 addpath GOPATH
@@ -38,9 +48,12 @@ cd $emacs_dir
 addbinpath $GOPATH/bin
 addbinpath /usr/local/texlive/2017/bin/x86_64-darwin
 
-brew cask install homebrew/cask-versions/java8
-brew cask install xquartz
-brew bundle
+brew tab go-delve/delve homebrew/bundle homebrew/cask hombrew/cask-versions homebrew/core kylef/formulae
+brew cask install docker emacs jandi mactex postman robo-3t spectacle sublime-text tunnelblick visual-studio-code wireshark adoptopenjdk8 xquartz google-chrome
+brew install aspell bazel cmake ctags erlang gettext global go gradle graphviz groovy ios-deploy node ios-sim jq jupyter markdown nmap python rtags rust rustup-init sloccount tree xctool yq maven
+
+
+# brew bundle
 brew link --overwrite ctags
 
 ## eralng setting
@@ -49,8 +62,6 @@ ln -s /usr/local/opt/erlang/lib/erlang /usr/local/opt/erl
 cd refs/distel
 make
 cd $emacs_dir
-
-sudo gem install redcarpet
 
 # Java setting (JDEE)
 if [[ `which javac` == "" ]]
@@ -69,7 +80,7 @@ sudo mv $CLANG $CLANG.old
 sudo ln -s /usr/local/opt/rtags/bin/gcc-rtags-wrapper.sh $CLANG 
 
 # python
-pip3 install -r requirements.txt
+pip3 install absl-py appnope asn1crypto astor autopep8 certifi cffi chardet cryptography cycler decorator graphviz grpcio hkdf idna importmagic ipykernel ipython ipython-genutils jedi jupyter-client jupyter-core kiwisolver matplotlib numpy pandas parso pexpect pickleshare Pillow prompt-toolkit protobuf ptyprocess pycodestyle pycparser pycryptodomex Pygments pyparsing pysha3 python-dateutil pytz pyzmq requests rope Rx scikit-learn scipy simplegeneric six tornado traitlets urllib3 virtualenv wcwidth yapf 
 python3 -m ipykernel install --user
 
 # Rust
