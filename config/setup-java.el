@@ -1,9 +1,15 @@
 (use-package meghanada)
 
+(jdecomp-mode 1)
+
+(customize-set-variable 'jdecomp-decompiler-paths
+                        '((cfr . "~/.emacs.d/refs/cfr/cfr-0.146.jar")))
+
 (add-hook 'java-mode-hook
           (lambda ()
             ;; meghanada-mode on
             (meghanada-mode t)
+
             (flycheck-mode +1)
 			(add-to-list 'load-path "~/.emacs.d/refs/jdibug")
 			(require 'jdibug)
