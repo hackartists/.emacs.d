@@ -105,4 +105,6 @@
 
 (helm-mode 1)
 
+(customize-set-variable 'helm-ff-lynx-style-map t)
+
 (provide 'setup-helm)

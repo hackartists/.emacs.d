@@ -1,7 +1,7 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")
                          ("org" . "http://orgmode.org/elpa/")))
-(setq package-list '( json-navigator ng2-mode lsp-go bats-mode hackernews go-imenu go-fill-struct go-direx go-add-tags go-projectile go-tag go-stacktracer go-gen-test go-imports go-impl docker dropbox company-tern helm-xref lsp-java eclim meghanada company-lsp dap-mode hydra treemacs lsp-ui lsp-mode helm-jira org-jira web-mode golint go-snippets go-complete govet rustic highlight-blocks rainbow-blocks react-snippets flycheck-swift company-sourcekit cargo racer flycheck-rust rust-mode tide gulp-task-runner typescript-mode nodejs-repl helm-xref helm-ag gorepl-mode project-explorer typo visual-regexp bm rainbow-delimiters helm-mt elscreen tabbar multi-term toml-mode dockerfile-mode helm-core helm swift-mode flycheck-swiftlint flycheck-swift3 bazel-mode xcode-project protobuf-mode ecb mvn csv-mode flycheck flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json diff-hl vdiff go-playground go-rename markdown-mode+ android-mode fixmee go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jade-mode iedit helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu ))
+(setq package-list '( ))
 
 (package-initialize)
 
@@ -20,6 +20,7 @@
 (set-frame-parameter nil 'fullscreen 'fullboth)
 
 (add-to-list 'load-path "~/.emacs.d/config")
+(add-to-list 'load-path "~/.emacs.d/refs/jdibug")
 
 (require 'setup-dev)
 (require 'setup-docker)
@@ -111,7 +112,7 @@
  '(ac-auto-show-menu t)
  '(ac-auto-start t)
  '(ac-show-menu-immediately-on-auto-complete t)
- '(android-mode-sdk-dir "/Volumes/Data/Developers/android")
+ '(android-mode-sdk-dir "~/Data/sdks/android")
  '(default-input-method "korean-hangul")
  '(diff-hl-draw-borders t)
  '(doc-view-continuous t)
@@ -119,9 +120,9 @@
  '(ecb-options-version "2.50")
  '(ecb-source-path
    (quote
-    (("/" "/")
-     ("~/Data/devel/src" "/Devel")
-     ("~/Data" "/Data"))))
+	(("/" "/")
+	 ("~/Data/devel/src" "/Devel")
+	 ("~/Data" "/Data"))))
  '(ecb-stealthy-tasks-delay 30)
  '(ecb-tree-incremental-search (quote prefix))
  '(ecb-use-speedbar-instead-native-tree-buffer nil)
@@ -135,10 +136,10 @@
  '(jdibug-use-jdee-source-paths nil)
  '(package-selected-packages
    (quote
-    (json-navigator ng2-mode lsp-go bats-mode hackernews go-imenu go-fill-struct go-direx go-add-tags go-projectile go-tag go-stacktracer go-gen-test go-imports go-impl docker dropbox company-tern helm-xref lsp-java eclim meghanada company-lsp dap-mode hydra treemacs lsp-ui lsp-mode helm-jira org-jira web-mode golint go-snippets go-complete govet rustic highlight-blocks rainbow-blocks react-snippets flycheck-swift company-sourcekit cargo racer flycheck-rust rust-mode tide gulp-task-runner typescript-mode nodejs-repl helm-xref helm-ag gorepl-mode project-explorer typo visual-regexp bm rainbow-delimiters helm-mt elscreen tabbar multi-term toml-mode dockerfile-mode helm-core helm swift-mode flycheck-swiftlint flycheck-swift3 bazel-mode osx-plist xcode-project protobuf-mode ecb mvn csv-mode flycheck ctags flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json rfringe diff-hl vdiff go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu)))
+	(helm-directory jdecomp jdee jenkins java-imports java-snippets kotlin-mode groovy-mode gradle-mode json-navigator ng2-mode lsp-go bats-mode hackernews go-imenu go-fill-struct go-direx go-add-tags go-projectile go-tag go-stacktracer go-gen-test go-imports go-impl docker dropbox company-tern helm-xref lsp-java eclim meghanada company-lsp dap-mode hydra treemacs lsp-ui lsp-mode helm-jira org-jira web-mode golint go-snippets go-complete govet rustic highlight-blocks rainbow-blocks react-snippets flycheck-swift company-sourcekit cargo racer flycheck-rust rust-mode tide gulp-task-runner typescript-mode nodejs-repl helm-xref helm-ag gorepl-mode project-explorer typo visual-regexp bm rainbow-delimiters helm-mt elscreen tabbar multi-term toml-mode dockerfile-mode helm-core helm swift-mode flycheck-swiftlint flycheck-swift3 bazel-mode osx-plist xcode-project protobuf-mode ecb mvn csv-mode flycheck ctags flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json rfringe diff-hl vdiff go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu)))
  '(projectile-project-root-files
    (quote
-    ("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS" ".dropbox")))
+	("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS" ".dropbox")))
  '(server-port nil)
  '(treemacs-position (quote right)))
 

@@ -48,7 +48,7 @@ cd $emacs_dir
 addbinpath $GOPATH/bin
 addbinpath /usr/local/texlive/2017/bin/x86_64-darwin
 
-brew tab go-delve/delve homebrew/bundle homebrew/cask hombrew/cask-versions homebrew/core kylef/formulae
+## brew tab go-delve/delve homebrew/bundle homebrew/cask hombrew/cask-versions homebrew/core kylef/formulae
 brew cask install docker emacs jandi mactex postman robo-3t spectacle sublime-text tunnelblick visual-studio-code wireshark adoptopenjdk8 xquartz google-chrome
 brew install aspell bazel cmake ctags erlang gettext global go gradle graphviz groovy ios-deploy node ios-sim jq jupyter markdown nmap python rtags rust rustup-init sloccount tree xctool yq maven
 
