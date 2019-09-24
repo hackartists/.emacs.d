@@ -51,6 +51,11 @@ brew cask install homebrew/cask-versions/adoptopenjdk8
 brew install aspell bazel cmake ctags erlang gettext global go gradle graphviz groovy ios-deploy node ios-sim jq jupyter markdown nmap python rtags rust rustup-init sloccount tree xctool yq maven
 brew cask install docker emacs jandi mactex postman robo-3t spectacle sublime-text tunnelblick visual-studio-code wireshark xquartz google-chrome
 
+# golang setting
+go get golang.org/x/lint/golint
+go get -u golang.org/x/tools/...
+go get -u github.com/go-delve/delve/cmd/dlv
+
 # groovy setting
 cd /usr/local/opt/groovy/libexec
 addpath GROOVY_HOME
