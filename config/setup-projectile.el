@@ -17,6 +17,7 @@
 (helm-projectile-on)
 (setq projectile-completion-system 'helm)
 (setq projectile-indexing-method 'alien)
+(setq projectile-git-submodule-command nil)
 
 (add-hook 'projectile-after-switch-project-hook (lambda ()
                                                   (projectile-invalidate-cache nil)))
