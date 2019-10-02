@@ -46,7 +46,6 @@
   (local-set-key (kbd "M-*") 'pop-tag-mark)
   (add-to-list 'company-backends 'company-go)
   (flycheck-select-checker 'go-golint)
-  (flycheck-disable-checker 'go-build)
   (flycheck-mode)
   ;; (require 'go-autocomplete)
   ;; (require 'auto-complete-config)

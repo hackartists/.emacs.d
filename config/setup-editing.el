@@ -6,7 +6,6 @@
       tab-width 4                       ; default to 4 visible spaces to display a tab
       )
 
-(global-fixmee-mode)
 (rainbow-delimiters-mode)
 (tabbar-mode)
 (global-linum-mode)
