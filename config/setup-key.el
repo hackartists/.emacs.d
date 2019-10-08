@@ -78,6 +78,8 @@
                             (define-key term-raw-map (kbd "<C-left>") 'windmove-left)
                             (define-key term-raw-map (kbd "<C-up>") 'windmove-up)
                             (define-key term-raw-map (kbd "<C-down>") 'windmove-down)
+                            (define-key term-raw-map (kbd "<M-left>") 'term-send-backward-word)
+                            (define-key term-raw-map (kbd "<M-right>") 'term-send-forward-word)
                             ))
 
 (add-hook 'projectile-mode-hook (lambda()
