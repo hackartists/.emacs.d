@@ -13,6 +13,8 @@
 (global-set-key (kbd "<s-down>") 'windmove-down)
 (global-set-key [C-left] 'windmove-left)
 (global-set-key [C-right] 'windmove-right)
+(global-set-key (kbd "<s-left>") 'windmove-left)
+(global-set-key (kbd "<s-right>") 'windmove-right)
 (global-set-key (kbd "<f5>") 'compile)
 (global-set-key (kbd "<s-left>") 'tabbar-backward)
 (global-set-key (kbd "<s-right>") 'tabbar-forward)

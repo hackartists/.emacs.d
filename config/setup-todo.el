@@ -135,7 +135,34 @@ With arg, turn Flymake mode on if and only if arg is positive."
           (cancel-timer myfixme--timer)
           (setq myfixme--timer nil))))))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package fixmee
+  :ensure t
+  :init
+  (setq fixmee-smartrep-prefix nil
+        fixmee-view-listing-keystrokes nil
+        fixmee-goto-nextmost-urgent-keystrokes nil
+        fixmee-goto-next-by-position-keystrokes nil
+        fixmee-goto-prevmost-urgent-keystrokes nil
+        fixmee-goto-previous-by-position-keystrokes nil)
+
+  :config
+  (setq fixmee-cache-refresh-interval 30)
+
+  (set-face-attribute 'fixmee-notice-face nil
+                      :background "dark orange" :foreground "#222222"
+                      :weight 'bold
+                      )
+
+  (dolist (hook '(prog-mode-hook
+                  ))
+    (add-hook hook 'fixmee-mode))
+
+  (define-key my-prog-comment-fixme-map (kbd "l") 'fixmee-view-listing)
+  (define-key my-prog-comment-fixme-map (kbd "n") 'fixmee-goto-next-by-position)
+  (define-key my-prog-comment-fixme-map (kbd "p") 'fixmee-goto-previous-by-position)
+  (define-key my-prog-comment-fixme-map (kbd "N") 'fixmee-goto-nextmost-urgent)
+  (define-key my-prog-comment-fixme-map (kbd "P") 'fixmee-goto-prevmost-urgent)
+  )
 
 
 (provide 'setup-todo)

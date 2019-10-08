@@ -49,7 +49,7 @@
 (require 'android)
 (require 'setup-markdown)
 (require 'setup-path)
-;;(require 'setup-todo)
+(require 'setup-todo)
 (require 'setup-json)
 (require 'setup-javascript)
 (require 'setup-java)
@@ -69,6 +69,7 @@
 (require 'setup-rust)
 (require 'setup-gradle)
 (require 'setup-magit)
+(require 'setup-global)
 
 (setq warning-minimum-level :emergency)
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
@@ -135,7 +136,7 @@
  '(jdee-server-dir "~/.emacs.d/refs/jdee-server")
  '(jdibug-use-jdee-source-paths nil)
  '(package-selected-packages
-   '(godoctor flycheck-gometalinter flycheck-golangci-lint realgud-jdb helm-directory jdecomp jdee jenkins java-imports java-snippets kotlin-mode groovy-mode gradle-mode json-navigator ng2-mode lsp-go bats-mode hackernews go-imenu go-fill-struct go-direx go-add-tags go-projectile go-tag go-stacktracer go-gen-test go-imports go-impl docker dropbox company-tern helm-xref lsp-java eclim meghanada company-lsp dap-mode hydra treemacs lsp-ui lsp-mode helm-jira org-jira web-mode golint go-snippets go-complete govet rustic highlight-blocks rainbow-blocks react-snippets flycheck-swift company-sourcekit cargo racer flycheck-rust rust-mode tide gulp-task-runner typescript-mode nodejs-repl helm-xref helm-ag gorepl-mode project-explorer typo visual-regexp bm rainbow-delimiters helm-mt elscreen tabbar multi-term toml-mode dockerfile-mode helm-core helm swift-mode flycheck-swiftlint flycheck-swift3 bazel-mode osx-plist xcode-project protobuf-mode ecb mvn csv-mode flycheck ctags flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json rfringe diff-hl vdiff go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu))
+   '(magit-todos godoctor flycheck-gometalinter flycheck-golangci-lint realgud-jdb helm-directory jdecomp jdee jenkins java-imports java-snippets kotlin-mode groovy-mode gradle-mode json-navigator ng2-mode lsp-go bats-mode hackernews go-imenu go-fill-struct go-direx go-add-tags go-projectile go-tag go-stacktracer go-gen-test go-imports go-impl docker dropbox company-tern helm-xref lsp-java eclim meghanada company-lsp dap-mode hydra treemacs lsp-ui lsp-mode helm-jira org-jira web-mode golint go-snippets go-complete govet rustic highlight-blocks rainbow-blocks react-snippets flycheck-swift company-sourcekit cargo racer flycheck-rust rust-mode tide gulp-task-runner typescript-mode nodejs-repl helm-xref helm-ag gorepl-mode project-explorer typo visual-regexp bm rainbow-delimiters helm-mt elscreen tabbar multi-term toml-mode dockerfile-mode helm-core helm swift-mode flycheck-swiftlint flycheck-swift3 bazel-mode osx-plist xcode-project protobuf-mode ecb mvn csv-mode flycheck ctags flymake-shell docker-tramp highlight-symbol pyenv-mode realgud ein-mumamo flymake-json rfringe diff-hl vdiff go-playground go-rename markdown-mode+ android-mode fixmee fixme-mode go-dlv company-go flymake flymake-yaml yaml-mode company-auctex auctex find-temp-file company-distel zygospore xcscope ws-butler volatile-highlights undo-tree tabbar-ruler sws-mode sr-speedbar smartparens py-autopep8 magit jedi jade-mode iedit highlight-current-line helm-swoop helm-projectile helm-gtags go-guru go-errcheck go-autocomplete ggtags function-args flycheck-tip exec-path-from-shell emacs-eclim elpy ein duplicate-thing dtrt-indent company-jedi company-c-headers comment-dwim-2 clean-aindent-mode auto-complete-distel anzu))
  '(projectile-project-root-files
    '("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS" ".dropbox"))
  '(server-port nil)
