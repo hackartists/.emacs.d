@@ -22,7 +22,7 @@
       ;;ecb-create-layout-frame-width 110
       )
 
-(setq window-setup-hook 'ecb-redraw-layout)
+;; (setq window-setup-hook 'ecb-redraw-layout)
 
 (define-key ecb-mode-map (kbd "<f9>") 'ecb-toggle-ecb-windows)
 (define-key ecb-mode-map (kbd "M-1") 'ecb-goto-window-directories)
