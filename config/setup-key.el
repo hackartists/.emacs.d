@@ -6,7 +6,7 @@
 (global-unset-key [C-up])
 (global-unset-key [C-down])
 (global-unset-key (kbd "<C-t>"))
-(global-set-key (kbd "`") 'keyboard-quit)
+;;(global-set-key (kbd "`") 'keyboard-quit)
 (global-set-key [C-up] 'windmove-up)
 (global-set-key [C-down] 'windmove-down)
 (global-set-key (kbd "<s-up>") 'windmove-up)
