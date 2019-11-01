@@ -67,8 +67,8 @@ little more place. This layout works best if it is contained in
     (select-window (next-window)))
 (add-to-list 'ecb-show-sources-in-directories-buffer "hackartist")
 (setq dired-omit-files "^\\.?#\\|^\\.$")
-(ecb-activate)
-(ecb-byte-compile)
+;;(ecb-activate)
+;; (ecb-byte-compile)
 
 (provide 'setup-ecb)
 

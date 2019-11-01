@@ -1,6 +1,6 @@
 (add-hook 'emacs-lisp-mode-hook
 		  '(lambda ()
-			 (smartparens-mode t)
+			 (show-smartparens-mode t)
 			 ))
 
 (provide 'setup-elisp)

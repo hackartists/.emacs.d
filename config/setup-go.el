@@ -29,10 +29,10 @@
   :config
   (add-to-list 'eglot-server-programs '(go-mode . ("go-langserver"))))
 
-(use-package lsp-go
-  :ensure t
-  :ensure-system-package (go-langserver . "go get -u github.com/sourcegraph/go-langserver")
-  :after go-mode)
+;; (use-package lsp-go
+;;   :ensure t
+;;   :ensure-system-package (go-langserver . "go get -u github.com/sourcegraph/go-langserver")
+;;   :after go-mode)
 
 (defun my-go-mode-hook()
   (add-hook 'before-save-hook 'gofmt-before-save)
@@ -69,6 +69,5 @@
   )
 
 (add-hook 'go-playground-mode-hook 'my-go-playground-mode-hook)
-
 
 (provide 'setup-go)

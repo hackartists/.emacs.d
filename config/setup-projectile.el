@@ -1,17 +1,12 @@
-;; Package: projejctile
-(require 'projectile)
-(setq use-package-verbose t
-      use-package-enable-imenu-support t)
-(require 'use-package)
-
 (use-package projectile
-             :ensure t
-             :diminish projectile-mode
-             :commands (projectile-global-mode)
-             :init (setq projectile-enable-caching t)
-             :config (projectile-global-mode 1))
-
-(projectile-global-mode)
+  :ensure t
+  :diminish projectile-mode
+  :commands (projectile-global-mode)
+  :init (setq projectile-enable-caching t)
+  :config
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-mode +1))
 
 (require 'helm-projectile)
 (helm-projectile-on)
@@ -33,7 +28,7 @@
                                                 (propertize project-root 'face 'font-lock-keyword-face)))
                                      (when (fboundp 'recentf-cleanup)
                                        (recentf-cleanup))))
-                                   ;;(projectile-hash-keys projectile-projects-cache))
+                             ;;(projectile-hash-keys projectile-projects-cache))
                              (projectile-serialize-cache)))
 
 (provide 'setup-projectile)
