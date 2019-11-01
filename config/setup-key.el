@@ -52,6 +52,7 @@
   (define-key map (kbd "<C-down>") nil)
   )
 
+(global-set-key (kbd "s-RET") 'yas-insert-snippet)
 (add-hook 'shell-mode-hook (lambda()
                              (local-set-key (kbd "<C-up>") 'windmove-up)
                              (local-set-key (kbd "<C-down>") 'windmove-down)
@@ -85,6 +86,7 @@
                                   (define-key projectile-mode-map (kbd "C-c p p") 'helm-projectile-switch-project)
                                   (define-key projectile-mode-map (kbd "C-c p f") 'helm-projectile-find-file)
                                   (define-key projectile-mode-map (kbd "C-c p k") 'projectile-kill-buffers)
+								  (define-key projectile-mode-map (kbd "C-c p s") 'projectile-save-project-buffers)
                                   ))
 
 
