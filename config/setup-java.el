@@ -69,6 +69,7 @@
   (add-hook 'java-mode-hook
             (lambda ()
               (add-hook 'before-save-hook 'meghanada-code-beautify-before-save)
+
               ;;(google-set-c-style)
               ;;(google-make-newline-indent)
               (meghanada-mode t)
@@ -79,7 +80,15 @@
               (customize-set-variable 'jdecomp-decompiler-paths
                                       '((cfr . "~/.emacs.d/refs/cfr/cfr-0.146.jar")))
               ;; (meghanada-telemetry-enable t)
-              (flycheck-mode +1)))
+              (flycheck-mode +1)
+              
+              (require 'jdibug)
+              (require 'jdibug-ui)
+
+              (setq jdibug-connect-hosts (quote ("localhost:5005"))
+                    jdibug-use-jdee-source-paths nil
+                    jdibug-source-paths (directory-files-recursively (projectile-project-root) "\\.java$"))
+              ))
 
   :config
   (use-package realgud
@@ -102,13 +111,8 @@
   :commands
   (meghanada-mode))
 
-(add-hook 'java-mode-hook
-          (lambda ()
-            (require 'jdibug)
-            
-                  ))
 (defhydra hydra-meghanada (:hint nil :exit t)
-"
+  "
 ^Edit^                           ^Tast or Task^
 ^^^^^^-------------------------------------------------------
 _f_: meghanada-compile-file      _m_: meghanada-restart
