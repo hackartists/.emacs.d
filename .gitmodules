@@ -1,0 +1,3 @@
+[submodule "refs/jdibug"]
+	path = refs/jdibug
+	url = git@github.com:udalrich/jdibug.git
