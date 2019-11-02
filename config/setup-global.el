@@ -78,4 +78,14 @@
   :after treemacs magit
   :ensure t)
 
+(use-package command-log-mode
+  :ensure t
+  :config
+  (setq command-log-mode-window-size 40
+        command-log-mode-window-font-size 6)
+  (global-command-log-mode t)
+  (clm/toggle-command-log-buffer t)
+  )
+
+
 (provide 'setup-global)

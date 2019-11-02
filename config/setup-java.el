@@ -81,7 +81,7 @@
                                       '((cfr . "~/.emacs.d/refs/cfr/cfr-0.146.jar")))
               ;; (meghanada-telemetry-enable t)
               (flycheck-mode +1)
-              
+
               (require 'jdibug)
               (require 'jdibug-ui)
 
@@ -98,7 +98,7 @@
   (setq indent-tabs-mode nil)
   (setq tab-width 4)
   (setq c-basic-offset 4)
-  (setq meghanada-server-remote-debug t)
+  (setq meghanada-server-remote-debug nil)
   (setq meghanada-javac-xlint "-Xlint:all,-processing")
   :bind
   (:map meghanada-mode-map

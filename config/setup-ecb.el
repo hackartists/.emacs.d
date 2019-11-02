@@ -62,13 +62,14 @@ little more place. This layout works best if it is contained in
     (ecb-set-directories-buffer)
     (ecb-split-ver 0.3)
     (ecb-set-methods-buffer)
-    (ecb-split-ver 0.5)
+    (ecb-split-ver 0.7)
     (ecb-set-history-buffer)
     (select-window (next-window)))
 (add-to-list 'ecb-show-sources-in-directories-buffer "hackartist")
 (setq dired-omit-files "^\\.?#\\|^\\.$")
 ;;(ecb-activate)
-;; (ecb-byte-compile)
+;;(ecb-byte-compile)
+
 
 (provide 'setup-ecb)
 
