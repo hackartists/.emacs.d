@@ -16,43 +16,16 @@
 (global-set-key (kbd "<s-left>") 'windmove-left)
 (global-set-key (kbd "<s-right>") 'windmove-right)
 (global-set-key (kbd "<f5>") 'compile)
-(global-set-key (kbd "s-f") 'helm-swoop-from-evil-search)
 (global-set-key (kbd "s-=") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)
-
-
 (global-set-key (kbd "S-SPC") 'toggle-input-method)
 (global-set-key (kbd "C-SPC") 'company-complete)
-
-(global-set-key (kbd "C-t") 'helm-mt)
-
 (global-set-key (kbd "C-x g") 'magit-status)
-
-;; (global-set-key (kbd "M-.") 'sp-forward-slurp-sexp)
-;; (global-set-key (kbd "M-,") 'sp-forward-barf-sexp)
 (global-set-key (kbd "<home>") 'move-beginning-of-line)
 (global-set-key (kbd "<end>") 'move-end-of-line)
 (global-set-key (kbd "RET") 'newline-and-indent)  ; automatically indent when press RET
-(global-set-key (kbd "M-`") 'ecb-open-source-in-editwin2)
-;;(global-set-key [(tab)] 'company-complete)
 
-;; (global-set-key (kbd "<f5>") (lambda ()
-;;                                (interactive)
-;;                                (setq-local compilation-read-command nil)
-;;                                (call-interactively 'compile)))
-
-(defun remove-keys-set-by-global()
-  (local-set-key (kbd "<C-letft>") nil)
-  (local-set-key (kbd "<C-right>") nil)
-  (local-set-key (kbd "<C-up>") nil)
-  (local-set-key (kbd "<C-down>") nil)
-  (define-key map (kbd "<C-right>") nil)
-  (define-key map (kbd "<C-left>") nil)
-  (define-key map (kbd "<C-up>") nil)
-  (define-key map (kbd "<C-down>") nil)
-  )
-
-(global-set-key (kbd "s-RET") 'yas-insert-snippet)
+(global-set-key (kbd "<s-return>") 'yas-insert-snippet)
 (add-hook 'shell-mode-hook (lambda()
                              (local-set-key (kbd "<C-up>") 'windmove-up)
                              (local-set-key (kbd "<C-down>") 'windmove-down)
@@ -81,13 +54,13 @@
                             (define-key term-raw-map (kbd "<M-right>") 'term-send-forward-word)
                             ))
 
-(add-hook 'projectile-mode-hook (lambda()
-                                  (define-key projectile-mode-map (kbd "C-c p g") 'helm-projectile-grep)
-                                  (define-key projectile-mode-map (kbd "C-c p p") 'helm-projectile-switch-project)
-                                  (define-key projectile-mode-map (kbd "C-c p f") 'helm-projectile-find-file)
-                                  (define-key projectile-mode-map (kbd "C-c p k") 'projectile-kill-buffers)
-								  (define-key projectile-mode-map (kbd "C-c p s") 'projectile-save-project-buffers)
-                                  ))
+;; (add-hook 'projectile-mode-hook (lambda()
+;;                                   (define-key projectile-mode-map (kbd "C-c p g") 'helm-projectile-grep)
+;;                                   (define-key projectile-mode-map (kbd "C-c p p") 'helm-projectile-switch-project)
+;;                                   (define-key projectile-mode-map (kbd "C-c p f") 'helm-projectile-find-file)
+;;                                   (define-key projectile-mode-map (kbd "C-c p k") 'projectile-kill-buffers)
+;; 								  (define-key projectile-mode-map (kbd "C-c p s") 'projectile-save-project-buffers)
+;;                                   ))
 
 
 (provide 'setup-key)
