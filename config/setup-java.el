@@ -92,6 +92,8 @@
 ;;   ("q" exit)
 ;;   ("z" nil "leave"))
 
+;; (ignore-errors (wrong-type-argument stringp spacemacs/helm-navigation-transient-state/params))
+
 (use-package lsp-javacomp
   :ensure t
   :hook (java-mode #'lsp-javacomp-enable))
@@ -101,6 +103,10 @@
 
 (add-hook 'java-mode-hook #'lsp)
 (add-hook 'java-mode-hook
+          (setq lsp-ui-doc-enable nil
+                lsp-ui-sideline-enable nil
+                lsp-ui-flycheck-enable t)
+
           (lambda()
             (add-hook 'before-save-hook #'lsp-format-buffer)
             (add-hook 'before-save-hook #'lsp-java-organize-imports)

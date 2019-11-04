@@ -52,7 +52,7 @@ values."
      version-control
      java
      erlang
-     c-c++
+     ;; c-c++
      dart
      ess
      go
@@ -81,14 +81,14 @@ values."
      cmake
      lsp
      imenu-list
-     multiple-cursors
+     ;; multiple-cursors
      smex
-     semantic
+     ;; semantic
      typography
-     ibuffer
-     better-defaults
-     ivy
-     neotree
+     ;; ibuffer
+     ;; better-defaults
+     ;; ivy
+     ;; neotree
      treemacs
      )
    ;; List of additional packages that will be installed without being
