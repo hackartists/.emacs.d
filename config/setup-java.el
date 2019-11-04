@@ -92,11 +92,11 @@
 ;;   ("q" exit)
 ;;   ("z" nil "leave"))
 
-;; (ignore-errors (wrong-type-argument stringp spacemacs/helm-navigation-transient-state/params))
+;; (ignore-errors (wrong-type-argument stringp spacemacs/helm-navigation-transient-state/params
 
-(use-package lsp-javacomp
-  :ensure t
-  :hook (java-mode #'lsp-javacomp-enable))
+;; (use-package lsp-javacomp
+;;   :ensure t
+;;   :hook (java-mode #'lsp-javacomp-enable))
 
 (require 'lsp-java)
 (require 'dap-java)
