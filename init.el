@@ -33,7 +33,7 @@
 (add-to-list 'load-path "~/.emacs.d.hackartists/config")
 (add-to-list 'load-path "~/.emacs.d.hackartists/refs/jdibug")
 (set-frame-parameter nil 'fullscreen 'fullboth)
-(setq 'browse-url-chrome-program "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
+;;(setq 'browse-url-chrome-program "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
 
 ;;(require 'setup-dev)
 (require 'setup-docker)
