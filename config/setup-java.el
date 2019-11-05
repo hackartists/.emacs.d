@@ -98,19 +98,24 @@
 ;;   :ensure t
 ;;   :hook (java-mode #'lsp-javacomp-enable))
 
-(require 'lsp-java)
-(require 'dap-java)
+;; (require 'lsp-java)
+;; (require 'dap-java)
 
-(add-hook 'java-mode-hook #'lsp)
-(add-hook 'java-mode-hook
-          (setq lsp-ui-doc-enable nil
-                lsp-ui-sideline-enable nil
-                lsp-ui-flycheck-enable t)
+;; (add-hook 'java-mode-hook #'lsp)
+(defun spacemacs//init-jump-handlers-java-mode ()
+  (interactive)
+  (require 'lsp-java)
+  (require 'dap-java)
 
-          (lambda()
-            (add-hook 'before-save-hook #'lsp-format-buffer)
-            (add-hook 'before-save-hook #'lsp-java-organize-imports)
-            ))
+  (setq lsp-ui-doc-enable nil
+        lsp-ui-sideline-enable t
+        lsp-ui-flycheck-enable nil)
+
+  (add-hook 'before-save-hook (lambda ()
+                                (lsp-format-buffer)
+                                (lsp-java-organize-imports)
+                                ))
+  )
 
 (defun java/pre-init-dap-mode ()
   (add-to-list 'spacemacs--dap-supported-modes 'java-mode))
