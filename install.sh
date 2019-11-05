@@ -13,38 +13,38 @@
 ## aspell : ispell-mode
 
 export emacs_dir=`pwd`
-#sudo xcodebuild -license accept
-#sudo gem install redcarpet
+sudo xcodebuild -license accept
+sudo gem install redcarpet
 
 ## Homebrew
-#cat .ctags >> ~/.ctags
-#ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-#brew install zsh
+cat .ctags >> ~/.ctags
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install zsh
 
 ## ZSH installation and configurations
 
-#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-#git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
-#git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
 
 ## oh-my-profile
-#sh -c "$(curl -fsSL https://raw.githubusercontent.com/hackartists/oh-my-profiles/master/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/hackartists/oh-my-profiles/master/install.sh)"
 
 ## Changing .zshrc
-#rm -rf $HOME/.zshrc
-#ln -s $HOME/.emacs.d/.zshrc $HOME/.zshrc
-#source $HOME/.zshrc
+rm -rf $HOME/.zshrc
+ln -s $HOME/.emacs.d.hackartists/.zshrc $HOME/.zshrc
+source $HOME/.zshrc
 
 ## Configuring devel paths
-#mkdir -p $HOME/data/devel/src
-#cd $HOME/data/devel
-#addpath GOPATH
-#cd $GOPATH/src
-#addpath devel
-#cd $emacs_dir
+mkdir -p $HOME/data/devel/src
+cd $HOME/data/devel
+addpath GOPATH
+cd $GOPATH/src
+addpath devel
+cd $emacs_dir
 
-#addbinpath $GOPATH/bin
-#addbinpath /usr/local/texlive/2017/bin/x86_64-darwin
+addbinpath $GOPATH/bin
+addbinpath /usr/local/texlive/2017/bin/x86_64-darwin
 
 brew tap go-delve/delve homebrew/bundle homebrew/cask hombrew/cask-versions homebrew/core kylef/formulae
 brew cask install homebrew/cask-versions/adoptopenjdk8
