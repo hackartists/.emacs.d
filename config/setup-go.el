@@ -21,6 +21,8 @@
 
   (setq gofmt-command "goimports")
   (setq go-tab-width 4)
+  (require 'dap-go)
+
   ;; (if (not (string-match "go" compile-command))
   ;;     (set (make-local-variable 'compile-command)
   ;;          "go build -v && go test -v && go vet"))
@@ -46,8 +48,8 @@
 
 
 (defun my-go-playground-mode-hook ()
-  (define-key go-playground-mode-map (kbd "<s-return>") 'go-playground-exec)
-  (define-key go-playground-mode-map (kbd "<M-return>") 'yas-insert-snippet)
+  (define-key go-playground-mode-map (kbd "<M-return>") 'go-playground-exec)
+  (define-key go-playground-mode-map (kbd "<s-return>") 'yas-insert-snippet)
   )
 
 (add-hook 'go-playground-mode-hook 'my-go-playground-mode-hook)

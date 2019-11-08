@@ -14,6 +14,8 @@
 
 export emacs_dir=`pwd`
 sudo xcodebuild -license accept
+xcode-select --install
+
 sudo gem install redcarpet
 
 ## Homebrew
@@ -98,9 +100,9 @@ mvn -Dmaven.test.skip=true package
 cp target/jdee-bundle-*.jar ./
 
 # rtags
-export CLANG=`xcrun -f clang++`
-sudo mv $CLANG $CLANG.old
-sudo ln -s /usr/local/opt/rtags/bin/gcc-rtags-wrapper.sh $CLANG 
+# export CLANG=`xcrun -f clang++`
+# sudo mv $CLANG $CLANG.old
+# sudo ln -s /usr/local/opt/rtags/bin/gcc-rtags-wrapper.sh $CLANG 
 
 # python
 pip3 install absl-py appnope asn1crypto astor autopep8 certifi cffi chardet cryptography cycler decorator graphviz grpcio hkdf idna importmagic ipykernel ipython ipython-genutils jedi jupyter-client jupyter-core kiwisolver matplotlib numpy pandas parso pexpect pickleshare Pillow prompt-toolkit protobuf ptyprocess pycodestyle pycparser pycryptodomex Pygments pyparsing pysha3 python-dateutil pytz pyzmq requests rope Rx scikit-learn scipy simplegeneric six tornado traitlets urllib3 virtualenv wcwidth yapf 
