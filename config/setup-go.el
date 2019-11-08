@@ -19,7 +19,8 @@
   (add-hook 'before-save-hook 'gofmt-before-save)
   ;; (add-hook 'completion-at-point-functions 'go-complete-at-point)
 
-  ;; (setq gofmt-command "goimports")
+  (setq gofmt-command "goimports")
+  (setq go-tab-width 4)
   ;; (if (not (string-match "go" compile-command))
   ;;     (set (make-local-variable 'compile-command)
   ;;          "go build -v && go test -v && go vet"))

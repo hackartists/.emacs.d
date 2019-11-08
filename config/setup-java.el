@@ -102,14 +102,14 @@
 ;; (require 'dap-java)
 
 ;; (add-hook 'java-mode-hook #'lsp)
+(setq lsp-ui-doc-enable nil
+      lsp-ui-sideline-enable t
+      lsp-ui-flycheck-enable nil)
+
 (defun spacemacs//init-jump-handlers-java-mode ()
   (interactive)
   (require 'lsp-java)
   (require 'dap-java)
-
-  (setq lsp-ui-doc-enable nil
-        lsp-ui-sideline-enable t
-        lsp-ui-flycheck-enable nil)
 
   (add-hook 'before-save-hook (lambda ()
                                 (lsp-format-buffer)

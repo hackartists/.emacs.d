@@ -87,5 +87,6 @@
   (clm/toggle-command-log-buffer t)
   )
 
+(setq confluence-url "http://wiki.smartm2m.co.kr/rpc/xmlrpc")
 
 (provide 'setup-global)
