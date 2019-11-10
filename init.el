@@ -39,4 +39,3 @@
 (clm/toggle-command-log-buffer)
 (global-command-log-mode)
 (windmove-left)
-(treemacs)
