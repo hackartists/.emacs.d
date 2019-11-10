@@ -1,5 +1,3 @@
-(defvar emacs-home "~/.emacs.d")
-
 (setq spacemacs-start-directory "~/.emacs.d/spacemacs/")
 (load-file (concat spacemacs-start-directory "init.el"))
 
@@ -41,3 +39,4 @@
 (clm/toggle-command-log-buffer)
 (global-command-log-mode)
 (windmove-left)
+(treemacs)

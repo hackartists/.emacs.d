@@ -1,4 +1,11 @@
 ;; GROUP: Editing -> Editing Basics
+(use-package treemacs
+  :ensure t
+  :bind (
+         :map treemacs-mode-map
+              ("RET" . treemacs-visit-node-in-most-recently-used-windows)
+         )
+  )
 
 (setq global-mark-ring-max 50000         ; increase mark ring to contains 5000 entries
       mark-ring-max 50000                ; increase kill ring to contains 5000 entries

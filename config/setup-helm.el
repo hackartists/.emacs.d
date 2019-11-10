@@ -1,5 +1,10 @@
 (use-package helm
+  :ensure t
   :requires ( popup helm-xref helm-mt helm-swoop helm-grags helm-ag helm-tramp)
+  :bind (
+         :map helm-find-files-map
+              ("RET" . helm-ff-RET)
+         )
   )
 (use-package helm-projectile
   :ensure t
@@ -33,14 +38,14 @@
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-set-key (kbd "C-c i") 'helm-imenu)
 
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebihnd tab to do persistent action
-(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebihnd tab to do persistent action
+;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+;; (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
-(define-key helm-find-files-map (kbd "<return>") 'helm-ff-RET)
-(define-key helm-grep-mode-map (kbd "<return>")  'helm-grep-mode-jump-other-window)
-(define-key helm-grep-mode-map (kbd "n")  'helm-grep-mode-jump-other-window-forward)
-(define-key helm-grep-mode-map (kbd "p")  'helm-grep-mode-jump-other-window-backward)
+;; (define-key helm-find-files-map (kbd "<return>") 'helm-ff-RET)
+;; (define-key helm-grep-mode-map (kbd "<return>")  'helm-grep-mode-jump-other-window)
+;; (define-key helm-grep-mode-map (kbd "n")  'helm-grep-mode-jump-other-window-forward)
+;; (define-key helm-grep-mode-map (kbd "p")  'helm-grep-mode-jump-other-window-backward)
 
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))

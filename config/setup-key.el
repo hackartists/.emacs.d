@@ -24,6 +24,7 @@
 (global-set-key (kbd "<home>") 'move-beginning-of-line)
 (global-set-key (kbd "<end>") 'move-end-of-line)
 (global-set-key (kbd "RET") 'newline-and-indent)  ; automatically indent when press RET
+(global-set-key (kbd "C-c C-h i") 'helm-semantic-or-imenu)
 
 (global-set-key (kbd "<s-return>") 'yas-insert-snippet)
 (add-hook 'shell-mode-hook (lambda()
