@@ -1,6 +1,8 @@
 
-(setq to-install
-      '(exec-path-from-shell))
+(use-package exec-path-from-shell
+  :ensure t)
+
+(setq shell-file-name "/bin/zsh")
 
 (exec-path-from-shell-initialize)
 (exec-path-from-shell-copy-env "GOROOT")

@@ -1,3 +1,8 @@
+[submodule "spacemacs"]
+	path = spacemacs
+	url = https://github.com/syl20bnr/spacemacs.git
+	branch = develop
 [submodule "refs/jdibug"]
 	path = refs/jdibug
-	url = git@github.com:udalrich/jdibug.git
+	url = https://github.com/udalrich/jdibug.git
+	branch = master

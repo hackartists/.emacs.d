@@ -14,6 +14,8 @@
 
 export emacs_dir=`pwd`
 sudo xcodebuild -license accept
+xcode-select --install
+
 sudo gem install redcarpet
 
 ## Homebrew
@@ -32,7 +34,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/hackartists/oh-my-profiles
 
 ## Changing .zshrc
 rm -rf $HOME/.zshrc
-ln -s $HOME/.emacs.d/.zshrc $HOME/.zshrc
+ln -s $HOME/.emacs.d.hackartists/.zshrc $HOME/.zshrc
 source $HOME/.zshrc
 
 ## Configuring devel paths
@@ -46,13 +48,13 @@ cd $emacs_dir
 addbinpath $GOPATH/bin
 addbinpath /usr/local/texlive/2017/bin/x86_64-darwin
 
-brew tab go-delve/delve homebrew/bundle homebrew/cask hombrew/cask-versions homebrew/core kylef/formulae
+brew tap go-delve/delve homebrew/bundle homebrew/cask hombrew/cask-versions homebrew/core kylef/formulae
 brew cask install homebrew/cask-versions/adoptopenjdk8
 brew install aspell bazel cmake ctags erlang gettext global go gradle graphviz groovy ios-deploy node ios-sim jq jupyter markdown nmap python rtags rust rustup-init sloccount tree xctool yq maven
 
 brew services start rtags
 
-brew cask install docker emacs-nightly jandi mactex postman robo-3t spectacle sublime-text tunnelblick visual-studio-code wireshark xquartz google-chrome
+brew cask install docker emacs jandi mactex postman spectacle sublime-text tunnelblick visual-studio-code wireshark xquartz google-chrome
 
 # golang setting
 go get golang.org/x/lint/golint
@@ -98,9 +100,9 @@ mvn -Dmaven.test.skip=true package
 cp target/jdee-bundle-*.jar ./
 
 # rtags
-export CLANG=`xcrun -f clang++`
-sudo mv $CLANG $CLANG.old
-sudo ln -s /usr/local/opt/rtags/bin/gcc-rtags-wrapper.sh $CLANG 
+# export CLANG=`xcrun -f clang++`
+# sudo mv $CLANG $CLANG.old
+# sudo ln -s /usr/local/opt/rtags/bin/gcc-rtags-wrapper.sh $CLANG 
 
 # python
 pip3 install absl-py appnope asn1crypto astor autopep8 certifi cffi chardet cryptography cycler decorator graphviz grpcio hkdf idna importmagic ipykernel ipython ipython-genutils jedi jupyter-client jupyter-core kiwisolver matplotlib numpy pandas parso pexpect pickleshare Pillow prompt-toolkit protobuf ptyprocess pycodestyle pycparser pycryptodomex Pygments pyparsing pysha3 python-dateutil pytz pyzmq requests rope Rx scikit-learn scipy simplegeneric six tornado traitlets urllib3 virtualenv wcwidth yapf 
