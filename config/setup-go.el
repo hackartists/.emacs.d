@@ -1,8 +1,22 @@
-;; (use-package go-mode
-;;   :requires ( company-go golint govet flycheck go-complete go-dlv go-errcheck go-guru go-playground go-snippets go-rename gorepl-mode gotest go-imenu go-fill-struct go-direx go-add-tags go-projectile go-tag go-stacktracer go-gen-test go-imports go-impl govet)
-;;   :ensure t
-;;   :bind (("M-." . godef-jump))
-;;   )
+(use-package go-dlv          :ensure t) 
+(use-package go-errcheck     :ensure t) 
+(use-package go-guru         :ensure t) 
+(use-package go-playground   :ensure t) 
+(use-package go-snippets     :ensure t) 
+(use-package go-rename       :ensure t) 
+(use-package gorepl-mode     :ensure t) 
+(use-package gotest          :ensure t) 
+(use-package go-imenu        :ensure t) 
+(use-package go-fill-struct  :ensure t) 
+(use-package go-direx        :ensure t) 
+(use-package go-add-tags     :ensure t) 
+(use-package go-projectile   :ensure t) 
+(use-package go-tag          :ensure t) 
+(use-package go-stacktracer  :ensure t) 
+(use-package go-gen-test     :ensure t) 
+(use-package go-imports      :ensure t) 
+(use-package go-impl         :ensure t) 
+(use-package govet           :ensure t) 
 
 ;; (use-package eglot
 ;;   :ensure t

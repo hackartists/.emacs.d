@@ -2,9 +2,6 @@
 (use-package exec-path-from-shell
   :ensure t)
 
-(setq to-install
-      '(exec-path-from-shell))
-
 (setq shell-file-name "/bin/zsh")
 
 (exec-path-from-shell-initialize)
