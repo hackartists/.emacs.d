@@ -30,77 +30,96 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(nginx
-     confluence
-     unicode-fonts
-     osx
-     sql
-     markdown
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-     helm
-     ;; ivy
-     ;; auto-completion
-     ;; better-defaults
-     emacs-lisp
-     git
-     markdown
-     org
-     ;; (shell :variables
+   '(
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     spell-checking
-     syntax-checking
-     version-control
-     java
-     erlang
-     c-c++
-     dart
-     ess
-     go
-     gpu
-     groovy
-     graphviz
-     json
-     latex
-     kotlin
-     rust
-     ruby
-     yaml
-     python
-     scala
-     swift
-     typescript
-     yaml
-     javascript
-     html
-     bibtex
-     asm
-     docker
-     dap
-     chrome
-     command-log
-     cmake
-     lsp
-     imenu-list
-     multiple-cursors
-     smex
-     semantic
-     typography
-     ibuffer
-     better-defaults
+     ;; (shell :variables
+     ;; ----------------------------------------------------------------
+     ;; ----------------------------------------------------------------
+     ;; <M-m f e R> (Emacs style) to install them.
+     ;; Example of useful layers you may want to use right away.
+     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
+     ;; auto-completion
+     ;; better-defaults
+     ;; ivy
      ;; ivy
      ;; neotree
+     asm
+     better-defaults
+     bibtex
+     c-c++
+     chrome
+     cmake
+     command-log
+     confluence
+     dap
+     dart
+     docker
+     emacs-lisp
+     erlang
+     ess
+     git
+     go
+     gpu
+     graphviz
+     groovy
+     helm
+     html
+     ibuffer
+     imenu-list
+     java
+     javascript
+     json
+     kotlin
+     latex
+     lsp
+     markdown
+     markdown
+     multiple-cursors
+     nginx
+     org
+     osx
+     python
+     ruby
+     rust
+     scala
+     semantic
+     smex
+     spell-checking
+     sql
+     swift
+     syntax-checking
      treemacs
+     typescript
+     typography
+     unicode-fonts
+     version-control
+     yaml
+     yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      multi-term
+                                      helm-mt
+                                      govet
+                                      gotest
+                                      gorepl-mode
+                                      go-stacktracer
+                                      go-snippets
+                                      go-projectile
+                                      go-playground
+                                      go-imports
+                                      go-imenu
+                                      go-errcheck
+                                      go-dlv
+                                      go-direx
+                                      go-add-tags
+                                      exec-path-from-shell
+                                      direx
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
