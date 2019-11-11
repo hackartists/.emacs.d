@@ -75,6 +75,7 @@ values."
      lsp
      markdown
      markdown
+     mu4e
      multiple-cursors
      nginx
      org
