@@ -16,3 +16,4 @@ todo
 tramp
 var
 .DS_Store
+.cache
