@@ -31,6 +31,8 @@
  gdb-show-main t
  )
 
+(setq gc-cons-threshold 16026531840 gc-cons-percentage 0.7)
+
 (cua-mode 1)
 (server-start)
 (split-window-horizontally)
