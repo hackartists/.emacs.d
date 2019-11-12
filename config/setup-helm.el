@@ -30,8 +30,9 @@
   )
 
 
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
+;; (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-set-key (kbd "C-c i") 'helm-imenu)
+(global-set-key (kbd "C-c h i") 'helm-semantic-or-imenu)
 
 ;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebihnd tab to do persistent action
 ;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
