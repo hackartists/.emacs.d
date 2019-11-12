@@ -6,6 +6,7 @@
               ("RET" . treemacs-visit-node-in-most-recently-used-windows)
          )
   )
+(set-face-attribute 'hl-line nil :inherit nil :background nil)
 
 (setq global-mark-ring-max 50000         ; increase mark ring to contains 5000 entries
       mark-ring-max 50000                ; increase kill ring to contains 5000 entries
