@@ -21,6 +21,7 @@
 (global-set-key (kbd "S-SPC") 'toggle-input-method)
 (global-set-key (kbd "C-SPC") 'company-complete)
 (global-set-key (kbd "C-x g") 'magit-status)
+;; (global-set-key (kbd "<home>") 'beginning-of-line-text)
 (global-set-key (kbd "<home>") 'move-beginning-of-line)
 (global-set-key (kbd "<end>") 'move-end-of-line)
 (global-set-key (kbd "RET") 'newline-and-indent)  ; automatically indent when press RET

@@ -31,7 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-          ;;        shell-default-height 30
+     ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; (shell :variables
      ;; ----------------------------------------------------------------
@@ -77,14 +77,14 @@ values."
      latex
      lsp
      markdown
-     markdown
+     node
+     restclient
+     mu4e
      multiple-cursors
      nginx
-     node
      org
      osx
      python
-     restclient
      ruby
      rust
      scala
@@ -109,7 +109,6 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
                                       multi-term
-                                      helm
                                       helm-mt
                                       govet
                                       gotest
