@@ -6,13 +6,28 @@
               ("RET" . treemacs-visit-node-in-most-recently-used-windows)
          )
   )
-(set-face-attribute 'hl-line nil :inherit nil :background nil)
+
+(set-face-attribute 'hl-line nil :height (+ (face-attribute 'default :height) 10) :bold t :underline t :inherit nil :background nil)
 
 (setq global-mark-ring-max 50000         ; increase mark ring to contains 5000 entries
       mark-ring-max 50000                ; increase kill ring to contains 5000 entries
       mode-require-final-newline t      ; add a newline to end of file
       tab-width 4                       ; default to 4 visible spaces to display a tab
       )
+
+(with-eval-after-load 'git-gutter+
+  (defun git-gutter+-remote-default-directory (dir file)
+    (let* ((vec (tramp-dissect-file-name file))
+           (method (tramp-file-name-method vec))
+           (user (tramp-file-name-user vec))
+           (domain (tramp-file-name-domain vec))
+           (host (tramp-file-name-host vec))
+           (port (tramp-file-name-port vec)))
+      (tramp-make-tramp-file-name method user domain host port dir)))
+
+  (defun git-gutter+-remote-file-path (dir file)
+    (let ((file (tramp-file-name-localname (tramp-dissect-file-name file))))
+      (replace-regexp-in-string (concat "\\`" dir) "" file))))
 
 (global-linum-mode)
 (global-diff-hl-mode)
