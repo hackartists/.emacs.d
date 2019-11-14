@@ -7,6 +7,8 @@
 (add-to-list 'load-path "~/.emacs.d/config")
 (add-to-list 'load-path "~/.emacs.d/refs/jdibug")
 (set-frame-parameter nil 'fullscreen 'fullboth)
+(global-git-gutter+-mode nil)
+(flyspell-mode-off)
 
 (require 'setup-docker)
 (require 'setup-path)
@@ -30,8 +32,6 @@
  gdb-many-windows t
  gdb-show-main t
  )
-
-(setq gc-cons-threshold 16026531840 gc-cons-percentage 0.7)
 
 (cua-mode 1)
 (server-start)

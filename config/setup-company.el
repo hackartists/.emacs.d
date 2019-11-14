@@ -18,6 +18,6 @@
 ;;(setq company-show-numbers t)
 (setq company-idle-delay 0)
 (setq company-require-match nil)
-
+(setq company-lsp-cache-candidates t)
 
 (provide 'setup-company)
