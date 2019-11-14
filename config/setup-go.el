@@ -32,7 +32,7 @@
 (defun my-go-mode-hook()
   (add-hook 'before-save-hook 'gofmt-before-save)
   ;; (add-hook 'completion-at-point-functions 'go-complete-at-point)
-
+  (flycheck-select-checker 'go-golint)
   (setq gofmt-command "goimports")
   (setq go-tab-width 4)
   (require 'dap-go)

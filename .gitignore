@@ -17,3 +17,8 @@ tramp
 var
 .DS_Store
 .cache
+/.dap-breakpoints
+/.extension/
+/.lsp-session-v1
+/eclipse.jdt.ls/
+/workspace/
