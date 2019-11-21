@@ -10,7 +10,7 @@
                     :underline t 
                     :inherit nil 
                     :background nil)
-
+(setq default-input-method 'korean-hangul)
 (global-centered-cursor-mode 1)
 ;; (add-hook 'emacs-lisp-mode-hook (lambda ()
 ;;                                   (add-hook 'before-save-hook 'elisp-format-buffer)))
