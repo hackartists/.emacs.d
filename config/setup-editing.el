@@ -11,6 +11,7 @@
                     :inherit nil 
                     :background nil)
 (setq default-input-method 'korean-hangul)
+(global-set-key (kbd "s-SPC") 'toggle-input-method)
 (global-centered-cursor-mode 1)
 ;; (add-hook 'emacs-lisp-mode-hook (lambda ()
 ;;                                   (add-hook 'before-save-hook 'elisp-format-buffer)))
