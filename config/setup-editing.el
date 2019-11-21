@@ -12,8 +12,8 @@
                     :background nil)
 
 (global-centered-cursor-mode 1)
-(add-hook 'emacs-lisp-mode-hook (lambda () 
-                                  (add-hook 'before-save-hook 'elisp-format-buffer)))
+;; (add-hook 'emacs-lisp-mode-hook (lambda ()
+;;                                   (add-hook 'before-save-hook 'elisp-format-buffer)))
 
 (setq global-mark-ring-max 50000   ; increase mark ring to contains 5000 entries
       mark-ring-max 50000          ; increase kill ring to contains 5000 entries
