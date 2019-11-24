@@ -48,7 +48,13 @@ values."
                                            git go gpu graphviz groovy helm html ibuffer imenu-list
                                            import-js java javascript json kotlin latex lsp markdown
                                            node restclient mu4e multiple-cursors nginx org osx
-                                           python ruby rust scala semantic shell smex spell-checking
+                                           python
+                                           (ruby :variables ruby-enable-enh-ruby-mode t
+                                                 ruby-backend 'robe
+                                                 ruby-version-manager 'rvm
+                                                 ruby-test-runner 'rspec
+                                                 )
+                                           rust scala semantic shell smex spell-checking
                                            sql swift syntax-checking treemacs typescript typography
                                            unicode-fonts version-control yaml yaml)
    ;; List of additional packages that will be installed without being
