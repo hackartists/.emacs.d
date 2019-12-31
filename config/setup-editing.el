@@ -12,8 +12,8 @@
                     :background nil)
 (setq default-input-method 'korean-hangul)
 (global-set-key (kbd "s-SPC") 'toggle-input-method)
-(global-centered-cursor-mode 1)
-;; (add-hook 'emacs-lisp-mode-hook (lambda ()
+;; (global-centered-cursor-mode 1)
+;; (add-hook 'emacs-lisp-mode-hookgs (lambda ()
 ;;                                   (add-hook 'before-save-hook 'elisp-format-buffer)))
 
 (setq global-mark-ring-max 50000   ; increase mark ring to contains 5000 entries
@@ -36,7 +36,7 @@
       (replace-regexp-in-string (concat "\\`" dir) "" file))))
 
 (global-linum-mode)
-(global-diff-hl-mode)
+;; (global-diff-hl-mode)
 (yas-minor-mode)
 ;;(highlight-blocks-mode)
 
