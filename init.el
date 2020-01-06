@@ -41,3 +41,4 @@
 (clm/toggle-command-log-buffer)
 (global-command-log-mode)
 (windmove-left)
+(global-set-key (kbd "S-SPC") 'toggle-input-method-custom)
