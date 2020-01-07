@@ -12,11 +12,10 @@
                     :background nil)
 
 (defun toggle-input-method-custom ()
-  "docstring"
   (interactive)
   (if (string= default-input-method "korean-hangul")
       (toggle-input-method)
-    (set-input-method 'korean-hangul)))
+    (set-input-method 'korean-hangul)))  
 
 ;; (global-centered-cursor-mode 1)
 ;; (add-hook 'emacs-lisp-mode-hookgs (lambda ()
