@@ -33,6 +33,8 @@
  gdb-show-main t
  )
 
+(setq ns-command-modifier 'super)
+(global-set-key (kbd "S-SPC") 'toggle-input-method-custom)
 (cua-mode 1)
 (server-start)
 (split-window-horizontally)

@@ -10,8 +10,14 @@
                     :underline t 
                     :inherit nil 
                     :background nil)
-(set-input-method 'korean-hangul)
-(global-set-key (kbd "s-SPC") 'toggle-input-method)
+
+(defun toggle-input-method-custom ()
+  "docstring"
+  (interactive)
+  (if (string= default-input-method "korean-hangul")
+      (toggle-input-method)
+    (set-input-method 'korean-hangul)))
+
 ;; (global-centered-cursor-mode 1)
 ;; (add-hook 'emacs-lisp-mode-hookgs (lambda ()
 ;;                                  (add-hook 'before-save-hook 'elisp-format-buffer)))
@@ -259,7 +265,7 @@
 ;;(global-set-key (kbd "M-o") 'prelude-smart-open-line)
 ;;(global-set-key (kbd "M-o") 'open-line)
 
-(add-hook 'flycheck-mode-hook (lambda() 
-                                (flycheck-list-errors)))
+;; (add-hook 'flycheck-mode-hook (lambda() 
+;;                                 (flycheck-list-errors)))
 
 (provide 'setup-editing)
