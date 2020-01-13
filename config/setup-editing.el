@@ -264,7 +264,7 @@
 ;;(global-set-key (kbd "M-o") 'prelude-smart-open-line)
 ;;(global-set-key (kbd "M-o") 'open-line)
 
-;; (add-hook 'flycheck-mode-hook (lambda() 
-;;                                 (flycheck-list-errors)))
+(add-hook 'flycheck-mode-hook (lambda() 
+                                (flycheck-list-errors)))
 
 (provide 'setup-editing)
