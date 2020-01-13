@@ -63,7 +63,7 @@ values."
                                            go-backend 'lsp)
                                        gpu graphviz groovy helm html ibuffer imenu-list
                                        import-js java javascript json kotlin latex
-                                       lsp
+                                       (lsp :variables lsp-ui-doc-enable nil)
                                        markdown
                                        node restclient mu4e multiple-cursors nginx org osx
                                        (python :variables python-format-on-save t
