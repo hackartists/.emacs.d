@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: git-commit
+# key: git
+# --
+${1:summary}
+
+* Problem
+  - ${2: describe a problem }
+
+* Solution
+  - ${3: describe a solution}
+
+* Incompatible Changes
+  - ${4:filename.ext}: ${5: explain what you have modified}
+
+* Compatible Changes
+  - ${6:filename.ext}: ${7: explain what you have modified}

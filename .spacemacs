@@ -29,61 +29,77 @@ values."
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
-   dotspacemacs-configuration-layers '(csv
-                                       php
-                                       ;;        shell-default-height 30
-                                       ;;        shell-default-position 'bottom)
-                                       ;; (shell :variables
-                                       ;; ----------------------------------------------------------------
-                                       ;; ----------------------------------------------------------------
-                                       ;; <M-m f e R> (Emacs style) to install them.
-                                       ;; Example of useful layers you may want to use right away.
-                                       ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-                                      ;; auto-completion
+   dotspacemacs-configuration-layers '(
+                                       (go :variables gofmt-command "goimports" go-format-before-save t go-tab-width 4 go-backend 'lsp)
+                                       (lsp :variables lsp-ui-doc-enable nil lsp-ui-sideline-enable t)
+                                       (multiple-cursors :variables multiple-cursors-backend 'mc)
+                                       (python :variables python-format-on-save t python-sort-imports-on-save t python-test-runner 'pytest python-test-runner '(pytest nose))
+                                       (ruby :variables ruby-enable-enh-ruby-mode t ruby-backend 'robe ruby-version-manager 'rvm ruby-test-runner 'rspec)
+                                       ;; (c-c++ :variables c-c++-backend 'lsp-clangd c-c++-adopt-subprojects t c-c++-lsp-enable-semantic-highlight 'rainbow c-c++-default-mode-for-headers 'c++-mode c++-enable-organize-includes-on-save t c-c++-enable-clang-format-on-save t c-c++-enable-google-style t c-c++-enable-google-newline t c-c++-enable-auto-newline t)
+                                       ;; auto-completion
                                        ;; better-defaults
-                                       ;; ivy
-                                       ;; ivy
+                                       ;; mu4e
                                        ;; neotree
-                                       asm better-defaults bibtex bm
-                                       ;; (c-c++ :variables c-c++-backend 'lsp-clangd
-                                       ;;        c-c++-adopt-subprojects t
-                                       ;;        c-c++-lsp-enable-semantic-highlight 'rainbow
-                                       ;;        c-c++-default-mode-for-headers 'c++-mode
-                                       ;;        c++-enable-organize-includes-on-save t
-                                       ;;        c-c++-enable-clang-format-on-save t
-                                       ;;        c-c++-enable-google-style t
-                                       ;;        c-c++-enable-google-newline t
-                                       ;;        c-c++-enable-auto-newline t)
-                                       chrome cmake command-log
-                                       confluence dap dart debug docker emacs-lisp erlang ess
+                                       ;; scala
+                                       asm
+                                       better-defaults
+                                       bibtex
+                                       bm
+                                       chrome
+                                       cmake
+                                       command-log
+                                       confluence
+                                       csv
+                                       dap
+                                       dart
+                                       debug
+                                       docker
+                                       emacs-lisp
+                                       erlang
+                                       ess
                                        git
-                                       (go :variables gofmt-command "goimports"
-                                           go-format-before-save t
-                                           go-tab-width 4
-                                           go-backend 'lsp)
-                                       gpu graphviz groovy helm html ibuffer imenu-list
-                                       import-js java javascript json kotlin latex
-                                       (lsp :variables lsp-ui-doc-enable nil)
+                                       gpu
+                                       graphviz
+                                       groovy
+                                       helm
+                                       html
+                                       ibuffer
+                                       imenu-list
+                                       import-js
+                                       ivy
+                                       java
+                                       javascript
+                                       json
+                                       kotlin
+                                       latex
                                        markdown
-                                       node restclient mu4e multiple-cursors nginx org osx
-                                       (python :variables python-format-on-save t
-                                               python-sort-imports-on-save t
-                                               python-test-runner 'pytest
-                                               python-test-runner '(pytest nose))
-                                       (ruby :variables ruby-enable-enh-ruby-mode t
-                                             ruby-backend 'robe
-                                             ruby-version-manager 'rvm
-                                             ruby-test-runner 'rspec
-                                             )
+                                       nginx
+                                       node
+                                       org
+                                       osx
+                                       php
+                                       restclient
+                                       rust
+                                       semantic
+                                       shell
                                        slack
-                                       rust scala semantic shell smex spell-checking
-                                       sql swift syntax-checking treemacs typescript typography
-                                       unicode-fonts version-control yaml yaml)
+                                       smex
+                                       spell-checking
+                                       sql
+                                       swift
+                                       syntax-checking
+                                       treemacs
+                                       typescript
+                                       typography
+                                       unicode-fonts
+                                       version-control
+                                       yaml
+                                       )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(multi-term helm-mt govet gotest gorepl-mode go-stacktracer
+   dotspacemacs-additional-packages '(multi-term helm-swoop helm-mt govet gotest gorepl-mode go-stacktracer
                                                  go-snippets go-projectile go-playground go-imports
                                                  go-imenu go-errcheck go-dlv go-direx go-add-tags
                                                  exec-path-from-shell direx elisp-format)
@@ -292,7 +308,7 @@ values."
    dotspacemacs-line-numbers nil
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
-   dotspacemacs-folding-method 'evil
+   dotspacemacs-folding-method 'origami
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -340,72 +356,7 @@ you should place your code here.")
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages '(lsp-javacomp helm-mt yapfify yaml-mode x86-lookup wgrep web-mode
-                                            web-beautify typo toml-mode tide typescript-mode tagedit
-                                            swift-mode smex smeargle slim-mode scss-mode sass-mode
-                                            rvm ruby-tools ruby-test-mode rubocop rspec-mode robe
-                                            rbenv rake racer pyvenv pytest pyenv-mode py-isort
-                                            pug-mode pip-requirements orgit org-ref pdf-tools
-                                            key-chord org-projectile org-category-capture
-                                            org-present org-pomodoro alert log4e gntp org-mime
-                                            org-download noflet nasm-mode minitest magit-gitflow
-                                            livid-mode skewer-mode simple-httpd live-py-mode
-                                            js2-refactor multiple-cursors js2-mode js-doc ivy-hydra
-                                            imenu-list hy-mode dash-functional htmlize helm-bibtex
-                                            parsebib haml-mode graphviz-dot-mode go-guru go-eldoc
-                                            go-mode gnuplot gmail-message-mode ham-mode
-                                            html-to-markdown gitignore-mode gitconfig-mode
-                                            gitattributes-mode git-timemachine git-messenger
-                                            git-link git-gutter-fringe+ git-gutter-fringe
-                                            fringe-helper git-gutter+ git-gutter
-                                            flyspell-correct-ivy flyspell-correct flymd
-                                            flycheck-rust flycheck-pos-tip pos-tip flycheck
-                                            evil-magit magit transient git-commit with-editor
-                                            ess-smart-equals ess-R-data-view ctable ess julia-mode
-                                            erlang ensime company sbt-mode scala-mode emmet-mode
-                                            edit-server dockerfile-mode docker json-mode tablist
-                                            magit-popup docker-tramp json-snatcher json-reformat
-                                            diff-hl cython-mode counsel-projectile counsel swiper
-                                            ivy command-log-mode coffee-mode chruby cargo rust-mode
-                                            bundler inf-ruby biblio biblio-core auto-dictionary
-                                            auctex anaconda-mode pythonic mmm-mode markdown-toc
-                                            markdown-mode gh-md ws-butler winum which-key
-                                            volatile-highlights vi-tilde-fringe uuidgen use-package
-                                            toc-org spaceline powerline restart-emacs request
-                                            rainbow-delimiters popwin persp-mode pcre2el paradox
-                                            spinner org-plus-contrib org-bullets open-junk-file
-                                            neotree move-text macrostep lorem-ipsum linum-relative
-                                            link-hint indent-guide hydra lv hungry-delete hl-todo
-                                            highlight-parentheses highlight-numbers parent-mode
-                                            highlight-indentation helm-themes helm-swoop
-                                            helm-projectile projectile pkg-info epl
-                                            helm-mode-manager helm-make helm-flx helm-descbinds
-                                            helm-ag google-translate golden-ratio flx-ido flx
-                                            fill-column-indicator fancy-battery eyebrowse
-                                            expand-region exec-path-from-shell evil-visualstar
-                                            evil-visual-mark-mode evil-unimpaired evil-tutor
-                                            evil-surround evil-search-highlight-persist highlight
-                                            evil-numbers evil-nerd-commenter evil-mc evil-matchit
-                                            evil-lisp-state smartparens evil-indent-plus
-                                            evil-iedit-state iedit evil-exchange evil-escape
-                                            evil-ediff evil-args evil-anzu anzu evil goto-chg
-                                            undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash
-                                            s diminish define-word column-enforce-mode
-                                            clean-aindent-mode bind-map bind-key
-                                            auto-highlight-symbol auto-compile packed
-                                            aggressive-indent adaptive-wrap ace-window ace-link
-                                            ace-jump-helm-line helm avy helm-core popup async)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
@@ -416,11 +367,9 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(go-add-tags-style (quote lower-camel-case))
- '(ns-command-modifier (quote super))
+ '(ns-command-modifier 'super)
  '(package-selected-packages
-   (quote
-    (csv-mode lsp-javacomp helm-mt yapfify yaml-mode x86-lookup wgrep web-mode web-beautify typo toml-mode tide typescript-mode tagedit swift-mode smex smeargle slim-mode scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake racer pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements orgit org-ref pdf-tools key-chord org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download noflet nasm-mode minitest magit-gitflow livid-mode skewer-mode simple-httpd live-py-mode js2-refactor multiple-cursors js2-mode js-doc ivy-hydra imenu-list hy-mode dash-functional htmlize helm-bibtex parsebib haml-mode graphviz-dot-mode go-guru go-eldoc go-mode gnuplot gmail-message-mode ham-mode html-to-markdown gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flyspell-correct-ivy flyspell-correct flymd flycheck-rust flycheck-pos-tip pos-tip flycheck evil-magit magit transient git-commit with-editor ess-smart-equals ess-R-data-view ctable ess julia-mode erlang ensime company sbt-mode scala-mode emmet-mode edit-server dockerfile-mode docker json-mode tablist magit-popup docker-tramp json-snatcher json-reformat diff-hl cython-mode counsel-projectile counsel swiper ivy command-log-mode coffee-mode chruby cargo rust-mode bundler inf-ruby biblio biblio-core auto-dictionary auctex anaconda-mode pythonic mmm-mode markdown-toc markdown-mode gh-md ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+   '(yasnippet-snippets yapfify yaml-mode xterm-color x86-lookup ws-butler writeroom-mode winum which-key web-mode web-beautify vterm volatile-highlights vi-tilde-fringe uuidgen use-package unicode-fonts unfill typo treemacs-projectile treemacs-persp treemacs-magit toml-mode toc-org tide terminal-here tagedit symon symbol-overlay swift-mode string-inflection stickyfunc-enhance srefactor sql-indent spaceline-all-the-icons smex smeargle slim-mode slack shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe reveal-in-osx-finder restclient-helm restart-emacs realgud rbenv rake rainbow-delimiters racer pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements phpunit phpcbf php-extras php-auto-yasnippets password-generator paradox overseer osx-trash osx-dictionary osx-clipboard origami orgit org-ref org-projectile org-present org-pomodoro org-mime org-download org-cliplink org-bullets org-brain opencl-mode open-junk-file ob-restclient ob-http nodejs-repl nginx-mode nasm-mode nameless mwim mvn move-text mmm-mode minitest meghanada maven-test-mode markdown-toc magit-svn magit-gitflow macrostep lsp-ui lsp-python-ms lsp-java lorem-ipsum livid-mode live-py-mode link-hint launchctl kotlin-mode json-navigator js2-refactor js-doc indent-guide importmagic import-js impatient-mode ibuffer-projectile hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mt helm-mode-manager helm-make helm-lsp helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-ctest helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports graphviz-dot-mode gradle-mode govet gorepl-mode google-translate golden-ratio godoctor go-tag go-stacktracer go-snippets go-projectile go-playground go-imports go-impl go-imenu go-gen-test go-fill-struct go-errcheck go-dlv go-direx go-add-tags gnuplot gmail-message-mode glsl-mode gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ gh-md geben fuzzy font-lock+ flyspell-correct-helm flymd flycheck-rust flycheck-pos-tip flycheck-package flycheck-kotlin flycheck-elsa flx-ido flutter fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu ess-R-data-view eshell-z eshell-prompt-extras esh-help erlang enh-ruby-mode emoji-cheat-sheet-plus emmet-mode elisp-slime-nav elisp-format editorconfig edit-server dumb-jump drupal-mode dotenv-mode doom-modeline dockerfile-mode docker diminish devdocs dart-mode dap-mode cython-mode cuda-mode csv-mode confluence company-web company-tern company-statistics company-restclient company-reftex company-phpactor company-php company-lsp company-go company-emoji company-auctex company-anaconda command-log-mode column-enforce-mode cmake-mode cmake-ide clean-aindent-mode chruby centered-cursor-mode cargo bundler browse-at-remote bm blacken auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent ace-link ace-jump-helm-line ac-ispell)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

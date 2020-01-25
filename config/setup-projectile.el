@@ -40,9 +40,9 @@
     ))
 
 
-(add-hook 'projectile-after-switch-project-hook (lambda ()
-                                                  (add-hook 'post-command-hook 'hackartist/smart-switch-treemacs)
-                                                  ))
+;; (add-hook 'projectile-after-switch-project-hook (lambda ()
+;;                                                   (add-hook 'post-command-hook 'hackartist/smart-switch-treemacs)
+;;                                                   ))
 
 ;; (add-hook 'after-init-hook (lambda ()
 ;;                              (mapc (lambda (project-root)
