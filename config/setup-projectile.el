@@ -14,9 +14,6 @@
 
 (require 'helm-projectile)
 (helm-projectile-on)
-(setq projectile-completion-system 'helm)
-(setq projectile-indexing-method 'alien)
-(setq projectile-git-submodule-command nil)
 
 (defun hackartist/smart-switch-treemacs ()
   (when (and

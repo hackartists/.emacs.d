@@ -61,7 +61,7 @@ values."
                                        gpu
                                        graphviz
                                        groovy
-                                       helm
+                                       ;; helm
                                        html
                                        ibuffer
                                        imenu-list
@@ -99,7 +99,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(multi-term helm-swoop helm-mt govet gotest gorepl-mode go-stacktracer
+   dotspacemacs-additional-packages '(multi-term helm-swoop helm-projectile helm-mt govet gotest gorepl-mode go-stacktracer
                                                  go-snippets go-projectile go-playground go-imports
                                                  go-imenu go-errcheck go-dlv go-direx go-add-tags
                                                  exec-path-from-shell direx elisp-format)

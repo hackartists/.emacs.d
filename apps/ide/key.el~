@@ -1,0 +1,34 @@
+(global-set-key (kbd "<s-up>") 'windmove-up)
+(global-set-key (kbd "<s-down>") 'windmove-down)
+(global-set-key (kbd "<s-left>") 'windmove-left)
+(global-set-key (kbd "<s-right>") 'windmove-right)
+(global-set-key (kbd "s-=") 'text-scale-increase)
+(global-set-key (kbd "s--") 'text-scale-decrease)
+(global-set-key (kbd "S-SPC") 'toggle-input-method-custom)
+(global-set-key (kbd "<home>") 'move-beginning-of-line)
+(global-set-key (kbd "<end>") 'move-end-of-line)
+(global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-t") 'helm-mt)
+
+;; (require helm)
+;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebihnd tab to do persistent action
+;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+;; (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+
+(define-key projectile-mode-map (kbd "C-c p p") 'helm-projectile-switch-project)
+(define-key projectile-mode-map (kbd "C-c p f") 'helm-projectile-find-file)
+(define-key projectile-mode-map (kbd "C-c p k") 'projectile-kill-buffers)
+(define-key projectile-mode-map (kbd "C-c p s") 'projectile-save-project-buffers)
+
+(setq helm-multi-swoop-edit-save t)
+(setq helm-swoop-split-with-multiple-windows t)
+(setq helm-swoop-split-direction 'split-window-vertically)
+(setq helm-swoop-speed-or-color t)
+
+(customize-set-variable 'helm-ff-lynx-style-map t)
+(customize-set-variable 'helm-imenu-lynx-style-map t)
+(customize-set-variable 'helm-semantic-lynx-style-map t)
+(customize-set-variable 'helm-occur-use-ioccur-style-keys t)
+(customize-set-variable 'helm-grep-use-ioccur-style-keys t)

@@ -1,0 +1,5 @@
+(defun toggle-input-method-custom ()
+  (interactive)
+  (if (string= default-input-method "korean-hangul")
+      (toggle-input-method)
+    (set-input-method 'korean-hangul)))  
