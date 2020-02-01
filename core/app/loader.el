@@ -1,0 +1,18 @@
+(defun core/app/load-apps ()
+  (let ((res)
+	(app-dir (concat emacs-start-directory "/apps")))
+    (let (
+	  (app-files (append (directory-files-recursively app-dir ".*\.el$")))
+	(apps (nthcdr 2 (directory-files app-dir))))
+      (dolist (el app-files res)	      
+	(load-file el))
+      (dolist (el apps res)	      
+	(core/app/init-app el)))))
+
+(defun core/app/init-app (pkg)
+  (let ((init (intern (concat pkg "/init")))
+	(config (intern (concat pkg "/config")))
+	(bindings (intern (concat pkg "/bindings"))))
+    (funcall init)
+    (funcall config)
+    (funcall bindings)))

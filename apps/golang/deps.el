@@ -26,17 +26,3 @@
    helm-lsp
    lsp-treemacs
    ))
-
-(setq lsp-ui-doc-enable nil)
-(setq lsp-ui-sideline-enable t)
-(setq gofmt-command "goimports")
-(setq go-format-before-save t)
-(setq go-tab-width 4)
-(add-hook 'go-mode-hook #'lsp)
-;; (push 'company-lsp company-backends)
-
-;; '(lsp-ui-sideline-code-action ((t (:foreground "dim gray"))))
-
-(add-hook 'go-mode-hook (lambda ()
-			  (flycheck-mode)
-			  ))

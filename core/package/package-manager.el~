@@ -1,5 +1,0 @@
-(defun hackartist/core/package/package-install (pkgs)
-  (let (res)
-    (dolist (el pkgs res)
-      (print el)
-      (package-install el ))))
