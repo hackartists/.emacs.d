@@ -1,6 +1,5 @@
-(hackartist/core/package/package-install
+(core/package/install
  '(
-   company
    company-go
    counsel-gtags
    ;; eldoc				;
@@ -25,4 +24,5 @@
    company-lsp
    helm-lsp
    lsp-treemacs
+   dap-mode
    ))

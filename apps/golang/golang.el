@@ -11,4 +11,4 @@
 
   (add-hook 'go-mode-hook
 	    (lambda ()
-	      (flycheck-mode))))
+	      (flycheck-mode +1))))

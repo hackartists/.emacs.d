@@ -1,4 +1,4 @@
-(hackartist/core/package/package-install
+(core/package/install
  '(
    helm
    popup
@@ -12,4 +12,7 @@
    exec-path-from-shell
    highlight-symbol
    spacemacs-theme
+   company
+   yasnippet-snippets
+   flycheck
    ))

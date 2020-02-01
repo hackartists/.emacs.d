@@ -1,3 +1,9 @@
+(defun ide/company-active-return ()
+  (interactive)
+  (company-abort)
+  (newline-and-indent)
+  )
+
 (defun ide/bindings ()
   (setq ns-command-modifier 'super)
 
@@ -16,6 +22,21 @@
   (global-set-key (kbd "C-t") 'helm-mt)
   (global-set-key (kbd "C-c p p") 'helm-projectile-switch-project)
   (global-set-key (kbd "C-c p f") 'helm-projectile-find-file)
+  (global-set-key (kbd "s-f") 'helm-swoop)
+  (global-set-key (kbd "C-c h i") 'helm-imenu)
+  (global-set-key (kbd "C-x b") 'helm-buffers-list)
+  (global-set-key (kbd "C-c p s g") 'helm-projectile-grep)
+  
+  (eval-after-load 'yasnippet
+    (define-key yas-minor-mode-map (kbd "<s-return>") 'yas-insert-snippet)
+    )
+  
+  (eval-after-load 'company
+    '(progn
+       (define-key company-active-map (kbd "TAB") 'company-complete)
+       (define-key company-active-map (kbd "ESC") 'company-abort)
+       (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
+       (define-key company-active-map [tab] 'company-complete)))
 
   (with-eval-after-load 'helm
     (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
@@ -30,3 +51,4 @@
   (with-eval-after-load 'projectile-mode
     (define-key projectile-mode-map (kbd "C-c p k") 'projectile-kill-buffers)
     (define-key projectile-mode-map (kbd "C-c p s") 'projectile-save-project-buffers)))
+

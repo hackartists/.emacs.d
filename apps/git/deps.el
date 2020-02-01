@@ -1,4 +1,4 @@
-(hackartist/core/package/package-install
+(core/package/install
  '(
    magit
    ))
