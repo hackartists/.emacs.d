@@ -4,4 +4,5 @@
   (cua-mode 1)
   (yas-global-mode +1)
   (projectile-mode +1)
+  (global-undo-tree-mode +1)
   (helm-projectile-on))
