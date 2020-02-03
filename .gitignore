@@ -25,3 +25,6 @@ var
 /.cask/
 /.edbi-ds-history
 /.mc-lists.el
+*.log
+/srecode-map.el
+/transient/

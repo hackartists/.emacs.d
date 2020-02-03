@@ -26,6 +26,7 @@
   (global-set-key (kbd "C-c h i") 'helm-imenu)
   (global-set-key (kbd "C-x b") 'helm-buffers-list)
   (global-set-key (kbd "C-c p s g") 'helm-projectile-grep)
+  (global-set-key (kbd "C-r") 'redraw-display)
   
   (eval-after-load 'yasnippet
     (define-key yas-minor-mode-map (kbd "<s-return>") 'yas-insert-snippet)
