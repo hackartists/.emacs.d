@@ -11,6 +11,12 @@
    helm-gtags
    go-eldoc
    go-fill-struct
+   go-playground
+   go-add-tags
+   go-dlv
+   go-imenu
+   go-imports
+   go-snippets
    go-gen-test
    go-guru
    go-impl

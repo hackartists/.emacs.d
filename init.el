@@ -44,7 +44,9 @@
  '(helm-imenu-lynx-style-map t t)
  '(helm-occur-use-ioccur-style-keys t)
  '(helm-semantic-lynx-style-map t t)
- '(package-selected-packages (quote (yasnippet-snippets pylookup))))
+ '(package-selected-packages
+   (quote
+    (inf-mongo mongo reveal-in-osx-finder minibuffer-complete-cycle go-snippets go-imports go-imenu go-dlv go-add-tags go-playground yasnippet-snippets pylookup))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -5,4 +5,10 @@
   (yas-global-mode +1)
   (projectile-mode +1)
   (global-undo-tree-mode +1)
-  (helm-projectile-on))
+  (helm-projectile-on)
+
+     ;; (add-hook 'minibuffer-setup-hook (lambda ()
+     ;; 				      (when minibuffer-completion-table
+     ;; 					(with-current-buffer "*Messages*"
+     ;; 					  (print minibuffer-completion-table)))))
+  )
