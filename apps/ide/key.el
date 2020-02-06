@@ -17,7 +17,7 @@
   (global-set-key (kbd "<home>") 'move-beginning-of-line)
   (global-set-key (kbd "<end>") 'move-end-of-line)
   (global-set-key (kbd "RET") 'newline-and-indent)
-  (global-set-key (kbd "M-x") 'helm-M-x)
+  (global-set-key (kbd "M-x") 'counsel-M-x)
   (global-set-key (kbd "C-x C-f") 'helm-find-files)
   (global-set-key (kbd "C-t") 'helm-mt)
   (global-set-key (kbd "C-c p p") 'helm-projectile-switch-project)
@@ -26,6 +26,7 @@
   (global-set-key (kbd "C-c h i") 'helm-imenu)
   (global-set-key (kbd "C-x b") 'helm-buffers-list)
   (global-set-key (kbd "C-c p s g") 'helm-projectile-grep)
+  (global-set-key (kbd "C-r") 'redraw-display)
   
   (eval-after-load 'yasnippet
     (define-key yas-minor-mode-map (kbd "<s-return>") 'yas-insert-snippet)
