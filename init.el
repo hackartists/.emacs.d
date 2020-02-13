@@ -65,15 +65,15 @@
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets")
 (set-frame-parameter nil 'fullscreen 'fullboth)
 
-;; (require 'setup-docker)
-;; (require 'setup-path)
-;; (require 'setup-helm)
-;; (require 'setup-editing)
-;; (require 'setup-key)
-;; (require 'setup-company)
-;; (require 'setup-projectile)
-;; (require 'setup-go)
-;; (require 'setup-java)
+(require 'setup-docker)
+(require 'setup-path)
+(require 'setup-helm)
+(require 'setup-editing)
+(require 'setup-key)
+(require 'setup-company)
+(require 'setup-projectile)
+(require 'setup-go)
+(require 'setup-java)
 
 ;; (setq
 ;;  gdb-many-windows t
