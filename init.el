@@ -61,7 +61,7 @@
 (switch-to-buffer "*scratch*")
 
 (add-to-list 'load-path "~/.emacs.d/config")
-(add-to-list 'load-path "~/.emacs.d/refs/jdibug")
+;; (add-to-list 'load-path "~/.emacs.d/refs/jdibug")
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets")
 (set-frame-parameter nil 'fullscreen 'fullboth)
 
