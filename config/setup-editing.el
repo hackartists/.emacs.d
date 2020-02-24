@@ -40,7 +40,7 @@
     (let ((file (tramp-file-name-localname (tramp-dissect-file-name file)))) 
       (replace-regexp-in-string (concat "\\`" dir) "" file))))
 
-(global-linum-mode)
+;; (global-linum-mode)
 ;; (global-diff-hl-mode)
 (yas-minor-mode)
 ;;(highlight-blocks-mode)

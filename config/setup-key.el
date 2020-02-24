@@ -27,6 +27,12 @@
 (global-set-key (kbd "RET") 'newline-and-indent)  ; automatically indent when press RET
 (global-set-key (kbd "C-c C-h i") 'helm-semantic-or-imenu)
 
+(global-set-key (kbd "s-c") 'cua-copy-region)
+(global-set-key (kbd "s-v") 'cua-paste)
+(global-set-key (kbd "s-x") 'cua-cut-region)
+(global-set-key (kbd "s-k") 'kill-this-buffer)
+(global-set-key (kbd "s-u") 'revert-buffer)
+
 (global-set-key (kbd "<s-return>") 'yas-insert-snippet)
 (add-hook 'shell-mode-hook (lambda()
                              (local-set-key (kbd "<C-up>") 'windmove-up)
