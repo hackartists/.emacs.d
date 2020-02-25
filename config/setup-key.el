@@ -32,6 +32,7 @@
 (global-set-key (kbd "s-x") 'cua-cut-region)
 (global-set-key (kbd "s-k") 'kill-this-buffer)
 (global-set-key (kbd "s-u") 'revert-buffer)
+(global-set-key (kbd "s-a") 'mark-whole-buffer)
 
 (global-set-key (kbd "<s-return>") 'yas-insert-snippet)
 (add-hook 'shell-mode-hook (lambda()
