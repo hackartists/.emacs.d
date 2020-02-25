@@ -1,10 +1,6 @@
 (use-package helm
   :ensure t
   :requires ( popup helm-xref helm-mt helm-swoop helm-grags helm-ag helm-tramp)
-  ;; :bind (
-  ;;        :map helm-find-files-map
-  ;;             ("RET" . helm-ff-RET)
-  ;;        )
   )
 (use-package helm-projectile
   :ensure t
@@ -36,18 +32,12 @@
 
 (require 'helm)
 
-;; (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-set-key (kbd "C-c i") 'helm-imenu)
 (global-set-key (kbd "C-c h i") 'helm-semantic-or-imenu)
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebihnd tab to do persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
-
-;; (define-key helm-find-files-map (kbd "<return>") 'helm-ff-RET)
-;; (define-key helm-grep-mode-map (kbd "<return>")  'helm-grep-mode-jump-other-window)
-;; (define-key helm-grep-mode-map (kbd "n")  'helm-grep-mode-jump-other-window-forward)
-;; (define-key helm-grep-mode-map (kbd "p")  'helm-grep-mode-jump-other-window-backward)
 
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
@@ -77,11 +67,6 @@
 (define-key 'help-command (kbd "r") 'helm-info-emacs)
 (define-key 'help-command (kbd "C-l") 'helm-locate-library)
 
-;; use helm to list eshell history
-(add-hook 'eshell-mode-hook
-          #'(lambda ()
-              (define-key eshell-mode-map (kbd "M-l")  'helm-eshell-history)))
-
 ;;; Save current position to mark ring
 (add-hook 'helm-goto-line-before-hook 'helm-save-current-pos-to-mark-ring)
 
@@ -89,8 +74,6 @@
 (define-key minibuffer-local-map (kbd "M-n") 'helm-minibuffer-history)
 (define-key global-map [remap find-tag] 'helm-etags-select)
 (define-key global-map [remap list-buffers] 'helm-buffers-list)
-
-(define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
 
 (helm-mode 1)
 
@@ -103,3 +86,4 @@
 (customize-set-variable 'helm-grep-use-ioccur-style-keys t)
 
 (provide 'setup-helm)
+  

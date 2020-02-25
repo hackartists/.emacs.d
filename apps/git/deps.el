@@ -1,5 +1,0 @@
-(core/package/install
- '(
-   magit
-   ))
-
