@@ -36,7 +36,12 @@
     (let ((file (tramp-file-name-localname (tramp-dissect-file-name file)))) 
       (replace-regexp-in-string (concat "\\`" dir) "" file))))
 
-(yas-minor-mode 1)
+;; (global-linum-mode)
+;; (global-diff-hl-mode)
+(yas-minor-mode)
+;;(highlight-blocks-mode)
+
+(recentf-mode 1)
 (setq recentf-max-menu-items 100)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 

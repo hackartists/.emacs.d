@@ -12,7 +12,7 @@
      (define-key company-active-map (kbd "<return>") 'my-company-active-return)
      (define-key company-active-map [tab] 'company-complete)))
 ;; (add-hook 'after-init-hook 'global-company-mode)
-(global-company-mode t)
+;; (global-company-mode t)
 (setq company-minimum-prefix-length 1)
 ;;(setq company-auto-complete t)
 ;;(setq company-show-numbers t)
