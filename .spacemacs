@@ -76,7 +76,7 @@ values."
                                        markdown
                                        nginx
                                        node
-                                       org
+                                       (org :variables org-enable-github-support t org-enable-bootstrap-support t org-enable-bootstrap-support t org-projectile-file "TODOs.org")
                                        osx
                                        php
                                        restclient
@@ -175,15 +175,15 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(deeper-blue spacemacs-dark spacemacs-light)
+   dotspacemacs-themes '(spacemacs-dark spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro" :size 13 
+   dotspacemacs-default-font '("Source Code Pro" :size 20 
                                :weight normal 
                                :width normal 
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.5)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -372,6 +372,60 @@ This function is called at the very end of Spacemacs initialization."
  '(buffers-menu-buffer-name-length 100)
  '(gofmt-show-errors nil)
  '(ns-command-modifier (quote super))
+ '(custom-safe-themes
+   (quote
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+ '(gofmt-show-errors nil)
+ '(ispell-program-name "/usr/bin/hunspell")
+ '(ns-command-modifier (quote super) t)
+ '(org-latex-listings t)
+ '(org-latex-listings-langs
+   (quote
+    ((emacs-lisp "Lisp")
+     (lisp "Lisp")
+     (clojure "Lisp")
+     (c "C")
+     (cc "C++")
+     (fortran "fortran")
+     (perl "Perl")
+     (cperl "Perl")
+     (python "Python")
+     (ruby "Ruby")
+     (html "HTML")
+     (xml "XML")
+     (tex "TeX")
+     (latex "[LaTeX]TeX")
+     (shell-script "bash")
+     (gnuplot "Gnuplot")
+     (ocaml "Caml")
+     (caml "Caml")
+     (sql "SQL")
+     (sqlite "sql")
+     (makefile "make")
+     (R "r")
+     (js "JavaScript"))))
+ '(org-latex-listings-options
+   (quote
+    (("aboveskip" "0.2\\baselineskip")
+     ("frame" "top")
+     ("frame" "bottom")
+     ("captionpos" "b")
+     ("abovecaptionskip" "0.2\\baselineskip")
+     ("numbers" "left")
+     ("numbersep" "8pt")
+     ("numberstyle" "\\footnotesize \\color{black}")
+     ("stepnumber" "1")
+     ("breaklines" "true")
+     ("framexleftmargin" "5mm")
+     ("xleftmargin" "15pt")
+     ("showstringspaces" "false")
+     ("basicstyle" "\\linespread{0.8}\\footnotesize\\ttfamily")
+     ("keywordstyle" "\\bfseries\\color{mykeywords}")
+     ("commentstyle" "\\itshape\\color{purple}")
+     ("identifierstyle" "\\color{blue}")
+     ("stringstyle" "\\color{orange}")
+     ("tabsize" "4"))))
+ '(org-support-shift-select t)
  '(package-selected-packages
    (quote
     (rjsx-mode add-node-modules-path systemd yasnippet-snippets yapfify yaml-mode xterm-color x86-lookup ws-butler writeroom-mode winum which-key web-mode web-beautify vterm volatile-highlights vi-tilde-fringe uuidgen use-package unicode-fonts unfill typo treemacs-projectile treemacs-persp treemacs-magit toml-mode toc-org tide terminal-here tagedit symon symbol-overlay swift-mode string-inflection stickyfunc-enhance srefactor sql-indent spaceline-all-the-icons smex smeargle slim-mode slack shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe reveal-in-osx-finder restclient-helm restart-emacs realgud rbenv rake rainbow-delimiters racer pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements phpunit phpcbf php-extras php-auto-yasnippets password-generator paradox overseer osx-trash osx-dictionary osx-clipboard origami orgit org-ref org-projectile org-present org-pomodoro org-mime org-download org-cliplink org-bullets org-brain opencl-mode open-junk-file ob-restclient ob-http nodejs-repl nginx-mode nasm-mode nameless mwim mvn move-text mmm-mode minitest meghanada maven-test-mode markdown-toc magit-svn magit-gitflow macrostep lsp-ui lsp-python-ms lsp-java lorem-ipsum livid-mode live-py-mode link-hint launchctl kotlin-mode json-navigator js2-refactor js-doc indent-guide importmagic import-js impatient-mode ibuffer-projectile hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mt helm-mode-manager helm-make helm-lsp helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-ctest helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports graphviz-dot-mode gradle-mode govet gorepl-mode google-translate golden-ratio godoctor go-tag go-stacktracer go-snippets go-projectile go-playground go-imports go-impl go-imenu go-gen-test go-fill-struct go-errcheck go-dlv go-direx go-add-tags gnuplot gmail-message-mode glsl-mode gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ gh-md geben fuzzy font-lock+ flyspell-correct-helm flymd flycheck-rust flycheck-pos-tip flycheck-package flycheck-kotlin flycheck-elsa flx-ido flutter fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu ess-R-data-view eshell-z eshell-prompt-extras esh-help erlang enh-ruby-mode emoji-cheat-sheet-plus emmet-mode elisp-slime-nav elisp-format editorconfig edit-server dumb-jump drupal-mode dotenv-mode doom-modeline dockerfile-mode docker diminish devdocs dart-mode dap-mode cython-mode cuda-mode csv-mode confluence company-web company-tern company-statistics company-restclient company-reftex company-phpactor company-php company-lsp company-go company-emoji company-auctex company-anaconda command-log-mode column-enforce-mode cmake-mode cmake-ide clean-aindent-mode chruby centered-cursor-mode cargo bundler browse-at-remote bm blacken auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent ace-link ace-jump-helm-line ac-ispell)))
