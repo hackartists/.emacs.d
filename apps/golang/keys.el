@@ -1,6 +1,1 @@
-(defun golang/bindings ()
-  (add-hook 'go-mode-hook (lambda()
-  (define-key go-mode-map (kbd "M-.") 'godef-jump)
-  (define-key go-mode-map (kbd "M-,") 'pop-tag-mark)
-  (define-key go-mode-map (kbd "M->") 'godef-jump-other-window)
-  )))
+(defun hackartist/golang/bindings ())

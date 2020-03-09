@@ -1,25 +1,25 @@
 (defvar ide-load-env-pre-hook nil)
-(defvar miniwindow-position 'bottom)
+;; (defvar miniwindow-position 'bottom)
 
-(add-to-list 'display-buffer-alist
-             `(,(rx bos "*Flycheck errors*" eos)
-              (display-buffer-reuse-window
-               display-buffer-in-side-window)
-              (side            . bottom)
-              (reusable-frames . visible)
-              (window-height   . 0.25)))
+;; (add-to-list 'display-buffer-alist
+;;              `(,(rx bos "*Flycheck errors*" eos)
+;;               (display-buffer-reuse-window
+;;                display-buffer-in-side-window)
+;;               (side            . bottom)
+;;               (reusable-frames . visible)
+;;               (window-height   . 0.25)))
 
-(defvar ide-helm-display-buffer-regexp
-  `("**"
-    (display-buffer-in-side-window)
-    (inhibit-same-window . t)
-    (side . ,miniwindow-position)
-    (window-width . 0.6)
-    (window-height . 0.4)))
+;; (defvar ide-helm-display-buffer-regexp
+;;   `("**"
+;;     (display-buffer-in-side-window)
+;;     (inhibit-same-window . t)
+;;     (side . ,miniwindow-position)
+;;     (window-width . 0.6)
+;;     (window-height . 0.4)))
 
-(defvar ide-display-buffer-regexp
-  `("**"
-    (window-height . 0.4)))
+;; (defvar ide-display-buffer-regexp
+;;   `("**"
+;;     (window-height . 0.4)))
 
 (defcustom ide-environments
   '("PATH" "MANPATH")
@@ -75,11 +75,3 @@
                ;; displayed.
                ide-helm-display-buffer-regexp)))
     (helm-default-display-buffer buffer)))
-
-;; (defun ide/display-bottom-window (buffer)
-;;   "Display a buffer at the bottom of a frame."
-;;     (display-buffer-at-bottom buffer ide-display-buffer-regexp))
-
-;; (defun ide/display-bottom-window (buffer)
-;;   "Display a buffer at the bottom of a frame."
-;;     (display-buffer-at-bottom buffer ide-display-buffer-regexp))

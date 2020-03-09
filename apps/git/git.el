@@ -1,5 +1,0 @@
-(defun git/init())
-(defun git/config())
-(defun git/bindings()
-  (global-set-key (kbd "C-x g") 'magit-status)
-  )
