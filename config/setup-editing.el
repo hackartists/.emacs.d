@@ -16,6 +16,11 @@
       (toggle-input-method)
     (set-input-method 'korean-hangul)))
 
+(add-hook 'minibuffer-setup-hook
+          (lambda ()
+            (if (string= current-input-method 'korean-hangul)
+                (toggle-input-method-custom))))
+
 (setq global-mark-ring-max 50000
       mark-ring-max 50000
       mode-require-final-newline t
