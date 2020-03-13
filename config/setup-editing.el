@@ -19,7 +19,9 @@
 (add-hook 'minibuffer-setup-hook
           (lambda ()
             (if (string= current-input-method 'korean-hangul)
-                (toggle-input-method-custom))))
+                (toggle-input-method-custom)
+              (setq current-input-method nil)
+              )))
 
 (setq global-mark-ring-max 50000
       mark-ring-max 50000

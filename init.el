@@ -42,3 +42,4 @@
 (switch-to-buffer "*Messages*")
 (windmove-left)
 (slack-start)
+(put 'magit-clean 'disabled nil)
