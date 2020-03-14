@@ -1,14 +1,18 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
-;; (setq temporary-file-directory (concat emacs-start-directory "/tmp"))
+(defalias 'yes-or-no-p 'y-or-n-p)
 
-;; (when (not (file-directory-p temporary-file-directory))
-;;   (make-directory temporary-file-directory)
-;;   (set-file-modes temporary-file-directory #o700))
+(defvar hackartist-config-pre-load-hook nil
+  "Hook executed at the beginning of configuration loading.")
 
-;; (setq server-socket-dir temporary-file-directory)
+(setq dotspacemacs-configuration-layers '())
 
-;; (server-start)
+(defun hackartist//app-config (pkg)
+  "run config loader for an hackartist app"
+  (interactive "P")
+  (let* ((app-conf (intern (concat "hackartist/" (concat pkg "/config")))))
+    (funcall app-conf)))
+
 (add-hook 'focus-out-hook (lambda ()
 			    (interactive)
 			    (save-some-buffers t )
@@ -16,5 +20,17 @@
 
 (add-hook 'configuration-layer-pre-load-hook
           (lambda ()
-            (dolist (el hackartist-packages) (add-to-list 'dotspacemacs-additional-packages el))
+            (advice-add 'dotspacemacs/layers :after #'hackartist//config-load)
+            (advice-add 'dotspacemacs/init :after #'hackartist//layer-init)
+            ;; (dolist (el hackartist-configuration-layers) (dotspacemacs/add-layer el))
+            ;; (dolist (el hackartist-apps) (hackartist//app-config el))
             ))
+
+(defun hackartist//config-load ()
+  (dolist (el hackartist-packages) (add-to-list 'dotspacemacs-additional-packages el))
+  (dolist (el hackartist-configuration-layers) (add-to-list 'dotspacemacs-configuration-layers el))
+   )
+
+(defun hackartist//layer-init ()
+  (setq dotspacemacs-startup-banner nil)
+  )

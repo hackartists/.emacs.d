@@ -3,10 +3,17 @@
         helm
         ))
 
-(setq hackartist/ide/packages
-      '(org-jira multi-term helm-swoop helm-projectile helm-mt
-                 exec-path-from-shell direx elisp-format
-                 ))
+(setq hackartist-ide-packages
+      '(
+        org-jira
+        multi-term
+        helm-swoop
+        helm-projectile
+        helm-mt
+        exec-path-from-shell
+        direx
+        elisp-format
+        ))
 
 ;; (core/package/install
 ;;  '(

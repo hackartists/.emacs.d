@@ -100,10 +100,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(org-jira multi-term helm-swoop helm-projectile helm-mt govet gotest gorepl-mode go-stacktracer
-                                                 go-snippets go-projectile go-playground go-imports
-                                                 go-imenu go-errcheck go-dlv go-direx go-add-tags
-                                                 exec-path-from-shell direx elisp-format)
+   dotspacemacs-additional-packages '()
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -180,7 +177,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro" :size 20
+   dotspacemacs-default-font '("Source Code Pro" :size 14
                                :weight normal 
                                :width normal 
                                :powerline-scale 1.5)

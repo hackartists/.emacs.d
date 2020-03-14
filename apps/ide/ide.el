@@ -1,5 +1,4 @@
 (defun ide/init ()
-  (global-linum-mode +1)
   (global-company-mode +1)
   (cua-mode 1)
   (yas-global-mode +1)
