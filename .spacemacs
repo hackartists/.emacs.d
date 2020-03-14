@@ -180,7 +180,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro" :size 14
+   dotspacemacs-default-font '("Source Code Pro" :size 20
                                :weight normal 
                                :width normal 
                                :powerline-scale 1.5)
@@ -373,9 +373,10 @@ This function is called at the very end of Spacemacs initialization."
  '(custom-safe-themes
    (quote
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+ '(doc-view-resolution 200)
  '(gofmt-show-errors nil)
  '(lsp-file-watch-threshold 10000)
- '(ns-command-modifier (quote super))
+ '(ns-command-modifier (quote super) t)
  '(org-latex-listings t)
  '(org-latex-listings-langs
    (quote
@@ -411,7 +412,7 @@ This function is called at the very end of Spacemacs initialization."
      ("abovecaptionskip" "0.2\\baselineskip")
      ("numbers" "left")
      ("numbersep" "8pt")
-     ("numberstyle" "\\tiny \\color{black}")
+     ("numberstyle" "\\tiny\\color{black}")
      ("stepnumber" "1")
      ("breaklines" "true")
      ("framexleftmargin" "5mm")

@@ -19,7 +19,7 @@
 (switch-to-buffer "*scratch*")
 
 (add-to-list 'load-path "~/.emacs.d/config")
-(load-file "~/.emacs.d/private/slack.el")
+;; (load-file "~/.emacs.d/private/slack.el")
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets")
 (set-frame-parameter nil 'fullscreen 'fullboth)
 
@@ -33,6 +33,11 @@
 (require 'setup-go)
 (require 'setup-java)
 
+(defun for-linux ()
+  (message 'linux))
+
+;; (if (string= system-type "gnu/linux") (for-linux))
+
 (setq ns-command-modifier 'super)
 (global-set-key (kbd "S-SPC") 'toggle-input-method-custom)
 (cua-mode 1)
@@ -41,5 +46,5 @@
 (windmove-right)
 (switch-to-buffer "*Messages*")
 (windmove-left)
-(slack-start)
+;; (slack-start)
 (put 'magit-clean 'disabled nil)
