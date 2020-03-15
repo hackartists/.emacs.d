@@ -61,6 +61,7 @@
 
 
 (defun core/app/init-apps ()
+  (exec-path-from-shell-copy-envs hackartist-environments)
   (dolist (el hackartist-apps)
     (core/app/init-app el)))
 
