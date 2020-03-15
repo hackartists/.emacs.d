@@ -5,37 +5,18 @@
     (load-file el)))
 
 (core/app/load-apps)
-;; (core/ui/init)
-
 
 (setq spacemacs-start-directory "~/.emacs.d/spacemacs/")
 (load-file (concat spacemacs-start-directory "init.el"))
+(core/app/init-apps)
 
 (switch-to-buffer "*scratch*")
 
-(add-to-list 'load-path "~/.emacs.d/config")
 ;; (load-file "~/.emacs.d/private/slack.el")
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets")
 (set-frame-parameter nil 'fullscreen 'fullboth)
 
-;; (require 'setup-docker)
-(require 'setup-path)
-(require 'setup-helm)
-(require 'setup-editing)
-(require 'setup-key)
-(require 'setup-company)
-(require 'setup-projectile)
-(require 'setup-go)
-(require 'setup-java)
-
-(defun for-linux ()
-  (message 'linux))
-
-;; (if (string= system-type "gnu/linux") (for-linux))
-
 (setq ns-command-modifier 'super)
-(global-set-key (kbd "S-SPC") 'toggle-input-method-custom)
-(cua-mode 1)
 (server-start)
 (split-window-horizontally)
 (windmove-right)

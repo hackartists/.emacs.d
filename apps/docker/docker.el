@@ -1,5 +1,5 @@
 (setq hackartist-docker-layers
-      '())
+      '(docker))
 
 (setq hackartist-docker-packages
       '(

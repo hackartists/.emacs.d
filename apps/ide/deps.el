@@ -1,6 +1,15 @@
 (setq hackartist-ide-layers
       '(
         helm
+        (multiple-cursors :variables multiple-cursors-backend 'mc)
+        ivy
+        restclient
+        git
+        version-control
+        unicode-fonts
+        systemd
+        markdown
+        (org :variables org-enable-github-support t org-enable-bootstrap-support t org-enable-bootstrap-support t org-projectile-file "TODOs.org")
         ))
 
 (setq hackartist-ide-packages
@@ -13,23 +22,15 @@
         exec-path-from-shell
         direx
         elisp-format
+        popup helm-xref helm-mt helm-swoop helm-ag helm-tramp helm-gtags
+        pkg-info projectile
+        vdiff bazel-mode toml-mode
+        gradle-mode
+        markdown-mode+
+        magit
         ))
 
-;; (core/package/install
-;;  '(
-;;    helm
-;;    popup
-;;    helm-mt
-;;    helm-swoop
-;;    helm-ag
-;;    helm-tramp
-;;    helm-projectile
-;;    yasnippet
-;;    command-log-mode
-;;    exec-path-from-shell
-;;    highlight-symbol
-;;    spacemacs-theme
-;;    company
-;;    yasnippet-snippets
-;;    flycheck
-;;    ))
+(setq hackartist-ide-ocs
+      '(
+        "https://github.com/magoyette/openapi-yaml-mode.git"
+        ))

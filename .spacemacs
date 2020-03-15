@@ -1,5 +1,87 @@
 ;; -*- mode: emacs-lisp -*-
-;; This file is loaded by Spacemacs at startup.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(alert-default-style (quote osx-notifier))
+ '(buffers-menu-buffer-name-length 100)
+ '(custom-safe-themes
+   (quote
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+ '(doc-view-resolution 200)
+ '(evil-want-Y-yank-to-eol nil)
+ '(gofmt-show-errors nil)
+ '(helm-ff-lynx-style-map t)
+ '(helm-grep-use-ioccur-style-keys t)
+ '(helm-imenu-lynx-style-map t t)
+ '(helm-occur-use-ioccur-style-keys t)
+ '(helm-semantic-lynx-style-map t t)
+ '(lsp-file-watch-threshold 10000)
+ '(ns-command-modifier (quote super) t)
+ '(org-latex-listings t)
+ '(org-latex-listings-langs
+   (quote
+    ((emacs-lisp "Lisp")
+     (lisp "Lisp")
+     (clojure "Lisp")
+     (c "C")
+     (cc "C++")
+     (fortran "fortran")
+     (perl "Perl")
+     (cperl "Perl")
+     (python "Python")
+     (ruby "Ruby")
+     (html "HTML")
+     (xml "XML")
+     (tex "TeX")
+     (latex "[LaTeX]TeX")
+     (shell-script "bash")
+     (gnuplot "Gnuplot")
+     (ocaml "Caml")
+     (caml "Caml")
+     (sql "SQL")
+     (sqlite "sql")
+     (makefile "make")
+     (R "r")
+     (js "JavaScript"))))
+ '(org-latex-listings-options
+   (quote
+    (("aboveskip" "0.2\\baselineskip")
+     ("frame" "top")
+     ("frame" "bottom")
+     ("captionpos" "b")
+     ("abovecaptionskip" "0.2\\baselineskip")
+     ("numbers" "left")
+     ("numbersep" "8pt")
+     ("numberstyle" "\\tiny\\color{black}")
+     ("stepnumber" "1")
+     ("breaklines" "true")
+     ("framexleftmargin" "5mm")
+     ("xleftmargin" "15pt")
+     ("showstringspaces" "false")
+     ("basicstyle" "\\linespread{0.8}\\tiny\\ttfamily")
+     ("keywordstyle" "\\bfseries\\color{mykeywords}")
+     ("commentstyle" "\\itshape\\color{purple}")
+     ("identifierstyle" "\\color{blue}")
+     ("stringstyle" "\\color{orange}")
+     ("tabsize" "4"))))
+ '(org-support-shift-select t)
+ '(package-selected-packages
+   (quote
+    (gotest aws-ec2 org-jira github-browse-file github-stars github-review github-notifier github-pullrequest rjsx-mode add-node-modules-path systemd yasnippet-snippets yapfify yaml-mode xterm-color x86-lookup ws-butler writeroom-mode winum which-key web-mode web-beautify vterm volatile-highlights vi-tilde-fringe uuidgen use-package unicode-fonts unfill typo treemacs-projectile treemacs-persp treemacs-magit toml-mode toc-org tide terminal-here tagedit symon symbol-overlay swift-mode string-inflection stickyfunc-enhance srefactor sql-indent spaceline-all-the-icons smex smeargle slim-mode slack shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe reveal-in-osx-finder restclient-helm restart-emacs realgud rbenv rake rainbow-delimiters racer pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements phpunit phpcbf php-extras php-auto-yasnippets password-generator paradox overseer osx-trash osx-dictionary osx-clipboard origami orgit org-ref org-projectile org-present org-pomodoro org-mime org-download org-cliplink org-bullets org-brain opencl-mode open-junk-file ob-restclient ob-http nodejs-repl nginx-mode nasm-mode nameless mwim mvn move-text mmm-mode minitest meghanada maven-test-mode markdown-toc magit-svn magit-gitflow macrostep lsp-ui lsp-python-ms lsp-java lorem-ipsum livid-mode live-py-mode link-hint launchctl kotlin-mode json-navigator js2-refactor js-doc indent-guide importmagic import-js impatient-mode ibuffer-projectile hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mt helm-mode-manager helm-make helm-lsp helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-ctest helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports graphviz-dot-mode gradle-mode govet gorepl-mode google-translate golden-ratio godoctor go-tag go-stacktracer go-snippets go-projectile go-playground go-imports go-impl go-imenu go-gen-test go-fill-struct go-errcheck go-dlv go-direx go-add-tags gnuplot gmail-message-mode glsl-mode gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ gh-md geben fuzzy font-lock+ flyspell-correct-helm flymd flycheck-rust flycheck-pos-tip flycheck-package flycheck-kotlin flycheck-elsa flx-ido flutter fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu ess-R-data-view eshell-z eshell-prompt-extras esh-help erlang enh-ruby-mode emoji-cheat-sheet-plus emmet-mode elisp-slime-nav elisp-format editorconfig edit-server dumb-jump drupal-mode dotenv-mode doom-modeline dockerfile-mode docker diminish devdocs dart-mode dap-mode cython-mode cuda-mode csv-mode confluence company-web company-tern company-statistics company-restclient company-reftex company-phpactor company-php company-lsp company-go company-emoji company-auctex company-anaconda command-log-mode column-enforce-mode cmake-mode cmake-ide clean-aindent-mode chruby centered-cursor-mode cargo bundler browse-at-remote bm blacken auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent ace-link ace-jump-helm-line ac-ispell)))
+ '(slack-thread-also-send-to-room nil)
+ '(tramp-remote-path
+   (quote
+    (tramp-default-remote-path "/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin" "/local/bin" "/local/freeware/bin" "/local/gnu/bin" "/usr/freeware/bin" "/usr/pkg/bin" "/usr/contrib/bin" "/opt/bin" "/opt/sbin" "/opt/local/bin" "/usr/local/go/bin" "/home/luffy/go/bin")))
+ '(visible-bell t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+);; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
 (defun dotspacemacs/layers () 
@@ -29,73 +111,7 @@ values."
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
-   dotspacemacs-configuration-layers '(react
-                                       systemd
-                                       (go :variables gofmt-command "goimports" go-format-before-save t go-tab-width 4 go-backend 'lsp)
-                                       (lsp :variables lsp-ui-doc-enable nil lsp-ui-sideline-enable t)
-                                       (multiple-cursors :variables multiple-cursors-backend 'mc)
-                                       (python :variables python-format-on-save t python-sort-imports-on-save t python-test-runner 'pytest python-test-runner '(pytest nose))
-                                       (ruby :variables ruby-enable-enh-ruby-mode t ruby-backend 'robe ruby-version-manager 'rvm ruby-test-runner 'rspec)
-                                       ;; (c-c++ :variables c-c++-backend 'lsp-clangd c-c++-adopt-subprojects t c-c++-lsp-enable-semantic-highlight 'rainbow c-c++-default-mode-for-headers 'c++-mode c++-enable-organize-includes-on-save t c-c++-enable-clang-format-on-save t c-c++-enable-google-style t c-c++-enable-google-newline t c-c++-enable-auto-newline t)
-                                       ;; auto-completion
-                                       ;; better-defaults
-                                       ;; mu4e
-                                       ;; neotree
-                                       ;; scala
-                                       asm
-                                       better-defaults
-                                       bibtex
-                                       bm
-                                       chrome
-                                       cmake
-                                       command-log
-                                       confluence
-                                       csv
-                                       dap
-                                       dart
-                                       debug
-                                       docker
-                                       emacs-lisp
-                                       erlang
-                                       ess
-                                       git
-                                       gpu
-                                       graphviz
-                                       groovy
-                                       ;; helm
-                                       html
-                                       ibuffer
-                                       imenu-list
-                                       import-js
-                                       ivy
-                                       java
-                                       javascript
-                                       json
-                                       kotlin
-                                       latex
-                                       markdown
-                                       nginx
-                                       node
-                                       (org :variables org-enable-github-support t org-enable-bootstrap-support t org-enable-bootstrap-support t org-projectile-file "TODOs.org")
-                                       osx
-                                       php
-                                       restclient
-                                       rust
-                                       semantic
-                                       shell
-                                       slack
-                                       smex
-                                       spell-checking
-                                       sql
-                                       swift
-                                       syntax-checking
-                                       treemacs
-                                       typescript
-                                       typography
-                                       unicode-fonts
-                                       version-control
-                                       yaml
-                                       )
+   dotspacemacs-configuration-layers '()
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -177,7 +193,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro" :size 14
+   dotspacemacs-default-font '("Source Code Pro" :size 20
                                :weight normal 
                                :width normal 
                                :powerline-scale 1.5)
@@ -360,80 +376,4 @@ you should place your code here.")
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
 This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(alert-default-style (quote osx-notifier))
- '(buffers-menu-buffer-name-length 100)
- '(custom-safe-themes
-   (quote
-    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
- '(doc-view-resolution 200)
- '(gofmt-show-errors nil)
- '(lsp-file-watch-threshold 10000)
- '(ns-command-modifier (quote super) t)
- '(org-latex-listings t)
- '(org-latex-listings-langs
-   (quote
-    ((emacs-lisp "Lisp")
-     (lisp "Lisp")
-     (clojure "Lisp")
-     (c "C")
-     (cc "C++")
-     (fortran "fortran")
-     (perl "Perl")
-     (cperl "Perl")
-     (python "Python")
-     (ruby "Ruby")
-     (html "HTML")
-     (xml "XML")
-     (tex "TeX")
-     (latex "[LaTeX]TeX")
-     (shell-script "bash")
-     (gnuplot "Gnuplot")
-     (ocaml "Caml")
-     (caml "Caml")
-     (sql "SQL")
-     (sqlite "sql")
-     (makefile "make")
-     (R "r")
-     (js "JavaScript"))))
- '(org-latex-listings-options
-   (quote
-    (("aboveskip" "0.2\\baselineskip")
-     ("frame" "top")
-     ("frame" "bottom")
-     ("captionpos" "b")
-     ("abovecaptionskip" "0.2\\baselineskip")
-     ("numbers" "left")
-     ("numbersep" "8pt")
-     ("numberstyle" "\\tiny\\color{black}")
-     ("stepnumber" "1")
-     ("breaklines" "true")
-     ("framexleftmargin" "5mm")
-     ("xleftmargin" "15pt")
-     ("showstringspaces" "false")
-     ("basicstyle" "\\linespread{0.8}\\tiny\\ttfamily")
-     ("keywordstyle" "\\bfseries\\color{mykeywords}")
-     ("commentstyle" "\\itshape\\color{purple}")
-     ("identifierstyle" "\\color{blue}")
-     ("stringstyle" "\\color{orange}")
-     ("tabsize" "4"))))
- '(org-support-shift-select t)
- '(package-selected-packages
-   (quote
-    (aws-ec2 org-jira github-browse-file github-stars github-review github-notifier github-pullrequest rjsx-mode add-node-modules-path systemd yasnippet-snippets yapfify yaml-mode xterm-color x86-lookup ws-butler writeroom-mode winum which-key web-mode web-beautify vterm volatile-highlights vi-tilde-fringe uuidgen use-package unicode-fonts unfill typo treemacs-projectile treemacs-persp treemacs-magit toml-mode toc-org tide terminal-here tagedit symon symbol-overlay swift-mode string-inflection stickyfunc-enhance srefactor sql-indent spaceline-all-the-icons smex smeargle slim-mode slack shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe reveal-in-osx-finder restclient-helm restart-emacs realgud rbenv rake rainbow-delimiters racer pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements phpunit phpcbf php-extras php-auto-yasnippets password-generator paradox overseer osx-trash osx-dictionary osx-clipboard origami orgit org-ref org-projectile org-present org-pomodoro org-mime org-download org-cliplink org-bullets org-brain opencl-mode open-junk-file ob-restclient ob-http nodejs-repl nginx-mode nasm-mode nameless mwim mvn move-text mmm-mode minitest meghanada maven-test-mode markdown-toc magit-svn magit-gitflow macrostep lsp-ui lsp-python-ms lsp-java lorem-ipsum livid-mode live-py-mode link-hint launchctl kotlin-mode json-navigator js2-refactor js-doc indent-guide importmagic import-js impatient-mode ibuffer-projectile hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mt helm-mode-manager helm-make helm-lsp helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-ctest helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports graphviz-dot-mode gradle-mode govet gorepl-mode google-translate golden-ratio godoctor go-tag go-stacktracer go-snippets go-projectile go-playground go-imports go-impl go-imenu go-gen-test go-fill-struct go-errcheck go-dlv go-direx go-add-tags gnuplot gmail-message-mode glsl-mode gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ gh-md geben fuzzy font-lock+ flyspell-correct-helm flymd flycheck-rust flycheck-pos-tip flycheck-package flycheck-kotlin flycheck-elsa flx-ido flutter fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu ess-R-data-view eshell-z eshell-prompt-extras esh-help erlang enh-ruby-mode emoji-cheat-sheet-plus emmet-mode elisp-slime-nav elisp-format editorconfig edit-server dumb-jump drupal-mode dotenv-mode doom-modeline dockerfile-mode docker diminish devdocs dart-mode dap-mode cython-mode cuda-mode csv-mode confluence company-web company-tern company-statistics company-restclient company-reftex company-phpactor company-php company-lsp company-go company-emoji company-auctex company-anaconda command-log-mode column-enforce-mode cmake-mode cmake-ide clean-aindent-mode chruby centered-cursor-mode cargo bundler browse-at-remote bm blacken auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent ace-link ace-jump-helm-line ac-ispell)))
- '(slack-thread-also-send-to-room nil)
- '(tramp-remote-path
-   (quote
-    (tramp-default-remote-path "/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin" "/local/bin" "/local/freeware/bin" "/local/gnu/bin" "/usr/freeware/bin" "/usr/pkg/bin" "/usr/contrib/bin" "/opt/bin" "/opt/sbin" "/opt/local/bin" "/usr/local/go/bin" "/home/luffy/go/bin")))
- '(visible-bell t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
+

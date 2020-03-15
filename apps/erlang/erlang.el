@@ -1,7 +1,11 @@
-(use-package erlang-mode
-  :requires ( company-distel )
-  )
-(add-hook 'erlang-mode-hook
+(setq hackartist-erlang-layers '(erlang))
+(setq hackartist-erlang-packages '(company-distel))
+(setq hackartist-erlang-ocs '(
+                              "https://github.com/massemanet/distel.git"
+                              ))
+
+(defun hackartist/erlang/init ( )
+  (add-hook 'erlang-mode-hook
           (lambda ()
             (setq load-path (cons "/usr/local/opt/erl/lib/tools/emacs" load-path))
             (require 'erlang-start)
@@ -15,7 +19,7 @@
             ;;(flycheck-tip-use-timer 'verbose)
 
             (setq flycheck-display-errors-function 'ignore)
-            (push "~/.emacs.d/refs/distel/elisp/" load-path)
+            (push (concat hackartist-vendor-dir "/distel/elisp/")  load-path)
             (require 'distel)
             (distel-setup)
 
@@ -51,5 +55,4 @@
             (flycheck-select-checker 'erlang-otp)
             (flycheck-mode)
             ))
-
-(provide 'setup-erlang)
+  )

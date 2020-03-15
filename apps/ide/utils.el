@@ -24,3 +24,26 @@
         (remove-hook 'post-command-hook 'hackartist/smartm-switch-treemacs)
         ))
     ))
+
+(defun toggle-input-method-custom ()
+  (interactive)
+  (if (string= default-input-method "korean-hangul")
+      (toggle-input-method)
+    (set-input-method 'korean-hangul)))
+
+(defun hackartist/ide/windmove-left ()
+  "docstring"
+  (interactive "")
+  (if (eq (condition-case nil (windmove-left) (error 1)) 1) (hackartist/ide/other-frame-safe)))
+
+(defun hackartist/ide/windmove-right ()
+  "docstring"
+  (interactive "")
+  (if (eq (condition-case nil (windmove-right) (error 1)) 1) (hackartist/ide/other-frame-safe)))
+
+(defun hackartist/ide/other-frame-safe ()
+  (select-frame-set-input-focus (next-frame (selected-frame))))
+
+(defun hackartist/ide/switch-or-create-other-frame ()
+  (interactive "")
+  (if (eq (next-frame (selected-frame)) (selected-frame)) (make-frame) (hackartist/ide/other-frame-safe)))

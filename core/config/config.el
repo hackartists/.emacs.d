@@ -33,4 +33,5 @@
 
 (defun hackartist//layer-init ()
   (setq dotspacemacs-startup-banner nil)
+  ;; (setq dotspacemacs-pretty-docs t)
   )

@@ -1,40 +1,11 @@
 (setq hackartist-golang-layers
-      '())
+      '(
+        (go :variables gofmt-command "goimports" go-format-before-save t go-tab-width 4 go-backend 'lsp)
+        (lsp :variables lsp-ui-doc-enable nil lsp-ui-sideline-enable t)
+        dap
+        ))
 
 (setq hackartist-golang-packages
-      '())
-
-;; (core/package/install
-;;  '(
-;;    company-go
-;;    counsel-gtags
-;;    ;; eldoc				;
-;;    flycheck
-;;    ;; (flycheck-golangci-lint :toggle (and go-use-golangci-lint
-;;    ;;                                      (configuration-layer/package-used-p
-;;    ;;                                       'flycheck)))
-;;    ggtags
-;;    helm-gtags
-;;    go-eldoc
-;;    go-fill-struct
-;;    go-playground
-;;    go-add-tags
-;;    go-dlv
-;;    go-imenu
-;;    go-imports
-;;    go-snippets
-;;    go-gen-test
-;;    go-guru
-;;    go-impl
-;;    go-mode
-;;    go-rename
-;;    go-tag
-;;    godoctor
-;;    popwin
-;;    lsp-mode
-;;    lsp-ui
-;;    company-lsp
-;;    helm-lsp
-;;    lsp-treemacs
-;;    dap-mode
-;;    ))
+      '(govet gotest gorepl-mode go-stacktracer
+              go-snippets go-projectile go-playground go-imports
+              go-imenu go-errcheck go-dlv go-direx go-add-tags))
