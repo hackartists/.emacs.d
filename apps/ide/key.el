@@ -73,23 +73,6 @@
     (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
     (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
-    (when (executable-find "curl")
-      (setq helm-google-suggest-use-curl-p t))
-
-    (setq
-     helm-scroll-amount 4
-     helm-ff-search-library-in-sexp t 
-     helm-split-window-in-side-p t
-     helm-candidate-number-limit 500
-     helm-ff-file-name-history-use-recentf t
-     helm-move-to-line-cycle-in-source t
-     helm-buffers-fuzzy-matching t
-     helm-ff-lynx-style-map t
-     helm-imenu-lynx-style-map t
-     helm-semantic-lynx-style-map t
-     helm-occur-use-ioccur-style-keys t
-     helm-grep-use-ioccur-style-keys t)
-
     ;; (global-set-key (kbd "M-x") 'counsel-M-x)
     (global-set-key (kbd "M-x") 'helm-M-x)
     (global-set-key (kbd "M-y") 'helm-show-kill-ring)

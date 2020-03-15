@@ -133,11 +133,28 @@
                               (setq yas-dont-activate t)))
 
 
-  (customize-set-variable 'helm-ff-lynx-style-map t)
-  (customize-set-variable 'helm-imenu-lynx-style-map t)
-  (customize-set-variable 'helm-semantic-lynx-style-map t)
-  (customize-set-variable 'helm-occur-use-ioccur-style-keys t)
-  (customize-set-variable 'helm-grep-use-ioccur-style-keys t)
+  ;; (customize-set-variable 'helm-ff-lynx-style-map t)
+  ;; (customize-set-variable 'helm-imenu-lynx-style-map t)
+  ;; (customize-set-variable 'helm-semantic-lynx-style-map t)
+  ;; (customize-set-variable 'helm-occur-use-ioccur-style-keys t)
+  ;; (customize-set-variable 'helm-grep-use-ioccur-style-keys t)
+  ;; (when (executable-find "curl")
+  ;;   (setq helm-google-suggest-use-curl-p t))
+
+  ;; (setq
+  ;;  helm-scroll-amount 4
+  ;;  helm-ff-search-library-in-sexp t 
+  ;;  helm-split-window-in-side-p t
+  ;;  helm-candidate-number-limit 500
+  ;;  helm-ff-file-name-history-use-recentf t
+  ;;  helm-move-to-line-cycle-in-source t
+  ;;  helm-buffers-fuzzy-matching t
+  ;;  helm-ff-lynx-style-map t
+  ;;  helm-imenu-lynx-style-map t
+  ;;  helm-semantic-lynx-style-map t
+  ;;  helm-occur-use-ioccur-style-keys t
+  ;;  helm-grep-use-ioccur-style-keys t)
+
   (custom-set-variables
    '(doc-view-resolution 200)
    '(org-latex-listings t)

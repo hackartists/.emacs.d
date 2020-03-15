@@ -46,13 +46,13 @@
 
 
             (add-to-list 'company-backends 'company-distel)
-            (local-set-key (kbd "RET") 'newline-and-indent)
+
             ;;(add-to-list 'flycheck-erlang-include-path "../include")
             ;;(setq company-distel-popup-help t)
             ;;(setq company-distel-popup-height 30)
             ;;(setq inferior-erlang-machine-options '("-sname" "emacs@localhost"))
             (imenu-add-to-menubar "imenu")
             (flycheck-select-checker 'erlang-otp)
-            (flycheck-mode)
+            (flycheck-mode +1)
             ))
   )

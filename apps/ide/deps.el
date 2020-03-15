@@ -1,6 +1,5 @@
 (setq hackartist-ide-layers
       '(
-        helm
         multiple-cursors
         ivy
         restclient
@@ -31,6 +30,7 @@
 
 (setq hackartist-ide-packages
       '(
+        helm
         org-jira
         multi-term
         helm-swoop
