@@ -10,4 +10,4 @@
 
         lsp-ui-doc-enable nil
         lsp-ui-sideline-enable t)
-  )
+  (add-hook 'go-mode-hook #'lsp))

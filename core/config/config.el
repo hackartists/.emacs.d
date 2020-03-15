@@ -29,7 +29,12 @@
 (defun hackartist//config-load ()
   (dolist (el hackartist-packages) (add-to-list 'dotspacemacs-additional-packages el))
   (dolist (el hackartist-configuration-layers) (add-to-list 'dotspacemacs-configuration-layers el))
-   )
+  (dolist (el hackartist-apps) (hackartist//load-app-config el)))
+
+(defun hackartist//load-app-config (app)
+  (let ((config (intern (concat "hackartist/" (concat app "/config")))))
+    (condition-case nil (funcall config) (error (concat (symbol-name config) " function does not defined")))))
+
 
 (defun hackartist//layer-init ()
   (setq dotspacemacs-startup-banner nil)

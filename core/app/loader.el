@@ -67,8 +67,6 @@
 
 (defun core/app/init-app (app)
   (let ((init (intern (concat "hackartist/" (concat app "/init"))))
-        (config (intern (concat "hackartist/" (concat app "/config"))))
         (bindings (intern (concat "hackartist/" (concat app "/bindings")))))
     (condition-case nil (funcall init) (error (concat (symbol-name init) " function does not defined")))
-    (condition-case nil (funcall config) (error (concat (symbol-name config) " function does not defined")))
     (condition-case nil (funcall bindings) (error (concat (symbol-name bindings) " function does not defined")))))
