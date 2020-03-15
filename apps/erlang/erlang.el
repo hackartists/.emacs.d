@@ -1,6 +1,6 @@
 (setq hackartist-erlang-layers '(erlang))
 (setq hackartist-erlang-packages '(company-distel))
-(setq hackartist-erlang-ocs '(
+(setq hackartist-erlang-osc '(
                               "https://github.com/massemanet/distel.git"
                               ))
 

@@ -33,6 +33,11 @@
         recentf-max-menu-items 100
         )
 
+  (setq org-enable-github-support t
+        org-enable-bootstrap-support t
+        org-enable-bootstrap-support t
+        org-projectile-file "TODOs.org")
+
   (add-to-list 'auto-mode-alist '("\\.profile\\'" . shell-script-mode))
   (add-to-list 'auto-mode-alist '("\\.gradle\\'" . gradle-mode))
   (add-to-list 'auto-mode-alist'("README\\.md\\'" . gfm-mode))

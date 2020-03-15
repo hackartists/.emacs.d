@@ -1,7 +1,7 @@
 (setq hackartist-packages '())
 (setq hackartist-layers '())
 (setq hackartist-apps '())
-(setq hackartist-ocs '())
+(setq hackartist-osc '())
 (setq dotspacemacs-additional-packages '())
 (setq hackartist-vendor-dir (concat emacs-start-directory "/libs"))
 
@@ -25,14 +25,14 @@
         (add-to-list 'hackartist-apps el)
         (core/app/app-deps el))
       (dolist (el hackartist-packages) (add-to-list 'dotspacemacs-additional-packages el))
-      (core/app/load-ocs)
+      (core/app/load-osc)
       )))
 
 (defun core/app/app-deps (pkg)
   (let* ((pkgs (intern (concat "hackartist-"  pkg "-packages")))
          (lys (intern (concat "hackartist-"  pkg "-layers")))
          (envs (intern (concat "hackartist-"  pkg "-envs")))
-         (ocs (intern (concat "hackartist-"  pkg "-ocs")))
+         (osc (intern (concat "hackartist-"  pkg "-osc")))
          )
     (condition-case nil
         (dolist (el (symbol-value pkgs)) (add-to-list 'hackartist-packages el))
@@ -44,16 +44,16 @@
         (dolist (el (symbol-value envs)) (add-to-list 'hackartist-environments el))
       (error "not define environments"))
     (condition-case nil
-        (dolist (el (symbol-value ocs)) (add-to-list 'hackartist-ocs el))
+        (dolist (el (symbol-value osc)) (add-to-list 'hackartist-osc el))
       (error "not define open source libraries"))))
 
-(defun core/app/load-ocs ()
-  (dolist (el hackartist-ocs) (core/app/load-ocs|clone-load el)))
+(defun core/app/load-osc ()
+  (dolist (el hackartist-osc) (core/app/load-osc|clone-load el)))
 
-(defun core/app/load-ocs|clone-load (ocs)
-  (let* ((name (replace-regexp-in-string ".git" "" (nth 0 (last (split-string el "/")))))
+(defun core/app/load-osc|clone-load (osc)
+  (let* ((name (replace-regexp-in-string ".git" "" (nth 0 (last (split-string osc "/")))))
          (lp (concat hackartist-vendor-dir "/" name))
-         (cmd (concat "git clone " el " " lp)))
+         (cmd (concat "git clone " osc " " lp)))
     (unless (file-exists-p (concat hackartist-vendor-dir "/" name))
       (message cmd)
       (shell-command cmd))

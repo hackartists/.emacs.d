@@ -1,0 +1,42 @@
+#+title: Hackartist emacs configurations
+
+
+* Installing configurations
+
+** Cloning this repository
+You can clone this repository with ~git~. 
+Below command will add develop branch of Spacemacs repository into ~.emacs.d/spacemacs~. 
+#+BEGIN_SRC shell
+git clone https://github.com/hackartists/.emacs.d.git $HOME/.emacs.d
+#+END_SRC
+
+* Adding an app
+
+** ~apps~ directory includes hackartist applications. And each application defines layers, packages and osc (open source code).
+
+*** ~layers~ means a name of an spacemacs layer.
+
+*** ~packages~ means a name of an additional packages to prevent removing orphan packages from ~spacemacs~.
+
+*** ~osc~ means an open source code libraries which will be cloned at the first launch time.
+
+** Example application code
+- ~hackartist/~ is a prefix for all additional applications.
+- ~init~, ~config~, ~bindings~ will be called by ~hackartist core~ at loaded.
+- ~layers~ list must indicate layers defined in ~spacemacs~.
+- ~packages~ list can describes your customized packages unlisted in ~spacemacs~.
+- ~osc~ list make your emacs more powerful by cloning user repositories you need.
+  - All of open source libraries will be cloned into ~path-to-emacs-home/libs~
+#+BEGIN_SRC emacs-lisp
+(setq hackartist-example-layers '(go))
+(setq hackartist-example-packages '(govet))
+(setq hackartist-example-osc '("https://github.com/example/lib.git"))
+
+(defun hackartist/example/init ())
+
+(defun hackartist/example/config ())
+
+(defun hackartist/example/bindings ())
+
+#+END_SRC
+

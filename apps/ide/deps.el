@@ -1,7 +1,7 @@
 (setq hackartist-ide-layers
       '(
         helm
-        (multiple-cursors :variables multiple-cursors-backend 'mc)
+        multiple-cursors
         ivy
         restclient
         git
@@ -9,7 +9,7 @@
         unicode-fonts
         systemd
         markdown
-        (org :variables org-enable-github-support t org-enable-bootstrap-support t org-enable-bootstrap-support t org-projectile-file "TODOs.org")
+        org
         ))
 
 (setq hackartist-ide-packages
@@ -30,7 +30,7 @@
         magit
         ))
 
-(setq hackartist-ide-ocs
+(setq hackartist-ide-osc
       '(
         "https://github.com/magoyette/openapi-yaml-mode.git"
         ))

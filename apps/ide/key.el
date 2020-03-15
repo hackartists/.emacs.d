@@ -40,6 +40,7 @@
   (global-set-key (kbd "s-a") 'mark-whole-buffer)
   (global-set-key (kbd "s-z") 'undo)
   (global-set-key (kbd "s-'") 'hackartist/ide/switch-or-create-other-frame)
+  (global-set-key (kbd "<s-return>") 'yas-insert-snippet)
 
   (add-hook 'term-mode-hook (lambda()
                               ;;(define-key term-mode-map (kbd "C-t") 'helm-mt)
