@@ -2,6 +2,12 @@
       '(
         javascript
         json
+        ess
+        import-js
+        node
+        typescript
+        react
+        html
         ))
 
 (setq hackartist-javascript-packages

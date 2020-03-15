@@ -1,7 +1,6 @@
 (setq hackartist-packages '())
-(setq hackartist-layers '())
-(setq hackartist-apps '())
 (setq hackartist-osc '())
+(setq hackartist-apps '())
 (setq dotspacemacs-additional-packages '())
 (setq hackartist-vendor-dir (concat emacs-start-directory "/libs"))
 
@@ -38,7 +37,7 @@
         (dolist (el (symbol-value pkgs)) (add-to-list 'hackartist-packages el))
       (error "not define packages"))
     (condition-case nil
-        (dolist (el (symbol-value lys)) (add-to-list 'hackartist-layers el))
+        (dolist (el (symbol-value lys)) (add-to-list 'hackartist-configuration-layers el))
       (error "not define layers"))
     (condition-case nil
         (dolist (el (symbol-value envs)) (add-to-list 'hackartist-environments el))
@@ -66,7 +65,9 @@
     (core/app/init-app el)))
 
 (defun core/app/init-app (app)
-  (let ((init (intern (concat "hackartist/" (concat app "/init"))))
-        (bindings (intern (concat "hackartist/" (concat app "/bindings")))))
+  (let ((init (intern (concat "hackartist/"  app "/init")))
+        (config (intern (concat "hackartist/" app "/config")))
+        (bindings (intern (concat "hackartist/" app "/bindings"))))
     (condition-case nil (funcall init) (error (concat (symbol-name init) " function does not defined")))
+    (condition-case nil (funcall config) (error (concat (symbol-name config) " function does not defined")))
     (condition-case nil (funcall bindings) (error (concat (symbol-name bindings) " function does not defined")))))

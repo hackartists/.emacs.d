@@ -1,17 +1,7 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (defalias 'yes-or-no-p 'y-or-n-p)
-
-(defvar hackartist-config-pre-load-hook nil
-  "Hook executed at the beginning of configuration loading.")
-
-(setq dotspacemacs-configuration-layers '())
-
-(defun hackartist//app-config (pkg)
-  "run config loader for an hackartist app"
-  (interactive "P")
-  (let* ((app-conf (intern (concat "hackartist/" (concat pkg "/config")))))
-    (funcall app-conf)))
+(setq hackartist-configuration-layers '())
 
 (add-hook 'focus-out-hook (lambda ()
 			    (interactive)
@@ -28,8 +18,7 @@
 
 (defun hackartist//config-load ()
   (dolist (el hackartist-packages) (add-to-list 'dotspacemacs-additional-packages el))
-  (dolist (el hackartist-configuration-layers) (add-to-list 'dotspacemacs-configuration-layers el))
-  (dolist (el hackartist-apps) (hackartist//load-app-config el)))
+  (dolist (el hackartist-configuration-layers) (add-to-list 'dotspacemacs-configuration-layers el)))
 
 (defun hackartist//load-app-config (app)
   (let ((config (intern (concat "hackartist/" (concat app "/config")))))
