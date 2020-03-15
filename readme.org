@@ -12,15 +12,15 @@ git clone https://github.com/hackartists/.emacs.d.git $HOME/.emacs.d
 
 * Adding an app
 
-** ~apps~ directory includes hackartist applications. And each application defines layers, packages and osc (open source code).
+-  ~apps~ directory includes hackartist applications. And each application defines layers, packages and osc (open source code).
+  -  ~layers~ means a name of an spacemacs layer.
+   
+  -  ~packages~ means a name of an additional packages to prevent removing orphan packages from ~spacemacs~.
 
-*** ~layers~ means a name of an spacemacs layer.
+  -  ~osc~ means an open source code libraries which will be cloned at the first launch time.
 
-*** ~packages~ means a name of an additional packages to prevent removing orphan packages from ~spacemacs~.
 
-*** ~osc~ means an open source code libraries which will be cloned at the first launch time.
-
-** Example application code
+* Example application code
 - ~hackartist/~ is a prefix for all additional applications.
 - ~init~, ~config~, ~bindings~ will be called by ~hackartist core~ at loaded.
 - ~layers~ list must indicate layers defined in ~spacemacs~.
