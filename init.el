@@ -12,7 +12,6 @@
 
 (switch-to-buffer "*scratch*")
 
-;; (load-file "~/.emacs.d/private/slack.el")
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets")
 (set-frame-parameter nil 'fullscreen 'fullboth)
 
@@ -22,4 +21,3 @@
 (windmove-right)
 (switch-to-buffer "*Messages*")
 (windmove-left)
-;; (slack-start)

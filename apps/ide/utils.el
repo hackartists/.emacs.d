@@ -47,3 +47,20 @@
 (defun hackartist/ide/switch-or-create-other-frame ()
   (interactive "")
   (if (eq (next-frame (selected-frame)) (selected-frame)) (make-frame) (hackartist/ide/other-frame-safe)))
+
+(defun helm-hackartist-buffer ()
+  "Select channels using helm."
+  (interactive)
+  (helm
+   :prompt "Select Buffer : "
+   :sources (helm-build-sync-source "Buffer List"
+              ;; :persistent-action #'helm-slack-persistent-action
+              ;; :action helm-slack-actions
+              :candidates #'candidates-buffer-names)))
+
+(defun candidates-buffer-names ()
+  (setq bufs '())
+  (dolist (el (buffer-list)) (push (buffer-name el) bufs))
+  bufs
+  )
+
