@@ -7,7 +7,8 @@
         ))
 
 (defun hackartist/chat/init ()
-  (hackartist/chat/slack-init))
+  (hackartist/chat/slack-init)
+  (slack-start))
 
 (defun hackartist/chat/config ()
   (setq slack-thread-also-send-to-room nil))

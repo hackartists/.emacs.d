@@ -40,3 +40,7 @@ git clone https://github.com/hackartists/.emacs.d.git $HOME/.emacs.d
 
 #+END_SRC
 
+
+* VLC
+
+**  :screen-fps=20.000000 :no-video-deco :no-embedded-video :screen-top=0 :screen-left=3840 :screen-width=3840 :screen-height=2160

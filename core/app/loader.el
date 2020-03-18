@@ -3,6 +3,8 @@
 (setq hackartist-apps '())
 (setq dotspacemacs-additional-packages '())
 (setq hackartist-vendor-dir (concat emacs-start-directory "/libs"))
+(defvar hackartist-hook//post-private-load-hook '()
+  "called after loading privates")
 
 (defcustom hackartist-environments
   '("PATH" "MANPATH" "ERLPATH" "LD_LIBRARY_PATH")
@@ -58,9 +60,15 @@
       (shell-command cmd))
     (push lp load-path)))
 
+(defun core/app/load-private ( )
+  (let* ((priv-files (append (directory-files-recursively (concat emacs-start-directory "/private") ".*\.el"))))
+    (dolist (el priv-files) (load-file el))
+    (run-hooks 'hackartist-hook//post-private-load-hook)))
 
 (defun core/app/init-apps ()
   (exec-path-from-shell-copy-envs hackartist-environments)
+  (when (file-exists-p (concat emacs-start-directory "/private"))
+    (core/app/load-private))
   (dolist (el hackartist-apps)
     (core/app/init-app el)))
 

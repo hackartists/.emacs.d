@@ -37,6 +37,8 @@
                             :action helm-slack-actions
                             :candidates #'helm-slack-build-candidates))
 
+(setq slack-buffer-function #'switch-to-buffer)
+
 (defcustom helm-slack-sources
   '(helm-slack-source)
   "Default helm sources.
