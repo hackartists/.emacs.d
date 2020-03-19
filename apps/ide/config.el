@@ -23,6 +23,10 @@
 
 
 (defun hackartist/ide/config ()
+  (setq helm-hackartist-buffers-list (make-hackartist-helm-source (helm-make-source "Buffers" 'helm-source-buffers)))
+  (setq helm-hackartist-projectile-files-list (make-hackartist-helm-source helm-source-projectile-files-list))
+  (setq helm-hackartist-recentf-list (helm-make-source "Recentf" 'helm-recentf-source :fuzzy-match helm-recentf-fuzzy-match))
+  
   (setq shell-file-name "/bin/zsh")
   (setq global-mark-ring-max 50000
         mark-ring-max 50000
@@ -57,7 +61,6 @@
 
   (global-set-key (kbd "RET") 'newline-and-indent)
   (global-set-key "\C-x\ \C-r" 'recentf-open-files)
-
 
   (setq custom-safe-themes t)
 

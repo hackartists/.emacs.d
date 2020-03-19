@@ -99,5 +99,6 @@
     (define-key projectile-mode-map (kbd "C-c p p") 'helm-projectile-switch-project)
     (define-key projectile-mode-map (kbd "C-c p f") 'helm-projectile-find-file)
     (define-key projectile-mode-map (kbd "C-c p k") 'projectile-kill-buffers)
-    (define-key projectile-mode-map (kbd "C-c p s") 'projectile-save-project-buffers)))
+    (define-key projectile-mode-map (kbd "C-c p s") 'projectile-save-project-buffers))
 
+  )

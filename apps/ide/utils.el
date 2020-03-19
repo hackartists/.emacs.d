@@ -53,7 +53,7 @@
   (interactive)
   (helm
    :prompt "Hackartist Shell : "
-   :sources (helm-hackartist-buffers-source)))
+   :sources helm-hackartist-sources-list))
 
 (defun helm-hackartist-buffers-candidates ()
   (let (bufs '())
@@ -72,10 +72,27 @@
     (if w (hackartist-focus-on-window w) (switch-to-buffer candidate))
     ))
 
-(defun helm-hackartist-buffers-source ()
-  (let* ((src (helm-make-source "Buffers" 'helm-source-buffers)))
+(defun make-hackartist-helm-source (s)
+  (let* ((src (copy-alist s)))
     (setf (alist-get 'action src) 'helm-hackartist-buffers-persistent-action)
-    src
-    ))
+    src))
 
+;; spacemacs//display-helm-window
+(defun helm-hackartist-switch-to-buffer (buffer &optional resume)
+  (helm-hackartist-buffers-persistent-action buffer))
+
+(defvar helm-hackartist-buffers-list nil)
+(defvar helm-hackartist-projectile-files-list nil)
+(defvar helm-hackartist-recentf-list nil)
+
+(defcustom helm-hackartist-sources-list
+  '(
+    helm-hackartist-buffers-list
+    helm-hackartist-projectile-files-list
+    helm-source-projectile-projects
+    #'(helm-make-source "Recentf" 'helm-recentf-source :fuzzy-match helm-recentf-fuzzy-match)
+    )
+  "Default sources for `helm-hackartist'"
+  :type 'list
+  :group 'helm-hackartist)
 
