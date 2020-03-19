@@ -1,5 +1,6 @@
 (setq hackartist-ide-layers
       '(
+        protobuf
         multiple-cursors
         ivy
         restclient

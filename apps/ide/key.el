@@ -29,7 +29,7 @@
   (global-set-key (kbd "C-r") 'redraw-display)
   (global-set-key (kbd "M-m o s h") 'helm-slack)
   (global-set-key (kbd "s-SPC") 'company-complete)
-  (global-set-key (kbd "C-SPC") 'helm-buffers-list)
+  (global-set-key (kbd "C-SPC") 'helm-hackartist-buffer)
   (global-set-key (kbd "C-x g") 'magit-status)
   (global-set-key (kbd "C-c C-h i") 'helm-semantic-or-imenu)
   (global-set-key (kbd "s-c") 'cua-copy-region)

@@ -49,18 +49,33 @@
   (if (eq (next-frame (selected-frame)) (selected-frame)) (make-frame) (hackartist/ide/other-frame-safe)))
 
 (defun helm-hackartist-buffer ()
-  "Select channels using helm."
+  "Select hackartist ide using helm."
   (interactive)
   (helm
-   :prompt "Select Buffer : "
-   :sources (helm-build-sync-source "Buffer List"
-              ;; :persistent-action #'helm-slack-persistent-action
-              ;; :action helm-slack-actions
-              :candidates #'candidates-buffer-names)))
+   :prompt "Hackartist Shell : "
+   :sources (helm-hackartist-buffers-source)))
 
-(defun candidates-buffer-names ()
-  (setq bufs '())
-  (dolist (el (buffer-list)) (push (buffer-name el) bufs))
-  bufs
-  )
+(defun helm-hackartist-buffers-candidates ()
+  (let (bufs '())
+    (dolist (el (buffer-list)) (push (buffer-name el) bufs))
+    bufs
+    ))
+
+(defun hackartist-focus-on-window (w)
+  (when (windowp w)
+    (select-frame-set-input-focus (window-frame w))
+    (select-window w)
+  ))
+
+(defun helm-hackartist-buffers-persistent-action (candidate)
+  (let* ((w (get-buffer-window candidate t)))
+    (if w (hackartist-focus-on-window w) (switch-to-buffer candidate))
+    ))
+
+(defun helm-hackartist-buffers-source ()
+  (let* ((src (helm-make-source "Buffers" 'helm-source-buffers)))
+    (setf (alist-get 'action src) 'helm-hackartist-buffers-persistent-action)
+    src
+    ))
+
 
