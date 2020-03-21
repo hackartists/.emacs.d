@@ -88,9 +88,8 @@
 (defcustom helm-hackartist-sources-list
   '(
     helm-hackartist-buffers-list
-    helm-hackartist-projectile-files-list
+    helm-source-projectile-files-list
     helm-source-projectile-projects
-    #'(helm-make-source "Recentf" 'helm-recentf-source :fuzzy-match helm-recentf-fuzzy-match)
     )
   "Default sources for `helm-hackartist'"
   :type 'list

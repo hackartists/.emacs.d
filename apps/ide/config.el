@@ -25,7 +25,7 @@
 (defun hackartist/ide/config ()
   (setq helm-hackartist-buffers-list (make-hackartist-helm-source (helm-make-source "Buffers" 'helm-source-buffers)))
   (setq helm-hackartist-projectile-files-list (make-hackartist-helm-source helm-source-projectile-files-list))
-  (setq helm-hackartist-recentf-list (helm-make-source "Recentf" 'helm-recentf-source :fuzzy-match helm-recentf-fuzzy-match))
+  ;; (setq helm-hackartist-recentf-list (helm-make-source "Recentf" 'helm-recentf-source :fuzzy-match helm-recentf-fuzzy-match))
   
   (setq shell-file-name "/bin/zsh")
   (setq global-mark-ring-max 50000
@@ -208,7 +208,8 @@
        ("stringstyle" "\\color{orange}")
        ("tabsize" "4"))))
    '(org-support-shift-select t)
-   '(lsp-file-watch-threshold 10000)
+   '(lsp-file-watch-threshold 100)
+   '(lsp-enable-file-watchers nil)
    ))
 
 (defun ide/display-helm-miniwindow (buffer &optional resume)

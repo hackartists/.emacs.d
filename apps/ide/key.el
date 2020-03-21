@@ -65,6 +65,21 @@
        (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
        (define-key company-active-map [tab] 'company-complete)))
 
+  (with-eval-after-load 'dap-mode
+    (define-key dap-mode-map (kbd "<f5>") 'dap-debug)
+    (define-key dap-mode-map (kbd "M-n d b") 'dap-breakpoint-add)
+    (define-key dap-mode-map (kbd "M-n d c") 'dap-continue)
+    (define-key dap-mode-map (kbd "M-n d d") 'dap-breakpoint-delete)
+    (define-key dap-mode-map (kbd "M-n d i") 'dap-step-in)
+    (define-key dap-mode-map (kbd "M-n d l") 'dap-ui-locals)
+    (define-key dap-mode-map (kbd "M-n d n") 'dap-next)
+    (define-key dap-mode-map (kbd "M-n d o") 'dap-step-out)
+    (define-key dap-mode-map (kbd "M-n d r") 'dap-debug-last)
+    (define-key dap-mode-map (kbd "M-n d u") 'dap-ui-sessions)
+    (define-key dap-mode-map (kbd "M-n d t") 'dap-breakpoint-toggle)
+    (define-key dap-mode-map (kbd "M-n d h") 'dap-hydra)
+    )
+
   (with-eval-after-load 'helm
     (global-set-key (kbd "C-c i") 'helm-imenu)
     (global-set-key (kbd "C-c h i") 'helm-semantic-or-imenu)
