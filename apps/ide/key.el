@@ -1,3 +1,5 @@
+(setq hackartist-swap-ctrl-super (eq system-type 'gnu/linux))
+
 (defun ide/company-active-return ()
   (interactive)
   (company-abort)
@@ -6,6 +8,9 @@
 
 (defun hackartist/ide/bindings ()
   (setq ns-command-modifier 'super)
+  (when hackartist-swap-ctrl-super
+    (setq x-ctrl-keysym 'super)
+    (setq x-super-keysym 'ctrl))
 
   (global-set-key (kbd "<s-up>") 'windmove-up)
   (global-set-key (kbd "<s-down>") 'windmove-down)
