@@ -23,10 +23,14 @@
 
 
 (defun hackartist/ide/config ()
+  (require 'multi-eshell)
+  
   (setq helm-hackartist-buffers-list (make-hackartist-helm-source (helm-make-source "Buffers" 'helm-source-buffers)))
   (setq helm-hackartist-projectile-files-list (make-hackartist-helm-source helm-source-projectile-files-list))
   ;; (setq helm-hackartist-recentf-list (helm-make-source "Recentf" 'helm-recentf-source :fuzzy-match helm-recentf-fuzzy-match))
-  
+
+  (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
+
   (setq shell-file-name "/bin/zsh")
   (setq global-mark-ring-max 50000
         mark-ring-max 50000
@@ -54,10 +58,18 @@
   (add-hook 'sh-mode-hook (lambda () 
                             (setq tab-width 4)))
 
-  (set-terminal-coding-system 'utf-8)
+  (prefer-coding-system       'utf-8)
+  (set-default-coding-systems 'utf-8)
+  (set-terminal-coding-system 'utf-8-unix)
   (set-keyboard-coding-system 'utf-8)
+  (setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
   (set-language-environment "UTF-8")
   (prefer-coding-system 'utf-8)
+  (add-hook 'term-exec-hook
+            (function
+             (lambda ()
+               (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))))
 
   (global-set-key (kbd "RET") 'newline-and-indent)
   (global-set-key "\C-x\ \C-r" 'recentf-open-files)
@@ -132,9 +144,11 @@
                                                                   :tab newline newline-mark)) 
                               (whitespace-mode 1)))
 
-  (add-hook 'term-mode-hook (lambda() 
+  (add-hook 'term-mode-hook (lambda()
                               (setq yas-dont-activate t)))
 
+  (add-hook 'shell-mode-hook (lambda ()
+                               (company-mode -1)))
 
   (customize-set-variable 'helm-ff-lynx-style-map t)
   (customize-set-variable 'helm-imenu-lynx-style-map t)
@@ -178,6 +192,7 @@
        (tex "TeX")
        (latex "[LaTeX]TeX")
        (shell-script "bash")
+       (shell "bash")
        (gnuplot "Gnuplot")
        (ocaml "Caml")
        (caml "Caml")
