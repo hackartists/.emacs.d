@@ -1,6 +1,6 @@
 (setq hackartist-javascript-layers
       '(
-        javascript
+        (javascript :variables javascript-import-tool 'import-js javascript-backend 'lsp javascript-lsp-linter nil javascript-fmt-tool 'web-beautify javascript-repl `nodejs node-add-modules-path t)
         json
         ess
         import-js
