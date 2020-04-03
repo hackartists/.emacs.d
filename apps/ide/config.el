@@ -21,12 +21,20 @@
 ;;   `("**"
 ;;     (window-height . 0.4)))
 
+(defun hackartist/ide/config/darwin ()
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  (add-to-list 'default-frame-alist '(ns-appearance . dark))
+  (setq ns-command-modifier 'super))
+
+(defun hackartist/ide/config/linux ()
+  (setq x-ctrl-keysym 'super)
+  (setq x-super-keysym 'ctrl))
 
 (defun hackartist/ide/config ()
   (setq helm-hackartist-buffers-list (make-hackartist-helm-source (helm-make-source "Buffers" 'helm-source-buffers)))
   (setq helm-hackartist-projectile-files-list (make-hackartist-helm-source helm-source-projectile-files-list))
   ;; (setq helm-hackartist-recentf-list (helm-make-source "Recentf" 'helm-recentf-source :fuzzy-match helm-recentf-fuzzy-match))
-  
+  (if (eq system-type 'darwin) (hackartist/ide/config/darwin) (hackartist/ide/config/linux))
   (setq shell-file-name "/bin/zsh")
   (setq global-mark-ring-max 50000
         mark-ring-max 50000
