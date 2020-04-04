@@ -1,4 +1,3 @@
-source $HOME/.oh-my-profiles/init.profile
 export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
 export LANG='en_US.UTF-8'
 export LC_ALL="en_US.UTF-8"
@@ -96,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export NVM_DIR="$HOME/.nvm"
 if [ -f "/usr/local/opt/nvm/nvm.sh" ]
-then 
+then
     . "/usr/local/opt/nvm/nvm.sh"
 fi
 source $HOME/.cargo/env
@@ -111,4 +110,5 @@ export ANDROID_NDK_ROOT="/usr/local/Caskroom/android-ndk/18/android-ndk-r18"
 export ANDROID_NDK="$ANDROID_NDK_ROOT"
 export ANDROID_TOOLCHAIN="/usr/local/Caskroom/android-ndk/18/android-ndk-r18/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin"
 export PATH="$ANDROID_TOOLCHAIN:$PATH"
-source ~/.oh-my-profiles/init.profile
+export EDITOR='emacsclient -n'
+source $HOME/.oh-my-profiles/init.profile

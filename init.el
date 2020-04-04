@@ -21,3 +21,4 @@
 (windmove-right)
 (switch-to-buffer "*Messages*")
 (windmove-left)
+(put 'magit-clean 'disabled nil)
