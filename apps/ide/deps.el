@@ -1,7 +1,7 @@
 (setq hackartist-ide-layers
       '(
         protobuf
-        multiple-cursors
+        (multiple-cursors :variables multiple-cursors-backend 'mc)
         ivy
         restclient
         git

@@ -6,6 +6,7 @@
   (global-undo-tree-mode +1)
   (helm-projectile-on)
   (recentf-mode +1)
+  (global-git-gutter+-mode -1)
 
   (add-hook 'minibuffer-setup-hook
             (lambda ()
