@@ -29,6 +29,7 @@
         (ruby :variables ruby-enable-enh-ruby-mode t ruby-backend 'robe ruby-version-manager 'rvm ruby-test-runner 'rspec)
         (typescript :variables typescript-fmt-on-save t typescript-fmt-tool 'typescript-formatter typescript-linter 'tslint)
         (shell-scripts :variables shell-scripts-backend 'lsp)
+        themes-megapack
         ))
 
 (setq hackartist-ide-packages
