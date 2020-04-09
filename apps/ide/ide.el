@@ -7,6 +7,8 @@
   (helm-projectile-on)
   (recentf-mode +1)
   (global-git-gutter+-mode -1)
+  (global-auto-highlight-symbol-mode +1)
+
 
   (add-hook 'minibuffer-setup-hook
             (lambda ()
