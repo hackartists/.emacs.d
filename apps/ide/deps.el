@@ -35,7 +35,6 @@
 (setq hackartist-ide-packages
       '(
         helm
-        org-jira
         multi-term
         helm-swoop
         helm-projectile

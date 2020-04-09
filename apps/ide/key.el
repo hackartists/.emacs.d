@@ -63,6 +63,26 @@
        (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
        (define-key company-active-map [tab] 'company-complete)))
 
+  (with-eval-after-load 'org-mode
+    (define-key org-mode-map (kbd "<M-return>") nil)
+    (define-key org-mode-map (kbd "<M-S-up>") nil)
+    (define-key org-mode-map (kbd "<M-S-down>") nil)
+    (define-key org-mode-map (kbd "<M-up>") nil)
+    (define-key org-mode-map (kbd "<M-down>") nil)
+    (define-key org-mode-map (kbd "<M-S-left>") nil)
+    (define-key org-mode-map (kbd "<M-S-right>") nil)
+    (define-key org-mode-map (kbd "<M-left>") nil)
+    (define-key org-mode-map (kbd "<S-left>") nil)
+    (define-key org-mode-map (kbd "<S-right>") nil)
+    (define-key org-mode-map (kbd "<S-up>") nil)
+    (define-key org-mode-map (kbd "<S-down>") nil)
+    (define-key org-mode-map (kbd "<M-right>") nil) 
+    (define-key org-mode-map (kbd "C-<tab>") nil)
+    (define-key org-mode-map (kbd "C-S-<tab>") nil)
+    (define-key org-mode-map (kbd "<C-up>") nil)
+    (define-key org-mode-map (kbd "<C-down>") nil)
+    (define-key org-mode-map (kbd "RET") nil))
+
   (with-eval-after-load 'dap-mode
     (define-key dap-mode-map (kbd "<f5>") 'dap-debug)
     (define-key dap-mode-map (kbd "M-n d b") 'dap-breakpoint-add)
@@ -75,8 +95,7 @@
     (define-key dap-mode-map (kbd "M-n d r") 'dap-debug-last)
     (define-key dap-mode-map (kbd "M-n d u") 'dap-ui-sessions)
     (define-key dap-mode-map (kbd "M-n d t") 'dap-breakpoint-toggle)
-    (define-key dap-mode-map (kbd "M-n d h") 'dap-hydra)
-    )
+    (define-key dap-mode-map (kbd "M-n d h") 'dap-hydra))
 
   (with-eval-after-load 'helm
     (global-set-key (kbd "C-c i") 'helm-imenu)

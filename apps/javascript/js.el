@@ -1,6 +1,6 @@
 (setq hackartist-javascript-layers
       '(
-        (javascript :variables javascript-import-tool 'import-js javascript-backend 'lsp javascript-lsp-linter nil javascript-fmt-tool 'web-beautify javascript-repl `nodejs node-add-modules-path t)
+        (javascript :variables javascript-import-tool 'import-js javascript-backend 'lsp javascript-fmt-tool 'web-beautify javascript-repl `nodejs js-indent-level 2 js2-basic-offset 2 javascript-fmt-on-save t)
         json
         ess
         import-js
@@ -8,6 +8,7 @@
         typescript
         react
         html
+        tide
         ))
 
 (setq hackartist-javascript-packages
@@ -16,11 +17,10 @@
         angular-snippets
         xref-js2
         js2-refactor
-        company-tern
         web-mode
         indium
         emmet-mode web-beautify skewer-mode impatient-mode restclient elnode
-        js2-refactor xref-js2 tern js-comint json-mode rjsx-mode))
+        js-comint json-mode))
 
 (setq hackartist-javascript-commands
       '(
@@ -35,33 +35,38 @@
         (indium "npm install -g indium" )
         ))
 
-(defun hackartist/javascript/init ( )
-  (add-hook 'js2-mode-hook
-            (lambda ()
-              (add-to-list 'company-backends 'company-tern)
-              (js2r-add-keybindings-with-prefix "C-c C-r")
-              (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)
-              (tern-mode)
-              (company-mode)
-              (js2-imenu-extras-mode)
-              (js2-refactor-mode)
-              (setq js-indent-level 2)
+;; (defun hackartist/javascript/init ( )
+;;   ;; (add-hook 'js2-mode-hook
+;;   ;;           (lambda ()
+;;   ;;             (add-to-list 'company-backends 'company-tern)
+;;   ;;             ;; (js2r-add-keybindings-with-prefix "C-c C-r")
+;;   ;;             ;; (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)
+;;   ;;             (tern-mode +1)
+;;   ;;             (company-mode +1)
+;;   ;;             (js2-imenu-extras-mode +1)
+;;   ;;             (js2-refactor-mode +1)
+;;   ;;             (add-hook 'before-save-hook 'tide-format-before-save)
 
-              ;; Key bindings
-              (define-key js2-mode-map (kbd "C-x C-e") 'nodejs-repl-send-last-expression)
-              (define-key js2-mode-map (kbd "C-c C-r") 'nodejs-repl-send-region)
-              (define-key js2-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
-              (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)
-              (define-key js-mode-map (kbd "M-.") nil)
-              (define-key tern-mode-keymap (kbd "M-.") nil)
-              (define-key tern-mode-keymap (kbd "M-,") nil)
-              (define-key js2-mode-map (kbd "C-k") #'js2r-kill)
-              )))
+;;   ;;             ;; Key bindings
+;;   ;;             ;; (define-key js2-mode-map (kbd "C-x C-e") 'nodejs-repl-send-last-expression)
+;;   ;;             ;; (define-key js2-mode-map (kbd "C-c C-r") 'nodejs-repl-send-region)
+;;   ;;             ;; (define-key js2-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
+;;   ;;             ;; (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)
+;;   ;;             ;; (define-key js-mode-map (kbd "M-.") nil)
+;;   ;;             ;; (define-key tern-mode-keymap (kbd "M-.") nil)
+;;   ;;             ;; (define-key tern-mode-keymap (kbd "M-,") nil)
+;;   ;;             ;; (define-key js2-mode-map (kbd "C-k") #'js2r-kill)
+;;   ;;             ))
+;;   )
 
-(defun hackartist/javascript/config ( )
-  (setq xref-show-xrefs-function 'helm-xref-show-xrefs)
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-  (add-hook 'js-jsx-mode-hook (lambda ()
-                                (setq js-indent-level 2)
-                                (setq-local sgml-basic-offset js-indent-level)))
-  )
+(defun hackartist/javascript/bindings ()
+  (add-hook 'js2-mode-hook (lambda ()
+                             (local-set-key (kbd "M-.") 'lsp-find-definition))))
+;; (defun hackartist/javascript/config ( )
+;;   ;; (setq xref-show-xrefs-function 'helm-xref-show-xrefs)
+;;   ;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+;;   ;; (add-hook 'js-jsx-mode-hook (lambda ()
+;;   ;;                               (setq js-indent-level 2)
+;;   ;;                               (setq-local sgml-basic-offset js-indent-level))
+;;             )
+;;   )
