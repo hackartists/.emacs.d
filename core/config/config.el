@@ -18,7 +18,7 @@
 
 (defun hackartist//config-load ()
   (setq dotspacemacs-configuration-layers '())
-  (setq dotspacemacs-themes '(afternoon))
+  (setq dotspacemacs-themes '(darktooth))
   (dolist (el hackartist-packages) (add-to-list 'dotspacemacs-additional-packages el))
   (dolist (el hackartist-configuration-layers) (add-to-list 'dotspacemacs-configuration-layers el)))
 

@@ -48,6 +48,8 @@
         gradle-mode
         markdown-mode+
         magit
+        ghub
+        magit-gh-pulls
         ))
 
 (setq hackartist-ide-osc

@@ -1,6 +1,6 @@
 (setq hackartist-javascript-layers
       '(
-        (javascript :variables javascript-import-tool 'import-js javascript-backend 'lsp javascript-fmt-tool 'web-beautify javascript-repl `nodejs js-indent-level 2 js2-basic-offset 2 javascript-fmt-on-save t)
+        (javascript :variables javascript-import-tool 'import-js javascript-backend 'lsp javascript-repl `nodejs js-indent-level 2 js2-basic-offset 2)
         json
         ess
         import-js
@@ -20,6 +20,7 @@
         web-mode
         indium
         emmet-mode web-beautify skewer-mode impatient-mode restclient elnode
+        eslintd-fix
         js-comint json-mode))
 
 (setq hackartist-javascript-commands
@@ -58,6 +59,12 @@
 ;;   ;;             ;; (define-key js2-mode-map (kbd "C-k") #'js2r-kill)
 ;;   ;;             ))
 ;;   )
+
+(defun hackartist/javascript/init ()
+  (hackartist/javascript/dap-react-native-init))
+
+(defun hackartist/javascript/config ()
+  (add-hook 'js2-mode-hook 'eslintd-fix-mode))
 
 (defun hackartist/javascript/bindings ()
   (add-hook 'js2-mode-hook (lambda ()
