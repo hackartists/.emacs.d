@@ -43,8 +43,6 @@
   (global-set-key (kbd "<M-down>") 'symbol-overlay-jump-next)
 
   (add-hook 'term-mode-hook (lambda()
-                              ;;(define-key term-mode-map (kbd "C-t") 'helm-mt)
-                              ;;(local-set-key (kbd "C-t") 'helm-mt)
                               (define-key term-raw-map (kbd "<prior>") 'term-pager-back-page)
                               (define-key term-raw-map (kbd "<next>") 'term-pager-page)
                               (define-key term-raw-map (kbd "C-t") 'helm-mt)
@@ -55,35 +53,38 @@
                               (define-key term-raw-map (kbd "<M-right>") 'term-send-forward-word)
                               ))
 
-  (eval-after-load 'yasnippet
+  (with-eval-after-load 'yasnippet
     (define-key yas-minor-mode-map (kbd "<s-return>") 'yas-insert-snippet))
 
-  (eval-after-load 'company
-    '(progn
-       (define-key company-active-map (kbd "TAB") 'company-complete)
-       (define-key company-active-map (kbd "ESC") 'company-abort)
-       (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
-       (define-key company-active-map [tab] 'company-complete)))
+  (add-hook 'company-mode-hook
+            (lambda () (interactive "")
+              (define-key company-active-map (kbd "TAB") 'company-complete-common-or-cycle)
+              (define-key company-active-map (kbd "ESC") 'company-abort)
+              (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
+              (define-key company-active-map [tab] 'company-complete)))
 
-  (with-eval-after-load 'org-mode
-    (define-key org-mode-map (kbd "<M-return>") nil)
-    (define-key org-mode-map (kbd "<M-S-up>") nil)
-    (define-key org-mode-map (kbd "<M-S-down>") nil)
-    (define-key org-mode-map (kbd "<M-up>") nil)
-    (define-key org-mode-map (kbd "<M-down>") nil)
-    (define-key org-mode-map (kbd "<M-S-left>") nil)
-    (define-key org-mode-map (kbd "<M-S-right>") nil)
-    (define-key org-mode-map (kbd "<M-left>") nil)
-    (define-key org-mode-map (kbd "<S-left>") nil)
-    (define-key org-mode-map (kbd "<S-right>") nil)
-    (define-key org-mode-map (kbd "<S-up>") nil)
-    (define-key org-mode-map (kbd "<S-down>") nil)
-    (define-key org-mode-map (kbd "<M-right>") nil) 
-    (define-key org-mode-map (kbd "C-<tab>") nil)
-    (define-key org-mode-map (kbd "C-S-<tab>") nil)
-    (define-key org-mode-map (kbd "<C-up>") nil)
-    (define-key org-mode-map (kbd "<C-down>") nil)
-    (define-key org-mode-map (kbd "RET") nil))
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (interactive "")
+              (define-key org-mode-map (kbd "<M-return>") nil)
+              (define-key org-mode-map (kbd "<M-S-up>") nil)
+              (define-key org-mode-map (kbd "<M-S-down>") nil)
+              (define-key org-mode-map (kbd "<M-up>") nil)
+              (define-key org-mode-map (kbd "<M-down>") nil)
+              (define-key org-mode-map (kbd "<M-S-left>") nil)
+              (define-key org-mode-map (kbd "<M-S-right>") nil)
+              (define-key org-mode-map (kbd "<M-left>") nil)
+              (define-key org-mode-map (kbd "<S-left>") nil)
+              (define-key org-mode-map (kbd "<S-right>") nil)
+              (define-key org-mode-map (kbd "<S-up>") nil)
+              (define-key org-mode-map (kbd "<S-down>") nil)
+              (define-key org-mode-map (kbd "<M-right>") nil) 
+              (define-key org-mode-map (kbd "C-<tab>") nil)
+              (define-key org-mode-map (kbd "C-S-<tab>") nil)
+              (define-key org-mode-map (kbd "<C-up>") nil)
+              (define-key org-mode-map (kbd "<C-down>") nil)
+              (define-key org-mode-map (kbd "RET") nil)))
+
 
   (with-eval-after-load 'dap-mode
     (define-key dap-mode-map (kbd "<f5>") 'dap-debug)
