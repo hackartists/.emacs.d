@@ -22,4 +22,13 @@
   (setq slack-buffer-function #'switch-to-buffer))
 
 (defun hackartist/chat/bindings ()
+  (add-hook 'slack-buffer-mode-hook
+            (lambda ()
+              (interactive "")
+              (local-set-key (kbd "M-RET @") 'slack-message-embed-mention)
+              (local-set-key (kbd "M-RET #") 'slack-message-embed-channel)
+              (local-set-key (kbd "M-RET RET") 'slack-thread-show-or-create)
+              (local-set-key (kbd "M-RET !") 'slack-message-add-reaction)
+              ))
+
   (global-set-key (kbd "M-m o s h") 'helm-slack))

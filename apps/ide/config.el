@@ -119,6 +119,10 @@
       (let ((file (tramp-file-name-localname (tramp-dissect-file-name file)))) 
         (replace-regexp-in-string (concat "\\`" dir) "" file))))
 
+  (with-eval-after-load 'doom-modeline
+    (add-hook 'doom-modeline-mode-hook (lambda ()
+                                         (display-time))))
+
   (define-key yas-keymap (kbd "<return>") 'yas/exit-all-snippets)
 
   (defun yas/goto-end-of-active-field () 
