@@ -15,8 +15,8 @@
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets")
 (set-frame-parameter nil 'fullscreen 'fullboth)
 
-(setq ns-command-modifier 'super)
-(server-start)
+;; (setq ns-command-modifier 'super)
+;; (server-start)
 (split-window-horizontally)
 (windmove-right)
 (switch-to-buffer "*Messages*")
