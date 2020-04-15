@@ -34,12 +34,6 @@
   (defcustom dap-react-native-debug-path (expand-file-name "vscode/msjsdiag.vscode-react-native"
                                                            dap-utils-extension-path)
     "The path to React Native Tools vscode extension."
-    :group 'dap-node
-    :type 'string)
-
-  (defcustom dap-react-native-debug-path (expand-file-name "vscode/msjsdiag.vscode-react-native"
-                                                           dap-utils-extension-path)
-    "The path to React Native Tools vscode extension."
     :group 'dap-react-native
     :type 'string)
 
@@ -50,9 +44,6 @@
     :type '(repeat string))
 
   (dap-utils-vscode-setup-function "dap-react-native" "msjsdiag" "vscode-react-native"
-                                   dap-react-native-debug-path)
-
-  (dap-utils-vscode-setup-function "dap-react-native" "msjsdiag" "vscode-node-debug2"
                                    dap-react-native-debug-path)
 
   (defun dap-react-native--populate-start-file-args (conf)
