@@ -1,6 +1,6 @@
 (setq hackartist-javascript-layers
       '(
-        (javascript :variables javascript-import-tool 'import-js javascript-backend 'lsp javascript-repl `nodejs js-indent-level 2 js2-basic-offset 2)
+        (javascript :variables javascript-import-tool 'import-js javascript-backend 'lsp javascript-repl `nodejs js-indent-level 4 js2-basic-offset 4)
         json
         ess
         import-js
