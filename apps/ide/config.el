@@ -24,7 +24,8 @@
 (defun hackartist/ide/config/darwin ()
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
   (add-to-list 'default-frame-alist '(ns-appearance . dark))
-  (setq ns-command-modifier 'super))
+  (setq ns-command-modifier 'super)
+  (setq mac-command-modifier 'super))
 
 (defun hackartist/ide/config/linux ()
   (setq x-ctrl-keysym 'super)
@@ -52,6 +53,7 @@
         org-enable-bootstrap-support t
         org-projectile-file "TODOs.org")
 
+  (add-to-list 'auto-mode-alist '("\\profile\\'" . shell-script-mode))
   (add-to-list 'auto-mode-alist '("\\.profile\\'" . shell-script-mode))
   (add-to-list 'auto-mode-alist '("\\.gradle\\'" . gradle-mode))
   (add-to-list 'auto-mode-alist'("README\\.md\\'" . gfm-mode))
@@ -110,11 +112,29 @@
         mu4e-view-show-images t
         mu4e-view-show-addresses t)
 
+  (transient-append-suffix 'magit-dispatch "F" '("o" "Fotingo" fotingo-dispatch))
   (set-face-attribute 'hl-line nil ;; :height (+ (face-attribute 'default :height) 30)
                       :bold t 
                       :underline t 
                       :inherit nil 
                       :background nil)
+
+  (with-eval-after-load 'mu4e-alert
+    ;; Enable Desktop notifications
+    ;; (mu4e-alert-set-default-style 'notifications)) ; For Linux.
+  ;; (mu4e-alert-set-default-style 'libnotify))  ; Alternative for Linux
+  (mu4e-alert-set-default-style 'notifier))   ; For macOS (through the
+                                        ; terminal notifier app).
+  ;; (mu4e-alert-set-default-style 'growl))      ; Alternative for macOS.
+
+  ;; (setq mu4e-maildir (expand-file-name "~/Maildir")
+  ;;       mu4e-drafts-folder "/gmail/[Gmail].Drafts"
+  ;;       mu4e-sent-folder   "/gmail/[Gmail].Sent Mail"
+  ;;       mu4e-trash-folder  "/gmail/[Gmail].Trash"
+  ;;       mu4e-sent-messages-behavior 'delete
+  ;;       mu4e-get-mail-command "mbsync -a"
+  ;;       mu4e-update-interval 300)
+
 
   (with-eval-after-load 'git-gutter+ 
     (defun git-gutter+-remote-default-directory (dir file) 
