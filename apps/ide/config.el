@@ -99,7 +99,17 @@
   (setq projectile-git-submodule-command nil)
   (setq projectile-project-root-files '("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS" ".dropbox" ".projectile"))
   ;; (setq flycheck-display-errors-function 'ide/display-bottom-window)
-  
+
+  (setq mu4e-maildir "~/Maildir"
+        mu4e-trash-folder "/Trash"
+        mu4e-refile-folder "/Archive"
+        mu4e-sent-folder "/Sent Mail"
+        mu4e-drafts-folder "/Drafts"
+        mu4e-get-mail-command "offlineimap"
+        mu4e-compose-signature-auto-include nil
+        mu4e-view-show-images t
+        mu4e-view-show-addresses t)
+
   (set-face-attribute 'hl-line nil ;; :height (+ (face-attribute 'default :height) 30)
                       :bold t 
                       :underline t 
