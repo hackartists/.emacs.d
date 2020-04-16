@@ -30,6 +30,7 @@
         (typescript :variables typescript-fmt-on-save t typescript-fmt-tool 'typescript-formatter typescript-linter 'tslint)
         (shell-scripts :variables shell-scripts-backend 'lsp)
         themes-megapack
+        (mu4e :variables mu4e-installation-path "/usr/local/share/emacs/site-lisp" mu4e-use-maildirs-extension t mu4e-enable-async-operations t mu4e-attachment-dir "~/Downloads" mu4e-enable-notifications t mu4e-enable-mode-line t)
         ))
 
 (setq hackartist-ide-packages
@@ -59,4 +60,5 @@
         "https://github.com/domtronn/all-the-icons.el.git"
         "https://github.com/sebastiencs/icons-in-terminal.git"
         "https://github.com/seagle0128/icons-in-terminal.el.git"
+        "https://github.com/fgallina/mu4e-multi.git"
         ))
