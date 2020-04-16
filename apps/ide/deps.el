@@ -61,4 +61,5 @@
         "https://github.com/sebastiencs/icons-in-terminal.git"
         "https://github.com/seagle0128/icons-in-terminal.el.git"
         "https://github.com/fgallina/mu4e-multi.git"
+        "https://github.com/mack1070101/fotingo-emacs.git"
         ))
