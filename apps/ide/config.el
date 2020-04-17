@@ -102,14 +102,7 @@
   (setq projectile-project-root-files '("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS" ".dropbox" ".projectile"))
   ;; (setq flycheck-display-errors-function 'ide/display-bottom-window)
 
-  (setq mu4e-maildir "~/Maildir"
-        mu4e-trash-folder "/Trash"
-        mu4e-refile-folder "/Archive"
-        mu4e-sent-folder "/Sent Mail"
-        mu4e-drafts-folder "/Drafts"
-        mu4e-get-mail-command "offlineimap"
-        mu4e-compose-signature-auto-include nil
-        mu4e-view-show-images t
+  (setq mu4e-view-show-images t
         mu4e-view-show-addresses t)
 
   ;; (transient-append-suffix 'magit-dispatch "F" '("o" "Fotingo" fotingo-dispatch))
@@ -126,14 +119,6 @@
   (mu4e-alert-set-default-style 'notifier))   ; For macOS (through the
                                         ; terminal notifier app).
   ;; (mu4e-alert-set-default-style 'growl))      ; Alternative for macOS.
-
-  ;; (setq mu4e-maildir (expand-file-name "~/Maildir")
-  ;;       mu4e-drafts-folder "/gmail/[Gmail].Drafts"
-  ;;       mu4e-sent-folder   "/gmail/[Gmail].Sent Mail"
-  ;;       mu4e-trash-folder  "/gmail/[Gmail].Trash"
-  ;;       mu4e-sent-messages-behavior 'delete
-  ;;       mu4e-get-mail-command "mbsync -a"
-  ;;       mu4e-update-interval 300)
 
 
   (with-eval-after-load 'git-gutter+ 
