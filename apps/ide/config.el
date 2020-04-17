@@ -112,7 +112,7 @@
         mu4e-view-show-images t
         mu4e-view-show-addresses t)
 
-  (transient-append-suffix 'magit-dispatch "F" '("o" "Fotingo" fotingo-dispatch))
+  ;; (transient-append-suffix 'magit-dispatch "F" '("o" "Fotingo" fotingo-dispatch))
   (set-face-attribute 'hl-line nil ;; :height (+ (face-attribute 'default :height) 30)
                       :bold t 
                       :underline t 
