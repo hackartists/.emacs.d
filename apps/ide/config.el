@@ -53,6 +53,8 @@
         org-enable-bootstrap-support t
         org-projectile-file "TODOs.org")
 
+  (setq tab-always-indent t)
+
   (add-to-list 'auto-mode-alist '("\\profile\\'" . shell-script-mode))
   (add-to-list 'auto-mode-alist '("\\.profile\\'" . shell-script-mode))
   (add-to-list 'auto-mode-alist '("\\.gradle\\'" . gradle-mode))
