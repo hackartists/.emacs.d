@@ -25,7 +25,8 @@
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
   (add-to-list 'default-frame-alist '(ns-appearance . dark))
   (setq ns-command-modifier 'super)
-  (setq mac-command-modifier 'super))
+  (setq mac-command-modifier 'super)
+  (highlight2clipboard-mode +1))
 
 (defun hackartist/ide/config/linux ()
   (setq x-ctrl-keysym 'super)
