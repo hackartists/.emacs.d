@@ -15,23 +15,17 @@
 
 (defun hackartist/ci/bindings () )
 
+(defun hackartist/ci/circle-golog-beautify/el (el)
+  (beginning-of-buffer)
+  (replace-string el (concat "
+" el)))
+
 (defun hackartist/ci/circle-golog-beautify ()
   (interactive)
-  (beginning-of-buffer)
-  (replace-string "?" "
-?")
-  (beginning-of-buffer)
-  (replace-string "go: " "
-go: ")
-  (beginning-of-buffer)
-  (replace-string "warning: " "
-warning: ")
-  (beginning-of-buffer)
-  (replace-string "ok " "
-ok ")
+  (dolist (el '("?" "go: ""warning: " "ok " "FAIL " " --- "))
+    (hackartist/ci/circle-golog-beautify/el el))
   (beginning-of-buffer)
   (replace-string "
 
 " "
-")
-  )
+"))
