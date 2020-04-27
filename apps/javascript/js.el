@@ -61,7 +61,7 @@
 ;;   )
 
 (defun hackartist/javascript/init ()
-  (hackartist/javascript/dap-react-native-init))
+  (add-hook 'js2-mode-hook 'hackartist/javascript/dap-react-native-init))
 
 (defun hackartist/javascript/config ()
   (add-hook 'js2-mode-hook 'eslintd-fix-mode))
