@@ -9,7 +9,6 @@
   (global-git-gutter+-mode -1)
   (global-auto-highlight-symbol-mode +1)
 
-
   (add-hook 'minibuffer-setup-hook
             (lambda ()
               (if (string= current-input-method 'korean-hangul)

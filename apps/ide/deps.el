@@ -87,6 +87,7 @@
         magit
         ghub
         magit-gh-pulls
+        highlight2clipboard
         ))
 
 (setq hackartist-ide-osc
