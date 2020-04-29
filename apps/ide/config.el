@@ -180,6 +180,10 @@
                                                                   :tab newline newline-mark)) 
                               (whitespace-mode 1)))
 
+  (add-hook 'protobuf-mode-hook (lambda ()
+                                  (interactive "")
+                                  (format-all-mode +1)))
+  
   (add-hook 'term-mode-hook (lambda()
                               (setq yas-dont-activate t)))
 
