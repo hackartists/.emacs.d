@@ -46,7 +46,12 @@
 
 (defun hackartist/ide/switch-or-create-other-frame ()
   (interactive "")
-  (if (eq (next-frame (selected-frame)) (selected-frame)) (make-frame) (hackartist/ide/other-frame-safe)))
+  (if (eq (next-frame (selected-frame)) (selected-frame)) (make-frame) (hackartist/ide/other-frame-safe))
+  (set-face-attribute 'hl-line nil
+                      :bold t 
+                      :underline t 
+                      :inherit nil 
+                      :background nil))
 
 (defun helm-hackartist-buffer ()
   "Select hackartist ide using helm."
