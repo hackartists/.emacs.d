@@ -272,8 +272,18 @@
        ("tabsize" "4"))))
    '(org-support-shift-select t)
    '(lsp-file-watch-threshold 100)
-   '(lsp-enable-file-watchers nil)
-   ))
+   '(lsp-enable-file-watchers nil))
+  (setq calendar-month-name-array
+        ["January" "February" "March"     "April"   "May"      "June"
+         "July"    "August"   "September" "October" "November" "December"])
+
+  ;; Week days
+  (setq calendar-day-name-array
+        ["Sunday" "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday"])
+
+  ;; First day of the week
+  (setq calendar-week-start-day 1) ; 0:Sunday, 1:Monday
+  )
 
 (defun ide/display-helm-miniwindow (buffer &optional resume)
   "Display the Helm window respecting `helm-position'."
