@@ -3,7 +3,7 @@
         protobuf
         (multiple-cursors :variables multiple-cursors-backend 'mc)
         ivy
-        restclient
+        (restclient :variables restclient-use-org t)
         git
         version-control
         unicode-fonts
@@ -103,4 +103,5 @@
         "https://github.com/seagle0128/icons-in-terminal.el.git"
         "https://github.com/fgallina/mu4e-multi.git"
         "https://github.com/mack1070101/fotingo-emacs.git"
+        "git@github.com:hackartists/org-api-mode.git"
         ))
