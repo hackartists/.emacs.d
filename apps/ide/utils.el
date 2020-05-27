@@ -1,8 +1,17 @@
+(defun set-keyboard-en ( )
+  (toggle-input-method)
+  ;; (set-input-method 'latin-prefix)
+  )
+
+(defun set-keyboard-kr ( )
+  ;; (toggle-input-method)
+  (set-input-method 'korean-hangul))
+
 (defun apps/ide/toggle-input-method-custom ()
   (interactive)
   (if (string= default-input-method "korean-hangul")
-      (toggle-input-method)
-    (set-input-method 'korean-hangul)))  
+      (set-keyboard-en)
+    (set-keyboard-kr)))
 
 (defun hackartist/smart-switch-treemacs ()
   (when (and

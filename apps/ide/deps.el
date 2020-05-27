@@ -70,6 +70,7 @@
         (kubernetes :variables kubernetes-commands-display-buffer-function 'display-buffer)
         pass
         calendar
+        pdf
         ))
 
 (setq hackartist-ide-packages
