@@ -83,7 +83,8 @@
               (define-key org-mode-map (kbd "C-S-<tab>") nil)
               (define-key org-mode-map (kbd "<C-up>") nil)
               (define-key org-mode-map (kbd "<C-down>") nil)
-              (define-key org-mode-map (kbd "RET") nil)))
+              (define-key org-mode-map (kbd "RET") nil)
+              (local-set-key (kbd "C-c h i") 'counsel-outline)))
 
 
   (with-eval-after-load 'dap-mode
