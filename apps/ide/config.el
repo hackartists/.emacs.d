@@ -222,6 +222,9 @@
 
   (custom-set-variables
    '(doc-view-resolution 200)
+   '(org-confirm-babel-evaluate nil)
+   '(org-export-use-babel nil)
+   '(org-export-with-sub-superscripts '{})
    '(org-latex-listings t)
    '(org-latex-listings-langs
      (quote

@@ -93,6 +93,7 @@
         magit-gh-pulls
         highlight2clipboard
         format-all
+        ob-async
         ))
 
 (setq hackartist-ide-osc
