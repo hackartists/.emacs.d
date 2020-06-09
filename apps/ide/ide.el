@@ -10,6 +10,7 @@
   (global-auto-highlight-symbol-mode +1)
   (require 'ob-api)
   (require 'ob-api-mode)
+  (require 'ob-async)
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((api . t)))
