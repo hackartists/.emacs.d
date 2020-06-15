@@ -34,7 +34,7 @@
 
 (defun hackartist/ide/config ()
   (require 'multi-eshell)
-  
+
   (setq helm-hackartist-buffers-list (make-hackartist-helm-source (helm-make-source "Buffers" 'helm-source-buffers)))
   (setq helm-hackartist-projectile-files-list (make-hackartist-helm-source helm-source-projectile-files-list))
   ;; (setq helm-hackartist-recentf-list (helm-make-source "Recentf" 'helm-recentf-source :fuzzy-match helm-recentf-fuzzy-match))
@@ -274,6 +274,20 @@
        ("stringstyle" "\\color{orange}")
        ("tabsize" "4"))))
    '(org-support-shift-select t)
+   '(org-export-use-babel nil)
+   '(org-export-with-sub-superscripts '{})
+   '(dap-ui-controls-mode nil nil (dap-ui))
+   '(ivy-initial-inputs-alist
+     '((counsel-minor . "^+")
+       (counsel-package . "^+")
+       (counsel-org-capture . "^")
+       (counsel-M-x . "")
+       (counsel-describe-symbol . "^")
+       (org-refile . "^")
+       (org-agenda-refile . "^")
+       (org-capture-refile . "^")
+       (Man-completion-table . "^")
+       (woman . "^")))
    '(lsp-enable-file-watchers nil))
   
   (setq calendar-month-name-array
