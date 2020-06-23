@@ -94,6 +94,7 @@
         highlight2clipboard
         format-all
         ob-async
+        ob-go
         ))
 
 (setq hackartist-ide-osc

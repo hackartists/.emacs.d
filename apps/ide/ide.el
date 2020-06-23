@@ -11,6 +11,7 @@
   (require 'ob-api)
   (require 'ob-api-mode)
   (require 'ob-async)
+  (require 'ob-go)
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((api . t)))
