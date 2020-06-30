@@ -20,8 +20,8 @@
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
   (define-key evil-normal-state-map (kbd "-") 'text-scale-decrease)
   (define-key evil-normal-state-map (kbd "=") 'text-scale-adjust)
-  (define-key evil-normal-state-map (kbd "M-.") 'spacemacs/jump-to-definition)
-  (define-key evil-normal-state-map (kbd "M-,") 'xref-pop-marker-stack)
+  (define-key evil-normal-state-map (kbd ".") 'spacemacs/jump-to-definition)
+  (define-key evil-normal-state-map (kbd ",") 'xref-pop-marker-stack)
   
   (global-set-key (kbd "<s-up>") 'windmove-up)
   (global-set-key (kbd "<s-down>") 'windmove-down)

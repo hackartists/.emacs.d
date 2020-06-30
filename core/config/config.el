@@ -35,6 +35,7 @@
    dotspacemacs-startup-banner nil
    dotspacemacs-enable-server t
    dotspacemacs-pretty-docs t
+   dotspacemacs-major-mode-leader-key "RET"
    dotspacemacs-loading-progress-bar t
    dotspacemacs-mode-line-theme '(doom :separator wave :separator-scale 1.5)
    doom-modeline-github t
