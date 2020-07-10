@@ -9,11 +9,12 @@
   (spacemacs/set-leader-keys 
     "ah'" 'hackartist/ide/switch-or-create-other-frame
     "ah." 'helm-hackartist-buffer
-    "ahi" 'helm-semantic-or-imenu
+    "ahi" 'counsel-imenu
     "ahs" 'helm-slack
     "aht" 'helm-mt
     "ahy" 'yas-insert-snippet
     "ahra" 'helm-all-mark-rings
+    "ahrr" 'helm-mark-ring
     "ahrk" 'helm-show-kill-ring
     "ahbk" 'kill-this-buffer) 
 
@@ -40,8 +41,6 @@
   (global-set-key (kbd "M-m o s h") 'helm-slack)
   (global-set-key (kbd "s-SPC") 'company-complete)
   (global-set-key (kbd "C-SPC") 'helm-hackartist-buffer)
-  (global-set-key (kbd "C-x g") 'magit-status)
-  (global-set-key (kbd "C-c C-h i") 'helm-semantic-or-imenu)
   (global-set-key (kbd "s-c") 'cua-copy-region)
   (global-set-key (kbd "s-v") 'cua-paste)
   (global-set-key (kbd "s-x") 'cua-cut-region)
@@ -75,28 +74,28 @@
               (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
               (define-key company-active-map [tab] 'company-complete)))
 
-  ;; (add-hook 'org-mode-hook
-  ;;           (lambda ()
-  ;;             (interactive "")
-  ;;             (define-key org-mode-map (kbd "<M-return>") nil)
-  ;;             (define-key org-mode-map (kbd "<M-S-up>") nil)
-  ;;             (define-key org-mode-map (kbd "<M-S-down>") nil)
-  ;;             (define-key org-mode-map (kbd "<M-up>") nil)
-  ;;             (define-key org-mode-map (kbd "<M-down>") nil)
-  ;;             (define-key org-mode-map (kbd "<M-S-left>") nil)
-  ;;             (define-key org-mode-map (kbd "<M-S-right>") nil)
-  ;;             (define-key org-mode-map (kbd "<M-left>") nil)
-  ;;             (define-key org-mode-map (kbd "<S-left>") nil)
-  ;;             (define-key org-mode-map (kbd "<S-right>") nil)
-  ;;             (define-key org-mode-map (kbd "<S-up>") nil)
-  ;;             (define-key org-mode-map (kbd "<S-down>") nil)
-  ;;             (define-key org-mode-map (kbd "<M-right>") nil) 
-  ;;             (define-key org-mode-map (kbd "C-<tab>") nil)
-  ;;             (define-key org-mode-map (kbd "C-S-<tab>") nil)
-  ;;             (define-key org-mode-map (kbd "<C-up>") nil)
-  ;;             (define-key org-mode-map (kbd "<C-down>") nil)
-  ;;             (define-key org-mode-map (kbd "RET") nil)
-  ;;             (local-set-key (kbd "C-c h i") 'counsel-outline)))
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (interactive "")
+              (define-key org-mode-map (kbd "<M-return>") nil)
+              (define-key org-mode-map (kbd "<M-S-up>") nil)
+              (define-key org-mode-map (kbd "<M-S-down>") nil)
+              (define-key org-mode-map (kbd "<M-up>") nil)
+              (define-key org-mode-map (kbd "<M-down>") nil)
+              (define-key org-mode-map (kbd "<M-S-left>") nil)
+              (define-key org-mode-map (kbd "<M-S-right>") nil)
+              (define-key org-mode-map (kbd "<M-left>") nil)
+              (define-key org-mode-map (kbd "<S-left>") nil)
+              (define-key org-mode-map (kbd "<S-right>") nil)
+              (define-key org-mode-map (kbd "<S-up>") nil)
+              (define-key org-mode-map (kbd "<S-down>") nil)
+              (define-key org-mode-map (kbd "<M-right>") nil) 
+              (define-key org-mode-map (kbd "C-<tab>") nil)
+              (define-key org-mode-map (kbd "C-S-<tab>") nil)
+              (define-key org-mode-map (kbd "<C-up>") nil)
+              (define-key org-mode-map (kbd "<C-down>") nil)
+              (define-key org-mode-map (kbd "RET") nil)
+              (local-set-key (kbd "C-c h i") 'counsel-outline)))
 
 
   (with-eval-after-load 'helm
