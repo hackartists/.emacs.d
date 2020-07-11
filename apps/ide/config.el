@@ -69,6 +69,9 @@
   (add-hook 'sh-mode-hook (lambda () 
                             (setq tab-width 4)))
 
+  (setq-default gac-automatically-push-p t)
+  (add-hook 'org-mode-hook (lambda () (git-auto-commit-mode 1)))
+
   (prefer-coding-system       'utf-8)
   (set-default-coding-systems 'utf-8)
   (set-terminal-coding-system 'utf-8-unix)

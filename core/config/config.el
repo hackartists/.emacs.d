@@ -41,4 +41,12 @@
    doom-modeline-github t
    doom-modeline-irc-buffers t
    doom-modeline-unicode-fallback t
-   doom-modeline-vcs-max-length 30))
+   doom-modeline-vcs-max-length 30
+   dotspacemacs-emacs-command-key "X")
+  ;; (let ((ret '()))
+  ;;   (dolist
+  ;;       (el spacemacs/key-binding-prefixes)
+  ;;     (if (not (string= (car el) "SPC"))
+  ;;         (push el ret)))
+  ;;   (setq spacemacs/key-binding-prefixes ret))
+  )

@@ -5,18 +5,21 @@
   )
 
 (defun hackartist/ide/bindings ()
-  (spacemacs/declare-prefix "ah" "hackartist")
+  (spacemacs/declare-prefix "SPC" "hackartist")
+  (spacemacs/declare-prefix "SPC r" "rings")
+  (spacemacs/declare-prefix "SPC b" "buffers") 
   (spacemacs/set-leader-keys 
-    "ah'" 'hackartist/ide/switch-or-create-other-frame
-    "ah." 'helm-hackartist-buffer
-    "ahi" 'counsel-imenu
-    "ahs" 'helm-slack
-    "aht" 'helm-mt
-    "ahy" 'yas-insert-snippet
-    "ahra" 'helm-all-mark-rings
-    "ahrr" 'helm-mark-ring
-    "ahrk" 'helm-show-kill-ring
-    "ahbk" 'kill-this-buffer) 
+    "SPC '" 'hackartist/ide/switch-or-create-other-frame
+    "SPC ." 'helm-hackartist-buffer
+    "SPC i" 'counsel-imenu
+    "SPC s" 'helm-slack
+    "SPC t" 'helm-mt
+    "SPC y" 'yas-insert-snippet
+    "SPC ra" 'helm-all-mark-rings
+    "SPC rr" 'helm-mark-ring
+    "SPC rk" 'helm-show-kill-ring
+    "SPC bk" 'kill-this-buffer
+    "SPC bu" 'revert-buffer)
 
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
   (define-key evil-normal-state-map (kbd "-") 'text-scale-decrease)
