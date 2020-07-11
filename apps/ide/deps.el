@@ -96,7 +96,7 @@
         ob-async
         ob-go
         git-auto-commit-mode
-        ))
+        projectile-git-autofetch))
 
 (setq hackartist-ide-osc
       '(

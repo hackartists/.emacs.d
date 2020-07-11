@@ -6,20 +6,28 @@
 
 (defun hackartist/ide/bindings ()
   (spacemacs/declare-prefix "SPC" "hackartist")
+  (spacemacs/declare-prefix "SPC b" "buffers")
+  (spacemacs/declare-prefix "SPC e" "evil")
+  (spacemacs/declare-prefix "SPC h" "helm")
   (spacemacs/declare-prefix "SPC r" "rings")
-  (spacemacs/declare-prefix "SPC b" "buffers") 
-  (spacemacs/set-leader-keys 
+  (spacemacs/declare-prefix "SPC s" "sort")
+  (spacemacs/set-leader-keys
     "SPC '" 'hackartist/ide/switch-or-create-other-frame
     "SPC ." 'helm-hackartist-buffer
-    "SPC i" 'counsel-imenu
-    "SPC s" 'helm-slack
-    "SPC t" 'helm-mt
-    "SPC y" 'yas-insert-snippet
-    "SPC ra" 'helm-all-mark-rings
-    "SPC rr" 'helm-mark-ring
-    "SPC rk" 'helm-show-kill-ring
+    "SPC RET" 'yas-insert-snippet
+    "SPC SPC" 'helm-mt
+    "SPC TAB" 'counsel-imenu
+    "SPC \\" 'apps/ide/toggle-input-method-custom
     "SPC bk" 'kill-this-buffer
-    "SPC bu" 'revert-buffer)
+    "SPC bu" 'revert-buffer
+    "SPC ei" 'evil-insert
+    "SPC hs" 'helm-slack
+    "SPC ra" 'helm-all-mark-rings
+    "SPC rk" 'helm-show-kill-ring
+    "SPC rr" 'helm-mark-ring
+    "SPC sc" 'sort-columns
+    "SPC sf" 'sort-fields
+    )
 
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
   (define-key evil-normal-state-map (kbd "-") 'text-scale-decrease)

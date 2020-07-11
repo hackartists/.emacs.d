@@ -68,7 +68,8 @@
 
   (add-hook 'sh-mode-hook (lambda () 
                             (setq tab-width 4)))
-
+  (require 'projectile-git-autofetch)
+  (projectile-git-autofetch-mode 1)
   (setq-default gac-automatically-push-p t)
   (add-hook 'org-mode-hook (lambda () (git-auto-commit-mode 1)))
 
