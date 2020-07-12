@@ -4,13 +4,32 @@
   (newline-and-indent)
   )
 
+(defun hackartist/ide/kmacro ( )
+  "defines kmacro"
+  (fset 'append-copy-until-spc-to-a
+        (kmacro-lambda-form [?v ?f ?  ?\" ?A ?y] 0 "%d"))
+  (fset 'init-copy-until-spc-to-a
+        (kmacro-lambda-form [?v ?f ?  ?\" ?a ?y] 0 "%d"))
+  (fset 'append-copy-until-spc-to-b
+        (kmacro-lambda-form [?v ?f ?  ?\" ?B ?y] 0 "%d"))
+  (fset 'init-copy-until-spc-to-b
+        (kmacro-lambda-form [?v ?f ?  ?\" ?b ?y] 0 "%d"))
+  (fset 'append-copy-until-spc-to-c
+        (kmacro-lambda-form [?v ?f ?  ?\" ?C ?y] 0 "%d"))
+  (fset 'init-copy-until-spc-to-c
+        (kmacro-lambda-form [?v ?f ?  ?\" ?c ?y] 0 "%d"))
+  )
+
 (defun hackartist/ide/bindings ()
+  (hackartist/ide/kmacro)
   (spacemacs/declare-prefix "SPC" "hackartist")
   (spacemacs/declare-prefix "SPC b" "buffers")
   (spacemacs/declare-prefix "SPC e" "evil")
   (spacemacs/declare-prefix "SPC h" "helm")
   (spacemacs/declare-prefix "SPC r" "rings")
   (spacemacs/declare-prefix "SPC s" "sort")
+  (spacemacs/declare-prefix "SPC k" "kmacro")
+
   (spacemacs/set-leader-keys
     "SPC '" 'hackartist/ide/switch-or-create-other-frame
     "SPC ." 'helm-hackartist-buffer
@@ -22,12 +41,18 @@
     "SPC bu" 'revert-buffer
     "SPC ei" 'evil-insert
     "SPC hs" 'helm-slack
+    "SPC kcA" 'init-copy-until-spc-to-a
+    "SPC kcB" 'init-copy-until-spc-to-b
+    "SPC kcC" 'init-copy-until-spc-to-c
+    "SPC kca" 'append-copy-until-spc-to-a
+    "SPC kcb" 'append-copy-until-spc-to-b
+    "SPC kcc" 'append-copy-until-spc-to-c
     "SPC ra" 'helm-all-mark-rings
     "SPC rk" 'helm-show-kill-ring
     "SPC rr" 'helm-mark-ring
     "SPC sc" 'sort-columns
     "SPC sf" 'sort-fields
-    )
+ )
 
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
   (define-key evil-normal-state-map (kbd "-") 'text-scale-decrease)
@@ -55,8 +80,6 @@
   (global-set-key (kbd "s-c") 'cua-copy-region)
   (global-set-key (kbd "s-v") 'cua-paste)
   (global-set-key (kbd "s-x") 'cua-cut-region)
-  (global-set-key (kbd "s-k") 'kill-this-buffer)
-  (global-set-key (kbd "s-u") 'revert-buffer)
   (global-set-key (kbd "s-a") 'mark-whole-buffer)
   (global-set-key (kbd "s-z") 'undo)
   ;; (global-set-key (kbd "s-'") 'hackartist/ide/switch-or-create-other-frame)

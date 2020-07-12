@@ -1,7 +1,7 @@
 (setq hackartist-ide-layers
       '(
         protobuf
-        (multiple-cursors :variables multiple-cursors-backend 'mc)
+        multiple-cursors
         ivy
         (restclient :variables restclient-use-org t)
         git
@@ -9,7 +9,7 @@
         unicode-fonts
         systemd
         markdown
-        (org :variables org-enable-github-support t org-enable-bootstrap-support t org-enable-bootstrap-support t org-projectile-file "TODOs.org")
+        (org :variables org-enable-github-support t org-enable-bootstrap-support t org-enable-bootstrap-support t org-projectile-file "TODOs.org" org-enable-hugo-support t org-enable-epub-support t org-enable-bootstrap-support t org-enable-reveal-js-support t org-enable-jira-support t org-enable-org-journal-support t)
         confluence
         yaml
         spell-checking
@@ -97,6 +97,7 @@
         ob-go
         git-auto-commit-mode
         projectile-git-autofetch))
+
 
 (setq hackartist-ide-osc
       '(
