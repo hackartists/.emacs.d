@@ -28,3 +28,4 @@ var
 *.log
 /srecode-map.el
 /transient/
+private
