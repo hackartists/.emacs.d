@@ -29,6 +29,7 @@
   (spacemacs/declare-prefix "SPC r" "rings")
   (spacemacs/declare-prefix "SPC s" "sort")
   (spacemacs/declare-prefix "SPC k" "kmacro")
+  (spacemacs/declare-prefix "SPC g" "git")
 
   (spacemacs/set-leader-keys
     "SPC '" 'hackartist/ide/switch-or-create-other-frame
@@ -40,6 +41,11 @@
     "SPC bk" 'kill-this-buffer
     "SPC bu" 'revert-buffer
     "SPC ei" 'evil-insert
+    "SPC gb" 'magit-branch-and-checkout
+    "SPC gc" 'magit-branch-checkout
+    "SPC gf" 'magit-fetch-all
+    "SPC gl" 'magit-blame
+    "SPC gr" 'magit-ediff-resolve
     "SPC hs" 'helm-slack
     "SPC kcA" 'init-copy-until-spc-to-a
     "SPC kcB" 'init-copy-until-spc-to-b
