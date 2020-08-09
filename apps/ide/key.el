@@ -30,8 +30,11 @@
   (spacemacs/declare-prefix "SPC s" "sort")
   (spacemacs/declare-prefix "SPC k" "kmacro")
   (spacemacs/declare-prefix "SPC g" "git")
+  (spacemacs/declare-prefix "SPC w" "window")
 
   (spacemacs/set-leader-keys
+    "`" 'ace-window
+    "=" 'ace-window
     "SPC '" 'hackartist/ide/switch-or-create-other-frame
     "SPC ." 'helm-hackartist-buffer
     "SPC RET" 'yas-insert-snippet
@@ -58,6 +61,9 @@
     "SPC rr" 'helm-mark-ring
     "SPC sc" 'sort-columns
     "SPC sf" 'sort-fields
+    "SPC wm" 'maximize-window
+    "SPC wn" 'minimize-window
+    "SPC wb" 'balance-windows
  )
 
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)

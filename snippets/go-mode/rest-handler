@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: rest-handler
+# key: handler
+# --
+type $2Req struct {
+  rest.${3:Json|Uri|Query|Form}Requester \`json:"-"\`
+}
+
+type $2Resp struct {
+
+}
+
+// $2 ${4:...}
+func (r ${1:reciever}) ${2:name}(ctx *rest.RestContext, req $2Req) *rest.RestResponse {
+  $0
+
+  return rest.Error(errors.ErrNotImplemented)
+}

@@ -1,5 +1,7 @@
 (setq emacs-start-directory "~/.emacs.d")
 
+
+
 (let (res)
   (dolist (el (directory-files-recursively (concat emacs-start-directory "/core") ".*\.el$") res)
     (load-file el)))
@@ -9,10 +11,11 @@
 (setq spacemacs-start-directory "~/.emacs.d/spacemacs/")
 (load-file (concat spacemacs-start-directory "init.el"))
 (core/app/init-apps)
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets")
+(yas-reload-all)
 
 (switch-to-buffer "*scratch*")
 
-(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets")
 (set-frame-parameter nil 'fullscreen 'fullboth)
 
 ;; (setq ns-command-modifier 'super)

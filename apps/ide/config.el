@@ -223,6 +223,11 @@
    ;; If there is more than one, they won't work right.
    '(mode-line ((t (:background "#222226" :foreground "#b2b2b2" :box (:line-width 1 :color "#5d4d7a")))))
    '(mode-line-inactive ((t (:background "gray42" :foreground "#b2b2b2" :box (:line-width 1 :color "#5d4d7a"))))))
+  (add-hook 'text-mode-hook (lambda ()
+                              (spacemacs/toggle-relative-line-numbers-on)))
+
+  (add-hook 'prog-mode-hook (lambda ()
+                              (spacemacs/toggle-relative-line-numbers-on)))
 
   (custom-set-variables
    '(doc-view-resolution 200)

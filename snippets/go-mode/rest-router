@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: rest-router
+# key: router
+# --
+// $1API ${2:...}
+type ${1:Name}API struct {
+  rest.RestGroup
+}
+
+func (r *$1API) Route() rest.IRestRouter {
+  r.HEAD("/", func(*rest.RestContext) *rest.RestResponse { return rest.Success(nil) })
+  $0
+
+  return &r.RestGroup
+}

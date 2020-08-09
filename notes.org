@@ -1,9 +1,0 @@
-* 1password
-  - Secret: A3-7EVQ44-B6RTAS-ZT34J-SXC2K-MQA4W-HE53K
-  - Master password: chlwhdtjr08252143
-
-* Restarting Hardserver
-#+BEGIN_SRC shell
-systemctl restart nc_hardserver
-#+END_SRC
-
