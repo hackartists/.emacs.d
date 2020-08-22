@@ -1,0 +1,73 @@
+# -*- mode: snippet -*-
+# name: api-description
+# key: api 
+# --
+### ${1:number}. ${2:title}
+$2 API는 ${3:description}
+
+#### HTTP 헤더 정의
+| 헤더 파라미터   | 설명                 |
+| :--           | :--                  |
+| x-chain-id | ${4:header description} | 
+
+자세한 내용은 [다음](Basics - X-KRN 섹션)을 확인하십시오.  
+
+\`\`\`text
+Authorization: {{your credential}}
+x-chain-id: {{1001 | 8217}}
+\`\`\`
+
+이 API에 관한 자세한 내용은 [다음](ReDoc API Reference 페이지 - 해당 API 섹션 링크)을 확인하십시오.  
+이 문서 혹은 KAS에 관한 문의는 [개발자 포럼](https://forum.XXX 제품 도메인.com/)를 방문해 도움을 받으십시오.  
+
+#### API 호출
+$2 API를 호출하기 위해서 HTTP API 호출 또는 caver SDK 를 사용할 수 있습니다.
+
+{% tabs %}
+{% tab title="curl" %}
+\`\`\`text
+${5:curl command}
+\`\`\`
+{% endtab %}
+
+{% tab title="caver-js" %}
+\`\`\`text
+sdfsdf
+\`\`\`
+{% endtab %}
+
+{% tab title="caver-java" %}
+\`\`\`text
+sdsdfsdf
+\`\`\`
+{% endtab %}
+{% endtabs %}
+
+이 API에 관한 자세한 내용은 [다음](ReDoc API Reference 페이지 - 해당 API 섹션 링크)을 확인하십시오.  
+이 문서 혹은 KAS에 관한 문의는 [개발자 포럼](https://forum.XXX 제품 도메인.com/)를 방문해 도움을 받으십시오.  
+
+#### API 응답
+$2 API의 응답은 아래와 같습니다.
+
+{% tabs %}
+{% tab title="curl" %}
+\`\`\`text
+${6:response}
+\`\`\`
+{% endtab %}
+
+{% tab title="caver-js" %}
+\`\`\`text
+sdfsdf
+\`\`\`
+{% endtab %}
+
+{% tab title="caver-java" %}
+\`\`\`text
+sdsdfsdf
+\`\`\`
+{% endtab %}
+{% endtabs %}
+
+이 API에 관한 자세한 내용은 [다음](ReDoc API Reference 페이지 - 해당 API 섹션 링크)을 확인하십시오.  
+이 문서 혹은 KAS에 관한 문의는 [개발자 포럼](https://forum.XXX 제품 도메인.com/)를 방문해 도움을 받으십시오. 

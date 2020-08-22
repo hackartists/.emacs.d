@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: gitbook-hint
+# key: hint
+# --
+{% hint style="note" %}
+$0
+{% endhint %}

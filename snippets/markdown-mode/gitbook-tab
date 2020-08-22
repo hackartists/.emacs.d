@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: gitbook-tab
+# key: tabs
+# --
+
+{% tab title="${1:title}" %}
+$0
+{% endtab %}

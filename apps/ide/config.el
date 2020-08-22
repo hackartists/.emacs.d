@@ -29,8 +29,9 @@
   (highlight2clipboard-mode +1))
 
 (defun hackartist/ide/config/linux ()
-  (setq x-ctrl-keysym 'super)
-  (setq x-super-keysym 'ctrl))
+  ;; (setq x-ctrl-keysym 'super)
+  ;; (setq x-super-keysym 'ctrl)
+  )
 
 (defun hackartist/ide/config ()
   (require 'multi-eshell)
