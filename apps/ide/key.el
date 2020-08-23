@@ -76,7 +76,7 @@
   (global-set-key (kbd "<s-down>") 'windmove-down)
   (global-set-key (kbd "<s-left>") 'hackartist/ide/windmove-left)
   (global-set-key (kbd "<s-right>") 'hackartist/ide/windmove-right)
-  (global-set-key (kbd "<f5>") 'compile)
+  ;; (global-set-key (kbd "<f5>") 'compile)
   ;; (global-set-key (kbd "s-=") 'text-scale-increase)
   ;; (global-set-key (kbd "s--") 'text-scale-decrease)
   (global-set-key (kbd "S-SPC") 'apps/ide/toggle-input-method-custom)
@@ -89,15 +89,15 @@
   (global-set-key (kbd "M-m o s h") 'helm-slack)
   (global-set-key (kbd "s-SPC") 'company-complete)
   (global-set-key (kbd "C-SPC") 'helm-hackartist-buffer)
-  (global-set-key (kbd "C-c C-M-c") 'cua-copy-region)
-  (global-set-key (kbd "C-v C-M-v") 'cua-paste)
-  (global-set-key (kbd "C-x C-M-x") 'cua-cut-region)
-  (global-set-key (kbd "C-a C-M-a") 'mark-whole-buffer)
-  (global-set-key (kbd "C-z C-M-z") 'undo)
+  ;; (global-set-key (kbd "C-c C-M-c") 'cua-copy-region)
+  ;; (global-set-key (kbd "C-v C-M-v") 'cua-paste)
+  ;; (global-set-key (kbd "C-x C-M-x") 'cua-cut-region)
+  ;; (global-set-key (kbd "C-a C-M-a") 'mark-whole-buffer)
+  ;; (global-set-key (kbd "C-z C-M-z") 'undo)
   ;; (global-set-key (kbd "s-'") 'hackartist/ide/switch-or-create-other-frame)
   ;; (global-set-key (kbd "<s-return>") 'yas-insert-snippet)
-  (global-set-key (kbd "<M-up>") 'symbol-overlay-jump-prev)
-  (global-set-key (kbd "<M-down>") 'symbol-overlay-jump-next)
+  (global-set-key (kbd "M-k") 'symbol-overlay-jump-prev)
+  (global-set-key (kbd "M-j") 'symbol-overlay-jump-next)
 
   ;; (add-hook 'term-mode-hook (lambda()
   ;;                             (define-key term-raw-map (kbd "<prior>") 'term-pager-back-page)
@@ -110,15 +110,15 @@
   ;;                             (define-key term-raw-map (kbd "<M-right>") 'term-send-forward-word)
   ;;                             ))
 
-  (with-eval-after-load 'yasnippet
-    (define-key yas-minor-mode-map (kbd "<s-return>") 'yas-insert-snippet))
+  ;; (with-eval-after-load 'yasnippet
+  ;;   (define-key yas-minor-mode-map (kbd "<s-return>") 'yas-insert-snippet))
 
   (add-hook 'company-mode-hook
             (lambda () (interactive "")
-              ;;(define-key company-active-map (kbd "TAB") 'company-complete-common-or-cycle)
+              (define-key company-active-map (kbd "TAB") 'company-complete-common)
               (define-key company-active-map (kbd "ESC") 'company-abort)
               (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
-              (define-key company-active-map [tab] 'company-complete)))
+              (define-key company-active-map (kbd "<tab>") 'company-complete)))
 
   (add-hook 'org-mode-hook
             (lambda ()
@@ -140,14 +140,10 @@
               (define-key org-mode-map (kbd "C-S-<tab>") nil)
               (define-key org-mode-map (kbd "<C-up>") nil)
               (define-key org-mode-map (kbd "<C-down>") nil)
-              (define-key org-mode-map (kbd "RET") nil)
-              (local-set-key (kbd "C-c h i") 'counsel-outline)))
+              (define-key org-mode-map (kbd "RET") nil)))
 
 
   (with-eval-after-load 'helm
-    (global-set-key (kbd "C-c i") 'helm-imenu)
-    (global-set-key (kbd "C-c h i") 'helm-semantic-or-imenu)
-
     (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebihnd tab to do persistent action
     (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
     (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
