@@ -235,6 +235,7 @@
    '(org-confirm-babel-evaluate nil)
    '(org-export-use-babel nil)
    '(org-export-with-sub-superscripts '{})
+   '(org-src-window-setup 'split-window-below)
    '(org-latex-listings t)
    '(org-latex-listings-langs
      (quote
@@ -286,6 +287,7 @@
    '(org-support-shift-select t)
    '(org-export-use-babel nil)
    '(org-export-with-sub-superscripts '{})
+   '(org-download-image-dir "./images")
    '(dap-ui-controls-mode nil nil (dap-ui))
    '(ivy-initial-inputs-alist
      '((counsel-minor . "^+")

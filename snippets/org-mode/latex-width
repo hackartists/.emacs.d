@@ -1,0 +1,5 @@
+# name: latex-width
+# key: latex,beamer,width
+# --
+
+#+ATTR_LATEX: :width ${1:ratio}\textwidth

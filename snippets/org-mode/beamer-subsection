@@ -1,0 +1,5 @@
+# name: beamer-subsection
+# key: beamer,subsection
+# --
+
+#+BEAMER: \subsection{${1:title}}
