@@ -115,7 +115,7 @@
 
   (add-hook 'company-mode-hook
             (lambda () (interactive "")
-              (define-key company-active-map (kbd "TAB") 'company-complete-common)
+              (define-key company-active-map (kbd "TAB") 'company-complete)
               (define-key company-active-map (kbd "ESC") 'company-abort)
               (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
               (define-key company-active-map (kbd "<tab>") 'company-complete)))
