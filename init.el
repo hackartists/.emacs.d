@@ -1,7 +1,5 @@
 (setq emacs-start-directory "~/.emacs.d")
 
-
-
 (let (res)
   (dolist (el (directory-files-recursively (concat emacs-start-directory "/core") ".*\.el$") res)
     (load-file el)))
