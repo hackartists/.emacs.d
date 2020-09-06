@@ -1,4 +1,11 @@
 (defun hackartist/golang/bindings ()
+  (spacemacs/declare-prefix-for-mode 'go-mode "m" "movement")
+  (spacemacs/set-leader-keys-for-minor-mode 'go-mode
+    "rt" 'go-add-tags
+    "mf" 'go-goto-function-name
+    "mr" 'go-goto-return-values
+    "mh" 'go-goto-opening-parenthesis
+    )
   (add-hook 'go-playground-mode-hook 'hackartist/golang/playground-keymap))
 
 (defun hackartist/golang/playground-keymap ()

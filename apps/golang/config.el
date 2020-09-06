@@ -10,4 +10,7 @@
 
         lsp-ui-doc-enable nil
         lsp-ui-sideline-enable t)
+  (custom-set-variables
+   '(go-add-tags-style 'snake-case)
+   '(go-tag-args '("-transform" "camelcase")))
   (add-hook 'go-mode-hook #'lsp))
