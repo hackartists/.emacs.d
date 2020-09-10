@@ -39,7 +39,7 @@
     "SPC ." 'helm-hackartist-buffer
     "SPC RET" 'yas-insert-snippet
     "SPC SPC" 'helm-mt
-    "SPC TAB" 'counsel-imenu
+    "SPC TAB" 'helm-imenu
     "SPC \\" 'apps/ide/toggle-input-method-custom
     "SPC bk" 'kill-this-buffer
     "SPC bu" 'revert-buffer
@@ -142,7 +142,7 @@
     (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
     (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
-    (global-set-key (kbd "M-x") 'counsel-M-x)
+    ;; (global-set-key (kbd "M-x") 'counsel-M-x)
     ;; (global-set-key (kbd "M-x") 'helm-M-x)
     ;; (global-set-key (kbd "M-y") 'helm-show-kill-ring) ;
     (global-set-key (kbd "C-x b") 'helm-mini)
