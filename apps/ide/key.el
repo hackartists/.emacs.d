@@ -84,7 +84,7 @@
   (global-set-key (kbd "<end>") 'move-end-of-line)
   (global-set-key (kbd "RET") 'newline-and-indent)
   (global-set-key (kbd "C-x C-f") 'helm-find-files)
-  (global-set-key (kbd "s-f") 'helm-swoop)
+  (global-set-key (kbd "C-s") 'helm-swoop)
   (global-set-key (kbd "C-r") 'redraw-display)
   (global-set-key (kbd "M-m o s h") 'helm-slack)
   (global-set-key (kbd "s-SPC") 'company-complete)
