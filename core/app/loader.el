@@ -67,10 +67,10 @@
 
 (defun core/app/init-apps ()
   (exec-path-from-shell-copy-envs hackartist-environments)
-  (when (file-exists-p (concat emacs-start-directory "/private"))
-    (core/app/load-private))
   (dolist (el hackartist-apps)
-    (core/app/init-app el)))
+    (core/app/init-app el))
+  (when (file-exists-p (concat emacs-start-directory "/private"))
+    (core/app/load-private)))
 
 (defun core/app/init-app (app)
   (let ((init (intern (concat "hackartist/"  app "/init")))

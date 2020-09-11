@@ -67,7 +67,7 @@
         (typescript :variables typescript-fmt-on-save t typescript-fmt-tool 'typescript-formatter typescript-linter 'tslint)
         (shell-scripts :variables shell-scripts-backend 'lsp)
         themes-megapack
-        (mu4e :variables mu4e-installation-path "/usr/local/share/emacs/site-lisp" mu4e-use-maildirs-extension t mu4e-enable-async-operations t mu4e-attachment-dir "~/Downloads" mu4e-enable-notifications nil mu4e-enable-mode-line t)
+        ;; (mu4e :variables mu4e-installation-path "/usr/local/share/emacs/site-lisp" mu4e-use-maildirs-extension t mu4e-enable-async-operations t mu4e-attachment-dir "~/Downloads" mu4e-enable-notifications nil mu4e-enable-mode-line t)
         (kubernetes :variables kubernetes-commands-display-buffer-function 'display-buffer)
         pass
         calendar
@@ -107,7 +107,7 @@
         "https://github.com/domtronn/all-the-icons.el.git"
         "https://github.com/sebastiencs/icons-in-terminal.git"
         "https://github.com/seagle0128/icons-in-terminal.el.git"
-        "https://github.com/fgallina/mu4e-multi.git"
+        ;; "https://github.com/fgallina/mu4e-multi.git"
         "https://github.com/mack1070101/fotingo-emacs.git"
         "git@github.com:hackartists/org-api-mode.git"
         ))

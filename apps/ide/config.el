@@ -121,15 +121,7 @@
                       :inherit nil 
                       :background nil)
 
-  (with-eval-after-load 'mu4e-alert
-    ;; Enable Desktop notifications
-    ;; (mu4e-alert-set-default-style 'notifications)) ; For Linux.
-  ;; (mu4e-alert-set-default-style 'libnotify))  ; Alternative for Linux
-  (mu4e-alert-set-default-style 'notifier))   ; For macOS (through the
-                                        ; terminal notifier app).
-  ;; (mu4e-alert-set-default-style 'growl))      ; Alternative for macOS.
-
-
+  
   (with-eval-after-load 'git-gutter+ 
     (defun git-gutter+-remote-default-directory (dir file) 
       (let* ((vec (tramp-dissect-file-name file)) 
