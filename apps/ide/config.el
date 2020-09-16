@@ -33,6 +33,20 @@
   ;; (setq x-super-keysym 'ctrl)
   )
 
+(defmacro k-time (&rest body)
+  "Measure and return the time it takes evaluating BODY."
+  `(let ((time (current-time)))
+     ,@body
+     (float-time (time-since time))))
+
+(defvar hackartist/ide/gc-timer
+  (run-with-idle-timer
+   15 t
+   (lambda ()
+     (message "Garbage Collector has run for %.06fsec"
+              (k-time (garbage-collect)))))
+  "Timer for `hackartist/ide/gc-timer' to reschedule itself, or nil.")
+
 (defun hackartist/ide/config ()
   (require 'multi-eshell)
 
