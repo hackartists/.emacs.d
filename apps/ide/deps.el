@@ -2,8 +2,8 @@
       '(
         protobuf
         multiple-cursors
-        ivy
-        ;;helm
+        ;;ivy
+        helm
         (restclient :variables restclient-use-org t)
         git
         version-control
