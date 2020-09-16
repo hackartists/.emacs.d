@@ -201,11 +201,11 @@
   (add-hook 'shell-mode-hook (lambda ()
                                (company-mode -1)))
 
-  (customize-set-variable 'helm-ff-lynx-style-map t)
-  (customize-set-variable 'helm-imenu-lynx-style-map t)
-  (customize-set-variable 'helm-semantic-lynx-style-map t)
-  (customize-set-variable 'helm-occur-use-ioccur-style-keys t)
-  (customize-set-variable 'helm-grep-use-ioccur-style-keys t)
+  ;; (customize-set-variable 'helm-ff-lynx-style-map t)
+  ;; (customize-set-variable 'helm-imenu-lynx-style-map t)
+  ;; (customize-set-variable 'helm-semantic-lynx-style-map t)
+  ;; (customize-set-variable 'helm-occur-use-ioccur-style-keys t)
+  ;; (customize-set-variable 'helm-grep-use-ioccur-style-keys t)
   (when (executable-find "curl")
     (setq helm-google-suggest-use-curl-p t))
 

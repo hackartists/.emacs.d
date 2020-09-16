@@ -39,7 +39,7 @@
     "SPC ." 'helm-hackartist-buffer
     "SPC RET" 'yas-insert-snippet
     "SPC SPC" 'helm-mt
-    "SPC TAB" 'helm-imenu
+    "SPC TAB" 'counsel-semantic-or-imenu
     "SPC \\" 'apps/ide/toggle-input-method-custom
     "SPC bk" 'kill-this-buffer
     "SPC bu" 'revert-buffer

@@ -2,8 +2,8 @@
       '(
         protobuf
         multiple-cursors
-        ;;ivy
-        helm
+        ivy
+        ;;helm
         (restclient :variables restclient-use-org t)
         git
         version-control
@@ -104,9 +104,9 @@
       '(
         "https://github.com/magoyette/openapi-yaml-mode.git"
         "https://github.com/emacsmirror/multi-eshell.git"
-        "https://github.com/domtronn/all-the-icons.el.git"
-        "https://github.com/sebastiencs/icons-in-terminal.git"
-        "https://github.com/seagle0128/icons-in-terminal.el.git"
+        ;; "https://github.com/domtronn/all-the-icons.el.git"
+        ;; "https://github.com/sebastiencs/icons-in-terminal.git"
+        ;; "https://github.com/seagle0128/icons-in-terminal.el.git"
         ;; "https://github.com/fgallina/mu4e-multi.git"
         "https://github.com/mack1070101/fotingo-emacs.git"
         "git@github.com:hackartists/org-api-mode.git"
