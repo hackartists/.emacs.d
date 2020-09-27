@@ -2,6 +2,7 @@
 (setq auto-save-default nil)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq hackartist-configuration-layers '())
+(setq helm-split-window-inside-p t)
 
 (advice-add 'dotspacemacs/init :after #'hackartist//layer-init)
 (advice-add 'dotspacemacs/layers :after #'hackartist//config-load)

@@ -1,6 +1,6 @@
 (setq hackartist-javascript-layers
       '(
-        (javascript :variables javascript-import-tool 'import-js javascript-backend 'lsp javascript-repl `nodejs js-indent-level 4 js2-basic-offset 4)
+        (javascript :variables javascript-import-tool 'import-js javascript-backend 'lsp javascript-repl `nodejs js-indent-level 4 js2-basic-offset 4 javascript-fmt-on-save t javascript-fmt-tool 'prettier)
         json
         ess
         import-js
@@ -64,6 +64,19 @@
   (add-hook 'js2-mode-hook 'hackartist/javascript/dap-react-native-init))
 
 (defun hackartist/javascript/config ()
+  (setq-default
+   ;; web-mode
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2)
+
+  (with-eval-after-load 'web-mode
+    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+
   (add-hook 'js2-mode-hook 'eslintd-fix-mode))
 
 (defun hackartist/javascript/bindings ()

@@ -41,7 +41,7 @@
 
 (defvar hackartist/ide/gc-timer
   (run-with-idle-timer
-   15 t
+   600 t
    (lambda ()
      (message "Garbage Collector has run for %.06fsec"
               (k-time (garbage-collect)))))
@@ -49,7 +49,7 @@
 
 (defun hackartist/ide/config ()
   (require 'multi-eshell)
-
+  (setq evil-want-fine-undo t)
   (setq helm-hackartist-buffers-list (make-hackartist-helm-source (helm-make-source "Buffers" 'helm-source-buffers)))
   (setq helm-hackartist-projectile-files-list (make-hackartist-helm-source helm-source-projectile-files-list))
   ;; (setq helm-hackartist-recentf-list (helm-make-source "Recentf" 'helm-recentf-source :fuzzy-match helm-recentf-fuzzy-match))
@@ -320,20 +320,20 @@
   (setq calendar-week-start-day 1) ; 0:Sunday, 1:Monday
   )
 
-(defun ide/display-helm-miniwindow (buffer &optional resume)
-  "Display the Helm window respecting `helm-position'."
-  (let ((display-buffer-alist
-         (list ;; ide-helm-display-help-buffer-regexp
-          ;; this or any specialized case of Helm buffer must be
-          ;; added AFTER `spacemacs-helm-display-buffer-regexp'.
-          ;; Otherwise, `spacemacs-helm-display-buffer-regexp' will
-          ;; be used before
-          ;; `spacemacs-helm-display-help-buffer-regexp' and display
-          ;; configuration for normal Helm buffer is applied for helm
-          ;; help buffer, making the help buffer unable to be
-          ;; displayed.
-          ide-helm-display-buffer-regexp)))
-    (helm-default-display-buffer buffer)))
+;; (defun ide/display-helm-miniwindow (buffer &optional resume)
+;;   "Display the Helm window respecting `helm-position'."
+;;   (let ((display-buffer-alist
+;;          (list ;; ide-helm-display-help-buffer-regexp
+;;           ;; this or any specialized case of Helm buffer must be
+;;           ;; added AFTER `spacemacs-helm-display-buffer-regexp'.
+;;           ;; Otherwise, `spacemacs-helm-display-buffer-regexp' will
+;;           ;; be used before
+;;           ;; `spacemacs-helm-display-help-buffer-regexp' and display
+;;           ;; configuration for normal Helm buffer is applied for helm
+;;           ;; help buffer, making the help buffer unable to be
+;;           ;; displayed.
+;;           ide-helm-display-buffer-regexp)))
+;;     (helm-default-display-buffer buffer)))
 
 (defun my-org-screenshot ()
   "Take a screenshot into a time stamped unique-named file in the

@@ -97,6 +97,7 @@
         ob-async
         ob-go
         git-auto-commit-mode
+        counsel
         projectile-git-autofetch))
 
 
