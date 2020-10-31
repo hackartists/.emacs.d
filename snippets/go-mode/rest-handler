@@ -11,8 +11,8 @@ type $2Resp struct {
 }
 
 // $2 ${4:...}
-func (r ${1:reciever}) ${2:name}(ctx *rest.RestContext, req $2Req) *rest.RestResponse {
+func (r ${1:reciever}) ${2:name}(ctx *rest.RestContext, req $2Req) ($2Req, deftype.Error) {
   $0
 
-  return rest.Error(errors.ErrNotImplemented)
+  return nil, errors.ErrNotImplemented
 }
