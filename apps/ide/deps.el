@@ -72,6 +72,7 @@
         pass
         calendar
         pdf
+        (dart :variables lsp-dart-sdk-dir "/opt/flutter/bin/cache/dart-sdk" dart-lsp-enable-on-type-formatting t)
         ))
 
 (setq hackartist-ide-packages
@@ -80,7 +81,8 @@
         multi-term
         helm-swoop
         helm-projectile
-        helm-mt
+        multi-vterm
+        ;; helm-mt
         exec-path-from-shell
         direx
         elisp-format
@@ -89,7 +91,8 @@
         vdiff bazel-mode toml-mode
         gradle-mode
         markdown-mode+
-        magit
+        ;; magit
+        magit-find-file
         ghub
         magit-gh-pulls
         highlight2clipboard
@@ -105,6 +108,7 @@
       '(
         "https://github.com/magoyette/openapi-yaml-mode.git"
         "https://github.com/emacsmirror/multi-eshell.git"
+        "https://github.com/hackartists/helm-mt.git"
         ;; "https://github.com/domtronn/all-the-icons.el.git"
         ;; "https://github.com/sebastiencs/icons-in-terminal.git"
         ;; "https://github.com/seagle0128/icons-in-terminal.el.git"
