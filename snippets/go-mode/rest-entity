@@ -1,0 +1,34 @@
+# name: rest-entity
+# key: entity
+# --
+
+// $1 ${2:...}
+type ${1:EntityName} struct {
+  // entity.Modeler | entity.HybridModeler | entity.BatchModeler | entity.HybridBatchModeler
+  entity.${3:}Modeler \`json:"-" dynamodbav:"-" redis:"-"\`
+
+  docID string
+}
+
+func New() *$1 {
+  ret := &$1{}
+  ret.Modeler = entity.New$3Entity(ret)
+
+  return ret
+}
+
+func (r *$1) Keys() []deftype.Key {
+  return []deftype.Key{{entity.PartitionKey, r.Key()}, {entity.SortKey, entity.DocType$1}}
+}
+
+func (r *$1) Key() string {
+  return r.docID
+}
+
+func (r *$1) SetKey(key string) {
+  r.docID = key
+}
+
+func (r *$1) IsFilled() bool {
+  return true
+}
