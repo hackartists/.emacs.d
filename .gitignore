@@ -29,3 +29,7 @@ var
 /srecode-map.el
 /transient/
 private
+session*
+/libs/
+/org-gcal/
+/url/
