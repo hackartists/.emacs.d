@@ -3,7 +3,7 @@
 # key: handler
 # --
 type $2Req struct {
-  rest.${3:Json|Uri|Query|Form}Requester \`json:"-"\`
+  rest.${3:Json|URI|Query|Form|Header}Requester \`json:"-"\`
 }
 
 type $2Resp struct {
@@ -11,7 +11,7 @@ type $2Resp struct {
 }
 
 // $2 ${4:...}
-func (r ${1:reciever}) ${2:name}(ctx *rest.RestContext, req $2Req) ($2Req, deftype.Error) {
+func (r ${1:reciever}) ${2:name}(ctx *rest.RestContext, req $2Req) (*$2Req, deftype.Error) {
   $0
 
   return nil, errors.ErrNotImplemented
