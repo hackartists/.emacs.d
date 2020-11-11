@@ -86,7 +86,7 @@
         exec-path-from-shell
         direx
         elisp-format
-        popup helm-xref helm-mt helm-swoop helm-ag helm-tramp helm-gtags
+        popup helm-xref helm-swoop helm-ag helm-tramp helm-gtags
         pkg-info projectile
         vdiff bazel-mode toml-mode
         gradle-mode
