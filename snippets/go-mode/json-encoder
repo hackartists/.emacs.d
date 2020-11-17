@@ -1,0 +1,15 @@
+# name: json-encoder
+# contributor : hackartist
+# key: json,marshal,unmarshal
+# --
+
+func (r ${1:receiver type}) MarshalJSON() ([]byte, error) {
+     ret := []byte{}
+     $0
+
+     return ret, nil
+}
+
+func (r *$1) UnmarshalJSON(b []byte) error {
+     return nil
+}

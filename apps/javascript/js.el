@@ -1,14 +1,14 @@
 (setq hackartist-javascript-layers
       '(
-        (javascript :variables javascript-import-tool 'import-js javascript-backend 'lsp javascript-repl `nodejs js-indent-level 4 js2-basic-offset 4 javascript-fmt-on-save t javascript-fmt-tool 'prettier)
-        json
+        (javascript :variables javascript-import-tool 'import-js javascript-backend 'lsp javascript-repl `nodejs js-indent-level 4 js2-basic-offset 4 javascript-fmt-on-save t javascript-fmt-tool 'prettier node-add-modules-path t)
+        (json :variables json-fmt-tool 'prettier json-fmt-on-save t)
         ess
         import-js
         node
         typescript
         react
         html
-        tide
+        ;; tide
         ))
 
 (setq hackartist-javascript-packages
@@ -18,7 +18,7 @@
         xref-js2
         js2-refactor
         web-mode
-        indium
+        ;; indium
         emmet-mode web-beautify skewer-mode impatient-mode restclient elnode
         eslintd-fix
         js-comint json-mode))
@@ -61,7 +61,8 @@
 ;;   )
 
 (defun hackartist/javascript/init ()
-  (add-hook 'js2-mode-hook 'hackartist/javascript/dap-react-native-init))
+  ;; (add-hook 'js2-mode-hook 'hackartist/javascript/dap-react-native-init)
+  )
 
 (defun hackartist/javascript/config ()
   (setq-default
@@ -72,6 +73,14 @@
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
 
+  (setq prettier-js-args
+        '(
+          "--trailing-comma" "all"
+          "--bracket-spacing" "true"
+          "--tab-width" "4"
+          "--semi" "true"
+          "--single-quote" "true"
+          ))
   (with-eval-after-load 'web-mode
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))

@@ -3,7 +3,7 @@
 
 (setq hackartist-elixir-layers
       '(
-        (elixir :variables elixir-backend 'alchemist)
+        (elixir :variables elixir-backend 'lsp elixir-ls-path "/usr/lib/elixir-ls")
         phoenix
         dap
         ))
