@@ -104,9 +104,9 @@
               (define-key evil-normal-state-local-map (kbd "p") 'term-paste)
               (define-key evil-normal-state-local-map (kbd "w") 'term-send-forward-word)
               (define-key evil-normal-state-local-map (kbd "b") 'term-send-backward-word)
-              (define-key term-raw-map (kbd "C-s") 'helm-swoop)
-              (define-key term-raw-map (kbd "M-h") 'term-send-backward-word)
-              (define-key term-raw-map (kbd "M-l") 'term-send-forward-word)))
+              (define-key vterm-mode-map (kbd "C-s") 'helm-swoop)
+              (define-key vterm-mode-map (kbd "M-h") 'term-send-backward-word)
+              (define-key vterm-mode-map (kbd "M-l") 'term-send-forward-word)))
 
   ;; (with-eval-after-load 'yasnippet
   ;;   (define-key yas-minor-mode-map (kbd "<s-return>") 'yas-insert-snippet))
