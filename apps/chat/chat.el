@@ -18,7 +18,7 @@
 
 (defun hackartist/chat/config ()
   (setq slack-thread-also-send-to-room nil)
-  ;;(setq alert-default-style 'notifier)
+  (setq alert-default-style 'notifier)
   (setq slack-buffer-function #'switch-to-buffer))
 
 (defun hackartist/chat/bindings ()

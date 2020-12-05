@@ -99,8 +99,16 @@
   (global-set-key (kbd "M-k") 'symbol-overlay-jump-prev)
   (global-set-key (kbd "M-j") 'symbol-overlay-jump-next)
 
-  (add-hook 'term-mode-hook
+  (add-hook 'vterm-mode-hook
             (lambda()
+              (define-key evil-normal-state-local-map (kbd "p") 'term-paste)
+              (define-key evil-normal-state-local-map (kbd "w") 'term-send-forward-word)
+              (define-key evil-normal-state-local-map (kbd "b") 'term-send-backward-word)
+              (define-key evil-normal-state-local-map (kbd "h") 'vterm-send-left)
+              (define-key evil-normal-state-local-map (kbd "l") 'vterm-send-right)
+              (define-key evil-normal-state-local-map (kbd "j") 'vterm-send-up)
+              (define-key evil-normal-state-local-map (kbd "k") 'vterm-send-down)
+              (define-key term-raw-map (kbd "C-s") 'helm-swoop)
               (define-key term-raw-map (kbd "M-h") 'term-send-backward-word)
               (define-key term-raw-map (kbd "M-l") 'term-send-forward-word)))
 
