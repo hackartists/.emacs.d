@@ -1,0 +1,22 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: React connect to redux
+# key: hackartst-rcr
+# uuid: hackartst-rcr
+# --
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import `(hackartist/capitalize-first-char-dirname-base)` from './`(hackartist/capitalize-first-char-dirname-base)`';
+
+function mapStateToProps(state) {
+    return {};
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators({}, dispatch),
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(`(hackartist/capitalize-first-char-dirname-base)`);

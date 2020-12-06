@@ -21,6 +21,8 @@
         ;; indium
         emmet-mode web-beautify skewer-mode impatient-mode restclient elnode
         eslintd-fix
+        js-react-redux-yasnippets
+        react-snippets
         js-comint json-mode))
 
 (setq hackartist-javascript-commands
@@ -99,3 +101,8 @@
 ;;   ;;                               (setq-local sgml-basic-offset js-indent-level))
 ;;             )
 ;;   )
+(defun hackartist/capitalize-first-char-dirname-base ()
+  "Used in snippets. Return buffer base file name, should not throw errors."
+  (when (buffer-file-name)
+    (js-react-redux-yasnippets-capitalize-first-char (car (last (split-string (buffer-file-name) "/") 2)))))
+
