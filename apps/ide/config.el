@@ -64,6 +64,10 @@
         kill-whole-line t
         recentf-max-menu-items 100
         )
+  (setq org-plantuml-jar-path (expand-file-name "/home/you/path/to/plantuml.jar"))
+  (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
+  (org-babel-do-load-languages 'org-babel-load-languages '((plantuml . t)))
+
 
   (setq org-enable-github-support t
         org-enable-bootstrap-support t

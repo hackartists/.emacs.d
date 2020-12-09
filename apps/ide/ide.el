@@ -9,8 +9,7 @@
   (global-git-gutter+-mode -1)
   (global-auto-highlight-symbol-mode +1)
   (setq auth-sources '("~/.authinfo"))
-
-  (require 'ob-api)
+    (require 'ob-api)
   (require 'ob-api-mode)
   (require 'ob-async)
   (require 'ob-go)

@@ -101,6 +101,7 @@
         ob-go
         git-auto-commit-mode
         counsel
+        plantuml-mode
         projectile-git-autofetch))
 
 
