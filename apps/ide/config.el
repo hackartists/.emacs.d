@@ -26,11 +26,13 @@
   (add-to-list 'default-frame-alist '(ns-appearance . dark))
   (setq ns-command-modifier 'super)
   (setq mac-command-modifier 'super)
+  (setq org-plantuml-jar-path (expand-file-name "/usr/local/Cellar/plantuml/1.2020.22/libexec/plantuml.jar"))
   (highlight2clipboard-mode +1))
 
 (defun hackartist/ide/config/linux ()
   ;; (setq x-ctrl-keysym 'super)
   ;; (setq x-super-keysym 'ctrl)
+  (setq org-plantuml-jar-path (expand-file-name "/usr/share"))
   )
 
 (defmacro k-time (&rest body)
@@ -64,7 +66,6 @@
         kill-whole-line t
         recentf-max-menu-items 100
         )
-  (setq org-plantuml-jar-path (expand-file-name "/home/you/path/to/plantuml.jar"))
   (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
   (org-babel-do-load-languages 'org-babel-load-languages '((plantuml . t)))
 
