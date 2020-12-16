@@ -32,7 +32,7 @@
 (defun hackartist/ide/config/linux ()
   ;; (setq x-ctrl-keysym 'super)
   ;; (setq x-super-keysym 'ctrl)
-  (setq org-plantuml-jar-path (expand-file-name "/usr/share"))
+  (setq org-plantuml-jar-path (expand-file-name "/usr/share/java/plantuml/plantuml.jar"))
   )
 
 (defmacro k-time (&rest body)
