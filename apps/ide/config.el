@@ -24,8 +24,10 @@
 (defun hackartist/ide/config/darwin ()
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
   (add-to-list 'default-frame-alist '(ns-appearance . dark))
-  (setq ns-command-modifier 'super)
-  (setq mac-command-modifier 'super)
+  (setq ns-command-modifier 'ctrl
+        mac-command-modifier 'ctrl
+        ns-control-modifier 'super
+        mac-control-modifier 'super)
   (setq org-plantuml-jar-path (expand-file-name "/usr/local/Cellar/plantuml/1.2020.22/libexec/plantuml.jar"))
   (highlight2clipboard-mode +1))
 
