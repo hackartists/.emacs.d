@@ -312,7 +312,7 @@
        (org-capture-refile . "")
        (Man-completion-table . "^")
        (woman . "^")))
-   '(lsp-enable-file-watchers t))
+   '(lsp-enable-file-watchers nil))
   
   (setq calendar-month-name-array
         ["January" "February" "March"     "April"   "May"      "June"
