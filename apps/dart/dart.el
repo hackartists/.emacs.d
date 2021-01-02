@@ -1,0 +1,5 @@
+(defun hackartist/dart/init () 
+  (add-hook 'dart-mode-hook (lambda () 
+                              (add-hook 'before-save-hook (lambda () 
+                                                            (lsp-format-buffer) 
+                                                            (flutter-hot-reload) )))))
