@@ -185,10 +185,10 @@
   (setq yas-verbosity 1)
   (setq yas-wrap-around-region t)
 
-  (add-hook 'yas-before-expand-snippet-hook (lambda ()
-                                              (company-mode -1)))
-  (add-hook 'yas-after-exit-snippet-hook (lambda ()
-                                           (company-mode 1)))
+  ;; (add-hook 'yas-before-expand-snippet-hook (lambda ()
+  ;;                                             (company-mode -1)))
+  ;; (add-hook 'yas-after-exit-snippet-hook (lambda ()
+  ;;                                          (company-mode 1)))
   (add-hook 'slack-mode-hook (lambda ()
                                (company-mode -1)))
 

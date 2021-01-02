@@ -72,7 +72,6 @@
         pass
         calendar
         pdf
-        (dart :variables lsp-dart-sdk-dir "/opt/flutter/bin/cache/dart-sdk" dart-lsp-enable-on-type-formatting t)
         ))
 
 (setq hackartist-ide-packages
