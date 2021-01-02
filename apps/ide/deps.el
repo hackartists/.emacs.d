@@ -81,7 +81,7 @@
         helm-swoop
         helm-projectile
         multi-vterm
-        ;; helm-mt
+        helm-mt
         exec-path-from-shell
         direx
         elisp-format
@@ -108,7 +108,7 @@
       '(
         "https://github.com/magoyette/openapi-yaml-mode.git"
         "https://github.com/emacsmirror/multi-eshell.git"
-        "https://github.com/hackartists/helm-mt.git"
+        ;; "https://github.com/hackartists/helm-mt.git"
         ;; "https://github.com/domtronn/all-the-icons.el.git"
         ;; "https://github.com/sebastiencs/icons-in-terminal.git"
         ;; "https://github.com/seagle0128/icons-in-terminal.el.git"
