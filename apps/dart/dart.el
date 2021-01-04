@@ -8,3 +8,10 @@
                               (add-hook 'before-save-hook (lambda () 
                                                             (lsp-format-buffer) 
                                                             (flutter-hot-reload) )))))
+(defun hackartist/dart/bindings ()
+  "key bindings in dart mode"
+  (spacemacs/declare-prefix-for-mode 'dart-mode "f" "flutter")
+  (spacemacs/set-leader-keys-for-major-mode 'dart-mode
+    "RET" 'flutter-hot-reload
+    "fr" 'flutter-run-or-hot-reload)
+  )
