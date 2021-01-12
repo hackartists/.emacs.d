@@ -20,6 +20,10 @@
         (kmacro-lambda-form [?v ?f ?  ?\" ?c ?y] 0 "%d"))
   )
 
+(defun hackartist/xdg-open ( )
+  (interactive)
+  (shell-command "xdg-open ."))
+
 (defun hackartist/ide/bindings ()
   (hackartist/ide/kmacro)
   (spacemacs/declare-prefix "SPC" "hackartist")
@@ -31,6 +35,7 @@
   (spacemacs/declare-prefix "SPC k" "kmacro")
   (spacemacs/declare-prefix "SPC g" "git")
   (spacemacs/declare-prefix "SPC w" "window")
+  (spacemacs/declare-prefix "SPC f" "file/directory")
 
   (spacemacs/set-leader-keys
     "`" 'ace-window
@@ -64,6 +69,7 @@
     "SPC wm" 'maximize-window
     "SPC wn" 'minimize-window
     "SPC wb" 'balance-windows
+    "SPC fo" 'hackartist/xdg-open
  )
 
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
@@ -111,10 +117,10 @@
   (add-hook 'term-mode-hook
             (lambda()
               (define-key evil-normal-state-local-map (kbd "p") 'term-paste)
-              (define-key evil-normal-state-local-map (kbd "l") 'term-send-right)
-              (define-key evil-normal-state-local-map (kbd "h") 'term-send-left)
-              (define-key evil-normal-state-local-map (kbd "^") 'term-send-home)
-              (define-key evil-normal-state-local-map (kbd "$") 'term-send-end)
+              ;; (define-key evil-normal-state-local-map (kbd "l") 'term-send-right)
+              ;; (define-key evil-normal-state-local-map (kbd "h") 'term-send-left)
+              ;; (define-key evil-normal-state-local-map (kbd "^") 'term-send-home)
+              ;; (define-key evil-normal-state-local-map (kbd "$") 'term-send-end)
               (define-key evil-normal-state-local-map (kbd "w") 'term-send-forward-word)
               (define-key evil-normal-state-local-map (kbd "b") 'term-send-backward-word)
               (define-key term-mode-map (kbd "C-s") 'helm-swoop)
