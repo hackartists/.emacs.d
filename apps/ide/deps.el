@@ -3,7 +3,9 @@
         protobuf
         multiple-cursors
         ;;ivy
-        helm
+        (helm :variables
+              history-delete-duplicates t
+              history-length 10)
         (restclient :variables restclient-use-org t)
         git
         version-control
