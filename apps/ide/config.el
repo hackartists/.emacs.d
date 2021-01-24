@@ -318,7 +318,12 @@
           (woman . "^"))
         evil-want-Y-yank-to-eol nil
         lsp-enable-file-watchers
-        nil)
+        nil
+        org-re-reveal-root
+        "https://cdn.jsdelivr.net/npm/reveal.js@4.1.0"
+        org-re-reveal-revealjs-version
+        "4"
+        )
   ;; (custom-set-variables
   ;;  '(doc-view-resolution 200)
   ;;  '(org-confirm-babel-evaluate nil)
