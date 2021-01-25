@@ -75,6 +75,7 @@
         pass
         calendar
         pdf
+        copy-as-format
         ))
 
 (setq hackartist-ide-packages

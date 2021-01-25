@@ -1,7 +1,7 @@
 (setq hackartist-golang-layers
       '(
         (go :variables gofmt-command "goimports" go-format-before-save t go-tab-width 4 go-backend 'lsp godoc-at-point-function 'godoc-gogetdoc)
-        (lsp :variables lsp-ui-doc-enable nil lsp-ui-sideline-enable t)
+        (lsp :variables lsp-ui-doc-enable nil lsp-ui-sideline-enable t lsp-auto-guess-root t)
         dap
         ))
 

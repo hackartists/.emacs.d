@@ -1,4 +1,5 @@
 (defun hackartist/golang/init ()
+  (add-hook #'lsp-deferred)
   (add-hook 'go-mode-hook
             (lambda ()
               (require 'dap-go)
