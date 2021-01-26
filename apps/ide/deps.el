@@ -105,7 +105,9 @@
         git-auto-commit-mode
         counsel
         plantuml-mode
-        projectile-git-autofetch))
+        projectile-git-autofetch
+        ob-mongo
+        ))
 
 
 (setq hackartist-ide-osc
