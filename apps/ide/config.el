@@ -323,6 +323,8 @@
         "https://cdn.jsdelivr.net/npm/reveal.js@4.1.0"
         org-re-reveal-revealjs-version
         "4"
+        org-re-reveal-plugins
+        '(markdown highlight zoom notes search math)
         )
   ;; (custom-set-variables
   ;;  '(doc-view-resolution 200)
