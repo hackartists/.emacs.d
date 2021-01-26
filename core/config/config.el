@@ -6,6 +6,8 @@
 
 (advice-add 'dotspacemacs/init :after #'hackartist//layer-init)
 (advice-add 'dotspacemacs/layers :after #'hackartist//config-load)
+(advice-add 'spacemacs-buffer//insert-version :before #'hackartist//version)
+(advice-add 'spacemacs-buffer//insert-version :after #'hackartist//restore)
 
 (add-hook 'focus-out-hook (lambda ()
 			    (interactive)
@@ -14,10 +16,14 @@
 
 ;; (add-hook 'configuration-layer-pre-load-hook
 ;;           (lambda ()
-            
 ;;             ;; (dolist (el hackartist-configuration-layers) (dotspacemacs/add-layer el))
 ;;             ;; (dolist (el hackartist-apps) (hackartist//app-config el))
 ;;             ))
+(defun hackartist//version ()
+  (setq dotspacemacs-distribution 'hackartistemacs))
+
+(defun hackartist//restore ()
+  (setq dotspacemacs-distribution 'spacemacs))
 
 (defun hackartist//config-load ()
   (add-to-list 'dotspacemacs-configuration-layer-path (concat emacs-start-directory "/apps/spacemacs-adapter-layers/"))

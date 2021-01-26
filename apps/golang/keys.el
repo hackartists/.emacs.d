@@ -1,5 +1,5 @@
 (defun hackartist/golang/bindings ()
-  (spacemacs/declare-prefix-for-mode 'go-mode "m" "movement")
+  (spacemacs/declare-prefix-for-mode 'go-mode "mm" "movement")
   (spacemacs/set-leader-keys-for-minor-mode 'go-mode
     "rt" 'go-add-tags
     "mf" 'go-goto-function-name

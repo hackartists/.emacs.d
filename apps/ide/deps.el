@@ -2,8 +2,10 @@
       '(
         protobuf
         multiple-cursors
-        ivy
-        ;;helm
+        ;;ivy
+        (helm :variables
+              history-delete-duplicates t
+              history-length 10)
         (restclient :variables restclient-use-org t)
         git
         version-control
@@ -73,6 +75,7 @@
         pass
         calendar
         pdf
+        copy-as-format
         ))
 
 (setq hackartist-ide-packages
