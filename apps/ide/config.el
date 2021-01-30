@@ -245,6 +245,7 @@
 
   ;; (add-hook 'prog-mode-hook (lambda ()
   ;;                             (spacemacs/toggle-relative-line-numbers-on)))
+  (set doom-modeline-buffer-file-name-style 'file-name)
   (setq doc-view-resolution 200
         org-confirm-babel-evaluate
         nil
