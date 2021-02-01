@@ -54,6 +54,8 @@
   (require 'multi-eshell)
   (require 'helm-mt)
   (setq org-re-reveal-extra-css (concat emacs-start-directory "/metadata/reveal-extra.css"))
+  (setq plantuml-exec-mode "jar"
+        org-plantuml-jar-path (expand-file-name "~/plantuml.jar"))
   (setq evil-want-fine-undo t)
   (setq helm-hackartist-buffers-list (make-hackartist-helm-source (helm-make-source "Buffers" 'helm-source-buffers)))
   (setq helm-hackartist-projectile-files-list (make-hackartist-helm-source helm-source-projectile-files-list))
