@@ -29,13 +29,12 @@
   (setq ns-command-modifier 'ctrl mac-command-modifier
         'ctrl ns-control-modifier 'super mac-control-modifier
         'super)
-  (setq org-plantuml-jar-path (expand-file-name "/usr/local/Cellar/plantuml/1.2020.22/libexec/plantuml.jar"))
   (highlight2clipboard-mode +1))
 
 (defun hackartist/ide/config/linux ()
   ;; (setq x-ctrl-keysym 'super)
   ;; (setq x-super-keysym 'ctrl)
-  (setq org-plantuml-jar-path (expand-file-name "/usr/share/java/plantuml/plantuml.jar")))
+  )
 
 (defmacro k-time (&rest body)
   "Measure and return the time it takes evaluating BODY."
@@ -53,9 +52,9 @@
 (defun hackartist/ide/config ()
   (require 'multi-eshell)
   (require 'helm-mt)
+  (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
   (setq org-re-reveal-extra-css (concat emacs-start-directory "/metadata/reveal-extra.css"))
-  (setq plantuml-exec-mode "jar"
-        org-plantuml-jar-path (expand-file-name "~/plantuml.jar"))
+  (setq org-plantuml-jar-path (expand-file-name "~/plantuml.jar"))
   (setq evil-want-fine-undo t)
   (setq helm-hackartist-buffers-list (make-hackartist-helm-source (helm-make-source "Buffers" 'helm-source-buffers)))
   (setq helm-hackartist-projectile-files-list (make-hackartist-helm-source helm-source-projectile-files-list))

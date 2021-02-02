@@ -110,7 +110,6 @@
         ox-clip
         ))
 
-
 (setq hackartist-ide-osc
       '(
         "https://github.com/magoyette/openapi-yaml-mode.git"
