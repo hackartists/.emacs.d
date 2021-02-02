@@ -107,6 +107,7 @@
         plantuml-mode
         projectile-git-autofetch
         ob-mongo
+        ox-clip
         ))
 
 
