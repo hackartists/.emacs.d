@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# name: hugo-template
+# key: hugo,template
+# --
+
+#+hugo_base_dir: /Volumes/data/devel/github.com/hackartists/notes/writeups/ 
+#+hugo_section: ${1:section name}
+#+author: Hackartist
+#+title: ${2: title}
+#+categories: ${3:category}
+#+description: $3
+#+hugo_tags: $3
+#+hugo_categories: $3
+#+hugo_draft: false
+#+hugo_custom_front_matter: :toc true :comments true
+#+date: ${6:timestamp}
+#+hugo_menu: :menu ${4:main menu} :parent ${5:sub menu}
+#+hugo_weight: auto
+#+hugo_images:
+#+startup: logdone
+
+* $0
