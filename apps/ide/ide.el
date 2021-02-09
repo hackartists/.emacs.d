@@ -15,7 +15,7 @@
   (require 'ob-go)
   (org-babel-do-load-languages
    'org-babel-load-languages
-   '((api . t)))
+   `(,@org-babel-load-languages (api . t)))
 
   (add-hook 'minibuffer-setup-hook
             (lambda ()

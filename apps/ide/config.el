@@ -69,8 +69,10 @@
         100)
   (add-to-list 'org-src-lang-modes
                '("plantuml" . plantuml))
-  (org-babel-do-load-languages 'org-babel-load-languages
-                               '((plantuml . t)))
+
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   `(,@org-babel-load-languages (plantuml . t)))
   (setq org-enable-github-support t org-enable-bootstrap-support
         t org-enable-bootstrap-support t org-projectile-file
         "TODOs.org")
