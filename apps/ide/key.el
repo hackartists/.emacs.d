@@ -36,6 +36,7 @@
   (spacemacs/declare-prefix "SPC g" "git")
   (spacemacs/declare-prefix "SPC w" "window")
   (spacemacs/declare-prefix "SPC f" "file/directory")
+  (spacemacs/declare-prefix "SPC o" "org")
 
   (spacemacs/set-leader-keys
     "`" 'ace-window
