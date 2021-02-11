@@ -76,6 +76,7 @@
   (setq org-enable-github-support t org-enable-bootstrap-support
         t org-enable-bootstrap-support t org-projectile-file
         "TODOs.org")
+  (setq org-image-actual-width 800)
   (setq tab-always-indent t)
   (add-to-list 'auto-mode-alist
                '("\\profile\\'" . shell-script-mode))
