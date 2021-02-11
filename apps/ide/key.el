@@ -3,51 +3,11 @@
   (company-abort)
   (newline-and-indent))
 
-(defun hackartist/ide/kmacro ()
-  "defines kmacro"
-  (fset 'append-copy-until-spc-to-a
-        (kmacro-lambda-form [?v ?f ??\" ?A ?y]
-                            0
-                            " 
-0
-"%d"))
-(fset 'init-copy-until-spc-to-a
-(kmacro-lambda-form [?v ?f ??\" ?a ?y]
-0
-" 
-                            0
-                            "%d"))
-  (fset 'append-copy-until-spc-to-b
-        (kmacro-lambda-form [?v ?f ??\" ?B ?y]
-                            0
-                            " 
-0
-"%d"))
-(fset 'init-copy-until-spc-to-b
-(kmacro-lambda-form [?v ?f ??\" ?b ?y]
-0
-" 
-                            0
-                            "%d"))
-  (fset 'append-copy-until-spc-to-c
-        (kmacro-lambda-form [?v ?f ??\" ?C ?y]
-                            0
-                            " 
-0
-"%d"))
-(fset 'init-copy-until-spc-to-c
-(kmacro-lambda-form [?v ?f ??\" ?c ?y]
-0
-" 
-                            0
-                            "%d")))
-
 (defun hackartist/xdg-open ()
   (interactive)
   (shell-command "xdg-open ."))
 
 (defun hackartist/ide/bindings ()
-  (hackartist/ide/kmacro)
   (spacemacs/declare-prefix "SPC" "hackartist")
   (spacemacs/declare-prefix "SPC b" "buffers")
   (spacemacs/declare-prefix "SPC e" "evil")
