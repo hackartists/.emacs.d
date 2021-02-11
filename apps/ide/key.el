@@ -186,3 +186,21 @@
 
     (define-key helm-map (kbd "<left>") 'helm-previous-source)
     (define-key helm-map (kbd "<right>") 'helm-next-source)))
+
+(defun org-hydra ()
+  "setting for org-hydra"
+  (defhydra org-hydra (:color pink)
+    "ORG hydra mode
+"
+    ("f" org-previous-visible-heading "previous visible heading")
+    ("F" org-next-visible-heading "next visible heading")
+    ("j" org-forward-heading-same-level "next same-level heading")
+    ("k" org-backward-heading-same-level "previous same-level heading")
+    ("h" outline-up-heading "go to parent heading")
+    ("l" org-next-visible-heading "next visible heading")
+    ("q" nil "quit" :color blue))
+
+  (spacemacs/set-leader-keys-for-minor-mode
+   'org-mode
+   "." 'org-hydra/body)
+  )
