@@ -29,6 +29,12 @@
   (setq ns-command-modifier 'ctrl mac-command-modifier
         'ctrl ns-control-modifier 'super mac-control-modifier
         'super)
+  (global-set-key (kbd "s-c") 'cua-copy-region)
+  (global-set-key (kbd "s-v") 'cua-paste)
+  (global-set-key (kbd "s-x") 'cua-cut-region)
+  (global-set-key (kbd "s-a") 'mark-whole-buffer)
+  (global-set-key (kbd "s-z") 'undo)
+
   (highlight2clipboard-mode +1))
 
 (defun hackartist/ide/config/linux ()

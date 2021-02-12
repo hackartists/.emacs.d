@@ -20,23 +20,31 @@
   (spacemacs/declare-prefix "SPC f" "file/directory")
   (spacemacs/declare-prefix "SPC o" "org")
   (spacemacs/set-leader-keys "`" 'ace-window
-    "=" 'ace-window "SPC '" 'hackartist/ide/switch-or-create-other-frame
-    "SPC ." 'helm-hackartist-buffer "SPC RET"
-    'yas-insert-snippet "SPC SPC" 'helm-mt "SPC TAB"
-    'counsel-semantic-or-imenu "SPC \\" 'apps/ide/toggle-input-method-custom
-    "SPC bk" 'kill-this-buffer "SPC bu" 'revert-buffer
-    "SPC ei" 'evil-insert "SPC gb" 'magit-branch-and-checkout
-    "SPC gc" 'magit-branch-checkout "SPC gf" 'magit-fetch-all
-    "SPC gl" 'magit-blame "SPC gr" 'magit-ediff-resolve
-    "SPC hs" 'helm-slack "SPC kcA" 'init-copy-until-spc-to-a
-    "SPC kcB" 'init-copy-until-spc-to-b "SPC kcC"
-    'init-copy-until-spc-to-c "SPC kca" 'append-copy-until-spc-to-a
-    "SPC kcb" 'append-copy-until-spc-to-b "SPC kcc"
-    'append-copy-until-spc-to-c "SPC ra" 'helm-all-mark-rings
-    "SPC rk" 'helm-show-kill-ring "SPC rr" 'helm-mark-ring
-    "SPC sc" 'sort-columns "SPC sf" 'sort-fields
-    "SPC wm" 'maximize-window "SPC wn" 'minimize-window
-    "SPC wb" 'balance-windows "SPC fo" 'hackartist/xdg-open)
+    "=" 'ace-window
+    "SPC '" 'hackartist/ide/switch-or-create-other-frame
+    "SPC ." 'helm-hackartist-buffer
+    "SPC RET" 'yas-insert-snippet
+    "SPC SPC" 'helm-mt
+    "SPC TAB" 'counsel-semantic-or-imenu
+    "SPC \\" 'apps/ide/toggle-input-method-custom
+    "SPC bk" 'kill-this-buffer
+    "SPC bu" 'revert-buffer
+    "SPC ei" 'evil-insert
+    "SPC gb" 'magit-branch-and-checkout
+    "SPC gc" 'magit-branch-checkout
+    "SPC gf" 'magit-fetch-all
+    "SPC gl" 'magit-blame
+    "SPC gr" 'magit-ediff-resolve
+    "SPC hs" 'helm-slack
+    "SPC ra" 'helm-all-mark-rings
+    "SPC rk" 'helm-show-kill-ring
+    "SPC rr" 'helm-mark-ring
+    "SPC sc" 'sort-columns
+    "SPC sf" 'sort-fields
+    "SPC wm" 'maximize-window
+    "SPC wn" 'minimize-window
+    "SPC wb" 'balance-windows
+    "SPC fo" 'hackartist/xdg-open)
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
   (define-key evil-normal-state-map (kbd "-") 'text-scale-decrease)
   (define-key evil-normal-state-map (kbd "=") 'text-scale-adjust)
@@ -44,55 +52,13 @@
   (define-key evil-normal-state-map (kbd ",") 'xref-pop-marker-stack)
 
   (hackartist/ide/org/bindings)
-  ;; (global-set-key (kbd "<s-up>")
-  ;;                 'windmove-up)
-  ;; (global-set-key (kbd "<s-down>")
-  ;;                 'windmove-down)
-  ;; (global-set-key (kbd "<s-left>")
-  ;;                 'hackartist/ide/windmove-left)
-  ;; (global-set-key (kbd "<s-right>")
-  ;;                 'hackartist/ide/windmove-right)
-  ;; ;; (global-set-key (kbd "<f5>") 'compile)
-  ;; ;; (global-set-key (kbd "s-=") 'text-scale-increase)
-  ;; ;; (global-set-key (kbd "s--") 'text-scale-decrease)
-  (global-set-key (kbd "S-SPC")
-                  'apps/ide/toggle-input-method-custom)
-  (global-set-key (kbd "<home>")
-                  'move-beginning-of-line)
-  (global-set-key (kbd "<end>")
-                  'move-end-of-line)
-  (global-set-key (kbd "RET")
-                  'newline-and-indent)
-  ;; (global-set-key (kbd "C-x C-f")
-  ;;                 'helm-find-files)
-  (global-set-key (kbd "C-s")
-  ;;                 'helm-swoop)
-  ;; (global-set-key (kbd "C-r")
-  ;;                 'redraw-display)
-  ;; (global-set-key (kbd "M-m o s h")
-  ;;                 'helm-slack)
-  ;; (global-set-key (kbd "s-SPC")
-  ;;                 'company-complete)
-  ;; (global-set-key (kbd "C-SPC")
-  ;;                 'helm-hackartist-buffer)
-  ;; (global-set-key (kbd "s-c")
-  ;;                 'cua-copy-region)
-  ;; (global-set-key (kbd "s-v")
-  ;;                 'cua-paste)
-  ;; (global-set-key (kbd "s-x")
-  ;;                 'cua-cut-region)
-  ;; (global-set-key (kbd "s-a")
-  ;;                 'mark-whole-buffer)
-  ;; (global-set-key (kbd "s-z")
-  ;;                 'undo)
-  ;; (global-set-key (kbd "s-'")
-  ;;                 'hackartist/ide/switch-or-create-other-frame)
-  ;; (global-set-key (kbd "<s-return>")
-  ;;                 'yas-insert-snippet)
-  (global-set-key (kbd "M-k")
-                  'symbol-overlay-jump-prev)
-  (global-set-key (kbd "M-j")
-                  'symbol-overlay-jump-next)
+  (global-set-key (kbd "S-SPC") 'apps/ide/toggle-input-method-custom)
+  (global-set-key (kbd "<home>") 'move-beginning-of-line)
+  (global-set-key (kbd "<end>") 'move-end-of-line)
+  (global-set-key (kbd "RET") 'newline-and-indent)
+  (global-set-key (kbd "C-s") 'helm-swoop)
+  (global-set-key (kbd "M-k") 'symbol-overlay-jump-prev)
+  (global-set-key (kbd "M-j") 'symbol-overlay-jump-next)
   (add-hook 'vterm-mode-hook
             (lambda ()
               (define-key evil-normal-state-local-map (kbd "p") 'term-paste)
