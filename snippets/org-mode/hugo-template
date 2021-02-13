@@ -5,19 +5,11 @@
 
 -*- eval: (org-hugo-auto-export-mode t) -*-
 
-#+hugo_base_dir: /Volumes/data/devel/github.com/hackartists/notes/writeups/ 
-#+hugo_section: ${1:section name}
+#+hugo_base_dir: /Volumes/data/devel/github.com/hackartists/notes/hugo/ 
 #+author: Hackartist
-#+title: ${2: title}
-#+categories: ${3:category}
-#+description: $3
-#+hugo_tags: $3
-#+hugo_categories: $3
-#+hugo_draft: false
-#+hugo_custom_front_matter: :toc true :comments true
-#+hugo_menu: :menu ${4:main menu} :parent ${5:sub menu}
-#+hugo_weight: auto
-#+hugo_images:
+#+title: ${1: title}
 #+startup: logdone
+#+Property: header-args :eval never-export
+#+hugo_auto_set_lastmod: t
 
-* $0
+$0
