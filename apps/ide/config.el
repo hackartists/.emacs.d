@@ -228,6 +228,7 @@
     (setq helm-google-suggest-use-curl-p t))
   (delete-dups extended-command-history)
   (setq history-delete-duplicates t)
+  (setq history-length 10)
   ;; (setq
   ;;  helm-scroll-amount 4
   ;;  helm-ff-search-library-in-sexp t

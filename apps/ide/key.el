@@ -51,7 +51,8 @@
     "fr" 'helm-recentf
     "ff" 'helm-find-files
     "ss" 'helm-swoop
-    "sgp" 'helm-git-grep)
+    "sgp" 'helm-git-grep
+    "gff" 'helm-ls-git-ls)
 
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
   (define-key evil-normal-state-map (kbd "-") 'text-scale-decrease)
@@ -68,6 +69,7 @@
   (global-set-key (kbd "C-s") 'helm-swoop)
   (global-set-key (kbd "M-k") 'symbol-overlay-jump-prev)
   (global-set-key (kbd "M-j") 'symbol-overlay-jump-next)
+  (global-set-key (kbd "M-x") 'helm-M-x)
   (add-hook 'vterm-mode-hook
             (lambda ()
               (define-key evil-normal-state-local-map (kbd "p") 'term-paste)

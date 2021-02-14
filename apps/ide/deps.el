@@ -80,34 +80,54 @@
 
 (setq hackartist-ide-packages
       '(
-        helm
-        multi-term
-        helm-swoop
-        helm-projectile
-        multi-vterm
-        helm-mt
-        exec-path-from-shell
+        ;; magit
+        ace-jump-helm-line
+        auto-highlight-symbol
+        bazel-mode
+        bookmark
+        counsel
         direx
         elisp-format
-        popup helm-xref helm-swoop helm-ag helm-tramp helm-gtags
-        pkg-info projectile
-        vdiff bazel-mode toml-mode
-        gradle-mode
-        markdown-mode+
-        ;; magit
-        magit-find-file
-        ghub
-        magit-gh-pulls
-        highlight2clipboard
+        exec-path-from-shell
         format-all
+        ghub
+        git-auto-commit-mode
+        gradle-mode
+        helm
+        helm-ag
+        helm-descbinds
+        helm-flx
+        helm-gtags
+        helm-ls-git
+        helm-make
+        helm-mode-manager
+        helm-mt
+        helm-org
+        helm-projectile
+        helm-swoop
+        helm-themes
+        helm-tramp
+        helm-xref
+        highlight2clipboard
+        imenu
+        magit-find-file
+        magit-gh-pulls
+        markdown-mode+
+        multi-term
+        multi-vterm
         ob-async
         ob-go
-        git-auto-commit-mode
-        counsel
-        plantuml-mode
-        projectile-git-autofetch
         ob-mongo
         ox-clip
+        persp-mode
+        pkg-info
+        plantuml-mode
+        popup
+        popwin
+        projectile
+        projectile-git-autofetch
+        toml-mode
+        vdiff
         ))
 
 (setq hackartist-ide-osc
