@@ -128,6 +128,7 @@
         projectile-git-autofetch
         toml-mode
         vdiff
+        html2org
         ))
 
 (setq hackartist-ide-osc
