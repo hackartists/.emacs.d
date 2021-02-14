@@ -35,6 +35,7 @@
   (global-set-key (kbd "s-a") 'mark-whole-buffer)
   (global-set-key (kbd "s-z") 'undo)
 
+  (setq org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.11.0_1/libexec/ditaa-0.11.0-standalone.jar")
   (highlight2clipboard-mode +1))
 
 (defun hackartist/ide/config/linux ()
@@ -78,7 +79,7 @@
 
   (org-babel-do-load-languages
    'org-babel-load-languages
-   `(,@org-babel-load-languages (plantuml . t)))
+   `(,@org-babel-load-languages (plantuml . t) (ditaa . t)))
   (setq org-enable-github-support t org-enable-bootstrap-support
         t org-enable-bootstrap-support t org-projectile-file
         "TODOs.org")
@@ -113,6 +114,7 @@
   (set-default-coding-systems 'utf-8)
   (set-terminal-coding-system 'utf-8-unix)
   (set-keyboard-coding-system 'utf-8)
+  (setq org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.11.0_1/libexec/ditaa-0.11.0-standalone.jar")
   (setq default-process-coding-system '(utf-8-unix . utf-8-unix))
   (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
   (set-language-environment "UTF-8")
