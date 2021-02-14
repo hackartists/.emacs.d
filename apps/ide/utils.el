@@ -18,6 +18,12 @@
       (set-keyboard-en)
     (set-keyboard-kr)))
 
+(defun toggle-input-method-custom ()
+  (interactive)
+  (if (string= default-input-method "korean-hangul")
+      (toggle-input-method)
+    (set-input-method 'korean-hangul)))
+
 (defun hackartist/smart-switch-treemacs ()
   (when (and
          (not (eq nil (projectile-project-root)))
