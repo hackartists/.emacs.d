@@ -19,7 +19,8 @@
   (spacemacs/declare-prefix "SPC w" "window")
   (spacemacs/declare-prefix "SPC f" "file/directory")
   (spacemacs/declare-prefix "SPC o" "org")
-  (spacemacs/set-leader-keys "`" 'ace-window
+  (spacemacs/set-leader-keys
+    "`" 'ace-window
     "=" 'ace-window
     "SPC '" 'hackartist/ide/switch-or-create-other-frame
     "SPC ." 'helm-hackartist-buffer
@@ -44,7 +45,13 @@
     "SPC wm" 'maximize-window
     "SPC wn" 'minimize-window
     "SPC wb" 'balance-windows
-    "SPC fo" 'hackartist/xdg-open)
+    "SPC fo" 'hackartist/xdg-open
+    "pp" 'helm-projectile-switch-project
+    "pf" 'helm-projectile-find-file
+    "fr" 'helm-recentf
+    "ss" 'helm-swoop
+    "sgp" 'helm-git-grep)
+
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
   (define-key evil-normal-state-map (kbd "-") 'text-scale-decrease)
   (define-key evil-normal-state-map (kbd "=") 'text-scale-adjust)
@@ -52,7 +59,8 @@
   (define-key evil-normal-state-map (kbd ",") 'xref-pop-marker-stack)
 
   (hackartist/ide/org/bindings)
-  (global-set-key (kbd "S-SPC") 'apps/ide/toggle-input-method-custom)
+  ;; (global-set-key (kbd "S-SPC") 'apps/ide/toggle-input-method-custom)
+  (global-set-key (kbd "S-SPC") 'toggle-input-method)
   (global-set-key (kbd "<home>") 'move-beginning-of-line)
   (global-set-key (kbd "<end>") 'move-end-of-line)
   (global-set-key (kbd "RET") 'newline-and-indent)
