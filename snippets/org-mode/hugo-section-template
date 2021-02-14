@@ -15,7 +15,7 @@
   :EXPORT_HUGO_DRAFT: false
   :EXPORT_HUGO_WEIGHT: auto
   :EXPORT_DESCRIPTION: ${7:description}
-  :EXPORT_HUGO_DATE: `(format-time-string "[%Y-%m-%d %a %H:%M]")`
+  :EXPORT_DATE: `(format-time-string "[%Y-%m-%d %a %H:%M]")`
   :EXPORT_HUGO_IMAGES:
   :END:
 

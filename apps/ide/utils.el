@@ -1,5 +1,5 @@
 (defun set-keyboard-en ()
-  (let* ((input-method "latin-prefix"))
+  (let* ((input-method nil))
     (setq hangul-queue nil)
     (activate-input-method input-method)
     (setq default-input-method input-method)
