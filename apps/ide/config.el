@@ -134,6 +134,7 @@
         t)
   (setq helm-swoop-split-direction 'split-window-vertically)
   (setq helm-swoop-speed-or-color t)
+  (setq xref-show-xrefs-function 'helm-xref-show-defs-27)
   ;; (setq helm-display-function 'ide/display-helm-miniwindow)
   ;; (setq helm-swoop-split-window-function 'ide/display-helm-miniwindow)
   (setq projectile-completion-system 'helm)

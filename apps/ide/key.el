@@ -49,6 +49,7 @@
     "pp" 'helm-projectile-switch-project
     "pf" 'helm-projectile-find-file
     "fr" 'helm-recentf
+    "ff" 'helm-find-files
     "ss" 'helm-swoop
     "sgp" 'helm-git-grep)
 
