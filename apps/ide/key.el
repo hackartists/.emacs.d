@@ -61,8 +61,8 @@
   (define-key evil-normal-state-map (kbd ",") 'xref-pop-marker-stack)
 
   (hackartist/ide/org/bindings)
-  ;; (global-set-key (kbd "S-SPC") 'apps/ide/toggle-input-method-custom)
-  (global-set-key (kbd "S-SPC") 'toggle-input-method)
+  (global-set-key (kbd "S-SPC") 'apps/ide/toggle-input-method-custom)
+  ;; (global-set-key (kbd "S-SPC") 'toggle-input-method)
   (global-set-key (kbd "<home>") 'move-beginning-of-line)
   (global-set-key (kbd "<end>") 'move-end-of-line)
   (global-set-key (kbd "RET") 'newline-and-indent)
