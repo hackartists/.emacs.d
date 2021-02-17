@@ -51,7 +51,7 @@
     "fr" 'helm-recentf
     "ff" 'helm-find-files
     "ss" 'helm-swoop
-    "sgp" 'helm-git-grep
+    "sgp" 'helm-projectile-grep
     "gff" 'helm-ls-git-ls)
 
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
@@ -116,6 +116,7 @@
     (define-key minibuffer-local-map (kbd "M-n") 'helm-minibuffer-history)
     (define-key global-map [remap find-tag] 'helm-etags-select)
     (define-key global-map [remap list-buffers] 'helm-buffers-list)
+    (define-key helm-find-files-map (kbd "<backspace>") 'helm-find-files-up-one-level)
     (define-key helm-map (kbd "<left>") 'helm-previous-source)
     (define-key helm-map (kbd "<right>") 'helm-next-source)))
 
