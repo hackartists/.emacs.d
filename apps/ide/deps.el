@@ -2,13 +2,25 @@
       '(
         protobuf
         multiple-cursors
-        ivy
-        ;; (helm :variables
-        ;;       history-delete-duplicates t
-        ;;       history-length 10)
+        ;;ivy
+        (helm :variables
+              history-delete-duplicates t
+              history-length 10)
         (restclient :variables restclient-use-org t)
         git
         version-control
+        (auto-completion :variables
+                         auto-completion-return-key-behavior nil
+                         auto-completion-tab-key-behavior 'complete
+                         auto-completion-complete-with-key-sequence nil
+                         auto-completion-complete-with-key-sequence-delay 0.1
+                         auto-completion-minimum-prefix-length 1
+                         auto-completion-idle-delay 0.2
+                         auto-completion-private-snippets-directory nil
+                         auto-completion-enable-snippets-in-popup nil
+                         auto-completion-enable-help-tooltip nil
+                         auto-completion-use-company-box nil
+                         auto-completion-enable-sort-by-usage t)
         unicode-fonts
         systemd
         markdown

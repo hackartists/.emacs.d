@@ -127,7 +127,7 @@
                   'newline-and-indent)
   (global-set-key "\C-x\ \C-r" 'recentf-open-files)
   (setq custom-safe-themes t)
-  (setq company-minimum-prefix-length 1)
+  ;; (setq company-minimum-prefix-length 1)
   (setq company-idle-delay 0)
   (setq company-require-match nil)
   (setq company-lsp-cache-candidates t)
@@ -229,8 +229,8 @@
   (when (executable-find "curl")
     (setq helm-google-suggest-use-curl-p t))
   (delete-dups extended-command-history)
-  (setq history-delete-duplicates t)
-  (setq history-length 10)
+  ;; (setq history-delete-duplicates t)
+  ;; (setq history-length 10)
   ;; (setq
   ;;  helm-scroll-amount 4
   ;;  helm-ff-search-library-in-sexp t

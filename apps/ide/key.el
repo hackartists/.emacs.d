@@ -51,7 +51,7 @@
     "fr" 'helm-recentf
     "ff" 'helm-find-files
     "ss" 'helm-swoop
-    "sgp" 'helm-git-grep
+    "sgp" 'helm-projectile-grep
     "gff" 'helm-ls-git-ls)
 
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
