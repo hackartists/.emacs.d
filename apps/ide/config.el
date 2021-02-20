@@ -59,6 +59,8 @@
 (defun hackartist/ide/config ()
   (require 'multi-eshell)
   (require 'helm-mt)
+  (set-face-attribute 'default nil :font "-*-D2Coding-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
+  ;; (set-face-attribute 'default nil :font "-*-D2Coding-normal-normal-normal-*-18-*-*-*-m-0-fontset-auto19")
   (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
   (setq org-re-reveal-extra-css (concat emacs-start-directory "/metadata/reveal-extra.css"))
   (setq org-plantuml-jar-path (expand-file-name "~/plantuml.jar"))
@@ -132,8 +134,7 @@
   (setq company-require-match nil)
   (setq company-lsp-cache-candidates t)
   (setq helm-multi-swoop-edit-save t)
-  (setq helm-swoop-split-with-multiple-windows
-        t)
+  (setq helm-swoop-split-with-multiple-windows t)
   (setq helm-swoop-split-direction 'split-window-vertically)
   (setq helm-swoop-speed-or-color t)
   (setq xref-show-xrefs-function 'helm-xref-show-defs-27)
