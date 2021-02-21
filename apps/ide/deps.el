@@ -141,6 +141,8 @@
         toml-mode
         vdiff
         html2org
+        docker-compose-mode
+        dockerfile-mode
         ))
 
 (setq hackartist-ide-osc
