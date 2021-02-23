@@ -3,7 +3,7 @@
 # key: hugo,section,template
 # --
 
-* ${1:title}
+* TODO ${1:title}
   :PROPERTIES:
   :EXPORT_FILE_NAME: ${2:filename}
   :EXPORT_HUGO_MENU: :menu ${3:main-menu} :parent ${4:parent-menu}
