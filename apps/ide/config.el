@@ -22,13 +22,13 @@
 ;;     (window-height . 0.4)))
 
 (defun hackartist/ide/config/darwin ()
-  (add-to-list 'default-frame-alist
-               '(ns-transparent-titlebar . t))
-  (add-to-list 'default-frame-alist
-               '(ns-appearance . dark))
-  (setq ns-command-modifier 'ctrl mac-command-modifier
-        'ctrl ns-control-modifier 'super mac-control-modifier
-        'super)
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  (add-to-list 'default-frame-alist '(ns-appearance . dark))
+  (setq ns-command-modifier 'ctrl
+        mac-command-modifier 'ctrl
+        ns-control-modifier 'super
+        mac-control-modifier 'super)
+  (cua-mode 1)
   (global-set-key (kbd "s-c") 'cua-copy-region)
   (global-set-key (kbd "s-v") 'cua-paste)
   (global-set-key (kbd "s-x") 'cua-cut-region)
@@ -59,50 +59,51 @@
 (defun hackartist/ide/config ()
   (require 'multi-eshell)
   (require 'helm-mt)
-  (set-face-attribute 'default nil :font "-*-D2Coding-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
-  ;; (set-face-attribute 'default nil :font "-*-D2Coding-normal-normal-normal-*-18-*-*-*-m-0-fontset-auto19")
+
   (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
   (setq org-re-reveal-extra-css (concat emacs-start-directory "/metadata/reveal-extra.css"))
   (setq org-plantuml-jar-path (expand-file-name "~/plantuml.jar"))
   (setq evil-want-fine-undo t)
+
   (setq helm-hackartist-buffers-list (make-hackartist-helm-source (helm-make-source "Buffers" 'helm-source-buffers)))
+  (helm-projectile-on)
   (setq helm-hackartist-projectile-files-list (make-hackartist-helm-source helm-source-projectile-files-list))
   ;; (setq helm-hackartist-recentf-list (helm-make-source "Recentf" 'helm-recentf-source :fuzzy-match helm-recentf-fuzzy-match))
+
   (if (eq system-type 'darwin)
       (hackartist/ide/config/darwin)
     (hackartist/ide/config/linux))
+
   (setq shell-file-name "/bin/zsh")
-  (setq global-mark-ring-max 50000 mark-ring-max
-        50000 kill-ring-max 50000 mode-require-final-newline
-        t tab-width 4 kill-whole-line t recentf-max-menu-items
-        100)
+  (setq global-mark-ring-max 50000
+        mark-ring-max 50000
+        kill-ring-max 50000
+        mode-require-final-newline t
+        tab-width 4
+        kill-whole-line t
+        recentf-max-menu-items 100)
   (add-to-list 'org-src-lang-modes
                '("plantuml" . plantuml))
 
   (org-babel-do-load-languages
    'org-babel-load-languages
    `(,@org-babel-load-languages (plantuml . t) (ditaa . t)))
-  (setq org-enable-github-support t org-enable-bootstrap-support
-        t org-enable-bootstrap-support t org-projectile-file
-        "TODOs.org")
-  (setq org-image-actual-width 800)
+  (setq org-enable-github-support t
+        org-enable-bootstrap-support t
+        org-enable-bootstrap-support t
+        org-projectile-file "TODOs.org")
+  (setq org-image-actual-width t)
   (setq tab-always-indent t)
-  (add-to-list 'auto-mode-alist
-               '("\\profile\\'" . shell-script-mode))
-  (add-to-list 'auto-mode-alist
-               '("\\.profile\\'" . shell-script-mode))
-  (add-to-list 'auto-mode-alist
-               '("\\.gradle\\'" . gradle-mode))
-  (add-to-list 'auto-mode-alist
-               '("README\\.md\\'" . gfm-mode))
-  (add-to-list 'auto-mode-alist
-               '("\\<BUILD\\'" . bazel-mode))
-  (add-to-list 'auto-mode-alist
-               '("\\<WORKSPACE\\'" . bazel-mode))
+  (add-to-list 'auto-mode-alist '("\\profile\\'" . shell-script-mode))
+  (add-to-list 'auto-mode-alist '("\\.profile\\'" . shell-script-mode))
+  (add-to-list 'auto-mode-alist '("\\.gradle\\'" . gradle-mode))
+  (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+  (add-to-list 'auto-mode-alist '("\\<BUILD\\'" . bazel-mode))
+  (add-to-list 'auto-mode-alist '("\\<WORKSPACE\\'" . bazel-mode))
   (spacemacs/toggle-visual-line-navigation-globally-on)
-  (add-hook 'gfm-mode-hook
-            (lambda ()
-              (visual-line-mode 1)))
+  ;; (add-hook 'gfm-mode-hook
+  ;;           (lambda ()
+  ;;             (visual-line-mode 1)))
   (add-hook 'sh-mode-hook
             (lambda ()
               (setq tab-width 4)))
@@ -112,22 +113,20 @@
   (add-hook 'org-mode-hook
             (lambda ()
               (git-auto-commit-mode 1)))
-  (prefer-coding-system 'utf-8)
-  (set-default-coding-systems 'utf-8)
-  (set-terminal-coding-system 'utf-8-unix)
-  (set-keyboard-coding-system 'utf-8)
-  (setq org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.11.0_1/libexec/ditaa-0.11.0-standalone.jar")
-  (setq default-process-coding-system '(utf-8-unix . utf-8-unix))
-  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
-  (set-language-environment "UTF-8")
-  (prefer-coding-system 'utf-8)
+  ;; (prefer-coding-system 'utf-8)
+  ;; (set-default-coding-systems 'utf-8)
+  ;; (set-terminal-coding-system 'utf-8-unix)
+  ;; (set-keyboard-coding-system 'utf-8)
+  ;; (setq org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.11.0_1/libexec/ditaa-0.11.0-standalone.jar")
+  ;; (setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+  ;; (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+  ;; (set-language-environment "UTF-8")
   (add-hook 'term-exec-hook
             (function (lambda ()
                         (set-buffer-process-coding-system 'utf-8-unix
                                                           'utf-8-unix))))
-  (global-set-key (kbd "RET")
-                  'newline-and-indent)
-  (global-set-key "\C-x\ \C-r" 'recentf-open-files)
+  (global-set-key (kbd "RET") 'newline-and-indent)
+  ;; (global-set-key "\C-x\ \C-r" 'recentf-open-files)
   (setq custom-safe-themes t)
   ;; (setq company-minimum-prefix-length 1)
   (setq company-idle-delay 0)
@@ -137,7 +136,7 @@
   (setq helm-swoop-split-with-multiple-windows t)
   (setq helm-swoop-split-direction 'split-window-vertically)
   (setq helm-swoop-speed-or-color t)
-  (setq xref-show-xrefs-function 'helm-xref-show-defs-27)
+  ;; (setq xref-show-xrefs-function 'helm-xref-show-defs-27)
   ;; (setq helm-display-function 'ide/display-helm-miniwindow)
   ;; (setq helm-swoop-split-window-function 'ide/display-helm-miniwindow)
   (setq projectile-completion-system 'helm)
@@ -150,14 +149,17 @@
                                         "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION"
                                         "TAGS" "GTAGS" ".dropbox" ".projectile"))
   ;; (setq flycheck-display-errors-function 'ide/display-bottom-window)
-  (setq mu4e-view-show-images t mu4e-view-show-addresses
-        t mu4e-hide-index-messages t)
+  ;; (setq mu4e-view-show-images t mu4e-view-show-addresses t mu4e-hide-index-messages t)
   ;; (transient-append-suffix 'magit-dispatch "F" '("o" "Fotingo" fotingo-dispatch))
   (set-face-attribute 'hl-line nil ;; :height (+ (face-attribute 'default :height) 30)
-                      :bold t
                       :underline t
                       :inherit nil
                       :background nil)
+  (set-face-attribute 'default nil
+                      :family "D2Coding"
+                      :size 14.0
+                      :weight 'normal
+                      :width 'normal)
   (with-eval-after-load 'git-gutter+
     (defun git-gutter+-remote-default-directory (dir file)
       (let* ((vec (tramp-dissect-file-name file))
@@ -261,7 +263,7 @@
 
   ;; (add-hook 'prog-mode-hook (lambda ()
   ;;                             (spacemacs/toggle-relative-line-numbers-on)))
-  (set doom-modeline-buffer-file-name-style 'file-name)
+  (setq doom-modeline-buffer-file-name-style 'file-name)
   (setq doc-view-resolution 200
         org-confirm-babel-evaluate
         nil

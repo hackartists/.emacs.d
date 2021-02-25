@@ -51,7 +51,7 @@
     "fr" 'helm-recentf
     "ff" 'helm-find-files
     "ss" 'helm-swoop
-    "sgp" 'helm-projectile-grep
+    "sgp" 'counsel-git-grep
     "gff" 'helm-ls-git-ls)
 
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
@@ -101,22 +101,21 @@
   ;;             (define-key company-active-map (kbd "<tab>") 'company-complete)))
   (with-eval-after-load 'helm
     (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebihnd tab to do persistent action
-    (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-    (define-key helm-map (kbd "C-z") 'helm-select-action) ; list actions using C-z
+    ;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+    ;; (define-key helm-map (kbd "C-z") 'helm-select-action) ; list actions using C-z
 
-    (global-set-key (kbd "C-x b")
-                    'helm-mini)
-    (global-set-key (kbd "C-x C-f")
-                    'helm-find-files)
-    (define-key 'help-command (kbd "C-f") 'helm-apropos)
-    (define-key 'help-command (kbd "r") 'helm-info-emacs)
-    (define-key 'help-command (kbd "C-l") 'helm-locate-library)
+    ;; (global-set-key (kbd "C-x b") 'helm-mini)
+    ;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
+    ;; (define-key 'help-command (kbd "C-f") 'helm-apropos)
+    ;; (define-key 'help-command (kbd "r") 'helm-info-emacs)
+    ;; (define-key 'help-command (kbd "C-l") 'helm-locate-library)
     (add-hook 'helm-goto-line-before-hook 'helm-save-current-pos-to-mark-ring)
     (define-key minibuffer-local-map (kbd "M-p") 'helm-minibuffer-history)
     (define-key minibuffer-local-map (kbd "M-n") 'helm-minibuffer-history)
     (define-key global-map [remap find-tag] 'helm-etags-select)
     (define-key global-map [remap list-buffers] 'helm-buffers-list)
-    (define-key helm-find-files-map (kbd "<backspace>") 'helm-find-files-up-one-level)
+    (setq helm-ff-DEL-up-one-level-maybe t)
+    ;; (define-key helm-find-files-map (kbd "<backspace>") 'helm-find-files-up-one-level)
     (define-key helm-map (kbd "<left>") 'helm-previous-source)
     (define-key helm-map (kbd "<right>") 'helm-next-source)))
 

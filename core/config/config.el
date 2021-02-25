@@ -50,7 +50,12 @@
    doom-modeline-irc-buffers t
    doom-modeline-unicode-fallback t
    doom-modeline-vcs-max-length 30
-   dotspacemacs-emacs-command-key "X")
+   dotspacemacs-emacs-command-key "X"
+   dotspacemacs-default-font '("D2Coding"
+                               :size 14.0
+                               :weight normal
+                               :width normal))
+
   ;; (let ((ret '()))
   ;;   (dolist
   ;;       (el spacemacs/key-binding-prefixes)
