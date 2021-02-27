@@ -62,6 +62,9 @@
 
   (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
   (setq org-re-reveal-extra-css (concat emacs-start-directory "/metadata/reveal-extra.css"))
+  (setq org-plantuml-exec-mode 'jar)
+  (setq plantuml-exec-mode 'jar)
+  (setq plantuml-jar-path (expand-file-name "~/plantuml.jar"))
   (setq org-plantuml-jar-path (expand-file-name "~/plantuml.jar"))
   (setq evil-want-fine-undo t)
 
@@ -155,9 +158,8 @@
                       :underline t
                       :inherit nil
                       :background nil)
-  (set-face-attribute 'default nil
+  (set-face-attribute 'org-table nil
                       :family "D2Coding"
-                      :size 14.0
                       :weight 'normal
                       :width 'normal)
   (with-eval-after-load 'git-gutter+
