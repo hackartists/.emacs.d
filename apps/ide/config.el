@@ -39,6 +39,7 @@
   (highlight2clipboard-mode +1))
 
 (defun hackartist/ide/config/linux ()
+  (setq org-ditaa-jar-path "/usr/share/java/ditaa/ditaa-0.11.jar")
   ;; (setq x-ctrl-keysym 'super)
   ;; (setq x-super-keysym 'ctrl)
   )
@@ -120,7 +121,6 @@
   ;; (set-default-coding-systems 'utf-8)
   ;; (set-terminal-coding-system 'utf-8-unix)
   ;; (set-keyboard-coding-system 'utf-8)
-  ;; (setq org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.11.0_1/libexec/ditaa-0.11.0-standalone.jar")
   ;; (setq default-process-coding-system '(utf-8-unix . utf-8-unix))
   ;; (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
   ;; (set-language-environment "UTF-8")
