@@ -104,6 +104,7 @@
   (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
   (add-to-list 'auto-mode-alist '("\\<BUILD\\'" . bazel-mode))
   (add-to-list 'auto-mode-alist '("\\<WORKSPACE\\'" . bazel-mode))
+  (add-to-list 'ac-modes 'plantuml-mode)
   (spacemacs/toggle-visual-line-navigation-globally-on)
   ;; (add-hook 'gfm-mode-hook
   ;;           (lambda ()
@@ -181,7 +182,6 @@
     (add-hook 'doom-modeline-mode-hook
               (lambda ()
                 (display-time))))
-  (define-key yas-keymap (kbd "<return>") 'yas/exit-all-snippets)
   (defun yas/goto-end-of-active-field ()
     (interactive)
     (let* ((snippet (car (yas--snippets-at-point)))
@@ -196,6 +196,7 @@
       (if (= (point) position)
           (move-beginning-of-line 1)
         (goto-char position))))
+  (define-key yas-keymap (kbd "<return>") 'yas/exit-all-snippets)
   (define-key yas-keymap (kbd "C-e") 'yas/goto-end-of-active-field)
   (define-key yas-keymap (kbd "C-a") 'yas/goto-start-of-active-field)
   (setq yas-prompt-functions '(yas/ido-prompt yas/completing-prompt))
@@ -267,16 +268,11 @@
   ;;                             (spacemacs/toggle-relative-line-numbers-on)))
   (setq doom-modeline-buffer-file-name-style 'file-name)
   (setq doc-view-resolution 200
-        org-confirm-babel-evaluate
-        nil
-        org-export-use-babel
-        t
-        org-export-with-sub-superscripts
-        '{}
-        org-src-window-setup
-        'current-window
-        org-latex-listings
-        t
+        org-confirm-babel-evaluate nil
+        org-export-use-babel t
+        org-export-with-sub-superscripts '{}
+        org-src-window-setup 'current-window
+        org-latex-listings t
         org-latex-listings-langs
         (quote ((emacs-lisp "Lisp")
                 (lisp "Lisp")
@@ -322,10 +318,8 @@
                 ("identifierstyle" "\\color{blue}")
                 ("stringstyle" "\\color{orange}")
                 ("tabsize" "4")))
-        org-support-shift-select
-        t
-        org-download-image-dir
-        "./images"
+        org-support-shift-select t
+        org-download-image-dir "./images"
         ivy-initial-inputs-alist
         '((counsel-minor . "^+")
           (counsel-package . "^+")
@@ -338,14 +332,10 @@
           (Man-completion-table . "^")
           (woman . "^"))
         evil-want-Y-yank-to-eol nil
-        lsp-enable-file-watchers
-        nil
-        org-re-reveal-root
-        "https://cdn.jsdelivr.net/npm/reveal.js@4.1.0"
-        org-re-reveal-revealjs-version
-        "4"
-        org-re-reveal-plugins
-        '(markdown highlight zoom notes search math)
+        lsp-enable-file-watchers nil
+        org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@4.1.0"
+        org-re-reveal-revealjs-version "4"
+        org-re-reveal-plugins '(markdown highlight zoom notes search math)
         )
   ;; (custom-set-variables
   ;;  '(doc-view-resolution 200)
