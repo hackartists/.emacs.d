@@ -104,7 +104,7 @@
   (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
   (add-to-list 'auto-mode-alist '("\\<BUILD\\'" . bazel-mode))
   (add-to-list 'auto-mode-alist '("\\<WORKSPACE\\'" . bazel-mode))
-  (add-to-list 'ac-modes 'plantuml-mode)
+  (add-hook 'plantuml-mode (lambda ()  (auto-complete-mode t)))
   (spacemacs/toggle-visual-line-navigation-globally-on)
   ;; (add-hook 'gfm-mode-hook
   ;;           (lambda ()
@@ -112,6 +112,7 @@
   (add-hook 'sh-mode-hook
             (lambda ()
               (setq tab-width 4)))
+
   (require 'projectile-git-autofetch)
   (projectile-git-autofetch-mode 1)
   (setq-default gac-automatically-push-p t)
