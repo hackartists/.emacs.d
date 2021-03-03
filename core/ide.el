@@ -47,6 +47,7 @@
     (setq auto-package-update-hide-results t)
     (auto-package-update-maybe))
 
+  (hackartist//ide-advice)
   (add-hook 'minibuffer-setup-hook
             (lambda ()
               (if (string= current-input-method 'korean-hangul)
@@ -110,6 +111,9 @@
   (evil-define-key 'normal global-map (kbd "SPC gc")  'magit-branch-checkout)
  
   )
+
+(defun hackartist//ide-advice ()
+  (advice-add 'windmove-do-window-select :after #'balance-windows))
 
 (defun hackartist//ide-global-key ()
   (global-set-key (kbd "S-SPC") 'apps/ide/toggle-input-method-custom)
