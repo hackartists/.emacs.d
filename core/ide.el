@@ -77,7 +77,7 @@
   (evil-define-key 'normal global-map (kbd "SPC ff") 'helm-find-files)
   (evil-define-key 'normal global-map (kbd "SPC fr") 'helm-recentf)
   
-  (evil-define-key 'normal global-map (kbd "SPC pf") 'helm-projectie-find-file)
+  (evil-define-key 'normal global-map (kbd "SPC pf") 'helm-projectile-find-file)
   (evil-define-key 'normal global-map (kbd "SPC pp")  'helm-projectile-switch-project)
 
   (evil-define-key 'normal global-map (kbd "SPC wl")  'windmove-right)
