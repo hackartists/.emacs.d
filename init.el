@@ -2,6 +2,7 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
+(package-install 'use-package)
 
 (require 'use-package)
 (require 'use-package-ensure)
@@ -26,7 +27,7 @@
  '(helm-minibuffer-history-key "M-p")
  '(helm-mode t)
  '(package-selected-packages
-   '(magit window-number window-numbering ace-window helm-mt evil-surround evil-indent-textobject evil-leader helm-projectile helm-projectil doom-themes company-mode which-key use-package lsp-mode helm go-mode evil-collection company)))
+   '(helm-imenu dap-mode magit window-number window-numbering ace-window helm-mt evil-surround evil-indent-textobject evil-leader helm-projectile helm-projectil doom-themes company-mode which-key use-package lsp-mode helm go-mode evil-collection company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
