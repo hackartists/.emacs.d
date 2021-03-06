@@ -13,7 +13,6 @@
   :group 'exec-path-from-shell)
 (setq shell-file-name "/bin/zsh")
 
-
 (defun core/app/load-apps ()
   (let ((res)
         (app-dir (concat emacs-start-directory "/apps")))
@@ -26,8 +25,7 @@
         (add-to-list 'hackartist-apps el)
         (core/app/app-deps el))
       (dolist (el hackartist-packages) (add-to-list 'dotspacemacs-additional-packages el))
-      (core/app/load-osc)
-      )))
+      (core/app/load-osc))))
 
 (defun core/app/app-deps (pkg)
   (let* ((pkgs (intern (concat "hackartist-"  pkg "-packages")))

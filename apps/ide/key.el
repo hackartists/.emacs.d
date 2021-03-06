@@ -8,51 +8,23 @@
   (shell-command "xdg-open ."))
 
 (defun hackartist/ide/bindings ()
-  (spacemacs/declare-prefix "SPC" "hackartist")
-  (spacemacs/declare-prefix "SPC b" "buffers")
-  (spacemacs/declare-prefix "SPC e" "evil")
-  (spacemacs/declare-prefix "SPC h" "helm")
-  (spacemacs/declare-prefix "SPC r" "rings")
-  (spacemacs/declare-prefix "SPC s" "sort")
-  (spacemacs/declare-prefix "SPC k" "kmacro")
-  (spacemacs/declare-prefix "SPC g" "git")
-  (spacemacs/declare-prefix "SPC w" "window")
-  (spacemacs/declare-prefix "SPC f" "file/directory")
-  (spacemacs/declare-prefix "SPC o" "org")
+  (spacemacs/declare-prefix "TAB" "Imenu")
   (spacemacs/set-leader-keys
     "`" 'ace-window
     "=" 'ace-window
-    "SPC '" 'hackartist/ide/switch-or-create-other-frame
-    "SPC ." 'helm-hackartist-buffer
-    "SPC RET" 'yas-insert-snippet
-    "SPC SPC" 'helm-mt
-    "SPC TAB" 'helm-semantic-or-imenu
-    "SPC \\" 'apps/ide/toggle-input-method-custom
-    "SPC bk" 'kill-this-buffer
-    "SPC bu" 'revert-buffer
-    "SPC ei" 'evil-insert
-    "SPC gb" 'magit-branch-and-checkout
-    "SPC gc" 'magit-branch-checkout
-    "SPC gf" 'magit-fetch-all
-    "SPC gl" 'magit-blame
-    "SPC gr" 'magit-ediff-resolve
-    "SPC hs" 'helm-slack
-    "SPC ra" 'helm-all-mark-rings
-    "SPC rk" 'helm-show-kill-ring
-    "SPC rr" 'helm-mark-ring
-    "SPC sc" 'sort-columns
-    "SPC sf" 'sort-fields
-    "SPC wm" 'maximize-window
-    "SPC wn" 'minimize-window
-    "SPC wb" 'balance-windows
-    "SPC fo" 'hackartist/xdg-open
-    "pp" 'helm-projectile-switch-project
-    "pf" 'helm-projectile-find-file
-    "fr" 'helm-recentf
-    "ff" 'helm-find-files
-    "ss" 'helm-swoop
-    "sgp" 'counsel-git-grep
-    "gff" 'helm-ls-git-ls)
+    "'" 'hackartist/ide/switch-or-create-other-frame
+    "." 'helm-hackartist-buffer
+    "RET" 'yas-insert-snippet
+    "SPC" 'helm-mt
+    "TAB" 'helm-semantic-or-imenu
+    "bk" 'kill-this-buffer
+    "bu" 'revert-buffer
+    "gB" 'magit-branch-and-checkout
+    "gC" 'magit-branch-checkout
+    "gF" 'magit-fetch-all
+    "wn" 'minimize-window
+    "fO" 'hackartist/xdg-open
+    "sgp" 'counsel-git-grep)
 
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
   (define-key evil-normal-state-map (kbd "-") 'text-scale-decrease)
@@ -60,7 +32,6 @@
   (define-key evil-normal-state-map (kbd ".") 'spacemacs/jump-to-definition)
   (define-key evil-normal-state-map (kbd ",") 'xref-pop-marker-stack)
 
-  (hackartist/ide/org/bindings)
   (global-set-key (kbd "S-SPC") 'apps/ide/toggle-input-method-custom)
   ;; (global-set-key (kbd "S-SPC") 'toggle-input-method)
   (global-set-key (kbd "<home>") 'move-beginning-of-line)
@@ -69,36 +40,31 @@
   (global-set-key (kbd "C-s") 'helm-swoop)
   (global-set-key (kbd "M-k") 'symbol-overlay-jump-prev)
   (global-set-key (kbd "M-j") 'symbol-overlay-jump-next)
-  (global-set-key (kbd "M-x") 'helm-M-x)
-  (add-hook 'vterm-mode-hook
-            (lambda ()
-              (define-key evil-normal-state-local-map (kbd "p") 'term-paste)
-              (define-key evil-normal-state-local-map (kbd "w") 'term-send-forward-word)
-              (define-key evil-normal-state-local-map (kbd "b") 'term-send-backward-word)
-              (define-key vterm-mode-map (kbd "C-s") 'helm-swoop)
-              (define-key vterm-mode-map (kbd "M-h") 'term-send-backward-word)
-              (define-key vterm-mode-map (kbd "M-l") 'term-send-forward-word)))
-  (add-hook 'term-mode-hook
-            (lambda ()
-              (define-key evil-normal-state-local-map (kbd "p") 'term-paste)
-              ;; (define-key evil-normal-state-local-map (kbd "l") 'term-send-right)
-              ;; (define-key evil-normal-state-local-map (kbd "h") 'term-send-left)
-              ;; (define-key evil-normal-state-local-map (kbd "^") 'term-send-home)
-              ;; (define-key evil-normal-state-local-map (kbd "$") 'term-send-end)
-              (define-key evil-normal-state-local-map (kbd "w") 'term-send-forward-word)
-              (define-key evil-normal-state-local-map (kbd "b") 'term-send-backward-word)
-              (define-key term-mode-map (kbd "C-s") 'helm-swoop)
-              (define-key term-mode-map (kbd "M-h") 'term-send-backward-word)
-              (define-key term-mode-map (kbd "M-l") 'term-send-forward-word)))
-  ;; (with-eval-after-load 'yasnippet
-  ;;   (define-key yas-minor-mode-map (kbd "<s-return>") 'yas-insert-snippet))
-  ;; (add-hook 'company-mode-hook
+  ;; (add-hook 'vterm-mode-hook
   ;;           (lambda ()
-  ;;             (interactive "")
-  ;;             (define-key company-active-map (kbd "TAB") 'company-complete)
-  ;;             (define-key company-active-map (kbd "ESC") 'company-abort)
-  ;;             (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
-  ;;             (define-key company-active-map (kbd "<tab>") 'company-complete)))
+  ;;             (define-key evil-normal-state-local-map (kbd "p") 'term-paste)
+  ;;             (define-key evil-normal-state-local-map (kbd "w") 'term-send-forward-word)
+  ;;             (define-key evil-normal-state-local-map (kbd "b") 'term-send-backward-word)
+  ;;             (define-key vterm-mode-map (kbd "C-s") 'helm-swoop)
+  ;;             (define-key vterm-mode-map (kbd "M-h") 'term-send-backward-word)
+  ;;             (define-key vterm-mode-map (kbd "M-l") 'term-send-forward-word)))
+  ;; (add-hook 'term-mode-hook
+  ;;           (lambda ()
+  ;;             (define-key evil-normal-state-local-map (kbd "p") 'term-paste)
+  ;;             ;; (define-key evil-normal-state-local-map (kbd "l") 'term-send-right)
+  ;;             ;; (define-key evil-normal-state-local-map (kbd "h") 'term-send-left)
+  ;;             ;; (define-key evil-normal-state-local-map (kbd "^") 'term-send-home)
+  ;;             ;; (define-key evil-normal-state-local-map (kbd "$") 'term-send-end)
+  ;;             (define-key evil-normal-state-local-map (kbd "w") 'term-send-forward-word)
+  ;;             (define-key evil-normal-state-local-map (kbd "b") 'term-send-backward-word)
+  ;;             (define-key term-mode-map (kbd "C-s") 'helm-swoop)
+  ;;             (define-key term-mode-map (kbd "M-h") 'term-send-backward-word)
+  ;;             (define-key term-mode-map (kbd "M-l") 'term-send-forward-word)))
+  (add-hook 'company-mode-hook
+            (lambda ()
+              (define-key company-active-map (kbd "ESC") 'company-abort)
+              (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
+              (define-key company-active-map (kbd "<tab>") 'company-complete)))
   (with-eval-after-load 'helm
     (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebihnd tab to do persistent action
     ;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
@@ -112,47 +78,9 @@
     (add-hook 'helm-goto-line-before-hook 'helm-save-current-pos-to-mark-ring)
     (define-key minibuffer-local-map (kbd "M-p") 'helm-minibuffer-history)
     (define-key minibuffer-local-map (kbd "M-n") 'helm-minibuffer-history)
-    (define-key global-map [remap find-tag] 'helm-etags-select)
-    (define-key global-map [remap list-buffers] 'helm-buffers-list)
+    ;;(define-key global-map [remap find-tag] 'helm-etags-select)
+    ;;(define-key global-map [remap list-buffers] 'helm-buffers-list)
     (setq helm-ff-DEL-up-one-level-maybe t)
     ;; (define-key helm-find-files-map (kbd "<backspace>") 'helm-find-files-up-one-level)
     (define-key helm-map (kbd "<left>") 'helm-previous-source)
     (define-key helm-map (kbd "<right>") 'helm-next-source)))
-
-(defun hackartist/ide/org/bindings ()
-  "setting for org-hydra"
-  (defhydra org-hydra
-    (:color pink)
-    "ORG hydra mode
-"
-    ("f" org-previous-visible-heading "previous visible heading")
-    ("F" org-next-visible-heading "next visible heading")
-    ("j" org-forward-heading-same-level "next same-level heading")
-    ("k" org-backward-heading-same-level "previous same-level heading")
-    ("h" outline-up-heading "go to parent heading")
-    ("l" org-next-visible-heading "next visible heading")
-    ("q" nil "quit" :color blue))
-  (spacemacs/set-leader-keys-for-minor-mode
-    'org-mode "." 'org-hydra/body)
-  (add-hook 'org-mode-hook
-            (lambda ()
-              (interactive "")
-              (define-key org-mode-map (kbd "<M-return>") nil)
-              (define-key org-mode-map (kbd "<M-S-up>") nil)
-              (define-key org-mode-map (kbd "<M-S-down>") nil)
-              (define-key org-mode-map (kbd "<M-up>") nil)
-              (define-key org-mode-map (kbd "<M-down>") nil)
-              (define-key org-mode-map (kbd "<M-S-left>") nil)
-              (define-key org-mode-map (kbd "<M-S-right>") nil)
-              (define-key org-mode-map (kbd "<M-left>") nil)
-              (define-key org-mode-map (kbd "<S-left>") nil)
-              (define-key org-mode-map (kbd "<S-right>") nil)
-              (define-key org-mode-map (kbd "<S-up>") nil)
-              (define-key org-mode-map (kbd "<S-down>") nil)
-              (define-key org-mode-map (kbd "<M-right>") nil)
-              (define-key org-mode-map (kbd "C-<tab>") nil)
-              (define-key org-mode-map (kbd "C-S-<tab>") nil)
-              (define-key org-mode-map (kbd "<C-up>") nil)
-              (define-key org-mode-map (kbd "<C-down>") nil)
-              (define-key org-mode-map (kbd "RET") nil))))
-

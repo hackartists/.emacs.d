@@ -22,9 +22,10 @@
                          auto-completion-use-company-box nil
                          auto-completion-enable-sort-by-usage t)
         ;; unicode-fonts
+        (org :variables org-enable-github-support t org-enable-bootstrap-support t org-enable-bootstrap-support t org-projectile-file "TODOs.org" org-enable-hugo-support t org-enable-epub-support t org-enable-bootstrap-support t org-enable-reveal-js-support t org-enable-jira-support t org-enable-org-journal-support t)
+
         systemd
         markdown
-        (org :variables org-enable-github-support t org-enable-bootstrap-support t org-enable-bootstrap-support t org-projectile-file "TODOs.org" org-enable-hugo-support t org-enable-epub-support t org-enable-bootstrap-support t org-enable-reveal-js-support t org-enable-jira-support t org-enable-org-journal-support t)
         confluence
         yaml
         spell-checking
@@ -114,7 +115,6 @@
         helm-make
         helm-mode-manager
         helm-mt
-        helm-org
         helm-projectile
         helm-swoop
         helm-themes
@@ -127,20 +127,15 @@
         markdown-mode+
         multi-term
         multi-vterm
-        ob-async
-        ob-go
-        ob-mongo
         ox-clip
         persp-mode
         pkg-info
-        plantuml-mode
         popup
         popwin
         projectile
         projectile-git-autofetch
         toml-mode
         vdiff
-        html2org
         docker-compose-mode
         dockerfile-mode
         ))

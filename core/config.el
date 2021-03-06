@@ -26,7 +26,7 @@
   (setq dotspacemacs-distribution 'spacemacs))
 
 (defun hackartist//config-load ()
-  (add-to-list 'dotspacemacs-configuration-layer-path (concat emacs-start-directory "/apps/spacemacs-adapter-layers/"))
+  (add-to-list 'dotspacemacs-configuration-layer-path (concat emacs-start-directory "/adapters/"))
   (setq dotspacemacs-configuration-layers '())
   (setq dotspacemacs-themes '(darktooth))
   (dolist (el hackartist-packages) (add-to-list 'dotspacemacs-additional-packages el))

@@ -35,11 +35,9 @@
   (global-set-key (kbd "s-a") 'mark-whole-buffer)
   (global-set-key (kbd "s-z") 'undo)
 
-  (setq org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.11.0_1/libexec/ditaa-0.11.0-standalone.jar")
   (highlight2clipboard-mode +1))
 
 (defun hackartist/ide/config/linux ()
-  (setq org-ditaa-jar-path "/usr/share/java/ditaa/ditaa-0.11.jar")
   ;; (setq x-ctrl-keysym 'super)
   ;; (setq x-super-keysym 'ctrl)
   )
@@ -62,11 +60,6 @@
   (require 'helm-mt)
 
   (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
-  (setq org-re-reveal-extra-css (concat emacs-start-directory "/metadata/reveal-extra.css"))
-  (setq org-plantuml-exec-mode 'jar)
-  (setq plantuml-exec-mode 'jar)
-  (setq plantuml-jar-path (expand-file-name "~/plantuml.jar"))
-  (setq org-plantuml-jar-path (expand-file-name "~/plantuml.jar"))
   (setq evil-want-fine-undo t)
 
   (setq helm-hackartist-buffers-list (make-hackartist-helm-source (helm-make-source "Buffers" 'helm-source-buffers)))
@@ -86,17 +79,7 @@
         tab-width 4
         kill-whole-line t
         recentf-max-menu-items 100)
-  (add-to-list 'org-src-lang-modes
-               '("plantuml" . plantuml))
 
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   `(,@org-babel-load-languages (plantuml . t) (ditaa . t)))
-  (setq org-enable-github-support t
-        org-enable-bootstrap-support t
-        org-enable-bootstrap-support t
-        org-projectile-file "TODOs.org")
-  (setq org-image-actual-width t)
   (setq tab-always-indent t)
   (add-to-list 'auto-mode-alist '("\\profile\\'" . shell-script-mode))
   (add-to-list 'auto-mode-alist '("\\.profile\\'" . shell-script-mode))
@@ -104,7 +87,6 @@
   (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
   (add-to-list 'auto-mode-alist '("\\<BUILD\\'" . bazel-mode))
   (add-to-list 'auto-mode-alist '("\\<WORKSPACE\\'" . bazel-mode))
-  (add-hook 'plantuml-mode (lambda ()  (auto-complete-mode t)))
   (spacemacs/toggle-visual-line-navigation-globally-on)
   ;; (add-hook 'gfm-mode-hook
   ;;           (lambda ()
@@ -116,9 +98,6 @@
   (require 'projectile-git-autofetch)
   (projectile-git-autofetch-mode 1)
   (setq-default gac-automatically-push-p t)
-  (add-hook 'org-mode-hook
-            (lambda ()
-              (git-auto-commit-mode 1)))
   ;; (prefer-coding-system 'utf-8)
   ;; (set-default-coding-systems 'utf-8)
   ;; (set-terminal-coding-system 'utf-8-unix)
@@ -268,146 +247,6 @@
   ;; (add-hook 'prog-mode-hook (lambda ()
   ;;                             (spacemacs/toggle-relative-line-numbers-on)))
   (setq doom-modeline-buffer-file-name-style 'file-name)
-  (setq doc-view-resolution 200
-        org-confirm-babel-evaluate nil
-        org-export-use-babel t
-        org-export-with-sub-superscripts '{}
-        org-src-window-setup 'current-window
-        org-latex-listings t
-        org-latex-listings-langs
-        (quote ((emacs-lisp "Lisp")
-                (lisp "Lisp")
-                (clojure "Lisp")
-                (c "C")
-                (cc "C++")
-                (fortran "fortran")
-                (perl "Perl")
-                (cperl "Perl")
-                (python "Python")
-                (ruby "Ruby")
-                (html "HTML")
-                (xml "XML")
-                (tex "TeX")
-                (latex "[LaTeX]TeX")
-                (shell-script "bash")
-                (shell "bash")
-                (gnuplot "Gnuplot")
-                (ocaml "Caml")
-                (caml "Caml")
-                (sql "SQL")
-                (sqlite "sql")
-                (makefile "make")
-                (R "r")
-                (js "JavaScript")))
-        org-latex-listings-options
-        (quote (("aboveskip" "0.2\\baselineskip")
-                ("frame" "top")
-                ("frame" "bottom")
-                ("captionpos" "b")
-                ("abovecaptionskip" "0.2\\baselineskip")
-                ("numbers" "left")
-                ("numbersep" "8pt")
-                ("numberstyle" "\\tiny\\color{black}")
-                ("stepnumber" "1")
-                ("breaklines" "true")
-                ("framexleftmargin" "5mm")
-                ("xleftmargin" "15pt")
-                ("showstringspaces" "false")
-                ("basicstyle" "\\linespread{0.8}\\tiny\\ttfamily")
-                ("keywordstyle" "\\bfseries\\color{mykeywords}")
-                ("commentstyle" "\\itshape\\color{purple}")
-                ("identifierstyle" "\\color{blue}")
-                ("stringstyle" "\\color{orange}")
-                ("tabsize" "4")))
-        org-support-shift-select t
-        org-download-image-dir "./images"
-        ivy-initial-inputs-alist
-        '((counsel-minor . "^+")
-          (counsel-package . "^+")
-          (counsel-org-capture . "")
-          (counsel-M-x . "")
-          (counsel-describe-symbol . "^")
-          (org-refile . "")
-          (org-agenda-refile . "")
-          (org-capture-refile . "")
-          (Man-completion-table . "^")
-          (woman . "^"))
-        evil-want-Y-yank-to-eol nil
-        lsp-enable-file-watchers nil
-        org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@4.1.0"
-        org-re-reveal-revealjs-version "4"
-        org-re-reveal-plugins '(markdown highlight zoom notes search math)
-        )
-  ;; (custom-set-variables
-  ;;  '(doc-view-resolution 200)
-  ;;  '(org-confirm-babel-evaluate nil)
-  ;;  '(org-export-use-babel nil)
-  ;;  '(org-export-with-sub-superscripts '{})
-  ;;  '(org-src-window-setup 'split-window-below)
-  ;;  '(org-latex-listings t)
-  ;;  '(org-latex-listings-langs
-  ;;    (quote
-  ;;     ((emacs-lisp "Lisp")
-  ;;      (lisp "Lisp")
-  ;;      (clojure "Lisp")
-  ;;      (c "C")
-  ;;      (cc "C++")
-  ;;      (fortran "fortran")
-  ;;      (perl "Perl")
-  ;;      (cperl "Perl")
-  ;;      (python "Python")
-  ;;      (ruby "Ruby")
-  ;;      (html "HTML")
-  ;;      (xml "XML")
-  ;;      (tex "TeX")
-  ;;      (latex "[LaTeX]TeX")
-  ;;      (shell-script "bash")
-  ;;      (shell "bash")
-  ;;      (gnuplot "Gnuplot")
-  ;;      (ocaml "Caml")
-  ;;      (caml "Caml")
-  ;;      (sql "SQL")
-  ;;      (sqlite "sql")
-  ;;      (makefile "make")
-  ;;      (R "r")
-  ;;      (js "JavaScript"))))
-  ;;  '(org-latex-listings-options
-  ;;    (quote
-  ;;     (("aboveskip" "0.2\\baselineskip")
-  ;;      ("frame" "top")
-  ;;      ("frame" "bottom")
-  ;;      ("captionpos" "b")
-  ;;      ("abovecaptionskip" "0.2\\baselineskip")
-  ;;      ("numbers" "left")
-  ;;      ("numbersep" "8pt")
-  ;;      ("numberstyle" "\\tiny\\color{black}")
-  ;;      ("stepnumber" "1")
-  ;;      ("breaklines" "true")
-  ;;      ("framexleftmargin" "5mm")
-  ;;      ("xleftmargin" "15pt")
-  ;;      ("showstringspaces" "false")
-  ;;      ("basicstyle" "\\linespread{0.8}\\tiny\\ttfamily")
-  ;;      ("keywordstyle" "\\bfseries\\color{mykeywords}")
-  ;;      ("commentstyle" "\\itshape\\color{purple}")
-  ;;      ("identifierstyle" "\\color{blue}")
-  ;;      ("stringstyle" "\\color{orange}")
-  ;;      ("tabsize" "4"))))
-  ;;  '(org-support-shift-select t)
-  ;;  '(org-download-image-dir "./images")
-  ;;  '(dap-ui-controls-mode nil nil (dap-ui))
-  ;;  '(ivy-initial-inputs-alist
-  ;;    '((counsel-minor . "^+")
-  ;;      (counsel-package . "^+")
-  ;;      (counsel-org-capture . "")
-  ;;      (counsel-M-x . "")
-  ;;      (counsel-describe-symbol . "^")
-  ;;      (org-refile . "")
-  ;;      (org-agenda-refile . "")
-  ;;      (org-capture-refile . "")
-  ;;      (Man-completion-table . "^")
-  ;;      (woman . "^")))
-  ;;  '(lsp-enable-file-watchers nil))
-
   (setq calendar-month-name-array ["January" "February" "March" "April" "May"
                                    "June" "July" "August" "September" "October"
                                    "November" "December"])
@@ -435,23 +274,23 @@
 ;;           ide-helm-display-buffer-regexp)))
 ;;     (helm-default-display-buffer buffer)))
 
-(defun my-org-screenshot ()
-  "Take a screenshot into a time stamped unique-named file in the
-same directory as the org-buffer and insert a link to this file."
-  (interactive)
-  (org-display-inline-images)
-  (setq filename (concat (make-temp-name (concat (file-name-nondirectory (buffer-file-name))
-                                                 "_imgs/"
-                                                 (format-time-string "%Y%m%d_%H%M%S_")))
-                         ".png"))
-  (unless (file-exists-p (file-name-directory filename))
-    (make-directory (file-name-directory filename)))
-                                        ; take screenshot
-  (if (eq system-type 'darwin)
-      (call-process "screencapture" nil nil nil
-                    "-i" filename))
-  (if (eq system-type 'gnu/linux)
-      (call-process "import" nil nil nil filename))
-                                        ; insert into file if correctly taken
-  (if (file-exists-p filename)
-      (insert (concat "[[file:" filename "]]"))))
+;; (defun my-org-screenshot ()
+;;   "Take a screenshot into a time stamped unique-named file in the
+;; same directory as the org-buffer and insert a link to this file."
+;;   (interactive)
+;;   (org-display-inline-images)
+;;   (setq filename (concat (make-temp-name (concat (file-name-nondirectory (buffer-file-name))
+;;                                                  "_imgs/"
+;;                                                  (format-time-string "%Y%m%d_%H%M%S_")))
+;;                          ".png"))
+;;   (unless (file-exists-p (file-name-directory filename))
+;;     (make-directory (file-name-directory filename)))
+;;                                         ; take screenshot
+;;   (if (eq system-type 'darwin)
+;;       (call-process "screencapture" nil nil nil
+;;                     "-i" filename))
+;;   (if (eq system-type 'gnu/linux)
+;;       (call-process "import" nil nil nil filename))
+;;                                         ; insert into file if correctly taken
+;;   (if (file-exists-p filename)
+;;       (insert (concat "[[file:" filename "]]"))))

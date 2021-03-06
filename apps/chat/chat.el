@@ -27,7 +27,4 @@
               (interactive "")
               (local-set-key (kbd "@") 'slack-message-embed-mention)
               (local-set-key (kbd "#") 'slack-message-embed-channel)
-              (local-set-key (kbd "!") 'slack-message-add-reaction)
-              ))
-
-  (global-set-key (kbd "M-m o s h") 'helm-slack))
+              (local-set-key (kbd "!") 'slack-message-add-reaction))))

@@ -1,0 +1,23 @@
+# name: hackaritst app layer
+# key: hackartst app
+# --
+
+;; ${1:package name} requires below layers of spacemacs.
+(setq hackartist-ide-layers '())
+
+;; $1 requires additional packages.
+(setq hackartist-ide-packages '())
+
+;; $1 requires open source code from github
+(setq hackartist-ide-osc '())
+
+(defun hackartist/$1/init ()
+"initialization code"
+    $0
+)
+
+(defun hackartist/$1/config ()
+"configuration code")
+
+(defun hackartist/$1/bindings ()
+"configuration code")

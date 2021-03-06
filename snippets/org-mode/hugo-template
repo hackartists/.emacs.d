@@ -5,7 +5,7 @@
 
 -*- eval: (org-hugo-auto-export-mode t) -*-
 
-#+hugo_base_dir: /Volumes/data/devel/github.com/hackartists/notes/hugo/ 
+#+hugo_base_dir: `org-directory`/hugo/ 
 #+author: Hackartist
 #+title: ${1: title}
 #+startup: logdone
