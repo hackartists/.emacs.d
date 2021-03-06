@@ -8,6 +8,7 @@
 (advice-add 'dotspacemacs/layers :after #'hackartist//config-load)
 (advice-add 'spacemacs-buffer//insert-version :before #'hackartist//version)
 (advice-add 'spacemacs-buffer//insert-version :after #'hackartist//restore)
+(advice-add 'spacemacs/init :before #'hackartist//init)
 
 (add-hook 'focus-out-hook (lambda ()
 			    (interactive)
@@ -19,8 +20,12 @@
 ;;             ;; (dolist (el hackartist-configuration-layers) (dotspacemacs/add-layer el))
 ;;             ;; (dolist (el hackartist-apps) (hackartist//app-config el))
 ;;             ))
+(defun hackartist//init ()
+  (defconst spacemacs-buffer-name "*hackartist-emacs*")
+  (defconst spacemacs-buffer-logo-title "[H A C K A R T I S T - E M A C S]")
+  )
 (defun hackartist//version ()
-  (setq dotspacemacs-distribution 'hackartistemacs))
+  (setq dotspacemacs-distribution 'hackartist-emacs))
 
 (defun hackartist//restore ()
   (setq dotspacemacs-distribution 'spacemacs))
@@ -40,7 +45,7 @@
 (defun hackartist//layer-init ()
   (setq
    dotspacemacs-line-numbers 'visual
-   dotspacemacs-startup-banner nil
+   ;;dotspacemacs-startup-banner nil
    dotspacemacs-enable-server t
    dotspacemacs-pretty-docs t
    dotspacemacs-major-mode-leader-key "RET"

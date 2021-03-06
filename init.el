@@ -12,14 +12,14 @@
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets")
 (yas-reload-all)
 
-(switch-to-buffer "*scratch*")
+;;(switch-to-buffer "*scratch*")
 
 (set-frame-parameter nil 'fullscreen 'fullboth)
 
 ;; (setq ns-command-modifier 'super)
 ;; (server-start)
-(split-window-horizontally)
-(windmove-right)
-(switch-to-buffer "*Messages*")
-(windmove-left)
+;; (split-window-horizontally)
+;; (windmove-right)
+;; (switch-to-buffer "*Messages*")
+;; (windmove-left)
 (put 'magit-clean 'disabled nil)
