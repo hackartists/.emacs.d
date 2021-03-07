@@ -20,7 +20,7 @@
                          auto-completion-enable-snippets-in-popup nil
                          auto-completion-enable-help-tooltip nil
                          auto-completion-use-company-box nil
-                         auto-completion-enable-sort-by-usage t)
+                         auto-completion-enable-sort-by-usage nil)
         ;; unicode-fonts
         (org :variables org-enable-github-support t org-enable-bootstrap-support t org-enable-bootstrap-support t org-projectile-file "TODOs.org" org-enable-hugo-support t org-enable-epub-support t org-enable-bootstrap-support t org-enable-reveal-js-support t org-enable-jira-support t org-enable-org-journal-support t)
 
