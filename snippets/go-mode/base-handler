@@ -2,16 +2,16 @@
 # name: base-handler
 # key: base-handler
 # --
-type $2Req struct {
-base.${3:JSON|QueryOrForm|Path|Header}Requester \`json:"-"\`
+type ${1:name}Req struct {
+base.${2:JSON|QueryOrForm|Path|HeaderRequester} \`json:"-"\`
 }
 
-type $2Resp struct {
+type $1Resp struct {
 
 }
 
-// $2 ${4:...}
-func (r *${1:reciever}) ${2:name}(ctx *base.Context, req $2Req) (*$2Resp, base.StatefulError) {
+// $1 ${4:...}
+func (r *${3:reciever}) $1(ctx *base.Context, req $1Req) (*$1Resp, base.StatefulError) {
 $0
 
 return nil, base.ErrNotImplemented
