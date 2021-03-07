@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: rest-router
-# key: router
+# key: lego-router
 # --
 // $1API ${2:...}
 type ${1:Name}API struct {

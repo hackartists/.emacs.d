@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: rest-handler
-# key: handler
+# key: lego-handler
 # --
 type $2Req struct {
   rest.${3:Json|URI|Query|Form|Header}Requester \`json:"-"\`

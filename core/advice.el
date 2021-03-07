@@ -3,6 +3,7 @@
 (advice-add 'spacemacs-buffer//insert-buttons :override #'hackartist-buffer//insert-buttons)
 (advice-add 'spacemacs-buffer//insert-footer :override #'hackartist-buffer//insert-footer)
 (advice-add 'spacemacs-buffer//insert-projects :override #'hackartist-buffer//insert-projects)
+(advice-add 'go-impl--collect-interface :override #'hackartist//go-impl--collect-interface)
 
 (defun hackartist-buffer//choose-banner ()
   (concat emacs-start-directory "/banner.txt"))
@@ -179,3 +180,16 @@ ADDITIONAL-WIDGETS: a function for inserting a widget under the frame."
                             0 list-size))
     (spacemacs-buffer||add-shortcut "p" "Projects:")
     (insert spacemacs-buffer-list-separator)))
+
+(defun hackartist//go-impl--collect-interface (package)
+  (with-temp-buffer
+    (unless (zerop (process-file "go" nil t nil "doc" "-src" package))
+      (error "Failed: 'go doc -src %s'" package))
+    (goto-char (point-min))
+    (cl-loop with re = "^type\\s-+\\(\\S-+\\)\\s-+interface"
+             with real-package = (go-impl--real-package-name package)
+             while (re-search-forward re nil t)
+             collect (concat real-package "." (match-string-no-properties 1)) into interfaces
+             finally return (progn
+                              (puthash package (cl-copy-list interfaces) go-impl--interface-cache)
+                              interfaces))))
