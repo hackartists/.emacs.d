@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: base-router
+# key: base-router
+# --
+// $1API ${2:...}
+type ${1:Name}API struct {
+}
+
+func (r *$1API) Route(rg *base.RouteGroup) {
+  rg.HEAD("/", func(*base.Context) (interface{}, base.StatefulError) { panic("not implemented") })
+$0
+}

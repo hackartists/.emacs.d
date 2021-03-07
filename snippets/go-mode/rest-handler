@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: rest-handler
+# name: lego-handler
 # key: lego-handler
 # --
 type $2Req struct {
@@ -11,7 +11,7 @@ type $2Resp struct {
 }
 
 // $2 ${4:...}
-func (r ${1:reciever}) ${2:name}(ctx *rest.RestContext, req $2Req) (*$2Req, deftype.Error) {
+func (r ${1:reciever}) ${2:name}(ctx *rest.RestContext, req $2Req) (*$2Resp, deftype.Error) {
   $0
 
   return nil, errors.ErrNotImplemented

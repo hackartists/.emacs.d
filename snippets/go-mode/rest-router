@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: rest-router
+# name: lego-router
 # key: lego-router
 # --
 // $1API ${2:...}
@@ -8,7 +8,7 @@ type ${1:Name}API struct {
 }
 
 func (r *$1API) Route() rest.IRestRouter {
-  r.HEAD("/", func(*rest.RestContext) *rest.RestResponse { return rest.Success(nil) })
+  r.HEAD("/", func(*rest.RestContext) (interface{}, deftype.Error) { return nil, errors.ErrNotImplemented })
   $0
 
   return &r.RestGroup

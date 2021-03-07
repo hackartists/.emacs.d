@@ -62,7 +62,7 @@
   ;;             (define-key term-mode-map (kbd "M-l") 'term-send-forward-word)))
   (add-hook 'company-mode-hook
             (lambda ()
-              (define-key company-active-map (kbd "ESC") 'company-abort)
+              ;;(define-key company-active-map (kbd "ESC") 'company-abort)
               (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
               (define-key company-active-map (kbd "<tab>") 'company-complete)))
   (with-eval-after-load 'helm
