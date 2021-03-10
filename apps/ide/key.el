@@ -16,7 +16,7 @@
     "." 'helm-hackartist-buffer
     "RET" 'yas-insert-snippet
     "SPC" 'helm-mt
-    "TAB" 'helm-semantic-or-imenu
+    "TAB" 'helm-imenu
     "bk" 'kill-this-buffer
     "bu" 'revert-buffer
     "gB" 'magit-branch-and-checkout

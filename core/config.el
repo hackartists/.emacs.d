@@ -51,12 +51,17 @@
    dotspacemacs-major-mode-leader-key "RET"
    dotspacemacs-loading-progress-bar t
    dotspacemacs-mode-line-theme '(doom :separator wave :separator-scale 1.5)
+   dotspacemacs-startup-lists '((recents  . 5)
+                                (projects . 15)
+                                (todos . 5)
+                                (bookmarks . 5))
+
    doom-modeline-github t
    doom-modeline-irc-buffers t
    doom-modeline-unicode-fallback t
    doom-modeline-vcs-max-length 30
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 17.0
+                               :size 14.0
                                :weight normal
                                :width normal)
    dotspacemacs-emacs-command-key "X")
