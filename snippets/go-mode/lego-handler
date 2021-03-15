@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: lego-handler
+# key: lego-handler
+# --
+type ${1:name}Req struct {
+  rest.${2:Json|URI|Query|Form|Header}Requester \`json:"-"\`
+}
+
+type $1Resp struct {
+
+}
+
+// $1 ${4:...}
+func (r ${3:reciever}) $1(ctx *rest.RestContext, req $1Req) (*$1Resp, deftype.Error) {
+  $0
+
+  return nil, errors.ErrNotImplemented
+}
