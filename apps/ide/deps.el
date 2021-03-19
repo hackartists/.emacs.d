@@ -89,6 +89,7 @@
         calendar
         pdf
         copy-as-format
+        plantuml
         ))
 
 (setq hackartist-ide-packages

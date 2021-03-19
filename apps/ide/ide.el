@@ -16,7 +16,7 @@
                   (apps/ide/toggle-input-method-custom)
                 (setq current-input-method nil)
                 )))
-
+  (add-hook 'image-mode-hook (lambda () (image-transform-fit-to-width)))
   ;; (add-hook 'minibuffer-setup-hook (lambda ()
   ;; 				      (when minibuffer-completion-table
   ;; 					(with-current-buffer "*Messages*"
