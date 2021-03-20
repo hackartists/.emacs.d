@@ -65,9 +65,9 @@
               ;;(define-key company-active-map (kbd "ESC") 'company-abort)
               (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
               (define-key company-active-map (kbd "<tab>") 'company-complete)))
-  (with-eval-after-load 'yasnippet
-    (define-key yas-minor-mode-map [(tab)]       (yas-filtered-definition 'yas-next-field))
-    (define-key yas-minor-mode-map (kbd "TAB")   (yas-filtered-definition 'yas-next-field)))
+  ;; (with-eval-after-load 'yasnippet
+  ;;   (define-key yas-minor-mode-map [(tab)]       (yas-filtered-definition 'yas-next-field))
+  ;;   (define-key yas-minor-mode-map (kbd "TAB")   (yas-filtered-definition 'yas-next-field)))
   (with-eval-after-load 'helm
     (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebihnd tab to do persistent action
     ;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal

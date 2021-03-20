@@ -109,6 +109,8 @@
             (function (lambda ()
                         (set-buffer-process-coding-system 'utf-8-unix
                                                           'utf-8-unix))))
+  (add-hook 'org-mode-hook 'toc-org-mode)
+  (add-to-list 'org-tag-alist '("TOC" . ?T))
   (global-set-key (kbd "RET") 'newline-and-indent)
   ;; (global-set-key "\C-x\ \C-r" 'recentf-open-files)
   (setq custom-safe-themes t)
