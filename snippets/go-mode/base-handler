@@ -6,6 +6,12 @@ type ${1:name}Req struct {
 base.${2:JSON|QueryOrForm|Path|HeaderRequester} \`json:"-"\`
 }
 
+func (r *$1Req) Default() {}
+
+func (r *$1Req) PostValidate() base.StatefulError {
+     return nil
+}
+
 type $1Resp struct {
 
 }
