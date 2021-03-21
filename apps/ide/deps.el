@@ -6,7 +6,6 @@
         (helm :variables
               history-delete-duplicates t
               history-length 10)
-        (restclient :variables restclient-use-org t)
         git
         version-control
         (auto-completion :variables
@@ -22,8 +21,6 @@
                          auto-completion-use-company-box nil
                          auto-completion-enable-sort-by-usage nil)
         ;; unicode-fonts
-        (org :variables org-enable-github-support t org-enable-bootstrap-support t org-enable-bootstrap-support t org-projectile-file "TODOs.org" org-enable-hugo-support t org-enable-epub-support t org-enable-bootstrap-support t org-enable-reveal-js-support t org-enable-jira-support t org-enable-org-journal-support t)
-
         systemd
         markdown
         confluence

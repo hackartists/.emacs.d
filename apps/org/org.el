@@ -1,5 +1,6 @@
 (setq hackartist-org-layers
       '(
+        (restclient :variables restclient-use-org t)
         (org :variables org-enable-github-support t org-enable-bootstrap-support t org-enable-bootstrap-support t org-projectile-file "TODOs.org" org-enable-hugo-support t org-enable-epub-support t org-enable-bootstrap-support t org-enable-reveal-js-support t org-enable-jira-support t org-enable-org-journal-support t))
       )
 
@@ -17,11 +18,22 @@
 
 (setq hackartist-org-osc '())
 
+(defun hackartist/ide/advice-before/org-export-to-file (backend file &optional async subtreep visible-only body-only ext-plist post-process)
+  (delete-file file))
+
+(defun hackartist/ide/advice-before/org-hugo-export-wim-to-md (&optional all-subtrees async visible-only noerror)
+  (advice-add 'org-export-to-file :before #'hackartist/ide/advice-before/org-export-to-file))
+
+(defun hackartist/ide/advice-after/org-hugo-export-wim-to-md (&optional all-subtrees async visible-only noerror)
+  (advice-remove 'org-export-to-file #'hackartist/ide/org-hugo-export-wim-to-md-before-hook))
+
 (defun hackartist/org/init ()
   "initialization code"
-  (add-hook 'org-mode-hook
-            (lambda ()
-              (git-auto-commit-mode 1)))
+  ;; (add-hook 'org-mode-hook
+  ;;           (lambda ()
+  ;;             (git-auto-commit-mode 1)))
+  (advice-add 'org-hugo-export-wim-to-md :before #'hackartist/ide/advice-before/org-hugo-export-wim-to-md)
+  (advice-add 'org-hugo-export-wim-to-md :after #'hackartist/ide/advice-after/org-hugo-export-wim-to-md)
   )
 
 (defun hackartist/org/config/darwin ()
@@ -36,11 +48,18 @@
   (if (eq system-type 'darwin)
       (hackartist/org/config/darwin)
     (hackartist/org/config/linux))
+
+  (add-hook 'org-mode-hook 'toc-org-mode)
+  (add-to-list 'org-tag-alist '("TOC" . ?T))
   (require 'ob-api)
   (require 'ob-api-mode)
   (require 'ob-async)
   (require 'ob-go)
 
+  (set-face-attribute 'org-table nil
+                      :family "D2Coding"
+                      :weight 'normal
+                      :width 'normal)
   (org-babel-do-load-languages
    'org-babel-load-languages
    `(,@org-babel-load-languages (plantuml . t) (ditaa . t) (api . t)))

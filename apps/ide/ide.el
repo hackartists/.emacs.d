@@ -21,15 +21,5 @@
   ;; 				      (when minibuffer-completion-table
   ;; 					(with-current-buffer "*Messages*"
   ;; 					  (print minibuffer-completion-table)))))
-  (advice-add 'org-hugo-export-wim-to-md :before #'hackartist/ide/advice-before/org-hugo-export-wim-to-md)
-  (advice-add 'org-hugo-export-wim-to-md :after #'hackartist/ide/advice-after/org-hugo-export-wim-to-md)
   )
 
-(defun hackartist/ide/advice-before/org-export-to-file (backend file &optional async subtreep visible-only body-only ext-plist post-process)
-  (delete-file file))
-
-(defun hackartist/ide/advice-before/org-hugo-export-wim-to-md (&optional all-subtrees async visible-only noerror)
-  (advice-add 'org-export-to-file :before #'hackartist/ide/advice-before/org-export-to-file))
-
-(defun hackartist/ide/advice-after/org-hugo-export-wim-to-md (&optional all-subtrees async visible-only noerror)
-  (advice-remove 'org-export-to-file #'hackartist/ide/org-hugo-export-wim-to-md-before-hook))
