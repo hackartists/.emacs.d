@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: api-run
+# key: api-run
+# --
+
+
+${1:rest}.Run(t, []api.Testcase{
+    $0
+})

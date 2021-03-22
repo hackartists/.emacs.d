@@ -12,4 +12,4 @@
     "${6:response.key}": ${7:expected},
     $0
   },
-}
+},
