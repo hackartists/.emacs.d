@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: api-testcase
+# key: api-testcase
+# --
+
+{
+  "${1:testcase name}",
+  "${2:method}", "${3:url path without host}",
+  ${4:nil},
+  ${5:http.StatusOK},
+  M{
+    "${6:response.key}": ${7:expected},
+    $0
+  },
+}

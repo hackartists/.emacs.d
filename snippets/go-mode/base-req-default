@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: base-req-default
+# key: base-req-default
+# --
+
+func (r *${1:request}) Default() {
+     $0
+}
+

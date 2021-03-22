@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: base-req-post-validate
+# key: base-req-post-validate
+# --
+
+func (r *$1Req) PostValidate(ctx *base.Context) base.StatefulError {
+     $0
+     return nil
+}
