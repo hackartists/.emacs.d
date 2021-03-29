@@ -82,7 +82,7 @@
         (shell-scripts :variables shell-scripts-backend 'lsp)
         themes-megapack
         ;; (mu4e :variables mu4e-installation-path "/usr/local/share/emacs/site-lisp" mu4e-use-maildirs-extension t mu4e-enable-async-operations t mu4e-attachment-dir "~/Downloads" mu4e-enable-notifications nil mu4e-enable-mode-line t)
-        (kubernetes :variables kubernetes-commands-display-buffer-function 'display-buffer)
+        kubernetes
         pass
         calendar
         pdf

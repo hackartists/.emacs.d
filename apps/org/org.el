@@ -34,6 +34,16 @@
   ;;             (git-auto-commit-mode 1)))
   (advice-add 'org-hugo-export-wim-to-md :before #'hackartist/ide/advice-before/org-hugo-export-wim-to-md)
   (advice-add 'org-hugo-export-wim-to-md :after #'hackartist/ide/advice-after/org-hugo-export-wim-to-md)
+  (org-add-link-type
+   "image-url"
+   (lambda (path)
+     (let ((img (expand-file-name
+                 (concat (md5 path) "." (file-name-extension path))
+                 temporary-file-directory)))
+       (if (file-exists-p img)
+           (find-file img)
+         (url-copy-file path img)
+         (find-file img)))))
   )
 
 (defun hackartist/org/config/darwin ()
@@ -184,3 +194,28 @@
   (define-key org-mode-map (kbd "<C-down>") nil)
   (define-key org-mode-map (kbd "RET") nil))
 
+(defun image-url-overlays ()
+"Put image overlays on remote image urls."
+(interactive)
+(loop for image-url in (org-element-map (org-element-parse-buffer) 'link
+                         (lambda (link)
+                           (when (string= "image-url" (org-element-property :type link))
+                             link)))
+      do
+      (let* ((path (org-element-property :path image-url))
+             (ov (make-overlay (org-element-property :begin image-url)
+                               (org-element-property :end image-url)))
+             (img (create-image (expand-file-name
+                                 (concat (md5 path)
+                                         "."
+                                         (file-name-extension
+                                          path))
+                                 temporary-file-directory))))
+        (overlay-put ov 'display img)
+        (overlay-put ov 'image-url t))))
+
+(defun image-url-clear-overlays ()
+  "Reove overlays on image-urls."
+  (interactive)
+  (require 'ov)
+  (ov-clear 'image-url))
