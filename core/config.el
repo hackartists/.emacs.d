@@ -55,6 +55,10 @@
    ;;                              (projects . 15)
    ;;                              (todos . 5)
    ;;                              (bookmarks . 5))
+   dotspacemacs-startup-lists '((recents  . 5)
+                                (projects . 3)
+                                (todos . 3)
+                                (bookmarks . 3))
 
    doom-modeline-github t
    doom-modeline-irc-buffers t
