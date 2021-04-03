@@ -9,7 +9,6 @@
   ;; (global-git-gutter+-mode -1)
   ;; (global-auto-highlight-symbol-mode +1)
   (setq auth-sources '("~/.authinfo"))
-
   (add-hook 'minibuffer-setup-hook
             (lambda ()
               (if (string= current-input-method 'korean-hangul)
@@ -17,9 +16,13 @@
                 (setq current-input-method nil)
                 )))
   (add-hook 'image-mode-hook (lambda () (image-transform-fit-to-width)))
+  ;;(advice-add 'windmove-do-window-select :after 'advice-after/windmove-do-window-select)
   ;; (add-hook 'minibuffer-setup-hook (lambda ()
   ;; 				      (when minibuffer-completion-table
   ;; 					(with-current-buffer "*Messages*"
   ;; 					  (print minibuffer-completion-table)))))
   )
 
+
+(defun advice-after/windmove-do-window-select (dir &optional arg window)
+  (treemacs-display-current-project-exclusively))

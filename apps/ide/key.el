@@ -17,13 +17,19 @@
     "RET" 'yas-insert-snippet
     "SPC" 'helm-mt
     "TAB" 'helm-imenu
+
     "bk" 'kill-this-buffer
     "bu" 'revert-buffer
+
     "gB" 'magit-branch-and-checkout
     "gC" 'magit-branch-checkout
     "gF" 'magit-fetch-all
+
     "wn" 'minimize-window
+
     "fO" 'hackartist/xdg-open
+    "f." 'treemacs-display-current-project-exclusively
+
     "sgp" 'counsel-git-grep)
 
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
