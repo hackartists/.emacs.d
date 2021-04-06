@@ -80,7 +80,7 @@
 #+BEAMER: \setbeamercovered{transparent=30}
 #+BEAMER_HEADER: \usepackage{blindtext}
 
-#+BEAMER: \begin{frame}<beamer>\frametitle{Table of Connnptents}\begin{columns}[t]
+#+BEAMER: \begin{frame}<beamer>\frametitle{Table of Contents}\begin{columns}[t]
 #+BEAMER: \begin{column}{.5\textwidth}\tableofcontents[sections={1-3}]\end{column}
 #+BEAMER: \begin{column}{.5\textwidth}\tableofcontents[sections={4-7}]\end{column}
 #+BEAMER: \end{columns}\end{frame}
