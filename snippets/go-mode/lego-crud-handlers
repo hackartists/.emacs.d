@@ -1,0 +1,64 @@
+# -*- mode: snippet -*-
+# name: lego-crud-handlers
+# key: lego-chs
+# --
+type List${1:name}Req struct {
+rest.QueryRequester \`json:"-"\`
+req.KasCommonQueryReq
+}
+
+type List$1Resp struct {
+
+}
+
+// List$1 ${3:...}
+func (r ${2:reciever}) List$1(ctx *rest.RestContext, req List$1Req) (*List$1Resp, deftype.Error) {
+$0
+
+return nil, errors.ErrNotImplemented
+}
+
+type Get$1Req struct {
+rest.URIRequester \`json:"-"\`
+
+$1ID string \`uri:"$1-id"\`
+}
+
+type Get$1Resp struct {
+
+}
+
+// Get$1 ${4:...}
+func (r $2) Get$1(ctx *rest.RestContext, req Get$1Req) (*Get$1Resp, deftype.Error) {
+
+return nil, errors.ErrNotImplemented
+}
+
+type Create$1Req struct {
+rest.JsonRequester \`json:"-"\`
+}
+
+type Create$1Resp struct {
+
+}
+
+// Create$1 ${5:...}
+func (r $2) Create$1(ctx *rest.RestContext, req Create$1Req) (*Create$1Resp, deftype.Error) {
+
+return nil, errors.ErrNotImplemented
+}
+
+type Update$1Req struct {
+rest.JsonRequester \`json:"-"\`
+}
+
+type Update$1Resp struct {
+
+}
+
+// Update$1 ${6:...}
+func (r $2) Update$1(ctx *rest.RestContext, req Update$1Req) (*Update$1Resp, deftype.Error) {
+
+return nil, errors.ErrNotImplemented
+}
+
