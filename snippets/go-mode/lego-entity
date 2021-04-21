@@ -1,0 +1,43 @@
+# name: lego-entity
+# key: entity
+# --
+
+const (
+      PartitionKey string = "doc_id"
+      SorkKey = "type"
+
+      DocType$1 = "$4"
+)
+
+// $1 ${2:...}
+type ${1:EntityName} struct {
+  entity.${3:Modeler} \`json:"-" dynamodbav:"-" redis:"-"\`
+
+  DocID string `dynamodbav:"doc_id,omitempty"`
+  Type string `dynamodbav:"type,omitempty"`
+
+  $5
+}
+
+func New() *$1 {
+  ret := &$1{}
+  ret.Modeler = entity.$4(ret)
+
+  return ret
+}
+
+func (r *$1) Keys() []deftype.Key {
+  return []deftype.Key{{PartitionKey, r.Key()}, {SortKey, DocType$1}}
+}
+
+func (r *$1) Key() string {
+  return r.docID
+}
+
+func (r *$1) SetKey(key string) {
+  r.docID = key
+}
+
+func (r *$1) IsFilled() bool {
+  return r.DocID != ""
+}
