@@ -4,7 +4,7 @@
 (defun hackartist/golang/config ()
   (setq
    go-add-tags-style 'snake-case
-   go-tag-args '("-transform" "camelcase" "-add-options" "json=omitempty,bson=omitempty,dynamodbav=omitempty,redis=omitempty")
+   go-tag-args '("-transform" "camelcase")
    lsp-go-codelenses '((generate . t)
                        (gc_details . t)
                        (regenerate_cgo . t)
