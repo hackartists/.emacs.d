@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: reveal-template
+# key: reveal,template
+# --
+
+#+REVEAL_EXTRA_CSS: `(concat (getenv "devel") "/github.com/hackartists/notes")`/common/reveal.css
+#+REVEAL_THEME: league
+#+OPTIONS:   author:t toc:nil timestamp:t

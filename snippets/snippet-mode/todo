@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: todo
+# key: d_e_f
+# binding: C-I d e f
+# --
+`(yas-with-comment "TODO: ")`
