@@ -7,7 +7,7 @@
         (helm :variables
               history-delete-duplicates t
               history-length 10)
-        git
+        (git :variables git-enable-magit-todos-plugin t)
         version-control
         (auto-completion :variables
                          auto-completion-return-key-behavior nil
@@ -137,6 +137,7 @@
         vdiff
         docker-compose-mode
         dockerfile-mode
+        magit-todos
         ))
 
 (setq hackartist-ide-osc

@@ -30,6 +30,8 @@
     "fO" 'hackartist/xdg-open
     "f." 'treemacs-display-current-project-exclusively
 
+    "gt" 'helm-magit-todos
+
     "sgp" 'counsel-git-grep)
 
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
