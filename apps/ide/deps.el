@@ -4,7 +4,7 @@
         protobuf
         multiple-cursors
         ;; (keyboard-layout :variables kl-layout 'dvp)
-        ;; ivy
+        ivy
         (helm :variables
               history-delete-duplicates t
               history-length 10)

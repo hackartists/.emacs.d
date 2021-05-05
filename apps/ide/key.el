@@ -29,6 +29,9 @@
 
     "fO" 'hackartist/xdg-open
     "f." 'treemacs-display-current-project-exclusively
+    "ff" 'spacemacs/helm-find-files
+
+    "ss" 'helm-swoop
 
     "gt" 'helm-magit-todos
 
