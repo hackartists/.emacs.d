@@ -1,5 +1,6 @@
 (setq hackartist-ide-layers
       '(
+        eww
         protobuf
         multiple-cursors
         ;; (keyboard-layout :variables kl-layout 'dvp)
@@ -138,6 +139,7 @@
         docker-compose-mode
         dockerfile-mode
         magit-todos
+        helm-eww
         ))
 
 (setq hackartist-ide-osc
