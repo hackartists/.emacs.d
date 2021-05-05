@@ -124,7 +124,6 @@
         imenu
         magit-find-file
         magit-gh-pulls
-        markdown-mode+
         multi-term
         multi-vterm
         ox-clip
