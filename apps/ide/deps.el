@@ -24,7 +24,7 @@
                          auto-completion-enable-sort-by-usage nil)
         ;; unicode-fonts
         systemd
-        markdown
+        (markdown :variables markdown-live-preview-engine 'vmd)
         confluence
         yaml
         spell-checking

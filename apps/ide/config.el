@@ -106,7 +106,7 @@
   ;; (setq default-process-coding-system '(utf-8-unix . utf-8-unix))
   ;; (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
   ;; (set-language-environment "UTF-8")
-  (setq browse-url-browser-function 'eww-browse-url)
+  (setq browse-url-browser-function 'browse-url-chrome)
   (add-hook 'term-exec-hook
             (function (lambda ()
                         (set-buffer-process-coding-system 'utf-8-unix
