@@ -140,7 +140,8 @@
         dockerfile-mode
         magit-todos
         helm-eww
-        ))
+	      shrface
+	      ))
 
 (setq hackartist-ide-osc
       '(

@@ -21,7 +21,12 @@
   ;; 				      (when minibuffer-completion-table
   ;; 					(with-current-buffer "*Messages*"
   ;; 					  (print minibuffer-completion-table)))))
-  )
+
+  (setq shrface-toggle-bullets t)
+  (shrface-basic)
+  (shrface-trial)
+  ;; (shrface-default-keybindings) ; setup default keybindings
+  (setq shrface-href-versatile t))
 
 
 (defun advice-after/windmove-do-window-select (dir &optional arg window)

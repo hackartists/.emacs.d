@@ -105,10 +105,12 @@
   ;; (setq default-process-coding-system '(utf-8-unix . utf-8-unix))
   ;; (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
   ;; (set-language-environment "UTF-8")
+  (setq browse-url-browser-function 'eww-browse-url)
   (add-hook 'term-exec-hook
             (function (lambda ()
                         (set-buffer-process-coding-system 'utf-8-unix
                                                           'utf-8-unix))))
+  (add-hook 'eww-after-render-hook #'shrface-mode)
   (global-set-key (kbd "RET") 'newline-and-indent)
   ;; (global-set-key "\C-x\ \C-r" 'recentf-open-files)
   (setq custom-safe-themes t)
