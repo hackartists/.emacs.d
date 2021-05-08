@@ -89,7 +89,7 @@
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
   (add-hook 'js2-mode-hook 'eslintd-fix-mode)
-  (add-hook 'js2-mode-hook (lambda () (required 'dap-node))))
+  (add-hook 'js2-mode-hook (lambda () (require 'dap-node))))
 
 (defun hackartist/javascript/bindings ()
   )
