@@ -5,7 +5,7 @@
 Navigator.of(context).push(
 MaterialPageRoute(
 builder: (context) {
-return ${1:ScreenName}(${2:args});
+return ${1:Screen};
 },
 ),
 );
