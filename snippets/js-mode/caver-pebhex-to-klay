@@ -1,0 +1,7 @@
+# name: caver-pebhex-to-klay
+# --
+
+const klay = caver.utils.convertFromPeb(
+caver.utils.hexToNumberString(${1:'0x00000000'}),
+'KLAY',
+);

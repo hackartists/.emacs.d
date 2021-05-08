@@ -1,0 +1,7 @@
+# name: express-handler
+# key: exph
+# --
+
+router.get('${1:URL path}', async (req, res) => {
+$0
+});
