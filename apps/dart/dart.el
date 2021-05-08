@@ -12,6 +12,6 @@
   "key bindings in dart mode"
   (spacemacs/declare-prefix-for-mode 'dart-mode "f" "flutter")
   (spacemacs/set-leader-keys-for-major-mode 'dart-mode
-    "RET" 'flutter-hot-reload
-    "fr" 'flutter-run-or-hot-reload)
+    "RET" 'lsp-dart-dap--flutter-hot-reload
+    "SPC" 'flutter-run-or-hot-reload)
   )
