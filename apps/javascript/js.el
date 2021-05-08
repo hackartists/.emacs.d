@@ -92,8 +92,7 @@
   (add-hook 'js2-mode-hook (lambda () (required 'dap-node))))
 
 (defun hackartist/javascript/bindings ()
-  (add-hook 'js2-mode-hook (lambda ()
-                             (local-set-key (kbd "M-.") 'lsp-find-definition))))
+  )
 ;; (defun hackartist/javascript/config ( )
 ;;   ;; (setq xref-show-xrefs-function 'helm-xref-show-xrefs)
 ;;   ;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
