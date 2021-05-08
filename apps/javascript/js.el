@@ -88,7 +88,8 @@
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
-  (add-hook 'js2-mode-hook 'eslintd-fix-mode))
+  (add-hook 'js2-mode-hook 'eslintd-fix-mode)
+  (add-hook 'js2-mode-hook (lambda () (required 'dap-node))))
 
 (defun hackartist/javascript/bindings ()
   (add-hook 'js2-mode-hook (lambda ()
