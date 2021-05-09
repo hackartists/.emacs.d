@@ -9,11 +9,14 @@
 
 (defun hackartist/ide/bindings ()
   (spacemacs/declare-prefix "TAB" "Imenu")
+  (spacemacs/declare-prefix "'" "create a snippet")
   (spacemacs/set-leader-keys
     "`" 'ace-window
     "=" 'ace-window
     "'" 'hackartist/ide/switch-or-create-other-frame
     "." 'helm-hackartist-buffer
+    "'" 'helm-yas-create-snippet-on-region
+
     "RET" 'yas-insert-snippet
     "SPC" 'helm-mt
     "TAB" 'counsel-imenu

@@ -1,0 +1,4 @@
+# name: caver-address-to-checksum
+# --
+
+caver.utils.toChecksumAddress(${1:address})

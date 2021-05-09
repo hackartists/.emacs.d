@@ -1,0 +1,4 @@
+# name: kas-tutorial-address-to-user
+# --
+
+const ${1:address} = await conv.addressToUser(${2:user});

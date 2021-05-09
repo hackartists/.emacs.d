@@ -1,0 +1,13 @@
+# name: mongo-schema
+# --
+
+var mongoose = require('mongoose');
+
+const ${1:example}Schema = new mongoose.Schema({
+${2:name}: ${3:String},
+$0
+});
+
+const ${1:$(string-inflection-pascal-case-function yas-text)} = mongoose.model('${1:$(string-inflection-pascal-case-function yas-text)}', $1Schema);
+
+module.exports = ${1:$(string-inflection-pascal-case-function yas-text)};
