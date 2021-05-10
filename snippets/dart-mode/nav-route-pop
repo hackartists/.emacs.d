@@ -1,0 +1,4 @@
+#name : nav-route-pop
+#contributor : hackartist
+# --
+Navigator.of(context).pop();

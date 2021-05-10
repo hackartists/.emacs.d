@@ -1,0 +1,15 @@
+#name : text-field-input
+#key : text-field-input
+# --
+
+TextField(
+  onChanged: (value) {
+    setState(() {
+      $0
+    });
+  },
+  decoration: InputDecoration(
+    border: OutlineInputBorder(),
+    labelText: ${1:label},
+  ),
+),

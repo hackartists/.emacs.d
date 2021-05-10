@@ -1,11 +1,21 @@
-# name: navigation route 
+# name: nav-route-push
 # key: navr
 # --
 
 Navigator.of(context).push(
 MaterialPageRoute(
 builder: (context) {
-return ${1:Screen};
+return Scaffold(
+appBar: AppBar(
+title: Text(${1:title}),
+),
+floatingActionButton: FloatingActionButton(
+tooltip: ${2:label},
+onPressed: () {},
+child: Icon(Icons.search),
+),
+body: Container(),
+);
 },
 ),
 );
