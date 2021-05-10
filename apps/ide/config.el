@@ -59,6 +59,7 @@
   (require 'multi-eshell)
   (require 'helm-mt)
 
+  (setq user-full-name "hackartist")
   (setq completion-styles `(flex))
   (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
   (setq evil-want-fine-undo t)
