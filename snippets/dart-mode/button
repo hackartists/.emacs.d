@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+#name : button
+#key : button
+#contributor : 
+# --
+SizedBox(
+  height: 50,
+  width: double.infinity,
+  child: ElevatedButton.icon(
+    onPressed: () async {},
+    icon: Icon(Icons.send, size: 18),
+    label: Text(${1:label}),
+  ),
+),
