@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : str-to-time
+#key : str-to-time
+#contributor : hackartist
+# --
+time.Unix(${1:sec}, ${2:0})

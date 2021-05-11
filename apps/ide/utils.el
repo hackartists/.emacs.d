@@ -151,3 +151,7 @@ If XML, generate XML instead of HTML."
             (insert "\n"))
 	  (insert (make-string column ? )))
         (insert (format "</%s>" (dom-tag dom)))))))
+
+(defun term/append-string-to-file ()
+  (interactive)
+  (term-send-raw-string "rm -rf untitled.txt && touch untitled.txt && cat <<EOF >> untitled.txt"))
