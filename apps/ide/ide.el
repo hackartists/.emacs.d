@@ -21,6 +21,9 @@
   ;; 				      (when minibuffer-completion-table
   ;; 					(with-current-buffer "*Messages*"
   ;; 					  (print minibuffer-completion-table)))))
+  (helm-projectile-on)
+  (setq helm-hackartist-buffers-list (make-hackartist-helm-source (helm-make-source "Buffers" 'helm-source-buffers)))
+  (setq helm-hackartist-projectile-files-list (make-hackartist-helm-source helm-source-projectile-files-list))
 
   (setq shrface-toggle-bullets t)
   (shrface-basic)

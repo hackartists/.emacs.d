@@ -64,9 +64,6 @@
   (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
   (setq evil-want-fine-undo t)
 
-  (setq helm-hackartist-buffers-list (make-hackartist-helm-source (helm-make-source "Buffers" 'helm-source-buffers)))
-  (helm-projectile-on)
-  (setq helm-hackartist-projectile-files-list (make-hackartist-helm-source helm-source-projectile-files-list))
   ;; (setq helm-hackartist-recentf-list (helm-make-source "Recentf" 'helm-recentf-source :fuzzy-match helm-recentf-fuzzy-match))
 
   (if (eq system-type 'darwin)
