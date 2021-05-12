@@ -5,10 +5,10 @@
         protobuf
         multiple-cursors
         ;; (keyboard-layout :variables kl-layout 'dvp)
-        ivy
-        ;; (helm :variables
-        ;;       history-delete-duplicates t
-        ;;       history-length 10)
+        ;; ivy
+        (helm :variables
+              history-delete-duplicates t
+              history-length 10)
         (git :variables git-enable-magit-todos-plugin t)
         version-control
         (auto-completion :variables

@@ -44,7 +44,7 @@
 
 (defun hackartist//layer-init ()
   (setq
-   dotspacemacs-line-numbers 'visual
+   dotspacemacs-line-numbers 'relative
    ;;dotspacemacs-startup-banner nil
    dotspacemacs-enable-server t
    dotspacemacs-pretty-docs t
