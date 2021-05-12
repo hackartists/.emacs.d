@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : http-get
+#key : http-get
+#contributor : hackartist
+# --
+final response =
+        await http.get(Uri.http(endpoint, ${1:'/v1/path'}));
