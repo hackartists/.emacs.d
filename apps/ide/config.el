@@ -94,9 +94,9 @@
             (lambda ()
               (setq tab-width 4)))
 
-  (require 'projectile-git-autofetch)
-  (projectile-git-autofetch-mode 1)
-  (setq-default gac-automatically-push-p t)
+  ;; (require 'projectile-git-autofetch)
+  ;; (projectile-git-autofetch-mode 1)
+  ;; (setq-default gac-automatically-push-p t)
   ;; (prefer-coding-system 'utf-8)
   ;; (set-default-coding-systems 'utf-8)
   ;; (set-terminal-coding-system 'utf-8-unix)
