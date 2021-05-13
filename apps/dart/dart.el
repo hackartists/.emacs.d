@@ -3,8 +3,7 @@
         (dart :variables dart-backend 'lsp lsp-dart-sdk-dir "/opt/flutter/bin/cache/dart-sdk" lsp-enable-on-type-formatting t)
         ))
 
-(defun hackartist/dart/init ()
-  (add-hook 'dart-mode-hook 'hackartist/dart/before-save-hook))
+(defun hackartist/dart/init ())
 
 (defun hackartist/dart/bindings ()
   "key bindings in dart mode"
