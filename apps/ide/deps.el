@@ -97,7 +97,7 @@
         ;; magit
         ace-jump-helm-line
         auto-highlight-symbol
-        bazel-mode
+        bazel
         bookmark
         counsel
         direx
