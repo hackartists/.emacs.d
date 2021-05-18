@@ -24,6 +24,7 @@
     "bk" 'kill-this-buffer
     "bu" 'revert-buffer
 
+    "gn" 'github-notifier-visit-github
     "gB" 'magit-branch-and-checkout
     "gC" 'magit-branch-checkout
     "gF" 'magit-fetch-all
