@@ -141,6 +141,7 @@
         magit-todos
         helm-eww
 	      shrface
+        github-notifier
 	      ))
 
 (setq hackartist-ide-osc

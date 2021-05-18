@@ -28,6 +28,7 @@
   (setq shrface-toggle-bullets t)
   (shrface-basic)
   (shrface-trial)
+  (github-notifier-mode t)
   ;; (shrface-default-keybindings) ; setup default keybindings
   (setq shrface-href-versatile t))
 
