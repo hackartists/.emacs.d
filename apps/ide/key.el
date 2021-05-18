@@ -29,6 +29,8 @@
     "gC" 'magit-branch-checkout
     "gF" 'magit-fetch-all
 
+    "pF" 'projectile-find-file-other-window
+
     "wn" 'minimize-window
 
     "fO" 'hackartist/xdg-open
