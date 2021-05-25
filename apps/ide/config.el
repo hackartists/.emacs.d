@@ -132,7 +132,7 @@
                                         "build.gradle" ".ensime" "Gemfile" "requirements.txt"
                                         "setup.py" "tox.ini" "composer.json" "Cargo.toml"
                                         "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION"
-                                        "TAGS" "GTAGS" ".dropbox" ".projectile"))
+                                        "TAGS" "GTAGS" ".dropbox" ".projectile" "package.json"))
   ;; (setq flycheck-display-errors-function 'ide/display-bottom-window)
   ;; (setq mu4e-view-show-images t mu4e-view-show-addresses t mu4e-hide-index-messages t)
   ;; (transient-append-suffix 'magit-dispatch "F" '("o" "Fotingo" fotingo-dispatch))

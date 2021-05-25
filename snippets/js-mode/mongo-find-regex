@@ -1,9 +1,7 @@
 # name: mongo-find-regex
 # --
 
-var pattern = ${1:regex};
-
 const doc = await ${2:Example}.find(
-{ name: { $regex: `^${pattern}`, $options: 'i' } },
+{ name: { $regex: \`^\$\{pattern\}\`, $options: 'i' } },
 '${3:field1 fields2}',
 );
