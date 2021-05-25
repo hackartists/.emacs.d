@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+#name : docker-compose-template
+#key : docker-compose-template
+#contributor : hackartist
+# --
+
+version: "3"
+
+networks:
+  default:
+    external:
+      name: ${1:dev-net}
+
+services:

@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+#name : docker-compose-container
+#key : docker-compose-container
+#contributor : hackartist
+# --
+  ${1:app-id}:
+    image: ${2:ubuntu:latest}
+    container_name: $1
+    restart: always
+    environment:
+      ${3:ENV}: ${4:VAL}
+      $0
