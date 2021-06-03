@@ -8,6 +8,7 @@
 
 (setq spacemacs-start-directory "~/.emacs.d/spacemacs/")
 (load-file (concat spacemacs-start-directory "init.el"))
+(load-env-vars spacemacs-env-vars-file)
 (core/app/init-apps)
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets")
 (yas-reload-all)
