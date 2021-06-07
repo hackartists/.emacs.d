@@ -41,6 +41,8 @@
 
     "gt" 'helm-magit-todos
 
+    "rM" 'helm-global-mark-ring
+
     "sgp" 'counsel-git-grep)
 
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
