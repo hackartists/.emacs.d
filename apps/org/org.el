@@ -225,3 +225,6 @@
    (lambda (el)
      (when (string= (car el) key)
        (car (cdr el)))) vars ""))
+
+(defmacro ot (name field)
+  `(car (read (org-table-get-remote-range ,(symbol-name name) , (symbol-name field)))))
