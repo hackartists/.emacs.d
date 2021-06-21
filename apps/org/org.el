@@ -219,3 +219,9 @@
   (interactive)
   (require 'ov)
   (ov-clear 'image-url))
+
+(defun lookup-vars (key vars)
+  (mapconcat
+   (lambda (el)
+     (when (string= (car el) key)
+       (car (cdr el)))) vars ""))
