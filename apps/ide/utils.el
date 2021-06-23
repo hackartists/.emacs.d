@@ -155,3 +155,8 @@ If XML, generate XML instead of HTML."
 (defun term/append-string-to-file ()
   (interactive)
   (term-send-raw-string "rm -rf untitled.txt && touch untitled.txt && cat <<EOF >> untitled.txt"))
+
+(defun hackartist/scratch-buffer-only ()
+  (interactive)
+  (spacemacs/switch-to-scratch-buffer)
+  (delete-other-windows))
