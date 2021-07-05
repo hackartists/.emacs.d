@@ -43,7 +43,9 @@
 
     "rM" 'helm-global-mark-ring
 
-    "sgP" 'counsel-git-grep)
+    "sgP" 'counsel-git-grep
+
+    "xf RET" 'ox-clip-formatted-copy)
 
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
   (define-key evil-normal-state-map (kbd "-") 'text-scale-decrease)
