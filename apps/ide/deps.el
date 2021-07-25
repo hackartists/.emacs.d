@@ -155,4 +155,5 @@
         ;; "https://github.com/fgallina/mu4e-multi.git"
         "https://github.com/mack1070101/fotingo-emacs.git"
         "git@github.com:hackartists/org-api-mode.git"
+        "https://github.com/flashcode/impostman.git"
         ))

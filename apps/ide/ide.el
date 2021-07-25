@@ -8,6 +8,7 @@
   ;; (recentf-mode +1)
   ;; (global-git-gutter+-mode -1)
   ;; (global-auto-highlight-symbol-mode +1)
+  (require 'impostman)
   (setq auth-sources '("~/.authinfo"))
   (add-hook 'minibuffer-setup-hook
             (lambda ()

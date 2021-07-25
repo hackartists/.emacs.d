@@ -13,15 +13,17 @@ const (
 type ${1:EntityName} struct {
   entity.${3:Modeler} \`json:"-" dynamodbav:"-" redis:"-"\`
 
-  DocID string `dynamodbav:"doc_id,omitempty"`
-  Type string `dynamodbav:"type,omitempty"`
+  DocID string \`dynamodbav:"doc_id,omitempty"\`
+  Type string \`dynamodbav:"type,omitempty"\`
 
   $5
 }
 
-func New() *$1 {
-  ret := &$1{}
-  ret.Modeler = entity.$4(ret)
+func New(ctx deftype.Context) *$1 {
+  ret := &$1{
+     Type: DocType$1,
+  }
+  ret.Modeler = entity.$4(ctx,ret)
 
   return ret
 }
