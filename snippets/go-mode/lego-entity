@@ -11,7 +11,7 @@ const (
 
 // $1 ${2:...}
 type ${1:EntityName} struct {
-  entity.${3:Modeler} \`json:"-" dynamodbav:"-" redis:"-"\`
+entity.${3:Hybrid}Modeler \`json:"-" dynamodbav:"-" redis:"-"\`
 
   DocID string \`dynamodbav:"doc_id,omitempty"\`
   Type string \`dynamodbav:"type,omitempty"\`
@@ -23,7 +23,7 @@ func New(ctx deftype.Context) *$1 {
   ret := &$1{
      Type: DocType$1,
   }
-  ret.Modeler = entity.$4(ctx,ret)
+  ret.Modeler = entity.New$3Entity(ctx,ret)
 
   return ret
 }
