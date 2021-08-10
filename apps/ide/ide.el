@@ -14,8 +14,9 @@
             (lambda ()
               (if (string= current-input-method 'korean-hangul)
                   (apps/ide/toggle-input-method-custom)
-                (setq current-input-method nil)
-                )))
+                (setq current-input-method nil))))
+  (with-eval-after-load 'git-auto-commit-mode
+    (setq gac-automatically-push-p t))
   (add-hook 'image-mode-hook (lambda () (image-transform-fit-to-width)))
   ;;(advice-add 'windmove-do-window-select :after 'advice-after/windmove-do-window-select)
   ;; (add-hook 'minibuffer-setup-hook (lambda ()
