@@ -232,12 +232,13 @@
    ;; If you edit it by hand, you could mess it up, so be careful.
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
-   '(mode-line ((t (:background "#222226"
-                                :foreground "#b2b2b2"
-                                :box (:line-width 1 :color "#5d4d7a")))))
-   '(mode-line-inactive ((t (:background "gray42"
-                                         :foreground "#b2b2b2"
-                                         :box (:line-width 1 :color "#5d4d7a"))))))
+   '(font-lock-comment-face ((t (:background "color-236" :foreground "#2aa1ae" :slant normal))))
+   '(hl-line ((t (:inherit nil :extend t :background "color-235" :underline t))))
+   '(line-number ((t (:inherit default :background "color-237" :foreground "#44505c"))))
+   '(line-number-current-line ((t (:inherit line-number :background "color-235" :foreground "#b2b2b2"))))
+   '(mode-line ((t (:background "#222226" :foreground "#b2b2b2" :box (:line-width 1 :color "#5d4d7a")))))
+   '(mode-line-inactive ((t (:background "gray42" :foreground "#b2b2b2" :box (:line-width 1 :color "#5d4d7a"))))))
+
   ;; (add-hook 'text-mode-hook (lambda ()
   ;;                             (spacemacs/toggle-relative-line-numbers-on)))
 
