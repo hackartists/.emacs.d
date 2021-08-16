@@ -64,7 +64,7 @@
    doom-modeline-irc-buffers t
    doom-modeline-unicode-fallback t
    doom-modeline-vcs-max-length 30
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("D2Coding"
                                :size 14.0
                                :weight normal
                                :width normal)

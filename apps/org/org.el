@@ -60,6 +60,7 @@
     (hackartist/org/config/linux))
 
   (add-hook 'org-mode-hook 'toc-org-mode)
+  (add-hook 'org-mode-hook (lambda () (add-to-list 'company-backends 'company-ispell)))
   (add-to-list 'org-tag-alist '("TOC" . ?T))
   (require 'ob-api)
   (require 'ob-api-mode)
