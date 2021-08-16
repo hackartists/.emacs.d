@@ -89,6 +89,7 @@
   ;; (with-eval-after-load 'yasnippet
   ;;   (define-key yas-minor-mode-map [(tab)]       (yas-filtered-definition 'yas-next-field))
   ;;   (define-key yas-minor-mode-map (kbd "TAB")   (yas-filtered-definition 'yas-next-field)))
+  (ide/keyboard-dvorak)
   (with-eval-after-load 'helm
     (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebihnd tab to do persistent action
     ;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
@@ -108,3 +109,138 @@
     ;; (define-key helm-find-files-map (kbd "<backspace>") 'helm-find-files-up-one-level)
     (define-key helm-map (kbd "<left>") 'helm-previous-source)
     (define-key helm-map (kbd "<right>") 'helm-next-source)))
+
+(defun ide/keyboard-dvorak ()
+  ;; (advice-add 'hangul2-input-method-internal :override 'advice-override/hangul2-input-method-internal)
+  (advice-add 'hangul2-input-method :override 'advice-override/hangul2-input-method)
+  (kl/leader-correct-keys
+    "wh"
+    "wj"
+    "wk"
+    "wl"
+    ;;
+    "wH"
+    "wJ"
+    "wK"
+    "wL")
+  (with-eval-after-load 'magit
+    (evil-define-key 'normal magit-mode-map "h" 'evil-next-visual-line))
+  (with-eval-after-load 'quail
+    (push
+     (cons "dvorak"
+           (concat
+            "                              "
+            "`~1!2@3#4$5%6^7&8*9(0)[{]}    "   ; numbers
+            "  '\",<.>pPyYfFgGcCrRlL/?=+\\|  " ; qwerty
+            "  aAoOeEuUiIdDhHtTnNsS-_      "   ; asdf
+            "  ;:qQjJkKxXbBmMwWvVzZ        "   ; zxcv
+            "                              "))
+     quail-keyboard-layout-alist)
+
+    (quail-set-keyboard-layout "dvorak")))
+
+(defun advice-override/hangul2-input-method-internal (key)
+  (setq key (quail-keyboard-translate key))
+  (let ((char (+ (aref hangul2-keymap (1- (% key 32)))
+                 (cond ((or (= key ?O) (= key ?P)) 2)
+                       ((or (= key ?E) (= key ?Q) (= key ?R)
+                            (= key ?T) (= key ?W)) 1)
+                       (t 0)))))
+    (if (< char 31)
+        (hangul2-input-method-jaum char)
+      (hangul2-input-method-moum char))))
+
+(defun advice-override/hangul2-input-method (key)
+  "2-Bulsik input method."
+  (setq key (quail-keyboard-translate key))
+  (if (or buffer-read-only (not (alphabetp key)))
+      (list key)
+    (quail-setup-overlays nil)
+    (let ((input-method-function nil)
+          (echo-keystrokes 0)
+          (help-char nil))
+      (setq hangul-queue (make-vector 6 0))
+      (hangul2-input-method-internal key)
+      (unwind-protect
+          (catch 'exit-input-loop
+            (while t
+              (let* ((seq (read-key-sequence nil))
+                     (cmd (lookup-key hangul-im-keymap seq))
+                     key)
+                (cond
+                 ((and (stringp seq)
+                       (= 1 (length seq))
+                       (setq key (quail-keyboard-translate (aref seq 0)))
+                       (alphabetp key))
+                  (hangul2-input-method-internal key))
+                 ((commandp cmd)
+                  (call-interactively cmd))
+                 (t
+                  (setq unread-command-events
+                        (nconc (listify-key-sequence seq)
+                               unread-command-events))
+                  (throw 'exit-input-loop nil))))))
+        (quail-delete-overlays)))))
+
+
+(defun advice-override/hangul3-input-method (key)
+  "3-Bulsik final input method."
+  (setq key (quail-keyboard-translate key))
+  (if (or buffer-read-only (< key 33) (>= key 127))
+      (list key)
+    (quail-setup-overlays nil)
+    (let ((input-method-function nil)
+          (echo-keystrokes 0)
+          (help-char nil))
+      (setq hangul-queue (make-vector 6 0))
+      (hangul3-input-method-internal key)
+      (unwind-protect
+          (catch 'exit-input-loop
+            (while t
+              (let* ((seq (read-key-sequence nil))
+                     (cmd (lookup-key hangul-im-keymap seq))
+                     key)
+                (cond ((and (stringp seq)
+                            (= 1 (length seq))
+                            (setq key (quail-keyboard-translate (aref seq 0)))
+                            (and (>= key 33) (< key 127)))
+                       (hangul3-input-method-internal key))
+                      ((commandp cmd)
+                       (call-interactively cmd))
+                      (t
+                       (setq unread-command-events
+                             (nconc (listify-key-sequence seq)
+                                    unread-command-events))
+                       (throw 'exit-input-loop nil))))))
+        (quail-delete-overlays)))))
+
+(defun advice-override/hangul390-input-method (key)
+  "3-Bulsik 390 input method."
+  (setq key (quail-keyboard-translate key))
+  (if (or buffer-read-only (< key 33) (>= key 127))
+      (list key)
+    (quail-setup-overlays nil)
+    (let ((input-method-function nil)
+          (echo-keystrokes 0)
+          (help-char nil))
+      (setq hangul-queue (make-vector 6 0))
+      (hangul390-input-method-internal key)
+      (unwind-protect
+          (catch 'exit-input-loop
+            (while t
+              (let* ((seq (read-key-sequence nil))
+                     (cmd (lookup-key hangul-im-keymap seq))
+                     key)
+                (cond ((and (stringp seq)
+                            (= 1 (length seq))
+                            (setq key (quail-keyboard-translate (aref seq 0)))
+                            (and (>= key 33) (< key 127)))
+                       (hangul390-input-method-internal key))
+                      ((commandp cmd)
+                       (call-interactively cmd))
+                      (t
+                       (setq unread-command-events
+                             (nconc (listify-key-sequence seq)
+                                    unread-command-events))
+                       (throw 'exit-input-loop nil))))))
+        (quail-delete-overlays)))))
