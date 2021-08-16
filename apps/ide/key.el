@@ -125,6 +125,42 @@
     "wL")
   (with-eval-after-load 'magit
     (evil-define-key 'normal magit-mode-map "h" 'evil-next-visual-line))
+  (with-eval-after-load 'org
+    (spacemacs/set-leader-keys-for-major-mode 'org-mode
+      "Oc" 'org-toggle-checkbox
+      "Oe" 'org-toggle-pretty-entities
+      "Oi" 'org-toggle-inline-images
+      "On" 'org-num-mode
+      "Ol" 'org-toggle-link-display
+      "Ot" 'org-show-todo-tree
+      "OT" 'org-todo
+      "OV" 'space-doc-mode
+      "Ox" 'org-latex-preview
+
+      "N" 'org-shiftright
+      "D" 'org-shiftleft
+      "H" 'org-shiftdown
+      "T" 'org-shiftup
+
+      "sd" 'org-promote-subtree
+      "sh" 'org-move-subtree-down
+      "st" 'org-move-subtree-up
+      "sn" 'org-demote-subtree
+      "sj" 'org-cut-subtree
+      "sl" 'org-narrow-to-subtree
+
+      "tD" 'org-table-move-column-left
+      "tN" 'org-table-move-column-right
+      "tH" 'org-table-move-row-down
+      "tT" 'org-table-move-row-up
+      "tC" 'org-table-create-with-table.el
+      ;; "tj" 'org-table-next-row
+      ;; "th" 'org-table-previous-field
+      ;; "tl" 'org-table-next-field
+
+      "tn" 'org-table-create
+
+      ))
   (with-eval-after-load 'quail
     (push
      (cons "dvorak"
