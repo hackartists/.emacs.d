@@ -4,7 +4,7 @@
         eww
         protobuf
         multiple-cursors
-        (keyboard-layout :variables kl-layout 'dvp)
+        ;; (keyboard-layout :variables kl-layout 'dvp)
         ;; ivy
         (helm :variables
               history-delete-duplicates t
@@ -28,7 +28,7 @@
         (markdown :variables markdown-live-preview-engine 'vmd)
         confluence
         yaml
-        spell-checking
+        (spell-checking :variables enable-flyspell-auto-completion t)
         semantic shell
         ibuffer imenu-list
         nginx

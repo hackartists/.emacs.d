@@ -29,11 +29,11 @@
 
 (defun hackartist/org/init ()
   "initialization code"
-  ;; (add-hook 'org-mode-hook
-  ;;           (lambda ()
-  ;;             (git-auto-commit-mode 1)))
   (advice-add 'org-hugo-export-wim-to-md :before #'hackartist/ide/advice-before/org-hugo-export-wim-to-md)
   (advice-add 'org-hugo-export-wim-to-md :after #'hackartist/ide/advice-after/org-hugo-export-wim-to-md)
+  (with-eval-after-load 'company
+    (add-hook 'org-mode-hook (lambda () (add-to-list 'company-backends 'company-ispell))))
+
   (org-add-link-type
    "image-url"
    (lambda (path)
@@ -43,8 +43,7 @@
        (if (file-exists-p img)
            (find-file img)
          (url-copy-file path img)
-         (find-file img)))))
-  )
+         (find-file img))))))
 
 (defun hackartist/org/config/darwin ()
   (setq org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.11.0_1/libexec/ditaa-0.11.0-standalone.jar"))
@@ -59,8 +58,8 @@
       (hackartist/org/config/darwin)
     (hackartist/org/config/linux))
 
-  (add-hook 'org-mode-hook 'toc-org-mode)
-  (add-hook 'org-mode-hook (lambda () (add-to-list 'company-backends 'company-ispell)))
+  ;; (add-hook 'org-mode-hook 'toc-org-mode)
+  ;; (add-hook 'org-mode-hook (lambda () (add-to-list 'company-backends 'company-ispell)))
   (add-to-list 'org-tag-alist '("TOC" . ?T))
   (require 'ob-api)
   (require 'ob-api-mode)
