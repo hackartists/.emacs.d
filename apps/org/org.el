@@ -32,7 +32,7 @@
   (advice-add 'org-hugo-export-wim-to-md :before #'hackartist/ide/advice-before/org-hugo-export-wim-to-md)
   (advice-add 'org-hugo-export-wim-to-md :after #'hackartist/ide/advice-after/org-hugo-export-wim-to-md)
   (with-eval-after-load 'company
-    (add-hook 'org-mode-hook (lambda () (add-to-list 'company-backends 'company-ispell))))
+    (spacemacs|add-company-backends :backends company-ispell :modes org-mode))
 
   (org-add-link-type
    "image-url"
