@@ -86,6 +86,7 @@
   (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
   (add-to-list 'auto-mode-alist '("\\<BUILD\\'" . bazel-mode))
   (add-to-list 'auto-mode-alist '("\\<WORKSPACE\\'" . bazel-mode))
+  (add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-view-mode))
   ;; (spacemacs/toggle-visual-line-navigation-globally-on)
   ;; (add-hook 'gfm-mode-hook
   ;;           (lambda ()
