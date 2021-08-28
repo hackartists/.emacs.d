@@ -75,14 +75,14 @@
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
 
-  (setq prettier-js-args
-        '(
-          "--trailing-comma" "all"
-          "--bracket-spacing" "true"
-          "--tab-width" "4"
-          "--semi" "true"
-          "--single-quote" "true"
-          ))
+  ;; (setq prettier-js-args
+  ;;       '(
+  ;;         "--trailing-comma" "all"
+  ;;         "--bracket-spacing" "true"
+  ;;         "--tab-width" "4"
+  ;;         "--semi" "true"
+  ;;         "--single-quote" "true"
+  ;;         ))
   (with-eval-after-load 'web-mode
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))

@@ -142,6 +142,7 @@
         helm-eww
 	      shrface
         github-notifier
+        github-review
 	      ))
 
 (setq hackartist-ide-osc
