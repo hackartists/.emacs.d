@@ -28,7 +28,7 @@
         (markdown :variables markdown-live-preview-engine 'vmd)
         confluence
         yaml
-        (spell-checking :variables enable-flyspell-auto-completion t)
+        (spell-checking :variables enable-flyspell-auto-completion nil)
         semantic shell
         ibuffer imenu-list
         nginx
