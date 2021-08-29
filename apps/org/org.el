@@ -16,7 +16,10 @@
         helm-org
         ))
 
-(setq hackartist-org-osc '())
+(setq hackartist-org-osc
+      '(
+        "https://github.com/tecosaur/org-pandoc-import.git"
+        ))
 
 (defun hackartist/ide/advice-before/org-export-to-file (backend file &optional async subtreep visible-only body-only ext-plist post-process)
   (delete-file file))
@@ -33,7 +36,8 @@
   (advice-add 'org-hugo-export-wim-to-md :after #'hackartist/ide/advice-after/org-hugo-export-wim-to-md)
   (with-eval-after-load 'company
     (spacemacs|add-company-backends :backends company-ispell :modes org-mode))
-
+  (require 'org-pandoc-import)
+  (require 'org-pandoc-import-transient)
   (org-add-link-type
    "image-url"
    (lambda (path)
@@ -173,8 +177,22 @@
     ("h" outline-up-heading "go to parent heading")
     ("l" org-next-visible-heading "next visible heading")
     ("q" nil "quit" :color blue))
-  (spacemacs/set-leader-keys-for-minor-mode
-    'org-mode "." 'org-hydra/body)
+
+  (spacemacs/set-leader-keys-for-minor-mode 'org-mode
+    "." 'org-hydra/body)
+
+  (spacemacs/set-leader-keys
+    "ii RET" 'org-pandoc-import-as-org
+    "ii SPC" 'org-pandoc-import-to-org
+    "iim" 'org-pandoc-import-markdown-as-org
+    "iio" 'org-pandoc-import-odt-as-org
+    "iic" 'org-pandoc-import-csv-as-org
+    "iid" 'org-pandoc-import-docx-as-org
+    "iir" 'org-pandoc-import-rst-as-org
+    "iit" 'org-pandoc-import-tsv-as-org
+    "iil" 'org-pandoc-import-latex-as-org
+    "iip" 'org-pandoc-import-ipynb-as-org)
+
   (define-key org-mode-map (kbd "<M-return>") nil)
   (define-key org-mode-map (kbd "<M-S-up>") nil)
   (define-key org-mode-map (kbd "<M-S-down>") nil)
