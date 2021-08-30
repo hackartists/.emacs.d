@@ -143,6 +143,9 @@
 	      shrface
         github-notifier
         github-review
+        dictionary
+        helm-wordnet
+        helm-dictionary
 	      ))
 
 (setq hackartist-ide-osc
