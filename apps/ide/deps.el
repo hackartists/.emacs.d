@@ -26,7 +26,7 @@
         ;; unicode-fonts
         systemd
         (markdown :variables markdown-live-preview-engine 'vmd)
-        confluence
+        ;; confluence
         yaml
         (spell-checking :variables enable-flyspell-auto-completion nil)
         semantic shell
