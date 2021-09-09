@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: masked text
+# --
+[[`(read-string "Hidden text: ")`][****]]

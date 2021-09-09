@@ -37,3 +37,4 @@
 
 (defun advice-after/windmove-do-window-select (dir &optional arg window)
   (treemacs-display-current-project-exclusively))
+
