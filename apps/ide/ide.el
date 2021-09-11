@@ -34,7 +34,12 @@
   ;; (shrface-default-keybindings) ; setup default keybindings
   (setq shrface-href-versatile t))
 
-
 (defun advice-after/windmove-do-window-select (dir &optional arg window)
   (treemacs-display-current-project-exclusively))
 
+(advice-add 'emacs-lisp/post-init-company :override 'advice-override/emacs-lisp/post-init-company)
+(defun advice-override/emacs-lisp/post-init-company ()
+  (spacemacs|add-company-backends :backends company-elisp
+                                  :modes emacs-lisp-mode)
+  (spacemacs|add-company-backends :backends (company-files company-elisp)
+                                  :modes ielm-mode))
