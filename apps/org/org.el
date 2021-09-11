@@ -193,6 +193,7 @@
     "iil" 'org-pandoc-import-latex-as-org
     "iip" 'org-pandoc-import-ipynb-as-org)
 
+  (evil-define-key 'normal org-mode-map "." 'dictionary-lookup-definition)
   (define-key org-mode-map (kbd "<M-return>") nil)
   (define-key org-mode-map (kbd "<M-S-up>") nil)
   (define-key org-mode-map (kbd "<M-S-down>") nil)
