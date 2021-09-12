@@ -1,7 +1,7 @@
 (setq hackartist-org-layers
       '(
         (restclient :variables restclient-use-org t)
-        (org :variables org-enable-github-support t org-enable-bootstrap-support t org-projectile-file "TODOs.org" org-enable-hugo-support t org-enable-epub-support t  org-enable-reveal-js-support t org-enable-jira-support t org-enable-org-journal-support t))
+        (org :variables org-enable-github-support t org-enable-bootstrap-support t org-projectile-file "TODOs.org" org-enable-hugo-support t org-enable-epub-support t  org-enable-reveal-js-support t org-enable-jira-support t org-enable-org-journal-support t org-enable-org-brain-support t))
       )
 
 (setq org-src-lang-modes '())
@@ -61,6 +61,7 @@
   (if (eq system-type 'darwin)
       (hackartist/org/config/darwin)
     (hackartist/org/config/linux))
+  (setq org-brain-file-entries-use-title nil)
 
   ;; (add-hook 'org-mode-hook 'toc-org-mode)
   ;; (add-hook 'org-mode-hook (lambda () (add-to-list 'company-backends 'company-ispell)))
