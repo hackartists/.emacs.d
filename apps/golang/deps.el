@@ -8,4 +8,5 @@
 (setq hackartist-golang-packages
       '(govet gotest gorepl-mode go-stacktracer helm-go-package
               go-snippets go-projectile go-playground go-imports
-              go-imenu go-errcheck go-dlv go-direx go-add-tags))
+              go-imenu go-errcheck go-dlv go-direx go-add-tags
+              hover))
