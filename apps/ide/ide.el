@@ -28,6 +28,7 @@
   (setq helm-hackartist-projectile-files-list (make-hackartist-helm-source helm-source-projectile-files-list))
 
   (setq shrface-toggle-bullets t)
+  (savehist-mode -1)
   (shrface-basic)
   (shrface-trial)
   (github-notifier)

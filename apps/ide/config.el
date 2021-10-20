@@ -63,7 +63,7 @@
   (setq completion-styles `(flex))
   (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
   (setq evil-want-fine-undo t)
-
+  (setq auto-save-default nil)
   ;; (setq helm-hackartist-recentf-list (helm-make-source "Recentf" 'helm-recentf-source :fuzzy-match helm-recentf-fuzzy-match))
 
   (if (eq system-type 'darwin)
