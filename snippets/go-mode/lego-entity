@@ -4,7 +4,7 @@
 
 const (
       PartitionKey string = "doc_id"
-      SorkKey = "type"
+      SortKey = "type"
 
       DocType$1 = "$4"
 )
@@ -23,7 +23,7 @@ func New(ctx deftype.Context) *$1 {
   ret := &$1{
      Type: DocType$1,
   }
-  ret.Modeler = entity.New$3Entity(ctx,ret)
+  ret.$3Modeler = entity.New$3Entity(ctx,ret)
 
   return ret
 }
@@ -33,11 +33,11 @@ func (r *$1) Keys() []deftype.Key {
 }
 
 func (r *$1) Key() string {
-  return r.docID
+  return r.DocID
 }
 
 func (r *$1) SetKey(key string) {
-  r.docID = key
+  r.DocID = key
 }
 
 func (r *$1) IsFilled() bool {
