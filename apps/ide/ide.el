@@ -32,6 +32,7 @@
   (shrface-basic)
   (shrface-trial)
   (github-notifier)
+  (elcord-mode 1)
   ;; (shrface-default-keybindings) ; setup default keybindings
   (setq shrface-href-versatile t))
 

@@ -147,6 +147,7 @@
         dictionary
         helm-wordnet
         helm-dictionary
+        elcord
 	      ))
 
 (setq hackartist-ide-osc
@@ -161,4 +162,5 @@
         "https://github.com/mack1070101/fotingo-emacs.git"
         "git@github.com:hackartists/org-api-mode.git"
         "https://github.com/flashcode/impostman.git"
+        "https://gitgud.io/sakura-chan/discord-emacs-el.git"
         ))
