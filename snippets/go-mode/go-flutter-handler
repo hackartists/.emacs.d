@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : go-flutter-handler
+#key : go-flutter-handler
+#contributor : hackartist
+# --
+func ${1:HandlerName}(ctx context.Context, data interface{}) (interface{}, error) {
+  $0
+	return nil, nil
+}
