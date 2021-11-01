@@ -1,7 +1,7 @@
 (setq hackartist-org-layers
       '(
         (restclient :variables restclient-use-org t)
-        (org :variables org-enable-github-support t org-enable-bootstrap-support t org-projectile-file "TODOs.org" org-enable-hugo-support t org-enable-epub-support t  org-enable-reveal-js-support t org-enable-jira-support t org-enable-org-journal-support t org-enable-org-brain-support t))
+        (org :variables org-enable-github-support t org-enable-bootstrap-support t org-projectile-file "TODOs.org" org-enable-hugo-support t org-enable-epub-support t  org-enable-reveal-js-support t org-enable-jira-support t org-enable-org-journal-support t org-enable-org-brain-support t org-enable-appear-support t))
       )
 
 (setq org-src-lang-modes '())

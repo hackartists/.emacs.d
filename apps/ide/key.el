@@ -10,6 +10,7 @@
 (defun hackartist/ide/bindings ()
   (spacemacs/declare-prefix "TAB" "Imenu")
   (spacemacs/declare-prefix "'" "create a snippet")
+  (spacemacs/declare-prefix "gT" "tag")
   (spacemacs/set-leader-keys
     "`" 'ace-window
     "=" 'ace-window
@@ -24,10 +25,15 @@
     "bk" 'kill-this-buffer
     "bu" 'revert-buffer
 
+    "gd" 'helm-magit-todos
     "gn" 'github-notifier-visit-github
     "gB" 'magit-branch-and-checkout
     "gC" 'magit-branch-checkout
     "gF" 'magit-fetch-all
+    "gTc" 'magit-tag-create
+    "gTd" 'magit-tag-delete
+    "gTr" 'magit-tag-release
+    "gTp" 'magit-push-tag
 
     "pF" 'projectile-find-file-other-window
 
@@ -39,7 +45,6 @@
 
     "ss" 'helm-swoop
 
-    "gt" 'helm-magit-todos
 
     "rM" 'helm-global-mark-ring
 
