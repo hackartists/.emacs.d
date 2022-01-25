@@ -18,7 +18,9 @@
     (define-key exwm-mode-map (kbd "<escape>") 'evil-exwm-state)
     (define-key exwm-mode-map (kbd "i") 'evil-exwm-insert-state))
 
-;; (defun hackartist/ide/config ())
+(defun hackartist/ide/config ()
+  (setq mouse-autoselect-window t
+        focus-follows-mouse t))
 
 (defun setup-exwm ()
   (require 'exwm)
