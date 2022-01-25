@@ -57,7 +57,7 @@
    ;;                              (bookmarks . 5))
    dotspacemacs-startup-lists '((recents  . 5)
                                 (projects . 3)
-                                (todos . 3)
+                                (todos . 10)
                                 (bookmarks . 3))
 
    doom-modeline-github t
