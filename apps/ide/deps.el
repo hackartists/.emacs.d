@@ -11,6 +11,7 @@
               history-length 10)
         (git :variables git-enable-magit-todos-plugin t)
         version-control
+        github
         (auto-completion :variables
                          auto-completion-return-key-behavior nil
                          auto-completion-tab-key-behavior 'complete
@@ -91,6 +92,8 @@
         pdf
         copy-as-format
         plantuml
+        (lsp :variables lsp-ui-doc-enable nil lsp-ui-sideline-enable t lsp-auto-guess-root t)
+        (dap :variables dap-enable-ui-controls nil)
         ))
 
 (setq hackartist-ide-packages
