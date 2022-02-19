@@ -1,0 +1,32 @@
+# -*- mode: yaml-mode -*-
+# name: api-path
+# --
+
+${1:path}:
+  ${2:method}:
+    tags:
+      - ${3:tag}
+    summary: ${4:short description}
+    description: >-
+      ${5:API description in markdown}
+    operationId: ${6:operation name}
+    requestBody:
+      description: ${7:schema description}
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/${8}"
+      responses:
+        "200":
+          description: >-
+            ${9:response description}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/${10}"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+$0
