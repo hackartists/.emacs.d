@@ -95,6 +95,7 @@
   (add-hook 'sh-mode-hook
             (lambda ()
               (setq tab-width 4)))
+  (add-hook 'yaml-mode 'spacemacs/toggle-line-numbers-on)
 
   ;; (require 'projectile-git-autofetch)
   ;; (projectile-git-autofetch-mode 1)
@@ -142,6 +143,7 @@
                       :underline t
                       :inherit nil
                       :background nil)
+  (evil-avy-mode)
   ;; (with-eval-after-load 'git-gutter+
   ;;   (defun git-gutter+-remote-default-directory (dir file)
   ;;     (let* ((vec (tramp-dissect-file-name file))

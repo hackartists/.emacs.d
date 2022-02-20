@@ -81,6 +81,7 @@
 
   (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
   (add-hook 'plantuml-mode (lambda ()  (auto-complete-mode t)))
+  (add-hook 'org-mode 'spacemacs/toggle-line-numbers-on)
 
   (setq org-enable-github-support t
         org-enable-bootstrap-support t
