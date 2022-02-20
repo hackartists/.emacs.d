@@ -1,0 +1,12 @@
+# -*- mode: yaml-mode -*-
+# name: openapi3-endpoint
+# --
+
+${1:path}:
+  ${2:method}:
+    tags:
+      - ${3:tag}
+    summary: ${4:short description}
+    operationId: ${6:operation name}
+    description: >-
+      $0

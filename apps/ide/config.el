@@ -59,7 +59,6 @@
   (require 'multi-eshell)
   (require 'helm-mt)
 
-  (setq yas/indent-line nil)
   (setq user-full-name "hackartist")
   (setq completion-styles `(flex))
   (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
@@ -95,7 +94,11 @@
   (add-hook 'sh-mode-hook
             (lambda ()
               (setq tab-width 4)))
-  (add-hook 'yaml-mode 'spacemacs/toggle-line-numbers-on)
+  (add-hook 'yaml-mode-hook
+            (lambda ()
+              (yas-minor-mode 1)
+              (setq yas/indent-line nil)
+              (spacemacs/toggle-line-numbers-on)))
 
   ;; (require 'projectile-git-autofetch)
   ;; (projectile-git-autofetch-mode 1)
