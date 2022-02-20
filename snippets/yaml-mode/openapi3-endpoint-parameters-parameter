@@ -1,0 +1,15 @@
+# -*- mode: yaml-mode -*-
+# name: openapi3-endpoint-parameters-parameter
+# --
+
+      - name: ${1:parameter name}
+        in: ${2: query,header,form}
+        required: ${3:true,false}
+        schema:
+          type: ${4:string,integer}
+          enum: [$5]
+          default: $6
+          maximum: 1
+          minimum: 100
+        description: $0
+
