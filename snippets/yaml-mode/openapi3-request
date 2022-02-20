@@ -1,0 +1,11 @@
+# -*- mode: yaml-mode -*-
+# name: openapi3-request
+# --
+
+${1:request name}:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/${2:Request}"
+  description: $0
