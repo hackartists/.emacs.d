@@ -65,7 +65,7 @@
    doom-modeline-unicode-fallback t
    doom-modeline-vcs-max-length 30
    dotspacemacs-default-font '("D2Coding"
-                               :size 14.0
+                               :size 10.0
                                :weight normal
                                :width normal)
    dotspacemacs-emacs-command-key "X")

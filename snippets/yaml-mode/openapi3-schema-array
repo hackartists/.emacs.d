@@ -1,0 +1,9 @@
+# -*- mode: yaml-mode -*-
+# name: openapi3-schema-array
+# --
+
+${1:model name}:
+  type: array
+  description: ${2:description}
+  items:
+    $ref: '#/components/schemas/${3:ObjectModel}'

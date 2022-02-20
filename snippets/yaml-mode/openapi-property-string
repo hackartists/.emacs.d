@@ -1,0 +1,12 @@
+# -*- mode: yaml-mode -*-
+# name: openapi3-property-string
+# --
+
+${1:property name}:
+  type: string
+  format: ${2:email or so on}
+  enum:
+    - $3
+  default: $4
+  require: ${5:true,false}
+  description: $0

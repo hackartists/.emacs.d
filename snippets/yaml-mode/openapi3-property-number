@@ -1,0 +1,10 @@
+# -*- mode: yaml-mode -*-
+# name: openapi3-property-number
+# --
+
+${1:property name}:
+  type: integer
+  minimum: $2
+  maximum: $3
+  default: $4
+  require: ${5:true,false}

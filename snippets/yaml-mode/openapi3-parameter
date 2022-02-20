@@ -1,0 +1,15 @@
+# -*- mode: yaml-mode -*-
+# name: openapi3-parameter
+# --
+
+${1:parameter name}:
+  - name: ${2:parameter variable}
+    in: ${3:path,query,header,form}
+    required: ${4:true,false}
+    schema:
+      type: ${5:string,integer}
+      enum:
+        - $6
+      default: $7
+    description: $0
+
