@@ -1,0 +1,11 @@
+# -*- mode: yaml-mode -*-
+# name: openapi3-response
+# --
+
+${1:response name}Response:
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/${2:Model}"
+  description: >-
+    ${0:response description}

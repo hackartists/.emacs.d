@@ -1,0 +1,6 @@
+# -*- mode: yaml-mode -*-
+# name: openapi3-ref-response
+# --
+
+"${1:200,400,404,500,...}":
+  $ref: '#components/responses/${1:schema}'

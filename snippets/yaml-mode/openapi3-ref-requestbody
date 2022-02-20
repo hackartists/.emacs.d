@@ -1,0 +1,6 @@
+# -*- mode: yaml-mode -*-
+# name: openapi3-ref-requestbody
+# --
+
+requestBody:
+  $ref: '#components/requestBodies/${1:schema}'
