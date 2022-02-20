@@ -1,0 +1,5 @@
+# -*- mode: yaml-mode -*-
+# name: openapi3-ref-schema
+# --
+
+- $ref: '#components/schemas/${1:schema}'

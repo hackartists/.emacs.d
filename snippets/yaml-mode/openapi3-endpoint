@@ -8,5 +8,8 @@ ${1:path}:
       - ${3:tag}
     summary: ${4:short description}
     operationId: ${6:operation name}
+    parameters:
+    requestBody:
+    responses:
     description: >-
       $0
