@@ -3,4 +3,4 @@
 # --
 
 requestBody:
-  $ref: '#components/requestBodies/${1:schema}'
+  $ref: '#/components/requestBodies/${1:schema}'

@@ -2,4 +2,4 @@
 # name: openapi3-ref-parameter
 # --
 
-- $ref: '#components/parameters/${1:parameter schema}'
+- $ref: '#/components/parameters/${1:parameter schema}'

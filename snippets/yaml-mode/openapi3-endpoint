@@ -9,7 +9,6 @@ ${1:path}:
     summary: ${4:short description}
     operationId: ${6:operation name}
     parameters:
-    requestBody:
     responses:
     description: >-
       $0
