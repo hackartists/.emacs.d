@@ -146,7 +146,7 @@
                       :underline t
                       :inherit nil
                       :background nil)
-  (evil-avy-mode)
+  ;; (evil-avy-mode)
   ;; (with-eval-after-load 'git-gutter+
   ;;   (defun git-gutter+-remote-default-directory (dir file)
   ;;     (let* ((vec (tramp-dissect-file-name file))

@@ -151,7 +151,7 @@
         helm-wordnet
         helm-dictionary
         elcord
-        evil-avy
+        ;; evil-avy
 	      ))
 
 (setq hackartist-ide-osc
