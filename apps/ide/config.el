@@ -246,11 +246,9 @@
    '(mode-line ((t (:background "#222226" :foreground "#b2b2b2" :box (:line-width 1 :color "#5d4d7a")))))
    '(mode-line-inactive ((t (:background "gray42" :foreground "#b2b2b2" :box (:line-width 1 :color "#5d4d7a"))))))
 
-  ;; (add-hook 'text-mode-hook (lambda ()
-  ;;                             (spacemacs/toggle-relative-line-numbers-on)))
+  ;; (add-hook 'text-mode-hook (lambda () (spacemacs/toggle-relative-line-numbers-on)))
+  ;; (add-hook 'prog-mode-hook 'spacemacs/toggle-relative-line-numbers-on)
 
-  ;; (add-hook 'prog-mode-hook (lambda ()
-  ;;                             (spacemacs/toggle-relative-line-numbers-on)))
   (setq doom-modeline-buffer-file-name-style 'file-name)
   (setq calendar-month-name-array ["January" "February" "March" "April" "May"
                                    "June" "July" "August" "September" "October"

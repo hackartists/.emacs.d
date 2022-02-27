@@ -52,6 +52,10 @@
 
     "xf RET" 'ox-clip-formatted-copy)
 
+  (spacemacs/declare-prefix-for-mode 'term-mode "x" "text")
+  (spacemacs/set-leader-keys-for-minor-mode 'term-mode
+    "xo" 'browse-url-at-point)
+
   (evil-define-key 'motion dictionary-mode-map "." 'dictionary-lookup-definition)
   (evil-define-key 'motion dictionary-mode-map "," 'dictionary-previous)
 
