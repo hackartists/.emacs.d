@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: api-header
+# key: 
+# --
+
+#+name: local
+| Name  | Value | Description |
+|-------+-------+-------------|
+|       |       |             |
+
+#+name: headers
+| user-agent | emacs |
