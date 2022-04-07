@@ -11,7 +11,7 @@
               history-length 10)
         (git :variables git-enable-magit-todos-plugin t)
         version-control
-        github
+        ;; github
         (auto-completion :variables
                          auto-completion-return-key-behavior nil
                          auto-completion-tab-key-behavior 'complete
