@@ -8,7 +8,7 @@
 #+hugo_base_dir: `org-directory`/hugo/ 
 #+author: Hackartist
 #+title: ${1: title}
-#+startup: logdone
+#+startup: nologdone
 #+Property: header-args :eval never-export
 #+hugo_auto_set_lastmod: t
 
