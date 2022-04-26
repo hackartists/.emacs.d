@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: lego-request-default
+# key: 
+# --
+
+func (r *${1:receiver}) Default() error {
+$0
+
+return nil
+}
