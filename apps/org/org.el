@@ -77,7 +77,7 @@
                       :width 'normal)
   (org-babel-do-load-languages
    'org-babel-load-languages
-   `(,@org-babel-load-languages (plantuml . t) (ditaa . t) (api . t) (go . t)))
+   `(,@org-babel-load-languages (plantuml . t) (ditaa . t) (api . t) (go . t) (latex . t) (shell . t)))
 
   (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
   (add-hook 'plantuml-mode (lambda ()  (auto-complete-mode t)))
