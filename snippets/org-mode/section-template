@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: section-template
+# key: section,template
+# --
+
+* TODO ${1:title}
+:PROPERTIES:
+:EXPORT_FILE_NAME: ${2:filename}
+:EXPORT_HUGO_MENU: :menu ${3:main-menu} :parent ${4:parent-menu}
+:EXPORT_HUGO_MENU_OVERRIDE: :identifier $3-$4-$2
+:EXPORT_HUGO_SECTION: $3/$4
+:EXPORT_HUGO_TAGS: $3 $4 ${5:keywords}
+:EXPORT_HUGO_CATEGORIES: $3 $4 $5
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true :comments true :lead "${6: brief-description}"
+:EXPORT_HUGO_DRAFT: false
+:EXPORT_HUGO_WEIGHT: auto
+:EXPORT_DESCRIPTION: ${7:description}
+:EXPORT_DATE: `(format-time-string "[%Y-%m-%d %a %H:%M]")`
+:END:
+
+$0
