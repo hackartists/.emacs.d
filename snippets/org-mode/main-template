@@ -93,4 +93,7 @@
 #+hugo_base_dir: `org-directory`/hugo/ 
 #+hugo_auto_set_lastmod: t
 
+#+REVEAL_EXTRA_CSS: `(concat (getenv "devel") "/github.com/hackartists/notes")`/common/reveal.css
+#+REVEAL_THEME: league
+
 * ${5:section}
