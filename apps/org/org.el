@@ -123,6 +123,7 @@
                 (sqlite "sql")
                 (makefile "make")
                 (R "r")
+                (solidity "Solidity")
                 (js "JavaScript")))
         org-latex-listings-options
         (quote (("aboveskip" "0.2\\baselineskip")
