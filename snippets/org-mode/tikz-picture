@@ -3,7 +3,7 @@
 # key: 
 # --
 
-#+begin_src latex :file images/${1:file-path} :results file graphics :headers '("\\usepackage{tikz}") :fit yes :imagemagick yes 
+#+begin_src latex :file images/${1:file-path} :results file graphics :headers '("\\usepackage{tikz}" "\\usepackage{kotex}") :fit yes :imagemagick yes :imoutoptions -geometry 800 :iminoptions -density 600
 \begin{tikzpicture}
 $0
 \end{tikzpicture} 
