@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
 # name: hugo-section-template
-# key: hugo,section,template
 # --
 
 * TODO ${1:title}

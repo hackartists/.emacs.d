@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: main-template
-# key: main,template
+# key: #org-tpl-main
 # --
 
 #+TITLE:     ${1:title}

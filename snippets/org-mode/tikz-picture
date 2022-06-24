@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
 # name: tikz-picture
-# key: 
 # --
 
 #+begin_src latex :file images/${1:file-path} :results file graphics :headers '("\\\\usepackage{tikz}" "\\\\usepackage{kotex}") :fit yes :imagemagick yes :imoutoptions -geometry 1920 :iminoptions -density 600 :exports results

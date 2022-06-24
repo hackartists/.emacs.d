@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: latex-template
-# key: l-tpl
+# key: #org-tpl-latex
 # --
 
 #+AUTHOR:    Jongseok Choi
