@@ -1,6 +1,6 @@
 (setq hackartist-javascript-layers
       '(
-        (javascript :variables javascript-import-tool 'import-js javascript-backend 'lsp javascript-repl `nodejs js-indent-level 4 js2-basic-offset 4 javascript-fmt-on-save t javascript-fmt-tool 'prettier node-add-modules-path t)
+        (javascript :variables javascript-import-tool 'import-js javascript-backend 'lsp javascript-repl `nodejs js-indent-level 2 js2-basic-offset 2 javascript-fmt-on-save nil javascript-fmt-tool 'prettier node-add-modules-path t)
         (json :variables json-fmt-tool 'prettier json-fmt-on-save t)
         ess
         import-js
