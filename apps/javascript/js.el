@@ -64,7 +64,10 @@
 
 (defun hackartist/javascript/init ()
   ;; (add-hook 'js2-mode-hook 'hackartist/javascript/dap-react-native-init)
-  (setq lsp-eslint-auto-fix-on-save t)
+  (add-hook 'rjsx-mode-hook
+            (lambda
+              (add-hook 'before-save-hook 'lsp-eslint-apply-all-fixes)
+              (setq lsp-eslint-auto-fix-on-save t)))
   )
 
 (defun hackartist/javascript/config ()
