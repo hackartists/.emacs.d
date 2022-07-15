@@ -20,8 +20,7 @@
 #+PROPERTY: header-args :eval never-export
 #+startup: beamer
 #+BEAMER_CLASS: beamer
-#+BEAMER_CLASS_OPTIONS: [t,10pt]
-#+BEAMER_CLASS_OPTIONS: [aspectratio=169]
+#+LATEX_CLASS_OPTIONS: [t,9pt,aspectratio=169]
 
 #+LATEX_CLASS: article
 #+LATEX_CLASS_OPTIONS: [a4paper,11pt,twoside,twocolumn]
