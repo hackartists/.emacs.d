@@ -152,6 +152,8 @@
         helm-dictionary
         elcord
         ;; evil-avy
+        mermaid-mode
+        ob-mermaid
 	      ))
 
 (setq hackartist-ide-osc

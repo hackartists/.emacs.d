@@ -70,6 +70,7 @@
   (require 'ob-api-mode)
   (require 'ob-async)
   (require 'ob-go)
+  (require 'ob-mermaid)
 
   (set-face-attribute 'org-table nil
                       :family "D2Coding"
