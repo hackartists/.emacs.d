@@ -54,7 +54,7 @@
 #+LATEX_HEADER: \usepackage{graphicx}
 #+LATEX_HEADER: \usepackage{mathtools}
 #+LATEX_HEADER: \usepackage{longtable}
-#+LATEX_HEADER: \usepackage[acronym]{glossaries}
+#+LATEX_HEADER: \usepackage[acronym,nomain]{glossaries}
 #+LATEX_HEADER: \usepackage[font=small,skip=0pt]{caption}
 #+LATEX_HEADER: \usepackage{xcolor}
 #+LATEX_HEADER: \usepackage{color}
@@ -63,6 +63,7 @@
 #+LATEX_HEADER: \usepackage{lmodern}
 #+LATEX_HEADER: \usepackage{blindtext}
 #+LATEX_HEADER: \input{`org-directory`/common/lang.tex}
+#+LATEX_HEADER: \input{`org-directory`/common/abb.tex}
 
 #+BEAMER_HEADER: \setbeamercolor{footline}{fg=blue}
 #+BEAMER_HEADER: \setbeamerfont{footline}{series=\bfseries}
@@ -82,6 +83,7 @@
 #+BEAMER_HEADER: }
 #+BEAMER_HEADER: \hypersetup{colorlinks=true, linkcolor=blue}
 #+BEAMER: \setbeamercovered{transparent=30}
+#+LATEX_HEADER: \makeglossaries
 
 #+BEAMER: \begin{frame}<beamer>\frametitle{Table of Contents}\begin{columns}[t]
 #+BEAMER: \begin{column}{.5\textwidth}\tableofcontents[sections={1-3}]\end{column}
@@ -95,3 +97,6 @@
 #+REVEAL_THEME: league
 
 * ${5:section}
+
+#+latex: \pagebreak
+#+latex: \printglossaries
