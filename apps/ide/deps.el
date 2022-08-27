@@ -30,7 +30,8 @@
         ;; confluence
         yaml
         (spell-checking :variables enable-flyspell-auto-completion nil)
-        semantic shell
+        ;; semantic
+        shell
         ibuffer imenu-list
         nginx
         syntax-checking
