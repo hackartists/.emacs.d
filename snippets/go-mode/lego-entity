@@ -13,8 +13,9 @@ const (
 type ${1:EntityName} struct {
 entity.${3:Hybrid}Modeler \`json:"-" dynamodbav:"-" redis:"-"\`
 
-  DocID string \`dynamodbav:"doc_id,omitempty"\`
-  Type string \`dynamodbav:"type,omitempty"\`
+  DocID string \`dynamodbav:"doc_id"\`
+  Type string \`dynamodbav:"type"\`
+  CreatedAt string \`dynamodbav:"created_at"\`
 
   $5
 }
@@ -41,5 +42,5 @@ func (r *$1) SetKey(key string) {
 }
 
 func (r *$1) IsFilled() bool {
-  return r.DocID != ""
+  return r.DocID != "" && r.CreatedAt != 0
 }
