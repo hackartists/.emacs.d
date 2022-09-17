@@ -15,7 +15,7 @@ entity.${3:Hybrid}Modeler \`json:"-" dynamodbav:"-" redis:"-"\`
 
   DocID string \`dynamodbav:"doc_id"\`
   Type string \`dynamodbav:"type"\`
-  CreatedAt string \`dynamodbav:"created_at"\`
+  CreatedAt int64 \`dynamodbav:"created_at"\`
 
   $5
 }
