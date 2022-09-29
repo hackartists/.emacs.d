@@ -1,4 +1,4 @@
-# name: lego-entity
+# name: lego-http-entity
 # key: entity
 # --
 
@@ -17,19 +17,28 @@ entity.${3:Hybrid}Modeler \`json:"-" dynamodbav:"-" redis:"-"\`
   Type string \`dynamodbav:"type"\`
   CreatedAt int64 \`dynamodbav:"created_at"\`
 
+limiter rateLimiter
+ctx     deftype.Context
   index string \`dynamodbav:"-"\`
 //  tableName string \`dynamodbav:"-"\`
 
   $5
 }
 
-func New(ctx deftype.Context) *$1 {
+func New(ctx deftype.Context, limiter rateLimiter) *$1 {
   ret := &$1{
      Type: DocType$1,
+		 limiter: limiter,
+		 ctx:     ctx,
+
   }
-  ret.$3Modeler = entity.New$3Entity(ctx,ret)
+  ret.$3Modeler = entity.New$3HTTPEntity(ctx,ret,entity.NewHTTPOption(http.MethodGet, "", ret.handle))
 
   return ret
+}
+
+func (r *$1) handle() (func(), error) {
+return r.limiter.Take(r.ctx, 0)
 }
 
 func (r *$1) Keys() []deftype.Key {
