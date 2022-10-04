@@ -9,6 +9,10 @@ const (
       DocType$1 = "$4"
 )
 
+type rateLimiter interface {
+Take(ctx context.Context, weight int64) (func(), error)
+}
+
 // $1 ${2:...}
 type ${1:EntityName} struct {
 entity.${3:Hybrid}Modeler \`json:"-" dynamodbav:"-" redis:"-"\`
