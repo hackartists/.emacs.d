@@ -1,0 +1,25 @@
+# -*- mode: snippet -*-
+# name: biyard-platform-controller
+# key: 
+# --
+
+import Controller from '../../controller'
+import logger from '../../../config/logger'
+
+export default class ${1:Name}Controller extends Controller {
+  constructor() {
+    super()
+
+    super.get('/hello', this.hello)
+    super.get('/hi/:id', this.hello)
+  }
+
+  hello(req: { id: string }): { message: string } {
+    logger.info(JSON.stringify(req))
+
+    return {
+      message: "hello",
+      ...req,
+    }
+  }
+}
