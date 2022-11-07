@@ -1,0 +1,117 @@
+# -*- mode: snippet -*-
+# name: main-template-for-api
+# key: #org-tpl-main-api
+# --
+
+#+TITLE:     ${1:title}
+#+AUTHOR:    ${2:Jongseok Choi}
+#+EMAIL:     ${3:hackartists@gmail.com}
+
+#+DESCRIPTION: 
+#+KEYWORDS: ${4:keywords}
+#+LANGUAGE:  en
+#+OPTIONS:   num:t toc:nil ::t |:t ^:{} -:t f:t *:t <:t
+#+OPTIONS:   tex:t d:nil todo:t pri:nil tags:nil
+#+OPTIONS:   timestamp:t
+
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+
+#+PROPERTY: header-args :eval never-export
+#+startup: beamer
+#+BEAMER_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [t,9pt,aspectratio=169]
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,11pt,twoside,twocolumn]
+
+#+COLUMNS: %20ITEM %13BEAMER_env(Env) %6BEAMER_envargs(Args) %4BEAMER_col(Col) %7BEAMER_extra(Extra)
+
+#+OPTIONS: H:3
+#+BEAMER_THEME: Darmstadt
+#+BEAMER_OUTER_THEME: miniframes [subsection=false]
+
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage{kotex}
+#+LATEX_HEADER: \usepackage{rotating}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{amssymb,amsmath}
+#+LATEX_HEADER: \usepackage{amsthm}
+#+LATEX_HEADER: \usepackage{algorithmic}
+#+LATEX_HEADER: \usepackage[ruled,linesnumbered]{algorithm2e}
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \usepackage[titletoc]{appendix}
+#+LATEX_HEADER: \usepackage{rotating}
+#+LATEX_HEADER: \usepackage{multirow}
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \usepackage{supertabular}
+#+LATEX_HEADER: \usepackage{dcolumn}
+#+LATEX_HEADER: \usepackage{adjustbox}
+#+LATEX_HEADER: \usepackage{epsfig}
+#+LATEX_HEADER: \usepackage{subfigure}
+#+LATEX_HEADER: \usepackage{acronym}
+#+LATEX_HEADER: \usepackage{url}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{mathtools}
+#+LATEX_HEADER: \usepackage{longtable}
+#+LATEX_HEADER: \usepackage[acronym,nomain]{glossaries}
+#+LATEX_HEADER: \usepackage[font=small,skip=0pt]{caption}
+#+LATEX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \usepackage{color}
+#+LATEX_HEADER: \usepackage{colortbl}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usepackage{lmodern}
+#+LATEX_HEADER: \usepackage{blindtext}
+#+LATEX_HEADER: \input{`org-directory`/common/lang.tex}
+#+LATEX_HEADER: \input{`org-directory`/common/abb.tex}
+
+#+BEAMER_HEADER: \setbeamercolor{footline}{fg=blue}
+#+BEAMER_HEADER: \setbeamerfont{footline}{series=\bfseries}
+#+BEAMER_HEADER: \addtobeamertemplate{navigation symbols}{}{%
+#+BEAMER_HEADER:     \usebeamerfont{footline}%
+#+BEAMER_HEADER:     \usebeamercolor[fg]{footline}%
+#+BEAMER_HEADER:     \hspace{1em}%
+#+BEAMER_HEADER:     \insertframenumber/\inserttotalframenumber
+#+BEAMER_HEADER: }
+
+#+BEAMER_HEADER: \AtBeginSection[]{
+#+BEAMER_HEADER: \begin{frame}<beamer>\frametitle{Table of Contents}\begin{columns}[t]
+#+BEAMER_HEADER: \begin{column}{.5\textwidth}\tableofcontents[currentsection,sections={1-3}]\end{column}
+#+BEAMER_HEADER: \begin{column}{.5\textwidth}\tableofcontents[currentsection,sections={4-7}]\end{column}
+#+BEAMER_HEADER: \end{columns}\end{frame}
+#+BEAMER_HEADER: \subsection{}
+#+BEAMER_HEADER: }
+#+BEAMER_HEADER: \hypersetup{colorlinks=true, linkcolor=blue}
+#+BEAMER: \setbeamercovered{transparent=30}
+#+LATEX_HEADER: \makeglossaries
+
+#+BEAMER: \begin{frame}<beamer>\frametitle{Table of Contents}\begin{columns}[t]
+#+BEAMER: \begin{column}{.5\textwidth}\tableofcontents[sections={1-3}]\end{column}
+#+BEAMER: \begin{column}{.5\textwidth}\tableofcontents[sections={4-7}]\end{column}
+#+BEAMER: \end{columns}\end{frame}
+
+#+hugo_base_dir: `org-directory`/hugo/ 
+#+hugo_auto_set_lastmod: t
+
+#+REVEAL_EXTRA_CSS: `org-directory`/common/reveal.css
+#+REVEAL_THEME: league
+
+#+name: local
+| Name       | Value                 | Description |
+|------------+-----------------------+-------------|
+| -          | -                     |             |
+| host       | http://localhost:3001 |             |
+| token      | xxx                   |             |
+
+#+name: headers
+| authorization | \$\{token\} |
+| content-type | application/json |
+
+
+* ${5:section} API
+:PROPERTIES:
+:header-args: :var env=local :baseurl \$\{host\} :headers headers
+:END:
+
+#+latex: \pagebreak
+#+latex: \printglossaries

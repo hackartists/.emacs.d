@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: biyard-platform-model
+# key: 
+# --
+
+import { createModel } from '@platform/apps/model';
+
+interface I${1:Name}Model {
+    name: string
+}
+
+export const $1Model = createModel<I$1Model>(
+    '$1',
+    {
+        name: {
+            type: String,
+            required: true,
+            unique: true,
+        },
+    }
+)
