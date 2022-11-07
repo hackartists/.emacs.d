@@ -10,10 +10,10 @@
 (advice-add 'spacemacs-buffer//insert-version :after #'hackartist//restore)
 (advice-add 'spacemacs/init :before #'hackartist//init)
 
-(add-hook 'focus-out-hook (lambda ()
-			    (interactive)
-			    (save-some-buffers t )
-			    ))
+;; (add-hook 'focus-out-hook (lambda ()
+;; 			    (interactive)
+;; 			    (save-some-buffers t )
+;; 			    ))
 
 ;; (add-hook 'configuration-layer-pre-load-hook
 ;;           (lambda ()

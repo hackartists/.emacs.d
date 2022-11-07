@@ -48,12 +48,12 @@
      ,@body
      (float-time (time-since time))))
 
-(defvar hackartist/ide/gc-timer (run-with-idle-timer 600
-                                                     t
-                                                     (lambda ()
-                                                       (message "Garbage Collector has run for %.06fsec"
-                                                                (k-time (garbage-collect)))))
-  "Timer for `hackartist/ide/gc-timer' to reschedule itself, or nil.")
+;; (defvar hackartist/ide/gc-timer (run-with-idle-timer 600
+;;                                                      t
+;;                                                      (lambda ()
+;;                                                        (message "Garbage Collector has run for %.06fsec"
+;;                                                                 (k-time (garbage-collect)))))
+;;   "Timer for `hackartist/ide/gc-timer' to reschedule itself, or nil.")
 
 (defun hackartist/ide/config ()
   (require 'multi-eshell)
