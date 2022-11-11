@@ -82,7 +82,7 @@
 #+BEAMER_HEADER: \end{columns}\end{frame}
 #+BEAMER_HEADER: \subsection{}
 #+BEAMER_HEADER: }
-#+BEAMER_HEADER: \hypersetup{colorlinks=true, linkcolor=blue}
+#+BEAMER_HEADER: \hypersetup{colorlinks=false}
 #+BEAMER: \setbeamercovered{transparent=30}
 #+LATEX_HEADER: \makeglossaries
 
