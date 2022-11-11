@@ -43,11 +43,6 @@
                                                                  :modes org-mode)) 
   (require 'org-pandoc-import) 
   (require 'org-pandoc-import-transient) 
-  (use-package lsp-grammarly
-    :ensure t
-    :hook (org-mode . (lambda ()
-                         (require 'lsp-grammarly)
-                         (lsp)))) 
   (org-add-link-type "image-url" (lambda (path) 
                                    (let ((img (expand-file-name (concat (md5 path) "."
                                                                         (file-name-extension path))
@@ -93,6 +88,10 @@
   (add-hook 'plantuml-mode (lambda () 
                              (auto-complete-mode t))) 
   (add-hook 'org-mode 'spacemacs/toggle-line-numbers-on) 
+  (add-hook 'org-mode 'spacemacs/toggle-truncate-lines-on) 
+  (add-hook 'org-mode (lambda ()
+                        (require 'lsp-grammarly)
+                        (lsp)))
   (setq org-enable-github-support t org-enable-bootstrap-support t org-enable-bootstrap-support t
         org-projectile-file "TODOs.org" org-image-actual-width t org-plantuml-exec-mode 'jar
         plantuml-exec-mode 'jar plantuml-jar-path (expand-file-name "~/plantuml.jar")

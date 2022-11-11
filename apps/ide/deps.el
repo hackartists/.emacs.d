@@ -155,6 +155,7 @@
         ;; evil-avy
         mermaid-mode
         ob-mermaid
+        lsp-grammarly
 	      ))
 
 (setq hackartist-ide-osc
