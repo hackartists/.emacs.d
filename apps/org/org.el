@@ -43,6 +43,11 @@
                                                                  :modes org-mode)) 
   (require 'org-pandoc-import) 
   (require 'org-pandoc-import-transient) 
+  (use-package lsp-grammarly
+    :ensure t
+    :hook (org-mode . (lambda ()
+                         (require 'lsp-grammarly)
+                         (lsp)))) 
   (org-add-link-type "image-url" (lambda (path) 
                                    (let ((img (expand-file-name (concat (md5 path) "."
                                                                         (file-name-extension path))

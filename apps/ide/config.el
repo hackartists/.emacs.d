@@ -123,7 +123,7 @@
   (setq company-idle-delay 0)
   (setq company-require-match nil)
   (setq company-lsp-cache-candidates t)
-  (setq helm-multi-swoop-edit-save t)
+  (setq helm-multi-swoop-edit-save nil)
   (setq helm-swoop-split-with-multiple-windows t)
   (setq helm-swoop-split-direction 'split-window-vertically)
   (setq helm-swoop-speed-or-color t)
