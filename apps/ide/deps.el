@@ -95,7 +95,6 @@
         plantuml
         (lsp :variables lsp-ui-doc-enable nil lsp-ui-sideline-enable t lsp-auto-guess-root t)
         (dap :variables dap-enable-ui-controls nil)
-        code-review
         ))
 
 (setq hackartist-ide-packages
@@ -157,6 +156,7 @@
         mermaid-mode
         ob-mermaid
         lsp-grammarly
+        code-review
 	      ))
 
 (setq hackartist-ide-osc

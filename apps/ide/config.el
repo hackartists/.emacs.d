@@ -100,6 +100,12 @@
               (setq yas/indent-line nil)
               (spacemacs/toggle-line-numbers-on)))
 
+  ;; code review configuration
+  ;; (add-hook 'code-review-mode-hook #'emojify-mode)
+  (setq code-review-auth-login-marker 'forge
+        code-review-new-buffer-window-strategy #'switch-to-buffer
+        code-review-fill-column 80)
+
   ;; (require 'projectile-git-autofetch)
   ;; (projectile-git-autofetch-mode 1)
   ;; (setq-default gac-automatically-push-p t)
