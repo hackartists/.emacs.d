@@ -5,7 +5,7 @@
 
 import { createModel } from '@platform/apps/model';
 
-interface I${1:Name}Model {
+export interface I${1:Name}Model {
     name: string
 }
 
