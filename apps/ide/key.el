@@ -102,6 +102,10 @@
   ;;   (define-key yas-minor-mode-map [(tab)]       (yas-filtered-definition 'yas-next-field))
   ;;   (define-key yas-minor-mode-map (kbd "TAB")   (yas-filtered-definition 'yas-next-field)))
   ;; (ide/keyboard-dvorak)
+
+  (with-eval-after-load 'magit
+    (define-key magit-status-mode-map (kbd "<tab>") 'code-review-forge-pr-at-point))
+
   (with-eval-after-load 'helm
     (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebihnd tab to do persistent action
     ;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
@@ -136,6 +140,7 @@
     "wK"
     "wL")
   (with-eval-after-load 'magit
+    (define-key magit-status-mode-map (kbd "<tab>") 'code-review-forge-pr-at-point)
     (evil-define-key 'normal magit-mode-map "h" 'evil-next-visual-line))
   (with-eval-after-load 'org
     (spacemacs/set-leader-keys-for-major-mode 'org-mode
