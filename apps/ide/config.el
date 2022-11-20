@@ -121,7 +121,7 @@
             (function (lambda ()
                         (set-buffer-process-coding-system 'utf-8-unix
                                                           'utf-8-unix))))
-  (add-hook 'eww-after-render-hook #'shrface-mode)
+  ;; (add-hook 'eww-after-render-hook #'shrface-mode)
   (global-set-key (kbd "RET") 'newline-and-indent)
   ;; (global-set-key "\C-x\ \C-r" 'recentf-open-files)
   (setq custom-safe-themes t)
@@ -217,6 +217,10 @@
   (add-hook 'shell-mode-hook
             (lambda ()
               (company-mode -1)))
+  (add-hook 'gfm-mode (lambda ()
+                        (require 'lsp-grammarly)
+                        (lsp)))
+
   ;; (customize-set-variable 'helm-ff-lynx-style-map t)
   ;; (customize-set-variable 'helm-imenu-lynx-style-map t)
   ;; (customize-set-variable 'helm-semantic-lynx-style-map t)
