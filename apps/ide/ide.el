@@ -47,10 +47,14 @@
                                                                    (gofmt-before-save)))))))
 
   ;; (shrface-default-keybindings) ; setup default keybindings
+  (advice-add 'forge-visit-pullreq :override 'advice-override/forge-visit-pullreq)
   (setq shrface-href-versatile t))
 
 (defun advice-after/windmove-do-window-select (dir &optional arg window) 
   (treemacs-display-current-project-exclusively))
+
+(defun advice-override/forge-visit-pullreq (pullreq)
+  (code-review-forge-pr-at-point))
 
 (advice-add 'emacs-lisp/post-init-company 
             :override 'advice-override/emacs-lisp/post-init-company)
