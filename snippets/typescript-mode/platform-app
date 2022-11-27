@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: biyard-platform-app
+# name: platform-app
 # key: 
 # --
 import App from '../app';

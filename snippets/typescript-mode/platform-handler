@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: platform-handler
+# key: 
+# --
+
+${1:Operation} = async (req: $1Request): Promise<$1Response> => {
+$0
+};
