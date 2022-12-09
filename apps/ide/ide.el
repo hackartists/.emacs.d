@@ -63,3 +63,5 @@
                                   :modes emacs-lisp-mode) 
   (spacemacs|add-company-backends :backends (company-files company-elisp) 
                                   :modes ielm-mode))
+
+(defun hackartist-insert-end (text) (goto-char (point-max)) (inser text))
