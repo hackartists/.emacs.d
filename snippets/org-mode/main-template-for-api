@@ -97,7 +97,7 @@
 #+REVEAL_EXTRA_CSS: `org-directory`/common/reveal.css
 #+REVEAL_THEME: league
 
-#+name: local
+#+name: current
 | Name       | Value                 | Description |
 |------------+-----------------------+-------------|
 | -          | -                     |             |
@@ -111,7 +111,7 @@
 
 * ${5:section} API
 :PROPERTIES:
-:header-args: :var env=local :baseurl \$\{host\} :headers headers
+:header-args: :var env=current :baseurl \$\{host\} :headers headers
 :END:
 
 #+latex: \pagebreak

@@ -4,10 +4,18 @@
 # --
 import App from '../app';
 
-export default class ${1:Name}App extends App {
+export class ${1:Name}App extends App {
   constructor() {
     super('$1 App');
 
     // super.use('/v1', new Controller());
   }
+}
+
+export class $1InternaApp extends App {
+constructor() {
+super('$1 Internal App');
+
+// super.use('/m1', new Controller());
+}
 }
