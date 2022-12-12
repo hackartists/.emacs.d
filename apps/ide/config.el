@@ -244,16 +244,20 @@
   ;;  helm-semantic-lynx-style-map t
   ;;  helm-occur-use-ioccur-style-keys t
   ;;  helm-grep-use-ioccur-style-keys t)
+
   (custom-set-faces
-   ;; custom-set-faces was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
-   '(font-lock-comment-face ((t (:background "color-236" :foreground "#2aa1ae" :slant normal))))
-   '(hl-line ((t (:inherit nil :extend t :background "color-235" :underline t))))
-   '(line-number ((t (:inherit default :background "color-237" :foreground "#44505c"))))
-   '(line-number-current-line ((t (:inherit line-number :background "color-235" :foreground "#b2b2b2"))))
-   '(mode-line ((t (:background "#222226" :foreground "#b2b2b2" :box (:line-width 1 :color "#5d4d7a")))))
+   '(default ((t (:inherit nil :extend nil :stipple nil :background "#292b2e" :foreground "#b2b2b2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
+   '(font-lock-comment-face ((t (:background "#292b2e" :foreground "#2aa1ae" :slant normal))))
+   '(header-line ((t (:background "#222226"))))
+   '(hl-line ((t (:extend t :background "#292b2e" :underline t))))
+   '(line-number ((t (:inherit default :background "#222226" :foreground "#44505c"))))
+   '(line-number-current-line ((t (:inherit line-number :background "#222226" :foreground "#b2b2b2" :underline t))))
+   '(mode-line ((t (:background "#222226" :foreground "#b2b2b2" :box (:line-width (1 . 1) :color "#5d4d7a")))))
+   ;; '(font-lock-comment-face ((t (:background "color-236" :foreground "#2aa1ae" :slant normal))))
+   ;; '(hl-line ((t (:inherit nil :extend t :background "color-235" :underline t))))
+   ;; '(line-number ((t (:inherit default :background "color-237" :foreground "#44505c"))))
+   ;; '(line-number-current-line ((t (:inherit line-number :background "color-235" :foreground "#b2b2b2"))))
+   ;; '(mode-line ((t (:background "#222226" :foreground "#b2b2b2" :box (:line-width 1 :color "#5d4d7a")))))
    '(mode-line-inactive ((t (:background "gray42" :foreground "#b2b2b2" :box (:line-width 1 :color "#5d4d7a"))))))
 
   ;; (add-hook 'text-mode-hook (lambda () (spacemacs/toggle-relative-line-numbers-on)))
