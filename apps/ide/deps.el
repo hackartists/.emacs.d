@@ -157,7 +157,6 @@
         ob-mermaid
         lsp-grammarly
         code-review
-        magithub
 	      ))
 
 (setq hackartist-ide-osc
