@@ -9,7 +9,9 @@
         (helm :variables
               history-delete-duplicates t
               history-length 10)
-        (git :variables git-enable-magit-todos-plugin t)
+        (git :variables
+             git-enable-magit-todos-plugin t
+             git-enable-magit-gitflow-plugin t)
         version-control
         ;; github
         (auto-completion :variables

@@ -106,6 +106,8 @@
         code-review-new-buffer-window-strategy #'switch-to-buffer
         code-review-fill-column 80)
 
+  (setq magit-repository-directories '(("~/data/devel" . 3)))
+
   ;; (require 'projectile-git-autofetch)
   ;; (projectile-git-autofetch-mode 1)
   ;; (setq-default gac-automatically-push-p t)
