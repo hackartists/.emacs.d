@@ -97,7 +97,7 @@
         plantuml
         (lsp :variables lsp-ui-doc-enable nil lsp-ui-sideline-enable t lsp-auto-guess-root t)
         (dap :variables dap-enable-ui-controls nil)
-        ))
+        (ess :variables ess-r-backend 'lsp)))
 
 (setq hackartist-ide-packages
       '(
