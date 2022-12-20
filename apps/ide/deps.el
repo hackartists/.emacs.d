@@ -37,7 +37,6 @@
         ibuffer imenu-list
         nginx
         syntax-checking
-        (solidity :variables solidity-flycheck-solium-checker-active t)
         (treemacs :variables treemacs-collapse-dirs 3
           treemacs-deferred-git-apply-delay      0.5
           treemacs-directory-name-transformer    #'identity
