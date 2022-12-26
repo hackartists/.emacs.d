@@ -191,10 +191,13 @@
   (define-key yas-keymap (kbd "<return>") 'yas/exit-all-snippets)
   (define-key yas-keymap (kbd "C-e") 'yas/goto-end-of-active-field)
   (define-key yas-keymap (kbd "C-a") 'yas/goto-start-of-active-field)
+
+  (custom-set-variables
+   '(create-lockfiles nil))
+
   (setq yas-prompt-functions '(yas/ido-prompt yas/completing-prompt))
   (setq yas-verbosity 1)
   (setq yas-wrap-around-region t)
-  (setq create-lockfiles nil)
   ;; (add-hook 'yas-before-expand-snippet-hook (lambda ()
   ;;                                             (company-mode -1)))
   ;; (add-hook 'yas-after-exit-snippet-hook (lambda ()
@@ -223,7 +226,6 @@
   (add-hook 'gfm-mode (lambda ()
                         (require 'lsp-grammarly)
                         (lsp)))
-
   (add-hook 'focus-out-hook (lambda ()
                               (interactive)
                               (save-some-buffers t)))
