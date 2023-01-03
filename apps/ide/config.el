@@ -198,6 +198,8 @@
   (setq yas-prompt-functions '(yas/ido-prompt yas/completing-prompt))
   (setq yas-verbosity 1)
   (setq yas-wrap-around-region t)
+  (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
+
   ;; (add-hook 'yas-before-expand-snippet-hook (lambda ()
   ;;                                             (company-mode -1)))
   ;; (add-hook 'yas-after-exit-snippet-hook (lambda ()
