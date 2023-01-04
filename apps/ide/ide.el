@@ -9,6 +9,7 @@
   ;; (global-git-gutter+-mode -1)
   ;; (global-auto-highlight-symbol-mode +1)
   (require 'impostman) 
+  (require 'ox-moderncv)
   (autoload 'garak "garak" nil t)
   (setq auth-sources '("~/.authinfo")) 
   (add-hook 'minibuffer-setup-hook (lambda () 

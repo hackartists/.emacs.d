@@ -175,4 +175,5 @@
         "https://github.com/flashcode/impostman.git"
         "https://gitgud.io/sakura-chan/discord-emacs-el.git"
         "https://git.savannah.gnu.org/git/elim.git"
+        "https://gitlab.com/Titan-C/org-cv.git"
         ))
