@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: theorem
+# key: #org-latex-theorem
+# --
+
+#+begin_theorem
+$0
+#+end_theorem
+

@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: definition
+# key: #org-latex-definition
+# --
+
+#+begin_definition
+$0
+#+end_definition
+

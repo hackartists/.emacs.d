@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: corollary
+# key: #org-latex-corollary
+# --
+
+#+begin_corollary
+$0
+#+end_corollary
+
