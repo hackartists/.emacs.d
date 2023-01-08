@@ -103,12 +103,14 @@
 * References
 :PROPERTIES:
 :BEAMER_OPT: fragile,allowframebreaks,label=
+:BEAMER_env: frame
 :END:
 #+latex: \printbibliography
 
 * Acronyms
 :PROPERTIES:
 :BEAMER_OPT: fragile,allowframebreaks,label=
+:BEAMER_env: frame
 :END:
 
 #+latex: \printglossaries
