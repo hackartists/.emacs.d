@@ -1,0 +1,37 @@
+# -*- mode: typescript -*-
+# name: contract-test
+# --
+
+import { assert } from 'chai';
+import { describe, it } from 'mocha';
+import { ContractInformation, TestingUtils } from './utils';
+
+const Caver = require('caver-js');
+require('dotenv').config({ path: \`\${__dirname}/../.env.test\` });
+
+const endpoint = process.env.CLI_ENDPOINT;
+const caver = new Caver(endpoint);
+
+const owner = process.env.CLI_CONTRACT_OWNER_ADDR;
+const privateKey = process.env.CLI_CONTRACT_OWNER_KEY;
+const fpOwner = process.env.CLI_FEEPAYER_ADDR;
+const fpPrivateKey = process.env.CLI_FEEPAYER_KEY;
+
+const deployerKeyring = caver.wallet.keyring.create(owner, privateKey);
+caver.wallet.add(deployerKeyring);
+const fpKeyring = caver.wallet.keyring.create(fpOwner, fpPrivateKey);
+caver.wallet.add(fpKeyring);
+
+const contractName = '${1: contract name}';
+describe(contractName, function () {
+  let addr = '';
+
+  const util = new TestingUtils(caver, owner, fpOwner);
+  const deploy = util.deploy;
+  let data: ContractInformation;
+
+  it('deployment', async () => {
+    data = await deploy(contractName);
+    addr = data.address;
+  });
+});
