@@ -2,5 +2,5 @@
 # name: functional-component
 # --
 
-Component(${2:$(string-inflection-kebab-case-function (string-replace " " "-" yas-text))},${2:Component function}, $tags=v1.0)
-Lay_R(${1:upper-component},${2:$(string-inflection-kebab-case-function (string-replace " " "-" yas-text))})
+Component(${2:$(string-inflection-kebab-case-function (string-replace " " "" yas-text))},${2:Component function}, $tags=v1.0)
+Lay_R(${1:upper-component},${2:$(string-inflection-kebab-case-function (string-replace " " "" yas-text))})
