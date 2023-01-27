@@ -1,0 +1,19 @@
+# -*- mode: plantuml -*-
+# name: functional-architecture
+# --
+
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+AddElementTag("v1.0", $borderColor="#ff8000", $bgColor="#ffffff", $fontColor="#000000")
+
+Boundary(${1:$(string-inflection-kebab-case-function (string-replace " " "-" yas-text))},${1:Layer Name},$type=layer) {
+  Component(${2:$(string-inflection-kebab-case-function (string-replace " " "-" yas-text))},${2:Component function}, $tags=v1.0)
+}
+
+Lay_D(${1:$(string-inflection-kebab-case-function (string-replace " " "-" yas-text))},${3:$(string-inflection-kebab-case-function (string-replace " " "-" yas-text))})
+Boundary(${3:$(string-inflection-kebab-case-function (string-replace " " "-" yas-text))},${3:Layer Name},$type=layer) {
+
+}
+
+@enduml
