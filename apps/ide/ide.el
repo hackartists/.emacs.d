@@ -79,6 +79,10 @@
     (puthash 'statistics "stats" ht)
     (puthash 'state "st" ht)
     (puthash 'component "comp" ht)
+    (puthash 'activity "act" ht)
+    (puthash 'array "arr" ht)
+    (puthash 'index "i" ht)
+    (puthash 'string "str" ht)
     (string-join
      (mapcar (lambda (el) (gethash (intern el) ht el))
              (split-string (downcase text) " ")) "")))
