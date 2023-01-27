@@ -7,12 +7,12 @@
 
 AddElementTag("v1.0", $borderColor="#ff8000", $bgColor="#ffffff", $fontColor="#000000")
 
-Boundary(${1:$(string-inflection-kebab-case-function (string-replace " " "" yas-text))},${1:Layer Name},$type=layer) {
-  Component(${2:$(string-inflection-kebab-case-function (string-replace " " "" yas-text))},${2:Component function}, $tags=v1.0)
+Boundary(${1:$(hackartist/string/abbreviation yas-text)},${1:Layer Name},$type=layer) {
+  Component(${2:$(hackartist/string/abbreviation yas-text)},${2:Component function}, $tags=v1.0)
 }
 
-Lay_D(${1:$(string-inflection-kebab-case-function (string-replace " " "" yas-text))},${3:$(string-inflection-kebab-case-function (string-replace " " "" yas-text))})
-Boundary(${3:$(string-inflection-kebab-case-function (string-replace " " "" yas-text))},${3:Layer Name},$type=layer) {
+Lay_D(${1:$(hackartist/string/abbreviation yas-text)},${3:$(hackartist/string/abbreviation yas-text)})
+Boundary(${3:$(hackartist/string/abbreviation yas-text)},${3:Layer Name},$type=layer) {
 
 }
 
