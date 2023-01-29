@@ -1,0 +1,23 @@
+# -*- mode: plantuml -*-
+# name: sequence-diagram
+# --
+
+@startuml
+skinparam backgroundcolor transparent
+skinparam BoxBackgroundColor white
+
+actor "User 1" as u1
+box "${1:Service name}"
+  participant "${2:component name}" as ${2:$(hackartist/string/abbreviation yas-text)}
+  participant "${3:component name}" as ${3:$(hackartist/string/abbreviation yas-text)}
+end box
+
+box "External services"
+  participant "Service" as s1
+end box
+
+u1 -> ${2:$(hackartist/string/abbreviation yas-text)}: ${3:message}
+note right of ${2:$(hackartist/string/abbreviation yas-text)}
+notes
+end note
+@enduml
