@@ -82,8 +82,6 @@
         gpu graphviz typography
         asm  bibtex groovy kotlin latex ;;php
         (rust :variables rust-format-on-save t lsp-rust-server 'rust-analyzer)
-        (python :variables python-format-on-save t python-sort-imports-on-save t python-test-runner 'pytest python-test-runner '(pytest nose))
-        (ipython-notebook :variables ein-backend 'jupyter)
         (ruby :variables ruby-enable-enh-ruby-mode t ruby-backend 'robe ruby-version-manager 'rvm ruby-test-runner 'rspec)
         (typescript :variables typescript-fmt-on-save t typescript-fmt-tool 'prettier typescript-linter 'eslint)
         (shell-scripts :variables shell-scripts-backend 'lsp)

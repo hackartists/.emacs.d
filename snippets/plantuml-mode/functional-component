@@ -2,5 +2,5 @@
 # name: functional-component
 # --
 
-Component(${2:$(hackartist/string/abbreviation yas-text)},${2:Component function}, $tags=v1.0)
+Component(${2:$(hackartist/string/abbreviation yas-text)},${2:Component function}, $techn=lang, $tags=v1.0)
 Lay_R(${1:upper-component},${2:$(hackartist/string/abbreviation yas-text)})
