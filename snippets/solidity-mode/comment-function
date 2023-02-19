@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: comment-function
+# --
+
+/// @notice ${1:description for endusers}
+/// @dev ${2:description for developers}
+/// @param ${3:arg} ${4:argument description}
+/// @return ${5:description}

@@ -1,6 +1,6 @@
 (setq hackartist-solidity-layers
       '(
-        (solidity :variables solidity-flycheck-solc-checker-active t)
+        (solidity :variables solidity-flycheck-solc-checker-active nil solidity-flycheck-solium-checker-active t)
         ))
 
 (setq hackartist-solidity-packages '())
