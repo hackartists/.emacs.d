@@ -1,13 +1,17 @@
-(setq hackartist-javascript-layers '((javascript :variables javascript-import-tool 
-                                                 'import-js javascript-backend 'lsp javascript-repl
-                                                 `nodejs js-indent-level 2 js2-basic-offset 2
-                                                 javascript-fmt-on-save t javascript-fmt-tool
-                                                 'prettier node-add-modules-path t)
-                                     (json :variables json-fmt-tool 
-                                           'prettier json-fmt-on-save t) ess import-js node
-                                           typescript react html
-                                           ;; tide
-                                           ))
+(setq hackartist-javascript-layers
+      '((javascript :variables javascript-import-tool
+                    'import-js javascript-backend 'lsp javascript-repl
+                    `nodejs js-indent-level 2 js2-basic-offset 2
+                    javascript-fmt-on-save t javascript-fmt-tool
+                    'prettier node-add-modules-path t)
+        (typescript :variables
+                    typescript-fmt-on-save t
+                    typescript-fmt-tool 'typescript-formatter
+                    typescript-linter 'tslint )
+        (json :variables json-fmt-tool 'prettier json-fmt-on-save t) ess import-js node
+        react html
+        ;; tide
+        ))
 
 (setq hackartist-javascript-packages '(angular-mode angular-snippets xref-js2 js2-refactor web-mode
                                                     ;; indium

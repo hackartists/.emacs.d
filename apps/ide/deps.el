@@ -25,7 +25,7 @@
                          auto-completion-enable-snippets-in-popup nil
                          auto-completion-enable-help-tooltip nil
                          auto-completion-use-company-box nil
-                         auto-completion-enable-sort-by-usage t)
+                         auto-completion-enable-sort-by-usage nil)
         ;; unicode-fonts
         systemd
         (markdown :variables markdown-live-preview-engine 'vmd)
