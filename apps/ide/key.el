@@ -56,7 +56,7 @@
   (spacemacs/set-leader-keys-for-minor-mode 'term-mode
     "xo" 'browse-url-at-point)
 
-  (spacemacs/set-leader-keys-for-minor-mode 'forge-topic-mode
+  (spacemacs/set-leader-keys-for-major-mode 'forge-topic-mode
     "RET" 'code-review-forge-pr-at-point)
 
   (evil-define-key 'motion dictionary-mode-map "." 'dictionary-lookup-definition)
