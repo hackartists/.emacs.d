@@ -2,33 +2,33 @@
       '((javascript :variables javascript-import-tool
                     'import-js javascript-backend 'lsp javascript-repl
                     `nodejs js-indent-level 2 js2-basic-offset 2
-                    javascript-fmt-on-save t javascript-fmt-tool
-                    'prettier node-add-modules-path t)
-        (typescript :variables
-                    typescript-fmt-on-save t
-                    typescript-fmt-tool 'typescript-formatter
-                    typescript-linter 'tslint )
-        (json :variables json-fmt-tool 'prettier json-fmt-on-save t) ess import-js node
+                    javascript-fmt-on-save t javascript-fmt-tool 'prettier
+                    node-add-modules-path t)
+        typescript
+        (json :variables json-fmt-tool 'prettier json-fmt-on-save t)
+        ess import-js node
         react html
         ;; tide
         ))
 
-(setq hackartist-javascript-packages '(angular-mode angular-snippets xref-js2 js2-refactor web-mode
-                                                    ;; indium
-                                                    emmet-mode web-beautify skewer-mode
-                                                    impatient-mode restclient elnode eslintd-fix
-                                                    js-react-redux-yasnippets react-snippets
-                                                    js-comint json-mode))
+(setq hackartist-javascript-packages
+      '(angular-mode angular-snippets xref-js2 js2-refactor web-mode
+                     ;; indium
+                     emmet-mode web-beautify skewer-mode
+                     impatient-mode restclient elnode eslintd-fix
+                     js-react-redux-yasnippets react-snippets
+                     js-comint json-mode))
 
-(setq hackartist-javascript-commands '((jsonlint "npm install -g jsonlint") 
-                                       (tern "npm install -g tern") 
-                                       (eslint "npm install -g eslint") 
-                                       (babel-eslint "npm install -g babel-eslint") 
-                                       (eslint-plugin-react "npm install -g eslint-plugin-react") 
-                                       (eslint-plugin-node "npm install -g eslint-plugin-node") 
-                                       (jshint "npm install -g jshint") 
-                                       (standard "npm install -g standard") 
-                                       (indium "npm install -g indium" )))
+(setq hackartist-javascript-commands
+      '((jsonlint "npm install -g jsonlint")
+        (tern "npm install -g tern") 
+        (eslint "npm install -g eslint") 
+        (babel-eslint "npm install -g babel-eslint") 
+        (eslint-plugin-react "npm install -g eslint-plugin-react") 
+        (eslint-plugin-node "npm install -g eslint-plugin-node") 
+        (jshint "npm install -g jshint") 
+        (standard "npm install -g standard") 
+        (indium "npm install -g indium" )))
 
 ;; (defun hackartist/javascript/init ( )
 ;;   ;; (add-hook 'js2-mode-hook
