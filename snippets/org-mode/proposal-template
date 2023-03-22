@@ -1,0 +1,227 @@
+# -*- mode: snippet -*-
+# name: proposal-template
+# --
+
+#+TITLE:     ${1:title}
+#+AUTHOR:    ${2:Jongseok Choi}
+#+EMAIL:     ${3:hackartists@gmail.com}
+
+#+DESCRIPTION: 
+#+KEYWORDS: ${4:keywords}
+#+LANGUAGE:  en
+#+OPTIONS:   num:t toc:nil ::t |:t ^:{} -:t f:t *:t <:t
+#+OPTIONS:   tex:t d:nil todo:t pri:nil tags:nil
+#+OPTIONS:   timestamp:t
+
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+
+#+PROPERTY: header-args :eval never-export
+#+startup: beamer
+#+BEAMER_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [t,9pt,aspectratio=169]
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,11pt,twoside,twocolumn]
+
+#+COLUMNS: %20ITEM %13BEAMER_env(Env) %6BEAMER_envargs(Args) %4BEAMER_col(Col) %7BEAMER_extra(Extra)
+
+#+OPTIONS: H:3
+#+BEAMER_THEME: Darmstadt
+#+BEAMER_OUTER_THEME: miniframes [subsection=false]
+
+#+LATEX_HEADER: \usepackage[backend=bibtex]{biblatex}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage{kotex}
+#+LATEX_HEADER: \usepackage{rotating}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{amssymb,amsmath}
+#+LATEX_HEADER: \usepackage{amsthm}
+#+LATEX_HEADER: \usepackage{algorithmic}
+#+LATEX_HEADER: \usepackage[ruled,linesnumbered]{algorithm2e}
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \usepackage[titletoc]{appendix}
+#+LATEX_HEADER: \usepackage{rotating}
+#+LATEX_HEADER: \usepackage{multirow}
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \usepackage{supertabular}
+#+LATEX_HEADER: \usepackage{dcolumn}
+#+LATEX_HEADER: \usepackage{adjustbox}
+#+LATEX_HEADER: \usepackage{epsfig}
+#+LATEX_HEADER: \usepackage{subfigure}
+#+LATEX_HEADER: \usepackage{acronym}
+#+LATEX_HEADER: \usepackage{url}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{mathtools}
+#+LATEX_HEADER: \usepackage{longtable}
+#+LATEX_HEADER: \usepackage[acronym,nomain]{glossaries}
+#+LATEX_HEADER: \usepackage[font=small,skip=0pt]{caption}
+#+LATEX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \usepackage{color}
+#+LATEX_HEADER: \usepackage{colortbl}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usepackage{lmodern}
+#+LATEX_HEADER: \usepackage{blindtext}
+#+LATEX_HEADER: \input{`org-directory`/common/lang.tex}
+#+LATEX_HEADER: \input{`org-directory`/common/abb.tex}
+#+LATEX_HEADER: \bibliography{`org-directory`/common/ref.bib}
+
+#+BEAMER_HEADER: \setbeamercolor{footline}{fg=blue}
+#+BEAMER_HEADER: \setbeamerfont{footline}{series=\bfseries}
+#+BEAMER_HEADER: \addtobeamertemplate{navigation symbols}{}{%
+#+BEAMER_HEADER:     \usebeamerfont{footline}%
+#+BEAMER_HEADER:     \usebeamercolor[fg]{footline}%
+#+BEAMER_HEADER:     \hspace{1em}%
+#+BEAMER_HEADER:     \insertframenumber/\inserttotalframenumber
+#+BEAMER_HEADER: }
+
+#+BEAMER_HEADER: \AtBeginSection[]{
+#+BEAMER_HEADER: \begin{frame}<beamer>\frametitle{Table of Contents}\begin{columns}[t]
+#+BEAMER_HEADER: \begin{column}{.5\textwidth}\tableofcontents[currentsection,sections={1-3}]\end{column}
+#+BEAMER_HEADER: \begin{column}{.5\textwidth}\tableofcontents[currentsection,sections={4-7}]\end{column}
+#+BEAMER_HEADER: \end{columns}\end{frame}
+#+BEAMER_HEADER: \subsection{}
+#+BEAMER_HEADER: }
+#+BEAMER_HEADER: \hypersetup{colorlinks=false}
+#+BEAMER: \setbeamercovered{transparent=30}
+#+LATEX_HEADER: \makeglossaries
+
+#+BEAMER: \begin{frame}<beamer>\frametitle{Table of Contents}\begin{columns}[t]
+#+BEAMER: \begin{column}{.5\textwidth}\tableofcontents[sections={1-3}]\end{column}
+#+BEAMER: \begin{column}{.5\textwidth}\tableofcontents[sections={4-7}]\end{column}
+#+BEAMER: \end{columns}\end{frame}
+
+#+hugo_base_dir: `org-directory`/hugo/ 
+#+hugo_auto_set_lastmod: t
+
+#+REVEAL_EXTRA_CSS: `org-directory`/common/reveal.css
+#+REVEAL_THEME: league
+
+* 일반현황
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_SECTION: intro
+:EXPORT_HUGO_TAGS: intro  index
+:EXPORT_HUGO_CATEGORIES: intro
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true :comments true :lead " brief-description"
+:EXPORT_HUGO_DRAFT: false
+:EXPORT_HUGO_WEIGHT: auto
+:EXPORT_DESCRIPTION: 일반 현황 소개
+:EXPORT_DATE: [2023-03-09 Thu 10:52]
+:END:
+
+** 제안사 일반현황
+
+
+** 제안사 조직 및 인원
+
+** 수행조직 및 업무 분장
+
+** 제안사의 추가 활용 역량
+
+* 전략 및 방법론
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_SECTION: methodology
+:EXPORT_HUGO_TAGS: methodology index
+:EXPORT_HUGO_CATEGORIES: methodology
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true :comments true :lead " brief-description"
+:EXPORT_HUGO_DRAFT: false
+:EXPORT_HUGO_WEIGHT: auto
+:EXPORT_DESCRIPTION: 프로젝트 수행을 위한 전반적 방법론
+:EXPORT_DATE: [2023-03-09 Thu 10:52]
+:END:
+
+** 사업이해도
+
+** 추진전략
+
+** 적용기술
+
+** 개발 방법론
+
+* 기술 및 기능
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_SECTION: develop
+:EXPORT_HUGO_TAGS: develop index
+:EXPORT_HUGO_CATEGORIES: develop
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true :comments true :lead " brief-description"
+:EXPORT_HUGO_DRAFT: false
+:EXPORT_HUGO_WEIGHT: auto
+:EXPORT_DESCRIPTION: 프로젝트 수행을 위한 전반적 방법론
+:EXPORT_DATE: [2023-03-09 Thu 10:52]
+:END:
+
+** 기능 요구사항
+
+** 데이터 요구사항
+
+** 제약 요구사항
+
+* 성능 및 품질
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_SECTION: qa
+:EXPORT_HUGO_TAGS: qa index
+:EXPORT_HUGO_CATEGORIES: qa
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true :comments true :lead " brief-description"
+:EXPORT_HUGO_DRAFT: false
+:EXPORT_HUGO_WEIGHT: auto
+:EXPORT_DESCRIPTION: 프로젝트 산출물에 대한 성능 및 품질 요구사항
+:EXPORT_DATE: [2023-03-09 Thu 10:52]
+:END:
+
+** 성능 요구사항
+
+** 인터페이스 요구사항
+
+** 보안 요구사항
+
+** 테스트 요구사항
+
+** 품질 요구사항
+
+* 프로젝트 관리
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_MENU: :menu status :parent status
+:EXPORT_HUGO_MENU_OVERRIDE: :identifier status-status-status
+:EXPORT_HUGO_SECTION: status/status
+:EXPORT_HUGO_TAGS: status status
+:EXPORT_HUGO_CATEGORIES: status status
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true :comments true :lead " brief-description"
+:EXPORT_HUGO_DRAFT: false
+:EXPORT_HUGO_WEIGHT: auto
+:EXPORT_DESCRIPTION: description
+:EXPORT_DATE: [2023-03-09 Thu 10:52]
+:END:
+
+** 관리 방법론
+
+** 관리 역량
+
+** 일정 계획
+
+* 프로젝트 지원
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_SECTION: support
+:EXPORT_HUGO_TAGS: support index
+:EXPORT_HUGO_CATEGORIES: support
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true :comments true :lead " brief-description"
+:EXPORT_HUGO_DRAFT: false
+:EXPORT_HUGO_WEIGHT: auto
+:EXPORT_DESCRIPTION: 프로젝트 개발이 완료된 이후에 인수인계 및 사후 지원 방안
+:EXPORT_DATE: [2023-03-09 Thu 10:52]
+:END:
+
+** 품질보증
+
+** 시험운영
+
+** 교육훈련
+
+** 하자보수
+
+** 비상대책
