@@ -58,6 +58,7 @@
 (defun hackartist/ide/config ()
   (require 'multi-eshell)
   (require 'helm-mt)
+  (require 'emacs-everywhere)
 
   (setq user-full-name "hackartist")
   (setq completion-styles `(flex))
@@ -108,6 +109,21 @@
         code-review-fill-column 80)
 
   (setq magit-repository-directories '(("~/data/devel" . 3)))
+
+  (add-hook 'jiralib2-post-login-hook #'ejira-guess-epic-sprint-fields)
+
+  ;; They can also be set manually if autoconfigure is not used.
+  ;; (setq ejira-sprint-field       'customfield_10001
+  ;;       ejira-epic-field         'customfield_10002
+  ;;       ejira-epic-summary-field 'customfield_10004)
+
+  (require 'ejira-agenda)
+
+  ;; Add an agenda view to browse the issues that
+  (org-add-agenda-custom-command
+   '("j" "My JIRA issues"
+     ((ejira-jql "resolution = unresolved and assignee = currentUser()"
+                 ((org-agenda-overriding-header "Assigned to me"))))))
 
   ;; (require 'projectile-git-autofetch)
   ;; (projectile-git-autofetch-mode 1)

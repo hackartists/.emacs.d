@@ -20,7 +20,7 @@
 
     "RET" 'yas-insert-snippet
     "SPC" 'helm-mt
-    "TAB" 'counsel-imenu
+    "TAB" 'helm-imenu
 
     "bk" 'kill-this-buffer
     "bu" 'revert-buffer

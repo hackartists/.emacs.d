@@ -157,6 +157,7 @@
         ob-mermaid
         lsp-grammarly
         code-review
+        jiralib2
 	      ))
 
 (setq hackartist-ide-osc
@@ -174,4 +175,6 @@
         "https://gitgud.io/sakura-chan/discord-emacs-el.git"
         "https://git.savannah.gnu.org/git/elim.git"
         "https://gitlab.com/Titan-C/org-cv.git"
+        "https://github.com/nyyManni/ejira.git"
+        "https://github.com/tecosaur/emacs-everywhere.git"
         ))
