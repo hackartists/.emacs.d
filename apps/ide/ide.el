@@ -49,6 +49,12 @@
 
   ;; (shrface-default-keybindings) ; setup default keybindings
   (advice-add 'forge-visit-pullreq :override 'advice-override/forge-visit-pullreq)
+
+  (add-hook 'org-mode-hook #'org-ai-mode)
+  (org-ai-global-mode)
+  (setq org-ai-default-chat-model "gpt-3.5-turbo")
+  (org-ai-install-yasnippets) ; if you are using yasnippet and want `ai` snippets
+
   (setq shrface-href-versatile t))
 
 (defun advice-after/windmove-do-window-select (dir &optional arg window) 

@@ -158,6 +158,9 @@
         lsp-grammarly
         code-review
         jiralib2
+        org-ai
+        gptel
+        sqlite3
 	      ))
 
 (setq hackartist-ide-osc
