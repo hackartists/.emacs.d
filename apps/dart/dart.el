@@ -9,9 +9,16 @@
   "key bindings in dart mode"
   (spacemacs/declare-prefix-for-mode 'dart-mode "f" "flutter")
   (spacemacs/set-leader-keys-for-major-mode 'dart-mode
-    "RET" 'lsp-dart-dap--flutter-hot-reload
-    "SPC" 'flutter-run-or-hot-reload)
+    "RET" 'lsp-dart-dap-flutter-hot-reload
+    "SPC" 'hackartist/flutter-run-or-hot-restart)
   )
+
+(defun hackartist/flutter-run-or-hot-restart ()
+  "Start `flutter run` or hot-reload if already running."
+  (interactive)
+  (if (flutter--running-p)
+      (flutter-hot-restart)
+    (flutter-run)))
 
 (defun hackartist/dart/before-save-hook ()
   (when (derived-mode-p 'dart-mode)
