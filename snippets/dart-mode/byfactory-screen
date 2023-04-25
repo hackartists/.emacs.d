@@ -1,0 +1,36 @@
+# -*- mode: snippet -*-
+#name : byfactory-screen
+# --
+import 'package:byfactory/components/base_layout.dart';
+// import 'package:byfactory/services/byfactory_mobile_api.dart';
+import 'package:flutter/material.dart';
+
+class ${1:Name}Screen extends StatefulWidget {
+  const $1Screen({super.key});
+
+  @override
+  $1ScreenState createState() => $1ScreenState();
+}
+
+class $1ScreenState extends State<$1Screen> {
+
+  @override
+  void initState() {
+    super.initState();
+    init();
+  }
+
+  Future init() async {
+    // var d = await ByFactoryMobileApi.getDashboard();
+    // setState(() {
+    //   data = d;
+    // });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BaseLayout(
+      child: Text('$1 Screen'),
+    );
+  }
+}

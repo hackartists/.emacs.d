@@ -10,6 +10,7 @@
   (spacemacs/declare-prefix-for-mode 'dart-mode "f" "flutter")
   (spacemacs/set-leader-keys-for-major-mode 'dart-mode
     "SPC" 'lsp-dart-dap-flutter-hot-reload
+    "TAB" 'flutter-run-or-hot-reload
     "RET" 'hackartist/flutter-run-or-hot-restart)
   )
 
