@@ -68,6 +68,7 @@
   (global-evil-mc-mode t)
   ;; (setq helm-hackartist-recentf-list (helm-make-source "Recentf" 'helm-recentf-source :fuzzy-match helm-recentf-fuzzy-match))
 
+  (hackartist/openwith)
   (if (eq system-type 'darwin)
       (hackartist/ide/config/darwin)
     (hackartist/ide/config/linux))
@@ -77,7 +78,7 @@
         mark-ring-max 50000
         kill-ring-max 50000
         mode-require-final-newline t
-        tab-width 4
+        tab-width 2
         kill-whole-line t
         recentf-max-menu-items 100)
 
@@ -95,7 +96,7 @@
   ;;             (visual-line-mode 1)))
   (add-hook 'sh-mode-hook
             (lambda ()
-              (setq tab-width 4)))
+              (setq tab-width 2)))
   (add-hook 'yaml-mode-hook
             (lambda ()
               (yas-minor-mode 1)
@@ -339,3 +340,42 @@
 ;;                                         ; insert into file if correctly taken
 ;;   (if (file-exists-p filename)
 ;;       (insert (concat "[[file:" filename "]]"))))
+(defun hackartist/openwith ()
+  "dired openwith setup"
+  (require 'openwith)
+  (setq openwith-associations
+        '(
+          ("\\.svg\\'" "inkscape" (file))
+          ("\\.eps\\'" "inkscape" (file))
+          )
+        )
+  (openwith-mode t)
+  )
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(create-lockfiles nil)
+ '(google-translate-default-source-language "ko" t)
+ '(google-translate-default-target-language "en")
+ '(google-translate-output-destination '(kill-ring))
+ '(google-translate-translation-to-kill-ring t)
+ '(org-image-actual-width '(700))
+ '(plantuml-indent-level 2)
+ '(safe-local-variable-values
+   '((eval org-hugo-auto-export-mode t)
+     (typescript-backend . tide)
+     (typescript-backend . lsp)
+     (javascript-backend . tide)
+     (javascript-backend . tern)
+     (javascript-backend . lsp)))
+ '(send-mail-function 'mailclient-send-it)
+ '(solidity-comment-style 'slash)
+ '(typescript-indent-level 2)
+ '(warning-suppress-types
+   '((org-element-cache)
+     (org-element-cache)
+     (emacsql)
+     (lsp-mode))))

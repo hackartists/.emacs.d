@@ -72,7 +72,7 @@
   ;; (global-set-key (kbd "S-SPC") 'toggle-input-method)
   (global-set-key (kbd "<home>") 'move-beginning-of-line)
   (global-set-key (kbd "<end>") 'move-end-of-line)
-  (global-set-key (kbd "RET") 'newline-and-indent)
+  ;; (global-set-key (kbd "RET") 'newline-and-indent)
   (global-set-key (kbd "C-s") 'helm-swoop)
   (global-set-key (kbd "M-k") 'symbol-overlay-jump-prev)
   (global-set-key (kbd "M-j") 'symbol-overlay-jump-next)

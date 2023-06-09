@@ -1,9 +1,6 @@
 (setq hackartist-ci-layers '())
 
-(setq hackartist-ci-packages
-      '(
-        magit-circleci
-        ))
+(setq hackartist-ci-packages '())
 
 (setq hackartist-ci-commands '())
 

@@ -1,6 +1,6 @@
 (setq hackartist-dart-layers
       '(
-        (dart :variables dart-backend 'lsp lsp-dart-sdk-dir "/opt/flutter/bin/cache/dart-sdk" lsp-enable-on-type-formatting t)
+        (dart :variables dart-backend 'lsp lsp-dart-sdk-dir "/opt/flutter/bin/cache/dart-sdk" lsp-enable-on-type-formatting t dart-server-format-on-save t)
         ))
 
 (defun hackartist/dart/init ())
@@ -9,9 +9,9 @@
   "key bindings in dart mode"
   (spacemacs/declare-prefix-for-mode 'dart-mode "f" "flutter")
   (spacemacs/set-leader-keys-for-major-mode 'dart-mode
-    "SPC" 'lsp-dart-dap-flutter-hot-reload
-    "TAB" 'flutter-run-or-hot-reload
-    "RET" 'hackartist/flutter-run-or-hot-restart)
+    "RET" 'lsp-dart-dap-flutter-hot-reload
+    "SPC" 'lsp-dart-dap-flutter-hot-restart
+    "TAB" 'flutter-run-or-hot-reload)
   )
 
 (defun hackartist/flutter-run-or-hot-restart ()

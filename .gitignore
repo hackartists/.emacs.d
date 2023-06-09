@@ -34,3 +34,5 @@ session*
 /url/
 /projects
 /forge-database.sqlite
+/image-dired/
+/thumbs/
