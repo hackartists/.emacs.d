@@ -63,6 +63,8 @@
 #+LATEX_HEADER: \usepackage{tikz}
 #+LATEX_HEADER: \usepackage{lmodern}
 #+LATEX_HEADER: \usepackage{blindtext}
+#+LATEX_HEADER: \usepackage{etoolbox}
+#+LATEX_HEADER: \AtBeginEnvironment{tabular}{\small}
 #+LATEX_HEADER: \input{`org-directory`/common/lang.tex}
 #+LATEX_HEADER: \input{`org-directory`/common/abb.tex}
 #+LATEX_HEADER: \bibliography{`org-directory`/common/ref.bib}

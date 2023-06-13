@@ -343,13 +343,15 @@
 (defun hackartist/openwith ()
   "dired openwith setup"
   (require 'openwith)
+  (openwith-mode t)
   (setq openwith-associations
         '(
+          ("\\.doc\\'" "libreoffice" (file))
+          ("\\.docx\\'" "libreoffice" (file))
+          ("\\.hwp\\'" "/opt/hnc/hoffice11/Bin/hwp" (file))
+          ("\\.hwpx\\'" "/opt/hnc/hoffice11/Bin/hwp" (file))
           ("\\.svg\\'" "inkscape" (file))
-          ("\\.eps\\'" "inkscape" (file))
-          )
-        )
-  (openwith-mode t)
+          ("\\.eps\\'" "inkscape" (file))))
   )
 
 (custom-set-variables
