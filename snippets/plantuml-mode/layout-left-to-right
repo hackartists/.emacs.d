@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: layout left to right
+# --
+
+LAYOUT_LEFT_RIGHT()

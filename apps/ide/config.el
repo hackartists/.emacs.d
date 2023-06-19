@@ -350,8 +350,9 @@
           ("\\.docx\\'" "libreoffice" (file))
           ("\\.hwp\\'" "/opt/hnc/hoffice11/Bin/hwp" (file))
           ("\\.hwpx\\'" "/opt/hnc/hoffice11/Bin/hwp" (file))
-          ("\\.svg\\'" "inkscape" (file))
-          ("\\.eps\\'" "inkscape" (file))))
+          ;; ("\\.svg\\'" "inkscape" (file))
+          ("\\.eps\\'" "inkscape" (file))
+          ))
   )
 
 (custom-set-variables

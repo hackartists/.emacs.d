@@ -102,6 +102,7 @@
         org-plantuml-jar-path (expand-file-name "~/plantuml.jar"))
   (setq doc-view-resolution 200 org-confirm-babel-evaluate nil org-export-use-babel t
         org-export-with-sub-superscripts '{} org-src-window-setup 'current-window org-latex-listings
+        tex-cmd-bibtex-args "--min-crossref=100 --extra-mem-bot=120000000"
         t org-latex-listings-langs (quote ((emacs-lisp "Lisp")
                                            (lisp "Lisp") 
                                            (clojure "Lisp") 
