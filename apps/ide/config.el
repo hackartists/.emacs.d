@@ -346,6 +346,9 @@
   (openwith-mode t)
   (setq openwith-associations
         '(
+          ("\\.pdf\\'" "okular" (file))
+          ("\\.ppt\\'" "libreoffice" (file))
+          ("\\.pptx\\'" "libreoffice" (file))
           ("\\.doc\\'" "libreoffice" (file))
           ("\\.docx\\'" "libreoffice" (file))
           ("\\.hwp\\'" "/opt/hnc/hoffice11/Bin/hwp" (file))
