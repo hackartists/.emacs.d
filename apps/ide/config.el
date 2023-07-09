@@ -59,6 +59,7 @@
   (require 'multi-eshell)
   (require 'helm-mt)
   (require 'emacs-everywhere)
+  (require 'bard)
 
   (setq user-full-name "hackartist")
   (setq completion-styles `(flex))

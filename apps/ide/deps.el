@@ -160,7 +160,7 @@
         jiralib2
         org-ai
         gptel
-        ;; sqlite3
+        sqlite3
         openwith
 	      ))
 
@@ -181,4 +181,5 @@
         "https://gitlab.com/Titan-C/org-cv.git"
         "https://github.com/nyyManni/ejira.git"
         "https://github.com/tecosaur/emacs-everywhere.git"
+        "https://github.com/AllTheLife/Bard.el.git"
         ))
