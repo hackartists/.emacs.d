@@ -247,9 +247,9 @@
   (add-hook 'gfm-mode (lambda ()
                         (require 'lsp-grammarly)
                         (lsp)))
-  (add-hook 'focus-out-hook (lambda ()
-                              (interactive)
-                              (save-some-buffers t)))
+  ;; (add-hook 'focus-out-hook (lambda ()
+  ;;                             (interactive)
+  ;;                             (save-some-buffers t)))
 
   ;; (customize-set-variable 'helm-ff-lynx-style-map t)
   ;; (customize-set-variable 'helm-imenu-lynx-style-map t)

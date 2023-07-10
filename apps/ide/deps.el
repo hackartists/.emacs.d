@@ -81,7 +81,7 @@
         debug
         gpu graphviz typography
         asm  bibtex groovy kotlin latex ;;php
-        (rust :variables rust-format-on-save t lsp-rust-server 'rust-analyzer cargo-process-reload-on-modify t)
+        (rust :variables rust-format-on-save t cargo-process-reload-on-modify t)
         (ruby :variables ruby-enable-enh-ruby-mode t ruby-backend 'robe ruby-version-manager 'rvm ruby-test-runner 'rspec)
         (typescript :variables typescript-fmt-on-save t typescript-fmt-tool 'prettier typescript-linter 'eslint)
         (shell-scripts :variables shell-scripts-backend 'lsp)
