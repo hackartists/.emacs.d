@@ -15,7 +15,7 @@
 
 ;;(switch-to-buffer "*scratch*")
 
-(set-frame-parameter nil 'fullscreen 'fullboth)
+;; (set-frame-parameter nil 'fullscreen 'fullboth)
 
 ;; (setq ns-command-modifier 'super)
 ;; (server-start)
