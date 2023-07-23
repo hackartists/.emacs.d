@@ -4,6 +4,12 @@
 
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons2
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include DEVICONS/mongodb.puml
+!include DEVICONS/nodejs.puml
+!include DEVICONS/bash.puml
+LAYOUT_LEFT_RIGHT()
 
 AddElementTag("v1.0", $borderColor="#ff8000", $bgColor="#ffffff", $fontColor="#000000")
 

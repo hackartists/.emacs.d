@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: algorithm
+# key: #org-latex-algorithm
+# --
+
+
+#+begin_export latex
+\caption{https://ftp.kaist.ac.kr/tex-archive/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf}
+\begin{algorithmic}
+\KwData{${1:algorithm name}}
+\KwResult{}
+
+\While{}{
+  \eIf{}{
+  }{}
+}
+
+\end{algorithmic}
+#+end_export
