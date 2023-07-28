@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : getx-model
+#key : #gxm
+# --
+
+
+class ${1:Name}Mode {
+
+}

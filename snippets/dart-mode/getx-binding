@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+#name : getx-binding
+#key : #gxb
+#contributor : 
+# --
+
+import 'package:get/get.dart';
+
+import '${1:(downcase yas-text)}_controller.dart';
+
+class ${1:Name}Binding extends Bindings {
+@override
+void dependencies() {
+Get.lazyPut<$1Controller>(
+() => $1Controller(),
+);
+}
+}

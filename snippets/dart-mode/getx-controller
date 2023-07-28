@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+#name : getx-controller
+#key : #gxc
+# --
+
+
+import 'package:get/get.dart';
+import '../../core/base/base_controller.dart';
+
+import '${1:(downcase yas-text)}_model.dart';
+
+class ${1:Name}Controller extends BaseController {
+Rx<$1Model> model = $1Model().obs;
+}

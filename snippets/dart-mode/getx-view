@@ -1,0 +1,29 @@
+# -*- mode: snippet -*-
+#name : getx-view
+#key : #gxv
+# --
+
+import 'package:flutter/material.dart';
+import '../../core/base/base_view.dart';
+import '../../theme/app_values.dart';
+import '../../widgets/paging_view.dart';
+
+import '${1:(downcase yas-text)}_controller.dart';
+
+class ${1:Name}View extends BaseView<$1Controller> {
+  $1View() {}
+
+  @override
+  PreferredSizeWidget? appBar(BuildContext context) {
+    return null;
+  }
+
+  @override
+  Widget body(BuildContext context) {
+    return PagingView(
+      onRefresh: () async {},
+      onLoadNextPage: () {},
+      child: Container(),
+    );
+  }
+}
