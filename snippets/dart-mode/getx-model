@@ -4,6 +4,6 @@
 # --
 
 
-class ${1:Name}Mode {
+class `(string-inflection-underscore-function (string-replace ".dart" "" (buffer-name)))` {
 
 }

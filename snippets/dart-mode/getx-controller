@@ -7,8 +7,8 @@
 import 'package:get/get.dart';
 import '../../core/base/base_controller.dart';
 
-import '${1:(downcase yas-text)}_model.dart';
+import '`(string-inflection-underscore-function (string-replace "_controller.dart" "" (buffer-name)))`_model.dart';
 
-class ${1:Name}Controller extends BaseController {
-Rx<$1Model> model = $1Model().obs;
+class `(string-inflection-upper-camelcase-function (string-replace "_controller.dart" "" (buffer-name)))`Controller extends BaseController {
+Rx< `(string-inflection-upper-camelcase-function (string-replace "_controller.dart" "" (buffer-name)))`Model> model =  `(string-inflection-upper-camelcase-function (string-replace "_controller.dart" "" (buffer-name)))`Model().obs;
 }
