@@ -4,6 +4,6 @@
 # --
 
 
-class `(string-inflection-underscore-function (string-replace ".dart" "" (buffer-name)))` {
+class `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))` {
 
 }

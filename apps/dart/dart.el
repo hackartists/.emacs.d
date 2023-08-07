@@ -4,7 +4,7 @@
         ))
 
 (defun hackartist/dart/init ()
-  (add-hook 'after-save-hook 'hackartist/dart/after-save-hook)
+  ;; (add-hook 'after-save-hook 'hackartist/dart/after-save-hook)
   (add-hook 'before-save-hook 'hackartist/dart/before-save-hook))
 
 (defun hackartist/dart/bindings ()
