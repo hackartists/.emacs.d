@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: mongo-ql-create-index
+# key: #mongo-create-index
+# --
+
+db.${1:collection}.createIndex(
+  {
+      "${2:field}": 1
+  },
+  {
+    name: "index-by-$2",
+      // unique: true,
+      sparse: true,
+      // expireAfterSeconds: 3600
+  }
+)
