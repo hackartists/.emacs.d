@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: mongo-ql-aggregate
+# key: #mongo-agg
+# --
+
+db.${1:collection}.aggregate([
+$0
+])

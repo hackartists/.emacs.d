@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: mongo-ql-sort
+# key: #mongo-sort
+# --
+
+  { $sort: {${1:field}: 1}}

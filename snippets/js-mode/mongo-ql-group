@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: mongo-ql-group
+# key: #mongo-group
+# --
+
+  { $group:
+    {
+      _id: "$${1:fieldname}",
+      count: {$sum: 1},
+      ${2:projected field}: { $first: "$2" }
+    }
+  }

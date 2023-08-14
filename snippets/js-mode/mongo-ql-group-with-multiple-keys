@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: mongo-ql-group-with-multiple-keys
+# key: #mongo-group
+# --
+
+  { $group:
+    {
+      _id: {
+        "pk":"$${1:fieldname}",
+        "sk":"$${2:fieldname}",
+      },
+      count: {$sum: 1},
+      ${2:projected field}: { $first: "$2" }
+    },
+    { $sort: {"_id.pk": 1, "count": -1}}
+  }
