@@ -10,7 +10,7 @@
         "sk":"$${2:fieldname}",
       },
       count: {$sum: 1},
-      ${2:projected field}: { $first: "$2" }
+      ${3:projected field}: { $first: "$3" }
     },
-    { $sort: {"_id.pk": 1, "count": -1}}
-  }
+  },
+  { $sort: {"_id.pk": 1, "count": -1}}
