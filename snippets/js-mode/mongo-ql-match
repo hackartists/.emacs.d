@@ -1,0 +1,5 @@
+# name: mongo-ql-match
+# key: #mongo-match
+# --
+
+{ $match: { ${1:field}: $0 } },
