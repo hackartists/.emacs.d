@@ -93,6 +93,7 @@
         pdf
         copy-as-format
         plantuml
+        (translate :variables gts-translate-list '(("en" "ko") ("ko" "en")))
         (lsp :variables lsp-ui-doc-enable nil lsp-ui-sideline-enable t lsp-auto-guess-root t)
         (dap :variables dap-enable-ui-controls nil)
         (ess :variables ess-r-backend 'lsp)))
