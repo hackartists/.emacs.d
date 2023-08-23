@@ -61,39 +61,6 @@
   (require 'emacs-everywhere)
   (require 'bard)
 
-  (setq gts-default-translator (gts-translator
-                                :picker
-                                ;;(gts-noprompt-picker)
-                                ;;(gts-noprompt-picker :texter (gts-whole-buffer-texter))
-                                (gts-prompt-picker)
-                                ;;(gts-prompt-picker :single t)
-                                ;;(gts-prompt-picker :texter (gts-current-or-selection-texter) :single t)
-
-                                :engines
-                                (list
-                                 (gts-bing-engine)
-                                 ;;(gts-google-engine)
-                                 ;;(gts-google-rpc-engine)
-                                 (gts-deepl-engine :auth-key (getenv "DEEPL_KEY") :pro nil)
-                                 (gts-google-engine)
-                                 ;; (gts-google-engine :parser (gts-google-summary-parser))
-                                 ;;(gts-google-engine :parser (gts-google-parser))
-                                 ;;(gts-google-rpc-engine :parser (gts-google-rpc-summary-parser) :url "https://translate.google.com")
-                                 ;; (gts-google-rpc-engine :parser (gts-google-rpc-parser) :url "https://translate.google.com")
-                                 )
-
-                                :render
-                                (gts-buffer-render)
-                                ;;(gts-posframe-pop-render)
-                                ;;(gts-posframe-pop-render :backcolor "#333333" :forecolor "#ffffff")
-                                ;;(gts-posframe-pin-render)
-                                ;;(gts-posframe-pin-render :position (cons 1200 20))
-                                ;;(gts-posframe-pin-render :width 80 :height 25 :position (cons 1000 20) :forecolor "#ffffff" :backcolor "#111111")
-                                ;;(gts-kill-ring-render)
-
-                                :splitter
-                                (gts-paragraph-splitter)))
-
   (setq user-full-name "hackartist")
   (setq completion-styles `(flex))
   (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
@@ -136,6 +103,10 @@
               (yas-minor-mode 1)
               (setq yas/indent-line nil)
               (spacemacs/toggle-line-numbers-on)))
+
+  (add-hook 'make-mode-hook 
+            '(lambda() 
+               (setq indent-tabs-mode t)))
 
   ;; code review configuration
   ;; (add-hook 'code-review-mode-hook #'emojify-mode)
@@ -337,6 +308,40 @@
   ;; First day of the week
 
   (setq calendar-week-start-day 1) ; 0:Sunday, 1:Monday
+
+  (setq gts-default-translator (gts-translator
+                                :picker
+                                ;;(gts-noprompt-picker)
+                                ;;(gts-noprompt-picker :texter (gts-whole-buffer-texter))
+                                (gts-prompt-picker)
+                                ;;(gts-prompt-picker :single t)
+                                ;;(gts-prompt-picker :texter (gts-current-or-selection-texter) :single t)
+
+                                :engines
+                                (list
+                                 (gts-bing-engine)
+                                 ;;(gts-google-engine)
+                                 ;;(gts-google-rpc-engine)
+                                 (gts-deepl-engine :auth-key (getenv "DEEPL_KEY") :pro nil)
+                                 (gts-google-engine)
+                                 ;; (gts-google-engine :parser (gts-google-summary-parser))
+                                 ;;(gts-google-engine :parser (gts-google-parser))
+                                 ;;(gts-google-rpc-engine :parser (gts-google-rpc-summary-parser) :url "https://translate.google.com")
+                                 ;; (gts-google-rpc-engine :parser (gts-google-rpc-parser) :url "https://translate.google.com")
+                                 )
+
+                                :render
+                                (gts-buffer-render)
+                                ;;(gts-posframe-pop-render)
+                                ;;(gts-posframe-pop-render :backcolor "#333333" :forecolor "#ffffff")
+                                ;;(gts-posframe-pin-render)
+                                ;;(gts-posframe-pin-render :position (cons 1200 20))
+                                ;;(gts-posframe-pin-render :width 80 :height 25 :position (cons 1000 20) :forecolor "#ffffff" :backcolor "#111111")
+                                ;;(gts-kill-ring-render)
+
+                                :splitter
+                                (gts-paragraph-splitter)))
+
   )
 
 ;; (defun ide/display-helm-miniwindow (buffer &optional resume)
