@@ -1,0 +1,21 @@
+
+import { BaseApp, makeAuthMiddleware } from '@wb/libs';
+import { Config } from './config';
+import mongoose, { ConnectOptions } from 'mongoose';
+
+export class ${1:Name}App extends BaseApp {
+  config: Config;
+
+  constructor(cfg: Config) {
+    super(cfg.env, '$1 App');
+    this.config = cfg;
+
+    // super.addMiddleware(makeAuthMiddleware(cfg.services.imember));
+  }
+
+  async start() {
+    await mongoose.connect(this.config.database.url, this.config.database.options as ConnectOptions);
+
+    super.start(this.config.port);
+  }
+}

@@ -1,0 +1,25 @@
+# name: base-run
+# --
+
+import { loadConfig, logger } from '@wb/libs';
+import { Application } from '@wb/libs';
+
+import { ${1:Name}App } from './app';
+import { config } from './config';
+
+const yargs = require('yargs');
+
+const { argv } = yargs(process.argv.splice(2))
+  .option('config', {
+    alias: 'c',
+    description: 'YAML config file',
+    type: 'string',
+    default: 'fixtures/config.yaml',
+  })
+  .help('h');
+
+const cfg = loadConfig(config, argv.config);
+logger.info('starting a server...');
+
+const server = new Application();
+server.start(new $1App(cfg));

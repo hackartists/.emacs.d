@@ -1,0 +1,32 @@
+# name: base-controller
+# --
+
+import { Controller, logger } from '@wb/libs';
+
+import { Config } from '../config';
+
+type HelloRequest = {
+  message: string;
+}
+
+type HelloResponse = {
+  echo: string;
+  msg: string;
+}
+
+export class ${1:Name}Controller extends Controller {
+  constructor(cfg: Config) {
+    super();
+
+    super.get('/hello', this.hello);
+  }
+
+
+  hello = async (req: HelloRequest): Promise<HelloResponse> => {
+    return {
+      echo: req.message,
+      msg: 'hello'
+    };
+};
+
+}

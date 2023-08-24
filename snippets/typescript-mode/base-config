@@ -1,0 +1,12 @@
+# name: base-config
+# --
+
+import { BaseConfig, baseConfig } from '@wb/libs';
+
+export type Config = BaseConfig & {
+};
+
+export const config: Config = {
+  ...baseConfig,
+
+};
