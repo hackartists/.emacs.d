@@ -10,7 +10,8 @@
               history-delete-duplicates t
               history-length 10)
         (git :variables
-             ;; git-enable-magit-todos-plugin t
+             git-enable-magit-delta-plugin t
+             git-enable-magit-todos-plugin t
              git-enable-magit-gitflow-plugin t)
         version-control
         ;; github
