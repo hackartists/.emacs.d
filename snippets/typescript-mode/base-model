@@ -7,7 +7,7 @@ export interface I${1:Name}Model {
   ${2:field}: string;
 }
 
-export const $1Model = createModel<I$1Model>('${3:Prefix}_$1', {
+export const $1Model = createModel<I$1Model>('$1', {
   $2: {
     type: String,
     required: true,

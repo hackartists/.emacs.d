@@ -104,9 +104,9 @@
               (setq yas/indent-line nil)
               (spacemacs/toggle-line-numbers-on)))
 
-  (add-hook 'make-mode-hook 
-            '(lambda() 
-               (setq indent-tabs-mode t)))
+  (add-hook 'makefile-mode-hook
+            (lambda()
+              (indent-tabs-mode 1)))
 
   ;; code review configuration
   ;; (add-hook 'code-review-mode-hook #'emojify-mode)
