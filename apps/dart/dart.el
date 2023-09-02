@@ -20,8 +20,7 @@
   "Start `flutter run` or hot-reload if already running."
   (interactive)
   (if (flutter--running-p)
-      (flutter-run-or-hot-reload)
-    (flutter-run)))
+      (flutter-run-or-hot-reload)))
 
 (defun hackartist/dart/before-save-hook ()
   (when (derived-mode-p 'dart-mode)
