@@ -184,4 +184,5 @@
         "https://github.com/nyyManni/ejira.git"
         "https://github.com/tecosaur/emacs-everywhere.git"
         "https://github.com/AllTheLife/Bard.el.git"
+        "https://github.com/zerolfx/copilot.el.git"
         ))

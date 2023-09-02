@@ -60,6 +60,13 @@
   (require 'helm-mt)
   (require 'emacs-everywhere)
   (require 'bard)
+  (require 'copilot)
+
+  (with-eval-after-load 'company
+    ;; disable inline previews
+    (delq 'company-preview-if-just-one-frontend company-frontends))
+
+  (add-hook 'prog-mode-hook 'copilot-mode)
 
   (setq user-full-name "hackartist")
   (setq completion-styles `(flex))
@@ -278,7 +285,6 @@
   ;;  helm-semantic-lynx-style-map t
   ;;  helm-occur-use-ioccur-style-keys t
   ;;  helm-grep-use-ioccur-style-keys t)
-
   (custom-set-faces
    '(default ((t (:inherit nil :extend nil :stipple nil :background "#292b2e" :foreground "#b2b2b2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
    '(font-lock-comment-face ((t (:background "#292b2e" :foreground "#2aa1ae" :slant normal))))

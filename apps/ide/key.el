@@ -97,11 +97,17 @@
               (define-key term-mode-map (kbd "M-h") 'term-send-backward-word)
               (define-key term-mode-map (kbd "M-l") 'term-send-forward-word)))
 
-  (add-hook 'company-mode-hook
-            (lambda ()
+  (with-eval-after-load 'copilot
+    (define-key copilot-completion-map (kbd "<return>") 'copilot-accept-completion)
+    (define-key copilot-completion-map (kbd "RET") 'copilot-accept-completion)
+    (define-key copilot-completion-map (kbd "C-RET") 'copilot-accept-completion-by-word)
+    (define-key copilot-completion-map (kbd "C-<return>") 'copilot-accept-completion-by-word))
+
+  ;; (add-hook 'company-mode-hook
+  ;;           (lambda ()
               ;;(define-key company-active-map (kbd "ESC") 'company-abort)
-              (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
-              (define-key company-active-map (kbd "<tab>") 'company-complete)))
+              ;; (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
+              ;; (define-key company-active-map (kbd "<tab>") 'company-complete)))
   ;; (with-eval-after-load 'yasnippet
   ;;   (define-key yas-minor-mode-map [(tab)]       (yas-filtered-definition 'yas-next-field))
   ;;   (define-key yas-minor-mode-map (kbd "TAB")   (yas-filtered-definition 'yas-next-field)))
