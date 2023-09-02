@@ -6,8 +6,10 @@ import 'package:common/common.dart';
 
 import '`(string-inflection-underscore-function (string-replace ".dart" "" (buffer-name)))`_controller.dart';
 
-class `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))` extends GetWidget {
+class `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))` extends StatelessWidget {
   const `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`({Key? key}) : super(key: key);
+
+  final `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`Controller controller = Get.put(`(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`Controller());
 
   @override
   Widget build(BuildContext context) {
