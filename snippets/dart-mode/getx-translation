@@ -1,5 +1,9 @@
 # name: getx-translation 
 # --
 
-    static final _${1:trigger} = s('$1', '${2:en}', '${3:ko}');
+    static final _${1:trigger} = s(
+      '$1',
+      '${2:en}',
+      '${3:ko}',
+    );
     static String get $1 => _$1.tr;

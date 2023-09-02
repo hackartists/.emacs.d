@@ -4,7 +4,7 @@
         ))
 
 (defun hackartist/dart/init ()
-  ;; (add-hook 'after-save-hook 'hackartist/dart/after-save-hook)
+  (add-hook 'after-save-hook 'hackartist/dart/after-save-hook)
   (add-hook 'before-save-hook 'hackartist/dart/before-save-hook))
 
 (defun hackartist/dart/bindings ()
@@ -19,13 +19,17 @@
 (defun hackartist/flutter-run-or-hot-restart ()
   "Start `flutter run` or hot-reload if already running."
   (interactive)
-  (if (flutter--running-p)
-      (flutter-run-or-hot-reload)))
+  (when (flutter--running-p)
+      (flutter-hot-restart)))
+
+(defun hackartist/flutter-run-web-with-build-config ()
+  (interactive)
+  (flutter-run "-d web-server --web-port 3000 --dart-define-from-file=build/config.json"))
 
 (defun hackartist/dart/before-save-hook ()
   (when (derived-mode-p 'dart-mode)
     (lsp-format-buffer)))
 
 (defun hackartist/dart/after-save-hook ()
-  (when (derived-mode-p 'dart-mode)
-    (flutter-run-or-hot-reload)))
+  (when (and (derived-mode-p 'dart-mode) (not (eq nil (flutter--running-p))))
+    (flutter-hot-restart)))
