@@ -1,0 +1,12 @@
+# name: base-controller
+# --
+
+type `(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))` struct {
+}
+
+func New`(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))`(cfg config.AppConfig) *`(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))` {
+return &`(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))`{}
+}
+
+func (r *`(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))`) OnInit(route base.PathRouter) {
+}

@@ -2,17 +2,15 @@
 # name: base-handler
 # key: base-handler
 # --
-type ${1:name}Req struct {
-base.${2:JSON|QueryOrForm|Path|HeaderRequester} \`json:"-"\`
+type ${1:name}Request struct {
 }
 
-
-type $1Resp struct {
+type $1Response struct {
 
 }
 
-// $1 ${4:...}
-func (r *${3:reciever}) $1(ctx *base.Context, req $1Req) (*$1Resp, base.StatefulError) {
+// $1 ${3:...}
+func (r *`(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))`) $1(ctx *base.Context, req $1Request) (*$1Response, *base.Error) {
 $0
 
 return nil, base.ErrNotImplemented

@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+#name : getx-storage
+#key : #gxst
+# --
+
+
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+
+// add below code to main.dart
+// await Get.putAsync(() => `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`().init());
+class `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))` {
+  late final GetStorage storage;
+
+  `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`() {
+      storage = GetStorage('`(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`');
+    }
+}

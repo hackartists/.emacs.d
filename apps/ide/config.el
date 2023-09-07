@@ -62,10 +62,6 @@
   (require 'bard)
   (require 'copilot)
 
-  (with-eval-after-load 'company
-    ;; disable inline previews
-    (delq 'company-preview-if-just-one-frontend company-frontends))
-
   (add-hook 'prog-mode-hook 'copilot-mode)
 
   (setq user-full-name "hackartist")

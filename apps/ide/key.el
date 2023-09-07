@@ -97,6 +97,13 @@
               (define-key term-mode-map (kbd "M-h") 'term-send-backward-word)
               (define-key term-mode-map (kbd "M-l") 'term-send-forward-word)))
 
+  (with-eval-after-load 'company
+    (delq 'company-preview-if-just-one-frontend company-frontends)
+    ;; (define-key company-mode-map (kbd "<tab>") 'hackartist/hybrid-completion-tab)
+    ;; (define-key company-mode-map (kbd "TAB") 'hackartist/hybrid-completion-tab)
+    (define-key company-active-map (kbd "<tab>") 'hackartist/hybrid-completion-tab)
+    (define-key company-active-map (kbd "TAB") 'hackartist/hybrid-completion-tab))
+
   (with-eval-after-load 'copilot
     (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
     (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
@@ -303,3 +310,8 @@
                                     unread-command-events))
                        (throw 'exit-input-loop nil))))))
         (quail-delete-overlays)))))
+
+(defun hackartist/hybrid-completion-tab ()
+  (interactive)
+  (or (copilot-accept-completion)
+      (company-complete-selection)))

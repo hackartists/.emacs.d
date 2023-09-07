@@ -5,5 +5,15 @@
 
 
 class `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))` {
+  final String? id;
+
+  `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`({
+      this.id,
+    });
+
+    factory `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`.fromJson(Map<String, dynamic> json) =>
+      PrivateKeyResponse(
+        id: json["id"],
+      );
 
 }

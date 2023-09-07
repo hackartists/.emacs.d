@@ -4,7 +4,17 @@
         ))
 
 (defun hackartist/dart/init ()
-  (add-hook 'after-save-hook 'hackartist/dart/after-save-hook)
+  (dap-register-debug-template "Flutter :: Debug"
+                             (list :type "flutter"
+                                   :request "launch"
+                                   :name "Launch Flutter Web with .build/config.json"
+                                   :mode "debug"
+                                   :program nil
+                                   :args "--dart-define-from-file=.build/config.json"
+                                   :env nil
+                                   :envFile nil))
+
+  ;; (add-hook 'after-save-hook 'hackartist/dart/after-save-hook)
   (add-hook 'before-save-hook 'hackartist/dart/before-save-hook))
 
 (defun hackartist/dart/bindings ()
@@ -24,7 +34,7 @@
 
 (defun hackartist/flutter-run-web-with-build-config ()
   (interactive)
-  (flutter-run "-d web-server --web-port 3000 --dart-define-from-file=build/config.json"))
+  (flutter-run "-d web-server --web-port 5000 --dart-define-from-file=.build/config.json"))
 
 (defun hackartist/dart/before-save-hook ()
   (when (derived-mode-p 'dart-mode)
