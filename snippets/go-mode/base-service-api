@@ -1,0 +1,29 @@
+# name: base-service-api
+# --
+
+type `(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))` struct {
+	ctx context.Context
+	cli *httpclient.HTTPClient
+}
+
+var cli *`(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))`
+var once sync.Once
+
+func New`(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))`(ctx context.Context, endpoint string) *`(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))` {
+	once.Do(func() {
+		cl, err := httpclient.NewHttpClient(httpclient.ConstantBackoff(3, 1*time.Second), httpclient.Limiter(1000), httpclient.Headers(http.Header{
+			"Content-Type": []string{"application/json"},
+		}), httpclient.Endpoint(endpoint))
+
+		if err != nil {
+			logger.Criticalf(nil, "NewHttpClient error: %v", err)
+
+		}
+		cli = &`(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))`{
+			ctx: ctx,
+			cli: cl,
+		}
+	})
+
+	return cli
+}

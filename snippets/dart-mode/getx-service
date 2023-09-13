@@ -7,10 +7,9 @@
 import 'package:get/get.dart';
 
 // add below code to main.dart
-// await Get.putAsync(() => `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`().init());
 class `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))` extends GetxService {
   static void init()  {
-    $0
+    Get.put<`(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`>(`(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`());
 
     return this;
   }

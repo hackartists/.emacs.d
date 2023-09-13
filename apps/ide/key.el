@@ -314,4 +314,5 @@
 (defun hackartist/hybrid-completion-tab ()
   (interactive)
   (or (copilot-accept-completion)
-      (company-complete-selection)))
+      (company-complete-selection) ;(company-complete-selection)
+      ))

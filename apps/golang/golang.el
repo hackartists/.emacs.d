@@ -1,5 +1,5 @@
 (defun hackartist/golang/init ()
-  (add-hook #'lsp-deferred)
+  ;; (add-hook #'lsp-deferred)
   (add-hook 'before-save-hook 'hackartist/go/before-save-hook))
 
 (defun go/pre-init-dap-mode ()

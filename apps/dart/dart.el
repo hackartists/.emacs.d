@@ -23,6 +23,7 @@
   (spacemacs/set-leader-keys-for-major-mode 'dart-mode
     "RET" 'lsp-dart-dap-flutter-hot-reload
     "SPC" 'lsp-dart-dap-flutter-hot-restart
+    "'" 'hackartist/flutter-run-web-with-build-config
     "TAB" 'flutter-run-or-hot-reload)
   )
 

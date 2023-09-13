@@ -12,7 +12,7 @@ class `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (b
     });
 
     factory `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`.fromJson(Map<String, dynamic> json) =>
-      PrivateKeyResponse(
+    `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`(
         id: json["id"],
       );
 
