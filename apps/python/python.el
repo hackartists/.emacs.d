@@ -1,5 +1,5 @@
 (setq hackartist-python-layers
-      '((python :variables python-format-on-save t python-sort-imports-on-save nil python-test-runner 'pytest python-test-runner '(pytest nose))
+      '((python :variables python-format-on-save nil python-sort-imports-on-save nil python-test-runner 'pytest python-test-runner '(pytest nose))
         (ipython-notebook :variables ein-backend 'jupyter)))
 
 (setq hackartist-python-packages '())

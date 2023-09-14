@@ -1,5 +1,6 @@
 (defun hackartist/ide-before-save-hook()
-  (when (bound-and-true-p go-mode)
+  (when (or (derived-mode-p 'go-mode)
+            (derived-mode-p 'dart-mode))
     (lsp-organize-imports)
     (lsp-format-buffer)))
 
