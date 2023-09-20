@@ -97,18 +97,21 @@
               (define-key term-mode-map (kbd "M-h") 'term-send-backward-word)
               (define-key term-mode-map (kbd "M-l") 'term-send-forward-word)))
 
-  (with-eval-after-load 'company
-    (delq 'company-preview-if-just-one-frontend company-frontends)
-    ;; (define-key company-mode-map (kbd "<tab>") 'hackartist/hybrid-completion-tab)
-    ;; (define-key company-mode-map (kbd "TAB") 'hackartist/hybrid-completion-tab)
-    (define-key company-active-map (kbd "<tab>") 'hackartist/hybrid-completion-tab)
-    (define-key company-active-map (kbd "TAB") 'hackartist/hybrid-completion-tab))
+  ;; (with-eval-after-load 'company
+  ;;   (delq 'company-preview-if-just-one-frontend company-frontends)
+  ;;   ;; (define-key company-mode-map (kbd "<tab>") 'hackartist/hybrid-completion-tab)
+  ;;   ;; (define-key company-mode-map (kbd "TAB") 'hackartist/hybrid-completion-tab)
+  ;;   (define-key company-active-map (kbd "<tab>") 'hackartist/hybrid-completion-tab)
+  ;;   (define-key company-active-map (kbd "TAB") 'hackartist/hybrid-completion-tab))
 
   (with-eval-after-load 'copilot
-    (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
-    (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
-    (define-key copilot-completion-map (kbd "C-TAB") 'copilot-accept-completion-by-word)
-    (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion-by-word))
+    (define-key copilot-mode-map (kbd "C-c C-c") 'copilot-accept-completion)
+
+    ;; (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+    ;; (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
+    ;; (define-key copilot-completion-map (kbd "C-TAB") 'copilot-accept-completion-by-word)
+    ;; (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion-by-word)
+    )
 
   ;; (add-hook 'company-mode-hook
   ;;           (lambda ()
@@ -314,5 +317,5 @@
 (defun hackartist/hybrid-completion-tab ()
   (interactive)
   (or (copilot-accept-completion)
-      (company-complete-selection) ;(company-complete-selection)
+      (company-complete) ;(company-complete-selection)
       ))

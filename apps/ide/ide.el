@@ -43,7 +43,6 @@
   (shrface-basic) 
   (shrface-trial) 
   (github-notifier) 
-  (elcord-mode 1) 
   ;; (add-hook 'prog-mode-hook (lambda () 
   ;;                             (add-hook 'before-save-hook (lambda () 
   ;;                                                           (cond ((eq major-mode 'rjsx-mode) 
