@@ -97,12 +97,17 @@
               (define-key term-mode-map (kbd "M-h") 'term-send-backward-word)
               (define-key term-mode-map (kbd "M-l") 'term-send-forward-word)))
 
-  ;; (with-eval-after-load 'company
-  ;;   (delq 'company-preview-if-just-one-frontend company-frontends)
-  ;;   ;; (define-key company-mode-map (kbd "<tab>") 'hackartist/hybrid-completion-tab)
-  ;;   ;; (define-key company-mode-map (kbd "TAB") 'hackartist/hybrid-completion-tab)
-  ;;   (define-key company-active-map (kbd "<tab>") 'hackartist/hybrid-completion-tab)
-  ;;   (define-key company-active-map (kbd "TAB") 'hackartist/hybrid-completion-tab))
+  (with-eval-after-load 'company
+
+    (define-key company-active-map (kbd "ESC") 'company-abort)
+    (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
+    (define-key company-active-map (kbd "<tab>") 'company-complete)
+    ;;   (delq 'company-preview-if-just-one-frontend company-frontends)
+    ;;   ;; (define-key company-mode-map (kbd "<tab>") 'hackartist/hybrid-completion-tab)
+    ;;   ;; (define-key company-mode-map (kbd "TAB") 'hackartist/hybrid-completion-tab)
+    ;;   (define-key company-active-map (kbd "<tab>") 'hackartist/hybrid-completion-tab)
+    ;;   (define-key company-active-map (kbd "TAB") 'hackartist/hybrid-completion-tab)
+    )
 
   (with-eval-after-load 'copilot
     (define-key copilot-mode-map (kbd "C-c C-c") 'copilot-accept-completion)
