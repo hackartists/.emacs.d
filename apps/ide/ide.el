@@ -43,16 +43,6 @@
   (shrface-basic) 
   (shrface-trial) 
   (github-notifier) 
-  ;; (add-hook 'prog-mode-hook (lambda () 
-  ;;                             (add-hook 'before-save-hook (lambda () 
-  ;;                                                           (cond ((eq major-mode 'rjsx-mode) 
-  ;;                                                                  (lsp-eslint-apply-all-fixes)) 
-  ;;                                                                 ((eq major-mode 'rjsx-mode) 
-  ;;                                                                  (lsp-eslint-apply-all-fixes)) 
-  ;;                                                                 ((eq major-mode 'emacs-lisp-mode) 
-  ;;                                                                  (elisp-format-buffer)) 
-  ;;                                                                 ((eq major-mode 'go-mode) 
-  ;;                                                                  (gofmt-before-save)))))))
 
   ;; (shrface-default-keybindings) ; setup default keybindings
   (advice-add 'forge-visit-pullreq :override 'advice-override/forge-visit-pullreq)
