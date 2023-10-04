@@ -10,7 +10,5 @@ import 'package:get/get.dart';
 class `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))` extends GetxService {
   static void init()  {
     Get.put<`(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`>(`(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`());
-
-    return this;
   }
 }

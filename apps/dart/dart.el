@@ -1,10 +1,13 @@
 (setq hackartist-dart-layers
       '(
-        (dart :variables dart-backend 'lsp lsp-dart-sdk-dir "/opt/flutter/bin/cache/dart-sdk" lsp-enable-on-type-formatting t dart-server-format-on-save t)
+        (dart :variables
+              dart-backend 'lsp
+              lsp-dart-sdk-dir "/opt/flutter/bin/cache/dart-sdk"
+              lsp-enable-on-type-formatting t
+              dart-server-format-on-save nil)
         ))
 
 (defun hackartist/dart/init ()
-  (dap-register-debug-provider "flutter" 'hackartist/lsp-dart-dap--populate-flutter-start-file-args)
   (add-hook 'before-save-hook 'hackartist/dart/before-save-hook))
 
 (defun hackartist/dart/bindings ()
@@ -15,8 +18,14 @@
     "ESC" 'hackartist/dart/devtools
     "SPC" 'lsp-dart-dap-flutter-hot-restart
     "'" 'hackartist/flutter-run-web-with-build-config
+    "d" 'hackartist/dart/config
     "TAB" 'flutter-run-or-hot-reload)
+
   )
+
+(defun hackartist/dart/config ()
+  (interactive)
+  (dap-register-debug-provider "flutter" 'hackartist/lsp-dart-dap--populate-flutter-start-file-args))
 
 (defun hackartist/flutter-run-or-hot-restart ()
   "Start `flutter run` or hot-reload if already running."
@@ -37,6 +46,7 @@
     (flutter-hot-restart)))
 
 (defun hackartist/dart/devtools ()
+  (interactive)
   (start-process-shell-command "dart-devtools" "*dart devtools*" "dart devtools"))
 
 (defun hackartist/lsp-dart-dap--populate-flutter-start-file-args (conf)

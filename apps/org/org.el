@@ -107,6 +107,7 @@
                                            (lisp "Lisp") 
                                            (clojure "Lisp") 
                                            (c "C") 
+                                           (dart "Dart") 
                                            (cc "C++") 
                                            (fortran "fortran") 
                                            (perl "Perl") 
