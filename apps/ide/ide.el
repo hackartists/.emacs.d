@@ -16,7 +16,7 @@
   ;; (global-auto-highlight-symbol-mode +1)
   (require 'impostman) 
   (require 'ox-moderncv)
-  (elcord-mode t)
+  ;; (elcord-mode t)
   (autoload 'garak "garak" nil t)
   (setq auth-sources '("~/.authinfo")) 
   (add-hook 'before-save-hook 'hackartist/ide-before-save-hook)

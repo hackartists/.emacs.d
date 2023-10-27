@@ -122,7 +122,7 @@
         dictionary
         helm-wordnet
         helm-dictionary
-        elcord
+        ;; elcord
         ;; evil-avy
         mermaid-mode
         ob-mermaid

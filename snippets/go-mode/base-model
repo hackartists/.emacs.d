@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: base-model
+# key: 
+# --
+
+type ${1: Name} struct {
+	Key       string `bson:"key,omitempty" json:"key,omitempty"`
+	CreatedAt int64  `bson:"createdAt,omitempty" json:"createdAt,omitempty"`
+}
+
+func (r $1) Collection() string {
+	return "${2: Table name}"
+}
+
+func (r $1) Table() string {
+	return r.Collection()
+}
+
+func (r $1) Indexes() []mongo.IndexModel {
+	return []mongo.IndexModel{}
+}
