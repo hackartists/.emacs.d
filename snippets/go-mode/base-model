@@ -4,8 +4,8 @@
 # --
 
 type ${1: Name} struct {
-	Key       string `bson:"key,omitempty" json:"key,omitempty"`
-	CreatedAt int64  `bson:"createdAt,omitempty" json:"createdAt,omitempty"`
+	Key       string \`bson:"key,omitempty" json:"key,omitempty"\`
+	CreatedAt int64  \`bson:"createdAt,omitempty" json:"createdAt,omitempty"\`
 }
 
 func (r $1) Collection() string {
