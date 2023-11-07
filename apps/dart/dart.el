@@ -8,6 +8,7 @@
         ))
 
 (defun hackartist/dart/init ()
+  (setq lexical-binding t)
   (add-hook 'before-save-hook 'hackartist/dart/before-save-hook))
 
 (defun hackartist/dart/bindings ()
