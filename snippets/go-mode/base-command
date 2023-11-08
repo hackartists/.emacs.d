@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# name: base-command
+# key: 
+# --
+
+
+var Command = &cobra.Command{
+  Use:   "`(string-inflection-lower-camelcase-function (string-replace ".go" "" (buffer-name)))`",
+	Short: "${1:Describe your command here}",
+	Long:  "${2:Explain more details}",
+	Run:   Execute,
+}
+
+func init() {
+	Command.Flags().String("type", "pptx", "describe your file extension")
+}
+
+func Execute(cmd *cobra.Command, args []string) {
+	ctx := context.TODO()
+
+	logger.Debugf(ctx, "%+v", args)
+}
