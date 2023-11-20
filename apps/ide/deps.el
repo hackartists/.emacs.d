@@ -29,7 +29,7 @@
                          auto-completion-use-company-posframe t
                          auto-completion-enable-sort-by-usage nil)
         ;; unicode-fonts
-        systemd
+        ;;systemd
         (markdown :variables markdown-live-preview-engine 'vmd)
         ;; confluence
         yaml

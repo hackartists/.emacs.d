@@ -50,7 +50,7 @@
    dotspacemacs-pretty-docs t
    dotspacemacs-major-mode-leader-key "RET"
    dotspacemacs-loading-progress-bar t
-   dotspacemacs-mode-line-theme '(doom :separator wave :separator-scale 1.5)
+   dotspacemacs-mode-line-theme '(doom :separator wave :separator-scale 1.0)
    ;; dotspacemacs-startup-lists '((recents  . 5)
    ;;                              (projects . 15)
    ;;                              (todos . 5)
@@ -65,7 +65,7 @@
    doom-modeline-unicode-fallback t
    doom-modeline-vcs-max-length 30
    dotspacemacs-default-font '("D2Coding"
-                               :size 14.0
+                               :size 11.0
                                :weight normal
                                :width normal)
    dotspacemacs-emacs-command-key "X")

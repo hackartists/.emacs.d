@@ -1,3 +1,15 @@
+(defun classify-linux-distribution ()
+  "Classify the Linux distribution."
+  (cond
+   ((file-exists-p "/etc/arch-release") "Arch Linux")
+   ((file-exists-p "/etc/os-release")
+    (if (string-match-p "Ubuntu" (with-temp-buffer
+                                    (insert-file-contents "/etc/os-release")
+                                    (buffer-string)))
+        "Ubuntu"
+      "Unknown Linux distribution"))
+   (t "Unknown Linux distribution")))
+
 (defun set-keyboard-en ()
   (let* ((input-method nil))
     (setq hangul-queue nil)

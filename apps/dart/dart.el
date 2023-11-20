@@ -26,6 +26,8 @@
 
 (defun hackartist/dart/config ()
   (interactive)
+  (when (string= (classify-linux-distribution) "Ubuntu")
+    (setq lsp-dart-flutter-sdk-dir "/home/hackartist/snap/flutter/common/flutter"))
   (dap-register-debug-provider "flutter" 'hackartist/lsp-dart-dap--populate-flutter-start-file-args))
 
 (defun hackartist/flutter-run-or-hot-restart ()

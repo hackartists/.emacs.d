@@ -61,6 +61,8 @@
   (require 'emacs-everywhere)
   (require 'bard)
   (require 'copilot)
+  (setq read-process-output-max (* (* 1024 1024) 10)) ;; 10mb
+  (setq lsp-session-folders-blocklist (list (expand-file-name "~")))
 
   (add-hook 'prog-mode-hook 'copilot-mode)
 
