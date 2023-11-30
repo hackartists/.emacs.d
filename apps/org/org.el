@@ -41,6 +41,10 @@
               :after #'hackartist/ide/advice-after/org-hugo-export-wim-to-md) 
   (with-eval-after-load 'company (spacemacs|add-company-backends :backends company-ispell 
                                                                  :modes org-mode)) 
+  (org-ai-global-mode t)
+  (org-ai-install-yasnippets)
+  (setq org-ai-openai-api-token (getenv "OPENAPI_KEY"))
+
   (require 'org-pandoc-import) 
   (require 'org-pandoc-import-transient) 
   (org-add-link-type "image-url" (lambda (path) 
@@ -213,6 +217,15 @@
     'org-pandoc-import-rst-as-org "iit" 'org-pandoc-import-tsv-as-org "iil"
     'org-pandoc-import-latex-as-org "iip" 'org-pandoc-import-ipynb-as-org)
   (evil-define-key 'normal org-mode-map "." 'dictionary-lookup-definition) 
+
+  (spacemacs/declare-prefix "," "Open AI")
+  (spacemacs/set-leader-keys
+    ", SPC" 'org-ai-prompt
+    ", RET" 'org-ai-summarize
+    ",c" 'org-ai-refactor-code
+    ",p" 'org-ai-on-project
+    )
+
   (define-key org-mode-map (kbd "<M-return>") nil) 
   (define-key org-mode-map (kbd "<M-S-up>") nil) 
   (define-key org-mode-map (kbd "<M-S-down>") nil) 

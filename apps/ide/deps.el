@@ -133,6 +133,7 @@
         gptel
         sqlite3
         openwith
+        codegpt
 	      ))
 
 (setq hackartist-ide-osc

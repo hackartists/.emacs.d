@@ -76,9 +76,27 @@
 (defun helm-hackartist-buffer ()
   "Select hackartist ide using helm."
   (interactive)
+  (require 'helm-for-files)
+
+  (unless helm-source-buffers-list
+    (setq helm-source-buffers-list
+          (helm-make-source "Buffers" 'helm-source-buffers)))
+
+  (unless helm-source-recentf
+    (setq helm-source-recentf
+                 (helm-make-source "Recentf" 'helm-recentf-source)))
+
   (helm
    :prompt "Hackartist Shell : "
-   :sources helm-hackartist-sources-list))
+   :sources '(
+              helm-source-buffers-list
+              helm-source-recentf
+              helm-source-projectile-files-list
+              helm-source-projectile-projects
+              helm-source-buffer-not-found
+              )
+    :buffer "*helm hackartist*"
+   ))
 
 (defun helm-hackartist-buffers-candidates ()
   (let (bufs '())

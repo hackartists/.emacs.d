@@ -1,11 +1,3 @@
-;; (setq package-archives '(
-;;                          ("melpa" . "https://melpa.org/packages/")
-;; 			                   ("gnu" . "https://elpa.gnu.org/packages/")))
-;; (setq core/package/list '())
-
-;; (package-initialize)
-;; (package-refresh-contents)
-
 (defun core/package/install (pkgs)
   (let (res)
     (dolist (el pkgs res)

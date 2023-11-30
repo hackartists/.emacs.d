@@ -9,6 +9,7 @@
 (advice-add 'spacemacs-buffer//insert-version :before #'hackartist//version)
 (advice-add 'spacemacs-buffer//insert-version :after #'hackartist//restore)
 (advice-add 'spacemacs/init :before #'hackartist//init)
+(advice-add 'configuration-layer/create-elpa-repository :override #'hackartist/configuration-layer/create-elpa-repository)
 
 ;; (add-hook 'focus-out-hook (lambda ()
 ;; 			    (interactive)
@@ -20,10 +21,34 @@
 ;;             ;; (dolist (el hackartist-configuration-layers) (dotspacemacs/add-layer el))
 ;;             ;; (dolist (el hackartist-apps) (hackartist//app-config el))
 ;;             ))
+(defun hackartist/configuration-layer/create-elpa-repository (name output-dir)
+  "Create an ELPA repository containing all packages supported by Spacemacs."
+  (configuration-layer/make-all-packages 'no-discover)
+  (let (package-archive-contents
+        (package-archives '(("melpa" . "https://melpa.org/packages/")
+                            ("gnu"   . "https://elpa.gnu.org/packages/")
+                            ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+                            ("jcs-elpa" . "https://jcs-emacs.github.io/jcs-elpa/packages/")
+                            ("org" . "https://orgmode.org/elpa/"))))
+    (package-refresh-contents)
+    (package-read-all-archive-contents)
+    (let* ((packages (configuration-layer//get-indexed-elpa-package-names))
+           (archive-contents
+            (mapcar 'configuration-layer//create-archive-contents-item
+                    packages))
+           (path (file-name-as-directory (concat output-dir "/" name))))
+      (unless (file-exists-p path) (make-directory path 'create-parents))
+      (configuration-layer//sync-elpa-packages-files packages path)
+      (push 1 archive-contents)
+      (with-current-buffer (find-file-noselect
+                            (concat path "archive-contents"))
+        (erase-buffer)
+        (prin1 archive-contents (current-buffer))
+        (save-buffer)))))
+
 (defun hackartist//init ()
   (defconst spacemacs-buffer-name "*hackartist-emacs*")
-  (defconst spacemacs-buffer-logo-title "[H A C K A R T I S T - E M A C S]")
-  )
+  (defconst spacemacs-buffer-logo-title "[H A C K A R T I S T - E M A C S]"))
 (defun hackartist//version ()
   (setq dotspacemacs-distribution 'hackartist-emacs))
 

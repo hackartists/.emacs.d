@@ -8,7 +8,9 @@
         ))
 
 (defun hackartist/dart/init ()
-  (setq lexical-binding t)
+  (setq
+   lexical-binding t
+   lsp-dart-flutter-widget-guides nil)
   (add-hook 'before-save-hook 'hackartist/dart/before-save-hook))
 
 (defun hackartist/dart/bindings ()
@@ -20,12 +22,14 @@
     "SPC" 'lsp-dart-dap-flutter-hot-restart
     "'" 'hackartist/flutter-run-web-with-build-config
     "d" 'hackartist/dart/config
-    "TAB" 'flutter-run-or-hot-reload)
+    "TAB" 'flutter-run-or-hot-reload))
 
-  )
+(defun hackartist/dart/mode-hook ()
+  (when (derived-mode-p 'dart-mode)
+    (flyspell-mode-off)))
 
 (defun hackartist/dart/config ()
-  (interactive)
+  (add-hook 'dart-mode-hook 'hackartist/dart/mode-hook)
   (when (string= (classify-linux-distribution) "Ubuntu")
     (setq lsp-dart-flutter-sdk-dir "/home/hackartist/snap/flutter/common/flutter"))
   (dap-register-debug-provider "flutter" 'hackartist/lsp-dart-dap--populate-flutter-start-file-args))
@@ -42,6 +46,7 @@
 
 (defun hackartist/dart/before-save-hook ()
   (when (derived-mode-p 'dart-mode)
+    (lsp-organize-imports)
     (lsp-format-buffer)))
 
 (defun hackartist/dart/after-save-hook ()

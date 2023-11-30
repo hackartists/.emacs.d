@@ -63,6 +63,15 @@
   (require 'copilot)
   (setq read-process-output-max (* (* 1024 1024) 10)) ;; 10mb
   (setq lsp-session-folders-blocklist (list (expand-file-name "~")))
+  (setq shell-file-name "/bin/zsh")
+  (setq global-mark-ring-max 50000
+        mark-ring-max 50000
+        kill-ring-max 50000
+        mode-require-final-newline t
+        tab-width 2
+        kill-whole-line t
+        recentf-filename-handlers '(file-truename)
+        recentf-max-menu-items 100)
 
   (add-hook 'prog-mode-hook 'copilot-mode)
 
@@ -78,15 +87,6 @@
   (if (eq system-type 'darwin)
       (hackartist/ide/config/darwin)
     (hackartist/ide/config/linux))
-
-  (setq shell-file-name "/bin/zsh")
-  (setq global-mark-ring-max 50000
-        mark-ring-max 50000
-        kill-ring-max 50000
-        mode-require-final-newline t
-        tab-width 2
-        kill-whole-line t
-        recentf-max-menu-items 100)
 
   (setq tab-always-indent t)
   (add-to-list 'auto-mode-alist '("\\profile\\'" . shell-script-mode))

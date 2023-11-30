@@ -3,9 +3,9 @@
 (let (res)
   (dolist (el (directory-files-recursively (concat emacs-start-directory "/core") ".*\.el$") res)
     (load-file el)))
+;;(add-to-list 'package-archives '( "jcs-elpa" . "https://jcs-emacs.github.io/jcs-elpa/packages/") t)
 
 (core/app/load-apps)
-
 (setq spacemacs-start-directory "~/.emacs.d/spacemacs/")
 (load-file (concat spacemacs-start-directory "init.el"))
 (load-env-vars spacemacs-env-vars-file)

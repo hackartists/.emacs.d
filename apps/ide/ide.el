@@ -16,6 +16,11 @@
   ;; (global-auto-highlight-symbol-mode +1)
   (require 'impostman) 
   (require 'ox-moderncv)
+  (require 'codegpt)
+  (setq codegpt-tunnel 'chat            ; The default is 'completion or 'chat
+        codegpt-model "gpt-4"
+        openai-key (getenv "OPENAPI_KEY")
+        )
   ;; (elcord-mode t)
   (autoload 'garak "garak" nil t)
   (setq auth-sources '("~/.authinfo")) 
@@ -34,12 +39,12 @@
   ;; 					(with-current-buffer "*Messages*"
   ;; 					  (print minibuffer-completion-table)))))
   (helm-projectile-on) 
-  (setq helm-hackartist-buffers-list (make-hackartist-helm-source (helm-make-source "Buffers"
-                                                                      'helm-source-buffers)))
+  
+  (setq helm-hackartist-buffers-list (make-hackartist-helm-source helm-source-buffers-list))
   (setq helm-hackartist-projectile-files-list (make-hackartist-helm-source
                                                helm-source-projectile-files-list)) 
   (setq shrface-toggle-bullets t) 
-  (savehist-mode -1) 
+  ;; (savehist-mode -1) 
   (shrface-basic) 
   (shrface-trial) 
   (github-notifier) 
@@ -49,7 +54,7 @@
 
   (add-hook 'org-mode-hook #'org-ai-mode)
   (org-ai-global-mode)
-  (setq org-ai-default-chat-model "gpt-3.5-turbo")
+  (setq org-ai-default-chat-model "gpt-4")
   (org-ai-install-yasnippets) ; if you are using yasnippet and want `ai` snippets
 
   (setq shrface-href-versatile t))

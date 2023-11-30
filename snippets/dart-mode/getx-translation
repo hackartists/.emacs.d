@@ -1,7 +1,7 @@
 # name: getx-translation 
 # --
 
-    static final _${1:trigger} = s(
+    static final _${1:trigger} = i(
       '$1',
       '${2:en}',
       '${3:ko}',
