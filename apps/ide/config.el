@@ -72,6 +72,7 @@
         kill-whole-line t
         recentf-filename-handlers '(file-truename)
         recentf-max-menu-items 100)
+  (set-fontset-font t 'hangul (font-spec :name "D2Coding"))
 
   (add-hook 'prog-mode-hook 'copilot-mode)
 
@@ -81,7 +82,6 @@
   (setq evil-want-fine-undo t)
   (setq auto-save-default nil)
   (global-evil-mc-mode t)
-  ;; (setq helm-hackartist-recentf-list (helm-make-source "Recentf" 'helm-recentf-source :fuzzy-match helm-recentf-fuzzy-match))
 
   (hackartist/openwith)
   (if (eq system-type 'darwin)
@@ -96,10 +96,6 @@
   (add-to-list 'auto-mode-alist '("\\<BUILD\\'" . bazel-mode))
   (add-to-list 'auto-mode-alist '("\\<WORKSPACE\\'" . bazel-mode))
   (add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-view-mode))
-  ;; (spacemacs/toggle-visual-line-navigation-globally-on)
-  ;; (add-hook 'gfm-mode-hook
-  ;;           (lambda ()
-  ;;             (visual-line-mode 1)))
   (add-hook 'sh-mode-hook
             (lambda ()
               (setq tab-width 2)))
@@ -155,10 +151,8 @@
   (global-set-key (kbd "RET") 'newline-and-indent)
   ;; (global-set-key "\C-x\ \C-r" 'recentf-open-files)
   (setq custom-safe-themes t)
-  ;; (setq company-minimum-prefix-length 1)
-  (setq company-idle-delay 0)
   (setq company-require-match nil)
-  (setq company-lsp-cache-candidates t)
+  ;; (setq company-lsp-cache-candidates t)
   (setq helm-multi-swoop-edit-save nil)
   (setq helm-swoop-split-with-multiple-windows t)
   (setq helm-swoop-split-direction 'split-window-vertically)

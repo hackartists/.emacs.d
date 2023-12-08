@@ -17,6 +17,7 @@
   (require 'impostman) 
   (require 'ox-moderncv)
   (require 'codegpt)
+  (require 'whisper)
   (setq codegpt-tunnel 'chat            ; The default is 'completion or 'chat
         codegpt-model "gpt-4"
         openai-key (getenv "OPENAPI_KEY")
@@ -51,11 +52,6 @@
 
   ;; (shrface-default-keybindings) ; setup default keybindings
   (advice-add 'forge-visit-pullreq :override 'advice-override/forge-visit-pullreq)
-
-  (add-hook 'org-mode-hook #'org-ai-mode)
-  (org-ai-global-mode)
-  (setq org-ai-default-chat-model "gpt-4")
-  (org-ai-install-yasnippets) ; if you are using yasnippet and want `ai` snippets
 
   (setq shrface-href-versatile t))
 

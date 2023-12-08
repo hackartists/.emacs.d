@@ -3,7 +3,38 @@
 (advice-add 'spacemacs-buffer//insert-buttons :override #'hackartist-buffer//insert-buttons)
 (advice-add 'spacemacs-buffer//insert-footer :override #'hackartist-buffer//insert-footer)
 (advice-add 'spacemacs-buffer//insert-projects :override #'hackartist-buffer//insert-projects)
-(advice-add 'go-impl--collect-interface :override #'hackartist//go-impl--collect-interface)
+;; (advice-add 'go-impl--collect-interface :override #'hackartist//go-impl--collect-interface)
+(advice-add 'helm-git-grep-action :override #'hackartist//helm-git-grep-action)
+
+(defun hackartist//helm-git-grep-action (candidate &optional where mark)
+  "Define a default action for `helm-git-grep' on CANDIDATE.
+WHERE can be one of `other-window', `other-frame'.
+if MARK is t, Set mark."
+  (let* ((lineno (nth 0 candidate))
+         (fname (or (nth 2 candidate)
+                    (with-current-buffer helm-buffer
+                      (get-text-property (point-at-bol) 'help-echo)))))
+    (case where
+          (other-window (find-file-other-window fname))
+          (other-frame  (find-file-other-frame fname))
+          (grep         (helm-git-grep-save-results-1))
+          (t            (find-file fname)))
+    (unless (or (eq where 'grep))
+      (helm-goto-line lineno))
+    (when mark
+      (set-marker (mark-marker) (point))
+      (push-mark (point) 'nomsg))
+    ;; Save history
+    (unless (or helm-in-persistent-action
+                (string= helm-input ""))
+      (setq helm-git-grep-history
+            (cons helm-pattern
+                  (delete helm-pattern helm-git-grep-history)))
+      (when (> (length helm-git-grep-history)
+               helm-git-grep-max-length-history)
+        (setq helm-git-grep-history
+              (delete (car (last helm-git-grep-history))
+                      helm-git-grep-history))))))
 
 (defun hackartist-buffer//choose-banner ()
   (concat emacs-start-directory "/banner.txt"))

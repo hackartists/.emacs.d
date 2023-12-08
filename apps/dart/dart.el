@@ -10,6 +10,7 @@
 (defun hackartist/dart/init ()
   (setq
    lexical-binding t
+   lsp-dart-closing-labels nil
    lsp-dart-flutter-widget-guides nil)
   (add-hook 'before-save-hook 'hackartist/dart/before-save-hook))
 

@@ -20,15 +20,15 @@
                          auto-completion-tab-key-behavior nil
                          auto-completion-complete-with-key-sequence nil
                          auto-completion-complete-with-key-sequence-delay 0.1
-                         auto-completion-minimum-prefix-length 0
+                         auto-completion-minimum-prefix-length 1
                          auto-completion-idle-delay 0.2
                          auto-completion-private-snippets-directory nil
-                         auto-completion-enable-snippets-in-popup nil
+                         auto-completion-enable-snippets-in-popup t
                          auto-completion-enable-help-tooltip t
                          auto-completion-use-company-box nil
                          auto-completion-use-company-posframe t
                          auto-completion-enable-sort-by-usage nil)
-        ;; unicode-fonts
+        unicode-fonts
         ;;systemd
         (markdown :variables markdown-live-preview-engine 'vmd)
         ;; confluence
@@ -50,7 +50,8 @@
         emacs-lisp
         debug
         gpu graphviz typography
-        asm  bibtex groovy kotlin latex ;;php
+        asm  bibtex groovy kotlin
+        (latex :variables latex-build-engine 'xetex) ;;php
         (rust :variables rust-format-on-save t cargo-process-reload-on-modify t)
         (ruby :variables ruby-enable-enh-ruby-mode t ruby-backend 'robe ruby-version-manager 'rvm ruby-test-runner 'rspec)
         (typescript :variables typescript-fmt-on-save t typescript-fmt-tool 'prettier typescript-linter 'eslint)
@@ -97,6 +98,9 @@
         helm-themes
         helm-tramp
         helm-xref
+        helm-eww
+        helm-wordnet
+        helm-dictionary
         highlight2clipboard
         imenu
         magit-find-file
@@ -115,13 +119,10 @@
         docker-compose-mode
         dockerfile-mode
         magit-todos
-        helm-eww
 	      shrface
         github-notifier
         github-review
         dictionary
-        helm-wordnet
-        helm-dictionary
         ;; elcord
         ;; evil-avy
         mermaid-mode
@@ -134,6 +135,7 @@
         sqlite3
         openwith
         codegpt
+        greader
 	      ))
 
 (setq hackartist-ide-osc
@@ -155,4 +157,5 @@
         "https://github.com/tecosaur/emacs-everywhere.git"
         "https://github.com/AllTheLife/Bard.el.git"
         "https://github.com/zerolfx/copilot.el.git"
+        "https://github.com/natrys/whisper.el.git"
         ))
