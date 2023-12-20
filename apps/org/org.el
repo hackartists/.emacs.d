@@ -46,6 +46,7 @@
   (org-ai-global-mode t)
   (org-ai-install-yasnippets)
   (add-hook 'org-mode-hook #'org-ai-mode)
+  ;; (add-hook 'org-mode-hook #'lsp-mode)
   (setq org-ai-default-chat-model "gpt-4") 
   (setq org-ai-openai-api-token (getenv "OPENAPI_KEY"))
   (setq org-ai-talk-spoken-input t)

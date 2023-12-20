@@ -23,11 +23,12 @@
                          auto-completion-minimum-prefix-length 1
                          auto-completion-idle-delay 0.2
                          auto-completion-private-snippets-directory nil
-                         auto-completion-enable-snippets-in-popup t
+                         auto-completion-enable-snippets-in-popup nil
                          auto-completion-enable-help-tooltip t
                          auto-completion-use-company-box nil
                          auto-completion-use-company-posframe t
                          auto-completion-enable-sort-by-usage nil)
+        graphql
         unicode-fonts
         ;;systemd
         (markdown :variables markdown-live-preview-engine 'vmd)

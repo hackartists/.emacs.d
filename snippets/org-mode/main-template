@@ -28,55 +28,12 @@
 #+COLUMNS: %20ITEM %13BEAMER_env(Env) %6BEAMER_envargs(Args) %4BEAMER_col(Col) %7BEAMER_extra(Extra)
 
 #+OPTIONS: H:3
-#+BEAMER_THEME: Darmstadt
-#+BEAMER_OUTER_THEME: miniframes [subsection=false]
 
-#+LATEX_HEADER: \usepackage[backend=bibtex]{biblatex}
-#+LATEX_HEADER: \usepackage[utf8]{inputenc}
-#+LATEX_HEADER: \usepackage{kotex}
-#+LATEX_HEADER: \usepackage{rotating}
-#+LATEX_HEADER: \usepackage{graphicx}
-#+LATEX_HEADER: \usepackage{amssymb,amsmath}
-#+LATEX_HEADER: \usepackage{amsthm}
-#+LATEX_HEADER: \usepackage{algorithmic}
-#+LATEX_HEADER: \usepackage[ruled,linesnumbered]{algorithm2e}
-#+LATEX_HEADER: \usepackage{listings}
-#+LATEX_HEADER: \usepackage[titletoc]{appendix}
-#+LATEX_HEADER: \usepackage{rotating}
-#+LATEX_HEADER: \usepackage{multirow}
-#+LATEX_HEADER: \usepackage{array}
-#+LATEX_HEADER: \usepackage{supertabular}
-#+LATEX_HEADER: \usepackage{dcolumn}
-#+LATEX_HEADER: \usepackage{adjustbox}
-#+LATEX_HEADER: \usepackage{epsfig}
-#+LATEX_HEADER: \usepackage{subfigure}
-#+LATEX_HEADER: \usepackage{acronym}
-#+LATEX_HEADER: \usepackage{url}
-#+LATEX_HEADER: \usepackage{graphicx}
-#+LATEX_HEADER: \usepackage{mathtools}
-#+LATEX_HEADER: \usepackage{longtable}
-#+LATEX_HEADER: \usepackage[acronym,nomain]{glossaries}
-#+LATEX_HEADER: \usepackage[font=small,skip=0pt]{caption}
-#+LATEX_HEADER: \usepackage{xcolor}
-#+LATEX_HEADER: \usepackage{color}
-#+LATEX_HEADER: \usepackage{colortbl}
-#+LATEX_HEADER: \usepackage{tikz}
-#+LATEX_HEADER: \usepackage{lmodern}
-#+LATEX_HEADER: \usepackage{blindtext}
-#+LATEX_HEADER: \usepackage{etoolbox}
+#+LATEX_HEADER: \usepackage{`org-directory`/common/hackartist}
 #+LATEX_HEADER: \AtBeginEnvironment{tabular}{\small}
 #+LATEX_HEADER: \input{`org-directory`/common/lang.tex}
 #+LATEX_HEADER: \input{`org-directory`/common/abb.tex}
 #+LATEX_HEADER: \bibliography{`org-directory`/common/ref.bib}
-
-#+BEAMER_HEADER: \setbeamercolor{footline}{fg=blue}
-#+BEAMER_HEADER: \setbeamerfont{footline}{series=\bfseries}
-#+BEAMER_HEADER: \addtobeamertemplate{navigation symbols}{}{%
-#+BEAMER_HEADER:     \usebeamerfont{footline}%
-#+BEAMER_HEADER:     \usebeamercolor[fg]{footline}%
-#+BEAMER_HEADER:     \hspace{1em}%
-#+BEAMER_HEADER:     \insertframenumber/\inserttotalframenumber
-#+BEAMER_HEADER: }
 
 #+BEAMER_HEADER: \AtBeginSection[]{
 #+BEAMER_HEADER: \begin{frame}<beamer>\frametitle{Table of Contents}\begin{columns}[t]
@@ -85,8 +42,6 @@
 #+BEAMER_HEADER: \end{columns}\end{frame}
 #+BEAMER_HEADER: \subsection{}
 #+BEAMER_HEADER: }
-#+BEAMER_HEADER: \hypersetup{colorlinks=false}
-#+BEAMER: \setbeamercovered{transparent=30}
 #+LATEX_HEADER: \makeglossaries
 
 #+BEAMER: \begin{frame}<beamer>\frametitle{Table of Contents}\begin{columns}[t]
