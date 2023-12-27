@@ -102,20 +102,30 @@
   (add-hook 'plantuml-mode-hook (lambda () 
                              (auto-complete-mode t))) 
   (add-hook 'org-mode-hook 'spacemacs/toggle-line-numbers-on) 
-  (add-hook 'org-mode-hook 'spacemacs/toggle-truncate-lines-on) 
+  (add-hook 'org-mode-hook 'spacemacs/toggle-truncate-lines-off) 
   ;; (add-hook 'org-mode-hook (lambda ()
   ;;                       (require 'lsp-grammarly)
   ;;                       (lsp)))
-  (setq org-enable-github-support t org-enable-bootstrap-support t org-enable-bootstrap-support t
-        org-projectile-file "TODOs.org" org-image-actual-width t org-plantuml-exec-mode 'jar
-        plantuml-exec-mode 'jar plantuml-jar-path (expand-file-name "~/plantuml.jar")
-        org-plantuml-jar-path (expand-file-name "~/plantuml.jar"))
-  (setq doc-view-resolution 200 org-confirm-babel-evaluate nil org-export-use-babel t
-        org-export-with-sub-superscripts '{} org-src-window-setup 'current-window org-latex-listings
+  (setq doc-view-resolution 200
+        org-enable-github-support t
+        org-enable-bootstrap-support t
+        org-enable-bootstrap-support t
+        org-projectile-file "TODOs.org"
+        org-image-actual-width t
+        org-plantuml-exec-mode 'jar
+        plantuml-exec-mode 'jar
+        plantuml-jar-path (expand-file-name "~/plantuml.jar")
+        org-plantuml-jar-path (expand-file-name "~/plantuml.jar")
+        org-confirm-babel-evaluate nil
+        org-export-use-babel t
+        org-export-with-sub-superscripts '{}
+        org-src-window-setup 'current-window
+        org-latex-listings t
         ob-mongo:default-mongo-executable "mongosh"
         org-latex-src-block-backend 'listings
         tex-cmd-bibtex-args "--min-crossref=100 --extra-mem-bot=120000000"
-        t org-latex-listings-langs (quote ((emacs-lisp "Lisp")
+        org-export-allow-bind-keywords t
+        org-latex-listings-langs (quote ((emacs-lisp "Lisp")
                                            (lisp "Lisp") 
                                            (clojure "Lisp") 
                                            (c "C") 
@@ -140,68 +150,26 @@
                                            (makefile "make") 
                                            (R "r") 
                                            (solidity "Solidity") 
+                                           (flutter "Flutter") 
                                            (js "JavaScript")))
-        org-latex-listings-options (quote (("aboveskip"
-                                            "0.2\\baselineskip")
-                                           ("frame"
-                                            "top")
-                                           ("frame"
-                                            "bottom")
-                                           ("captionpos"
-                                            "b")
-                                           ("abovecaptionskip"
-                                            "0.2\\baselineskip")
-                                           ("numbers"
-                                            "left")
-                                           ("numbersep"
-                                            "8pt")
-                                           ("numberstyle"
-                                            "\\small\\color{magenta}")
-                                           ("stepnumber"
-                                            "1")
-                                           ("breaklines"
-                                            "true")
-                                           ("framexleftmargin"
-                                            "5mm")
-                                           ("xleftmargin"
-                                            "15pt")
-                                           ("showstringspaces"
-                                            "false")
-                                           ("basicstyle"
-                                            "\\linespread{0.8}\\small\\ttfamily")
-                                           ("keywordstyle"
-                                            "\\bfseries\\color{mykeywords}")
-                                           ("commentstyle"
-                                            "\\itshape\\color{purple}")
-                                           ("identifierstyle"
-                                            "\\color{blue}")
-                                           ("stringstyle"
-                                            "\\color{orange}")
-                                           ("tabsize"
-                                            "4")))
-                                           org-support-shift-select t org-download-image-dir
-                                           "./images" ivy-initial-inputs-alist '((counsel-minor .
-                                                                                                "^+")
-                                                                                 (counsel-package .
-                                                                                                  "^+")
-                                                                                 (counsel-org-capture
-                                                                                  . "")
-                                                                                 (counsel-M-x . "") 
-                                                                                 (counsel-describe-symbol
-                                                                                  . "^")
-                                                                                 (org-refile . "") 
-                                                                                 (org-agenda-refile
-                                                                                  . "")
-                                                                                 (org-capture-refile
-                                                                                  . "")
-                                                                                 (Man-completion-table
-                                                                                  . "^")
-                                                                                 (woman . "^"))
-                                           evil-want-Y-yank-to-eol nil lsp-enable-file-watchers nil
-                                           org-re-reveal-root
-                                           "https://cdn.jsdelivr.net/npm/reveal.js@4.1.0"
-                                           org-re-reveal-revealjs-version "4" org-re-reveal-plugins
-                                           '(markdown highlight zoom notes search math)))
+        org-latex-listings-options (quote (("numbers" "left")))
+        org-support-shift-select t
+        org-download-image-dir "./images"
+        ;; ivy-initial-inputs-alist '((counsel-minor . "^+")
+        ;;                            (counsel-package . "^+")
+        ;;                            (counsel-org-capture . "")
+        ;;                            (counsel-M-x . "") 
+        ;;                            (counsel-describe-symbol . "^")
+        ;;                            (org-refile . "") 
+        ;;                            (org-agenda-refile . "")
+        ;;                            (org-capture-refile . "")
+        ;;                            (Man-completion-table . "^")
+        ;;                            (woman . "^"))
+        evil-want-Y-yank-to-eol nil
+        lsp-enable-file-watchers nil
+        org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@4.1.0"
+        org-re-reveal-revealjs-version "4"
+        org-re-reveal-plugins '(markdown highlight zoom notes search math)))
 
 (defun hackartist/org/bindings () 
   "setting for org-hydra"

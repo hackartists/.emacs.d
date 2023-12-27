@@ -384,7 +384,7 @@
   (openwith-mode t)
   (setq openwith-associations
         '(
-          ("\\.pdf\\'" "okular" (file))
+          ;; ("\\.pdf\\'" "okular" (file))
           ("\\.ppt\\'" "libreoffice" (file))
           ("\\.pptx\\'" "libreoffice" (file))
           ("\\.doc\\'" "libreoffice" (file))
