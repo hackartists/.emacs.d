@@ -11,6 +11,10 @@
   (spacemacs/declare-prefix "TAB" "Imenu")
   (spacemacs/declare-prefix "'" "create a snippet")
   (spacemacs/declare-prefix "gT" "tag")
+  (spacemacs/set-leader-keys-for-major-mode 'plantuml-mode
+    "SPC" 'plantuml-preview
+    )
+
   (spacemacs/set-leader-keys
     "`" 'ace-window
     "=" 'ace-window

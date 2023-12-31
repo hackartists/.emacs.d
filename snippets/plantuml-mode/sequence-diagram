@@ -3,8 +3,11 @@
 # --
 
 @startuml
-skinparam backgroundcolor transparent
 skinparam BoxBackgroundColor white
+!include https://raw.githubusercontent.com/patrik-csak/one-dark-plantuml-theme/v1.0.1/theme.puml
+skinparam backgroundcolor transparent
+hide footbox
+
 
 actor "User 1" as u1
 box "${1:Service name}"
