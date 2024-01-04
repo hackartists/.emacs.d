@@ -135,7 +135,7 @@
         gptel
         sqlite3
         openwith
-        codegpt
+        ;; codegpt
         greader
 	      ))
 
