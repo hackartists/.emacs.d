@@ -1,0 +1,11 @@
+# -*- mode: plantuml -*-
+# name: plantuml-dark
+# --
+
+@startuml
+  !include https://raw.githubusercontent.com/patrik-csak/one-dark-plantuml-theme/v1.0.1/theme.puml
+  skinparam backgroundcolor transparent
+
+$0
+@enduml
+

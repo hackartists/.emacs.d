@@ -1,0 +1,8 @@
+# name: getx-localization
+# --
+
+class ${1:Name}Localization {
+  static String i(String key, String en, String ko) {
+  return s("${1:$(string-inflection-underscore-function yas-text)}.$key", en, ko);
+  }
+}
