@@ -19,10 +19,10 @@
   (spacemacs/declare-prefix-for-mode 'dart-mode "f" "flutter")
   (spacemacs/set-leader-keys-for-major-mode 'dart-mode
     "RET" 'lsp-dart-dap-flutter-hot-reload
-    "ESC" 'hackartist/dart/devtools
     "SPC" 'lsp-dart-dap-flutter-hot-restart
     "'" 'hackartist/flutter-run-web-with-build-config
     "d" 'hackartist/dart/config
+    "t" 'hackartist/dart/devtools
     "TAB" 'flutter-run-or-hot-reload))
 
 (defun hackartist/dart/mode-hook ()
