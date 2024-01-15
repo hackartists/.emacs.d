@@ -43,7 +43,7 @@
          (bname (format "*%s*" bs))
          (bname (if (get-buffer bname)
                     bname
-                  (progn (kcompilation-start "bard-rs -e ~/.env" bs)
+                  (progn (kcompilation-start "bard-rs -e ~/.env-bard" bs)
                          bname)))
          (prompt (if mark-active
                      (replace-regexp-in-string

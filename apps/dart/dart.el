@@ -21,19 +21,49 @@
     "RET" 'lsp-dart-dap-flutter-hot-reload
     "SPC" 'lsp-dart-dap-flutter-hot-restart
     "'" 'hackartist/flutter-run-web-with-build-config
-    "d" 'hackartist/dart/config
+    "d" 'hackartist/dart/dap
     "t" 'hackartist/dart/devtools
     "TAB" 'flutter-run-or-hot-reload))
+
+;; To call dap-debug in your code, you need to install the `dap-mode` package and configure your debugging environment. Here is an example code snippet that demonstrates how to call dap-debug:
+
+;; ```emacs-lisp
+;; (require 'dap-mode)
+;; (require 'dap-gdb-lldb) ; or dap-gdb-lldb for C/C++ debugging
+
+;; ;; Configure the debugging environment
+;; (setq dap-auto-configure-features '(sessions locals breakpoints expressions))
+;; (dap-mode 1)
+;; (dap-ui-mode 1)
+
+;; ;; Define a debugging configuration
+;; (dap-register-debug-template
+;;   "My Debug Configuration"
+;;   (list :type "gdb/lldb"
+;;         :name "My Debug Configuration"
+;;         :request "launch"
+;;         :target "path/to/your/executable"
+;;         :cwd "path/to/your/workspace"))
+
+;; ;; Call dap-debug with the registered configuration
+;; (dap-debug "My Debug Configuration")
+;; ```
+
+;; Make sure to replace `"path/to/your/executable"` with the actual path to your executable binary and `"path/to/your/workspace"` with the workspace directory where your code is located.
+
+;; Once this code is executed, you can call `(dap-debug "My Debug Configuration")` to start the debugging session with the configured settings.
+(defun hackartist/dart/dap ()
+  (interactive)
+  (dap-register-debug-provider "flutter" 'hackartist/lsp-dart-dap--populate-flutter-start-file-args)
+  (dap-register-debug-template "Flutter :: Debug" (list :type "flutter"))
+  (dap-debug "Flutter :: Debug"))
 
 (defun hackartist/dart/mode-hook ()
   (when (derived-mode-p 'dart-mode)
     (flyspell-mode-off)))
 
 (defun hackartist/dart/config ()
-  (add-hook 'dart-mode-hook 'hackartist/dart/mode-hook)
-  (when (string= (classify-linux-distribution) "Ubuntu")
-    (setq lsp-dart-flutter-sdk-dir "/home/hackartist/snap/flutter/common/flutter"))
-  (dap-register-debug-provider "flutter" 'hackartist/lsp-dart-dap--populate-flutter-start-file-args))
+  (add-hook 'dart-mode-hook 'hackartist/dart/mode-hook))
 
 (defun hackartist/flutter-run-or-hot-restart ()
   "Start `flutter run` or hot-reload if already running."
