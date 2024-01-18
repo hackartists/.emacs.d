@@ -77,6 +77,7 @@
   "Select hackartist ide using helm."
   (interactive)
   (require 'helm-for-files)
+  (require 'helm-projectile)
 
   (unless helm-source-buffers-list
     (setq helm-source-buffers-list
@@ -84,19 +85,32 @@
 
   (unless helm-source-recentf
     (setq helm-source-recentf
-                 (helm-make-source "Recentf" 'helm-recentf-source)))
+          (helm-make-source "Recentf" 'helm-recentf-source)))
 
-  (helm
-   :prompt "Hackartist Shell : "
-   :sources '(
-              helm-source-buffers-list
-              helm-source-recentf
-              helm-source-projectile-files-list
-              helm-source-projectile-projects
-              helm-source-buffer-not-found
-              )
-    :buffer "*helm hackartist*"
-   ))
+  (unless helm-source-projectile-projects 
+    (helm-build-sync-source "Projectile projects"
+      :candidates 'projectile-relevant-known-projects
+      :action 'projectile-switch-project-by-name))
+
+  (let* (
+         (hackartist-shell-buffers '(
+                                     helm-source-buffers-list
+                                     helm-source-recentf
+                                     helm-source-buffer-not-found
+                                     ))
+
+         )
+    (when helm-source-projectile-projects
+      (add-to-list 'hackartist-shell-buffers helm-source-projectile-projects))
+
+    (when helm-source-projectile-files-list
+      (add-to-list 'hackartist-shell-buffers helm-source-projectile-files-list))
+
+    (helm
+     :prompt "Hackartist Shell : "
+     :sources hackartist-shell-buffers
+     :buffer "*helm hackartist*"
+     )))
 
 (defun helm-hackartist-buffers-candidates ()
   (let (bufs '())
@@ -123,20 +137,6 @@
 ;; spacemacs//display-helm-window
 (defun helm-hackartist-switch-to-buffer (buffer &optional resume)
   (helm-hackartist-buffers-persistent-action buffer))
-
-(defvar helm-hackartist-buffers-list nil)
-(defvar helm-hackartist-projectile-files-list nil)
-(defvar helm-hackartist-recentf-list nil)
-
-(defcustom helm-hackartist-sources-list
-  '(
-    helm-hackartist-buffers-list
-    helm-source-projectile-files-list
-    helm-source-projectile-projects
-    )
-  "Default sources for `helm-hackartist'"
-  :type 'list
-  :group 'helm-hackartist)
 
 (defun dom-print (dom &optional pretty xml)
   "Print DOM at point as HTML/XML.

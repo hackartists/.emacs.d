@@ -48,7 +48,7 @@
   (add-hook 'org-mode-hook #'org-ai-mode)
   ;; (add-hook 'org-mode-hook #'lsp-mode)
   (setq org-ai-default-chat-model "gpt-3.5-turbo-16k")
-  (setq org-ai-openai-api-token (getenv "OPENAPI_KEY"))
+  (setq org-ai-openai-api-token (getenv "OPENAI_KEY"))
   (setq org-ai-talk-spoken-input nil)
 
   (require 'org-pandoc-import) 

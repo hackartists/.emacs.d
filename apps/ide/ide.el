@@ -41,9 +41,6 @@
   ;; 					  (print minibuffer-completion-table)))))
   (helm-projectile-on) 
   
-  (setq helm-hackartist-buffers-list (make-hackartist-helm-source helm-source-buffers-list))
-  (setq helm-hackartist-projectile-files-list (make-hackartist-helm-source
-                                               helm-source-projectile-files-list)) 
   (setq shrface-toggle-bullets t) 
   (savehist-mode -1) 
   (shrface-basic) 
