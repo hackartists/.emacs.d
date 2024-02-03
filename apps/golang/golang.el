@@ -1,6 +1,6 @@
-;; (defun hackartist/golang/init ()
+(defun hackartist/golang/init ()
   ;; (add-hook #'lsp-deferred)
-  ;; (add-hook 'before-save-hook 'hackartist/go/before-save-hook))
+  (add-hook 'before-save-hook 'hackartist/go/before-save-hook))
 
 (defun go/pre-init-dap-mode ()
   (add-to-list 'spacemacs--dap-supported-modes 'go-mode))
