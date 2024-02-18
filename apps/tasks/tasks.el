@@ -20,8 +20,16 @@
 
 (defun hackartist/task/jira ()
   "interaction with IRA to manage tasks"
-  (org-jira-get-projects)
+  (hackartist/task/jira/projects)
+  (hackartist/task/jira/get-issues)
   )
+
+(defun hackartist/task/jira/get-issues (issues)
+  (interactive
+   (org-jira-get-issue-list hackaritst/task/get-issues-callback))
+  (org-jira-log "Fetching issues...")
+  (when (> (length issues) 0)
+    (org-jira--render-issues-from-issue-list issues)))
 
 (defun hackartist/task/jira/projects ()
   "Get list of projects."
@@ -42,7 +50,6 @@
                     (let (
                           (pmin (org-find-exact-headline-in-buffer "Biyard"))
                            )
-
                       (goto-char pmin)
                       (org-narrow-to-subtree)
                       (outline-show-all)
@@ -65,3 +72,16 @@
                       (org-jira-entry-put (point) "ID" (org-jira-find-value proj 'id))
                       (org-jira-entry-put (point) "url" (format "%s/browse/%s" (replace-regexp-in-string "/*$" "" jiralib-url) (org-jira-find-value proj 'key)))))))
               oj-projs)))))
+
+(defvar hackaritst/task/get-issues-callback
+  (cl-function
+   (lambda (&key data &allow-other-keys)
+     "Callback for async, DATA is the response from the request call.
+
+Will send a list of org-jira-sdk-issue objects to the list printer."
+     (org-jira-log "Received data for org-jira-get-issue-list-callback.")
+     (--> data
+          (org-jira-sdk-path it '(issues))
+          (append it nil)
+          org-jira-sdk-create-issues-from-data-list
+          hackartist/task/jira/get-issues))))
