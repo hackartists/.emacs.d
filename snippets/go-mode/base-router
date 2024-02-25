@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: base-router
-# key: base-router
+# key: br
 # --
 // $1API ${2:...}
 type ${1:Name}API struct {

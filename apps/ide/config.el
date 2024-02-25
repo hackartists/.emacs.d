@@ -404,7 +404,7 @@
  '(create-lockfiles nil)
  '(google-translate-default-source-language "ko" t)
  '(google-translate-default-target-language "en")
- '(google-translate-output-destination '(kill-ring))
+ ;; '(google-translate-output-destination '(kill-ring))
  '(google-translate-translation-to-kill-ring t)
  '(org-image-actual-width '(700))
  '(plantuml-indent-level 2)

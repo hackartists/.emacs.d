@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: base-handler
-# key: base-handler
+# key: bh
 # --
 type ${1:name}Request struct {
 }

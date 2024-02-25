@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: base-model
-# key: 
+# key: bm
 # --
 
 type ${1: Name} struct {
