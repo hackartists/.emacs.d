@@ -17,6 +17,30 @@ For $5,000, please break your work into two (2) milestones (tip: think half-way 
 For $25,000, please break your work into a first 30-day milestone check-in and two subsequent milestones for a total of three milestones (tip: think half-way point and final deliverables).
 For $100,000 grants, please break your work into four (4) milestones.
 IMPORTANT: $100,000 grants are typically only available as a follow-on grant to a smaller grant, with some exceptions. If this is your first time applying for a grant, consider limiting your scope of work to a smaller grant size.
+** Roadmap
++ Release Title (Epic)
+
+** Milestones
+*** Monthly Plan 1
++ Deliverable
+  + Description
+  + Timeline
+  + Acceptance Criteria
++ Avoid high-level descriptions.
+  + Instead of writing "Build admin dashboard"
+  + specify the exact functionalities the dashboard will contain.
+
+** Architecture
++ This gives a sense that you've thoroughly researched and are familiar with the platform you're building on. It's a testament to your preparedness and understanding of the project.
+
+** User scenarios
++ Scenario 1
+  + For instance, "As a user, I want to be notified in detail by email if my KYC request has been approved or rejected and why."
+
+** Canister Interfaces
++ If you're building a service, provide a clear interface, including the argument and response types. If possible, write them in candid.
+
+** IC Deployment
 
 * What unique benefits does this work bring to the Internet Computer ecosystem?
 + Some questions to prompt your response:

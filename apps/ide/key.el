@@ -102,24 +102,16 @@
               (define-key term-mode-map (kbd "M-l") 'term-send-forward-word)))
 
   (with-eval-after-load 'company
-
     (define-key company-active-map (kbd "ESC") 'company-abort)
     (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
     (define-key company-active-map (kbd "<tab>") 'company-complete)
-    ;;   (delq 'company-preview-if-just-one-frontend company-frontends)
-    ;;   ;; (define-key company-mode-map (kbd "<tab>") 'hackartist/hybrid-completion-tab)
-    ;;   ;; (define-key company-mode-map (kbd "TAB") 'hackartist/hybrid-completion-tab)
-    ;;   (define-key company-active-map (kbd "<tab>") 'hackartist/hybrid-completion-tab)
-    ;;   (define-key company-active-map (kbd "TAB") 'hackartist/hybrid-completion-tab)
+    ;; (delq 'company-preview-if-just-one-frontend company-frontends)
     )
 
   (with-eval-after-load 'copilot
     (define-key copilot-mode-map (kbd "C-c C-c") 'copilot-accept-completion)
-
-    ;; (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
-    ;; (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
-    ;; (define-key copilot-completion-map (kbd "C-TAB") 'copilot-accept-completion-by-word)
-    ;; (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion-by-word)
+    (define-key copilot-mode-map (kbd "C-<return>") 'copilot-accept-completion)
+    (define-key copilot-completion-map (kbd "RET") 'copilot-accept-completion)
     )
 
   ;; (add-hook 'company-mode-hook
@@ -325,6 +317,7 @@
 
 (defun hackartist/hybrid-completion-tab ()
   (interactive)
-  (or (copilot-accept-completion)
-      (company-complete) ;(company-complete-selection)
-      ))
+  (or
+   (copilot-accept-completion)
+   (company-complete) ;(company-complete-selection)
+   (indent-for-tab-command)))

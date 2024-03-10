@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
 # name: tikz-image
-# key: 
 # --
 \node (${1:node name}) at (${2:x position},0)
 {\includegraphics[width=.25\textwidth]{images/${3:file path without file extension}}};

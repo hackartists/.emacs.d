@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
 # name: tikz-connection
-# key: 
 # --
 \draw[<->,thick] (${1: source name}.${2:south, east, west, north, south east}) -- (${3:destination name}.${4:south, east, west, north, south east})
 node[midway,fill=white] {$0};

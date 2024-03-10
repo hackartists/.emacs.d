@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
 # name: platform-controller
-# key: 
 # --
 
 import Controller from '../../controller'

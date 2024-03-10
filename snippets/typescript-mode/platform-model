@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
 # name: platform-model
-# key: 
 # --
 
 import { createModel } from '@platform/apps/model';

@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
 # name: platform-app
-# key: 
 # --
 import App from '../app';
 

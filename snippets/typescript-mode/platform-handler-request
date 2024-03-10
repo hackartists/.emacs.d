@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
 # name: platform-handler-request
-# key: 
 # --
 
 type ${1:Operation}Request ={}

@@ -49,6 +49,7 @@
 
   ;; (shrface-default-keybindings) ; setup default keybindings
   (advice-add 'forge-visit-pullreq :override 'advice-override/forge-visit-pullreq)
+  (advice-add 'plantuml-preview-string :override 'advice-override/plantuml-preview-string)
 
   (setq shrface-href-versatile t))
 
@@ -87,3 +88,14 @@
     (string-join
      (mapcar (lambda (el) (gethash (intern el) ht el))
              (split-string (downcase text) " ")) "")))
+
+
+(defun advice-override/plantuml-preview-string (prefix string)
+  "Preview diagram from PlantUML sources (as STRING), using prefix (as PREFIX)
+to choose where to display it."
+  (let* ((imagep (and (display-images-p)
+                      (plantuml-is-image-output-p)))
+         (buf (get-buffer-create plantuml-preview-buffer))
+         (coding-system-for-read (and imagep 'binary))
+         (coding-system-for-write (and imagep 'binary)))
+    (plantuml-exec-mode-preview-string prefix (plantuml-get-exec-mode) string buf)))

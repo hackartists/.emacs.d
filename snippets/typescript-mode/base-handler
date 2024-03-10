@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
 # name: base-handler
-# key: 
 # --
 
 ${1:operation name} = async (req: ${1:$(string-inflection-upper-camelcase-function yas-text)}Request): Promise<${1:$(string-inflection-upper-camelcase-function yas-text)}Response> => {
