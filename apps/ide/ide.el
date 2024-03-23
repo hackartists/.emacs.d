@@ -45,7 +45,7 @@
   (savehist-mode -1) 
   (shrface-basic) 
   (shrface-trial) 
-  (github-notifier) 
+  ;; (github-notifier) 
 
   ;; (shrface-default-keybindings) ; setup default keybindings
   (advice-add 'forge-visit-pullreq :override 'advice-override/forge-visit-pullreq)

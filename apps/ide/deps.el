@@ -40,10 +40,10 @@
         ibuffer imenu-list
         nginx
         syntax-checking
-        (treemacs :variables treemacs-use-follow-mode 'tag
-                  treemacs-use-git-mode 'deferred
-                  treemacs-use-all-the-icons-theme t
-                  treemacs-use-filewatch-mode t )
+        ;; (treemacs :variables treemacs-use-follow-mode 'tag
+        ;;           treemacs-use-git-mode 'deferred
+        ;;           treemacs-use-all-the-icons-theme t
+        ;;           treemacs-use-filewatch-mode t )
         sql osx
         bm chrome cmake
         better-defaults
@@ -121,7 +121,7 @@
         dockerfile-mode
         magit-todos
 	      shrface
-        github-notifier
+        ;; github-notifier
         github-review
         dictionary
         ;; elcord
