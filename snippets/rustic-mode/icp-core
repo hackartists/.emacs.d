@@ -1,0 +1,26 @@
+# -*- mode: snippet -*-
+# name: icp-core
+# --
+
+\#[derive(Clone, Debug, CandidType, Deserialize)]
+pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))`  {
+  $0
+}
+
+impl Storable for `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
+  fn to_bytes(&self) -> std::borrow::Cow<'_, [u8]> {
+    Cow::Owned(Encode!(self).unwrap())
+  }
+
+  fn from_bytes(bytes: Cow<[u8]>) -> Self {
+    Decode!(bytes.as_ref(), Self).unwrap()
+  }
+
+  const BOUND: Bound = Bound::Bounded {
+    max_size: MAX_VALUE_SIZE,
+    is_fixed_size: false,
+  };
+}
+
+impl `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
+}

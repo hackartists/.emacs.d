@@ -74,7 +74,7 @@
         recentf-max-menu-items 100)
   (set-fontset-font t 'hangul (font-spec :name "D2Coding"))
 
-  (add-hook 'prog-mode-hook 'copilot-mode)
+  ;; (add-hook 'prog-mode-hook 'copilot-mode)
 
   (setq user-full-name "hackartist")
   (setq completion-styles `(flex))

@@ -137,6 +137,7 @@
         openwith
         ;; codegpt
         greader
+        lsp-tailwindcss
 	      ))
 
 (setq hackartist-ide-osc
