@@ -144,11 +144,6 @@
       '(
         "https://github.com/magoyette/openapi-yaml-mode.git"
         "https://github.com/emacsmirror/multi-eshell.git"
-        ;; "https://github.com/hackartists/helm-mt.git"
-        ;; "https://github.com/domtronn/all-the-icons.el.git"
-        ;; "https://github.com/sebastiencs/icons-in-terminal.git"
-        ;; "https://github.com/seagle0128/icons-in-terminal.el.git"
-        ;; "https://github.com/fgallina/mu4e-multi.git"
         "https://github.com/mack1070101/fotingo-emacs.git"
         "git@github.com:hackartists/org-api-mode.git"
         "https://github.com/flashcode/impostman.git"
@@ -157,7 +152,6 @@
         "https://gitlab.com/Titan-C/org-cv.git"
         "https://github.com/nyyManni/ejira.git"
         "https://github.com/tecosaur/emacs-everywhere.git"
-        "https://github.com/AllTheLife/Bard.el.git"
         "https://github.com/zerolfx/copilot.el.git"
         "https://github.com/natrys/whisper.el.git"
         ))
