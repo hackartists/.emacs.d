@@ -63,6 +63,30 @@
   (spacemacs/set-leader-keys-for-major-mode 'forge-topic-mode
     "RET" 'code-review-forge-pr-at-point)
 
+  (spacemacs/declare-prefix "P" "pass")
+  (spacemacs/declare-prefix "Po" "otp")
+  (spacemacs/set-leader-keys
+    "P." 'helm-pass
+
+    "Py" 'password-store-copy
+    "Pg" 'password-store-generate
+    "Pi" 'password-store-insert
+    "Pc" 'password-store-edit
+    "Pr" 'password-store-rename
+    "Pd" 'password-store-remove
+    "PD" 'password-store-clear
+    "PI" 'password-store-init
+    "Pw" 'password-store-url
+    "P?" 'spacemacs/pass-describe
+    "PY" 'spacemacs/pass-copy-and-describe
+
+    "Poy" 'password-store-otp-token-copy
+    "PoY" 'password-store-otp-uri-copy
+    "Poi" 'password-store-otp-insert
+    "Poa" 'password-store-otp-append
+    "PoA" 'password-store-otp-append-from-image)
+
+
   (evil-define-key 'motion dictionary-mode-map "." 'dictionary-lookup-definition)
   (evil-define-key 'motion dictionary-mode-map "," 'dictionary-previous)
 
