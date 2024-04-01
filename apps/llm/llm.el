@@ -53,11 +53,10 @@
   "configuration code"
   (spacemacs/declare-prefix "L" "llm")
   (spacemacs/set-leader-keys
-    "." 'ellama-chat
-    "a" 'ellama-code-add
-    "e" 'ellama-code-edit
-    "r" 'ellama-code-review
-    "RET" 'ellama-code-complete
-    )
-
-  )
+    "L." 'ellama-chat
+    "La" 'ellama-code-add
+    "Le" 'ellama-code-edit
+    "Lr" 'ellama-code-review
+    "Li" 'ellama-code-improve
+    "L RET" 'ellama-code-complete
+    ))
