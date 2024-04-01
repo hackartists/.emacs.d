@@ -65,7 +65,7 @@
         recentf-max-menu-items 100)
   (set-fontset-font t 'hangul (font-spec :name "D2Coding"))
 
-  ;; (add-hook 'prog-mode-hook 'copilot-mode)
+  (add-hook 'prog-mode-hook 'copilot-mode)
 
   (setq user-full-name "hackartist")
   (setq completion-styles `(flex))
@@ -249,7 +249,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :extend nil :stipple nil :background "#292b2e" :foreground "#b2b2b2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
- '(font-lock-comment-face ((t (:background "#292b2e" :foreground "#2aa1ae" :slant normal))))
+;; '(font-lock-comment-face ((t (:background "#292b2e" :foreground "#2aa1ae" :slant normal))))
  '(header-line ((t (:background "#222226"))))
  '(hl-line ((t (:extend t :background "#292b2e" :underline t))))
  '(line-number ((t (:inherit default :background "#222226" :foreground "#44505c"))))

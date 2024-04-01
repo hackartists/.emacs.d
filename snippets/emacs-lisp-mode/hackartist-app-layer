@@ -3,13 +3,13 @@
 # --
 
 ;; ${1:package name} requires below layers of spacemacs.
-(setq hackartist-ide-layers '())
+(setq hackartist-$1-layers '())
 
 ;; $1 requires additional packages.
-(setq hackartist-ide-packages '())
+(setq hackartist-$1-packages '())
 
 ;; $1 requires open source code from github
-(setq hackartist-ide-osc '())
+(setq hackartist-$1-osc '())
 
 (defun hackartist/$1/init ()
 "initialization code"
