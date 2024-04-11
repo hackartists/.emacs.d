@@ -19,7 +19,10 @@
   "configuration code")
 
 (defun hackartist/rust/bindings ()
-  "configuration code")
+  "configuration code"
+  (spacemacs/declare-prefix-for-mode 'rustic-mode "l" "lsp")
+  (spacemacs/set-leader-keys-for-minor-mode 'rustic-mode
+    "l RET" 'lsp-avy-lens))
 
 (defun hackartist/rust/before-save-hook ()
   (when (derived-mode-p 'rustic-mode)

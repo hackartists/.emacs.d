@@ -11,6 +11,7 @@
   (spacemacs/declare-prefix "TAB" "Imenu")
   (spacemacs/declare-prefix "'" "create a snippet")
   (spacemacs/declare-prefix "gT" "tag")
+
   (spacemacs/set-leader-keys-for-major-mode 'plantuml-mode
     "SPC" 'plantuml-preview
     )
@@ -55,6 +56,13 @@
     "sgP" 'counsel-git-grep
 
     "xf RET" 'ox-clip-formatted-copy)
+
+  (spacemacs/declare-prefix-for-mode 'prog-mode "l" "lsp")
+  (spacemacs/set-leader-keys-for-minor-mode 'prog-mode
+    "l RET" 'lsp-avy-lens)
+
+  (spacemacs/set-leader-keys-for-minor-mode 'term-mode
+    "xo" 'browse-url-at-point)
 
   (spacemacs/declare-prefix-for-mode 'term-mode "x" "text")
   (spacemacs/set-leader-keys-for-minor-mode 'term-mode
