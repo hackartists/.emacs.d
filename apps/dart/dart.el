@@ -56,6 +56,13 @@
   (interactive)
   (dap-register-debug-provider "flutter" 'hackartist/lsp-dart-dap--populate-flutter-start-file-args)
   (dap-register-debug-template "Flutter :: Debug" (list :type "flutter"))
+  (dap-register-debug-template "Flutter :: Web Server With .build/config.json"
+                               (list
+                                :type "flutter"
+                                :flutterPlatform "web-server"
+                                :name "Flutter :: Web Server With .build/config.json"
+                                :toolArgs '("-d" "web-server" "--web-port" "5000" "--web-hostname" "--dart-define-from-file=.build/config.json")
+                                ))
   (dap-debug "Flutter :: Debug"))
 
 (defun hackartist/dart/mode-hook ()

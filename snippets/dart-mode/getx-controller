@@ -5,10 +5,6 @@
 
 
 import 'package:get/get.dart';
-import '../../core/base/base_controller.dart';
 
-import '`(string-inflection-underscore-function (string-replace "_controller.dart" "" (buffer-name)))`_model.dart';
-
-class `(string-inflection-upper-camelcase-function (string-replace "_controller.dart" "" (buffer-name)))`Controller extends BaseController {
-Rx< `(string-inflection-upper-camelcase-function (string-replace "_controller.dart" "" (buffer-name)))`Model> model =  `(string-inflection-upper-camelcase-function (string-replace "_controller.dart" "" (buffer-name)))`Model().obs;
+class `(string-inflection-upper-camelcase-function (string-replace "_controller.dart" "" (buffer-name)))`Controller extends GetxController {
 }

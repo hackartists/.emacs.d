@@ -4,7 +4,7 @@
 type `(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))` struct {
 }
 
-func New`(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))`(cfg config.AppConfig) *`(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))` {
+func New`(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))`(ctx, context.Context, cfg config.AppConfig) *`(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))` {
 return &`(string-inflection-upper-camelcase-function (string-replace ".go" "" (buffer-name)))`{}
 }
 

@@ -3,26 +3,19 @@
 #key : #gxv
 # --
 
+import 'package:dagit/components/layout/layout.dart';
 import 'package:flutter/material.dart';
-import '../../core/base/base_view.dart';
-import '../../theme/app_values.dart';
-import '../../widgets/paging_view.dart';
+import 'package:get/get.dart';
 
-import '${1:$(downcase yas-text)}_controller.dart';
+import '`(string-inflection-underscore-function (string-replace "_screen.dart" "" (buffer-name)))`_controller.dart';
 
-class ${1:Name}View extends BaseView<$1Controller> {
-  $1View() {}
+class `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))` extends GetWidget<`(string-inflection-upper-camelcase-function (string-replace "_screen.dart" "" (buffer-name)))`Controller> {
+const `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))`({super.key});
 
   @override
-  PreferredSizeWidget? appBar(BuildContext context) {
-    return null;
-  }
-
-  @override
-  Widget body(BuildContext context) {
-    return PagingView(
-      onRefresh: () async {},
-      onLoadNextPage: () {},
+  Widget build(context) {
+    return Layout(
+      removeFooter: true,
       child: Container(),
     );
   }

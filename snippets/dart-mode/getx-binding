@@ -6,13 +6,13 @@
 
 import 'package:get/get.dart';
 
-import '${1:$(downcase yas-text)}_controller.dart';
+import '`(string-inflection-underscore-function (string-replace "_binding.dart" "" (buffer-name)))`_controller.dart';
 
-class ${1:Name}Binding extends Bindings {
+class `(string-inflection-upper-camelcase-function (string-replace ".dart" "" (buffer-name)))` extends Bindings {
 @override
 void dependencies() {
-Get.lazyPut<$1Controller>(
-() => $1Controller(),
+Get.lazyPut<`(string-inflection-upper-camelcase-function (string-replace "_binding.dart" "" (buffer-name)))`Controller>(
+() => `(string-inflection-upper-camelcase-function (string-replace "_binding.dart" "" (buffer-name)))`Controller(),
 );
 }
 }

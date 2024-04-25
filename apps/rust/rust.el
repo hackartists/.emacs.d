@@ -13,6 +13,8 @@
 
 (defun hackartist/rust/init ()
   "initialization code"
+  (add-to-list 'lsp-tailwindcss-major-modes 'rustic-mode)
+  (add-hook 'rustic-mode-hook 'hackartist/rust/mode-hook)
   (add-hook 'before-save-hook 'hackartist/rust/before-save-hook))
 
 (defun hackartist/rust/config ()
@@ -28,3 +30,8 @@
   (when (derived-mode-p 'rustic-mode)
     (lsp-organize-imports)
     (lsp-format-buffer)))
+
+(defun hackartist/rust/mode-hook ()
+  (when (derived-mode-p 'rustic-mode)
+    (setq lsp-tailwindcss-experimental-class-regex "class: \"(.*)\"")
+    (setq lsp-tailwindcss-add-on-mode t)))

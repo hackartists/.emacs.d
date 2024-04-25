@@ -50,8 +50,9 @@
 (defun advice-override/forge-visit-pullreq (pullreq)
   (code-review-forge-pr-at-point))
 
-(advice-add 'emacs-lisp/post-init-company 
-            :override 'advice-override/emacs-lisp/post-init-company)
+;; (advice-add 'emacs-lisp/post-init-company 
+;;             :override 'advice-override/emacs-lisp/post-init-company)
+
 (defun advice-override/emacs-lisp/post-init-company () 
   (spacemacs|add-company-backends :backends company-elisp 
                                   :modes emacs-lisp-mode) 

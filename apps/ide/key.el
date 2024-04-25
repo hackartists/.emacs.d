@@ -141,9 +141,20 @@
     )
 
   (with-eval-after-load 'copilot
+    (defun copilot/keys ()
+      (local-unset-key (kbd "C-<return>"))
+      (define-key copilot-mode-map (kbd "C-c C-c") 'copilot-accept-completion)
+      (define-key copilot-mode-map (kbd "C-<return>") 'copilot-accept-completion)
+      (define-key copilot-completion-map (kbd "RET") 'copilot-accept-completion)
+      (define-key copilot-completion-map (kbd "C-l") 'copilot-next-completion)
+      (define-key copilot-completion-map (kbd "C-h") 'copilot-prev-completion)
+      (define-key copilot-completion-map (kbd "<right>") 'copilot-next-completion)
+      (define-key copilot-completion-map (kbd "<left>") 'copilot-prev-completion))
+    (add-hook 'copilot-mode-hook 'copilot/keys)
+
     (define-key copilot-mode-map (kbd "C-c C-c") 'copilot-accept-completion)
     (define-key copilot-mode-map (kbd "C-<return>") 'copilot-accept-completion)
-    (define-key copilot-completion-map (kbd "RET") 'copilot-accept-completion)
+    ;; (define-key copilot-completion-map (kbd "RET") 'copilot-accept-completion)
     (define-key copilot-completion-map (kbd "C-l") 'copilot-next-completion)
     (define-key copilot-completion-map (kbd "C-h") 'copilot-prev-completion)
     (define-key copilot-completion-map (kbd "<right>") 'copilot-next-completion)
