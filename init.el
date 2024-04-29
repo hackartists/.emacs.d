@@ -11,7 +11,7 @@
 (load-env-vars spacemacs-env-vars-file)
 (core/app/init-apps)
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets")
-(yas-reload-all)
+;; (yas-reload-all)
 
 ;;(switch-to-buffer "*scratch*")
 
