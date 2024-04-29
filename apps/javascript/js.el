@@ -4,10 +4,11 @@
                     `nodejs js-indent-level 2 js2-basic-offset 2
                     javascript-fmt-on-save t javascript-fmt-tool 'prettier
                     node-add-modules-path t)
+        (html :variables web-fmt-tool 'prettier web-fmt-on-save t)
         typescript
         (json :variables json-fmt-tool 'prettier json-fmt-on-save t)
         ess import-js node
-        react html
+        react
         ;; tide
         ))
 
@@ -53,6 +54,20 @@
 ;;   ;;             ;; (define-key js2-mode-map (kbd "C-k") #'js2r-kill)
 ;;   ;;             ))
 ;;   )
+
+(advice-add 'html/init-emmet-mode :override 'advice-override/html/init-emmet-mode)
+
+(defun advice-override/html/init-emmet-mode ()
+  (use-package emmet-mode
+    :defer t
+    :init (spacemacs/add-to-hooks 'emmet-mode '(css-mode-hook
+                                                html-mode-hook
+                                                sass-mode-hook
+                                                scss-mode-hook
+                                                web-mode-hook))
+    :config
+    (spacemacs|hide-lighter emmet-mode)))
+
 
 (defun hackartist/javascript/init ()
   ;; (add-hook 'js2-mode-hook 'hackartist/javascript/dap-react-native-init)
