@@ -98,15 +98,8 @@
                                                                                       (go . t) 
                                                                                       (latex . t) 
                                                                                       (shell . t))) 
-  (add-to-list 'org-latex-classes
-               '("journal"
-                 "\\documentclass[journal]{journal}"
-                 ("\\section{%s}" . "\\section*{%s}")
-                 ("\\subsection{%s}" . "\\subsection*{%s}")
-                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
+  (hackartist/org-latex/classes)
   (add-to-list 'org-src-lang-modes '("plantuml" . plantuml)) 
   (add-hook 'plantuml-mode-hook (lambda () 
                              (auto-complete-mode t))) 
