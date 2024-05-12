@@ -32,9 +32,6 @@
 
 #+LATEX_HEADER: \usepackage{`org-directory`/common/hackartist}
 #+LATEX_HEADER: \AtBeginEnvironment{tabular}{\small}
-#+LATEX_HEADER: \input{`org-directory`/common/lang.tex}
-#+LATEX_HEADER: \input{`org-directory`/common/abb.tex}
-#+LATEX_HEADER: \bibliography{`org-directory`/common/ref.bib}
 #+LATEX_HEADER: \makeglossaries
 
 #+BEAMER: \begin{frame}<beamer>\frametitle{Table of Contents}\begin{columns}[t]
