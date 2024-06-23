@@ -138,6 +138,7 @@
         ;; codegpt
         greader
         lsp-tailwindcss
+        adoc-mode
 	      ))
 
 (setq hackartist-ide-osc

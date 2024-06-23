@@ -3,7 +3,6 @@
 # key: #org-latex-equation
 # --
 
-#+begin_equation
+\begin{align*}
 $0
-#+end_equation
-
+\end{align*}

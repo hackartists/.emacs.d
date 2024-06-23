@@ -71,9 +71,13 @@
   (spacemacs/set-leader-keys-for-major-mode 'forge-topic-mode
     "RET" 'code-review-forge-pr-at-point)
 
+  (spacemacs/declare-prefix "B" "Bookmarks")
   (spacemacs/declare-prefix "P" "pass")
   (spacemacs/declare-prefix "Po" "otp")
   (spacemacs/set-leader-keys
+    "B." 'helm-bookmark
+    "Bb" 'bookmark-set
+
     "P." 'helm-pass
 
     "Py" 'password-store-copy
@@ -127,8 +131,8 @@
               ;; (define-key evil-normal-state-local-map (kbd "h") 'term-send-left)
               ;; (define-key evil-normal-state-local-map (kbd "^") 'term-send-home)
               ;; (define-key evil-normal-state-local-map (kbd "$") 'term-send-end)
-              (define-key evil-normal-state-local-map (kbd "w") 'term-send-forward-word)
-              (define-key evil-normal-state-local-map (kbd "b") 'term-send-backward-word)
+              ;; (define-key evil-normal-state-local-map (kbd "w") 'term-send-forward-word)
+              ;; (define-key evil-normal-state-local-map (kbd "b") 'term-send-backward-word)
               (define-key term-mode-map (kbd "C-s") 'helm-swoop)
               (define-key term-mode-map (kbd "M-h") 'term-send-backward-word)
               (define-key term-mode-map (kbd "M-l") 'term-send-forward-word)))
@@ -141,16 +145,16 @@
     )
 
   (with-eval-after-load 'copilot
-    (defun copilot/keys ()
-      (local-unset-key (kbd "C-<return>"))
-      (define-key copilot-mode-map (kbd "C-c C-c") 'copilot-accept-completion)
-      (define-key copilot-mode-map (kbd "C-<return>") 'copilot-accept-completion)
-      (define-key copilot-completion-map (kbd "RET") 'copilot-accept-completion)
-      (define-key copilot-completion-map (kbd "C-l") 'copilot-next-completion)
-      (define-key copilot-completion-map (kbd "C-h") 'copilot-prev-completion)
-      (define-key copilot-completion-map (kbd "<right>") 'copilot-next-completion)
-      (define-key copilot-completion-map (kbd "<left>") 'copilot-prev-completion))
-    (add-hook 'copilot-mode-hook 'copilot/keys)
+    ;; (defun copilot/keys ()
+    ;;   (local-unset-key (kbd "C-<return>"))
+    ;;   (define-key copilot-mode-map (kbd "C-c C-c") 'copilot-accept-completion)
+    ;;   (define-key copilot-mode-map (kbd "C-<return>") 'copilot-accept-completion)
+    ;;   ;; (define-key copilot-completion-map (kbd "RET") 'copilot-accept-completion)
+    ;;   (define-key copilot-completion-map (kbd "C-l") 'copilot-next-completion)
+    ;;   (define-key copilot-completion-map (kbd "C-h") 'copilot-prev-completion)
+    ;;   (define-key copilot-completion-map (kbd "<right>") 'copilot-next-completion)
+    ;;   (define-key copilot-completion-map (kbd "<left>") 'copilot-prev-completion))
+    ;; (add-hook 'copilot-mode-hook 'copilot/keys)
 
     (define-key copilot-mode-map (kbd "C-c C-c") 'copilot-accept-completion)
     (define-key copilot-mode-map (kbd "C-<return>") 'copilot-accept-completion)
@@ -158,8 +162,7 @@
     (define-key copilot-completion-map (kbd "C-l") 'copilot-next-completion)
     (define-key copilot-completion-map (kbd "C-h") 'copilot-prev-completion)
     (define-key copilot-completion-map (kbd "<right>") 'copilot-next-completion)
-    (define-key copilot-completion-map (kbd "<left>") 'copilot-prev-completion)
-    )
+    (define-key copilot-completion-map (kbd "<left>") 'copilot-prev-completion))
 
   ;; (add-hook 'company-mode-hook
   ;;           (lambda ()

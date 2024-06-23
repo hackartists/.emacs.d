@@ -2,4 +2,9 @@
 # name: beamer-frame-break
 # --
 
-#+BEAMER: \framebreak
+**** break block                                              :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+\framebreak
