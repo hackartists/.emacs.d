@@ -1,0 +1,62 @@
+# -*- mode: snippet -*-
+# name: article-template
+# --
+
+#+TITLE:     ${1:title}
+#+AUTHOR:    ${2:hackartist}
+#+EMAIL:     ${3:hackartists@gmail.com}
+
+#+DESCRIPTION: 
+#+KEYWORDS: keywords
+#+LANGUAGE:  en
+#+OPTIONS:   num:t toc:nil ::t |:t ^:{} -:t f:t *:t <:t
+#+OPTIONS:   tex:t d:nil todo:t pri:nil tags:nil
+#+OPTIONS:   timestamp:t
+
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+
+#+PROPERTY: header-args :eval never-export
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,11pt]
+
+#+OPTIONS: H:3
+
+#+LATEX_HEADER: \usepackage[T1]{fontenc}%
+#+LATEX_HEADER: \usepackage[backend=bibtex]{biblatex}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage{kotex}
+#+LATEX_HEADER: \usepackage{rotating}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{amssymb,amsmath}
+#+LATEX_HEADER: \usepackage{amsthm}
+#+LATEX_HEADER: \usepackage{algorithmic}
+#+LATEX_HEADER: \usepackage[ruled,linesnumbered]{algorithm2e}
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \usepackage[titletoc]{appendix}
+#+LATEX_HEADER: \usepackage{rotating}
+#+LATEX_HEADER: \usepackage{multirow}
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \usepackage{supertabular}
+#+LATEX_HEADER: \usepackage{dcolumn}
+#+LATEX_HEADER: \usepackage{adjustbox}
+#+LATEX_HEADER: \usepackage{epsfig}
+#+LATEX_HEADER: \usepackage{subfigure}
+#+LATEX_HEADER: \usepackage{acronym}
+#+LATEX_HEADER: \usepackage{url}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{mathtools}
+#+LATEX_HEADER: \usepackage{longtable}
+#+LATEX_HEADER: \usepackage[acronym,nomain]{glossaries}
+#+LATEX_HEADER: \usepackage[font=small,skip=0pt]{caption}
+#+LATEX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \usepackage{color}
+#+LATEX_HEADER: \usepackage{colortbl}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usepackage{lmodern}
+#+LATEX_HEADER: \usepackage{blindtext}
+#+LATEX_HEADER: \usepackage{etoolbox}
+
+* ${4:section}
+

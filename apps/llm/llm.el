@@ -11,18 +11,21 @@
 
 (defun hackartist/llm/init ()
   "initialization code"
-  (setopt ellama-language "Korean")
+  ;; (setopt ellama-language "Korean")
   
   (require 'llm-ollama)
   (setopt ellama-provider
 		      (make-llm-ollama
 		       ;; this model should be pulled to use it
 		       ;; value should be the same as you print in terminal during pull
-		       :chat-model "wizardcoder:33b-v1.1"
-		       :embedding-model "wizardcoder:33b-v1.1"))
+		       :chat-model "codellama"
+		       :embedding-model "codellama"))
 
   (setopt ellama-providers
-		      '(("wizrdcoder" . (make-llm-ollama
+		      '(("codellama" . (make-llm-ollama
+				                 :chat-model "codellama"
+				                 :embedding-model "codellama"))
+            ("wizrdcoder" . (make-llm-ollama
 				                     :chat-model "wizardcoder:33b-v1.1"
 				                     :embedding-model "wizardcoder:33b-v1.1"))
             ("zephyr" . (make-llm-ollama
@@ -37,13 +40,13 @@
  
   (setopt ellama-naming-provider
 	        (make-llm-ollama
-				   :chat-model "wizardcoder:33b-v1.1"
-				   :embedding-model "wizardcoder:33b-v1.1"))
+				   :chat-model "codellama"
+				   :embedding-model "codellama"))
   (setopt ellama-naming-scheme 'ellama-generate-name-by-llm)
   
-  (setopt ellama-translation-provider (make-llm-ollama
-					                             :chat-model "llama2:13b-chat"
-					                             :embedding-model "llama2:13b-chat"))       
+  ;; (setopt ellama-translation-provider (make-llm-ollama
+	;; 				                             :chat-model "llama2:13b-chat"
+	;; 				                             :embedding-model "llama2:13b-chat"))
   )
 
 (defun hackartist/llm/config ()
@@ -58,5 +61,9 @@
     "Le" 'ellama-code-edit
     "Lr" 'ellama-code-review
     "Li" 'ellama-code-improve
-    "L RET" 'ellama-code-complete
+    "Ll" 'ellama-ask-line
+    "Ls" 'ellama-ask-summerize
+    "L SPC" 'ellama-ask-about
+    "L RET" 'ellama-ask-selection
+    "L TAB" 'ellama-code-complete
     ))
