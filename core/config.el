@@ -85,8 +85,8 @@
                                 (todos . 10)
                                 (bookmarks . 3))
 
-   doom-modeline-github t
-   doom-modeline-irc-buffers t
+   doom-modeline-github nil
+   doom-modeline-irc-buffers nil
    doom-modeline-unicode-fallback t
    doom-modeline-vcs-max-length 30
    dotspacemacs-default-font '("D2Coding"
