@@ -36,3 +36,9 @@ session*
 /forge-database.sqlite
 /image-dired/
 /thumbs/
+/.org-generic-id-locations
+/code-review-db-file.sqlite
+/ellama-sessions/
+/eln-cache/
+/multisession/
+/quelpa/
