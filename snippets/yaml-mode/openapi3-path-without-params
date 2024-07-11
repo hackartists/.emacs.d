@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+#name : openapi3-path-without-params
+#key : openapi3-path-without-params
+#contributor : hackartist
+# --
+  /${1:path}:
+    ${2:method: get,post,put,delete}:
+      tags:
+        - ${3:tag}
+      summary: ${4:summary}
+      operationId: ${5:operationId}
+      responses:
+        '200':
+          description: ${6:Response description}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/${7:SchemaName}'

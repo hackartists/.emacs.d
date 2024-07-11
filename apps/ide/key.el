@@ -75,7 +75,7 @@
   (spacemacs/declare-prefix "P" "pass")
   (spacemacs/declare-prefix "Po" "otp")
   (spacemacs/set-leader-keys
-    "B." 'helm-bookmark
+    "B." 'helm-bookmarks
     "Bb" 'bookmark-set
 
     "P." 'helm-pass

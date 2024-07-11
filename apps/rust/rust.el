@@ -18,7 +18,24 @@
   (add-hook 'rustic-mode-hook 'hackartist/rust/mode-hook))
 
 (defun hackartist/rust/config ()
-  "configuration code")
+  "configuration code"
+  (require 'dap-codelldb)
+  (dap-codelldb-setup)
+
+  ;; (setq dap-auto-configure-features '(sessions locals controls tooltip))
+
+  ;; (dap-register-debug-provider
+  ;;  "hackartist-rust"
+  ;;  (lambda (conf)
+  ;;    (plist-put conf :type "lldb")
+  ;;     (plist-put conf :request "launch")
+  ;;     (plist-put conf :miDebuggerPath "~/.cargo/bin/rust-lldb")
+  ;;     (plist-put conf :target nil)
+  ;;     (plist-put conf :cwd (concat (projectile-project-root) "target/debug/"))
+  ;;     (plist-put conf :program (expand-file-name (read-file-name "Select file to debug.")))))
+  ;; (dap-register-debug-template "LLDB::Debug Rust"
+  ;;  (list :type "hackartist-rust" :name "LLDB::Debug Rust Program"))
+  )
 
 (defun hackartist/rust/bindings ()
   "configuration code"

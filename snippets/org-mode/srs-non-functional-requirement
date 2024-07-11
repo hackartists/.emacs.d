@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+#name : srs-non-functional-requirement
+#key : srs-non-functional-requirement
+#contributor : hackartist
+# --
+
+*** ${1:Requirement Item}
+**** 환경 구성 및 목표 성능
++ $2
+
+**** 테스트 방법
++ $3
+
+**** 측정 방법
++ $0

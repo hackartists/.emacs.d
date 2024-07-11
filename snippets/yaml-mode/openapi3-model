@@ -1,11 +1,11 @@
 # -*- mode: yaml-mode -*-
-# name: openapi3-model
+# name: openapi3-schema
 # --
 
-${1:model name}:
-  type: ${2:object,array,etc}
-  properties:
-    ${3:property name}:
-      type: ${4:object,string,array,integer,etc}
-      format: ${5:email,int64}
-      description: $0
+    ${1:model name}:
+      type: ${2:object,array,etc}
+      properties:
+        ${3:property name}:
+          type: ${4:object,string,array,integer,etc}
+          format: ${5:email,int64}
+          description: $0

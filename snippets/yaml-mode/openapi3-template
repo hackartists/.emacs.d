@@ -1,0 +1,59 @@
+# -*- mode: snippet -*-
+#name : openapi3-template
+#key : openapi3-template
+#contributor : hackartist
+
+openapi: 3.0.3
+info:
+  title: $1
+  version: 1.0.0
+  description: |
+    $2
+
+externalDocs:
+  url: $3
+  description: 사용자 가이드라인
+
+servers:
+  - url: http://localhost:3000
+
+tags:
+  - name: System API
+    description: 시스템 관리를 위한 API
+
+paths:
+  /version:
+    get:
+      tags:
+        - System API
+      summary: 버전 정보를 가져오는 API
+      operationId: getVersion
+      responses:
+        '200':
+          description: Git 커밋 버전과 API 버전 제공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Version'
+
+components:
+  # Response schemas
+  schemas:
+    Version:
+      type: object
+      properties:
+        version:
+          type: string
+          example: v1.0.0
+        commit:
+          type: string
+          example: 00000000
+
+  securitySchemes:
+    SessionSignature:
+      type: apiKey
+      in: header
+      name: session-signature
+
+# security:
+#   - SessionSignature: []
