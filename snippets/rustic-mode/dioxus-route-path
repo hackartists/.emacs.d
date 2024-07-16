@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : dioxus-route-path
+#key : dioxus-route-path
+#contributor : hackartist
+# --
+    #[route("/${1:path}")]
+    ${2:ComponentName} {},

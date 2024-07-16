@@ -3,51 +3,12 @@
 # key: #org-tpl-latex
 # --
 
-#+AUTHOR:    Jongseok Choi
-#+EMAIL:     hackartists@gmail.com
-
-#+KEYWORDS: keywords
-#+LANGUAGE:  en
-#+OPTIONS:   num:t toc:nil ::t |:t ^:{} -:t f:t *:t <:t
-#+OPTIONS:   tex:t d:nil todo:t pri:nil tags:nil
-#+OPTIONS:   timestamp:t
+#+TITLE: ${1: title}
+#+AUTHOR: Hackartist
+#+EMAIL:  hackartists@gmail.com
 
 #+SELECT_TAGS: export
 #+EXCLUDE_TAGS: noexport
 
-#+PROPERTY: header-args :eval never-export
-
-#+OPTIONS: H:3
-#+LATEX_CLASS: article
-#+LATEX_CLASS_OPTIONS: [a4paper,11pt,twoside,twocolumn]
-#+LATEX_HEADER: \usepackage[utf8]{inputenc}
-#+LATEX_HEADER: \usepackage{kotex}
-#+LATEX_HEADER: \usepackage{rotating}
-#+LATEX_HEADER: \usepackage{graphicx}
-#+LATEX_HEADER: \usepackage{amssymb,amsmath}
-#+LATEX_HEADER: \usepackage{amsthm}
-#+LATEX_HEADER: \usepackage{algorithmic}
-#+LATEX_HEADER: \usepackage[ruled,linesnumbered]{algorithm2e}
-#+LATEX_HEADER: \usepackage{listings}
-#+LATEX_HEADER: \usepackage[titletoc]{appendix}
-#+LATEX_HEADER: \usepackage{rotating}
-#+LATEX_HEADER: \usepackage{multirow}
-#+LATEX_HEADER: \usepackage{array}
-#+LATEX_HEADER: \usepackage{supertabular}
-#+LATEX_HEADER: \usepackage{dcolumn}
-#+LATEX_HEADER: \usepackage{adjustbox}
-#+LATEX_HEADER: \usepackage{epsfig}
-#+LATEX_HEADER: \usepackage{subfigure}
-#+LATEX_HEADER: \usepackage{acronym}
-#+LATEX_HEADER: \usepackage{url}
-#+LATEX_HEADER: \usepackage{graphicx}
-#+LATEX_HEADER: \usepackage{mathtools}
-#+LATEX_HEADER: \usepackage{longtable}
-#+LATEX_HEADER: \usepackage[acronym]{glossaries}
-#+LATEX_HEADER: \usepackage[font=small,skip=0pt]{caption}
-#+LATEX_HEADER: \usepackage{xcolor}
-#+LATEX_HEADER: \usepackage{color}
-#+LATEX_HEADER: \usepackage{colortbl}
-#+LATEX_HEADER: \usepackage{tikz}
-#+LATEX_HEADER: \usepackage{lmodern}
-
+#+LATEX_CLASS: book
+#+LATEX_HEADER: \usepackage{`org-directory`/common/hackartist-book}
