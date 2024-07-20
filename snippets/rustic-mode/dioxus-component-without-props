@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+#name : dioxus-component-without-props
+#key : dioxus-component-without-props
+#contributor : hackartist
+# --
+
+use dioxus::prelude::*;
+
+#[component]
+pub fn ${1:ComponentName}() -> Element {
+    rsx! {
+      div { "$1 page"}
+    }
+}
