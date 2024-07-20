@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#name : dioxus-api
+#key : dioxus-api
+#contributor : hackartist
+# --
+
+#[server(endpoint = "${1:/path}")]
+pub async fn ${2:function_name}() -> Result<String, ServerFnError> {
+    $2
+    Err(ServerFnError::InternalServerError("not implemented yet".to_string()))
+}

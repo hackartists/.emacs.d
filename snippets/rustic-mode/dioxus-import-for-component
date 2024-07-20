@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : dioxus-import-for-component
+#key : dioxus-import-for-component
+#contributor : hackartist
+# --
+#![allow(non_snake_case)]
+use dioxus::prelude::*;
