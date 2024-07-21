@@ -14,11 +14,6 @@
 (defun hackartist/rust/init ()
   "initialization code"
 
-  (use-package lsp-tailwindcss
-    :init
-    (add-to-list 'lsp-tailwindcss-major-modes 'rustic-mode)
-    (setq lsp-tailwindcss-add-on-mode t))
-
   ;; (lsp-register-client
   ;;  (make-lsp-client
   ;;   :new-connection (lsp-stdio-connection
@@ -33,7 +28,6 @@
   ;;   :download-server-fn (lambda (_client callback error-callback _update?)
   ;;                         (lsp-package-ensure 'tailwindcss-language-server callback error-callback))))
 
-  ;; (add-to-list 'lsp-language-id-configuration '(".*\\.rs$" . "html"))
   (add-hook 'before-save-hook 'hackartist/rust/before-save-hook)
   (add-hook 'rustic-mode-hook 'hackartist/rust/mode-hook))
 

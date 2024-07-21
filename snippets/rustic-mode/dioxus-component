@@ -7,14 +7,10 @@
 #![allow(non_snake_case)]
 use dioxus::prelude::*;
 
-#[derive(PartialEq, Props, Clone)]
-struct $1Props {
-  lang: String,
-}
-
 #[component]
-pub fn ${1:ComponentName}(props: $1Props) -> Element {
+pub fn ${1:ComponentName}() -> Element {
     rsx! {
       div { "$1 page"}
     }
 }
+
