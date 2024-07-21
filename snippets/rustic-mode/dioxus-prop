@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+#name : dioxus-prop
+#key : dioxus-prop
+#contributor : hackartist
+# --
+
+#[derive(Debug, Clone, PartialEq, Props, Serialize, Deserialize)]
+pub struct ${1:PropName} {
+    $0
+}

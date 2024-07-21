@@ -1,16 +1,16 @@
 # -*- mode: snippet -*-
-#name : dioxus-hook-translate
-#key : dioxus-hook-translate
+#name : dioxus-hook-translate-with-context
+#key : dioxus-hook-translate-with-context
 #contributor : hackartist
 # --
-
-    let tt = use_resource(use_reactive((&props.lang,), |(lang,)| async move {
+    let lang = use_lang();
+    let tt = use_resource(use_reactive((&lang,), |(lang,)| async move {
         translate_${1:resource}(lang).await
     }));
 
     let translates = match &*tt.read_unchecked() {
         Some(Ok(translates)) => translates.clone(),
-        _ => use_server_future(move || translate_$1(props.clone().lang))?
+        _ => use_server_future(move || translate_$1(lang.clone()))?
             .value()
             .unwrap()
             .unwrap(),

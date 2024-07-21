@@ -18,7 +18,7 @@
         (auto-completion :variables
                          auto-completion-return-key-behavior nil
                          auto-completion-tab-key-behavior nil
-                         auto-completion-complete-with-key-sequence nil
+                         auto-completion-complete-with-key-sequence t
                          auto-completion-complete-with-key-sequence-delay 0.1
                          auto-completion-minimum-prefix-length 0
                          auto-completion-idle-delay 0.2
@@ -120,7 +120,7 @@
         docker-compose-mode
         dockerfile-mode
         magit-todos
-	      shrface
+        shrface
         ;; github-notifier
         github-review
         dictionary
@@ -139,7 +139,7 @@
         greader
         lsp-tailwindcss
         adoc-mode
-	      ))
+        ))
 
 (setq hackartist-ide-osc
       '(

@@ -1,0 +1,48 @@
+# -*- mode: snippet -*-
+#name : dioxus-component-with-translate
+#key : dioxus-component-with-translate
+#contributor : hackartist
+# --
+
+#![allow(non_snake_case)]
+use crate::prelude::*;
+use dioxus::prelude::*;
+use serde::{Deserialize, Serialize};
+
+#[component]
+pub fn ${1:PageName}Page() -> Element {
+    let lang = use_lang();
+    let tt = use_resource(use_reactive((&lang,), |(lang,)| async move {
+        translate_${1:$(string-inflection-underscore-function yas-text)}(lang).await
+    }));
+
+    let translates = match &*tt.read_unchecked() {
+        Some(Ok(translates)) => translates.clone(),
+        _ => use_server_future(move || translate_${1:$(string-inflection-underscore-function yas-text)}(lang.clone()))?
+            .value()
+            .unwrap()
+            .unwrap(),
+    };
+
+    rsx! {
+      div { "{translates.title} page" }
+    }
+}
+
+#[derive(Serialize, Deserialize, Clone, Debug)]
+pub struct ${1:$(string-inflection-upper-camelcase-function yas-text)}Translate {
+    title: String,
+}
+
+#[server(endpoint = "/translates/${1:$(string-inflection-underscore-function yas-text)}")]
+pub async fn translate_${1:$(string-inflection-underscore-function yas-text)}(lang: Language) -> Result<${1:$(string-inflection-upper-camelcase-function yas-text)}Translate, ServerFnError> {
+    Ok(if lang == Language::En {
+        ${1:$(string-inflection-upper-camelcase-function yas-text)}Translate {
+            title: "$1".to_string(),
+        }
+    } else {
+        ${1:$(string-inflection-upper-camelcase-function yas-text)}Translate {
+            title: "$1".to_string(),
+        }
+    })
+}
