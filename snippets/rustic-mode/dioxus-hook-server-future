@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+#name : dioxus-hook-server-future
+#key : dioxus-hook-server-future
+#contributor : hackartist
+# --
+    let ${1:var_name} = use_server_future(move || ${2:function_call()})?.value();
+    let $1 = match &*$1.read_unchecked() {
+        Some(Ok($1)) => $1.clone(),
+        _ => vec![],
+    };
