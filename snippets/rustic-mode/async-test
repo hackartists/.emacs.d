@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+#name : async-test
+#key : async-test
+#contributor : hackartist
+# --
+    #[tokio::test]
+    async fn ${1:test_name}() {
+    }
