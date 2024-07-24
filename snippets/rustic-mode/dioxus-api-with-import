@@ -1,8 +1,14 @@
 # -*- mode: snippet -*-
-#name : dioxus-api
-#key : dioxus-api
+#name : dioxus-api-with-import
+#key : dioxus-api-with-import
 #contributor : hackartist
 # --
+
+#![allow(unused_imports)]
+use dioxus::prelude::{
+    server_fn::codec::{PostUrl, GetUrl, Json},
+    *,
+};
 
 #[server(endpoint = "${1:/path}", input = PostUrl, output = Json)]
 pub async fn ${2:function_name}() -> Result<String, ServerFnError> {
