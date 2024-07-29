@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+#name : action-diagram
+#key : action-diagram
+#contributor : hackartist
+# --
+@startuml
+|Swimlane1|
+start
+:foo1;
+|Swimlane2|
+:foo2;
+:foo3;
+|Swimlane1|
+:foo4;
+|Swimlane2|
+:foo5;
+stop
+@enduml

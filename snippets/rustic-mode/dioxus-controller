@@ -24,7 +24,14 @@ impl Controller {
 }
 
 pub fn new() -> Controller {
-    Controller {
+    let ctrl = Controller {
         data: use_signal(|| vec![]),
-    }
+    };
+    use_context_provider(|| ctrl);
+
+    ctrl
+}
+
+pub fn use_controller() -> Controller {
+    use_context()
 }
