@@ -32,6 +32,7 @@ pub fn new() -> Controller {
     ctrl
 }
 
+#[allow(dead_code)]
 pub fn use_controller() -> Controller {
     use_context()
 }
