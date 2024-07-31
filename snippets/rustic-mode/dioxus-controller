@@ -12,7 +12,7 @@ pub struct Controller {
 }
 
 impl Controller {
-    pub fn add_item(&mut self, item: CreateDekItem) {
+    pub fn add_item(&mut self, item: String) {
         let mut data = self.data.write();
         data.push(item);
     }
