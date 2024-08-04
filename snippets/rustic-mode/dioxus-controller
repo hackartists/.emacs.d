@@ -24,10 +24,17 @@ impl Controller {
 }
 
 pub fn new() -> Controller {
-    let ctrl = Controller {
+    let mut ctrl = Controller {
         data: use_signal(|| vec![]),
     };
     use_context_provider(|| ctrl);
+
+    let _ = use_server_future(move || async move {
+        // TODO: implement init state logic from server
+        // if let Ok(res) = get_data().await {
+        //     ctrl.data.set(res.data);
+        // };
+    });
 
     ctrl
 }

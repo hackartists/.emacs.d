@@ -1,0 +1,30 @@
+# -*- mode: snippet -*-
+#name : dioxus-service
+#key : dioxus-service
+#contributor : hackartist
+# --
+
+#![allow(non_snake_case)]
+use dioxus::prelude::*;
+
+#[derive(Debug, Clone, Copy)]
+pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
+    pub data: Signal<String>,
+}
+
+impl `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
+    pub fn init() {
+        let srv = `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
+            data: Signal::new("".to_string()),
+        };
+        use_context_provider(|| srv);
+    }
+
+    pub fn get_data(&self) -> String{
+        (self.data)()
+    }
+}
+
+pub fn use_`(string-inflection-underscore-function (string-replace ".rs" "" (buffer-name)))`() -> `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
+    use_context()
+}
