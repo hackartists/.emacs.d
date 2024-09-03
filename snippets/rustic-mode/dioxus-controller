@@ -12,6 +12,22 @@ pub struct Controller {
 }
 
 impl Controller {
+    pub fn init() -> Self {
+        let mut ctrl = Self {
+            data: use_signal(|| vec![]),
+        };
+        use_context_provider(|| ctrl);
+
+        let _ = use_server_future(move || async move {
+            // TODO: implement init state logic from server
+            // if let Ok(res) = get_data().await {
+            //     ctrl.data.set(res.data);
+            // };
+        });
+
+        ctrl
+    }
+
     pub fn add_item(&mut self, item: String) {
         let mut data = self.data.write();
         data.push(item);
@@ -23,21 +39,6 @@ impl Controller {
     }
 }
 
-pub fn new() -> Controller {
-    let mut ctrl = Controller {
-        data: use_signal(|| vec![]),
-    };
-    use_context_provider(|| ctrl);
-
-    let _ = use_server_future(move || async move {
-        // TODO: implement init state logic from server
-        // if let Ok(res) = get_data().await {
-        //     ctrl.data.set(res.data);
-        // };
-    });
-
-    ctrl
-}
 
 #[allow(dead_code)]
 pub fn use_controller() -> Controller {
