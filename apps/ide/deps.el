@@ -134,7 +134,7 @@
         org-ai
         gptel
         sqlite3
-        openwith
+        ;; openwith
         ;; codegpt
         greader
         lsp-tailwindcss
