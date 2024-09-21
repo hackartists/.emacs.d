@@ -121,7 +121,7 @@
                                                           'utf-8-unix))))
   (global-set-key (kbd "RET") 'newline-and-indent)
   (setq custom-safe-themes t)
-  (setq company-require-match nil)
+  ;; (setq company-require-match nil)
   (setq helm-multi-swoop-edit-save nil)
   (setq helm-swoop-split-with-multiple-windows t)
   (setq helm-swoop-split-direction 'split-window-vertically)

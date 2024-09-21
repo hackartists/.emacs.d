@@ -5,7 +5,7 @@
     (lsp-format-buffer)))
 
 (defun hackartist/ide/init ()
-  (require 'impostman) 
+  (require 'impostman)
   (require 'ox-moderncv)
   (require 'codegpt)
   (require 'whisper)
@@ -15,28 +15,28 @@
         )
   ;; (elcord-mode t)
   (autoload 'garak "garak" nil t)
-  (setq auth-sources '("~/.authinfo")) 
+  (setq auth-sources '("~/.authinfo"))
   (add-hook 'before-save-hook 'hackartist/ide-before-save-hook)
-  (add-hook 'minibuffer-setup-hook (lambda () 
-                                     (if (string= current-input-method 'korean-hangul) 
-                                         (apps/ide/toggle-input-method-custom) 
-                                       (setq current-input-method nil)))) 
-  (with-eval-after-load 'git-auto-commit-mode 
-    (setq gac-automatically-push-p t)) 
-  (add-hook 'image-mode-hook (lambda () 
+  (add-hook 'minibuffer-setup-hook (lambda ()
+                                     (if (string= current-input-method 'korean-hangul)
+                                         (apps/ide/toggle-input-method-custom)
+                                       (setq current-input-method nil))))
+  (with-eval-after-load 'git-auto-commit-mode
+    (setq gac-automatically-push-p t))
+  (add-hook 'image-mode-hook (lambda ()
                                (image-transform-fit-to-width)))
   ;;(advice-add 'windmove-do-window-select :after 'advice-after/windmove-do-window-select)
   ;; (add-hook 'minibuffer-setup-hook (lambda ()
-  ;; 				      (when minibuffer-completion-table
-  ;; 					(with-current-buffer "*Messages*"
-  ;; 					  (print minibuffer-completion-table)))))
-  (helm-projectile-on) 
-  
-  (setq shrface-toggle-bullets t) 
-  (savehist-mode -1) 
-  (shrface-basic) 
-  (shrface-trial) 
-  ;; (github-notifier) 
+  ;;              (when minibuffer-completion-table
+  ;;          (with-current-buffer "*Messages*"
+  ;;            (print minibuffer-completion-table)))))
+  (helm-projectile-on)
+
+  (setq shrface-toggle-bullets t)
+  (savehist-mode -1)
+  (shrface-basic)
+  (shrface-trial)
+  ;; (github-notifier)
 
   ;; (shrface-default-keybindings) ; setup default keybindings
   (advice-add 'forge-visit-pullreq :override 'advice-override/forge-visit-pullreq)
@@ -44,20 +44,11 @@
 
   (setq shrface-href-versatile t))
 
-(defun advice-after/windmove-do-window-select (dir &optional arg window) 
+(defun advice-after/windmove-do-window-select (dir &optional arg window)
   (treemacs-display-current-project-exclusively))
 
 (defun advice-override/forge-visit-pullreq (pullreq)
   (code-review-forge-pr-at-point))
-
-;; (advice-add 'emacs-lisp/post-init-company 
-;;             :override 'advice-override/emacs-lisp/post-init-company)
-
-(defun advice-override/emacs-lisp/post-init-company () 
-  (spacemacs|add-company-backends :backends company-elisp 
-                                  :modes emacs-lisp-mode) 
-  (spacemacs|add-company-backends :backends (company-files company-elisp) 
-                                  :modes ielm-mode))
 
 (defun hackartist-insert-end (text) (goto-char (point-max)) (inser text))
 (defun hackartist/string/abbreviation (text)

@@ -24,9 +24,9 @@
                          auto-completion-idle-delay 0.2
                          auto-completion-private-snippets-directory nil
                          auto-completion-enable-snippets-in-popup nil
-                         auto-completion-enable-help-tooltip t
+                         auto-completion-enable-help-tooltip nil
                          auto-completion-use-company-box nil
-                         auto-completion-use-company-posframe t
+                         auto-completion-use-company-posframe nil
                          auto-completion-enable-sort-by-usage nil)
         graphql
         unicode-fonts
