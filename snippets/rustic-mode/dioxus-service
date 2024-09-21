@@ -9,13 +9,13 @@ use dioxus::prelude::*;
 
 #[derive(Debug, Clone, Copy)]
 pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
-    pub data: Signal<String>,
+    pub data: Signal<Option<String>>,
 }
 
 impl `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
     pub fn init() {
         let srv = `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
-            data: Signal::new("".to_string()),
+            data: use_signal(|| None),
         };
         use_context_provider(|| srv);
     }
