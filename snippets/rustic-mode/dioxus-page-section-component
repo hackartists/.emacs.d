@@ -1,11 +1,11 @@
 # -*- mode: snippet -*-
 #name : dioxus-page-section-component
-#contributor : hackartist
+#contributor : hackartis
 # --
 
 #![allow(non_snake_case)]
 use dioxus::prelude::*;
-#![allow(unused_imports)]
+#[allow(unused_imports)]
 use crate::prelude::*;
 
 #[component]
