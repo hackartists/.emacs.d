@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+#name : dioxus-page-section-component
+#contributor : hackartist
+# --
+
+#![allow(non_snake_case)]
+use dioxus::prelude::*;
+#![allow(unused_imports)]
+use crate::prelude::*;
+
+#[component]
+pub(super) fn ${1:ComponentName}() -> Element {
+    let ctrl = super::controller::Controller::use_controller();
+
+    rsx! {
+      div { "$1 section"}
+    }
+}
+
