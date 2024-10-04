@@ -7,24 +7,23 @@
 #![allow(non_snake_case)]
 use dioxus::prelude::*;
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, Default)]
 pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
     pub data: Signal<Option<String>>,
 }
 
 impl `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
     pub fn init() {
-        let srv = `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
-            data: use_signal(|| None),
-        };
-        use_context_provider(|| srv);
+        use_context_provider(|| Self::default());
     }
 
     pub fn get_data(&self) -> String{
         (self.data)()
     }
+
+    pub fn use_service() -> Self {
+        use_context()
+    }
+
 }
 
-pub fn use_`(string-inflection-underscore-function (string-replace ".rs" "" (buffer-name)))`() -> `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
-    use_context()
-}
