@@ -1,8 +1,15 @@
 # -*- mode: snippet -*-
-#name : dioxus-api
-#key : dioxus-api
+#name : dioxus-post-api-with-import
+#key : dioxus-post-api-with-import
 #contributor : hackartist
 # --
+
+use dioxus::prelude::{
+    server,
+    server_fn::codec::Json,
+    ServerFnError,
+};
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ${2:$(string-inflection-upper-camelcase-function yas-text)}Response {}

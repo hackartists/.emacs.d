@@ -2,8 +2,16 @@
 # name: tikz-picture
 # --
 
-#+begin_src latex :file images/${1:file-path} :results file graphics :headers '("\\\\usepackage{tikz}" "\\\\usepackage{kotex}") :fit yes :imagemagick yes :imoutoptions -geometry 1920 :iminoptions -density 600 :exports results
-\begin{tikzpicture}
+#+begin_src latex :file images/${1:file-path} :results file graphics :headers '("\\\\usepackage{tikz}" "\\\\usepackage{kotex}" "\\\\usetikzlibrary{positioning}") :fit yes :imagemagick yes :imoutoptions -geometry 1920 :iminoptions -density 600 :exports results
+\begin{tikzpicture} [
+node/.style={rectangle, draw, rounded corners, minimum width=2.5cm, minimum height=1cm, align=center},
+blockchain/.style={rectangle, draw, rounded corners, minimum width=3cm, minimum height=1cm, align=center, fill=blue!10},
+globalmodel/.style={rectangle, draw, rounded corners, minimum width=2.5cm, minimum height=1cm, align=center, fill=green!10},
+arrow/.style={->, thick}]
+  \node[node] (node1) {Node 1};
+  \node[node, below=of node1] (node2) {Node 2};
+
+  \draw[arrow] (node1.east) -- (node2.west) node[midway, above] {message};
 $0
 \end{tikzpicture} 
 #+end_src

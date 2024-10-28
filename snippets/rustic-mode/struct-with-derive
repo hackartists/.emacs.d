@@ -3,5 +3,5 @@
 #key : struct-with-derive
 #contributor : hackartist
 # --
-#[derive(Debug, Clone, Eq, PartialEq, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ${Name} {}

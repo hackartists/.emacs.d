@@ -1,13 +1,20 @@
 # -*- mode: snippet -*-
-#name : dioxus-api
-#key : dioxus-api
+#name : dioxus-get-api-with-import
+#key : dioxus-get-api-with-import
 #contributor : hackartist
 # --
+
+use dioxus::prelude::{
+    server,
+    server_fn::codec::{GetUrl, Json},
+    ServerFnError,
+};
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ${2:$(string-inflection-upper-camelcase-function yas-text)}Response {}
 
-#[server(endpoint = "${1:/path}", input = Json, output = Json)]
+#[server(endpoint = "${1:/path}", input = GetUrl, output = Json)]
 pub async fn ${2:function_name}(id: String) -> Result<${2:$(string-inflection-upper-camelcase-function yas-text)}Response, ServerFnError> {
     dioxus_logger::tracing::debug!("$1: {:?}", id);
     $0
