@@ -12,7 +12,7 @@ pub struct Controller {
 }
 
 impl Controller {
-    pub fn init() -> Self {
+    pub fn init() -> Result<Self, RenderError> {
         let mut ctrl = Self {
             data: use_signal(|| vec![]),
         };
@@ -20,12 +20,13 @@ impl Controller {
 
         let _ = use_server_future(move || async move {
             // TODO: implement init state logic from server
-            // if let Ok(res) = get_data().await {
-            //     ctrl.data.set(res.data);
-            // };
-        });
+            // reqwest::get(format!("/v2/collections/{collection_id}"))
+            //     .await?
+            //     .json::<Collection>()
+            //     .await
+        })?.value();
 
-        ctrl
+        Ok(ctrl)
     }
 
     pub fn add_item(&mut self, item: String) {

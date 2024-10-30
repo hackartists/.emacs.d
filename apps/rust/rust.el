@@ -60,7 +60,11 @@
   "configuration code"
   (spacemacs/declare-prefix-for-mode 'rustic-mode "l" "lsp")
   (spacemacs/set-leader-keys-for-minor-mode 'rustic-mode
-    "l RET" 'lsp-avy-lens))
+    "l RET" 'lsp-avy-lens
+    "l s" 'hackartist/dioxus/server
+    "l w" 'hackartist/dioxus/web
+    "l l" 'hackartist/dioxus/lambda
+    ))
 
 (defun hackartist/rust/before-save-hook ()
   (when (derived-mode-p 'rustic-mode)
@@ -69,3 +73,18 @@
 (defun hackartist/rust/mode-hook ()
   (when (derived-mode-p 'rustic-mode)
     (setq lsp-tailwindcss-experimental-class-regex "class: \"(.*)\"")))
+
+(defun hackartist/dioxus/server ()
+  (interactive)
+  (setq lsp-rust-features ["server"])
+  (lsp-restart-workspace))
+
+(defun hackartist/dioxus/web ()
+  (interactive)
+  (setq lsp-rust-features ["web"])
+  (lsp-restart-workspace))
+
+(defun hackartist/dioxus/lambda ()
+  (interactive)
+  (setq lsp-rust-features ["lambda"])
+  (lsp-restart-workspace))
