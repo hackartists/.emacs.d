@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: latex-center
+# --
+#+LATEX: \vfill\centering\Large{
+$0
+#+LATEX: }\vfill

@@ -12,6 +12,7 @@ arrow/.style={->, thick}]
   \node[node, below=of node1] (node2) {Node 2};
 
   \draw[arrow] (node1.east) -- (node2.west) node[midway, above] {message};
-$0
+%% \draw[red,arrow] (blockchain.south west) to (node4) node[below left=of blockchain] {Reward};
+  $0
 \end{tikzpicture} 
 #+end_src
