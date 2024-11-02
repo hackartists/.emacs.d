@@ -2,14 +2,17 @@
 # name: tikz-picture
 # --
 
-#+begin_src latex :file images/${1:file-path} :results file graphics :headers '("\\\\usepackage{tikz}" "\\\\usepackage{kotex}" "\\\\usetikzlibrary{positioning}") :fit yes :imagemagick yes :imoutoptions -geometry 1920 :iminoptions -density 600 :exports results
+#+begin_src latex :file images/${1:file-path} :results file graphics :headers '("\\\\usepackage{tikz}" "\\\\usepackage{kotex}" "\\\\usetikzlibrary{positioning, shapes.geometric}") :fit yes :imagemagick yes :imoutoptions -geometry 1920 :iminoptions -density 600 :exports results
 \begin{tikzpicture} [
-node/.style={rectangle, draw, rounded corners, minimum width=2.5cm, minimum height=1cm, align=center},
-blockchain/.style={rectangle, draw, rounded corners, minimum width=3cm, minimum height=1cm, align=center, fill=blue!10},
-globalmodel/.style={rectangle, draw, rounded corners, minimum width=2.5cm, minimum height=1cm, align=center, fill=green!10},
-arrow/.style={->, thick}]
-  \node[node] (node1) {Node 1};
-  \node[node, below=of node1] (node2) {Node 2};
+  box/.style={rectangle, draw, color=blue, rounded corners, minimum width=4cm, minimum height=2.5cm, fill=blue!20, anchor=north},
+  program/.style={rectangle, draw, rounded corners, minimum width=5cm, minimum height=1cm, fill=green!30},
+  data/.style={rectangle, draw, dashed, fill=yellow!10, minimum width=3cm, minimum height=1cm},
+  title/.style={rectangle, fill=none, minimum width=3cm, minimum height=1cm},
+  arrow/.style={->, thick, color=white!50},
+  text/.style={color=white}
+]
+  \node[box] (node1) {Node 1};
+  \node[box, fill=none, below=of node1] (node2) {Node 2};
 
   \draw[arrow] (node1.east) -- (node2.west) node[midway, above] {message};
 %% \draw[red,arrow] (blockchain.south west) to (node4) node[below left=of blockchain] {Reward};

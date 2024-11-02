@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: tikz-box-with-title
+# --
+\node[box, minimum width=8cm, minimum height=4cm] (${1:var}) {};
+\node[at={($1.north)}, yshift=-0.3cm] ($1_text) {\textbf{${2:title}}};

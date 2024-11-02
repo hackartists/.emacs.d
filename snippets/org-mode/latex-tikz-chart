@@ -1,0 +1,45 @@
+# -*- mode: snippet -*-
+# name: latex-tikz-chart
+# --
+
+#+begin_src latex :file images/sca-example.png :results file graphics :headers '("\\usepackage{tikz}" "\\usepackage{pgfplots}") :fit yes :imagemagick yes :imoutoptions -geometry 1920 :iminoptions -density 600 :exports results
+  \begin{tikzpicture}
+    \begin{axis}[
+        xlabel=Time,
+        ylabel=Power Consumption,
+        title={Power Consumption Pattern},
+        legend pos=north east,
+        ymin=0, ymax=2,
+        label style={font=\large, color=white},
+        tick style={color=white},
+        tick label style={color=white, font=\small},
+        axis line style={color=white},
+        title style={color=white}
+        legend style={
+          font=\small,
+          text=white,
+          fill=none,
+          draw=none
+        },
+      ]
+
+      \addplot[
+        color=blue,
+        dashed
+      ]
+      coordinates {
+        (0,1) (1,1.1) (2,0.9) (3,1) (4,1.05) (5,0.95)
+      };
+      \addlegendentry{Even Bit Operation}
+
+      \addplot[
+        color=red
+      ]
+      coordinates {
+        (0,1.5) (1,1.4) (2,1.6) (3,1.55) (4,1.45) (5,1.5)
+      };
+      \addlegendentry{Odd Bit Operation}
+    \end{axis}
+  \end{tikzpicture}
+  \end{document}
+#+end_src
