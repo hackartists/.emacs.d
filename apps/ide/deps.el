@@ -139,6 +139,7 @@
         greader
         lsp-tailwindcss
         adoc-mode
+        copilot-chat
         ))
 
 (setq hackartist-ide-osc
