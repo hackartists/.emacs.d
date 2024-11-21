@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : activity-if-else
+# --
+
+if (${1:Condition}) then (yes)
+  :${2:statement};
+else (no)
+  :${3:statement};
+endif
