@@ -48,7 +48,7 @@ pub struct $1 {
 
 impl $1ControllerV1 {
     pub fn route() -> Result<by_axum::axum::Router, Box<dyn std::error::Error>> {
-        by_axum::axum::Router::new()
+        Ok(by_axum::axum::Router::new()
             .route(
                 "/:id",
                 post(Self::create_${1:$(string-inflection-underscore-function yas-text)})
@@ -56,7 +56,7 @@ impl $1ControllerV1 {
                 .delete(Self::delete_${1:$(string-inflection-underscore-function yas-text)})
                 .put(Self::update_${1:$(string-inflection-underscore-function yas-text)}),
             )
-            .route("", get(Self::list_${1:$(string-inflection-underscore-function yas-text)}))
+            .route("", get(Self::list_${1:$(string-inflection-underscore-function yas-text)})))
     }
 
     pub async fn create_${1:$(string-inflection-underscore-function yas-text)}(Path(id): Path<String>, Json(_body): Json<Create$1Request>) -> Result<Json<$1>, DagitError> {
