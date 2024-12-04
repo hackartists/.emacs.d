@@ -1,0 +1,81 @@
+# -*- mode: snippet -*-
+#name : axum-router
+#key : axum-router
+#contributor : hackartist
+# --
+use by_axum::axum::{
+  extract::{Path, Query},
+  routing::{get, post},
+  Json,
+};
+use shared_models::errors::DagitError;
+
+pub struct ${1:Name}ControllerV1;
+
+// NOTE: if already have other pagination, please remove this and use defined one.
+#[derive(serde::Deserialize)]
+pub struct Pagination {
+page: usize,
+size: usize,
+bookmark: String,
+}
+
+#[derive(serde::Deserialize)]
+pub struct Create$1Request {
+  name: String,
+}
+
+#[derive(serde::Deserialize)]
+pub struct Update$1Request {
+  name: Option<String>,
+}
+
+// NOTE: This is a real model and recommended to be moved to shared_models
+#[derive(serde::Deserialize, serde::Serialize, Default)]
+pub struct $1 {
+  id: String,
+  r#type: String,
+  crated_at: u64,
+  updated_at: u64,
+  deleted_at: Option<u64>,
+
+  name: Option<String>,
+
+  // Indexes, if deleted_at is set, all values of indexes must be empty.
+  gsi1: String,
+  gsi2: String,
+}
+
+impl $1ControllerV1 {
+    pub fn route() -> Result<by_axum::axum::Router, Box<dyn std::error::Error>> {
+        by_axum::axum::Router::new()
+            .route(
+                "/:id",
+                post(Self::create_${1:$(string-inflection-underscore-function yas-text)})
+                .get(Self::get_${1:$(string-inflection-underscore-function yas-text)})
+                .delete(Self::delete_${1:$(string-inflection-underscore-function yas-text)})
+                .put(Self::update_${1:$(string-inflection-underscore-function yas-text)}),
+            )
+            .route("", get(Self::list_${1:$(string-inflection-underscore-function yas-text)}))
+    }
+
+    pub async fn create_${1:$(string-inflection-underscore-function yas-text)}(Path(id): Path<String>, Json(_body): Json<Create$1Request>) -> Result<Json<$1>, DagitError> {
+        Ok(Json($1::default()))
+    }
+
+    pub async fn update_${1:$(string-inflection-underscore-function yas-text)}(Path(id): Path<String>, Json(_body): Json<Update$1Request>) -> Result<(), DagitError> {
+        Ok(())
+    }
+
+    pub async fn get_${1:$(string-inflection-underscore-function yas-text)}(Path(id): Path<String>) -> Result<Json<$1>, DagitError> {
+        Ok(Json($1::default()))
+    }
+
+    pub async fn delete_${1:$(string-inflection-underscore-function yas-text)}(Path(id): Path<String>) -> Result<(), DagitError> {
+        Ok(())
+    }
+
+    pub async fn list_${1:$(string-inflection-underscore-function yas-text)}(Query(pagination): Query<Pagination>) -> Result<CommonQueryResponse<$1>, DagitError> {
+        Ok(CommonQueryResponse::default())
+    }
+}
