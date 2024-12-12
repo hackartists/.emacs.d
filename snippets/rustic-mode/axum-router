@@ -75,7 +75,7 @@ impl $1ControllerV1 {
         Ok(())
     }
 
-    pub async fn list_${1:$(string-inflection-underscore-function yas-text)}(Query(pagination): Query<Pagination>) -> Result<CommonQueryResponse<$1>, DagitError> {
-        Ok(CommonQueryResponse::default())
+pub async fn list_${1:$(string-inflection-underscore-function yas-text)}(Query(pagination): Query<Pagination>) -> Result<Json<CommonQueryResponse<$1>>, DagitError> {
+        Ok(Json(CommonQueryResponse::default()))
     }
 }
