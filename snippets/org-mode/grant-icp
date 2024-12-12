@@ -2,67 +2,101 @@
 # name: grant-icp
 # --
 
+#+TITLE: ${1:Project Title}
+#+AUTHOR: Hackartist
+#+EMAIL:  hackartists@gmail.com
 
-* Please briefly describe your project. (500 words)
-+ Some questions to prompt your summary:
-  + What is your project?
-  + What is the goal?
-  + Who will use your project when it's complete?
-  + Are there any barriers to you completing this project? Does it have any dependencies?
-  + How would you utilize the grant funding?
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+OPTIONS:   num:nil toc:nil ::t |:t ^:{} -:t f:t *:t <:t
 
-* Project Roadmap & Milestones
-Please provide additional details on your project roadmap including milestones, associated deliverables, and timeline.
-For $5,000, please break your work into two (2) milestones (tip: think half-way point and final deliverables).
-For $25,000, please break your work into a first 30-day milestone check-in and two subsequent milestones for a total of three milestones (tip: think half-way point and final deliverables).
-For $100,000 grants, please break your work into four (4) milestones.
-IMPORTANT: $100,000 grants are typically only available as a follow-on grant to a smaller grant, with some exceptions. If this is your first time applying for a grant, consider limiting your scope of work to a smaller grant size.
-** Roadmap
-+ Release Title (Epic)
+#+LATEX_CLASS: book
+#+LATEX_HEADER: \usepackage{/home/hackartist/data/devel/github.com/hackartists/notes/common/hackartist-book}
 
-** Milestones
-*** Monthly Plan 1
-+ Deliverable
-  + Description
-  + Timeline
-  + Acceptance Criteria
-+ Avoid high-level descriptions.
-  + Instead of writing "Build admin dashboard"
-  + specify the exact functionalities the dashboard will contain.
 
-** Architecture
-+ This gives a sense that you've thoroughly researched and are familiar with the platform you're building on. It's a testament to your preparedness and understanding of the project.
+* ICP Grant
+** Please briefly describe your project. (500 words)
+What is your project?
+- 
 
-** User scenarios
-+ Scenario 1
-  + For instance, "As a user, I want to be notified in detail by email if my KYC request has been approved or rejected and why."
+What is the goal?
+- 
 
-** Canister Interfaces
-+ If you're building a service, provide a clear interface, including the argument and response types. If possible, write them in candid.
+Who will use your project when it's complete?
+- 
 
-** IC Deployment
+Are there any barriers to you completing this project? Does it have any dependencies?
+- 
+- 
 
-* What unique benefits does this work bring to the Internet Computer ecosystem?
-+ Some questions to prompt your response:
-  + Who will benefit most from your project?
-  + How can your project catalyze adoption of the Internet Computer and ecosystem growth?
-  + How can your project make the Internet Computer accessible and approachable to more developers around the world?
-  + How do you plan to share your work with the community once complete?
+How would you utilize the grant funding?
+- 
 
-* How do you plan to continue building on your project once the grant funding is over?
+** Project Roadmap & Milestones
 
-* How do you plan to attract the community to use what you are building?
+*** Goals overview
 
-* Where do you see your project in the next 12 months?
 
-* You will be required to participate in the forums as part of your developer grant process. What is your forum handle/user?
+*** 2025 Roadmap
+- 
 
-* Referral
+*** Sprint Goals / Milestone #1
+*Story*
+
+
+*Deliverables*
+- Developed and deployable web function: Sign up and login(w/google and internet identity)
+
+*Outcomes*
+- Deploy features on 
+
+*Sprint*
+
+*Sprint 1: Development of *
+- web: 
+
+*Sprint 2: Development of *
+- web: 
+
+*Sprint 3: Development of *
+- web: 
+
+*Sprint 4: Testing and documenting *
+- canister/backend: 
+
+*Reward after this milestone*
+
+$25,000
+
+
+
+** What unique benefits does this work bring to the Internet Computer ecosystem?
+
+*Who will benefit most from your project?*
+- 
+
+*How can your project catalyze adoption of the Internet Computer and ecosystem growth?*
+- 
+
+*How can your project make the Internet Computer accessible and approachable to more developers around the world?*
+- 
+
+*How do you plan to share your work with the community once complete?*
+- 
+
+** How do you plan to continue building on your project once the grant funding is over?
+
+** How do you plan to attract the community to use what you are building?
+
+** Where do you see your project in the next 12 months?
+
+** You will be required to participate in the forums as part of your developer grant process. What is your forum handle/user?
+
+** Referral
 How did you hear about us and this program? Are you currently involved in any DFINITY developer community channels? Have you been in touch with DFINITY team members in the past?
 
-* Do you have any supporting project files (ex. mockups, designs, video)? (Yes/No)
+** Do you have any supporting project files (ex. mockups, designs, video)? (Yes/No)
 If yes, attach the supporting files.
 
-* Do you plan to open source your project? (Yes/No/Not sure yet)
-If not yes, describe the below question.
-DFINITY supports open source projects. Your application could be rejected if you decide not to open source. Could you please share more information about your decision?
+** Do you plan to open source your project? (Yes/No/Not sure yet)
+Yes
