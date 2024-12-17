@@ -8,7 +8,7 @@ use by_axum::axum::{
   routing::{get, post},
   Json,
 };
-use shared_models::errors::DagitError;
+use dto::errors::ServiceError;
 
 #[derive(Clone, Debug)]
 pub struct ${1:Name}ControllerV1 {
@@ -16,19 +16,19 @@ pub struct ${1:Name}ControllerV1 {
 };
 
 // NOTE: if already have other pagination, please remove this and use defined one.
-#[derive(serde::Deserialize)]
+#[derive(Debug, serde::Deserialize)]
 pub struct Pagination {
-page: usize,
-size: usize,
-bookmark: String,
+page: Option<usize>,
+size: Option<usize>,
+bookmark: Option<usize>,
 }
 
-#[derive(serde::Deserialize)]
+#[derive(Debug, serde::Deserialize)]
 pub struct Create$1Request {
   name: String,
 }
 
-#[derive(serde::Deserialize)]
+#[derive(Debug, serde::Deserialize)]
 pub struct Update$1Request {
   name: Option<String>,
 }
@@ -70,8 +70,10 @@ impl $1ControllerV1 {
     pub async fn create_${1:$(string-inflection-underscore-function yas-text)}(
       State(ctrl): State<$1ControllerV1>,
       Path(id): Path<String>,
-      Json(_body): Json<Create$1Request>,
-    ) -> Result<Json<$1>, DagitError> {
+      Json(body): Json<Create$1Request>,
+    ) -> Result<Json<$1>, ServiceError> {
+    let log = ctrl.log.new(o!("api" => "create_${1:$(string-inflection-underscore-function yas-text)}"));
+  slog::debug!(log, "list_${1:$(string-inflection-underscore-function yas-text)} {:?} {:?}", id, body);
         Ok(Json($1::default()))
     }
 
@@ -79,28 +81,37 @@ impl $1ControllerV1 {
       State(ctrl): State<$1ControllerV1>,
       Path(id): Path<String>,
       Json(_body): Json<Update$1Request>,
-    ) -> Result<(), DagitError> {
+    ) -> Result<(), ServiceError> {
+    let log = ctrl.log.new(o!("api" => "update_${1:$(string-inflection-underscore-function yas-text)}"));
+    slog::debug!(log, "list_${1:$(string-inflection-underscore-function yas-text)} {:?} {:?}", id, body);
         Ok(())
     }
 
     pub async fn get_${1:$(string-inflection-underscore-function yas-text)}(
       State(ctrl): State<$1ControllerV1>,
       Path(id): Path<String>,
-    ) -> Result<Json<$1>, DagitError> {
+    ) -> Result<Json<$1>, ServiceError> {
+    let log = ctrl.log.new(o!("api" => "get_${1:$(string-inflection-underscore-function yas-text)}"));
+    slog::debug!(log, "get_${1:$(string-inflection-underscore-function yas-text)} {:?}", id);
         Ok(Json($1::default()))
     }
 
     pub async fn delete_${1:$(string-inflection-underscore-function yas-text)}(
       State(ctrl): State<$1ControllerV1>,
       Path(id): Path<String>,
-    ) -> Result<(), DagitError> {
-        Ok(())
+    ) -> Result<(), ServiceError> {
+    let log = ctrl.log.new(o!("api" => "delete_${1:$(string-inflection-underscore-function yas-text)}"));
+    slog::debug!(log, "delete_${1:$(string-inflection-underscore-function yas-text)} {:?}", id);
+    Ok(())
     }
 
 pub async fn list_${1:$(string-inflection-underscore-function yas-text)}(
   State(ctrl): State<$1ControllerV1>,
   Query(pagination): Query<Pagination>
-  ) -> Result<Json<CommonQueryResponse<$1>>, DagitError> {
+  ) -> Result<Json<CommonQueryResponse<$1>>, ServiceError> {
+  let log = ctrl.log.new(o!("api" => "list_${1:$(string-inflection-underscore-function yas-text)}"));
+  slog::debug!(log, "list_${1:$(string-inflection-underscore-function yas-text)} {:?}", pagination);
+
         Ok(Json(CommonQueryResponse::default()))
     }
 }
