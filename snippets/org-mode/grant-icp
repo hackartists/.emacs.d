@@ -14,8 +14,8 @@
 #+LATEX_HEADER: \usepackage{/home/hackartist/data/devel/github.com/hackartists/notes/common/hackartist-book}
 
 
-* ICP Grant
-** Please briefly describe your project. (500 words)
+
+* Please briefly describe your project. (500 words)
 What is your project?
 - 
 
@@ -32,25 +32,31 @@ Are there any barriers to you completing this project? Does it have any dependen
 How would you utilize the grant funding?
 - 
 
-** Project Roadmap & Milestones
+* Project Roadmap & Milestones
 
-*** Goals overview
+** Goals overview
 
+** Architecture
 
-*** 2025 Roadmap
+*** Technical Stack
+
+*** Canister Specification
+
+** User Scenario
+
+** 2025 Roadmap
 - 
 
-*** Sprint Goals / Milestone #1
-*Story*
+** Sprint Goals / Milestone #1
+*** Story
 
-
-*Deliverables*
+*** Deliverables
 - Developed and deployable web function: Sign up and login(w/google and internet identity)
 
-*Outcomes*
+*** Outcomes
 - Deploy features on 
 
-*Sprint*
+*** Sprints
 
 *Sprint 1: Development of *
 - web: 
@@ -64,13 +70,63 @@ How would you utilize the grant funding?
 *Sprint 4: Testing and documenting *
 - canister/backend: 
 
-*Reward after this milestone*
+*** Reward after this milestone
+\$5,000
 
-$25,000
+** Sprint Goals / Milestone #2
+*** Story
+
+*** Deliverables
+- Developed and deployable web function: Sign up and login(w/google and internet identity)
+
+*** Outcomes
+- Deploy features on 
+
+*** Sprints
+
+*Sprint 1: Development of *
+- web: 
+
+*Sprint 2: Development of *
+- web: 
+
+*Sprint 3: Development of *
+- web: 
+
+*Sprint 4: Testing and documenting *
+- canister/backend: 
+
+*** Reward after this milestone
+\$10,000
+
+** Sprint Goals / Milestone #3
+*** Story
+
+*** Deliverables
+- Developed and deployable web function: Sign up and login(w/google and internet identity)
+
+*** Outcomes
+- Deploy features on 
+
+*** Sprints
+
+*Sprint 1: Development of *
+- web: 
+
+*Sprint 2: Development of *
+- web: 
+
+*Sprint 3: Development of *
+- web: 
+
+*Sprint 4: Testing and documenting *
+- canister/backend: 
+
+*** Reward after this milestone
+\$10,000
 
 
-
-** What unique benefits does this work bring to the Internet Computer ecosystem?
+* What unique benefits does this work bring to the Internet Computer ecosystem?
 
 *Who will benefit most from your project?*
 - 
@@ -84,19 +140,19 @@ $25,000
 *How do you plan to share your work with the community once complete?*
 - 
 
-** How do you plan to continue building on your project once the grant funding is over?
+* How do you plan to continue building on your project once the grant funding is over?
 
-** How do you plan to attract the community to use what you are building?
+* How do you plan to attract the community to use what you are building?
 
-** Where do you see your project in the next 12 months?
+* Where do you see your project in the next 12 months?
 
-** You will be required to participate in the forums as part of your developer grant process. What is your forum handle/user?
+* You will be required to participate in the forums as part of your developer grant process. What is your forum handle/user?
 
-** Referral
+* Referral
 How did you hear about us and this program? Are you currently involved in any DFINITY developer community channels? Have you been in touch with DFINITY team members in the past?
 
-** Do you have any supporting project files (ex. mockups, designs, video)? (Yes/No)
+* Do you have any supporting project files (ex. mockups, designs, video)? (Yes/No)
 If yes, attach the supporting files.
 
-** Do you plan to open source your project? (Yes/No/Not sure yet)
+* Do you plan to open source your project? (Yes/No/Not sure yet)
 Yes
