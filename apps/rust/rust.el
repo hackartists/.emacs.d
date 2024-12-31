@@ -74,15 +74,20 @@
     (lsp-format-buffer)))
 
 (defun dx-fmt-before-save ()
-  "Format the buffer using `dx fmt` via a temporary file before saving."
+  "Format the buffer using `dx fmt` via a temporary file before saving,
+while preserving the cursor position."
   (when buffer-file-name
     (let* ((temp-file (make-temp-file "dx-fmt-"))
-           (command (format "dx fmt -f %s" (shell-quote-argument temp-file))))
+           (command (format "dx fmt -f %s" (shell-quote-argument temp-file)))
+           (scroll-pos (window-start))
+           (cursor-pos (point)))
       (write-region (point-min) (point-max) temp-file)
       (if (eq (shell-command command) 0)
           (progn
             (erase-buffer)
-            (insert-file-contents temp-file))
+            (insert-file-contents temp-file)
+            (goto-char cursor-pos)
+            (set-window-start (selected-window) scroll-pos))
         (message "dx fmt failed"))
       (delete-file temp-file))))
 
