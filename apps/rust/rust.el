@@ -75,21 +75,34 @@
 
 (defun dx-fmt-before-save ()
   "Format the buffer using `dx fmt` via a temporary file before saving,
-while preserving the cursor position."
-  (when buffer-file-name
-    (let* ((temp-file (make-temp-file "dx-fmt-"))
-           (command (format "dx fmt -f %s" (shell-quote-argument temp-file)))
-           (scroll-pos (window-start))
-           (cursor-pos (point)))
+if the buffer contains the string `rsx!`. Preserves cursor position and scroll position."
+  (when (and buffer-file-name
+             (save-excursion
+               (goto-char (point-min))
+               (search-forward "rsx!" nil t))) ;; Check if `rsx!` exists in the buffer
+    (let* ((temp-file (make-temp-file "dx-fmt-")) ;; Create a temporary file
+           (command (format "dx fmt -f %s" (shell-quote-argument temp-file))) ;; Command to run
+           (cursor-pos (point)) ;; Save the current cursor position
+           (scroll-pos (window-start))) ;; Save the scroll position (top of the window)
+      ;; Step 1: Write buffer contents to the temporary file
       (write-region (point-min) (point-max) temp-file)
-      (if (eq (shell-command command) 0)
+      ;; Step 2: Run the `dx fmt` command on the temporary file
+      (if (eq (shell-command command) 0) ;; Check if the command succeeds
           (progn
+            ;; Step 3: Replace buffer contents with the formatted temporary file's content
             (erase-buffer)
             (insert-file-contents temp-file)
+            ;; Step 4: Restore cursor position
             (goto-char cursor-pos)
+            ;; Step 5: Restore the scroll position
             (set-window-start (selected-window) scroll-pos))
-        (message "dx fmt failed"))
+        (message "dx fmt failed")) ;; Display a message if the command fails
+      ;; Step 6: Clean up the temporary file
       (delete-file temp-file))))
+
+;; Add the function to `before-save-hook`
+(add-hook 'before-save-hook #'run-dx-fmt-before-save)
+
 
 (defun dx-translate-on-region (start end)
   "Run `dx translate -r` on the selected region and replace it with the output."

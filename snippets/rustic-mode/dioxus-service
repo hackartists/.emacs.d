@@ -20,10 +20,5 @@ impl `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buff
     pub fn get_data(&self) -> String{
         (self.data)()
     }
-
-    pub fn use_service() -> Self {
-        use_context()
-    }
-
 }
 

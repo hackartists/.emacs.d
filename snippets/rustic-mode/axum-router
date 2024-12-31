@@ -3,17 +3,23 @@
 #key : axum-router
 #contributor : hackartist
 # --
-use by_axum::axum::{
-extract::{Path, Query},
-routing::{get, post},
-Json,
+use by_axum::{
+    axum::{
+        extract::{Path, Query, State},
+        routing::{get, post},
+        Json,
+    },
+    log::root,
 };
-use dto::errors::ServiceError;
+use common_query_response::CommonQueryResponse;
+use serde::{Deserialize, Serialize};
+use dto::*;
+use slog::o;
 
 #[derive(Clone, Debug)]
 pub struct ${1:Name}ControllerV1 {
 log: slog::Logger,
-};
+}
 
 // NOTE: if already have other pagination, please remove this and use defined one.
 #[derive(Debug, serde::Deserialize)]
@@ -36,7 +42,7 @@ name: Option<String>,
 #[derive(Debug, Clone, Eq, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
 #[serde(untagged)]
-pub enum ActionRequest {
+pub enum Action$1Request {
     Action1(String),
     Action2(String),
 }
@@ -58,7 +64,7 @@ pub struct $1 {
 }
 
 impl $1ControllerV1 {
-    pub fn route() -> Result<by_axum::axum::Router, Box<dyn std::error::Error>> {
+    pub fn route() -> Result<by_axum::axum::Router> {
     let log = root().new(o!("api-controller" => "$1ControllerV1"));
         let ctrl = $1ControllerV1 {
             log,
@@ -67,20 +73,18 @@ impl $1ControllerV1 {
         Ok(by_axum::axum::Router::new()
             .route(
                 "/:id",
-                post(Self::update_${1:$(string-inflection-underscore-function yas-text)})
-                .get(Self::get_${1:$(string-inflection-underscore-function yas-text)})
-                .delete(Self::delete_${1:$(string-inflection-underscore-function yas-text)})
-                .put(Self::act_${1:$(string-inflection-underscore-function yas-text)}),
+               get(Self::get_${1:$(string-inflection-underscore-function yas-text)})
+                .post(Self::act_${1:$(string-inflection-underscore-function yas-text)}_by_id),
             ).with_state(ctrl.clone())
-            .route("/", post(Self::create_${1:$(string-inflection-underscore-function yas-text)}).get(Self::list_${1:$(string-inflection-underscore-function yas-text)}))).with_state(ctrl.clone())
+            .route("/", post(Self::act_${1:$(string-inflection-underscore-function yas-text)}).get(Self::list_${1:$(string-inflection-underscore-function yas-text)})).with_state(ctrl.clone()))
     }
 
-    pub async fn create_${1:$(string-inflection-underscore-function yas-text)}(
+    pub async fn act_${1:$(string-inflection-underscore-function yas-text)}(
       State(ctrl): State<$1ControllerV1>,
-      Json(body): Json<Create$1Request>,
-    ) -> Result<Json<$1>, ServiceError> {
+      Json(body): Json<Action$1Request>,
+    ) -> Result<Json<$1>> {
     let log = ctrl.log.new(o!("api" => "create_${1:$(string-inflection-underscore-function yas-text)}"));
-  slog::debug!(log, "list_${1:$(string-inflection-underscore-function yas-text)} {:?} {:?}", id, body);
+  slog::debug!(log, "list_${1:$(string-inflection-underscore-function yas-text)} {:?}", body);
         Ok(Json($1::default()))
     }
 
@@ -88,17 +92,17 @@ impl $1ControllerV1 {
       State(ctrl): State<$1ControllerV1>,
       Path(id): Path<String>,
       Json(body): Json<Update$1Request>,
-    ) -> Result<(), ServiceError> {
+    ) -> Result<()> {
     let log = ctrl.log.new(o!("api" => "update_${1:$(string-inflection-underscore-function yas-text)}"));
     slog::debug!(log, "list_${1:$(string-inflection-underscore-function yas-text)} {:?} {:?}", id, body);
         Ok(())
     }
 
-    pub async fn act_${1:$(string-inflection-underscore-function yas-text)}(
+    pub async fn act_${1:$(string-inflection-underscore-function yas-text)}_by_id(
       State(ctrl): State<$1ControllerV1>,
       Path(id): Path<String>,
-      Json(body): Json<ActionRequest>,
-    ) -> Result<(), ServiceError> {
+      Json(body): Json<Action$1Request>,
+    ) -> Result<()> {
     let log = ctrl.log.new(o!("api" => "update_${1:$(string-inflection-underscore-function yas-text)}"));
     slog::debug!(log, "list_${1:$(string-inflection-underscore-function yas-text)} {:?} {:?}", id, body);
         Ok(())
@@ -107,7 +111,7 @@ impl $1ControllerV1 {
     pub async fn get_${1:$(string-inflection-underscore-function yas-text)}(
       State(ctrl): State<$1ControllerV1>,
       Path(id): Path<String>,
-    ) -> Result<Json<$1>, ServiceError> {
+    ) -> Result<Json<$1>> {
     let log = ctrl.log.new(o!("api" => "get_${1:$(string-inflection-underscore-function yas-text)}"));
     slog::debug!(log, "get_${1:$(string-inflection-underscore-function yas-text)} {:?}", id);
         Ok(Json($1::default()))
@@ -116,7 +120,7 @@ impl $1ControllerV1 {
     pub async fn delete_${1:$(string-inflection-underscore-function yas-text)}(
       State(ctrl): State<$1ControllerV1>,
       Path(id): Path<String>,
-    ) -> Result<(), ServiceError> {
+    ) -> Result<()> {
     let log = ctrl.log.new(o!("api" => "delete_${1:$(string-inflection-underscore-function yas-text)}"));
     slog::debug!(log, "delete_${1:$(string-inflection-underscore-function yas-text)} {:?}", id);
     Ok(())
@@ -125,7 +129,7 @@ impl $1ControllerV1 {
 pub async fn list_${1:$(string-inflection-underscore-function yas-text)}(
   State(ctrl): State<$1ControllerV1>,
   Query(pagination): Query<Pagination>
-  ) -> Result<Json<CommonQueryResponse<$1>>, ServiceError> {
+  ) -> Result<Json<CommonQueryResponse<$1>>> {
   let log = ctrl.log.new(o!("api" => "list_${1:$(string-inflection-underscore-function yas-text)}"));
   slog::debug!(log, "list_${1:$(string-inflection-underscore-function yas-text)} {:?}", pagination);
 
