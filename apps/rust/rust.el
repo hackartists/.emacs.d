@@ -74,11 +74,17 @@
     (lsp-format-buffer)))
 
 (defun dx-fmt-before-save ()
-  "Run `dx fmt -f` on the current file before saving."
+  "Format the buffer using `dx fmt` via a temporary file before saving."
   (when buffer-file-name
-    (let ((command (format "dx fmt -f %s" (shell-quote-argument buffer-file-name))))
-      (shell-command command)
-      (revert-buffer t t t))))
+    (let* ((temp-file (make-temp-file "dx-fmt-"))
+           (command (format "dx fmt -f %s" (shell-quote-argument temp-file))))
+      (write-region (point-min) (point-max) temp-file)
+      (if (eq (shell-command command) 0)
+          (progn
+            (erase-buffer)
+            (insert-file-contents temp-file))
+        (message "dx fmt failed"))
+      (delete-file temp-file))))
 
 (defun dx-translate-on-region (start end)
   "Run `dx translate -r` on the selected region and replace it with the output."
