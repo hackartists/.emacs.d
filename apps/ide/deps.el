@@ -19,12 +19,12 @@
                          auto-completion-return-key-behavior nil
                          auto-completion-tab-key-behavior nil
                          auto-completion-complete-with-key-sequence t
-                         auto-completion-complete-with-key-sequence-delay 0.1
+                         auto-completion-complete-with-key-sequence-delay 0
                          auto-completion-minimum-prefix-length 0
                          auto-completion-idle-delay 0.2
                          auto-completion-private-snippets-directory nil
                          auto-completion-enable-snippets-in-popup nil
-                         auto-completion-enable-help-tooltip t
+                         auto-completion-enable-help-tooltip nil
                          auto-completion-use-company-box nil
                          auto-completion-use-company-posframe t
                          auto-completion-enable-sort-by-usage nil)

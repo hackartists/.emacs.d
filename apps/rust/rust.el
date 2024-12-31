@@ -68,7 +68,15 @@
 
 (defun hackartist/rust/before-save-hook ()
   (when (derived-mode-p 'rustic-mode)
+    (dx-fmt-before-save)
     (lsp-format-buffer)))
+
+(defun dx-fmt-before-save ()
+  "Run `dx fmt -f` on the current file before saving."
+  (when buffer-file-name
+    (let ((command (format "dx fmt -f %s" (shell-quote-argument buffer-file-name))))
+      (shell-command command)
+      (revert-buffer t t t))))
 
 (defun hackartist/rust/mode-hook ()
   (when (derived-mode-p 'rustic-mode)
