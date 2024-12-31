@@ -59,7 +59,9 @@
 (defun hackartist/rust/bindings ()
   "configuration code"
   (spacemacs/declare-prefix-for-mode 'rustic-mode "l" "lsp")
-  (spacemacs/set-leader-keys-for-minor-mode 'rustic-mode
+  (spacemacs/set-leader-keys-for-major-mode 'rustic-mode
+    "RET" 'dx-translate-on-region
+
     "l RET" 'lsp-avy-lens
     "l s" 'hackartist/dioxus/server
     "l w" 'hackartist/dioxus/web
@@ -77,6 +79,16 @@
     (let ((command (format "dx fmt -f %s" (shell-quote-argument buffer-file-name))))
       (shell-command command)
       (revert-buffer t t t))))
+
+(defun dx-translate-on-region (start end)
+  "Run `dx translate -r` on the selected region and replace it with the output."
+  (interactive "r")
+  (let* ((selected-text (buffer-substring-no-properties start end))
+         (command (format "dx translate -r %s" (shell-quote-argument selected-text)))
+         (output (shell-command-to-string command)))
+    ;; Replace the selected text with the output
+    (delete-region start end)
+    (insert output)))
 
 (defun hackartist/rust/mode-hook ()
   (when (derived-mode-p 'rustic-mode)
