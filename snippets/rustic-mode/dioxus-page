@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+#name : dioxus-page
+#key : dioxus-page
+#contributor : hackartist
+# --
+
+#![allow(non_snake_case)]
+use dioxus::prelude::*;
+use dioxus_translate::Language;
+
+#[component]
+pub fn ${1:PageName}Page(
+    lang: Language,
+) -> Element {
+    rsx! {
+    div {id: "${1:$(string-inflection-kebab-case-function yas-text)}", "$1 page"}
+    }
+}
+
