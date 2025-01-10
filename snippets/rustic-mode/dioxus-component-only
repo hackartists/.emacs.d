@@ -1,11 +1,8 @@
 # -*- mode: snippet -*-
-#name : dioxus-component
-#key : dioxus-component
+#name : dioxus-component-only
+#key : dioxus-component-only
 #contributor : hackartist
 # --
-
-#![allow(non_snake_case)]
-use dioxus::prelude::*;
 
 #[component]
 pub fn ${1:ComponentName}(

@@ -4,18 +4,13 @@
 #contributor : hackartist
 # --
 
-pub struct PagesTranslate<'a> {
-    pub text: &'a str,
-}
+use dioxus_translate::*;
 
-pub fn translate_pages<'a>(lang: &'a Language) -> PagesTranslate<'a> {
-    if lang.clone() == Language::En {
-        PagesTranslate {
-            text: "homepage page",
-        }
-    } else {
-        PagesTranslate {
-            text: "homepage page",
-        }
-    }
+translate! {
+    ${1:Name}Translate;
+
+    ${2:id}: {
+        ko: "",
+        en: "",
+    },
 }
