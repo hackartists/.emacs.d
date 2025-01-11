@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+#name : dioxus-i18n
+#key : dioxus-i18n
+#contributor : hackartist
+# --
+
+use dioxus_translate::*;
+
+translate! {
+    ${1:$(string-inflection-upcase-function (file-name-nondirectory (directory-file-name (file-name-directory buffer-file-name))))}Translate;
+
+    title: {
+        ko: "$1",
+        en: "$1",
+    },
+}

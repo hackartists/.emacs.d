@@ -4,13 +4,11 @@
 #contributor : hackartist
 # --
 
-use dioxus_translate::*;
-
 translate! {
     ${1:Name}Translate;
 
-    ${2:id}: {
-        ko: "",
-        en: "",
+    title: {
+        ko: "$1",
+        en: "$1",
     },
 }
