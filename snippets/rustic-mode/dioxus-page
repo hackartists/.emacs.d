@@ -6,8 +6,7 @@
 
 #![allow(non_snake_case)]
 use dioxus::prelude::*;
-use dioxus_translate::Language;
-use super::i18n::*;
+use dioxus_translate::*;
 
 #[component]
 pub fn ${1:$(string-inflection-upcase-function (file-name-nondirectory (directory-file-name (file-name-directory buffer-file-name))))}Page(
