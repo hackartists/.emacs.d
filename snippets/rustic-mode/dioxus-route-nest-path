@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#name : dioxus-route-nest-path
+#key : dioxus-route-nest-path
+#contributor : hackartist
+# --
+            #[nest("/${1:path}")]
+                #[route("/")]
+                ${1:$(string-inflection-upper-camelcase-function yas-text)}Page {},
+                #[route("/:id")]
+                ${1:$(string-inflection-upper-camelcase-function yas-text)}ByIdPage { id: String, lang: Language },
+            #[end_nest]
