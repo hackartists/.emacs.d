@@ -7,15 +7,16 @@
 #![allow(non_snake_case)]
 use dioxus::prelude::*;
 use dioxus_translate::*;
+use super::i18n::*;
 
 #[component]
-pub fn ${1:$(string-inflection-upcase-function (file-name-nondirectory (directory-file-name (file-name-directory buffer-file-name))))}Page(
+pub fn ${1:$(string-inflection-upper-camelcase-function (file-name-nondirectory (directory-file-name (file-name-directory buffer-file-name))))}Page(
     lang: Language,
 ) -> Element {
-    let tr: $1Translate = translate(&lang);
+let tr: `(string-inflection-upper-camelcase-function (file-name-nondirectory (directory-file-name (file-name-directory buffer-file-name))))`Translate = translate(&lang);
 
     rsx! {
-    div {id: "${1:$(string-inflection-kebab-case-function yas-text)}", "$1 page"}
+    div {id: "`(string-inflection-kebab-case-function (file-name-nondirectory (directory-file-name (file-name-directory buffer-file-name))))`", "$1 page"}
     }
 }
 

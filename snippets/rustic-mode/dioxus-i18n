@@ -7,10 +7,10 @@
 use dioxus_translate::*;
 
 translate! {
-    ${1:$(string-inflection-upcase-function (file-name-nondirectory (directory-file-name (file-name-directory buffer-file-name))))}Translate;
+`(string-inflection-upper-camelcase-function (file-name-nondirectory (directory-file-name (file-name-directory buffer-file-name))))`Translate;
 
     title: {
-        ko: "$1",
-        en: "$1",
+      ko: "`(string-inflection-upcase-function (file-name-nondirectory (directory-file-name (file-name-directory buffer-file-name))))`",
+      en: "`(string-inflection-upcase-function (file-name-nondirectory (directory-file-name (file-name-directory buffer-file-name))))`",
     },
 }
