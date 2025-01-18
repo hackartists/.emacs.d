@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+#name : api-model(dto)
+#key : api-model(dto)
+#contributor : hackartist
+# --
+
+use crate::CommonQueryResponse;
+#[cfg(feature = "server")]
+use by_axum::aide;
+
+// If you want to know how to use `api_model` macro, refer to https://github.com/biyard/rust-sdk/tree/main/packages/by-macros
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize, Eq, PartialEq)]
+#[cfg_attr(feature = "server", derive(schemars::JsonSchema, aide::OperationIo))]
+#[api_model(base = "/topics/v1/:topic-id/comments", iter_type=CommonQueryResponse)]
+pub struct Comment {
+    #[api_model(summary)]
+    pub id: String,
+}
