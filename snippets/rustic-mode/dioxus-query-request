@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+#name : dioxus-query-request
+#key : dioxus-query-request
+#contributor : hackartist
+# --
+
+#[derive(Debug, Clone, Eq, PartialEq, Serialize, Deserialize)]
+pub struct ${1:Name}Query {
+    pub size: Option<usize>,
+    pub bookmark: Option<String>,
+    pub lang: Option<Language>,
+}
+
+impl std::fmt::Display for $1Query {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let query = serde_urlencoded::to_string(&self).unwrap();
+
+        write!(f, "{query}")
+    }
+}
+

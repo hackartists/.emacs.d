@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+#name : dioxus-dto
+#key : dioxus-dto
+#contributor : hackartist
+# --
+
+#[derive(Debug, Clone, Eq, PartialEq, Serialize, Deserialize)]
+pub struct ${1:Name} {
+    pub id: String,
+}

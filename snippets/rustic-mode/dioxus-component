@@ -10,10 +10,11 @@ use dioxus::prelude::*;
 #[component]
 pub fn ${1:ComponentName}(
     #[props(default ="${1:$(string-inflection-underscore-function yas-text)}".to_string())] id: String,
-    #[props(default ="".to_string())] class: String,
+    #[props(extends = GlobalAttributes)]
+    attributes: Vec<Attribute>,
 ) -> Element {
     rsx! {
-      div { id, class, "$1"}
+      div { id, ..attributes, "$1"}
     }
 }
 
