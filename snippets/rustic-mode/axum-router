@@ -4,28 +4,27 @@
 #contributor : hackartist
 # --
 use by_axum::{
-    axum::{
+auth::Authorization,
+axum::{
         extract::{Path, Query, State},
         routing::{get, post},
-        Json,
+        Extension, Json,
     },
-    log::root,
 };
-use common_query_response::CommonQueryResponse;
 use dto::*;
-use slog::o;
 
 #[derive(Clone, Debug)]
 pub struct ${1:Name}ControllerV1 {
-log: slog::Logger,
+  repo: $1Repository,
 }
 
 impl $1ControllerV1 {
-    pub fn route() -> Result<by_axum::axum::Router> {
-    let log = root().new(o!("api-controller" => "$1ControllerV1"));
-        let ctrl = $1ControllerV1 {
-            log,
-        };
+pub async fn route(pool: sqlx::Pool<sqlx::Postgres>) -> Result<by_axum::axum::Router> {
+    let repo = $1::get_repository(pool);
+
+        repo.create_table().await?;
+
+        let ctrl = $1ControllerV1 { repo };
 
         Ok(by_axum::axum::Router::new()
             .route(
@@ -37,44 +36,40 @@ impl $1ControllerV1 {
     }
 
     pub async fn act_${1:$(string-inflection-underscore-function yas-text)}(
-      State(ctrl): State<$1ControllerV1>,
-      Extension(_sig): Extension<Option<Signature>>,
-      Json(body): Json<$1ActionRequest>,
-    ) -> Result<Json<$1ActionResponse>> {
-    let log = ctrl.log.new(o!("api" => "create_${1:$(string-inflection-underscore-function yas-text)}"));
-  slog::debug!(log, "list_${1:$(string-inflection-underscore-function yas-text)} {:?}", body);
-        Ok(Json($1ActionResponse::default()))
+      State(_ctrl): State<$1ControllerV1>,
+      Extension(_sig): Extension<Option<Authorization>>,
+      Json(body): Json<$1Action>,
+    ) -> Result<Json<$1>> {
+  tracing::debug!("act_${1:$(string-inflection-underscore-function yas-text)} {:?}", body);
+        Ok(Json($1::default()))
     }
 
     pub async fn act_${1:$(string-inflection-underscore-function yas-text)}_by_id(
-      State(ctrl): State<$1ControllerV1>,
-      Extension(_sig): Extension<Option<Signature>>,
+      State(_ctrl): State<$1ControllerV1>,
+      Extension(_sig): Extension<Option<Authorization>>,
       Path(id): Path<String>,
-      Json(body): Json<$1ByIdActionRequest>,
-    ) -> Result<$1ByIdActionResponse> {
-    let log = ctrl.log.new(o!("api" => "update_${1:$(string-inflection-underscore-function yas-text)}"));
-    slog::debug!(log, "list_${1:$(string-inflection-underscore-function yas-text)} {:?} {:?}", id, body);
-    Ok($1ByIdActionResponse::default())
+      Json(body): Json<$1ByIdAction>,
+    ) -> Result<Json<$1>> {
+    tracing::debug!("act_${1:$(string-inflection-underscore-function yas-text)}_by_id {:?} {:?}", id, body);
+    Ok(Json($1::default()))
     }
 
     pub async fn get_${1:$(string-inflection-underscore-function yas-text)}(
-      State(ctrl): State<$1ControllerV1>,
-      Extension(_sig): Extension<Option<Signature>>,
+      State(_ctrl): State<$1ControllerV1>,
+      Extension(_sig): Extension<Option<Authorization>>,
       Path(id): Path<String>,
     ) -> Result<Json<$1>> {
-    let log = ctrl.log.new(o!("api" => "get_${1:$(string-inflection-underscore-function yas-text)}"));
-    slog::debug!(log, "get_${1:$(string-inflection-underscore-function yas-text)} {:?}", id);
+    tracing::debug!("get_${1:$(string-inflection-underscore-function yas-text)} {:?}", id);
         Ok(Json($1::default()))
     }
 
 pub async fn list_${1:$(string-inflection-underscore-function yas-text)}(
-  State(ctrl): State<$1ControllerV1>,
-  Extension(_sig): Extension<Option<Signature>>,
-  Query(q): Query<PatronQuery>
-  ) -> Result<Json<CommonQueryResponse<$1>>> {
-  let log = ctrl.log.new(o!("api" => "list_${1:$(string-inflection-underscore-function yas-text)}"));
-  slog::debug!(log, "list_${1:$(string-inflection-underscore-function yas-text)} {:?}", q);
+  State(_ctrl): State<$1ControllerV1>,
+  Extension(_sig): Extension<Option<Authorization>>,
+  Query(q): Query<$1Query>
+  ) -> Result<Json<$1GetResponse>> {
+  tracing::debug!("list_${1:$(string-inflection-underscore-function yas-text)} {:?}", q);
 
-        Ok(Json(CommonQueryResponse::default()))
+        Ok(Json(QueryResponse::default()))
     }
 }

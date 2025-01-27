@@ -4,14 +4,14 @@
 #contributor : hackartist
 # --
 
+
 #[component]
 pub fn ${1:ComponentName}(
-    #[props(default ="${1:$(string-inflection-underscore-function yas-text)}".to_string())] id: String,
     #[props(extends = GlobalAttributes)]
     attributes: Vec<Attribute>,
+    children: Element,
 ) -> Element {
     rsx! {
-      div { id, "$1"}
+      div { ..attributes, {children} }
     }
 }
-
