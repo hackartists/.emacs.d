@@ -70,6 +70,6 @@ pub async fn list_${1:$(string-inflection-underscore-function yas-text)}(
   ) -> Result<Json<$1GetResponse>> {
   tracing::debug!("list_${1:$(string-inflection-underscore-function yas-text)} {:?}", q);
 
-        Ok(Json(QueryResponse::default()))
+      Ok(Json($1GetResponse::Query(QueryResponse::default())))
     }
 }
