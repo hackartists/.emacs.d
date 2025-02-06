@@ -4,10 +4,13 @@
 #contributor : hackartist
 # --
 
-use crate::*;
+#![allow(unused_variables,unused)]
+use crate::Result;
 #[cfg(feature = "server")]
 use by_axum::aide;
 use by_macros::api_model;
+use by_types::QueryResponse;
+use validator::ValidationError;
 
 // If you want to know how to use `api_model` macro, refer to https://github.com/biyard/rust-sdk/tree/main/packages/by-macros
 #[api_model(base = "", table = table-name, iter_type=QueryResponse)]

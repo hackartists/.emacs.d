@@ -12,6 +12,7 @@ axum::{
     },
 };
 use dto::*;
+use by_types::QueryResponse;
 
 #[derive(Clone, Debug)]
 pub struct ${1:Name}ControllerV1 {
@@ -19,10 +20,8 @@ pub struct ${1:Name}ControllerV1 {
 }
 
 impl $1ControllerV1 {
-pub async fn route(pool: sqlx::Pool<sqlx::Postgres>) -> Result<by_axum::axum::Router> {
+pub fn route(pool: sqlx::Pool<sqlx::Postgres>) -> Result<by_axum::axum::Router> {
     let repo = $1::get_repository(pool);
-
-        repo.create_table().await?;
 
         let ctrl = $1ControllerV1 { repo };
 
