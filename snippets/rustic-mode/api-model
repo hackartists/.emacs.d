@@ -4,21 +4,20 @@
 #contributor : hackartist
 # --
 
-#![allow(unused_variables,unused)]
+#![allow(unused)]
 use crate::Result;
 #[cfg(feature = "server")]
 use by_axum::aide;
 use by_macros::api_model;
-use by_types::QueryResponse;
-use validator::ValidationError;
 
-// If you want to know how to use `api_model` macro, refer to https://github.com/biyard/rust-sdk/tree/main/packages/by-macros
-#[api_model(base = "", table = table-name, iter_type=QueryResponse)]
+#[api_model(base = "/", table = ${1:$(string-inflection-underscore-function yas-text)})]
 pub struct ${1:Name} {
-#[api_model(summary, primary_key)]
-    pub id: String,
+    #[api_model(summary, primary_key)]
+    pub id: i64,
     #[api_model(summary, auto = [insert])]
     pub created_at: i64,
     #[api_model(summary, auto = [insert, update])]
     pub updated_at: i64,
+
+    pub name: String,
 }
