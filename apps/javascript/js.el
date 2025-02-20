@@ -22,13 +22,13 @@
 
 (setq hackartist-javascript-commands
       '((jsonlint "npm install -g jsonlint")
-        (tern "npm install -g tern") 
-        (eslint "npm install -g eslint") 
-        (babel-eslint "npm install -g babel-eslint") 
-        (eslint-plugin-react "npm install -g eslint-plugin-react") 
-        (eslint-plugin-node "npm install -g eslint-plugin-node") 
-        (jshint "npm install -g jshint") 
-        (standard "npm install -g standard") 
+        (tern "npm install -g tern")
+        (eslint "npm install -g eslint")
+        (babel-eslint "npm install -g babel-eslint")
+        (eslint-plugin-react "npm install -g eslint-plugin-react")
+        (eslint-plugin-node "npm install -g eslint-plugin-node")
+        (jshint "npm install -g jshint")
+        (standard "npm install -g standard")
         (indium "npm install -g indium" )))
 
 ;; (defun hackartist/javascript/init ( )
@@ -71,11 +71,16 @@
 
 (defun hackartist/javascript/init ()
   ;; (add-hook 'js2-mode-hook 'hackartist/javascript/dap-react-native-init)
+  (add-hook 'before-save-hook 'hackartist/js/before-save-hook)
   (add-hook 'rjsx-mode-hook (lambda ()
                               ;; (setq before-save-hook '(lsp-eslint-apply-all-fixes))
                               (setq lsp-eslint-auto-fix-on-save t))))
 
-(defun hackartist/javascript/config () 
+(defun hackartist/js/before-save-hook ()
+  (when (derived-mode-p 'typescript-mode)
+    (lsp-format-buffer)))
+
+(defun hackartist/javascript/config ()
   (setq-default
    ;; web-mode
    css-indent-offset 2 web-mode-markup-indent-offset 2 web-mode-css-indent-offset 2
@@ -89,11 +94,11 @@
   ;;         "--semi" "true"
   ;;         "--single-quote" "true"
   ;;         ))
-  (with-eval-after-load 'web-mode (add-to-list 'web-mode-indentation-params '("lineup-args" . nil)) 
-                        (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil)) 
-                        (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))) 
-  (add-hook 'js2-mode-hook 'eslintd-fix-mode) 
-  (add-hook 'js2-mode-hook (lambda () 
+  (with-eval-after-load 'web-mode (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+                        (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+                        (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+  (add-hook 'js2-mode-hook 'eslintd-fix-mode)
+  (add-hook 'js2-mode-hook (lambda ()
                              (require 'dap-node))))
 
 (defun hackartist/javascript/bindings ())
@@ -105,8 +110,8 @@
 ;;   ;;                               (setq-local sgml-basic-offset js-indent-level))
 ;;             )
 ;;   )
-(defun hackartist/capitalize-first-char-dirname-base () 
+(defun hackartist/capitalize-first-char-dirname-base ()
   "Used in snippets. Return buffer base file name, should not throw errors."
-  (when (buffer-file-name) 
+  (when (buffer-file-name)
     (js-react-redux-yasnippets-capitalize-first-char (car (last (split-string (buffer-file-name)
                                                                               "/") 2)))))

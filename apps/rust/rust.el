@@ -100,10 +100,6 @@ if the buffer contains the string `rsx!`. Preserves cursor position and scroll p
       ;; Step 6: Clean up the temporary file
       (delete-file temp-file))))
 
-;; Add the function to `before-save-hook`
-(add-hook 'before-save-hook #'run-dx-fmt-before-save)
-
-
 (defun dx-translate-on-region (start end)
   "Run `dx translate -r` on the selected region and replace it with the output."
   (interactive "r")

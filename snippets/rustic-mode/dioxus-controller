@@ -4,8 +4,9 @@
 #contributor : hackartist
 # --
 use dioxus::prelude::*;
+use by_macros::*;
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Clone, Copy, DioxusController)]
 pub struct Controller {
 }
 
@@ -13,7 +14,6 @@ impl Controller {
 pub fn new() -> std::result::Result<Self, RenderError> {
         let ctrl = Self {
         };
-        use_context_provider(|| ctrl);
 
         Ok(ctrl)
     }
