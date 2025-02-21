@@ -5,20 +5,17 @@
 # --
 
 #![allow(non_snake_case)]
+use by_macros::DioxusController;
 use dioxus::prelude::*;
 
-#[derive(Debug, Clone, Copy, Default)]
+#[derive(Clone, Copy, DioxusController)]
 pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
-    pub data: Signal<Option<String>>,
 }
 
 impl `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
     pub fn init() {
-        use_context_provider(|| Self::default());
-    }
-
-    pub fn get_data(&self) -> String{
-        (self.data)()
+    let srv = Self {};
+        use_context_provider(move || srv);
     }
 }
 
