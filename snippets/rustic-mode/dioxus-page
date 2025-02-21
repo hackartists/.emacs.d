@@ -41,6 +41,8 @@ pub fn `(let* (
     (concat upper-camel-name "Translate"))` = translate(&lang);
 
     rsx! {
+    by_components::meta::MetaPage { title: "{tr.title}" }
+
     div { id: "`(let* (
     (dirs (split-string (file-name-directory buffer-file-name) "/"))
     (nested_dir (nth (- (length dirs) 2) dirs))
@@ -49,6 +51,6 @@ pub fn `(let* (
     (concat parent_dir "_by" nested_dir)
     nested_dir))
     (kebab-name (string-inflection-kebab-case-function name)))
-    kebab-name)`", "{tr.title} PAGE" }
+    kebab-name)`", "{tr.title} PAGE" } // end of this page
     }
 }
