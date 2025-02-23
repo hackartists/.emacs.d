@@ -29,7 +29,7 @@ pub fn `(let* (
     (concat (replace-regexp-in-string "^_" "" varname) ": String,") ""))`
     lang: Language,
 ) -> Element {
-    let mut _ctrl = Controller::new()?;
+    let mut _ctrl = Controller::new(lang)?;
     let tr: `(let* (
     (dirs (split-string (file-name-directory buffer-file-name) "/"))
     (nested_dir (nth (- (length dirs) 2) dirs))

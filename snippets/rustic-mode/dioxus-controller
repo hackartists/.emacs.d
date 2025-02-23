@@ -8,11 +8,13 @@ use by_macros::*;
 
 #[derive(Clone, Copy, DioxusController)]
 pub struct Controller {
+pub lang: Language,
 }
 
 impl Controller {
-pub fn new() -> std::result::Result<Self, RenderError> {
+pub fn new(lang: Language) -> std::result::Result<Self, RenderError> {
         let ctrl = Self {
+        lang
         };
 
         Ok(ctrl)
