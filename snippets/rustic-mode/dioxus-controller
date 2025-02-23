@@ -5,9 +5,11 @@
 # --
 use dioxus::prelude::*;
 use by_macros::*;
+use dioxus_translate::Language;
 
 #[derive(Clone, Copy, DioxusController)]
 pub struct Controller {
+#[allow(dead_code)]
 pub lang: Language,
 }
 
