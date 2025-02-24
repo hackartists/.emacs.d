@@ -4,6 +4,7 @@
 #contributor : hackartist
 # --
 use by_axum::{
+aide,
 auth::Authorization,
 axum::{
         extract::{Path, Query, State},
@@ -13,6 +14,14 @@ axum::{
 };
 use dto::*;
 use by_types::QueryResponse;
+
+#[derive(
+    Debug, Clone, serde::Deserialize, serde::Serialize, schemars::JsonSchema, aide::OperationIo,
+)]
+pub struct $1Path {
+    pub id: i64,
+}
+
 
 #[derive(Clone, Debug)]
 pub struct ${1:Name}Controller {
@@ -50,7 +59,7 @@ pub fn route(&self) -> Result<by_axum::axum::Router> {
     pub async fn act_${1:$(string-inflection-underscore-function yas-text)}_by_id(
       State(_ctrl): State<$1Controller>,
       Extension(_auth): Extension<Option<Authorization>>,
-      Path(id): Path<i64>,
+      Path($1Path { id }): Path<$1Path>,
       Json(body): Json<$1ByIdAction>,
     ) -> Result<Json<$1>> {
     tracing::debug!("act_${1:$(string-inflection-underscore-function yas-text)}_by_id {:?} {:?}", id, body);
@@ -60,7 +69,7 @@ pub fn route(&self) -> Result<by_axum::axum::Router> {
     pub async fn get_${1:$(string-inflection-underscore-function yas-text)}(
       State(_ctrl): State<$1Controller>,
       Extension(_auth): Extension<Option<Authorization>>,
-      Path(id): Path<i64>,
+      Path($1Path { id }): Path<$1Path>,
     ) -> Result<Json<$1>> {
     tracing::debug!("get_${1:$(string-inflection-underscore-function yas-text)} {:?}", id);
         Ok(Json($1::default()))

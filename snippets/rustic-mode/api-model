@@ -4,12 +4,12 @@
 #contributor : hackartist
 # --
 
-#![allow(unused)]
-use crate::Result;
 #[cfg(feature = "server")]
 use by_axum::aide;
 use by_macros::api_model;
+use validator::Validate;
 
+#[derive(Validate)]
 #[api_model(base = "/", table = ${1:$(string-inflection-underscore-function yas-text)})]
 pub struct ${1:Name} {
     #[api_model(summary, primary_key)]

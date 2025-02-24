@@ -4,6 +4,7 @@
 #contributor : hackartist
 # --
 use by_axum::{
+aide,
 auth::Authorization,
 axum::{
         extract::{Path, Query, State},
@@ -13,6 +14,22 @@ axum::{
 };
 use dto::*;
 use by_types::QueryResponse;
+
+#[derive(
+    Debug, Clone, serde::Deserialize, serde::Serialize, schemars::JsonSchema, aide::OperationIo,
+)]
+pub struct $1Path {
+    pub parent_id: i64,
+    pub id: i64,
+}
+
+#[derive(
+    Debug, Clone, serde::Deserialize, serde::Serialize, schemars::JsonSchema, aide::OperationIo,
+)]
+pub struct $1ParentPath {
+    pub parent_id: i64,
+    pub id: i64,
+}
 
 #[derive(Clone, Debug)]
 pub struct ${1:Name}Controller {
@@ -42,7 +59,7 @@ let ctrl = Self::new(pool);
 
     pub async fn act_${1:$(string-inflection-underscore-function yas-text)}(
       State(_ctrl): State<$1ControllerV1>,
-      Path(parent_id): Path<i64>,
+      Path(parent_id): Path<$1ParentPath>,
       Extension(_auth): Extension<Option<Authorization>>,
       Json(body): Json<$1Action>,
     ) -> Result<Json<$1>> {
@@ -53,7 +70,7 @@ let ctrl = Self::new(pool);
     pub async fn act_${1:$(string-inflection-underscore-function yas-text)}_by_id(
       State(_ctrl): State<$1ControllerV1>,
       Extension(_auth): Extension<Option<Authorization>>,
-      Path((parent_id, id)): Path<(i64, i64)>,
+      Path(id): Path<$1Path>,
       Json(body): Json<$1ByIdAction>,
     ) -> Result<Json<$1>> {
     tracing::debug!("act_${1:$(string-inflection-underscore-function yas-text)}_by_id {} {:?} {:?}", parent_id, id, body);
@@ -63,7 +80,7 @@ let ctrl = Self::new(pool);
     pub async fn get_${1:$(string-inflection-underscore-function yas-text)}(
       State(_ctrl): State<$1ControllerV1>,
       Extension(_auth): Extension<Option<Authorization>>,
-      Path((parent_id, id)): Path<(i64, i64)>,
+      Path(id): Path<$1Path>,
     ) -> Result<Json<$1>> {
     tracing::debug!("get_${1:$(string-inflection-underscore-function yas-text)} {} {:?}",parent_id, id);
         Ok(Json($1::default()))
@@ -71,7 +88,7 @@ let ctrl = Self::new(pool);
 
 pub async fn list_${1:$(string-inflection-underscore-function yas-text)}(
   State(_ctrl): State<$1ControllerV1>,
-  Path(parent_id): Path<i64>,
+  Path(parent_id): Path<$1ParentPath>,
   Extension(_auth): Extension<Option<Authorization>>,
   Query(q): Query<$1Param>
   ) -> Result<Json<$1GetResponse>> {
