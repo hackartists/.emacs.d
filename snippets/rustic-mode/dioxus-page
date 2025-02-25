@@ -9,6 +9,8 @@ use dioxus::prelude::*;
 use dioxus_translate::*;
 use super::i18n::*;
 use super::controller::*;
+#[allow(unused_imports)]
+use by_components::icons;
 
 #[component]
 pub fn `(let* (
@@ -26,7 +28,7 @@ pub fn `(let* (
     (contain_underscore (string-prefix-p "_" nested_dir))
     (varname (string-inflection-underscore-function nested_dir)))
     (if contain_underscore
-    (concat (replace-regexp-in-string "^_" "" varname) ": String,") ""))`
+    (concat (replace-regexp-in-string "^_" "" varname) ": i64,") ""))`
     lang: Language,
 ) -> Element {
     let mut _ctrl = Controller::new(lang)?;
