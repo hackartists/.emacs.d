@@ -15,11 +15,126 @@ axum::{
 use dto::*;
 use by_types::QueryResponse;
 
+#[derive(Clone, Debug)]
+pub struct ${1:Name}Controller {
+  repo: $1Repository,
+  pool: sqlx::Pool<sqlx::Postgres>,
+}
+
+impl $1Controller {
+    async fn query(
+        &self,
+        _$2: i64,
+        _auth: Option<Authorization>,
+        _param: $1Query,
+    ) -> Result<QueryResponse<$1Summary>> {
+        todo!()
+        }
+
+async fn create(
+        &self,
+        _$2: i64,
+        _auth: Option<Authorization>,
+        _param: $1Query,
+    ) -> Result<QueryResponse<$1Summary>> {
+        todo!()
+    }
+
+    // async fn run_read_action(
+    //     &self,
+    //     _auth: Option<Authorization>,
+    //     $1ReadAction { action, .. }: $1ReadAction,
+    // ) -> Result<$1> {
+    //     todo!()
+    // }
+
+}
+
+impl $1Controller {
+    pub fn new(pool: sqlx::Pool<sqlx::Postgres>) -> Self {
+        let repo = $1::get_repository(pool.clone());
+
+        Self {
+            repo,
+            pool,
+        }
+    }
+
+pub fn route(&self) -> by_axum::axum::Router {
+        Ok(by_axum::axum::Router::new()
+            .route(
+                "/:id",
+               get(Self::get_${1:$(string-inflection-underscore-function yas-text)}_by_id)
+                .post(Self::act_${1:$(string-inflection-underscore-function yas-text)}_by_id),
+            ).with_state(self.clone())
+            .route("/", post(Self::act_${1:$(string-inflection-underscore-function yas-text)}).get(Self::get_${1:$(string-inflection-underscore-function yas-text)})).with_state(self.clone()))
+    }
+
+    pub async fn act_${1:$(string-inflection-underscore-function yas-text)}(
+      State(_ctrl): State<$1Controller>,
+      Path($1ParentPath { $2 }): Path<$1ParentPath>,
+      Extension(_auth): Extension<Option<Authorization>>,
+      Json(body): Json<$1Action>,
+    ) -> Result<Json<$1>> {
+  tracing::debug!("act_${1:$(string-inflection-underscore-function yas-text)} {} {:?}", $2, body);
+        Ok(Json($1::default()))
+    }
+
+    pub async fn act_${1:$(string-inflection-underscore-function yas-text)}_by_id(
+      State(_ctrl): State<$1Controller>,
+      Extension(_auth): Extension<Option<Authorization>>,
+      Path($1Path{$2, id}): Path<$1Path>,
+      Json(body): Json<$1ByIdAction>,
+    ) -> Result<Json<$1>> {
+    tracing::debug!("act_${1:$(string-inflection-underscore-function yas-text)}_by_id {} {:?} {:?}", $2, id, body);
+    Ok(Json($1::default()))
+    }
+
+    pub async fn get_${1:$(string-inflection-underscore-function yas-text)}_by_id(
+      State(_ctrl): State<$1Controller>,
+      Extension(_auth): Extension<Option<Authorization>>,
+      Path($1Path{$2, id}): Path<$1Path>,
+    ) -> Result<Json<$1>> {
+    tracing::debug!("get_${1:$(string-inflection-underscore-function yas-text)} {} {:?}",$2, id);
+    Ok(Json(
+            Deliberation::query_builder()
+                .id_equals(id)
+                .org_id_equals(org_id)
+                .query()
+                .map($1::from)
+                .fetch_one(&ctrl.pool)
+                .await?,
+        ))
+    }
+
+pub async fn get_${1:$(string-inflection-underscore-function yas-text)}(
+  State(_ctrl): State<$1Controller>,
+  Path($1ParentPath { $2 }): Path<$1ParentPath>,
+  Extension(_auth): Extension<Option<Authorization>>,
+  Query(q): Query<$1Param>
+  ) -> Result<Json<$1GetResponse>> {
+  tracing::debug!("list_${1:$(string-inflection-underscore-function yas-text)} {} {:?}", $2, q);
+
+match q {
+            $1Param::Query(param) => Ok(Json($1GetResponse::Query(
+                ctrl.query($2, auth, param).await?,
+            ))),
+            // $1Param::Read(param)
+            //     if param.action == Some($1ReadActionType::ActionType) =>
+            // {
+            //     let res = ctrl.run_read_action(auth, param).await?;
+            //     Ok(Json($1GetResponse::Read(res)))
+            // }
+
+        }
+    }
+}
+
 #[derive(
     Debug, Clone, serde::Deserialize, serde::Serialize, schemars::JsonSchema, aide::OperationIo,
 )]
 pub struct $1Path {
-    pub parent_id: i64,
+    pub ${2:parent_id}: i64,
     pub id: i64,
 }
 
@@ -27,73 +142,5 @@ pub struct $1Path {
     Debug, Clone, serde::Deserialize, serde::Serialize, schemars::JsonSchema, aide::OperationIo,
 )]
 pub struct $1ParentPath {
-    pub parent_id: i64,
-    pub id: i64,
-}
-
-#[derive(Clone, Debug)]
-pub struct ${1:Name}Controller {
-  repo: $1Repository,
-}
-
-impl $1Controller {
-    pub fn new(pool: sqlx::Pool<sqlx::Postgres>) -> Self {
-        let repo = $1::get_repository(pool);
-
-        Self {
-            repo,
-        }
-    }
-
-pub fn route(pool: sqlx::Pool<sqlx::Postgres>) -> Result<by_axum::axum::Router> {
-let ctrl = Self::new(pool);
-
-        Ok(by_axum::axum::Router::new()
-            .route(
-                "/:id",
-               get(Self::get_${1:$(string-inflection-underscore-function yas-text)})
-                .post(Self::act_${1:$(string-inflection-underscore-function yas-text)}_by_id),
-            ).with_state(ctrl.clone())
-            .route("/", post(Self::act_${1:$(string-inflection-underscore-function yas-text)}).get(Self::list_${1:$(string-inflection-underscore-function yas-text)})).with_state(ctrl.clone()))
-    }
-
-    pub async fn act_${1:$(string-inflection-underscore-function yas-text)}(
-      State(_ctrl): State<$1ControllerV1>,
-      Path(parent_id): Path<$1ParentPath>,
-      Extension(_auth): Extension<Option<Authorization>>,
-      Json(body): Json<$1Action>,
-    ) -> Result<Json<$1>> {
-  tracing::debug!("act_${1:$(string-inflection-underscore-function yas-text)} {} {:?}", parent_id, body);
-        Ok(Json($1::default()))
-    }
-
-    pub async fn act_${1:$(string-inflection-underscore-function yas-text)}_by_id(
-      State(_ctrl): State<$1ControllerV1>,
-      Extension(_auth): Extension<Option<Authorization>>,
-      Path(id): Path<$1Path>,
-      Json(body): Json<$1ByIdAction>,
-    ) -> Result<Json<$1>> {
-    tracing::debug!("act_${1:$(string-inflection-underscore-function yas-text)}_by_id {} {:?} {:?}", parent_id, id, body);
-    Ok(Json($1::default()))
-    }
-
-    pub async fn get_${1:$(string-inflection-underscore-function yas-text)}(
-      State(_ctrl): State<$1ControllerV1>,
-      Extension(_auth): Extension<Option<Authorization>>,
-      Path(id): Path<$1Path>,
-    ) -> Result<Json<$1>> {
-    tracing::debug!("get_${1:$(string-inflection-underscore-function yas-text)} {} {:?}",parent_id, id);
-        Ok(Json($1::default()))
-    }
-
-pub async fn list_${1:$(string-inflection-underscore-function yas-text)}(
-  State(_ctrl): State<$1ControllerV1>,
-  Path(parent_id): Path<$1ParentPath>,
-  Extension(_auth): Extension<Option<Authorization>>,
-  Query(q): Query<$1Param>
-  ) -> Result<Json<$1GetResponse>> {
-  tracing::debug!("list_${1:$(string-inflection-underscore-function yas-text)} {} {:?}", parent_id, q);
-
-      Ok(Json($1GetResponse::Query(QueryResponse::default())))
-    }
+    pub $2: i64,
 }
