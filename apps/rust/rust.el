@@ -112,8 +112,6 @@ if the buffer contains the string `rsx!`. Preserves cursor position and scroll p
 
 (defun hackartist/rust/mode-hook ()
   (when (derived-mode-p 'rustic-mode)
-    (lsp-ui-doc-mode t)
-    (setq lsp-ui-doc-max-height 50)
     (setq lsp-tailwindcss-experimental-class-regex "class: \"(.*)\"")))
 
 (defun hackartist/dioxus/server ()
