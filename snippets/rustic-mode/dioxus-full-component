@@ -1,0 +1,32 @@
+# -*- mode: snippet -*-
+#name : dioxus-full-component
+#key : dioxus-full-component
+#contributor : hackartist
+# --
+
+#![allow(non_snake_case)]
+use dioxus::prelude::*;
+use dioxus_translate::*;
+
+#[component]
+pub fn ${1:ComponentName}(
+    #[props(extends = GlobalAttributes)]
+    attributes: Vec<Attribute>,
+    children: Element,
+) -> Element {
+    let tr: $1Translate = translate(&lang);
+
+    rsx! {
+    div { id: "${1:$(string-inflection-kebab-case-function yas-text)}", ..attributes, {children} }
+    }
+    }
+
+
+translate! {
+    $1Translate;
+
+    title: {
+        ko: "$1",
+        en: "$1",
+    },
+}
