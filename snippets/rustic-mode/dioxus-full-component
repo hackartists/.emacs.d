@@ -9,24 +9,25 @@ use dioxus::prelude::*;
 use dioxus_translate::*;
 
 #[component]
-pub fn ${1:ComponentName}(
+pub fn `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))`(
+lang: Language,
     #[props(extends = GlobalAttributes)]
     attributes: Vec<Attribute>,
     children: Element,
 ) -> Element {
-    let tr: $1Translate = translate(&lang);
+let tr: `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))`Translate = translate(&lang);
 
     rsx! {
-    div { id: "${1:$(string-inflection-kebab-case-function yas-text)}", ..attributes, {children} }
+    div { id: "`(string-inflection-kebab-case-function (string-replace ".rs" "" (buffer-name)))`", ..attributes, {tr.title} {children} }
     }
     }
 
 
 translate! {
-    $1Translate;
+`(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))`Translate;
 
     title: {
-        ko: "$1",
-        en: "$1",
+    ko: "`(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))`",
+    en: "`(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))`",
     },
 }
