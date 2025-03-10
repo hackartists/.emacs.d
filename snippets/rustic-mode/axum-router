@@ -14,6 +14,7 @@ axum::{
 };
 use dto::*;
 use by_types::QueryResponse;
+use sqlx::postgres::PgRow;
 
 #[derive(
     Debug, Clone, serde::Deserialize, serde::Serialize, schemars::JsonSchema, aide::OperationIo,
@@ -109,10 +110,10 @@ pub fn route(&self) -> Result<by_axum::axum::Router> {
         Ok(by_axum::axum::Router::new()
             .route(
                 "/:id",
-               get(Self::get_${1:$(string-inflection-underscore-function yas-text)})
+               get(Self::get_${1:$(string-inflection-underscore-function yas-text)}_by_id)
                 .post(Self::act_${1:$(string-inflection-underscore-function yas-text)}_by_id),
             ).with_state(self.clone())
-            .route("/", post(Self::act_${1:$(string-inflection-underscore-function yas-text)}).get(Self::list_${1:$(string-inflection-underscore-function yas-text)})).with_state(self.clone()))
+            .route("/", post(Self::act_${1:$(string-inflection-underscore-function yas-text)}).get(Self::get_${1:$(string-inflection-underscore-function yas-text)})).with_state(self.clone()))
     }
 
     pub async fn act_${1:$(string-inflection-underscore-function yas-text)}(
@@ -149,7 +150,7 @@ pub fn route(&self) -> Result<by_axum::axum::Router> {
     }
 
     pub async fn get_${1:$(string-inflection-underscore-function yas-text)}_by_id(
-      State(_ctrl): State<$1Controller>,
+      State(ctrl): State<$1Controller>,
       Extension(_auth): Extension<Option<Authorization>>,
       Path($1Path { id }): Path<$1Path>,
     ) -> Result<Json<$1>> {
