@@ -14,6 +14,7 @@ axum::{
 };
 use dto::*;
 use by_types::QueryResponse;
+use sqlx::postgres::PgRow;
 
 #[derive(Clone, Debug)]
 pub struct ${1:Name}Controller {
@@ -48,7 +49,7 @@ async fn query(
 
 async fn create(
         &self,
-        _org_id: i64,
+        _$2: i64,
         _auth: Option<Authorization>,
         _param: $1CreateRequest,
     ) -> Result<$1> {
@@ -59,8 +60,8 @@ async fn create(
         &self,
         id: i64,
         auth: Option<Authorization>,
-        param: OrganizationMemberUpdateRequest,
-    ) -> Result<OrganizationMember> {
+        param: $1UpdateRequest,
+    ) -> Result<$1> {
         if auth.is_none() {
             return Err(ApiError::Unauthorized);
         }
@@ -70,7 +71,7 @@ async fn create(
         Ok(res)
     }
 
-    async fn delete(&self, id: i64, auth: Option<Authorization>) -> Result<OrganizationMember> {
+    async fn delete(&self, id: i64, auth: Option<Authorization>) -> Result<$1> {
         if auth.is_none() {
             return Err(ApiError::Unauthorized);
         }
@@ -119,7 +120,7 @@ pub fn route(&self) -> by_axum::axum::Router {
   tracing::debug!("act_${1:$(string-inflection-underscore-function yas-text)} {} {:?}", $2, body);
   match body {
             $1Action::Create(param) => {
-                let res = ctrl.create(org_id, auth, param).await?;
+                let res = ctrl.create($2, auth, param).await?;
                 Ok(Json(res))
             }
         }
@@ -154,7 +155,7 @@ pub fn route(&self) -> by_axum::axum::Router {
     Ok(Json(
             Deliberation::query_builder()
                 .id_equals(id)
-                .org_id_equals(org_id)
+                .$2_equals($2)
                 .query()
                 .map($1::from)
                 .fetch_one(&ctrl.pool)
@@ -188,6 +189,7 @@ match q {
 #[derive(
     Debug, Clone, serde::Deserialize, serde::Serialize, schemars::JsonSchema, aide::OperationIo,
 )]
+#[serde(rename_all = "kebab-case")]
 pub struct $1Path {
     pub ${2:parent_id}: i64,
     pub id: i64,
@@ -196,6 +198,7 @@ pub struct $1Path {
 #[derive(
     Debug, Clone, serde::Deserialize, serde::Serialize, schemars::JsonSchema, aide::OperationIo,
 )]
+#[serde(rename_all = "kebab-case")]
 pub struct $1ParentPath {
     pub $2: i64,
 }
