@@ -114,7 +114,7 @@ pub fn route(&self) -> by_axum::axum::Router {
     pub async fn act_${1:$(string-inflection-underscore-function yas-text)}(
       State(ctrl): State<$1Controller>,
       Path($1ParentPath { $2 }): Path<$1ParentPath>,
-      Extension(_auth): Extension<Option<Authorization>>,
+      Extension(auth): Extension<Option<Authorization>>,
       Json(body): Json<$1Action>,
     ) -> Result<Json<$1>> {
   tracing::debug!("act_${1:$(string-inflection-underscore-function yas-text)} {} {:?}", $2, body);
@@ -153,7 +153,7 @@ pub fn route(&self) -> by_axum::axum::Router {
     ) -> Result<Json<$1>> {
     tracing::debug!("get_${1:$(string-inflection-underscore-function yas-text)} {} {:?}",$2, id);
     Ok(Json(
-            Deliberation::query_builder()
+            $1::query_builder()
                 .id_equals(id)
                 .$2_equals($2)
                 .query()
