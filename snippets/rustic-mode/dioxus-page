@@ -5,12 +5,9 @@
 # --
 
 #![allow(non_snake_case)]
-use dioxus::prelude::*;
-use dioxus_translate::*;
+use bdk::prelude::*;
 use super::i18n::*;
 use super::controller::*;
-#[allow(unused_imports)]
-use by_components::icons;
 
 #[component]
 pub fn `(let* (

@@ -3,9 +3,7 @@
 #key : dioxus-controller
 #contributor : hackartist
 # --
-use dioxus::prelude::*;
-use by_macros::*;
-use dioxus_translate::Language;
+use bdk::prelude::*;
 
 #[derive(Clone, Copy, DioxusController)]
 pub struct Controller {

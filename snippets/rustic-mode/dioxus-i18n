@@ -4,7 +4,7 @@
 #contributor : hackartist
 # --
 
-use dioxus_translate::*;
+use bdk::prelude::*;
 
 translate! {
 `(let* (
