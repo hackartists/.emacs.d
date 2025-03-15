@@ -15,13 +15,13 @@ pub fn ${1:Name}(
     let (width, height) = match (width, height) {
         (Some(w), Some(h)) => (w, h),
         (Some(w), None) => {
-            let ratio = DEFAULT_WIDTH as f32 / w as f32;
+            let ratio = w as f32 / DEFAULT_WIDTH as f32;
             let h = (DEFAULT_HEGITH as f32 * ratio) as i32;
 
             (w, h)
         }
         (None, Some(h)) => {
-            let ratio = DEFAULT_HEGITH as f32 / h as f32;
+            let ratio = h as f32 / DEFAULT_HEGITH as f32;
             let w = (DEFAULT_WIDTH as f32 * ratio) as i32;
 
             (w, h)
