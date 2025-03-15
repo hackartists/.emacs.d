@@ -6,8 +6,7 @@
 
 #![allow(non_snake_case)]
 use bdk::prelude::*;
-use super::i18n::*;
-use super::controller::*;
+use super::{*, i18n::*, controller::*};
 
 #[component]
 pub fn `(let* (

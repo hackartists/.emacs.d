@@ -7,7 +7,8 @@
 pub fn ${1:Name}(
     #[props(extends = GlobalAttributes)]
     attributes: Vec<Attribute>,
-#[props(default = 35)] size: i64) -> Element {
+#[props(default = 35)] size: i64
+) -> Element {
 rsx!{
 $0
 }
