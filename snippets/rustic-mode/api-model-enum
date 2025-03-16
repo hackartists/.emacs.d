@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+#name : api-model(enum)
+#key : api-model(enum)
+#contributor : hackartist
+# --
+
+#[derive(Debug, Clone, Eq, PartialEq, Default, by_macros::ApiModel, dioxus_translate::Translate, Copy)]
+#[cfg_attr(feature = "server", derive(schemars::JsonSchema, aide::OperationIo))]
+pub enum ${1:EnumName} {
+    #[default]
+    #[translate(ko = "기본값", en = "default value")]
+    ${2:Variant} = 1,
+    $0
+}
+

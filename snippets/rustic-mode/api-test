@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+#name : api-test
+#key : api-test
+#contributor : hackartist
+# --
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::tests::{setup, TestContext};
+
+    #[tokio::test]
+    async fn test_${1:name}() {
+        let TestContext {
+        user,
+        now,
+        endpoint,
+        ..
+    } = setup().await.unwrap();
+    $0
+
+    }
+}

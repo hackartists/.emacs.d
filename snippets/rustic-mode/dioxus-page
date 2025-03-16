@@ -6,7 +6,9 @@
 
 #![allow(non_snake_case)]
 use bdk::prelude::*;
-use super::{*, i18n::*, controller::*};
+use super::*;
+use i18n::*;
+use controller::*;
 
 #[component]
 pub fn `(let* (
@@ -39,7 +41,7 @@ pub fn `(let* (
     (concat upper-camel-name "Translate"))` = translate(&lang);
 
     rsx! {
-    by_components::meta::MetaPage { title: "{tr.title}" }
+    by_components::meta::MetaPage { title: tr.title }
 
     div { id: "`(let* (
     (dirs (split-string (file-name-directory buffer-file-name) "/"))
