@@ -66,10 +66,10 @@ impl $1Controller {
         &self,
         id: i64,
         auth: Option<Authorization>,
-        param: OrganizationMemberUpdateRequest,
-    ) -> Result<OrganizationMember> {
+        param: $1UpdateRequest,
+    ) -> Result<$1Member> {
         if auth.is_none() {
-            return Err(ApiError::Unauthorized);
+            return Err(Error::Unauthorized);
         }
 
         let res = self.repo.update(id, param.into()).await?;
@@ -77,9 +77,9 @@ impl $1Controller {
         Ok(res)
     }
 
-    async fn delete(&self, id: i64, auth: Option<Authorization>) -> Result<OrganizationMember> {
+    async fn delete(&self, id: i64, auth: Option<Authorization>) -> Result<$1> {
         if auth.is_none() {
-            return Err(ApiError::Unauthorized);
+            return Err(Error::Unauthorized);
         }
 
         let res = self.repo.delete(id).await?;

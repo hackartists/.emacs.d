@@ -19,13 +19,8 @@ use by_types::Role;
 use common::*;
 use reqwest::StatusCode;
 
-#[derive(Clone, Debug)]
-pub struct ${1:Menace}Controller {}
-
-impl $1Controller {
-    pub fn route(pool: sqlx::Pool<sqlx::Postgres>) -> Result<by_axum::axum::Router> {
-        Ok(by_axum::axum::Router::new().layer(middleware::from_fn(authorize_organization)))
-    }
+pub fn route(pool: sqlx::Pool<sqlx::Postgres>) -> Result<by_axum::axum::Router> {
+    Ok(by_axum::axum::Router::new().layer(middleware::from_fn(authorize_organization)))
 }
 
 pub async fn authorize_organization(
