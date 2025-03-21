@@ -175,6 +175,10 @@
 
 (defun hackartist/org/bindings ()
   "setting for org-hydra"
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode
+    "SPC" 'hackartist/org-beamer-export-to-pdf-async
+    )
+
   (defhydra org-hydra
     (:color pink)
     "ORG hydra mode
