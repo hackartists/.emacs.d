@@ -4,7 +4,6 @@
 #contributor : hackartist
 # --
 
-#![allow(non_snake_case)]
 use bdk::prelude::*;
 use super::*;
 use i18n::*;
