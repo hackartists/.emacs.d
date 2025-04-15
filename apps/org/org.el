@@ -41,16 +41,6 @@
               :after #'hackartist/ide/advice-after/org-hugo-export-wim-to-md)
   (with-eval-after-load 'company (spacemacs|add-company-backends :backends company-ispell
                                                                  :modes org-mode))
-  (require 'org-ai-talk)
-
-  (org-ai-global-mode t)
-  (org-ai-install-yasnippets)
-  (add-hook 'org-mode-hook #'org-ai-mode)
-  ;; (add-hook 'org-mode-hook #'lsp-mode)
-  (setq org-ai-default-chat-model "gpt-3.5-turbo-16k")
-  (setq org-ai-openai-api-token (getenv "OPENAI_KEY"))
-  (setq org-ai-talk-spoken-input nil)
-
   (require 'org-pandoc-import)
   (require 'org-pandoc-import-transient)
   (org-add-link-type "image-url" (lambda (path)

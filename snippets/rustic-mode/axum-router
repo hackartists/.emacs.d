@@ -67,7 +67,7 @@ impl $1Controller {
         id: i64,
         auth: Option<Authorization>,
         param: $1UpdateRequest,
-    ) -> Result<$1Member> {
+    ) -> Result<$1> {
         if auth.is_none() {
             return Err(Error::Unauthorized);
         }
@@ -132,8 +132,8 @@ pub fn route(&self) -> Result<by_axum::axum::Router> {
 }
 
     pub async fn act_${1:$(string-inflection-underscore-function yas-text)}_by_id(
-      State(_ctrl): State<$1Controller>,
-      Extension(_auth): Extension<Option<Authorization>>,
+      State(ctrl): State<$1Controller>,
+      Extension(auth): Extension<Option<Authorization>>,
       Path($1Path { id }): Path<$1Path>,
       Json(body): Json<$1ByIdAction>,
     ) -> Result<Json<$1>> {

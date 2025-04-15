@@ -26,6 +26,7 @@
     "RET" 'yas-insert-snippet
     "SPC" 'helm-mt
     "TAB" 'helm-imenu
+    "ESC" 'gptel-menu
 
     "bk" 'kill-this-buffer
     "bu" 'revert-buffer
@@ -166,9 +167,9 @@
 
   ;; (add-hook 'company-mode-hook
   ;;           (lambda ()
-              ;;(define-key company-active-map (kbd "ESC") 'company-abort)
-              ;; (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
-              ;; (define-key company-active-map (kbd "<tab>") 'company-complete)))
+  ;;(define-key company-active-map (kbd "ESC") 'company-abort)
+  ;; (define-key company-active-map (kbd "<return>") 'ide/company-active-return)
+  ;; (define-key company-active-map (kbd "<tab>") 'company-complete)))
   ;; (with-eval-after-load 'yasnippet
   ;;   (define-key yas-minor-mode-map [(tab)]       (yas-filtered-definition 'yas-next-field))
   ;;   (define-key yas-minor-mode-map (kbd "TAB")   (yas-filtered-definition 'yas-next-field)))
@@ -198,15 +199,15 @@
   ;; (advice-add 'hangul2-input-method-internal :override 'advice-override/hangul2-input-method-internal)
   (advice-add 'hangul2-input-method :override 'advice-override/hangul2-input-method)
   (kl/leader-correct-keys
-    "wh"
-    "wj"
-    "wk"
-    "wl"
-    ;;
-    "wH"
-    "wJ"
-    "wK"
-    "wL")
+   "wh"
+   "wj"
+   "wk"
+   "wl"
+   ;;
+   "wH"
+   "wJ"
+   "wK"
+   "wL")
   (with-eval-after-load 'magit
     (evil-define-key 'normal magit-mode-map "h" 'evil-next-visual-line))
   (with-eval-after-load 'org
