@@ -59,9 +59,9 @@
   (setq org-ditaa-jar-path "/usr/share/java/ditaa/ditaa-0.11.jar"))
 
 
-(defun hackartist/org/lsp ()
-  (require 'lsp-grammarly)
-  (lsp))
+;; (defun hackartist/org/lsp ()
+;;   (require 'lsp-grammarly)
+;;   (lsp))
 
 (defun hackartist/org/config ()
   "configuration code"
@@ -147,18 +147,8 @@
         org-latex-listings-options (quote (("numbers" "left")))
         org-support-shift-select t
         org-download-image-dir "./images"
-        ;; ivy-initial-inputs-alist '((counsel-minor . "^+")
-        ;;                            (counsel-package . "^+")
-        ;;                            (counsel-org-capture . "")
-        ;;                            (counsel-M-x . "")
-        ;;                            (counsel-describe-symbol . "^")
-        ;;                            (org-refile . "")
-        ;;                            (org-agenda-refile . "")
-        ;;                            (org-capture-refile . "")
-        ;;                            (Man-completion-table . "^")
-        ;;                            (woman . "^"))
-        evil-want-Y-yank-to-eol nil
-        lsp-enable-file-watchers nil
+        ;; evil-want-Y-yank-to-eol nil
+        ;; lsp-enable-file-watchers nil
         org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@4.1.0"
         org-re-reveal-revealjs-version "4"
         org-re-reveal-plugins '(markdown highlight zoom notes search math)))

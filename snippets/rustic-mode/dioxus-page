@@ -16,7 +16,9 @@ pub fn `(let* (
                 (parent_dir (nth (- (length dirs) 3) dirs))
                 (name (if (string-prefix-p "_" nested_dir)
                         (concat parent_dir "_by" nested_dir)
-                        nested_dir))
+                        (if (string-equal nested_dir "new")
+                            (concat parent_dir "_new")
+                            nested_dir)))
                 (upper-camel-name (string-inflection-upper-camelcase-function name)))
                 (concat upper-camel-name "Page"))`(
     `(let* (
@@ -35,7 +37,9 @@ pub fn `(let* (
     (parent_dir (nth (- (length dirs) 3) dirs))
     (name (if (string-prefix-p "_" nested_dir)
     (concat parent_dir "_by" nested_dir)
-    nested_dir))
+    (if (string-equal nested_dir "new")
+                            (concat parent_dir "_new")
+                            nested_dir)))
     (upper-camel-name (string-inflection-upper-camelcase-function name)))
     (concat upper-camel-name "Translate"))` = translate(&lang);
 
@@ -48,7 +52,9 @@ pub fn `(let* (
     (parent_dir (nth (- (length dirs) 3) dirs))
     (name (if (string-prefix-p "_" nested_dir)
     (concat parent_dir "_by" nested_dir)
-    nested_dir))
+    (if (string-equal nested_dir "new")
+                            (concat parent_dir "_new")
+                            nested_dir)))
     (kebab-name (string-inflection-kebab-case-function name)))
     kebab-name)`", "{tr.title} PAGE" } // end of this page
     }

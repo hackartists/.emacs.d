@@ -16,6 +16,10 @@
     "SPC" 'plantuml-preview
     )
 
+  (spacemacs/set-leader-keys-for-minor-mode 'lsp-mode
+    "SPC" 'gptel-menu
+    )
+
   (spacemacs/set-leader-keys
     "`" 'ace-window
     "=" 'ace-window
@@ -26,7 +30,6 @@
     "RET" 'yas-insert-snippet
     "SPC" 'helm-mt
     "TAB" 'helm-imenu
-    "ESC" 'gptel-menu
 
     "bk" 'kill-this-buffer
     "bu" 'revert-buffer

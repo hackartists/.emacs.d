@@ -181,9 +181,9 @@
   (add-hook 'shell-mode-hook
             (lambda ()
               (company-mode -1)))
-  (add-hook 'gfm-mode (lambda ()
-                        (require 'lsp-grammarly)
-                        (lsp)))
+  ;; (add-hook 'gfm-mode (lambda ()
+  ;;                       (require 'lsp-grammarly)
+  ;;                       (lsp)))
   (when (executable-find "curl")
     (setq helm-google-suggest-use-curl-p t))
   (delete-dups extended-command-history)
