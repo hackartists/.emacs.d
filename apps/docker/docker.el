@@ -4,7 +4,6 @@
 (setq hackartist-docker-packages
       '(
         docker
-        tramp-container
         dockerfile-mode
         flycheck
         yaml-mode
