@@ -25,9 +25,11 @@ pub fn `(let* (
     (dirs (split-string (file-name-directory buffer-file-name) "/"))
     (nested_dir (nth (- (length dirs) 2) dirs))
     (contain_underscore (string-prefix-p "_" nested_dir))
+    (is_new (string-prefix-p "new" nested_dir))
     (varname (string-inflection-underscore-function nested_dir)))
     (if contain_underscore
-    (concat (replace-regexp-in-string "^_" "" varname) ": i64,") ""))`
+    (concat (replace-regexp-in-string "^_" "" varname) ": i64,")
+      (if is_new  "id: Option<i64>," "")))`
     lang: Language,
 ) -> Element {
     let mut _ctrl = Controller::new(lang)?;
