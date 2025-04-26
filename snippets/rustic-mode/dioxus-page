@@ -30,7 +30,7 @@ pub fn `(let* (
     (if contain_underscore
     (concat (replace-regexp-in-string "^_" "" varname) ": i64,")
       (if is_new  "id: Option<i64>," "")))`
-    lang: Language,
+    #[props(default = Language::En)] lang: Language,
 ) -> Element {
     let mut _ctrl = Controller::new(lang)?;
     let tr: `(let* (
