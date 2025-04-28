@@ -20,10 +20,10 @@ use common::*;
 use reqwest::StatusCode;
 
 pub fn route(pool: sqlx::Pool<sqlx::Postgres>) -> Result<by_axum::axum::Router> {
-    Ok(by_axum::axum::Router::new().layer(middleware::from_fn(authorize_organization)))
+    Ok(by_axum::axum::Router::new().layer(middleware::from_fn(authorize_router)))
 }
 
-pub async fn authorize_organization(
+pub async fn authorize_router(
     req: Request,
     next: Next,
 ) -> std::result::Result<Response<Body>, StatusCode> {
