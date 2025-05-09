@@ -8,7 +8,7 @@ use bdk::prelude::*;
 use validator::Validate;
 
 #[derive(Validate)]
-#[api_model(base = "/", table = ${1:$(string-inflection-underscore-function yas-text)})]
+#[api_model(base = "/", table = ${1:$(string-inflection-underscore-function yas-text)}, action = [], action_by_id = [delete, update])]
 pub struct ${1:Name} {
     #[api_model(summary, primary_key)]
     pub id: i64,

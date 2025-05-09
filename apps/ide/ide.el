@@ -82,3 +82,23 @@ to choose where to display it."
          (coding-system-for-read (and imagep 'binary))
          (coding-system-for-write (and imagep 'binary)))
     (plantuml-exec-mode-preview-string prefix (plantuml-get-exec-mode) string buf)))
+
+
+(defun hackartist/call-env-fn ()
+  "Use Helm to select a zsh function, run it, and apply its exported env vars to Emacs."
+  (interactive)
+  (let* ((fn-list (split-string
+                   (shell-command-to-string "zsh -i -c 'cat ~/.config/oh-my-profiles/private.profile| grep \"^function\" | awk \"{print \\$2}\"'")
+                   "\n" t))
+         (selected-fn (helm :sources (helm-build-sync-source "Zsh Functions"
+                                       :candidates fn-list)
+                            :buffer "*helm zsh functions*")))
+    (when selected-fn
+      (let* ((command (format "zsh -i -c '%s && env'" selected-fn))
+             (env-output (shell-command-to-string command)))
+        (dolist (line (split-string env-output "\n"))
+          (when (string-match "^\\([^=]+\\)=\\(.*\\)$" line)
+            (let ((key (match-string 1 line))
+                  (val (match-string 2 line)))
+              (setenv key val)
+              (message "Set %s=%s" key val))))))))
