@@ -184,7 +184,7 @@ pub async fn get_${1:$(string-inflection-underscore-function yas-text)}(
             //     let res = ctrl.run_read_action(auth, param).await?;
             //     Ok(Json($1GetResponse::Read(res)))
             // }
-
+            _ => Err(Error::BadRequest),
         }
     }
 }
