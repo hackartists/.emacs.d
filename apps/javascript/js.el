@@ -5,7 +5,7 @@
                     javascript-fmt-on-save t javascript-fmt-tool 'prettier
                     node-add-modules-path t)
         (html :variables web-fmt-tool 'prettier web-fmt-on-save t)
-        typescript
+        (typescript :variables typescript-fmt-on-save t typescript-fmt-tool 'prettier typescript-linter 'eslint)
         (json :variables json-fmt-tool 'prettier json-fmt-on-save t)
         ess import-js node
         react
@@ -13,12 +13,11 @@
         ))
 
 (setq hackartist-javascript-packages
-      '(angular-mode angular-snippets xref-js2 js2-refactor web-mode
-                     ;; indium
-                     emmet-mode web-beautify skewer-mode
-                     impatient-mode restclient elnode eslintd-fix
-                     js-react-redux-yasnippets react-snippets
-                     js-comint json-mode))
+      '(xref-js2 js2-refactor web-mode
+                 web-beautify skewer-mode
+                 impatient-mode restclient elnode eslintd-fix
+                 js-react-redux-yasnippets react-snippets
+                 js-comint json-mode))
 
 (setq hackartist-javascript-commands
       '((jsonlint "npm install -g jsonlint")
@@ -30,44 +29,6 @@
         (jshint "npm install -g jshint")
         (standard "npm install -g standard")
         (indium "npm install -g indium" )))
-
-;; (defun hackartist/javascript/init ( )
-;;   ;; (add-hook 'js2-mode-hook
-;;   ;;           (lambda ()
-;;   ;;             (add-to-list 'company-backends 'company-tern)
-;;   ;;             ;; (js2r-add-keybindings-with-prefix "C-c C-r")
-;;   ;;             ;; (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)
-;;   ;;             (tern-mode +1)
-;;   ;;             (company-mode +1)
-;;   ;;             (js2-imenu-extras-mode +1)
-;;   ;;             (js2-refactor-mode +1)
-;;   ;;             (add-hook 'before-save-hook 'tide-format-before-save)
-
-;;   ;;             ;; Key bindings
-;;   ;;             ;; (define-key js2-mode-map (kbd "C-x C-e") 'nodejs-repl-send-last-expression)
-;;   ;;             ;; (define-key js2-mode-map (kbd "C-c C-r") 'nodejs-repl-send-region)
-;;   ;;             ;; (define-key js2-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
-;;   ;;             ;; (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)
-;;   ;;             ;; (define-key js-mode-map (kbd "M-.") nil)
-;;   ;;             ;; (define-key tern-mode-keymap (kbd "M-.") nil)
-;;   ;;             ;; (define-key tern-mode-keymap (kbd "M-,") nil)
-;;   ;;             ;; (define-key js2-mode-map (kbd "C-k") #'js2r-kill)
-;;   ;;             ))
-;;   )
-
-(advice-add 'html/init-emmet-mode :override 'advice-override/html/init-emmet-mode)
-
-(defun advice-override/html/init-emmet-mode ()
-  (use-package emmet-mode
-    :defer t
-    :init (spacemacs/add-to-hooks 'emmet-mode '(css-mode-hook
-                                                html-mode-hook
-                                                sass-mode-hook
-                                                scss-mode-hook
-                                                web-mode-hook))
-    :config
-    (spacemacs|hide-lighter emmet-mode)))
-
 
 (defun hackartist/javascript/init ()
   ;; (add-hook 'js2-mode-hook 'hackartist/javascript/dap-react-native-init)
@@ -97,6 +58,10 @@
   (with-eval-after-load 'web-mode (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
                         (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
                         (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+  (add-hook 'typescript-tsx-mode-hook
+            (lambda ()
+              (emmet-mode -1)))
+
   (add-hook 'js2-mode-hook 'eslintd-fix-mode)
   (add-hook 'js2-mode-hook (lambda ()
                              (require 'dap-node))))

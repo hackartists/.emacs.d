@@ -55,7 +55,6 @@
         (latex :variables latex-build-engine 'xetex) ;;php
         (rust :variables rust-format-on-save t cargo-process-reload-on-modify t)
         (ruby :variables ruby-enable-enh-ruby-mode t ruby-backend 'robe ruby-version-manager 'rvm ruby-test-runner 'rspec)
-        (typescript :variables typescript-fmt-on-save t typescript-fmt-tool 'prettier typescript-linter 'eslint)
         (shell-scripts :variables shell-scripts-backend 'lsp)
         themes-megapack
         ;; (mu4e :variables mu4e-installation-path "/usr/local/share/emacs/site-lisp" mu4e-use-maildirs-extension t mu4e-enable-async-operations t mu4e-attachment-dir "~/data/email" mu4e-enable-notifications nil mu4e-enable-mode-line t  mu4e-spacemacs-layout-name "@Mu4e" mu4e-spacemacs-layout-binding "m" mu4e-spacemacs-kill-layout-on-exit t mu4e-org-link-support t mu4e-org-compose-support t)
