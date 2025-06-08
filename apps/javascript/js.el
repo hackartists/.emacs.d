@@ -38,7 +38,8 @@
                               (setq lsp-eslint-auto-fix-on-save t))))
 
 (defun hackartist/js/before-save-hook ()
-  (when (derived-mode-p 'typescript-mode)
+  (when (or (derived-mode-p 'web-mode))
+    (lsp-eslint-fix-all)
     (lsp-format-buffer)))
 
 (defun hackartist/javascript/config ()
