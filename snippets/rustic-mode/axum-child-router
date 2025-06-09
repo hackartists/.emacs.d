@@ -63,7 +63,7 @@ async fn create(
         param: $1UpdateRequest,
     ) -> Result<$1> {
         if auth.is_none() {
-            return Err(ApiError::Unauthorized);
+            return Err(Error::Unauthorized);
         }
 
         let res = self.repo.update(id, param.into()).await?;
@@ -73,7 +73,7 @@ async fn create(
 
     async fn delete(&self, id: i64, auth: Option<Authorization>) -> Result<$1> {
         if auth.is_none() {
-            return Err(ApiError::Unauthorized);
+            return Err(Error::Unauthorized);
         }
 
         let res = self.repo.delete(id).await?;
