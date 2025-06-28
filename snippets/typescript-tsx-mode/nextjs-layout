@@ -1,0 +1,27 @@
+# -*- mode: snippet -*-
+# name: nextjs-layout
+# key: layout
+# --
+
+export default async function Layout({
+children,
+`(let* ((dirs (split-string (file-name-directory (or (buffer-file-name) "")) "/"))
+(nested-dir (nth (- (length dirs) 2) dirs)))
+(when (string-match-p "^\\[.*\\]$" nested-dir)
+"params,"))`
+}: {
+children: React.ReactNode,
+`(let* ((dirs (split-string (file-name-directory (or (buffer-file-name) "")) "/"))
+(nested-dir (nth (- (length dirs) 2) dirs)))
+(if (string-match "^\\[\\(.*\\)\\]$" nested-dir)
+(format "params: Promise<{ %s: number }>" (match-string 1 nested-dir))
+""))`
+}) {
+`(let* ((dirs (split-string (file-name-directory (or (buffer-file-name) "")) "/"))
+(nested-dir (nth (- (length dirs) 2) dirs)))
+(if (string-match "^\\[\\(.*\\)\\]$" nested-dir)
+(format "const { %s } = await params;" (match-string 1 nested-dir))
+""))`
+
+return <>{children}</>;
+}
