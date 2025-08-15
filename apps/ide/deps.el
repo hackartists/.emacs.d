@@ -67,6 +67,7 @@
         ;; (translate :variables gts-translate-list '(("en" "ko") ("ko" "en")))
         (lsp :variables lsp-ui-doc-enable t lsp-ui-sideline-enable t lsp-auto-guess-root t)
         (dap :variables dap-enable-ui-controls nil)
+        github-copilot
         (ess :variables ess-r-backend 'lsp)))
 
 (setq hackartist-ide-packages
