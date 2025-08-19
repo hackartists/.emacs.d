@@ -67,7 +67,6 @@
         ;; (translate :variables gts-translate-list '(("en" "ko") ("ko" "en")))
         (lsp :variables lsp-ui-doc-enable t lsp-ui-sideline-enable t lsp-auto-guess-root t)
         (dap :variables dap-enable-ui-controls nil)
-        github-copilot
         (ess :variables ess-r-backend 'lsp)))
 
 (setq hackartist-ide-packages
@@ -131,15 +130,12 @@
         lsp-grammarly
         code-review
         jiralib2
-        org-ai
-        gptel
         sqlite3
         ;; openwith
         ;; codegpt
         greader
         lsp-tailwindcss
         adoc-mode
-        copilot-chat
         ))
 
 (setq hackartist-ide-osc
@@ -154,6 +150,4 @@
         "https://gitlab.com/Titan-C/org-cv.git"
         "https://github.com/nyyManni/ejira.git"
         "https://github.com/tecosaur/emacs-everywhere.git"
-        "https://github.com/zerolfx/copilot.el.git"
-        "https://github.com/natrys/whisper.el.git"
         ))

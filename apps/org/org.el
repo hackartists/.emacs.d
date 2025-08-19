@@ -178,18 +178,6 @@
     'org-pandoc-import-latex-as-org "iip" 'org-pandoc-import-ipynb-as-org)
   (evil-define-key 'normal org-mode-map "." 'dictionary-lookup-definition)
 
-  (spacemacs/declare-prefix "," "Open AI")
-  (spacemacs/set-leader-keys
-    ", SPC" 'org-ai-prompt
-    ", RET" 'org-ai-summarize
-    ",c" 'org-ai-refactor-code
-    ",p" 'org-ai-on-project
-    ",r" 'org-ai-on-region
-    ",o" 'org-ai-talk-output-toggle
-    ",i" 'org-ai-talk-output-toggle
-    ",m" 'org-ai-switch-chat-model
-    )
-
   (define-key org-mode-map (kbd "<M-return>") nil)
   (define-key org-mode-map (kbd "<M-S-up>") nil)
   (define-key org-mode-map (kbd "<M-S-down>") nil)

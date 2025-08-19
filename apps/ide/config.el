@@ -51,16 +51,6 @@
 (defun hackartist/ide/config ()
   (require 'helm-mt)
   (require 'emacs-everywhere)
-  (require 'copilot)
-  (setq gptel-model  'gpt-5
-        gptel-backend
-        (gptel-make-openai "Github Models"
-          :host "models.inference.ai.azure.com"
-          :endpoint "/chat/completions?api-version=2024-05-01-preview"
-          :stream t
-          :key (getenv "GPTEL_GITHUB")
-          :models '(gpt-4o gpt-5)))
-  (setq copilot-chat-default-model "gpt-5")
   (setq read-process-output-max (* (* 1024 1024) 10)) ;; 10mb
   (setq lsp-session-folders-blocklist (list (expand-file-name "~")))
   (setq shell-file-name "/bin/zsh")
@@ -73,9 +63,6 @@
         recentf-filename-handlers '(file-truename)
         recentf-max-menu-items 100)
   (set-fontset-font t 'hangul (font-spec :name "D2Coding"))
-
-  (add-hook 'prog-mode-hook 'copilot-mode)
-  (add-hook 'git-commit-setup-hook 'copilot-chat-insert-commit-message)
 
   (setq user-full-name "hackartist")
   (setq completion-styles `(flex))

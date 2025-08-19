@@ -7,12 +7,6 @@
 (defun hackartist/ide/init ()
   (require 'impostman)
   (require 'ox-moderncv)
-  (require 'codegpt)
-  (require 'whisper)
-  (setq codegpt-tunnel 'chat            ; The default is 'completion or 'chat
-        codegpt-model "gpt-4"
-        openai-key (getenv "OPENAPI_KEY")
-        )
   ;; (elcord-mode t)
   (autoload 'garak "garak" nil t)
   (setq auth-sources '("~/.authinfo"))

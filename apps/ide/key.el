@@ -102,10 +102,6 @@
     "Poa" 'password-store-otp-append
     "PoA" 'password-store-otp-append-from-image)
 
-  (spacemacs/set-leader-keys
-    "$ ." 'copilot-chat
-    "$ RET" 'copilot-chat-custom-prompt-selection
-    )
 
   (evil-define-key 'motion dictionary-mode-map "." 'dictionary-lookup-definition)
   (evil-define-key 'motion dictionary-mode-map "," 'dictionary-previous)
