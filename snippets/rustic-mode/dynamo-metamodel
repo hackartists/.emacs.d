@@ -7,6 +7,7 @@ use bdk::prelude::*;
 
 #[derive(Debug, Clone, serde::Serialize, serde::Deserialize, DynamoEntity)]
 #[serde(untagged)]
-pub enum ${1:MetaModel} {
-    ${2:Model}($2),
+pub enum `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
+    ${1:Model}($1),
+    $0
 }
