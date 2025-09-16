@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: repr-enum
+# --
+
+#[derive(
+    Debug,
+    Clone,
+    Copy,
+    PartialEq,
+    Eq,
+    serde_repr::Serialize_repr,
+    serde_repr::Deserialize_repr,
+    Default,
+)]
+#[repr(u8)]
+pub enum ${1:EnumName} {
+    #[default]
+    ${2:VarName} = 1,
+}

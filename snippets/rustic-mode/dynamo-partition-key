@@ -1,0 +1,34 @@
+# -*- mode: snippet -*-
+# name: dynamo-partition-key
+# --
+
+use std::{fmt::Display, str::FromStr};
+
+use serde_with::{DeserializeFromStr, SerializeDisplay};
+
+#[derive(Debug, Clone, SerializeDisplay, DeserializeFromStr, strum_macros::Display, Default)]
+#[strum(serialize_all = "SCREAMING_SNAKE_CASE")]
+pub enum ${1:SubSchema}Partition {
+    #[default]
+    None,
+
+    #[strum(to_string = "VAR#{0}")]
+    Var(String),
+}
+
+impl $1Partition {
+    pub fn key<T: Display>(self, id: T) -> String {
+        format!("{}#{}", self, id)
+    }
+}
+
+impl FromStr for $1Partition {
+    type Err = crate::Error;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        Ok(match s {
+            s if s.starts_with("VAR#") => $1Partition::Var(s.to_string()),
+            _ => Err(crate::Error2::InvalidPartitionKey(s.to_string()))?,
+        })
+    }
+}

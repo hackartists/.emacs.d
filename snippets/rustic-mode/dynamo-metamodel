@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: dynamo-meta-model
+# --
+
+use super::*;
+use bdk::prelude::*;
+
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize, DynamoEntity)]
+#[serde(untagged)]
+pub enum ${1:MetaModel} {
+    ${2:Model}($2),
+}
