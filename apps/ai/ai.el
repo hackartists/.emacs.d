@@ -5,9 +5,9 @@
 
 (setq hackartist-ai-packages
       '(copilot-chat
-        claudemacs
         eat
         gptel
+        claudemacs
         ))
 
 
@@ -58,15 +58,15 @@
   (with-eval-after-load 'eat
     (setq eat-term-scrollback-size 400000))
 
-  (setq gptel-model  'gpt-5
+  (setq gptel-model  'gpt-4o
         gptel-backend
         (gptel-make-openai "Github Models"
-                           :host "models.inference.ai.azure.com"
-                           :endpoint "/chat/completions?api-version=2024-05-01-preview"
-                           :stream t
-                           :key (getenv "GPTEL_GITHUB")
-                           :models '(gpt-4o gpt-5)))
-  (setq copilot-chat-default-model "gpt-5")
+          :host "models.inference.ai.azure.com"
+          :endpoint "/chat/completions?api-version=2024-05-01-preview"
+          :stream t
+          :key (getenv "GPTEL_GITHUB")
+          :models '(gpt-4o gpt-5)))
+  (setq copilot-chat-default-model "gpt-4o")
   (add-hook 'prog-mode-hook 'copilot-mode)
   (add-hook 'git-commit-setup-hook 'copilot-chat-insert-commit-message)
   )

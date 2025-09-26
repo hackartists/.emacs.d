@@ -4,8 +4,8 @@
    ((file-exists-p "/etc/arch-release") "Arch Linux")
    ((file-exists-p "/etc/os-release")
     (if (string-match-p "Ubuntu" (with-temp-buffer
-                                    (insert-file-contents "/etc/os-release")
-                                    (buffer-string)))
+                                   (insert-file-contents "/etc/os-release")
+                                   (buffer-string)))
         "Ubuntu"
       "Unknown Linux distribution"))
    (t "Unknown Linux distribution")))
@@ -68,10 +68,9 @@
   (interactive "")
   (if (eq (next-frame (selected-frame)) (selected-frame)) (make-frame) (hackartist/ide/other-frame-safe))
   (set-face-attribute 'hl-line nil
-                      :bold t 
-                      :underline t 
-                      :inherit nil 
-                      :background nil))
+                      :bold t
+                      :underline t
+                      :inherit nil))
 
 (defun helm-hackartist-buffer ()
   "Select hackartist ide using helm."
@@ -87,7 +86,7 @@
     (setq helm-source-recentf
           (helm-make-source "Recentf" 'helm-recentf-source)))
 
-  (unless helm-source-projectile-projects 
+  (unless helm-source-projectile-projects
     (helm-build-sync-source "Projectile projects"
       :candidates 'projectile-relevant-known-projects
       :action 'projectile-switch-project-by-name))
@@ -146,40 +145,40 @@ If XML, generate XML instead of HTML."
     (insert (format "<%s" (dom-tag dom)))
     (let ((attr (dom-attributes dom)))
       (dolist (elem attr)
-	;; In HTML, these are boolean attributes that should not have
-	;; an = value.
-	(if (and (memq (car elem)
-		       '(async autofocus autoplay checked
-			       contenteditable controls default
-			       defer disabled formNoValidate frameborder
-			       hidden ismap itemscope loop
-			       multiple muted nomodule novalidate open
-			       readonly required reversed
-			       scoped selected typemustmatch))
-		 (cdr elem)
-		 (not xml))
-	    (insert (format " %s" (car elem)))
-	  (insert (format " %s=%S" (car elem) (cdr elem))))))
+        ;; In HTML, these are boolean attributes that should not have
+        ;; an = value.
+        (if (and (memq (car elem)
+                       '(async autofocus autoplay checked
+                               contenteditable controls default
+                               defer disabled formNoValidate frameborder
+                               hidden ismap itemscope loop
+                               multiple muted nomodule novalidate open
+                               readonly required reversed
+                               scoped selected typemustmatch))
+                 (cdr elem)
+                 (not xml))
+            (insert (format " %s" (car elem)))
+          (insert (format " %s=%S" (car elem) (cdr elem))))))
     (let* ((children (dom-children dom))
-	   (non-text nil))
+           (non-text nil))
       (if (null children)
-	  (insert " />")
-	(insert ">")
+          (insert " />")
+        (insert ">")
         (dolist (child children)
-	  (if (stringp child)
-	      (insert child)
-	    (setq non-text t)
-	    (when pretty
+          (if (stringp child)
+              (insert child)
+            (setq non-text t)
+            (when pretty
               (insert "\n" (make-string (+ column 2) ? )))
-	    (dom-print child pretty xml)))
-	;; If we inserted non-text child nodes, or a text node that
-	;; ends with a newline, then we indent the end tag.
+            (dom-print child pretty xml)))
+        ;; If we inserted non-text child nodes, or a text node that
+        ;; ends with a newline, then we indent the end tag.
         (when (and pretty
-		   (or (bolp)
-		       non-text))
-	  (unless (bolp)
+                   (or (bolp)
+                       non-text))
+          (unless (bolp)
             (insert "\n"))
-	  (insert (make-string column ? )))
+          (insert (make-string column ? )))
         (insert (format "</%s>" (dom-tag dom)))))))
 
 (defun term/append-string-to-file ()
