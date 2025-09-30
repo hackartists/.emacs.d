@@ -5,7 +5,7 @@
 use crate::types::*;
 use bdk::prelude::*;
 
-#[derive(Debug, Clone, serde::Serialize, serde::Deserialize, DynamoEntity, Default)]
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize, DynamoEntity, Default, schemars::JsonSchema, aide::OperationIo)]
 pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
     pub pk: Partition,
     pub sk: EntityType,
