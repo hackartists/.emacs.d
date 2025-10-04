@@ -1,23 +1,28 @@
 (setq hackartist-javascript-layers
-      '((javascript :variables javascript-import-tool
-                    'import-js javascript-backend 'lsp javascript-repl
-                    `nodejs js-indent-level 2 js2-basic-offset 2
-                    javascript-fmt-on-save t javascript-fmt-tool 'prettier
-                    node-add-modules-path t)
-        (html :variables web-fmt-tool 'prettier web-fmt-on-save t)
-        (typescript :variables typescript-fmt-on-save t typescript-fmt-tool 'prettier typescript-linter 'eslint)
+      '(
+        ;; (javascript :variables javascript-import-tool
+        ;;             'import-js javascript-backend 'lsp javascript-repl
+        ;;             `nodejs js-indent-level 2 js2-basic-offset 2
+        ;;             javascript-fmt-on-save t javascript-fmt-tool 'prettier
+        ;;             node-add-modules-path t)
+        ;; (html :variables web-fmt-tool 'prettier web-fmt-on-save t)
+        (typescript :variables typescript-fmt-on-save t ;; typescript-fmt-tool 'prettier
+                    typescript-linter 'eslint)
         (json :variables json-fmt-tool 'prettier json-fmt-on-save t)
-        ess import-js node
+        import-js
         react
         ;; tide
         ))
 
 (setq hackartist-javascript-packages
-      '(xref-js2 js2-refactor web-mode
-                 web-beautify skewer-mode
-                 impatient-mode restclient elnode eslintd-fix
-                 js-react-redux-yasnippets react-snippets
-                 js-comint json-mode))
+      '(;; xref-js2 js2-refactor web-mode
+        ;; web-beautify skewer-mode
+        ;; impatient-mode restclient elnode
+        eslintd-fix
+        ;; js-react-redux-yasnippets
+        react-snippets
+        ;; js-comint json-mode
+        ))
 
 (setq hackartist-javascript-commands
       '((jsonlint "npm install -g jsonlint")
@@ -38,7 +43,8 @@
                               (setq lsp-eslint-auto-fix-on-save t))))
 
 (defun hackartist/js/before-save-hook ()
-  (when (or (eq major-mode 'typescript-mode) (eq major-mode 'typescript-tsx-mode))
+  (when (or (eq major-mode 'typescript-mode) ;; (eq major-mode 'typescript-tsx-mode)
+            )
     (lsp-eslint-fix-all)))
 
 (defun hackartist/javascript/config ()
@@ -55,12 +61,9 @@
   ;;         "--semi" "true"
   ;;         "--single-quote" "true"
   ;;         ))
-  (with-eval-after-load 'web-mode (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
-                        (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
-                        (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
-  (add-hook 'typescript-tsx-mode-hook
-            (lambda ()
-              (emmet-mode -1)))
+  ;; (add-hook 'typescript-tsx-mode-hook
+  ;;           (lambda ()
+  ;;             (emmet-mode -1)))
 
   (add-hook 'js2-mode-hook 'eslintd-fix-mode)
   (add-hook 'js2-mode-hook (lambda ()

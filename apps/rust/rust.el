@@ -37,25 +37,30 @@
   ;; (add-hook 'rustic-mode-hook 'hackartist/rust/mode-hook)
   )
 
-;; (defun hackartist/rust/config ()
-;;   "configuration code"
-;;   (require 'dap-codelldb)
-;;   (dap-codelldb-setup)
+(defun hackartist/rust/config ()
+  "configuration code"
+  (require 'dap-codelldb)
+  (dap-codelldb-setup)
 
-;; (setq dap-auto-configure-features '(sessions locals controls tooltip))
+  (setq dap-auto-configure-features '(sessions locals controls tooltip))
+  (setq dap-lldb-debug-program '("/usr/bin/rust-lldb"))
 
-;; (dap-register-debug-provider
-;;  "hackartist-rust"
-;;  (lambda (conf)
-;;    (plist-put conf :type "lldb")
-;;     (plist-put conf :request "launch")
-;;     (plist-put conf :miDebuggerPath "~/.cargo/bin/rust-lldb")
-;;     (plist-put conf :target nil)
-;;     (plist-put conf :cwd (concat (projectile-project-root) "target/debug/"))
-;;     (plist-put conf :program (expand-file-name (read-file-name "Select file to debug.")))))
-;; (dap-register-debug-template "LLDB::Debug Rust"
-;;  (list :type "hackartist-rust" :name "LLDB::Debug Rust Program"))
-;; )
+  (dap-register-debug-template
+   "Rust::cargo run"
+   (list :type "lldb"
+         :request "launch"
+         :name "Rust::cargo run"
+         :program "cargo"
+         :args ["run"] ; 빈 args는 마지막 "--" 뒤에
+         :cwd "${workspaceFolder}"
+         :console "integratedTerminal"))
+
+  (dap-register-debug-template
+   "LLDB::Debug Rust"
+   (list :type "hackartist-rust" :name "LLDB::Debug Rust Program"))
+
+  )
+
 
 (defun hackartist/rust/bindings ()
   "configuration code"
