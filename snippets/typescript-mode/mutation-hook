@@ -1,0 +1,72 @@
+# -*- mode: snippet -*-
+#name : mutation-hook
+#key : mutation-hook
+#contributor : hackartist
+# --
+
+import { useMutation } from '@tanstack/react-query';
+import { feedKeys } from '@/constants';
+import { Feed } from '@/lib/api/models/feeds';
+import { showErrorToast } from '@/lib/toast';
+import { updatePostWithTitleAndContents } from '@/lib/api/ratel/posts.v3';
+import { optimisticListUpdate, optimisticUpdate } from '@/lib/hook-utils';
+
+export type UseUpdateDraftMutationProps = {
+  data: string;
+};
+
+export function useUpdateDraftMutation(username: string, key: string) {
+  // NOTE: set up keys
+  const dataKey = ['cat', 'data', key];
+  const listKey = ['cat', 'list'];
+
+  return useMutation({
+    mutationFn: async ({
+      data,
+    }: UseUpdateDraftMutationProps) => {
+      // TODO: implement your update function
+      // await updateData(key, data);
+      $0
+      return { key };
+    },
+
+    onMutate: async ({ data }: UseUpdateDraftMutationProps) => {
+      // TODO: implement optimistic update logic
+
+      const rollbackData = await optimisticUpdate<${1:DataType}>(
+        { queryKey: dataKey },
+        (d) => {
+          return {
+            ...d!,
+            data,
+          };
+        },
+      );
+
+      const rollbackList = await optimisticListUpdate<$1>(
+        { queryKey: listKey },
+        (d) => {
+          return {
+            ...d,
+            data,
+          };
+        },
+      );
+
+      return { rollbackData, rollbackList };
+    },
+
+    onError: (error: Error, _variables, context) => {
+      context?.rollbackData?.rollback();
+      context?.rollbackList?.rollback();
+
+      showErrorToast(error.message || 'Failed to delete feed');
+    },
+
+    onSettled: (_data, _vars, _ctx) => {
+      // TODO: Run after completed, as invalidation
+      // const queryClient = getQueryClient();
+      // queryClient.invalidateQueries({ queryKey });
+    },
+  });
+}

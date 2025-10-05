@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+#name : api-call-test
+#contributor : hackartist
+# --
+
+    let (status, _headers, body) = ${1:get}! {
+        app: app,
+        path: format!("${2:/v3/}"),
+        headers: ${3:test_user.1.clone()},
+        body: {
+          $0
+        },
+        response_type: ${4:serde_json::Value},
+    };
