@@ -30,27 +30,6 @@
       (set-keyboard-en)
     (set-keyboard-kr)))
 
-(defun hackartist/smart-switch-treemacs ()
-  (when (and
-         (not (eq nil (projectile-project-root)))
-         (or
-          (eq nil (treemacs-current-workspace))
-          (not (string= (treemacs-workspace->name (treemacs-current-workspace)) (projectile-project-root)))))
-    (let* ((path (projectile-project-root)))
-      (unless (eq nil path)
-        (when (eq nil (treemacs--find-workspace path))
-          (add-to-list 'treemacs--workspaces (make-treemacs-workspace :name path)  :append)
-          (setf (treemacs-current-workspace) (treemacs--select-workspace-by-name path))
-          (treemacs-do-add-project-to-workspace path (car (last (delete "" (split-string path "/")))))
-          )
-        (setf (treemacs-current-workspace) (treemacs--select-workspace-by-name path))
-        (treemacs--invalidate-buffer-project-cache)
-        (treemacs--rerender-after-workspace-change)
-        (run-hooks 'treemacs-switch-workspace-hook)
-        (remove-hook 'post-command-hook 'hackartist/smartm-switch-treemacs)
-        ))
-    ))
-
 (defun hackartist/ide/windmove-left ()
   "docstring"
   (interactive "")

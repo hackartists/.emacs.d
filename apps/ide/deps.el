@@ -25,7 +25,7 @@
         unicode-fonts
         (markdown :variables markdown-live-preview-engine 'vmd)
         yaml
-        (spell-checking :variables enable-flyspell-auto-completion nil)
+        ;; (spell-checking :variables enable-flyspell-auto-completion nil)
         shell
         ibuffer imenu-list
         syntax-checking

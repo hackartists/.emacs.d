@@ -18,7 +18,6 @@
 
 (defun hackartist/ai/init ()
   (require 'claudemacs)
-  (require 'copilot)
 
   (use-package claudemacs
     :vc (:url "https://github.com/cpoile/claudemacs.git"
@@ -41,6 +40,14 @@
     ", ," 'claudemacs-transient-menu
     )
 
+  (with-eval-after-load 'copilot
+    (define-key copilot-mode-map (kbd "C-c C-c") 'copilot-accept-completion)
+    (define-key copilot-mode-map (kbd "C-<return>") 'copilot-accept-completion)
+    (define-key copilot-completion-map (kbd "C-l") 'copilot-next-completion)
+    (define-key copilot-completion-map (kbd "C-h") 'copilot-prev-completion)
+    (define-key copilot-completion-map (kbd "<right>") 'copilot-next-completion)
+    (define-key copilot-completion-map (kbd "<left>") 'copilot-prev-completion))
+
   )
 
 (defun hackartist/ai/config ()
@@ -53,7 +60,7 @@
 
   (setq claudemacs-notification-auto-dismiss-linux nil)
   (setq claudemacs-notification-sound-linux "message-new-instant")
-  (setq claudemacs-prefer-projectile-root t)
+  ;; (setq claudemacs-prefer-projectile-root t)
 
   (with-eval-after-load 'eat
     (setq eat-term-scrollback-size 400000))
@@ -67,6 +74,6 @@
           :key (getenv "GPTEL_GITHUB")
           :models '(gpt-4o gpt-5)))
   (setq copilot-chat-default-model "gpt-4o")
-  (add-hook 'prog-mode-hook 'copilot-mode)
+  ;; (add-hook 'prog-mode-hook 'copilot-mode)
   (add-hook 'git-commit-setup-hook 'copilot-chat-insert-commit-message)
   )
