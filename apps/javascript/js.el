@@ -26,15 +26,9 @@
 
 (defun hackartist/javascript/init ()
   ;; (add-hook 'js2-mode-hook 'hackartist/javascript/dap-react-native-init)
-  (add-hook 'before-save-hook 'hackartist/js/before-save-hook)
   (add-hook 'rjsx-mode-hook (lambda ()
                               ;; (setq before-save-hook '(lsp-eslint-apply-all-fixes))
                               (setq lsp-eslint-auto-fix-on-save t))))
-
-(defun hackartist/js/before-save-hook ()
-  (when (or (eq major-mode 'typescript-mode) (eq major-mode 'typescript-tsx-mode))
-    (lsp-eslint-fix-all)))
-
 
 (defun hackartist/ts-literal-insert (n)
   (interactive "p")
