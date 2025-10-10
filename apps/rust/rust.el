@@ -43,21 +43,33 @@
   (dap-codelldb-setup)
 
   (setq dap-auto-configure-features '(sessions locals controls tooltip))
-  (setq dap-lldb-debug-program '("/usr/bin/rust-lldb"))
+
+  (dap-register-debug-provider
+   "hackartist-rust"
+   (lambda (conf)
+     ;; NOTE: it's from codelldb
+     (let ((debug-port (dap--find-available-port)))
+       (plist-put conf :program-to-start (format "%s --port %s" dap-codelldb-debug-program debug-port))
+       (plist-put conf :debugServer debug-port))
+     (plist-put conf :type "lldb")
+     (plist-put conf :request "launch")
+     (plist-put conf :host "localhost")
+     (plist-put conf :type "lldb")
+     (plist-put conf :cargo "")
+
+     ;; NOTE: customized provider for convenience of selecting binary
+     (plist-put conf :cwd (rustic-buffer-crate))
+     (plist-put conf :program (expand-file-name
+                               (read-file-name
+                                "Select file to debug."
+                                (concat (rustic-buffer-crate) "target/debug/" )
+                                (expand-file-name (concat (rustic-buffer-crate) "target/debug/" (car (last (butlast (string-split (rustic-buffer-crate) "/"))))))
+                                t
+                                (car (last (butlast (string-split (rustic-buffer-crate) "/")))))))))
 
   (dap-register-debug-template
-   "Rust::cargo run"
-   (list :type "lldb"
-         :request "launch"
-         :name "Rust::cargo run"
-         :program "cargo"
-         :args ["run"] ; 빈 args는 마지막 "--" 뒤에
-         :cwd "${workspaceFolder}"
-         :console "integratedTerminal"))
-
-  (dap-register-debug-template
-   "LLDB::Debug Rust"
-   (list :type "hackartist-rust" :name "LLDB::Debug Rust Program"))
+   "RUST(hackartist): Debug Rust Program by CodeLLDB"
+   (list :type "hackartist-rust" :name "Rust(hackartist): Debug Rust Program by CodeLLDB"))
 
   )
 

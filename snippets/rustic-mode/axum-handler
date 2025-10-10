@@ -4,7 +4,6 @@
 #contributor : hackartist
 # --
 
-use axum::*;
 use axum::extract::*;
 use bdk::prelude::*;
 use aide::NoApi;
