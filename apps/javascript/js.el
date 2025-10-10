@@ -43,7 +43,7 @@
     (local-set-key (kbd k) #'hackartist/ts-literal-insert)))
 
 (defun hackartist/ts/mode-hook ()
-  (copilot-mode -1)
+  ;; (copilot-mode -1)
   (local-set-key (kbd "C-<return>") 'copilot-accept-completion)
   (eldoc-mode -1)
   (flycheck-mode -1)
