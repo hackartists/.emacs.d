@@ -20,14 +20,14 @@
         ;; impatient-mode restclient elnode
         eslintd-fix
         ;; js-react-redux-yasnippets
-        react-snippets
+        ;; react-snippets
         ;; js-comint json-mode
         ))
 
 (defun hackartist/javascript/init ()
   ;; (add-hook 'js2-mode-hook 'hackartist/javascript/dap-react-native-init)
   (add-hook 'rjsx-mode-hook (lambda ()
-                              ;; (setq before-save-hook '(lsp-eslint-apply-all-fixes))
+                              (setq before-save-hook '(lsp-eslint-apply-all-fixes))
                               (setq lsp-eslint-auto-fix-on-save t))))
 
 (defun hackartist/ts-literal-insert (n)
@@ -38,13 +38,21 @@
     (ignore-errors (company-abort)))
   (insert-char last-command-event n))
 
+(defun hackartist/ts/before-save-hook ()
+  (when (derived-mode-p 'typescript-mode 'typescript-tsx-mode)
+    (prettier-js)
+    (lsp-eslint-apply-all-fixes)))
+
+
 (defun hackartist/ts-bind-literal-keys ()
   (dolist (k '("," ":" "{" "}" "[" "]" "(" ")" ";" ">" "<" "="))
     (local-set-key (kbd k) #'hackartist/ts-literal-insert)))
 
 (defun hackartist/ts/mode-hook ()
   ;; (copilot-mode -1)
-  (local-set-key (kbd "C-<return>") 'copilot-accept-completion)
+  (define-key typescript-mode-map (kbd "C-<return>") 'copilot-accept-completion)
+  (define-key typescript-tsx-mode-map (kbd "C-<return>") 'copilot-accept-completion)
+  (emmet-mode -1)
   (eldoc-mode -1)
   (flycheck-mode -1)
   (smartparens-mode -1))
@@ -55,6 +63,7 @@
    css-indent-offset 2 web-mode-markup-indent-offset 2 web-mode-css-indent-offset 2
    web-mode-code-indent-offset 2 web-mode-attr-indent-offset 2)
 
+  (add-hook 'before-save-hook 'hackartist/ts/before-save-hook)
   (add-hook 'typescript-mode-hook 'hackartist/ts/mode-hook)
   (add-hook 'typescript-tsx-mode-hook 'hackartist/ts/mode-hook))
 
