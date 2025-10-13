@@ -44,9 +44,6 @@
     (lsp-eslint-apply-all-fixes)))
 
 (defun hackartist/ts/mode-hook ()
-  ;; (copilot-mode -1)
-  ;; (define-key typescript-mode-map (kbd "C-<return>") 'copilot-accept-completion)
-  ;; (define-key typescript-tsx-mode-map (kbd "C-<return>") 'copilot-accept-completion)
   (emmet-mode -1)
   (eldoc-mode -1)
   (flycheck-mode -1)

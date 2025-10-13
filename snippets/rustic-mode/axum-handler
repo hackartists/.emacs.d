@@ -8,7 +8,8 @@ use axum::extract::*;
 use bdk::prelude::*;
 use aide::NoApi;
 use crate::models::user::User;
-use crate::AppState;
+use super::*;
+use crate::{AppState, Error2};
 
 
 #[derive(Debug, Clone, serde::Serialize, serde::Deserialize, aide::OperationIo, schemars::JsonSchema)]
@@ -27,7 +28,7 @@ pub async fn `(string-inflection-snake-case-function (string-replace ".rs" "" (f
     State(AppState { dynamo, .. }): State<AppState>,
     NoApi(user): NoApi<Option<User>>,
     Json(req): Json<`(string-inflection-upper-camelcase-function (string-replace ".rs" "" (file-name-base)))`Request>,
-    ) -> Result<Json<`(string-inflection-upper-camelcase-function (string-replace ".rs" "" (file-name-base)))`Response>, crate::Error2> {
+    ) -> Result<Json<`(string-inflection-upper-camelcase-function (string-replace ".rs" "" (file-name-base)))`Response>, Error2> {
     tracing::debug!("Handling request: {:?}", req);
     ${0:// TODO: Implement the handler logic here}
 
