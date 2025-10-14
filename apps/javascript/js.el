@@ -19,6 +19,7 @@
         ;; web-beautify skewer-mode
         ;; impatient-mode restclient elnode
         eslintd-fix
+        lsp-tailwindcss
         ;; js-react-redux-yasnippets
         ;; react-snippets
         ;; js-comint json-mode
@@ -26,6 +27,13 @@
 
 (defun hackartist/javascript/init ()
   ;; (add-hook 'js2-mode-hook 'hackartist/javascript/dap-react-native-init)
+  (use-package lsp-tailwindcss
+    :after lsp-mode
+    :init
+    (setq lsp-tailwindcss-add-on-mode t)
+    (setq lsp-tailwindcss-rustywind-command (concat (getenv "NVM_BIN") "/rustywind"))
+    )
+
   (add-hook 'rjsx-mode-hook (lambda ()
                               (setq before-save-hook '(lsp-eslint-apply-all-fixes))
                               (setq lsp-eslint-auto-fix-on-save t))))
@@ -40,10 +48,11 @@
 
 (defun hackartist/ts/before-save-hook ()
   (when (derived-mode-p 'typescript-mode 'typescript-tsx-mode)
-    (prettier-js)
+    (lsp-tailwindcss-rustywind-before-save)
     (lsp-eslint-apply-all-fixes)))
 
 (defun hackartist/ts/mode-hook ()
+  (setq lsp-)
   (emmet-mode -1)
   (eldoc-mode -1)
   (flycheck-mode -1)
