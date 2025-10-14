@@ -52,7 +52,6 @@
     (lsp-eslint-apply-all-fixes)))
 
 (defun hackartist/ts/mode-hook ()
-  (setq lsp-)
   (emmet-mode -1)
   (eldoc-mode -1)
   (flycheck-mode -1)
