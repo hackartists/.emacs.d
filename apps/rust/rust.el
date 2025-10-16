@@ -59,13 +59,15 @@
 
      ;; NOTE: customized provider for convenience of selecting binary
      (plist-put conf :cwd (rustic-buffer-crate))
-     (plist-put conf :program (expand-file-name
-                               (read-file-name
-                                "Select file to debug."
-                                (concat (rustic-buffer-crate) "target/debug/" )
-                                (expand-file-name (concat (rustic-buffer-crate) "target/debug/" (car (last (butlast (string-split (rustic-buffer-crate) "/"))))))
-                                t
-                                (car (last (butlast (string-split (rustic-buffer-crate) "/")))))))))
+     (plist-put conf :program (hackartist/rust/dap-program)
+                ;; (expand-file-name
+                ;;                (read-file-name
+                ;;                 "Select file to debug."
+                ;;                 (concat (rustic-buffer-crate) "target/debug/" )
+                ;;                 (expand-file-name (concat (rustic-buffer-crate) "target/debug/" (car (last (butlast (string-split (rustic-buffer-crate) "/"))))))
+                ;;                 t
+                ;;                 (car (last (butlast (string-split (rustic-buffer-crate) "/"))))))
+                )))
 
   (dap-register-debug-template
    "RUST(hackartist): Debug Rust Program by CodeLLDB"
@@ -73,6 +75,41 @@
 
   )
 
+(defun hackartist/rust/build-then (k)
+  "Run `make build` in crate root, then call K with the built program path."
+  (interactive)
+  (let* ((crate (directory-file-name (rustic-buffer-crate)))
+         (bin   (car (last (butlast (string-split crate "/")))))
+         (prog  (expand-file-name (format "%s/target/debug/%s" crate bin)))
+         (default-directory (file-name-as-directory crate)))
+    (let ((hook-sym (make-symbol "hackartist--comp-finish")))
+      (fset hook-sym
+            (lambda (_buf msg)
+              (when (string-match-p "finished" msg)
+                (remove-hook 'compilation-finish-functions hook-sym)
+                (funcall k prog))
+              (when (string-match-p "exited abnormally" msg)
+                (remove-hook 'compilation-finish-functions hook-sym)
+                (message "[build] failed: %s" msg))))
+      (add-hook 'compilation-finish-functions hook-sym)
+      (compile "make build"))))
+
+(defun hackartist/rust/dap-debug ()
+  (interactive)
+  (hackartist/rust/build-then
+   (lambda (prog)
+     (dap-debug (list :type "hackartist-rust"
+                      :request "launch"
+                      :name "Rust(hackartist): codelldb (after make)"
+                      :cwd (rustic-buffer-crate)
+                      :program prog)))))
+
+(defun hackartist/rust/dap-program ()
+  "configuration code"
+  (let* ((default-directory (rustic-buffer-crate)))
+    (compile "make build"))
+
+  (expand-file-name (concat (rustic-buffer-crate) "target/debug/" (car (last (butlast (string-split (rustic-buffer-crate) "/")))))))
 
 (defun hackartist/rust/bindings ()
   "configuration code"
