@@ -51,30 +51,30 @@
 (defun hackartist/ide/config ()
   (require 'helm-mt)
   (require 'emacs-everywhere)
-  (setq read-process-output-max (* (* 1024 1024) 10)) ;; 10mb
-  (setq lsp-session-folders-blocklist (list (expand-file-name "~")))
+  (setq copilot-idle-delay 0.5)
+  ;; (setq lsp-session-folders-blocklist (list (expand-file-name "~")))
   (setq shell-file-name "/bin/zsh")
   (setq global-mark-ring-max 50000
         mark-ring-max 50000
         kill-ring-max 50000
-        mode-require-final-newline t
+        ;; mode-require-final-newline t
         tab-width 2
         kill-whole-line t
         recentf-filename-handlers '(file-truename)
-        recentf-max-menu-items 100)
+        recentf-max-menu-items 10)
   (set-fontset-font t 'hangul (font-spec :name "D2Coding"))
 
   (setq user-full-name "hackartist")
-  (setq completion-styles `(flex))
+  ;; (setq completion-styles `(flex))
   (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
   (setq evil-want-fine-undo t)
   (setq auto-save-default nil)
   (global-evil-mc-mode t)
 
   ;; (hackartist/openwith)
-  (if (eq system-type 'darwin)
-      (hackartist/ide/config/darwin)
-    (hackartist/ide/config/linux))
+  ;; (if (eq system-type 'darwin)
+  ;;     (hackartist/ide/config/darwin)
+  ;;   (hackartist/ide/config/linux))
 
   (setq tab-always-indent t)
   (add-to-list 'auto-mode-alist '("\\profile\\'" . shell-script-mode))
@@ -97,35 +97,34 @@
             (lambda()
               (indent-tabs-mode 1)))
 
-  (setq code-review-auth-login-marker 'forge
-        code-review-new-buffer-window-strategy #'switch-to-buffer
-        code-review-fill-column 80)
+  ;; (setq code-review-auth-login-marker 'forge
+  ;;       code-review-new-buffer-window-strategy #'switch-to-buffer
+  ;;       code-review-fill-column 80)
 
   (setq magit-repository-directories '(("~/data/devel" . 3)))
 
-  (add-hook 'jiralib2-post-login-hook #'ejira-guess-epic-sprint-fields)
+  ;; (add-hook 'jiralib2-post-login-hook #'ejira-guess-epic-sprint-fields)
 
-  (require 'ejira-agenda)
-  (org-add-agenda-custom-command
-   '("j" "My JIRA issues"
-     ((ejira-jql "resolution = unresolved and assignee = currentUser()"
-                 ((org-agenda-overriding-header "Assigned to me"))))))
+  ;; (require 'ejira-agenda)
+  ;; (org-add-agenda-custom-command
+  ;;  '("j" "My JIRA issues"
+  ;;    ((ejira-jql "resolution = unresolved and assignee = currentUser()"
+  ;;                ((org-agenda-overriding-header "Assigned to me"))))))
 
   (setq browse-url-browser-function 'browse-url-chrome)
   (add-hook 'term-exec-hook
             (function (lambda ()
                         (set-buffer-process-coding-system 'utf-8-unix
                                                           'utf-8-unix))))
-  (global-set-key (kbd "RET") 'newline-and-indent)
+  ;; (global-set-key (kbd "RET") 'newline-and-indent)
   (setq custom-safe-themes t)
   ;; (setq company-require-match nil)
   (setq helm-multi-swoop-edit-save nil)
   (setq helm-swoop-split-with-multiple-windows t)
-  (setq helm-swoop-split-direction 'split-window-vertically)
   (setq helm-swoop-speed-or-color t)
-  (setq projectile-completion-system 'helm)
+  ;; (setq projectile-completion-system 'helm)
   (setq projectile-indexing-method 'alien)
-  (setq projectile-git-submodule-command nil)
+  ;; (setq projectile-git-submodule-command nil)
   (setq projectile-project-root-files '("rebar.config" "project.clj" "build.boot"
                                         "SConstruct" "pom.xml" "build.sbt" "gradlew"
                                         "build.gradle" ".ensime" "Gemfile" "requirements.txt"
@@ -133,10 +132,10 @@
                                         "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION"
                                         "TAGS" "GTAGS" ".dropbox" ".projectile" "package.json"
                                         "go.mod" "pubspec.yaml" "Makefile"))
-  (set-face-attribute 'hl-line nil ;; :height (+ (face-attribute 'default :height) 30)
-                      :underline t
-                      :inherit nil
-                      :background nil)
+  ;; (set-face-attribute 'hl-line nil ;; :height (+ (face-attribute 'default :height) 30)
+  ;;                     :underline t
+  ;;                     :inherit nil
+  ;;                     :background nil)
   (define-key yas-keymap (kbd "<return>") 'yas/exit-all-snippets)
 
   (custom-set-variables
@@ -147,9 +146,9 @@
   (setq yas-wrap-around-region t)
   (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
 
-  (add-hook 'slack-mode-hook
-            (lambda ()
-              (company-mode -1)))
+  ;; (add-hook 'slack-mode-hook
+  ;;           (lambda ()
+  ;;             (company-mode -1)))
   (add-hook 'diff-mode-hook
             (lambda ()
               (setq-local whitespace-style
