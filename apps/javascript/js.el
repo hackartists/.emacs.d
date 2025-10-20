@@ -46,10 +46,9 @@
     (ignore-errors (company-abort)))
   (insert-char last-command-event n))
 
-(defun hackartist/ts/before-save-hook ()
+(defun hackartist/ts/before-save-hook () ;
   (when (derived-mode-p 'typescript-mode 'typescript-tsx-mode)
-    (lsp-tailwindcss-rustywind-before-save)
-    (lsp-eslint-apply-all-fixes)))
+    (lsp-tailwindcss-rustywind-before-save)))
 
 (defun hackartist/ts/mode-hook ()
   (emmet-mode -1)
