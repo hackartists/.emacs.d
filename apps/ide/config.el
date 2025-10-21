@@ -65,7 +65,7 @@
   (set-fontset-font t 'hangul (font-spec :name "D2Coding"))
 
   (setq user-full-name "hackartist")
-  ;; (setq completion-styles `(flex))
+  (setq completion-styles `(flex))
   (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
   (setq evil-want-fine-undo t)
   (setq auto-save-default nil)
