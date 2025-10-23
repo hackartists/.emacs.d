@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-#name : struct-with-derive
-#key : struct-with-derive
-#contributor : hackartist
-# --
-#[derive(Debug, Clone, serde::Serialize, serde::Deserialize, PartialEq, Default)]
-pub struct ${Name} {}

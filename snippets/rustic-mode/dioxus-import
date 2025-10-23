@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-#name : dioxus-import
-#key : dioxus-import
-#contributor : hackartist
-# --
-
-use dioxus::prelude::*;

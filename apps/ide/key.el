@@ -36,6 +36,7 @@
 
     "gd" 'helm-magit-todos
     "gn" 'github-notifier-visit-github
+    "gw" 'magit-worktree
     "gB" 'magit-branch-and-checkout
     "gC" 'magit-branch-checkout
     "gF" 'magit-fetch-all

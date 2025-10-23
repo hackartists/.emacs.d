@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-#name : dioxus-route-path
-#key : dioxus-route-path
-#contributor : hackartist
-# --
-            #[route("/${1:path}")]
-            ${1:$(string-inflection-upper-camelcase-function yas-text)}Page { lang: Language },

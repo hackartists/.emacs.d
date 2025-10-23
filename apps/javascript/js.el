@@ -48,7 +48,6 @@
 
 (defun hackartist/ts/before-save-hook () ;
   (when (derived-mode-p 'typescript-mode 'typescript-tsx-mode)
-    (lsp-javascript-remove-unused-imports)
     (lsp-tailwindcss-rustywind-before-save)))
 
 (defun hackartist/ts/mode-hook ()
