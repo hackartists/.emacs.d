@@ -7,13 +7,13 @@
 use crate::*;
 
 
-#[derive(Debug, Clone, serde::Serialize, serde::Deserialize, aide::OperationIo, schemars::JsonSchema)]
+#[derive(Debug, Clone, Serialize, Deserialize, OperationIo, JsonSchema)]
 pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs.*" "" (file-name-base)))`Request {
   #[schemars(description = "Name of the entity")]
   pub name: String,
 }
 
-#[derive(Debug, Clone, serde::Serialize, serde::Deserialize, aide::OperationIo, schemars::JsonSchema)]
+#[derive(Debug, Clone, Serialize, Deserialize, OperationIo, JsonSchema)]
 pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (file-name-base)))`Response {
   #[schemars(description = "Status of the operation")]
   pub status: String,

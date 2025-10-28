@@ -34,7 +34,7 @@
   ;;                         (lsp-package-ensure 'tailwindcss-language-server callback error-callback))))
 
   (add-hook 'before-save-hook 'hackartist/rust/before-save-hook)
-  ;; (add-hook 'rustic-mode-hook 'hackartist/rust/mode-hook)
+  (add-hook 'rustic-mode-hook 'hackartist/rust/mode-hook)
   )
 
 (defun hackartist/rust/config ()
@@ -167,7 +167,8 @@ if the buffer contains the string `rsx!`. Preserves cursor position and scroll p
 
 (defun hackartist/rust/mode-hook ()
   (when (derived-mode-p 'rustic-mode)
-    (setq lsp-tailwindcss-experimental-class-regex "class: \"(.*)\"")))
+    (flycheck-mode -1)
+    ))
 
 (defun hackartist/dioxus/server ()
   (interactive)

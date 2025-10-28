@@ -2,7 +2,7 @@
 # name: repr-enum
 # --
 
-use bdk::prelude::*;
+use crate::*;
 
 #[derive(
     Debug,
@@ -14,8 +14,7 @@ use bdk::prelude::*;
     serde_repr::Deserialize_repr,
     Default,
     DynamoEnum,
-    schemars::JsonSchema_repr,
-
+    JsonSchema_repr,
 )]
 #[repr(u8)]
 pub enum ${1:EnumName} {
