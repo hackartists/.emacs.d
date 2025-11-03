@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+#name : vite-use-query
+#key : vite-use-query
+#contributor : hackartist
+# --
+import {
+  useSuspenseQuery,
+  UseSuspenseQueryResult,
+} from '@tanstack/react-query';
+
+export function `(string-inflection-camelcase-function (string-replace ".tsx" "" (buffer-name)))`(): UseSuspenseQueryResult<any> {
+  return useSuspenseQuery({
+    queryKey: ["key"],
+    queryFn: async () => {
+      // TODO: implement api call
+      $0
+      const ret = {};
+      return ret;
+    },
+  });
+}

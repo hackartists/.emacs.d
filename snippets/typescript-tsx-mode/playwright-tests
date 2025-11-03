@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+#name : playwright-tests
+#contributor : hackartist
+# --
+
+import { test, expect } from '@playwright/test';
+import { CONFIGS } from '@tests/config';
+import { click, fill } from '@tests/utils';
+
+test.describe('`(string-inflection-upper-camelcase-function (string-replace ".auth.spec.tsx" "" (string-replace ".anon.spec.tsx" "" (buffer-name))))`', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/');
+  });
+
+  test('', async ({ page }) => {});
+});

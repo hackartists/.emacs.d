@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+#name : vite-page-component
+#key : vite-page-component
+#contributor : hackartist
+# --
+
+import { useController } from './use-controller';
+
+export function `(string-inflection-upper-camelcase-function (file-name-nondirectory
+    (directory-file-name
+      (file-name-directory buffer-file-name)))
+)`() {
+    // TODO: use or define hooks
+    const _ctrl = useController();
+
+  return (
+    <>
+    <div>`(string-inflection-upper-camelcase-function (file-name-nondirectory
+    (directory-file-name
+    (file-name-directory buffer-file-name))))`</div>
+    </>
+  );
+}

@@ -1,0 +1,43 @@
+# -*- mode: snippet -*-
+#name : vite-i18n
+#key : vite-i18n
+#contributor : hackartist
+# --
+
+import { useTranslation } from 'react-i18next';
+
+export const `(string-inflection-upper-camelcase-function (file-name-nondirectory
+(directory-file-name
+(file-name-directory buffer-file-name)))
+)` = {
+  en: {
+    title: "",
+  },
+  ko: {
+    title: "",
+  }
+}
+
+export interface `(string-inflection-upper-camelcase-function (file-name-nondirectory
+(directory-file-name
+(file-name-directory buffer-file-name)))
+)`I18n {
+    title: string;
+}
+
+export function use`(string-inflection-upper-camelcase-function (file-name-nondirectory
+(directory-file-name
+(file-name-directory buffer-file-name)))
+)`I18n():`(string-inflection-upper-camelcase-function (file-name-nondirectory
+(directory-file-name
+(file-name-directory buffer-file-name)))
+)`I18n  {
+const { t } =  useTranslation('`(string-inflection-upper-camelcase-function (file-name-nondirectory
+(directory-file-name
+(file-name-directory buffer-file-name)))
+)`');
+
+return {
+    title: t('title'),
+    }
+}

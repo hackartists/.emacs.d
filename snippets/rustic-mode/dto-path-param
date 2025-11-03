@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+#name : dto-path-param
+#key : dto-path-param
+#contributor : hackartist
+# --
+use crate::*;
+
+#[derive(Debug, Clone, Serialize, Deserialize, OperationIo, JsonSchema)]
+pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))`Param {
+    #[schemars(description = "The unique identifier for the project")]
+    pub project_id: String,
+    #[schemars(description = "The unique identifier for the meta user from customer's service")]
+    pub meta_user_id: String,
+}
+
+pub type `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` = Path<`(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))`Param>;

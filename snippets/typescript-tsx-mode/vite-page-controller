@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+#name : vite-page-controller
+#key : vite-page-controller
+#contributor : hackartist
+# --
+
+import { useState } from 'react';
+import { State } from '@/types/state';
+
+export class Controller {
+
+  constructor(
+    public state: State<boolean>,
+  ) {
+  }
+}
+
+export function useController() {
+    // TODO: use or define hooks
+    const state = useState(false);
+
+    return new Controller(new State(state));
+}

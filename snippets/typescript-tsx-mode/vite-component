@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+#name : vite-component
+#key : vite-component
+#contributor : hackartist
+# --
+
+export type `(string-inflection-upper-camelcase-function (string-replace ".tsx" "" (buffer-name)))`Props = React.HTMLAttributes<HTMLDivElement> &  {
+  info: any;
+};
+
+export default function `(string-inflection-upper-camelcase-function (string-replace ".tsx" "" (buffer-name)))`({ info }: `(string-inflection-upper-camelcase-function (string-replace ".tsx" "" (buffer-name)))`Props) {
+  return <></>;
+}
