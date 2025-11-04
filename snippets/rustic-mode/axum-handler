@@ -4,7 +4,7 @@
 #contributor : hackartist
 # --
 
-use crate::*;
+use super::*;
 
 
 #[derive(Debug, Clone, Serialize, Deserialize, OperationIo, JsonSchema)]
