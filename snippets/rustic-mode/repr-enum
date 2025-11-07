@@ -15,6 +15,7 @@ use crate::*;
     Default,
     DynamoEnum,
     JsonSchema_repr,
+    OperationIo,
 )]
 #[repr(u8)]
 pub enum ${1:EnumName} {
