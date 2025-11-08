@@ -73,6 +73,23 @@
    "RUST(hackartist): Debug Rust Program by CodeLLDB"
    (list :type "hackartist-rust" :name "Rust(hackartist): Debug Rust Program by CodeLLDB"))
 
+  ;; Register attach debug provider
+  (dap-register-debug-provider
+   "hackartist-rust-attach"
+   (lambda (conf)
+     (let ((debug-port (dap--find-available-port)))
+       (plist-put conf :program-to-start (format "%s --port %s" dap-codelldb-debug-program debug-port))
+       (plist-put conf :debugServer debug-port))
+     (plist-put conf :type "lldb")
+     (plist-put conf :request "attach")
+     (plist-put conf :host "localhost")
+     (plist-put conf :pid (hackartist/rust/select-process-pid))
+     conf))
+
+  (dap-register-debug-template
+   "RUST(hackartist): Attach to Rust Process by CodeLLDB"
+   (list :type "hackartist-rust-attach" :name "Rust(hackartist): Attach to Rust Process by CodeLLDB"))
+
   )
 
 (defun hackartist/rust/build-then (k)
@@ -110,6 +127,13 @@
     (compile "make build"))
 
   (expand-file-name (concat (rustic-buffer-crate) "target/debug/" (car (last (butlast (string-split (rustic-buffer-crate) "/")))))))
+
+(defun hackartist/rust/select-process-pid ()
+  "Select a process PID from a list, defaulting to the process matching the crate name."
+  (let* ((crate-name (car (last (butlast (string-split (rustic-buffer-crate) "/")))))
+         (pid (shell-command-to-string (concat "ps -ae | grep " crate-name " | awk '{print $1}'")))
+         (selected (if (string-empty-p pid) nil (string-to-number pid))))
+    selected))
 
 (defun hackartist/rust/bindings ()
   "configuration code"
