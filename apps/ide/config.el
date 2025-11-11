@@ -64,12 +64,31 @@
         recentf-max-menu-items 10)
   (set-fontset-font t 'hangul (font-spec :name "D2Coding"))
 
+  (setq flycheck-checkers '())
   (setq user-full-name "hackartist")
   (setq completion-styles `(flex))
   (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
   (setq evil-want-fine-undo t)
   (setq auto-save-default nil)
   (global-evil-mc-mode t)
+
+  (with-eval-after-load 'lsp-mode
+    (defvar hackartist/lsp-code-action-timeout 20)
+
+    (defun hackartist--with-code-action-timeout (orig-fn &rest args)
+      (let ((lsp-response-timeout hackartist/lsp-code-action-timeout))
+        (apply orig-fn args)))
+
+    (dolist (f '(lsp--text-document-code-action
+                 lsp--text-document-completion
+                 lsp-request-completion
+                 lsp-completion--request
+                 lsp-completion--resolve
+                 lsp-code-actions-at-point
+                 lsp-execute-code-action
+                 lsp-quick-fix))
+      (when (fboundp f)
+        (advice-add f :around #'hackartist--with-code-action-timeout))))
 
   ;; (hackartist/openwith)
   ;; (if (eq system-type 'darwin)
@@ -251,6 +270,8 @@
  '(line-number ((t (:inherit default :background "#222226" :foreground "#44505c"))))
  '(line-number-current-line ((t (:inherit line-number :background "#222226" :foreground "#b2b2b2" :underline t))))
  '(lsp-rust-full-docs t)
+ '(lsp-enable-file-watchers t)
+ '(lsp-response-timeout 3)
  '(lsp-rust-show-hover-context nil)
  '(lsp-ui-doc-position 'top)
  '(lsp-ui-doc-show-with-cursor t)

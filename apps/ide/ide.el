@@ -100,3 +100,20 @@ to choose where to display it."
               (val (match-string 2 line)))
           (setenv key val)
           (message "Set %s=%s" key val))))))
+
+(defvar hackartist--env-loaded (make-hash-table :test 'equal))
+
+(defun hackartist/load-env-once (name)
+  "Load environment variables from a zsh function NAME only once per project root."
+  (let* ((root (or
+                (when (fboundp 'project-current)
+                  (when-let ((pr (project-current nil)))
+                    (expand-file-name (if (fboundp 'project-root)
+                                          (project-root pr)
+                                        (car (project-roots pr))))))
+                (locate-dominating-file default-directory ".git")
+                (expand-file-name default-directory)))
+         (key (cons root name)))
+    (unless (gethash key hackartist--env-loaded)
+      (hackartist/load-env-from-sh name)
+      (puthash key t hackartist--env-loaded))))
