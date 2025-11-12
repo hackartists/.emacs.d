@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: dynamo-model
+# --
+
+use crate::*;
+
+#[derive(Debug, Clone, Serialize, Deserialize, Default, JsonSchema, OperationIo)]
+pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
+    pub id: String,
+}

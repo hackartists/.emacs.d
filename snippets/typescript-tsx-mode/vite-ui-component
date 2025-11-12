@@ -1,0 +1,45 @@
+# -*- mode: snippet -*-
+#name : vite-ui-component
+#key : vite-ui-component
+#contributor : hackartist
+# --
+
+import * as React from 'react';
+
+import { cn } from '@/lib/utils';
+import { Slot } from '@radix-ui/react-slot';
+import { cva, VariantProps } from 'class-variance-authority';
+
+export const `(string-inflection-camelcase-function (file-name-base))`Variants = cva('${1:w-full bg-primary default-classes}', {
+  variants: {
+    ${2:variant}: {
+      default: '${3:class1}',
+    },
+  },
+  defaultVariants: {
+    $2: 'default',
+  },
+
+});
+
+export function `(string-inflection-upper-camelcase-function (file-name-base))`({
+  className,
+  $2,
+  asChild = false,
+  ...props
+}: React.ComponentProps<'${4:div}'> &
+VariantProps<typeof `(string-inflection-camelcase-function (file-name-base))`Variants> & {
+    asChild?: boolean;
+  }) {
+  const Comp = asChild ? Slot : '$4';
+
+  return (
+    <Comp
+      className={cn(
+      `(string-inflection-camelcase-function (file-name-base))`Variants({ $2, className }),
+      )}
+      {...props}
+    />
+  );
+}
+
