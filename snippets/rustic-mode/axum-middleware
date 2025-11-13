@@ -3,11 +3,12 @@
 #key : axum-middleware
 #contributor : hackartist
 # --
+
 pub async fn middleware(
     State(_state): State<AppState>,
     req: Request,
     next: Next,
-) -> std::result::Result<Response<Body>, Error> {
+) -> Result<Response<Body>> {
     tracing::debug!("Project authorization middleware");
     // TODO: .layer(middleware::from_fn_with_state(AppState::default(), middleware))
     let (mut _parts, body) = req.into_parts();
