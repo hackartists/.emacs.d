@@ -9,12 +9,11 @@ pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs" ""
     pub pk: Partition,
     pub sk: EntityType,
 
-    #[dynamo(prefix = "TS", index = "gsi1", sk)]
+    #[dynamo(index = "gsi1", sk)]
     pub created_at: i64,
+    #[dynamo(prefix = "INFO", name = "find_by_info", index = "gsi1", pk)]
     pub updated_at: i64,
 
-    #[dynamo(prefix = "INFO", name = "find_by_info", index = "gsi1", pk)]
-    pub info: String,
 }
 
 impl `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
@@ -24,10 +23,9 @@ impl `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buff
 
         Self {
         pk: Partition::`(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))`$0(uid),
-        sk: EntityType::`(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))`,
+        sk: EntityType::TS(time_utils::get_now()),
             created_at,
             updated_at: created_at,
-            info,
         }
     }
 }
