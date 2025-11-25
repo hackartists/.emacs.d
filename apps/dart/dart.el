@@ -67,7 +67,7 @@
 
 (defun hackartist/dart/mode-hook ()
   (when (derived-mode-p 'dart-mode)
-    (flyspell-mode-off)))
+    (flyspell-mode -1)))
 
 (defun hackartist/dart/config ()
   (add-hook 'dart-mode-hook 'hackartist/dart/mode-hook))
