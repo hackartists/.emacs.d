@@ -75,5 +75,6 @@
           :models '(gpt-4o gpt-5)))
   (setq copilot-chat-default-model "gpt-4o")
   ;; (add-hook 'prog-mode-hook 'copilot-mode)
+  (advice-add 'claudemacs--get-buffer-name :override #'new-function)
   (add-hook 'git-commit-setup-hook 'copilot-chat-insert-commit-message)
   )
