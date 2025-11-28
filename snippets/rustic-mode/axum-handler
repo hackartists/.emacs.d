@@ -20,11 +20,10 @@ pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs" ""
 }
 
 pub async fn `(string-inflection-snake-case-function (string-replace ".rs" "" (file-name-base)))`_handler(
-    State(AppState { dynamo, .. }): State<AppState>,
-    NoApi(user): NoApi<Option<User>>,
+    State(AppState { .. }): State<AppState>,
     Json(req): Json<`(string-inflection-upper-camelcase-function (string-replace ".rs" "" (file-name-base)))`Request>,
     ) -> Result<Json<`(string-inflection-upper-camelcase-function (string-replace ".rs" "" (file-name-base)))`Response>> {
-    tracing::debug!("Handling request: {:?}", req);
+    tracing::debug!("`(string-inflection-snake-case-function (string-replace ".rs" "" (file-name-base)))` request: {:?}", req);
     ${0:// TODO: Implement the handler logic here}
 
     unimplemented!()
