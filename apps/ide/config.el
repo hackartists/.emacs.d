@@ -72,6 +72,13 @@
   (setq auto-save-default nil)
   (global-evil-mc-mode t)
 
+  (require 'org-gtasks)
+  (org-gtasks-register-account :name (car (split-string (shell-command-to-string "hostname") "\n"))
+                               :directory "~/.emacs.d/gtasks/"
+                               :login (or (getenv "GTASKS_ACCOUNT_LOGIN") "")
+                               :client-id (or (getenv "GTASKS_CLIENT_ID") "")
+                               :client-secret (or (getenv "GTASKS_CLIENT_SECRET") ""))
+
   (with-eval-after-load 'lsp-mode
     (defvar hackartist/lsp-code-action-timeout 20)
 
