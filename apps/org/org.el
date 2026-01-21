@@ -106,8 +106,8 @@
         org-image-actual-width t
         org-plantuml-exec-mode 'jar
         plantuml-exec-mode 'jar
-        plantuml-jar-path (expand-file-name "~/plantuml.jar")
-        org-plantuml-jar-path (expand-file-name "~/plantuml.jar")
+        plantuml-jar-path (expand-file-name "/usr/share/java/plantuml/plantuml.jar")
+        org-plantuml-jar-path (expand-file-name "/usr/share/java/plantuml/plantuml.jar")
         org-confirm-babel-evaluate nil
         org-export-use-babel t
         org-export-with-sub-superscripts '{}
