@@ -4,7 +4,7 @@
 
 use crate::*;
 
-#[derive(Debug, Clone, serde::Serialize, serde::Deserialize, DynamoEntity, Default, schemars::JsonSchema, aide::OperationIo)]
+#[derive(Debug, Clone, Serialize, Deserialize, DynamoEntity, Default, JsonSchema, OperationIo)]
 pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
     pub pk: Partition,
     pub sk: EntityType,
@@ -18,7 +18,7 @@ pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs" ""
 
 impl `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
     pub fn new(info: String) -> Self {
-        let uid = uuid::Uuid::new_v4().to_string();
+        let uid = uuid::Uuid::now_v7().to_string();
         let created_at = chrono::Utc::now().timestamp_micros();
 
         Self {

@@ -4,7 +4,7 @@
 
 use crate::*;
 
-#[derive(Debug, Clone, serde_with::SerializeDisplay, serde_with::DeserializeFromStr, Default, DynamoEnum, JsonSchema, OperationIo, PartialEq, Eq)]
+#[derive(Debug, Clone, SerializeDisplay, DeserializeFromStr, Default, DynamoEnum, JsonSchema, OperationIo, PartialEq, Eq)]
 pub enum `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
     #[default]
     None,
