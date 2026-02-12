@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+#name : dioxus-enum
+#key : dioxus-enum
+#contributor : hackartist
+# --
+
+#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize, EnumProp, Default)]
+#[serde(rename_all = "kebab-case")]
+pub enum ${1:EnumName} {
+#[default]
+${2:DefaultVariant},
+}

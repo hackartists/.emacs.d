@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+#name : dioxus-component
+#key : dioxus-component
+#contributor : hackartist
+# --
+
+use crate::*;
+
+#[component]
+pub fn `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))`(
+#[props(extends = GlobalAttributes)]
+attributes: Vec<Attribute>,
+children: Element,
+) -> Element {
+
+rsx! {
+div { id: "`(string-inflection-kebab-case-function (string-replace ".rs" "" (buffer-name)))`", ..attributes, {children} }
+}
+}

@@ -1,0 +1,47 @@
+# -*- mode: snippet -*-
+#name : dioxus-i18n
+#key : dioxus-i18n
+#contributor : hackartist
+# --
+
+use crate::*;
+
+translate! {
+`(let* (
+(dirs (split-string (file-name-directory buffer-file-name) "/"))
+(nested_dir (nth (- (length dirs) 2) dirs))
+(parent_dir (nth (- (length dirs) 3) dirs))
+(name (if (string-prefix-p "_" nested_dir)
+(concat parent_dir "_by" nested_dir)
+(if (string-equal nested_dir "new")
+                            (concat parent_dir "_new")
+                            nested_dir)))
+(upper-camel-name (string-inflection-upper-camelcase-function name)))
+(concat upper-camel-name "Translate"))`;
+
+    title: {
+    en: "`(let* (
+    (dirs (split-string (file-name-directory buffer-file-name) "/"))
+    (nested_dir (nth (- (length dirs) 2) dirs))
+    (parent_dir (nth (- (length dirs) 3) dirs))
+    (name (if (string-prefix-p "_" nested_dir)
+    (concat parent_dir "_by" nested_dir)
+    (if (string-equal nested_dir "new")
+                            (concat parent_dir "_new")
+                            nested_dir)))
+    (up-name (string-inflection-upcase-function name)))
+    up-name)`",
+    ko: "`(let* (
+    (dirs (split-string (file-name-directory buffer-file-name) "/"))
+    (nested_dir (nth (- (length dirs) 2) dirs))
+    (parent_dir (nth (- (length dirs) 3) dirs))
+    (name (if (string-prefix-p "_" nested_dir)
+    (concat parent_dir "_by" nested_dir)
+    (if (string-equal nested_dir "new")
+                            (concat parent_dir "_new")
+                            nested_dir)))
+    (up-name (string-inflection-upcase-function name)))
+    up-name)`",
+
+    },
+}
