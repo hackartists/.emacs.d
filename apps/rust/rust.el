@@ -149,9 +149,9 @@
 
 (defun hackartist/rust/before-save-hook ()
   (when (derived-mode-p 'rustic-mode)
-    ;; (hackartist/rustywind-before-save)
     (dx-fmt-before-save)
-    (lsp-format-buffer)))
+    (lsp-format-buffer)
+    (hackartist/rustywind-before-save)))
 
 (defun dx-fmt-before-save ()
   "Format the buffer using `dx fmt` via a temporary file before saving,
@@ -211,6 +211,14 @@ if the buffer contains the string `rsx!`. Preserves cursor position and scroll p
   (lsp-restart-workspace))
 
 (defun hackartist/rustywind-before-save ()
-  (shell-command
-   (format "rustywind --custom-regex 'class: \"(.*)\"' %s" (shell-quote-argument buffer-file-name)))
-  (revert-buffer t t t))
+  (let ((output (with-output-to-string
+                  (call-process-region (point-min) (point-max)
+                                       "rustywind"
+                                       nil (list standard-output nil) nil
+                                       "--custom-regex" "class: \"(.*)\""
+                                       "--quiet"
+                                       "--stdin"
+                                       ))))
+    (unless (string-empty-p (string-trim output))
+      (erase-buffer)
+      (insert output))))
