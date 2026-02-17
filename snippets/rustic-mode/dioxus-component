@@ -7,13 +7,13 @@
 use crate::*;
 
 #[component]
-pub fn `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))`(
+pub fn `(let ((name (if (string= (file-name-base) "mod") (file-name-nondirectory (directory-file-name (file-name-directory (buffer-file-name)))) (file-name-base)))) (string-inflection-upper-camelcase-function name))`(
 #[props(extends = GlobalAttributes)]
 attributes: Vec<Attribute>,
 children: Element,
 ) -> Element {
 
 rsx! {
-div { id: "`(string-inflection-kebab-case-function (string-replace ".rs" "" (buffer-name)))`", ..attributes, {children} }
+div { id: "`(let ((name (if (string= (file-name-base) "mod") (file-name-nondirectory (directory-file-name (file-name-directory (buffer-file-name)))) (file-name-base)))) (string-inflection-kebab-case-function name))`", ..attributes, {children} }
 }
 }

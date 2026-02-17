@@ -220,5 +220,7 @@ if the buffer contains the string `rsx!`. Preserves cursor position and scroll p
                                        "--stdin"
                                        ))))
     (unless (string-empty-p (string-trim output))
-      (erase-buffer)
-      (insert output))))
+      (let ((pos (point)))
+        (erase-buffer)
+        (insert output)
+        (goto-char (min pos (point-max)))))))
