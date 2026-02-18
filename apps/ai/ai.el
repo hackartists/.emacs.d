@@ -60,6 +60,7 @@
 
   (setq claudemacs-notification-auto-dismiss-linux nil)
   (setq claudemacs-notification-sound-linux "message-new-instant")
+  (setq claudemacs-program-switches '("--dangerously-skip-permissions", "--chrome"))
   ;; (setq claudemacs-prefer-projectile-root t)
 
   (with-eval-after-load 'eat
