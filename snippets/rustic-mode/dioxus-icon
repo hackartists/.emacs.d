@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+#name : dioxus-icon
+#key : dioxus-icon
+#contributor : hackartist
+# --
+
+use crate::*;
+
+#[component]
+pub fn `(let ((name (if (string= (file-name-base) "mod") (file-name-nondirectory (directory-file-name (file-name-directory (buffer-file-name)))) (file-name-base)))) (string-inflection-upper-camelcase-function name))`(
+#[props(extends = SvgAttributes)]
+attributes: Vec<Attribute>,
+) -> Element {
+
+rsx! {
+svg { id: "`(let ((name (if (string= (file-name-base) "mod") (file-name-nondirectory (directory-file-name (file-name-directory (buffer-file-name)))) (file-name-base)))) (string-inflection-kebab-case-function name))`", ..attributes, }
+}
+}

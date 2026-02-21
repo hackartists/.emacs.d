@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+#name : dioxus-context
+#key : dioxus-context
+#contributor : hackartist
+# --
+
+use crate::*;
+
+#[derive(Clone, Copy)]
+pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
+}
+
+impl `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
+pub fn init() {
+let srv = Self {};
+use_context_provider(move || srv);
+}
+}
