@@ -153,6 +153,10 @@
     (lsp-format-buffer)
     (hackartist/rustywind-before-save)))
 
+(defun hackartist/rust/dioxus-fmt ()
+  (interactive)
+  (dx-fmt-before-save))
+
 (defun dx-fmt-before-save ()
   "Format the buffer using `dx fmt` via a temporary file before saving,
 if the buffer contains the string `rsx!`. Preserves cursor position and scroll position."
