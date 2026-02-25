@@ -159,30 +159,29 @@
 
 (defun dx-fmt-before-save ()
   "Format the buffer using `dx fmt` via a temporary file before saving,
-if the buffer contains the string `rsx!`. Preserves cursor position and scroll position."
+if the buffer contains the string `rsx!`. Only applies minimal diff to preserve markers and positions."
   (when (and buffer-file-name
              (save-excursion
                (goto-char (point-min))
-               (search-forward "rsx!" nil t))) ;; Check if `rsx!` exists in the buffer
-    (let* ((temp-file (make-temp-file "dx-fmt-")) ;; Create a temporary file
-           (command (format "dx fmt -f %s" (shell-quote-argument temp-file))) ;; Command to run
-           (cursor-pos (point)) ;; Save the current cursor position
-           (scroll-pos (window-start))) ;; Save the scroll position (top of the window)
-      ;; Step 1: Write buffer contents to the temporary file
-      (write-region (point-min) (point-max) temp-file)
-      ;; Step 2: Run the `dx fmt` command on the temporary file
-      (if (eq (shell-command command) 0) ;; Check if the command succeeds
-          (progn
-            ;; Step 3: Replace buffer contents with the formatted temporary file's content
-            (erase-buffer)
-            (insert-file-contents temp-file)
-            ;; Step 4: Restore cursor position
-            (goto-char cursor-pos)
-            ;; Step 5: Restore the scroll position
-            (set-window-start (selected-window) scroll-pos))
-        (message "dx fmt failed")) ;; Display a message if the command fails
-      ;; Step 6: Clean up the temporary file
+               (search-forward "rsx!" nil t)))
+    (let* ((temp-file (make-temp-file "dx-fmt-"))
+           (command (format "dx fmt -f %s" (shell-quote-argument temp-file))))
+      (write-region (point-min) (point-max) temp-file nil 'silent)
+      (if (eq (shell-command command) 0)
+          (let ((fmt-buf (generate-new-buffer " *dx-fmt-output*")))
+            (unwind-protect
+                (progn
+                  (with-current-buffer fmt-buf
+                    (insert-file-contents temp-file))
+                  (replace-buffer-contents fmt-buf))
+              (kill-buffer fmt-buf)))
+        (message "dx fmt failed"))
       (delete-file temp-file))))
+
+(defun hackartist/dx/fmt ()
+  "Manually trigger `dx fmt` on the current buffer, preserving cursor and scroll position."
+  (interactive)
+  (hackartist/rust/dioxus-fmt))
 
 (defun dx-translate-on-region (start end)
   "Run `dx translate -r` on the selected region and replace it with the output."
@@ -215,18 +214,28 @@ if the buffer contains the string `rsx!`. Preserves cursor position and scroll p
   (lsp-restart-workspace))
 
 (defun hackartist/rustywind-before-save ()
-  (let ((output (with-output-to-string
-                  (call-process-region (point-min) (point-max)
-                                       "rustywind"
-                                       nil (list standard-output nil) nil
-                                       "--custom-regex" "class: \"(.*)\""
-                                       "--quiet"
-                                       "--stdin"
-                                       ))))
-    (unless (string-empty-p (string-trim output))
-      (let ((pos (point))
-            (win-start (window-start)))
-        (erase-buffer)
-        (insert output)
-        (goto-char (min pos (point-max)))
-        (set-window-start (selected-window) (min win-start (point-max)))))))
+  "Sort Tailwind CSS classes in `class: \"...\"` patterns using rustywind."
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward "class: \"[^\"]*\"" nil t)
+      (let* ((match-text (match-string 0))
+             (beg (match-beginning 0))
+             (end (match-end 0))
+             (output (with-temp-buffer
+                       (insert match-text)
+                       (call-process-region (point-min) (point-max)
+                                            "rustywind"
+                                            t t nil
+                                            "--custom-regex" "class: \"(.*)\""
+                                            "--quiet"
+                                            "--stdin")
+                       (string-trim (buffer-string)))))
+        (when (and (not (string-empty-p output))
+                   (not (string= match-text output)))
+          (delete-region beg end)
+          (goto-char beg)
+          (insert output))))))
+
+(defun hackartist/rustywind-fmt ()
+  (interactive)
+  (hackartist/rustywind-before-save))
