@@ -4,15 +4,28 @@
 #contributor : hackartist
 # --
 
-use crate::*;
+use super::*;
 
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, DioxusController)]
 pub struct `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
 }
 
+pub fn ${1:use_context}() -> Context {
+    use_context()
+}
+
 impl `(string-inflection-upper-camelcase-function (string-replace ".rs" "" (buffer-name)))` {
-pub fn init() {
+pub fn init() -> Result<Self, Loading>{
 let srv = Self {};
 use_context_provider(move || srv);
+Ok(srv)
 }
+}
+#[component]
+pub fn ContextProvider() -> Element {
+    Context::init();
+
+    rsx! {
+        Outlet::<Route> {}
+    }
 }

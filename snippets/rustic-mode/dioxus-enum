@@ -4,9 +4,19 @@
 #contributor : hackartist
 # --
 
-#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize, EnumProp, Default)]
-#[serde(rename_all = "kebab-case")]
+#[derive(
+    Debug,
+    Clone,
+    Copy,
+    PartialEq,
+    Serialize,
+    Deserialize,
+    strum::Display,
+    strum::EnumString,
+    Default,
+)]
 pub enum ${1:EnumName} {
 #[default]
+#[strum(serialize = "variant")]
 ${2:DefaultVariant},
 }
