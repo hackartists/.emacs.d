@@ -22,10 +22,10 @@ Ok(srv)
 }
 }
 #[component]
-pub fn ContextProvider() -> Element {
+pub fn ContextProvider(children: Element) -> Element {
     Context::init();
 
     rsx! {
-        Outlet::<Route> {}
+    {children}
     }
 }
