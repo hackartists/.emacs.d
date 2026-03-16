@@ -6,14 +6,23 @@
 
 use crate::*;
 
+#[derive(Props, Clone, PartialEq)]
+pub struct `(let ((name (if (string= (file-name-base) "mod") (file-name-nondirectory (directory-file-name (file-name-directory (buffer-file-name)))) (file-name-base)))) (string-inflection-upper-camelcase-function name))`Props {
+    #[props(extends=GlobalAttributes)]
+    #[props(extends=div)]
+    attributes: Vec<Attribute>,
+    children: Element,
+}
+
+
 #[component]
 pub fn `(let ((name (if (string= (file-name-base) "mod") (file-name-nondirectory (directory-file-name (file-name-directory (buffer-file-name)))) (file-name-base)))) (string-inflection-upper-camelcase-function name))`(
-#[props(extends = GlobalAttributes)]
-attributes: Vec<Attribute>,
-children: Element,
+props: `(let ((name (if (string= (file-name-base) "mod") (file-name-nondirectory (directory-file-name (file-name-directory (buffer-file-name)))) (file-name-base)))) (string-inflection-upper-camelcase-function name))`Props,
 ) -> Element {
+let base = attributes!(div {class: ""});
+let merged = merge_attributes(vec![base, props.attributes]);
 
 rsx! {
-div { id: "`(let ((name (if (string= (file-name-base) "mod") (file-name-nondirectory (directory-file-name (file-name-directory (buffer-file-name)))) (file-name-base)))) (string-inflection-kebab-case-function name))`", ..attributes, {children} }
+div { id: "`(let ((name (if (string= (file-name-base) "mod") (file-name-nondirectory (directory-file-name (file-name-directory (buffer-file-name)))) (file-name-base)))) (string-inflection-kebab-case-function name))`", ..merged, {props.children} }
 }
 }
