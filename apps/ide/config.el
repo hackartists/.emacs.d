@@ -64,6 +64,8 @@
         recentf-max-menu-items 10)
   (set-fontset-font t 'hangul (font-spec :name "D2Coding"))
 
+  (setq eat-enable-auto-line-mode t)
+
   (setq flycheck-checkers '())
   (setq user-full-name "hackartist")
   (setq completion-styles `(flex))

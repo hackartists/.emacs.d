@@ -213,6 +213,13 @@ if the buffer contains the string `rsx!`. Only applies minimal diff to preserve 
   (setq lsp-rust-features ["lambda"])
   (lsp-restart-workspace))
 
+(defun hackartist/rust/add-feature ()
+  (interactive)
+  (let* ((feature (read-string "Enter feature to add: "))
+         (current-features (or lsp-rust-features [])))
+    (setq lsp-rust-features (vconcat current-features (list feature)))
+    (lsp-restart-workspace)))
+
 (defun hackartist/rustywind-before-save ()
   "Sort Tailwind CSS classes in `class: \"...\"` patterns using rustywind."
   (save-excursion

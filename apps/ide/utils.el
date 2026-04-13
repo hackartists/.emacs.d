@@ -23,6 +23,7 @@
     (setq default-input-method input-method)
     (customize-mark-as-set 'default-input-method)))
 
+
 (defun apps/ide/toggle-input-method-custom ()
   (interactive)
   (deactivate-input-method)

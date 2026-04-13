@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#name : playwright-test
+#key : playwright-test
+#contributor : hackartist
+# --
+import { test } from "@playwright/test";
+import { waitPopup, click, fill, goto } from "../utils";
+
+test("${1:Test name}", async ({ page }) => {
+  $0
+});

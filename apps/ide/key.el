@@ -106,6 +106,7 @@
 
   (evil-define-key 'motion dictionary-mode-map "." 'dictionary-lookup-definition)
   (evil-define-key 'motion dictionary-mode-map "," 'dictionary-previous)
+  (evil-define-key 'normal eat-semi-char-mode-map "p" 'term-paste)
 
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
   (define-key evil-normal-state-map (kbd "-") 'text-scale-decrease)
