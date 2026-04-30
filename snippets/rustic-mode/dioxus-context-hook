@@ -1,0 +1,38 @@
+# -*- mode: snippet -*-
+#name : dioxus-context-hook
+#key : dioxus-context-hook
+#contributor : hackartist
+# --
+
+use crate::*;
+use dioxus::core::Runtime;
+
+#[derive(Clone, Copy, DioxusController)]
+pub struct `(string-inflection-upper-camelcase-function (file-name-base))` {
+pub data: Loader<_>
+}
+
+#[track_caller]
+pub fn `(string-inflection-snake-case-function (file-name-base))`() -> Result<`(string-inflection-upper-camelcase-function (file-name-base))`, Loading> {
+    let ctx: Option<`(string-inflection-upper-camelcase-function (file-name-base))`> = try_use_context();
+
+    if let Some(ctx) = ctx {
+      return Ok(ctx);
+    }
+
+    let rt = Runtime::current();
+
+    Runtime::in_scope(&rt, ScopeId::APP, || {
+      let data = use_loader(move || async move {
+            // TODO: loading data
+      })?;
+
+      let ctx = use_context_provider(move || {
+        `(string-inflection-upper-camelcase-function (file-name-base))` {
+          data,
+        }
+      });
+
+      Ok(ctx)
+    })
+}
