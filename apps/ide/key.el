@@ -7,10 +7,20 @@
   (interactive)
   (shell-command "xdg-open ."))
 
+(defun hackartist/mac-binding ()
+  (setq mac-command-modifier 'control)
+  (setq mac-control-modifier 'super)
+  (setq mac-option-modifier  'meta))
+
+(defun hackartist/linux-binding ())
+
 (defun hackartist/ide/bindings ()
   (spacemacs/declare-prefix "TAB" "Imenu")
   (spacemacs/declare-prefix "'" "create a snippet")
   (spacemacs/declare-prefix "gT" "tag")
+
+  (if (eq system-type 'darwin)
+      (hackartist/mac-binding) (hackartist/linux-binding))
 
   (spacemacs/set-leader-keys-for-major-mode 'plantuml-mode
     "SPC" 'plantuml-preview
