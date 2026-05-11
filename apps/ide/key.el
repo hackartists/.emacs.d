@@ -5,7 +5,10 @@
 
 (defun hackartist/xdg-open ()
   (interactive)
-  (shell-command "xdg-open ."))
+
+  (if (eq system-type 'darwin)
+      (shell-command "open .")
+    (shell-command "xdg-open .")) )
 
 (defun hackartist/mac-binding ()
   (setq mac-command-modifier 'control)

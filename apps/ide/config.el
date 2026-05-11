@@ -22,22 +22,26 @@
 ;;     (window-height . 0.4)))
 
 (defun hackartist/ide/config/darwin ()
-  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-  (add-to-list 'default-frame-alist '(ns-appearance . dark))
-  (setq ns-command-modifier 'ctrl
-        mac-command-modifier 'ctrl
-        ns-control-modifier 'super
-        mac-control-modifier 'super)
-  (cua-mode 1)
-  (global-set-key (kbd "s-c") 'cua-copy-region)
-  (global-set-key (kbd "s-v") 'cua-paste)
-  (global-set-key (kbd "s-x") 'cua-cut-region)
-  (global-set-key (kbd "s-a") 'mark-whole-buffer)
-  (global-set-key (kbd "s-z") 'undo)
+  (setq browse-url-browser-function 'browse-url-default-macosx)
+  ;; (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  ;; (add-to-list 'default-frame-alist '(ns-appearance . dark))
+  ;; (setq ns-command-modifier 'ctrl
+  ;;       mac-command-modifier 'ctrl
+  ;;       ns-control-modifier 'super
+  ;;       mac-control-modifier 'super)
+  ;; (cua-mode 1)
+  ;; (global-set-key (kbd "s-c") 'cua-copy-region)
+  ;; (global-set-key (kbd "s-v") 'cua-paste)
+  ;; (global-set-key (kbd "s-x") 'cua-cut-region)
+  ;; (global-set-key (kbd "s-a") 'mark-whole-buffer)
+  ;; (global-set-key (kbd "s-z") 'undo)
 
   (highlight2clipboard-mode +1))
 
 (defun hackartist/ide/config/linux ()
+  (setq browse-url-browser-function 'browse-url-default-browser)
+  ;; (setq browse-url-browser-function 'browse-url-chrome)
+
   ;; (setq x-ctrl-keysym 'super)
   ;; (setq x-super-keysym 'ctrl)
   )
@@ -100,9 +104,9 @@
         (advice-add f :around #'hackartist--with-code-action-timeout))))
 
   ;; (hackartist/openwith)
-  ;; (if (eq system-type 'darwin)
-  ;;     (hackartist/ide/config/darwin)
-  ;;   (hackartist/ide/config/linux))
+  (if (eq system-type 'darwin)
+      (hackartist/ide/config/darwin)
+    (hackartist/ide/config/linux))
 
   (setq tab-always-indent t)
   (add-to-list 'auto-mode-alist '("\\profile\\'" . shell-script-mode))
@@ -139,7 +143,6 @@
   ;;    ((ejira-jql "resolution = unresolved and assignee = currentUser()"
   ;;                ((org-agenda-overriding-header "Assigned to me"))))))
 
-  (setq browse-url-browser-function 'browse-url-chrome)
   (add-hook 'term-exec-hook
             (function (lambda ()
                         (set-buffer-process-coding-system 'utf-8-unix
@@ -295,3 +298,34 @@
  '(org-image-actual-width '(700))
  '(plantuml-indent-level 2)
  '(typescript-indent-level 2))
+
+(defun lsp-booster--advice-json-parse (old-fn &rest args)
+  "Try to parse bytecode instead of json."
+  (or
+   (when (equal (following-char) ?#)
+     (let ((bytecode (read (current-buffer))))
+       (when (byte-code-function-p bytecode)
+         (funcall bytecode))))
+   (apply old-fn args)))
+(advice-add (if (progn (require 'json)
+                       (fboundp 'json-parse-buffer))
+                'json-parse-buffer
+              'json-read)
+            :around
+            #'lsp-booster--advice-json-parse)
+
+(defun lsp-booster--advice-final-command (old-fn cmd &optional test?)
+  "Prepend emacs-lsp-booster command to lsp CMD."
+  (let ((orig-result (funcall old-fn cmd test?)))
+    (if (and (not test?)                             ;; for check lsp-server-present?
+             (not (file-remote-p default-directory)) ;; see lsp-resolve-final-command, it would add extra shell wrapper
+             lsp-use-plists
+             (not (functionp 'json-rpc-connection))  ;; native json-rpc
+             (executable-find "emacs-lsp-booster"))
+        (progn
+          (when-let ((command-from-exec-path (executable-find (car orig-result))))  ;; resolve command from exec-path (in case not found in $PATH)
+            (setcar orig-result command-from-exec-path))
+          (message "Using emacs-lsp-booster for %s!" orig-result)
+          (cons "emacs-lsp-booster" orig-result))
+      orig-result)))
+(advice-add 'lsp-resolve-final-command :around #'lsp-booster--advice-final-command)
