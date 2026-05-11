@@ -124,7 +124,7 @@
   (define-key evil-normal-state-map (kbd "+") 'text-scale-increase)
   (define-key evil-normal-state-map (kbd "-") 'text-scale-decrease)
   (define-key evil-normal-state-map (kbd "=") 'text-scale-adjust)
-  (define-key evil-normal-state-map (kbd ".") 'spacemacs/jump-to-definition)
+  (define-key evil-normal-state-map (kbd ".") 'lsp-find-definition)
   (define-key evil-normal-state-map (kbd ",") 'xref-pop-marker-stack)
 
   (global-set-key (kbd "S-SPC") 'apps/ide/toggle-input-method-custom)
