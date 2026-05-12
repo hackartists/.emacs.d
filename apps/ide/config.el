@@ -22,7 +22,7 @@
 ;;     (window-height . 0.4)))
 
 (defun hackartist/ide/config/darwin ()
-  (setq browse-url-browser-function 'browse-url-default-macosx)
+  (setq browse-url-browser-function 'browse-url-default-browser)
   ;; (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
   ;; (add-to-list 'default-frame-alist '(ns-appearance . dark))
   ;; (setq ns-command-modifier 'ctrl
