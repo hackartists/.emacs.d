@@ -13,7 +13,45 @@
 (defun hackartist/mac-binding ()
   (setq mac-command-modifier 'control)
   (setq mac-control-modifier 'super)
-  (setq mac-option-modifier  'meta))
+  (setq mac-option-modifier  'meta)
+
+  ;; Sync macOS input source with evil insert state via `macism'.
+  ;; Save the IME on entering insert, restore it on re-entry, and force
+  ;; ABC (English) whenever leaving insert.
+  (defvar hackartist/macism-english-source "com.apple.keylayout.ABC"
+    "macOS input source ID to use as the English/ASCII layout.")
+
+  (defvar-local hackartist/macism-saved-source nil
+    "macOS input source that was active when last leaving evil-insert-state.")
+
+  (defun hackartist/macism-get ()
+    "Return the currently active macOS input source ID, or nil."
+    (when (executable-find "macism")
+      (let ((out (with-output-to-string
+                   (with-current-buffer standard-output
+                     (call-process "macism" nil t nil)))))
+        (when (> (length out) 0)
+          (string-trim out)))))
+
+  (defun hackartist/macism-set (source)
+    "Activate macOS input source SOURCE via `macism'."
+    (when (and source (executable-find "macism"))
+      (call-process "macism" nil 0 nil source)))
+
+  (defun hackartist/macism-save-and-english ()
+    "Remember the current macOS IME, then switch to English."
+    (let ((cur (hackartist/macism-get)))
+      (when cur (setq hackartist/macism-saved-source cur)))
+    (hackartist/macism-set hackartist/macism-english-source))
+
+  (defun hackartist/macism-restore ()
+    "Restore the macOS IME saved when last leaving insert state."
+    (when hackartist/macism-saved-source
+      (hackartist/macism-set hackartist/macism-saved-source)))
+
+  (when (eq system-type 'darwin)
+    (add-hook 'evil-insert-state-exit-hook  #'hackartist/macism-save-and-english)
+    (add-hook 'evil-insert-state-entry-hook #'hackartist/macism-restore)))
 
 (defun hackartist/linux-binding ())
 

@@ -12,9 +12,9 @@
 (advice-add 'configuration-layer/create-elpa-repository :override #'hackartist/configuration-layer/create-elpa-repository)
 
 ;; (add-hook 'focus-out-hook (lambda ()
-;; 			    (interactive)
-;; 			    (save-some-buffers t )
-;; 			    ))
+;;          (interactive)
+;;          (save-some-buffers t )
+;;          ))
 
 ;; (add-hook 'configuration-layer-pre-load-hook
 ;;           (lambda ()
@@ -90,7 +90,7 @@
    doom-modeline-unicode-fallback t
    doom-modeline-vcs-max-length 30
    dotspacemacs-default-font '("D2Coding"
-                               :size 11.0
+                               :size 18.0
                                :weight normal
                                :width normal)
    dotspacemacs-emacs-command-key "X")
