@@ -231,9 +231,9 @@
     (define-key helm-map (kbd "<left>") 'helm-previous-source)
     (define-key helm-map (kbd "<right>") 'helm-next-source)))
 
-(defun hackartist/hybrid-completion-tab ()
-  (interactive)
-  (or
-   (copilot-accept-completion)
-   (company-complete) ;(company-complete-selection)
-   (indent-for-tab-command)))
+;; (defun hackartist/hybrid-completion-tab ()
+;;   (interactive)
+;;   (or
+;;    (copilot-accept-completion)
+;;    (company-complete) ;(company-complete-selection)
+;;    (indent-for-tab-command)))

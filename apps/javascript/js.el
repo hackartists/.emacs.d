@@ -38,13 +38,13 @@
                               (setq before-save-hook '(lsp-eslint-apply-all-fixes))
                               (setq lsp-eslint-auto-fix-on-save t))))
 
-(defun hackartist/ts-literal-insert (n)
-  (interactive "p")
-  (when (fboundp 'copilot-clear-overlay)
-    (ignore-errors (copilot-clear-overlay)))
-  (when (bound-and-true-p company--active-p)
-    (ignore-errors (company-abort)))
-  (insert-char last-command-event n))
+;; (defun hackartist/ts-literal-insert (n)
+;;   (interactive "p")
+;;   (when (fboundp 'copilot-clear-overlay)
+;;     (ignore-errors (copilot-clear-overlay)))
+;;   (when (bound-and-true-p company--active-p)
+;;     (ignore-errors (company-abort)))
+;;   (insert-char last-command-event n))
 
 (defun hackartist/ts/before-save-hook () ;
   (when (derived-mode-p 'typescript-mode 'typescript-tsx-mode)

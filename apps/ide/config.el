@@ -55,7 +55,7 @@
 (defun hackartist/ide/config ()
   (require 'helm-mt)
   (require 'emacs-everywhere)
-  (setq copilot-idle-delay 0.5)
+  ;; (setq copilot-idle-delay 0.5)
   ;; (setq lsp-session-folders-blocklist (list (expand-file-name "~")))
   (setq shell-file-name "/bin/zsh")
   (setq global-mark-ring-max 50000
