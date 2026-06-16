@@ -117,4 +117,5 @@
         "https://github.com/hackartists/org-api-mode.git"
         "https://github.com/tecosaur/emacs-everywhere.git"
         "https://git.sr.ht/~jmasson/org-gtasks"
+        "https://github.com/snowiow/aws.el"
         ))

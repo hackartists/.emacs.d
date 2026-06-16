@@ -10,6 +10,7 @@
   ;; (elcord-mode t)
   (autoload 'garak "garak" nil t)
   (setq auth-sources '("~/.authinfo"))
+
   (add-hook 'before-save-hook 'hackartist/ide-before-save-hook)
   (add-hook 'minibuffer-setup-hook (lambda ()
                                      (if (string= current-input-method 'korean-hangul)

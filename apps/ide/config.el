@@ -55,6 +55,7 @@
 (defun hackartist/ide/config ()
   (require 'helm-mt)
   (require 'emacs-everywhere)
+  (require 'aws)
   ;; (setq copilot-idle-delay 0.5)
   ;; (setq lsp-session-folders-blocklist (list (expand-file-name "~")))
   (setq shell-file-name "/bin/zsh")
