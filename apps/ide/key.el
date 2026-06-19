@@ -11,6 +11,7 @@
     (shell-command "xdg-open .")) )
 
 (defun hackartist/mac-binding ()
+  (interactive)
   (setq mac-command-modifier 'control)
   (setq mac-control-modifier 'super)
   (setq mac-option-modifier  'meta)
