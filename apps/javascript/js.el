@@ -31,7 +31,9 @@
     :after lsp-mode
     :init
     (setq lsp-tailwindcss-add-on-mode t)
-    (setq lsp-tailwindcss-rustywind-command (concat (getenv "NVM_BIN") "/rustywind"))
+    (setq lsp-tailwindcss-server-path (concat (getenv "NVM_BIN") "/tailwindcss-language-server"))
+
+    (setq lsp-tailwindcss-rustywind-command (concat (getenv "HOME") "/.cargo/bin/rustywind"))
     )
 
   (add-hook 'rjsx-mode-hook (lambda ()
