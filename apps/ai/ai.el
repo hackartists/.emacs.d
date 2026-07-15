@@ -58,6 +58,11 @@
                  (side . right)
                  (window-width . 0.33)))
   (global-auto-revert-mode t)
+  (setq claudemacs-tool-registry
+        '((claude :program "claude" :switches nil)
+          (codex :program "codex" :switches nil)
+          (gemini :program "gemini" :switches nil)))
+
 
   (setq claudemacs-notification-auto-dismiss-linux nil)
   (setq claudemacs-notification-sound-linux "message-new-instant")
