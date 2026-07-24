@@ -33,7 +33,7 @@
 
 (defun hackartist/ai/bindings ()
   (spacemacs/declare-prefix "," "AI")
-  (spacemacs/set-leader-keys
+  (spacemacs/set-leader-keys-for-minor-mode 'copilot-mode
     ", C" 'copilot-chat
     ", ." 'copilot-chat-transient
     ", c" 'copilot-chat-custom-prompt
