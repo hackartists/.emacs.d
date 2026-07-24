@@ -40,7 +40,12 @@
            :embedding-model "codellama"))
 
   (setopt ellama-providers
-          '(("codellama" . (make-llm-ollama
+          '(
+            ("qwen3-coder-next" . (make-llm-ollama
+                                   :chat-model "qwen3-coder-next"
+                                   :embedding-model "qwen3-coder-next"))
+
+            ("codellama" . (make-llm-ollama
                             :chat-model "codellama"
                             :embedding-model "codellama"))
             ("wizrdcoder" . (make-llm-ollama
@@ -58,8 +63,8 @@
 
   (setopt ellama-naming-provider
           (make-llm-ollama
-           :chat-model "codellama"
-           :embedding-model "codellama"))
+           :chat-model "qwen3-coder-next"
+           :embedding-model "qwen3-coder-next"))
   (setopt ellama-naming-scheme 'ellama-generate-name-by-llm)
   )
 
