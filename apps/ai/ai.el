@@ -60,7 +60,7 @@
   (global-auto-revert-mode t)
   (setq claudemacs-tool-registry
         '((claude :program "claude" :switches nil)
-          (codex :program "codex" :switches ("-m" "gpt-5.3-codex"))
+          (codex :program "codex" :switches nil)
           (gemini :program "gemini" :switches nil)))
 
 
@@ -73,8 +73,9 @@
     (setq eat-term-scrollback-size 400000))
 
   (setq gptel-backend (gptel-make-gh-copilot "Copilot")
-        gptel-model 'gpt-5.3-codex)
-  (setq copilot-chat-default-model "gpt-5.3-codex")
+        gptel-model 'claude-sonnet-5)
+  (setq copilot-chat-default-model "claude-sonnet-5")
+  (setq copilot-chat-commit-model "gpt-5-mini")
   (add-hook 'prog-mode-hook 'copilot-mode)
   (add-hook 'git-commit-setup-hook 'copilot-chat-insert-commit-message)
   )

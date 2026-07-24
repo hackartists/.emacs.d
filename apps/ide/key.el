@@ -68,6 +68,13 @@
     "SPC" 'plantuml-preview
     )
 
+  (spacemacs/set-leader-keys-for-major-mode 'docker-container-logs
+    "l" 'docker-container-logs
+    )
+
+  (evil-define-key 'normal docker-container-mode-map "L" 'docker-container-logs)
+  (define-key docker-container-mode-map (kbd "L") 'docker-container-logs)
+
   (spacemacs/set-leader-keys-for-minor-mode 'lsp-mode
     "SPC" 'gptel-menu
     )
