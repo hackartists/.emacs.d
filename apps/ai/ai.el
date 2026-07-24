@@ -9,6 +9,7 @@
         eat
         gptel
         claudemacs
+        ellama
         ))
 
 
@@ -29,6 +30,37 @@
     :vc (:url "https://codeberg.org/akib/emacs-eat"
               :rev :newest
               :branch "master"))
+
+  (require 'llm-ollama)
+  (setopt ellama-provider
+          (make-llm-ollama
+           ;; this model should be pulled to use it
+           ;; value should be the same as you print in terminal during pull
+           :chat-model "codellama"
+           :embedding-model "codellama"))
+
+  (setopt ellama-providers
+          '(("codellama" . (make-llm-ollama
+                            :chat-model "codellama"
+                            :embedding-model "codellama"))
+            ("wizrdcoder" . (make-llm-ollama
+                             :chat-model "wizardcoder:33b-v1.1"
+                             :embedding-model "wizardcoder:33b-v1.1"))
+            ("zephyr" . (make-llm-ollama
+                         :chat-model "zephyr:7b-beta-q6_K"
+                         :embedding-model "zephyr:7b-beta-q6_K"))
+            ("mistral" . (make-llm-ollama
+                          :chat-model "mistral:7b-instruct-v0.2-q6_K"
+                          :embedding-model "mistral:7b-instruct-v0.2-q6_K"))
+            ("mixtral" . (make-llm-ollama
+                          :chat-model "mixtral:8x7b-instruct-v0.1-q3_K_M-4k"
+                          :embedding-model "mixtral:8x7b-instruct-v0.1-q3_K_M-4k"))))
+
+  (setopt ellama-naming-provider
+          (make-llm-ollama
+           :chat-model "codellama"
+           :embedding-model "codellama"))
+  (setopt ellama-naming-scheme 'ellama-generate-name-by-llm)
   )
 
 (defun hackartist/ai/bindings ()
@@ -39,6 +71,18 @@
     ", c" 'copilot-chat-custom-prompt
     ", RET" 'copilot-chat-custom-prompt-selection
     ", ," 'claudemacs-transient-menu
+
+    ;; ", ." 'ellama-chat
+    ", a" 'ellama-code-add
+    ", e" 'ellama-code-edit
+    ", r" 'ellama-code-review
+    ", i" 'ellama-code-improve
+    ", l" 'ellama-ask-line
+    ", s" 'ellama-ask-summerize
+    ", SPC" 'ellama-ask-about
+    ;; ", RET" 'ellama-ask-selection
+    ", TAB" 'ellama-code-complete
+
     )
 
   (with-eval-after-load 'copilot
@@ -48,7 +92,6 @@
     (define-key copilot-completion-map (kbd "C-h") 'copilot-prev-completion)
     (define-key copilot-completion-map (kbd "<right>") 'copilot-next-completion)
     (define-key copilot-completion-map (kbd "<left>") 'copilot-prev-completion))
-
   )
 
 (defun hackartist/ai/config ()
