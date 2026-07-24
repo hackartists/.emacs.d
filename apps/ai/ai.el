@@ -44,7 +44,6 @@
             ("qwen3-coder-next" . (make-llm-ollama
                                    :chat-model "qwen3-coder-next"
                                    :embedding-model "qwen3-coder-next"))
-
             ("codellama" . (make-llm-ollama
                             :chat-model "codellama"
                             :embedding-model "codellama"))
@@ -70,7 +69,7 @@
 
 (defun hackartist/ai/bindings ()
   (spacemacs/declare-prefix "," "AI")
-  (spacemacs/set-leader-keys-for-minor-mode 'copilot-mode
+  (spacemacs/set-leader-keys
     ", C" 'copilot-chat
     ", ." 'copilot-chat-transient
     ", c" 'copilot-chat-custom-prompt
@@ -108,6 +107,7 @@
   (global-auto-revert-mode t)
   (setq claudemacs-tool-registry
         '((claude :program "claude" :switches nil)
+          (ollama :program "ollama-claude" :switches nil)
           (codex :program "codex" :switches nil)
           (gemini :program "gemini" :switches nil)))
 
