@@ -98,6 +98,16 @@
     (define-key copilot-completion-map (kbd "<left>") 'copilot-prev-completion))
   )
 
+(defun hackartist/create-claude-ollama ()
+  (interactive)
+  (let ((claude-ollama-path "~/.local/bin/claude-ollama"))
+    (unless (file-exists-p claude-ollama-path)
+      (with-temp-file claude-ollama-path
+        (insert "#!/bin/bash\n")
+        (insert "ANTHROPIC_AUTH_TOKEN=ollama ANTHROPIC_BASE_URL=http://localhost:11434 ANTHROPIC_API_KEY=\"\" claude --model qwen3-coder-next \"$@\"\n"))
+      (set-file-modes claude-ollama-path #o755)
+      (message "Created %s" claude-ollama-path))))
+
 (defun hackartist/ai/config ()
   (add-to-list 'display-buffer-alist
                '("^\\*claudemacs"
@@ -105,12 +115,11 @@
                  (side . right)
                  (window-width . 0.33)))
   (global-auto-revert-mode t)
+  (hackartist/create-claude-ollama)
+
   (setq claudemacs-tool-registry
         '((claude :program "claude" :switches nil)
-          (ollama :program "ollama-claude" :switches nil)
-          (codex :program "codex" :switches nil)
-          (gemini :program "gemini" :switches nil)))
-
+          (ollama :program "claude-ollama" :switches nil)))
 
   (setq claudemacs-notification-auto-dismiss-linux nil)
   (setq claudemacs-notification-sound-linux "message-new-instant")
