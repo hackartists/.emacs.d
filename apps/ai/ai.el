@@ -108,6 +108,16 @@
       (set-file-modes claude-ollama-path #o755)
       (message "Created %s" claude-ollama-path))))
 
+(defun hackartist/create-claude-admin ()
+  (interactive)
+  (let ((claude-admin-path "~/.local/bin/claude-admin"))
+    (unless (file-exists-p claude-admin-path)
+      (with-temp-file claude-admin-path
+        (insert "#!/bin/bash\n")
+        (insert "CLAUDE_CONFIG_DIR=~/data/claude-admin claude \"$@\"\n"))
+      (set-file-modes claude-admin-path #o755)
+      (message "Created %s" claude-admin-path))))
+
 (defun hackartist/ai/config ()
   (add-to-list 'display-buffer-alist
                '("^\\*claudemacs"
@@ -116,9 +126,11 @@
                  (window-width . 0.33)))
   (global-auto-revert-mode t)
   (hackartist/create-claude-ollama)
+  (hackartist/create-claude-admin)
 
   (setq claudemacs-tool-registry
         '((claude :program "claude" :switches nil)
+          (claude-admin :program "claude-admin" :switches nil)
           (ollama :program "claude-ollama" :switches nil)))
 
   (setq claudemacs-notification-auto-dismiss-linux nil)
