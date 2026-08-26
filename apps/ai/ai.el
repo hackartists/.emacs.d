@@ -10,6 +10,8 @@
         gptel
         claudemacs
         ellama
+        acp
+        agent-shell
         ))
 
 
@@ -31,39 +33,43 @@
               :rev :newest
               :branch "master"))
 
+  ;; agent-shell + Hermes (ACP): Hermes → LiteLLM(:4000) → Ollama/Claude
+  ;; 실행: M-x agent-shell-hermes-start-agent (또는 leader ", h")
+  (use-package acp)
+  (use-package agent-shell
+    :config
+    ;; Emacs 가 ~/.local/bin 을 PATH 에 못 찾는 경우를 대비해 절대경로 사용
+    (setq agent-shell-hermes-acp-command
+          (list (expand-file-name "~/.local/bin/hermes") "acp"))
+    ;; 편집 승인 정책: nil = 매번 물음 (기본). 자동 승인을 원하면 아래 주석 해제
+    ;; (setq agent-shell-hermes-default-session-mode-id "accept_edits")
+    )
+
   (require 'llm-ollama)
   (setopt ellama-provider
           (make-llm-ollama
            ;; this model should be pulled to use it
            ;; value should be the same as you print in terminal during pull
-           :chat-model "codellama"
-           :embedding-model "codellama"))
+           :chat-model "muse-glimmer:30b-mlx"
+           :embedding-model "muse-glimmer:30b-mlx"))
 
   (setopt ellama-providers
           '(
-            ("qwen3-coder-next" . (make-llm-ollama
-                                   :chat-model "qwen3-coder-next"
-                                   :embedding-model "qwen3-coder-next"))
-            ("codellama" . (make-llm-ollama
-                            :chat-model "codellama"
-                            :embedding-model "codellama"))
-            ("wizrdcoder" . (make-llm-ollama
-                             :chat-model "wizardcoder:33b-v1.1"
-                             :embedding-model "wizardcoder:33b-v1.1"))
-            ("zephyr" . (make-llm-ollama
-                         :chat-model "zephyr:7b-beta-q6_K"
-                         :embedding-model "zephyr:7b-beta-q6_K"))
-            ("mistral" . (make-llm-ollama
-                          :chat-model "mistral:7b-instruct-v0.2-q6_K"
-                          :embedding-model "mistral:7b-instruct-v0.2-q6_K"))
-            ("mixtral" . (make-llm-ollama
-                          :chat-model "mixtral:8x7b-instruct-v0.1-q3_K_M-4k"
-                          :embedding-model "mixtral:8x7b-instruct-v0.1-q3_K_M-4k"))))
+            ("muse-glimmer" . (make-llm-ollama
+                               :chat-model "muse-glimmer:30b-mlx"
+                               :embedding-model "muse-glimmer:30b-mlx"))
+            ("gemma4" . (make-llm-ollama
+                         :chat-model "gemma4:31b-mlx"
+                         :embedding-model "gemma4:31b-mlx"))
+
+            ("qwen3" . (make-llm-ollama
+                        :chat-model "qwen3.8:35b-mlx"
+                        :embedding-model "qwen3.8:27b-mlx"))))
 
   (setopt ellama-naming-provider
           (make-llm-ollama
-           :chat-model "qwen3-coder-next"
-           :embedding-model "qwen3-coder-next"))
+           :chat-model "muse-glimmer:30b-mlx"
+           :embedding-model "muse-glimmer:30b-mlx"))
   (setopt ellama-naming-scheme 'ellama-generate-name-by-llm)
   )
 
@@ -75,6 +81,7 @@
     ", c" 'copilot-chat-custom-prompt
     ", RET" 'copilot-chat-custom-prompt-selection
     ", ," 'claudemacs-transient-menu
+    ", h" 'agent-shell-hermes-start-agent
 
     ;; ", ." 'ellama-chat
     ", a" 'ellama-code-add
@@ -121,6 +128,11 @@
 (defun hackartist/ai/config ()
   (add-to-list 'display-buffer-alist
                '("^\\*claudemacs"
+                 (display-buffer-in-side-window)
+                 (side . right)
+                 (window-width . 0.33)))
+  (add-to-list 'display-buffer-alist
+               '("^\\*Hermes"
                  (display-buffer-in-side-window)
                  (side . right)
                  (window-width . 0.33)))
