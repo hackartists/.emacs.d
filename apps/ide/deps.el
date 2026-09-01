@@ -55,6 +55,7 @@
 
 (setq hackartist-ide-packages
       '(
+        grip-mode ;; markdown preview
         helm-mt
         auto-highlight-symbol
         ox-clip
