@@ -29,5 +29,5 @@
 
 (defun hackartist/docker/bindings ()
   (with-eval-after-load 'docker-container
-    (evil-define-key 'normal docker-motion-mode-map (kbd "L") 'docker-container-logs)
+    (evil-define-key 'motion docker-container-mode-map (kbd "L") 'docker-container-logs)
     (evil-define-key 'normal docker-container-mode-map (kbd "L") 'docker-container-logs)))
