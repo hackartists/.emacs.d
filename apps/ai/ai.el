@@ -43,6 +43,21 @@
           (list (expand-file-name "~/.local/bin/hermes") "acp"))
     ;; 편집 승인 정책: nil = 매번 물음 (기본). 자동 승인을 원하면 아래 주석 해제
     ;; (setq agent-shell-hermes-default-session-mode-id "accept_edits")
+
+    ;; OpenCode over ACP: `opencode acp' speaks the Agent Client Protocol
+    ;; natively, so agent-shell drives it in a normal Emacs buffer
+    ;; (inline diffs, edit approvals) instead of a terminal TUI.
+    ;; Start with: M-x agent-shell-opencode-start-agent (leader ", o")
+    ;; Resolve the absolute path so GUI Emacs finds it even without a login PATH.
+    (setq agent-shell-opencode-acp-command
+          (list (or (executable-find "opencode") "opencode") "acp"))
+    ;; Credentials come from `opencode auth login', not from an env var.
+    (setq agent-shell-opencode-authentication
+          (agent-shell-opencode-make-authentication :none t))
+    ;; nil = pick interactively from the model list shown on session start.
+    ;; Pin one here once you settle, e.g. "github-copilot/claude-sonnet-5"
+    ;; or "ollama/muse-glimmer:30b-mlx".
+    (setq agent-shell-opencode-default-model-id nil)
     )
 
   (require 'llm-ollama)
@@ -82,6 +97,7 @@
     ", RET" 'copilot-chat-custom-prompt-selection
     ", ," 'claudemacs-transient-menu
     ", h" 'agent-shell-hermes-start-agent
+    ", o" 'agent-shell-opencode-start-agent
 
     ;; ", ." 'ellama-chat
     ", a" 'ellama-code-add
@@ -136,6 +152,11 @@
                  (display-buffer-in-side-window)
                  (side . right)
                  (window-width . 0.33)))
+  (add-to-list 'display-buffer-alist
+               '("^\\*OpenCode"
+                 (display-buffer-in-side-window)
+                 (side . right)
+                 (window-width . 0.33)))
   (global-auto-revert-mode t)
   (hackartist/create-claude-ollama)
   (hackartist/create-claude-admin)
@@ -143,7 +164,10 @@
   (setq claudemacs-tool-registry
         '((claude :program "claude" :switches nil)
           (claude-admin :program "claude-admin" :switches nil)
-          (ollama :program "claude-ollama" :switches nil)))
+          (ollama :program "claude-ollama" :switches nil)
+          ;; OpenCode TUI inside eat; gives claudemacs' file@line references
+          ;; and per-project session handling for the terminal workflow.
+          (opencode :program "opencode" :switches nil)))
 
   (setq claudemacs-notification-auto-dismiss-linux nil)
   (setq claudemacs-notification-sound-linux "message-new-instant")
