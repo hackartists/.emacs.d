@@ -19,7 +19,6 @@
         ;; web-beautify skewer-mode
         ;; impatient-mode restclient elnode
         eslintd-fix
-        lsp-tailwindcss
         ;; js-react-redux-yasnippets
         ;; react-snippets
         ;; js-comint json-mode
@@ -27,8 +26,7 @@
 
 (defun hackartist/javascript/init ()
   ;; (add-hook 'js2-mode-hook 'hackartist/javascript/dap-react-native-init)
-  (use-package lsp-tailwindcss
-    :after lsp-mode
+  (use-package lsp-mode
     :init
     (setq lsp-tailwindcss-add-on-mode t)
     (setq lsp-tailwindcss-server-path (concat (getenv "NVM_BIN") "/tailwindcss-language-server"))
